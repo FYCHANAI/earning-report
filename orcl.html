@@ -91,6 +91,7 @@
                 <button onclick="switchTab('risks')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 風險因素</button>
                 <button onclick="switchTab('scenarios')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">七. 情境分析</button>
                 <button onclick="switchTab('recommendation')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">八. 最終建議</button>
+                <button onclick="switchTab('disclaimer')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">九. 免責聲明</button>
             </nav>
         </div>
     </header>
@@ -424,6 +425,18 @@
             </div>
         </section>
 
+        <section id="disclaimer" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">九、免責聲明 (Disclaimer)</h2>
+            </div>
+
+            <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+                <div class="text-center py-10">
+                    <p class="text-sm text-slate-500 animate-pulse font-bold">正在載入免責聲明，請稍候...</p>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <script>
@@ -460,7 +473,6 @@
         // --- 3. Chart.js Initialization ---
         document.addEventListener('DOMContentLoaded', function() {
             
-            // Chart 1: Financials (Revenue Bar + EPS Line)
             const ctxFin = document.getElementById('financialChart').getContext('2d');
             new Chart(ctxFin, {
                 type: 'bar',
@@ -470,7 +482,7 @@
                         {
                             label: '營收 ($B)',
                             data: [12.4, 13.8, 12.5, 12.9, 13.8, 14.6],
-                            backgroundColor: 'rgba(37, 99, 235, 0.7)', // blue-600
+                            backgroundColor: 'rgba(37, 99, 235, 0.7)',
                             borderColor: 'rgba(37, 99, 235, 1)',
                             borderWidth: 1,
                             yAxisID: 'y',
@@ -480,7 +492,7 @@
                             label: 'EPS ($)',
                             data: [1.22, 1.67, 1.19, 1.34, 1.48, 1.62],
                             type: 'line',
-                            backgroundColor: 'rgba(16, 185, 129, 1)', // emerald-500
+                            backgroundColor: 'rgba(16, 185, 129, 1)',
                             borderColor: 'rgba(16, 185, 129, 1)',
                             borderWidth: 3,
                             pointRadius: 4,
@@ -513,7 +525,6 @@
                 }
             });
 
-            // Chart 2: Valuation (Forward P/E Comparison)
             const ctxVal = document.getElementById('valuationChart').getContext('2d');
             new Chart(ctxVal, {
                 type: 'bar',
@@ -526,7 +537,7 @@
                             'rgba(148, 163, 184, 0.5)', 
                             'rgba(148, 163, 184, 0.5)', 
                             'rgba(148, 163, 184, 0.5)', 
-                            'rgba(37, 99, 235, 0.9)'  // Blue for ORCL
+                            'rgba(37, 99, 235, 0.9)'
                         ],
                         borderWidth: 0,
                         borderRadius: 4
@@ -557,6 +568,24 @@
                     }
                 }
             });
+        });
+
+        // --- 4. 自動載入共用免責聲明 (Module Loader) ---
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('disclaimer.html')
+                .then(response => {
+                    if (!response.ok) throw new Error('找不到 disclaimer.html 檔案');
+                    return response.text();
+                })
+                .then(data => {
+                    const container = document.getElementById('disclaimer-container');
+                    if(container) container.innerHTML = data;
+                })
+                .catch(error => {
+                    console.error('無法載入免責聲明:', error);
+                    const container = document.getElementById('disclaimer-container');
+                    if(container) container.innerHTML = '<div class="text-center py-10"><p class="text-sm text-rose-500 font-bold">載入免責聲明失敗。請確認是否已建立 disclaimer.html 檔案。</p></div>';
+                });
         });
     </script>
 </body>
