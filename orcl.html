@@ -62,41 +62,50 @@
 <body class="antialiased">
 
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center space-x-3">
-                    <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-start">
+                
+                <div class="flex flex-col">
+                    <div class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100">
+                        <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-8 w-auto">
+                        <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+                    </div>
+                    
                     <div class="flex flex-col">
-                        <h1 class="text-2xl font-black text-slate-900 tracking-tight">甲骨文公司 <span class="text-blue-600">ORCL</span></h1>
-                        <span class="text-sm text-slate-500 font-medium hidden md:block">NTAM 資深分析師 深度研究報告 | 2026年3月更新</span>
+                        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">甲骨文公司 <span class="text-blue-600">ORCL</span></h1>
+                        <span class="text-sm text-slate-500 font-medium mt-1">資深分析師 深度研究報告 | 2026年3月更新</span>
                     </div>
                 </div>
-                <div class="flex items-center space-x-4">
+                
+                <div class="flex flex-col items-end space-y-3">
                     <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
                         <option value="orcl.html" selected>繁體中文</option>
                         <option value="orcl-sc.html">简体中文</option>
                         <option value="orcl-en.html">English</option>
                     </select>
-                    <div class="text-right hidden md:block">
-                        <div class="text-xs text-slate-400">目前預估價</div>
-                        <div class="text-xl font-bold text-slate-800">$155.00 USD</div>
-                    </div>
-                    <div class="px-4 py-2 bg-emerald-100 text-emerald-800 font-bold rounded-full border border-emerald-200 text-sm md:text-base hidden sm:block">
-                        評級：強力買入
+                    
+                    <div class="flex items-center space-x-4">
+                        <div class="text-right hidden sm:block">
+                            <div class="text-xs text-slate-400">目前預估價</div>
+                            <div class="text-xl font-bold text-slate-800">$155.00 USD</div>
+                        </div>
+                        <div class="px-4 py-2 bg-emerald-100 text-emerald-800 font-bold rounded-full border border-emerald-200 text-sm whitespace-nowrap">
+                            評級：強力買入
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-2" id="nav-tabs">
-                <button onclick="switchTab(event, 'summary')" class="tab-btn active whitespace-nowrap py-4 px-1 text-sm font-medium text-blue-600">一. 投資結論</button>
-                <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 財務業績</button>
-                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值與共識</button>
-                <button onclick="switchTab(event, 'sentiment')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 市場情緒</button>
-                <button onclick="switchTab(event, 'technical')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 技術面</button>
-                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 風險因素</button>
-                <button onclick="switchTab(event, 'scenarios')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">七. 情境分析</button>
-                <button onclick="switchTab(event, 'recommendation')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">八. 最終建議</button>
-                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">九. 免責聲明</button>
+            <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+                <button onclick="switchTab(event, 'summary')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 投資結論</button>
+                <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 財務業績</button>
+                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值與共識</button>
+                <button onclick="switchTab(event, 'sentiment')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 市場情緒</button>
+                <button onclick="switchTab(event, 'technical')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 技術面</button>
+                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 風險因素</button>
+                <button onclick="switchTab(event, 'scenarios')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">七. 情境分析</button>
+                <button onclick="switchTab(event, 'recommendation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">八. 最終建議</button>
+                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">九. 免責聲明</button>
             </nav>
         </div>
     </header>
