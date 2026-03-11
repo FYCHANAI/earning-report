@@ -263,18 +263,15 @@
                 options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { grid: { display: false } } } }
             });
 
-            // 動態載入免責聲明，並選擇繁體中文標籤
+            // 載入免責聲明並強制顯示【繁體中文版】
             fetch('disclaimer.html')
                 .then(res => res.text())
                 .then(data => {
                     const c = document.getElementById('disclaimer-container');
                     if(c) {
                         c.innerHTML = data;
-                        const tab = document.getElementById('disc-tab-tc');
-                        if(tab) tab.checked = true;
+                        document.getElementById('disc-tc').style.display = 'block';
                     }
                 });
-        });
-    </script>
 </body>
 </html>
