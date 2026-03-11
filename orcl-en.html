@@ -3,19 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oracle (ORCL) Research Report | NTAM Senior Analyst</title>
+    <title>ORCL Research Report | NTAM Senior Analyst</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; }
-        .chart-container { position: relative; width: 100%; max-width: 800px; margin: 0 auto; height: 350px; max-height: 400px; }
-        @media (min-width: 768px) { .chart-container { height: 400px; } }
-        .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
-        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; 
+            color: #1e293b; 
+        }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        @media (min-width: 768px) {
+            .chart-container { height: 400px; }
+        }
+
+        .tab-btn.active {
+            border-bottom: 4px solid #2563eb;
+            color: #2563eb;
+            font-weight: 700;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        
         .tab-content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-        .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .metric-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.25rem;
+            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+            border: 1px solid #e2e8f0;
+        }
+        
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
@@ -49,15 +87,15 @@
             </div>
             
             <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-2" id="nav-tabs">
-                <button onclick="switchTab('summary')" class="tab-btn active whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">I. Conclusion</button>
-                <button onclick="switchTab('financials')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">II. Financials</button>
-                <button onclick="switchTab('valuation')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">III. Valuation</button>
-                <button onclick="switchTab('sentiment')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">IV. Sentiment</button>
-                <button onclick="switchTab('technical')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">V. Technicals</button>
-                <button onclick="switchTab('risks')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">VI. Risks</button>
-                <button onclick="switchTab('scenarios')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">VII. Scenarios</button>
-                <button onclick="switchTab('recommendation')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">VIII. Strategy</button>
-                <button onclick="switchTab('disclaimer')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">IX. Disclaimer</button>
+                <button onclick="switchTab(event, 'summary')" class="tab-btn active whitespace-nowrap py-4 px-1 text-sm font-medium text-blue-600">I. Conclusion</button>
+                <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">II. Financials</button>
+                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">III. Valuation</button>
+                <button onclick="switchTab(event, 'sentiment')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">IV. Sentiment</button>
+                <button onclick="switchTab(event, 'technical')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">V. Technicals</button>
+                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">VI. Risks</button>
+                <button onclick="switchTab(event, 'scenarios')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">VII. Scenarios</button>
+                <button onclick="switchTab(event, 'recommendation')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">VIII. Strategy</button>
+                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">IX. Disclaimer</button>
             </nav>
         </div>
     </header>
@@ -163,7 +201,7 @@
                     
                     <div class="metric-card">
                         <h3 class="text-md font-bold text-slate-800 mb-3 border-b pb-2">Earnings Call Takeaways</h3>
-                        <ul class="text-xs text-slate-600 list-disc list-inside mt-1 space-y-2">
+                        <ul class="text-sm text-slate-600 list-disc list-inside mt-1 space-y-2">
                             <li><span class="font-bold text-emerald-600">Bullish:</span> Sovereign cloud signings globally exceeded expectations.</li>
                             <li><span class="font-bold text-emerald-600">Bullish:</span> Multi-cloud agreements accelerated legacy DB migrations.</li>
                             <li><span class="font-bold text-rose-600">Risk:</span> Massive upcoming CAPEX for data centers may squeeze near-term FCF.</li>
@@ -230,17 +268,17 @@
                     <li class="border-l-2 border-emerald-500 pl-3">
                         <span class="text-xs font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">Bullish</span>
                         <span class="text-sm font-bold text-slate-800 ml-2">Expands supercomputer deployments with NVIDIA</span>
-                        <p class="text-xs text-slate-500 mt-1">Solidifies "AI pick-and-shovel" narrative, prompting further re-rating.</p>
+                        <p class="text-sm text-slate-500 mt-1">Solidifies "AI pick-and-shovel" narrative, prompting further re-rating.</p>
                     </li>
                     <li class="border-l-2 border-emerald-500 pl-3">
                         <span class="text-xs font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">Bullish</span>
                         <span class="text-sm font-bold text-slate-800 ml-2">Google Cloud and ORCL sign cross-cloud pact</span>
-                        <p class="text-xs text-slate-500 mt-1">Eliminates isolation risks, proving the underlying indispensability of Oracle DB.</p>
+                        <p class="text-sm text-slate-500 mt-1">Eliminates isolation risks, proving the underlying indispensability of Oracle DB.</p>
                     </li>
                     <li class="border-l-2 border-slate-400 pl-3">
                         <span class="text-xs font-bold bg-slate-100 text-slate-800 px-2 py-0.5 rounded">Neutral</span>
                         <span class="text-sm font-bold text-slate-800 ml-2">Announces massive CAPEX hike for next 2 years</span>
-                        <p class="text-xs text-slate-500 mt-1">Confirms explosive demand, but temporarily spooks FCF-focused investors.</p>
+                        <p class="text-sm text-slate-500 mt-1">Confirms explosive demand, but temporarily spooks FCF-focused investors.</p>
                     </li>
                 </ul>
             </div>
@@ -405,13 +443,19 @@
     </main>
 
     <script>
-        function switchTab(tabId) {
+        // --- 1. Tab Navigation Logic ---
+        function switchTab(e, tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('active', 'border-blue-600', 'text-blue-600');
+                el.classList.add('text-slate-500');
+            });
             document.getElementById(tabId).classList.add('active');
-            event.currentTarget.classList.add('active');
+            e.currentTarget.classList.remove('text-slate-500');
+            e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
         }
 
+        // --- 2. Scenario Toggle Logic ---
         function showScenario(type) {
             document.querySelectorAll('.scenario-panel').forEach(el => {
                 el.classList.add('hidden');
@@ -429,6 +473,7 @@
             if(type === 'bear') activeBtn.className = 'flex-1 py-2 text-sm font-bold bg-rose-600 text-white rounded shadow transition';
         }
 
+        // --- 3. Chart.js Initialization ---
         document.addEventListener('DOMContentLoaded', function() {
             const ctxFin = document.getElementById('financialChart').getContext('2d');
             new Chart(ctxFin, {
@@ -469,15 +514,15 @@
                 }
             });
 
-            // Load Disclaimer and select English
+            // 讀入免責聲明並指定顯示英文 (#disc-en)
             fetch('disclaimer.html')
                 .then(res => res.text())
                 .then(data => {
                     const c = document.getElementById('disclaimer-container');
                     if(c) {
                         c.innerHTML = data;
-                        const tab = document.getElementById('disc-tab-en'); // EN selector
-                        if(tab) tab.checked = true;
+                        const en = document.getElementById('disc-en');
+                        if(en) en.style.display = 'block';
                     }
                 });
         });
