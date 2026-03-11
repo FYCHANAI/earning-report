@@ -61,41 +61,50 @@
 <body class="antialiased">
 
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <div class="flex items-center space-x-3">
-                    <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-start">
+                
+                <div class="flex flex-col">
+                    <div class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100">
+                        <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-8 w-auto">
+                        <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+                    </div>
+                    
                     <div class="flex flex-col">
-                        <h1 class="text-2xl font-black text-slate-900 tracking-tight">甲骨文公司 <span class="text-blue-600">ORCL</span></h1>
-                        <span class="text-sm text-slate-500 font-medium hidden md:block">NTAM 资深分析师 深度研究报告 | 2026年3月更新</span>
+                        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">甲骨文公司 <span class="text-blue-600">ORCL</span></h1>
+                        <span class="text-sm text-slate-500 font-medium mt-1">资深分析师 深度研究报告 | 2026年3月更新</span>
                     </div>
                 </div>
-                <div class="flex items-center space-x-4">
+                
+                <div class="flex flex-col items-end space-y-3">
                     <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
                         <option value="orcl.html">繁體中文</option>
                         <option value="orcl-sc.html" selected>简体中文</option>
                         <option value="orcl-en.html">English</option>
                     </select>
-                    <div class="text-right hidden md:block">
-                        <div class="text-xs text-slate-400">目前预估价</div>
-                        <div class="text-xl font-bold text-slate-800">$155.00 USD</div>
-                    </div>
-                    <div class="px-4 py-2 bg-emerald-100 text-emerald-800 font-bold rounded-full border border-emerald-200 text-sm md:text-base hidden sm:block">
-                        评级：强力买入
+                    
+                    <div class="flex items-center space-x-4">
+                        <div class="text-right hidden sm:block">
+                            <div class="text-xs text-slate-400">目前预估价</div>
+                            <div class="text-xl font-bold text-slate-800">$155.00 USD</div>
+                        </div>
+                        <div class="px-4 py-2 bg-emerald-100 text-emerald-800 font-bold rounded-full border border-emerald-200 text-sm whitespace-nowrap">
+                            评级：强力买入
+                        </div>
                     </div>
                 </div>
             </div>
             
-            <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-2" id="nav-tabs">
-                <button onclick="switchTab(event, 'summary')" class="tab-btn active whitespace-nowrap py-4 px-1 text-sm font-medium text-blue-600">一. 投资结论</button>
-                <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 财务业绩</button>
-                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值与共识</button>
-                <button onclick="switchTab(event, 'sentiment')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 市场情绪</button>
-                <button onclick="switchTab(event, 'technical')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 技术面</button>
-                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 风险因素</button>
-                <button onclick="switchTab(event, 'scenarios')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">七. 情境分析</button>
-                <button onclick="switchTab(event, 'recommendation')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">八. 最终建议</button>
-                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">九. 免责声明</button>
+            <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+                <button onclick="switchTab(event, 'summary')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 投资结论</button>
+                <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 财务业绩</button>
+                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值与共识</button>
+                <button onclick="switchTab(event, 'sentiment')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 市场情绪</button>
+                <button onclick="switchTab(event, 'technical')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 技术面</button>
+                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 风险因素</button>
+                <button onclick="switchTab(event, 'scenarios')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">七. 情境分析</button>
+                <button onclick="switchTab(event, 'recommendation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">八. 最终建议</button>
+                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">九. 免责声明</button>
             </nav>
         </div>
     </header>
@@ -194,7 +203,7 @@
                     <div class="metric-card">
                         <h3 class="text-md font-bold text-slate-800 mb-3 border-b pb-2">业绩趋势判断</h3>
                         <div class="text-center py-3 bg-blue-100 rounded mb-3">
-                            <span class="text-lg font-black text-blue-800">加速成长 (Accelerating)</span>
+                            <span class="text-lg font-black text-blue-800">加速增长 (Accelerating)</span>
                         </div>
                         <p class="text-sm text-slate-600"><strong>判断依据：</strong> EPS QoQ 增速高于营收，显示市场极度看好其经营杠杆效应。剩余履约义务 (RPO) 创下逾 $85B 的历史新高 (YoY +35%)，未来 4-6 个季度业绩衰退风险极低。</p>
                     </div>
@@ -443,7 +452,7 @@
     </main>
 
     <script>
-        // 修正後的 Tab 切換邏輯 (防呆版)
+        // --- 1. Tab Navigation Logic (防呆版修正) ---
         function switchTab(e, tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.tab-btn').forEach(el => {
@@ -455,6 +464,7 @@
             e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
         }
 
+        // --- 2. Scenario Toggle Logic ---
         function showScenario(type) {
             document.querySelectorAll('.scenario-panel').forEach(el => {
                 el.classList.add('hidden');
@@ -472,6 +482,7 @@
             if(type === 'bear') activeBtn.className = 'flex-1 py-2 text-sm font-bold bg-rose-600 text-white rounded shadow transition';
         }
 
+        // --- 3. Chart.js Initialization ---
         document.addEventListener('DOMContentLoaded', function() {
             const ctxFin = document.getElementById('financialChart').getContext('2d');
             new Chart(ctxFin, {
