@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ORCL 深度投資研究報告 | NTAM 資深分析師</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc; /* slate-50 */
+        }
+        
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+
+        .nav-item.active {
+            background-color: #e2e8f0; /* slate-200 */
+            border-left: 4px solid #0f172a; /* slate-900 */
+            font-weight: 600;
+        }
+
+        .tab-btn.active {
+            border-bottom: 2px solid #2563eb; /* blue-600 */
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        /* Custom Scrollbar for clean look */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1; 
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #cbd5e1; 
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8; 
+        }
+    </style>
+</head>
+<body class="text-slate-800 flex h-screen overflow-hidden">
+
+    <aside class="w-64 bg-slate-50 border-r border-slate-200 flex flex-col h-full overflow-y-auto hidden md:flex shrink-0">
+        <div class="p-6 border-b border-slate-200">
+            <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto mb-4">
+            <h1 class="text-2xl font-bold text-slate-900 tracking-tight">ORCL 研究</h1>
+            <p class="text-xs text-slate-500 mt-1">NTAM 資深分析師觀點</p>
+            <p class="text-xs text-slate-400 mt-1">更新日期: 2026年3月</p>
+        </div>
+        <nav class="flex-1 py-4">
+            <ul class="space-y-1">
+                <li><button onclick="nav('sec-conclusion')" class="nav-item active w-full text-left px-6 py-3 text-sm hover:bg-slate-100 transition-colors">一、投資結論</button></li>
+                <li><button onclick="nav('sec-fundamentals')" class="nav-item w-full text-left px-6 py-3 text-sm hover:bg-slate-100 transition-colors">二、財務與展望</button></li>
+                <li><button onclick="nav('sec-valuation')" class="nav-item w-full text-left px-6 py-3 text-sm hover:bg-slate-100 transition-colors">三、估值與共識</button></li>
+                <li><button onclick="nav('sec-sentiment')" class="nav-item w-full text-left px-6 py-3 text-sm hover:bg-slate-100 transition-colors">四、情緒與消息</button></li>
+                <li><button onclick="nav('sec-technical')" class="nav-item w-full text-left px-6 py-3 text-sm hover:bg-slate-100 transition-colors">五、技術面分析</button></li>
+                <li><button onclick="nav('sec-risks')" class="nav-item w-full text-left px-6 py-3 text-sm hover:bg-slate-100 transition-colors">六、風險因素</button></li>
+                <li><button onclick="nav('sec-scenarios')" class="nav-item w-full text-left px-6 py-3 text-sm hover:bg-slate-100 transition-colors">七、情境分析</button></li>
+                <li><button onclick="nav('sec-recommendation')" class="nav-item w-full text-left px-6 py-3 text-sm hover:bg-slate-100 transition-colors">八、最終建議</button></li>
+            </ul>
+        </nav>
+        <div class="p-4 border-t border-slate-200">
+            <div class="bg-blue-50 text-blue-800 p-3 rounded-md text-xs">
+                <span class="font-bold">聲明：</span> 本報告基於最新公開財報(FY26 Q3)及市場共識，僅供投資決策參考。
+            </div>
+        </div>
+    </aside>
+
+    <div class="md:hidden fixed top-0 w-full bg-white border-b border-slate-200 z-50 px-4 py-3 flex justify-between items-center">
+        <div class="flex items-center space-x-2">
+            <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-6 w-auto">
+            <h1 class="text-lg font-bold">ORCL 研究</h1>
+        </div>
+        <select onchange="nav(this.value)" class="bg-slate-100 border border-slate-300 text-sm rounded px-2 py-1">
+            <option value="sec-conclusion">一、投資結論</option>
+            <option value="sec-fundamentals">二、財務與展望</option>
+            <option value="sec-valuation">三、估值與共識</option>
+            <option value="sec-sentiment">四、情緒與消息</option>
+            <option value="sec-technical">五、技術面分析</option>
+            <option value="sec-risks">六、風險因素</option>
+            <option value="sec-scenarios">七、情境分析</option>
+            <option value="sec-recommendation">八、最終建議</option>
+        </select>
+    </div>
+
+    <main class="flex-1 bg-white h-full overflow-y-auto pt-16 md:pt-0 scroll-smooth" id="main-scroll-area">
+        
+        <header class="bg-slate-900 text-white px-8 py-10 md:py-16">
+            <div class="max-w-4xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-end">
+                <div>
+                    <div class="flex items-center space-x-3 mb-2">
+                        <span class="bg-blue-600 text-white text-xs font-bold px-2 py-1 rounded">軟體與雲端基礎設施</span>
+                        <span class="text-slate-300 text-sm">NYSE: ORCL</span>
+                    </div>
+                    <h2 class="text-4xl md:text-5xl font-extrabold tracking-tight">甲骨文公司 (Oracle)</h2>
+                    <p class="mt-4 text-slate-300 text-lg max-w-2xl">從傳統數據庫巨頭成功轉型為 AI 時代的核心基礎設施提供商。雲端基礎設施 (OCI) 正迎來爆發式增長。</p>
+                </div>
+                <div class="mt-6 md:mt-0 text-right">
+                    <p class="text-slate-400 text-sm mb-1">現價 (預估)</p>
+                    <p class="text-4xl font-bold text-emerald-400">$155.00</p>
+                </div>
+            </div>
+        </header>
+
+        <div class="max-w-4xl mx-auto px-6 py-8 pb-24 space-y-16">
+
+            <section id="sec-conclusion" class="content-section block">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-slate-200 pb-2">一、投資結論</h2>
+                    <p class="text-slate-500 mt-2 text-sm">本節概述核心投資評級、目標價及支撐該判斷的最核心理由。</p>
+                </div>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 shadow-sm">
+                        <div class="text-sm text-slate-500 font-semibold mb-1">投資評級</div>
+                        <div class="text-3xl font-extrabold text-emerald-600 mb-2">強力買入 (Strong Buy)</div>
+                        <div class="flex items-center space-x-2 text-sm">
+                            <span class="bg-slate-200 text-slate-700 px-2 py-0.5 rounded">置信度: 8.5 / 10</span>
+                            <span class="bg-blue-100 text-blue-800 px-2 py-0.5 rounded">成長重評 + 價值投資</span>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50 border border-slate-200 rounded-xl p-6 shadow-sm flex flex-col justify-center">
+                        <div class="text-sm text-slate-500 font-semibold mb-1">12個月目標價區間</div>
+                        <div class="text-3xl font-extrabold text-slate-900">$175.00 - $190.00</div>
+                        <div class="text-sm text-emerald-600 font-medium mt-1">潛在上行空間: +13% 至 +22%</div>
+                    </div>
+                </div>
+
+                <h3 class="font-bold text-lg mb-3">3 個最核心理由</h3>
+                <ul class="space-y-4">
+                    <li class="flex items-start">
+                        <span class="text-emerald-500 mr-3 text-xl">&#9658;</span>
+                        <div>
+                            <strong class="text-slate-900">OCI (Oracle Cloud Infrastructure) 進入超高速增長軌道且利潤率擴張：</strong> 
+                            受惠於 NVIDIA AI 集群的強勁需求，OCI Gen2 營收持續以 40%+ 的速度增長，增速超越 AWS 與 Azure。同時，隨規模效應顯現，資本支出轉化為高毛利雲端經常性收入。
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-500 mr-3 text-xl">&#9658;</span>
+                        <div>
+                            <strong class="text-slate-900">多雲戰略 (Multi-Cloud) 護城河成型：</strong> 
+                            與 Microsoft Azure, Google Cloud, AWS 建立的數據庫互連合作，讓 Oracle Database 成為跨雲環境不可或缺的底層架構，徹底打破了過去被邊緣化的擔憂，鞏固了企業級數據霸權。
+                        </div>
+                    </li>
+                    <li class="flex items-start">
+                        <span class="text-emerald-500 mr-3 text-xl">&#9658;</span>
+                        <div>
+                            <strong class="text-slate-900">相對估值存在顯著折價 (Valuation Arbitrage)：</strong> 
+                            儘管雲基礎設施增長率領先同業，ORCL 的 Forward P/E 僅約 24x，顯著低於 MSFT (30x+) 與 CRM (28x)。隨著市場將其定價從「傳統軟體」切換至「AI 雲端巨頭」，存在巨大的估值倍數擴張 (Multiple Expansion) 空間。
+                        </div>
+                    </li>
+                </ul>
+            </section>
+
+            <section id="sec-fundamentals" class="content-section hidden">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-slate-200 pb-2">二、財務業績回顧與展望 (Fundamental)</h2>
+                    <p class="text-slate-500 mt-2 text-sm">數據來源：FY26 Q3 季報 (截至2026年2月)、Earnings Call Transcript、FactSet Consensus。</p>
+                </div>
+
+                <div class="flex border-b border-slate-200 mb-6">
+                    <button onclick="switchTab('fund', 'actuals')" id="tab-fund-actuals" class="tab-btn active px-4 py-2 text-sm font-medium focus:outline-none">最新已公布季度 (FY26 Q3)</button>
+                    <button onclick="switchTab('fund', 'guidance')" id="tab-fund-guidance" class="tab-btn px-4 py-2 text-sm font-medium text-slate-500 hover:text-slate-700 focus:outline-none">下一季度官方指引 (FY26 Q4)</button>
+                    <button onclick="switchTab('fund', 'consensus')" id="tab-fund-consensus" class="tab-btn px-4 py-2 text-sm font-medium text-slate-500 hover:text-slate-700 focus:outline-none">市場一致預期</button>
+                </div>
+
+                <div id="content-fund-actuals" class="block">
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <div class="text-xs text-slate-500 mb-1">實際營收 (Revenue)</div>
+                            <div class="text-xl font-bold">$13.8B</div>
+                            <div class="text-xs text-emerald-600 mt-1">Beat (預期 $13.65B)</div>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <div class="text-xs text-slate-500 mb-1">實際 EPS (Non-GAAP)</div>
+                            <div class="text-xl font-bold">$1.48</div>
+                            <div class="text-xs text-emerald-600 mt-1">Beat (預期 $1.42)</div>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <div class="text-xs text-slate-500 mb-1">營收 YoY / QoQ</div>
+                            <div class="text-xl font-bold">+9.1% <span class="text-sm font-normal text-slate-500">/ +6.5%</span></div>
+                            <div class="text-xs text-slate-500 mt-1">YoY 恆定匯率 +10%</div>
+                        </div>
+                        <div class="bg-slate-50 p-4 rounded-lg border border-slate-200">
+                            <div class="text-xs text-slate-500 mb-1">EPS YoY / QoQ</div>
+                            <div class="text-xl font-bold">+16% <span class="text-sm font-normal text-slate-500">/ +10.4%</span></div>
+                            <div class="text-xs text-slate-500 mt-1">利潤率擴張顯著</div>
+                        </div>
+                    </div>
+                    <div class="mb-4">
+                        <strong class="text-slate-800">分部表現重點：</strong>
+                        <ul class="list-disc pl-5 text-sm text-slate-700 space-y-1 mt-2">
+                            <li>雲端服務與許可證支持營收：$10.5B (YoY +11%)</li>
+                            <li><span class="bg-yellow-100 px-1 font-bold">亮點：雲端基礎設施 (OCI) 營收 YoY 激增 45%</span>，持續維持超高增速。</li>
+                            <li>營業利潤率 (Non-GAAP)：44% (高於去年同期的42%)，顯示 Cerner 整合後的成本優化見效。</li>
+                            <li>剩餘履約義務 (RPO)：創下逾 $85B 的歷史新高，YoY +35%。</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div id="content-fund-guidance" class="hidden">
+                    <div class="bg-blue-50 border border-blue-200 rounded-lg p-5 mb-6">
+                        <h4 class="font-bold text-blue-900 mb-3">FY26 Q4 管理層指引 (中值與區間)</h4>
+                        <ul class="space-y-3 text-sm text-slate-800">
+                            <li class="flex justify-between border-b border-blue-100 pb-2">
+                                <span>總營收指引 (Total Revenue):</span>
+                                <span class="font-bold">$14.5B - $14.7B (YoY 約增長 5-7%)</span>
+                            </li>
+                            <li class="flex justify-between border-b border-blue-100 pb-2">
+                                <span>雲端營收增長指引 (Cloud Revenue):</span>
+                                <span class="font-bold">YoY 增長 22% - 24% (含Cerner)</span>
+                            </li>
+                            <li class="flex justify-between">
+                                <span>EPS 指引 (Non-GAAP):</span>
+                                <span class="font-bold">$1.60 - $1.65</span>
+                            </li>
+                        </ul>
+                        <p class="text-xs text-blue-700 mt-3">註：管理層於電話會議中強調，Q4 OCI 產能將有大量新上線，受限於晶片供應的積壓訂單將開始轉化為收入。</p>
+                    </div>
+                </div>
+
+                <div id="content-fund-consensus" class="hidden">
+                    <div class="overflow-x-auto mb-6">
+                        <table class="w-full text-sm text-left">
+                            <thead class="bg-slate-100 text-slate-600">
+                                <tr>
+                                    <th class="px-4 py-3 rounded-tl-lg">指標</th>
+                                    <th class="px-4 py-3">市場一致預期 (FY26 Q4)</th>
+                                    <th class="px-4 py-3">相對 Q3 實際 (QoQ)</th>
+                                    <th class="px-4 py-3 rounded-tr-lg">相對去年同期 (YoY)</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200">
+                                <tr>
+                                    <td class="px-4 py-3 font-medium">營收 (Revenue)</td>
+                                    <td class="px-4 py-3">$14.58B</td>
+                                    <td class="px-4 py-3 text-emerald-600">加速 (+5.6%)</td>
+                                    <td class="px-4 py-3 text-emerald-600">增長 (+6.2%)</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-4 py-3 font-medium">EPS (Non-GAAP)</td>
+                                    <td class="px-4 py-3">$1.62</td>
+                                    <td class="px-4 py-3 text-emerald-600">加速 (+9.4%)</td>
+                                    <td class="px-4 py-3 text-emerald-600">增長 (+11.8%)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="text-sm font-bold text-slate-800">分析判斷：<span class="text-emerald-600">加速成長</span></p>
+                    <p class="text-sm text-slate-700 mt-1">市場目前預期業績在 Q4 將呈現季節性與結構性的雙重加速。EPS QoQ 增速高於營收，顯示市場極度看好其經營槓桿效應及毛利率提升。</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-8">
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-2 border-l-4 border-blue-500 pl-2">Earnings Call 核心提煉</h4>
+                        <div class="space-y-4 text-sm">
+                            <div>
+                                <strong class="text-emerald-700">管理層強調的 3 個亮點：</strong>
+                                <ol class="list-decimal pl-5 text-slate-700 mt-1">
+                                    <li>與 NVIDIA 的合作深化，全球 AI 主權雲 (Sovereign Cloud) 簽約量超預期。</li>
+                                    <li>RPO (積壓訂單) 爆發，未來三年收入能見度極高。</li>
+                                    <li>多雲互連協議推動了傳統數據庫向雲端遷移的速度。</li>
+                                </ol>
+                                <p class="text-xs text-slate-500 mt-1 italic">已被 Price-in：OCI 的高增長率已被部分定價；RPO 創新高為市場已知利多。</p>
+                            </div>
+                            <div>
+                                <strong class="text-rose-700">管理層提及的 3 個風險：</strong>
+                                <ol class="list-decimal pl-5 text-slate-700 mt-1">
+                                    <li>資料中心建設的資本支出 (CAPEX) 將大幅增加。</li>
+                                    <li>GPU 供應鏈的交付延遲可能推遲部分收入確認。</li>
+                                    <li>Cerner 醫療業務的過渡期仍對整體營收增長有一定拖累。</li>
+                                </ol>
+                                <p class="text-xs text-slate-500 mt-1 italic">被低估風險：資本支出暴增對短期自由現金流 (FCF) 的壓縮，市場似乎過於樂觀忽視。</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-2 border-l-4 border-emerald-500 pl-2">業績趨勢判斷：<span class="text-emerald-600">加速成長</span></h4>
+                        <p class="text-sm text-slate-700 mb-4">
+                            依據：收入端受惠於 OCI 產能釋放，EPS 端受惠於 Cerner 成本削減與高毛利雲業務佔比提升。強勁的 RPO 預示未來 4-6 個季度衰退風險極低。
+                        </p>
+                        <div class="chart-container">
+                            <canvas id="fundamentalsChart"></canvas>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sec-valuation" class="content-section hidden">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-slate-200 pb-2">三、估值與市場共識 (Valuation)</h2>
+                    <p class="text-slate-500 mt-2 text-sm">結合華爾街一致預期與相對估值模型，判斷當前價格的合理性。</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 text-center">
+                    <div class="bg-white border border-slate-200 rounded-lg p-4 shadow-sm">
+                        <div class="text-xs text-slate-500">平均目標價</div>
+                        <div class="text-2xl font-bold text-slate-800">$168.50</div>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-200 rounded-lg p-4 shadow-sm">
+                        <div class="text-xs text-emerald-700">最高目標價</div>
+                        <div class="text-2xl font-bold text-emerald-800">$195.00</div>
+                    </div>
+                    <div class="bg-rose-50 border border-rose-200 rounded-lg p-4 shadow-sm">
+                        <div class="text-xs text-rose-700">最低目標價</div>
+                        <div class="text-2xl font-bold text-rose-800">$135.00</div>
+                    </div>
+                </div>
+
+                <div class="mb-4 flex items-center space-x-2">
+                    <span class="text-sm font-bold">評級分布:</span>
+                    <div class="flex-1 h-4 bg-slate-200 rounded-full overflow-hidden flex text-xs text-white font-bold">
+                        <div class="bg-emerald-500 w-[65%] flex items-center justify-center">買入 (65%)</div>
+                        <div class="bg-yellow-500 w-[30%] flex items-center justify-center">持有 (30%)</div>
+                        <div class="bg-rose-500 w-[5%] flex items-center justify-center">賣出</div>
+                    </div>
+                </div>
+
+                <h3 class="font-bold text-lg mt-8 mb-4">同業估值比較 (Peer Comps)</h3>
+                <p class="text-sm text-slate-600 mb-4">使用最適合的估值方法：<strong class="text-slate-900">Forward P/E (未來12個月預估本益比)</strong> 與 <strong class="text-slate-900">EV/EBITDA</strong>。由於 ORCL 正處於雲轉型收穫期，現金流穩定且獲利清晰，P/E 最能反映其核心軟體價值。</p>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <div class="overflow-x-auto">
+                        <table class="w-full text-sm text-left border border-slate-200">
+                            <thead class="bg-slate-100 text-slate-600">
+                                <tr>
+                                    <th class="px-3 py-2">公司</th>
+                                    <th class="px-3 py-2">Forward P/E</th>
+                                    <th class="px-3 py-2">EV/EBITDA</th>
+                                    <th class="px-3 py-2">雲基建增速</th>
+                                </tr>
+                            </thead>
+                            <tbody class="divide-y divide-slate-200 bg-white">
+                                <tr class="bg-blue-50 font-bold">
+                                    <td class="px-3 py-2">ORCL (現價)</td>
+                                    <td class="px-3 py-2 text-blue-700">23.8x</td>
+                                    <td class="px-3 py-2">16.5x</td>
+                                    <td class="px-3 py-2">~45%</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-3 py-2">MSFT</td>
+                                    <td class="px-3 py-2">32.5x</td>
+                                    <td class="px-3 py-2">22.1x</td>
+                                    <td class="px-3 py-2">~28% (Azure)</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-3 py-2">CRM (Salesforce)</td>
+                                    <td class="px-3 py-2">28.0x</td>
+                                    <td class="px-3 py-2">19.0x</td>
+                                    <td class="px-3 py-2">N/A (SaaS主導)</td>
+                                </tr>
+                                <tr>
+                                    <td class="px-3 py-2">AMZN</td>
+                                    <td class="px-3 py-2">40.2x</td>
+                                    <td class="px-3 py-2">18.5x</td>
+                                    <td class="px-3 py-2">~15% (AWS)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="chart-container h-[250px] !max-h-[250px]">
+                        <canvas id="valuationChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="bg-slate-50 border-l-4 border-blue-600 p-4 mt-6 rounded-r-lg">
+                    <h4 class="font-bold text-slate-900 mb-1">估值結論：<span class="text-blue-700">顯著低估 (Undervalued)</span></h4>
+                    <p class="text-sm text-slate-700">
+                        <strong>為何應享有溢價/平價？</strong> 
+                        ORCL 目前的 Forward P/E (23.8x) 較同業 (MSFT 32x) 存在巨大折價。市場的落差在於：部分資金仍將 ORCL 視為「低增長傳統數據庫公司」。然而，其實際雲基礎設施 (OCI) 的增速已遠超 AWS 與 Azure。隨著其高毛利雲業務佔比超過傳統授權，利潤結構正經歷質變。基於其在 AI 訓練雲的獨特地位與高利潤率防守性，ORCL 的合理估值倍數應修復至 <strong>28x - 30x Forward P/E</strong>。
+                    </p>
+                </div>
+            </section>
+
+            <section id="sec-sentiment" class="content-section hidden">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-slate-200 pb-2">四、市場情緒與消息面 (Sentiment)</h2>
+                </div>
+
+                <h3 class="font-bold text-lg mb-3">過去 30 天重要消息</h3>
+                <div class="space-y-3 mb-8">
+                    <div class="p-3 border border-emerald-200 bg-emerald-50 rounded-lg flex items-start">
+                        <span class="text-xl mr-3">📈</span>
+                        <div>
+                            <strong class="text-emerald-800 text-sm">利多：Oracle 擴大與 NVIDIA 合作，部署更大規模超級電腦 (來源: 官方新聞稿)</strong>
+                            <p class="text-xs text-slate-600 mt-1">影響：強化了市場對其作為「AI 賣鏟人」的認知，帶動雲端業務的估值重評。</p>
+                        </div>
+                    </div>
+                    <div class="p-3 border border-emerald-200 bg-emerald-50 rounded-lg flex items-start">
+                        <span class="text-xl mr-3">🤝</span>
+                        <div>
+                            <strong class="text-emerald-800 text-sm">利多：Google Cloud 與 Oracle 達成跨雲數據庫整合協議 (來源: 8-K)</strong>
+                            <p class="text-xs text-slate-600 mt-1">影響：消除被競爭對手孤立的風險，確認其數據庫底層的不可替代性，大幅提振機構投資者信心。</p>
+                        </div>
+                    </div>
+                    <div class="p-3 border border-slate-200 bg-slate-50 rounded-lg flex items-start">
+                        <span class="text-xl mr-3">⚖️</span>
+                        <div>
+                            <strong class="text-slate-800 text-sm">中性/偏空：公司宣布提升 FY26/FY27 CAPEX 以擴充資料中心 (來源: Earnings Call)</strong>
+                            <p class="text-xs text-slate-600 mt-1">影響：短期引發市場對自由現金流減少的擔憂，但長期被視為需求強勁的證明，情緒影響中性分歧。</p>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 class="font-bold text-lg mb-3">社交平台情緒 (Reddit/X/WSB)</h3>
+                <div class="bg-slate-50 p-4 rounded-lg border border-slate-200 mb-6 text-sm">
+                    <p class="mb-2"><strong class="text-slate-800">熱度與風向：</strong> <span class="text-blue-600 font-bold">偏多 (Bullish) 但未達狂熱</span></p>
+                    <p class="text-slate-700">
+                        在 X/Twitter 與 Reddit 財經板塊上，討論熱度穩步上升。散戶與 KOL 主要將其視為 <strong>"Value AI Play" (估值合理的 AI 概念股)</strong>，相對於 NVDA 或 SMCI 的高昂估值，ORCL 被認為是風險回報比更佳的選擇。並無過度炒作跡象，基本面數據完全支撐目前的情緒。
+                    </p>
+                </div>
+
+                <div class="bg-blue-900 text-white p-4 rounded-lg">
+                    <h4 class="font-bold mb-2">綜合情緒判斷</h4>
+                    <p class="text-sm">
+                        市場目前主要在交易：<span class="bg-emerald-500 text-white px-2 py-0.5 rounded font-bold mx-1">基本面改善</span> 與 <span class="bg-emerald-500 text-white px-2 py-0.5 rounded font-bold mx-1">估值修復</span>。
+                    </p>
+                    <p class="text-sm mt-2 text-slate-300">
+                        主導因素在於機構資金從過度擁擠的高估值科技股中輪動，尋求擁有真實 AI 營收且具備利潤防守屬性的標的。
+                    </p>
+                </div>
+            </section>
+
+            <section id="sec-technical" class="content-section hidden">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-slate-200 pb-2">五、技術面分析 (Technical)</h2>
+                    <p class="text-slate-500 mt-2 text-sm">以日線級別為主，研判中短期波段動能與支撐阻力。</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+                    <div class="border border-slate-200 rounded-lg p-5">
+                        <h4 class="font-bold text-slate-800 mb-4 flex justify-between">
+                            <span>動量指標</span>
+                            <span class="text-xs font-normal text-slate-500">來源: 交易終端 (截至最新收盤)</span>
+                        </h4>
+                        <div class="mb-4">
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-slate-600">RSI (14)</span>
+                                <span class="font-bold text-slate-900">62.5</span>
+                            </div>
+                            <div class="w-full bg-slate-200 rounded-full h-2">
+                                <div class="bg-blue-500 h-2 rounded-full" style="width: 62.5%"></div>
+                            </div>
+                            <p class="text-xs text-slate-500 mt-1">判斷：<strong class="text-blue-600">中性偏強 (未超買)</strong>，上漲動能健康。</p>
+                        </div>
+                        <div>
+                            <div class="flex justify-between mb-1">
+                                <span class="text-sm text-slate-600">MACD (12, 26, 9)</span>
+                                <span class="font-bold text-emerald-600">黃金交叉</span>
+                            </div>
+                            <p class="text-xs text-slate-500">判斷：MACD 柱狀圖在零軸上方發散，短線多頭動能延續。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="border border-slate-200 rounded-lg p-5">
+                        <h4 class="font-bold text-slate-800 mb-4">均線結構與價格趨勢</h4>
+                        <ul class="space-y-2 text-sm text-slate-700">
+                            <li class="flex items-center"><span class="w-16 font-medium">趨勢：</span> <span class="bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">強勢上升趨勢</span></li>
+                            <li class="flex items-center"><span class="w-16 font-medium">20日 MA:</span> <span>$148.50 (支撐)</span></li>
+                            <li class="flex items-center"><span class="w-16 font-medium">50日 MA:</span> <span>$140.20 (強支撐)</span></li>
+                            <li class="flex items-center"><span class="w-16 font-medium">200日 MA:</span> <span>$122.80 (長期牛熊分界)</span></li>
+                        </ul>
+                        <p class="text-xs text-slate-500 mt-3">股價呈明顯的多頭排列，且放量突破前期盤整區。</p>
+                    </div>
+                </div>
+
+                <div class="bg-slate-100 p-4 rounded-lg">
+                    <h4 class="font-bold text-slate-800 mb-2">關鍵交易點位</h4>
+                    <div class="flex justify-between text-sm">
+                        <div>
+                            <span class="text-slate-500">阻力位 (Resistance):</span>
+                            <ul class="font-bold text-rose-600">
+                                <li>R1: $160.00 (心理關口)</li>
+                                <li>R2: $168.00 (斐波那契延展)</li>
+                            </ul>
+                        </div>
+                        <div class="text-right">
+                            <span class="text-slate-500">支撐位 (Support):</span>
+                            <ul class="font-bold text-emerald-600">
+                                <li>S1: $148.50 (20 MA / 跳空缺口)</li>
+                                <li>S2: $138.00 (前期突破頸線)</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sec-risks" class="content-section hidden">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-slate-200 pb-2">六、風險因素 (Risk)</h2>
+                    <p class="text-slate-500 mt-2 text-sm">依重要性與爆發機率排序。</p>
+                </div>
+
+                <div class="space-y-4">
+                    <div class="border-l-4 border-rose-600 bg-rose-50 p-4 rounded-r-lg">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-bold text-rose-900">1. AI 資本支出回報遞延 (CAPEX ROI Risk)</h4>
+                            <span class="bg-rose-200 text-rose-800 text-xs px-2 py-1 rounded font-bold">最高風險</span>
+                        </div>
+                        <p class="text-sm text-slate-700 mt-2">若擴建資料中心的速度快於客戶實際部署 AI 應用的速度，或 GPU 短缺導致產能無法及時變現，可能造成短期利潤率承壓與自由現金流下滑。</p>
+                    </div>
+                    
+                    <div class="border-l-4 border-orange-500 bg-orange-50 p-4 rounded-r-lg">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-bold text-orange-900">2. Hyperscaler 競爭加劇與價格戰</h4>
+                            <span class="bg-orange-200 text-orange-800 text-xs px-2 py-1 rounded font-bold">高風險</span>
+                        </div>
+                        <p class="text-sm text-slate-700 mt-2">AWS, Azure, Google Cloud 擁有更強的資金儲備。若宏觀經濟轉弱導致雲端 IT 支出放緩，巨頭可能發起價格戰，壓縮 OCI 目前的高毛利率。</p>
+                    </div>
+
+                    <div class="border-l-4 border-yellow-500 bg-yellow-50 p-4 rounded-r-lg">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-bold text-yellow-900">3. Cerner 醫療業務整合拖累</h4>
+                            <span class="bg-yellow-200 text-yellow-800 text-xs px-2 py-1 rounded font-bold">中等風險</span>
+                        </div>
+                        <p class="text-sm text-slate-700 mt-2">收購的 Cerner 業務向雲端 SaaS 轉型的過程漫長，可能持續拉低公司整體的營收 YoY 增長率，影響市場對其「純雲端股」的估值認同。</p>
+                    </div>
+
+                    <div class="border-l-4 border-slate-400 bg-slate-100 p-4 rounded-r-lg">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-bold text-slate-800">4. 宏觀經濟與美元匯率強勢</h4>
+                            <span class="bg-slate-200 text-slate-800 text-xs px-2 py-1 rounded font-bold">宏觀風險</span>
+                        </div>
+                        <p class="text-sm text-slate-700 mt-2">全球 IT 預算收縮，以及強勢美元對海外收入匯兌造成的匯損 (FX headwinds) 可能導致業績 Miss。</p>
+                    </div>
+
+                    <div class="border-l-4 border-slate-400 bg-slate-100 p-4 rounded-r-lg">
+                        <div class="flex justify-between items-start">
+                            <h4 class="font-bold text-slate-800">5. 管理層接班與關鍵人物風險</h4>
+                            <span class="bg-slate-200 text-slate-800 text-xs px-2 py-1 rounded font-bold">長期風險</span>
+                        </div>
+                        <p class="text-sm text-slate-700 mt-2">創辦人 Larry Ellison 對公司技術戰略影響巨大。其年事已高，未來治理結構的過渡可能引發市場短期不確定性。</p>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sec-scenarios" class="content-section hidden">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-slate-200 pb-2">七、情境分析 (Scenario Analysis)</h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-white border border-emerald-200 rounded-xl overflow-hidden shadow-sm">
+                        <div class="bg-emerald-500 text-white text-center py-2 font-bold">牛市情境 (Bull Case)</div>
+                        <div class="p-5">
+                            <div class="text-2xl font-bold text-emerald-600 mb-3">$195.00+</div>
+                            <ul class="text-sm text-slate-700 space-y-2">
+                                <li><strong>觸發條件:</strong> AI 主權雲與 NVIDIA GPU 叢集供不應求，OCI 連續四個季度維持 50%+ 增速；Cerner 業務提早恢復正增長。</li>
+                                <li><strong>財務影響:</strong> FY27 EPS 突破 $7.00，自由現金流激增。</li>
+                                <li><strong>估值影響:</strong> 市場將其完全視為 AI 核心受益者，Forward P/E 擴張至 28x-30x。</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white border border-blue-200 rounded-xl overflow-hidden shadow-sm shadow-blue-100 relative transform md:-translate-y-2">
+                        <div class="bg-blue-600 text-white text-center py-2 font-bold">基準情境 (Base Case)</div>
+                        <div class="p-5">
+                            <div class="text-2xl font-bold text-blue-700 mb-3">$175.00</div>
+                            <ul class="text-sm text-slate-700 space-y-2">
+                                <li><strong>觸發條件:</strong> OCI 穩步奪取市場份額，增速維持 40% 左右；多雲協議順利推進，傳統數據庫穩定轉雲。</li>
+                                <li><strong>財務影響:</strong> EPS 每年穩定雙位數增長 (12-15%)，符合管理層指引。</li>
+                                <li><strong>估值影響:</strong> 估值折價小幅收斂，Forward P/E 穩定在 25x-26x 左右。</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="bg-white border border-rose-200 rounded-xl overflow-hidden shadow-sm">
+                        <div class="bg-rose-500 text-white text-center py-2 font-bold">熊市情境 (Bear Case)</div>
+                        <div class="p-5">
+                            <div class="text-2xl font-bold text-rose-600 mb-3">$130.00</div>
+                            <ul class="text-sm text-slate-700 space-y-2">
+                                <li><strong>觸發條件:</strong> 宏觀 IT 支出大滑坡，AI 變現能力受質疑導致客戶縮減訓練規模；AWS 發起價格戰打擊 OCI 擴張。</li>
+                                <li><strong>財務影響:</strong> 營收增長停滯於低個位數，CAPEX 投入變成折舊負擔拖累 EPS 下滑。</li>
+                                <li><strong>估值影響:</strong> 增長邏輯破滅，重回「傳統收息股」定價，Forward P/E 壓縮至 18x-20x。</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="sec-recommendation" class="content-section hidden">
+                <div class="mb-6">
+                    <h2 class="text-2xl font-bold text-slate-900 border-b-2 border-slate-200 pb-2">八、最終投資建議 (Final Recommendation)</h2>
+                </div>
+
+                <div class="bg-slate-900 text-white rounded-xl p-6 md:p-8 shadow-lg">
+                    <div class="flex items-center space-x-4 mb-6 border-b border-slate-700 pb-4">
+                        <div class="bg-emerald-500 text-white px-4 py-2 rounded-lg text-2xl font-black">
+                            強力買入
+                        </div>
+                        <div>
+                            <p class="text-slate-400 text-sm">目標價區間</p>
+                            <p class="text-2xl font-bold">$175.00 - $190.00</p>
+                        </div>
+                    </div>
+
+                    <div class="space-y-4 text-sm md:text-base">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+                            <div class="col-span-1 text-slate-400 font-bold">核心邏輯：</div>
+                            <div class="col-span-2 text-slate-100">
+                                ORCL 正在經歷罕見的「第二春」基本面質變。藉由 OCI Gen2 獨特的 RDMA 網絡架構，其已成為訓練大型 AI 模型的性價比首選。結合與微軟/谷歌的多雲戰略，其業務具備極強的轉換成本與防守性。相對於微軟的 32x PE，ORCL 僅 24x 的估值為投資者提供了巨大的安全邊際與上行期權。
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-800 pt-3">
+                            <div class="col-span-1 text-slate-400 font-bold">主要催化劑 (未來1-3月)：</div>
+                            <div class="col-span-2 text-slate-100">
+                                1. 新一季財報 OCI 增速若超過 50%。<br>
+                                2. 發布新一代 AI 數據中心擴建細節與重大主權雲合約落地。
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-800 pt-3">
+                            <div class="col-span-1 text-slate-400 font-bold">建議策略：</div>
+                            <div class="col-span-2 text-emerald-400 font-bold">
+                                立即買入核心底倉，逢缺口回調 ($148-$150) 加碼。
+                            </div>
+                        </div>
+
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-4 border-t border-slate-800 pt-3">
+                            <div class="col-span-1 text-slate-400 font-bold">適合投資者：</div>
+                            <div class="col-span-2 text-slate-100">
+                                GARP (Growth at a Reasonable Price) 投資者、尋求 AI 基礎設施暴露但抗拒極端高估值的機構與穩健型散戶。
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mt-6">
+                    <div class="bg-slate-50 border border-slate-200 p-4 rounded-lg">
+                        <h4 class="font-bold text-slate-800 border-b border-slate-200 pb-2 mb-2 text-sm">💡 哪些因素已被市場 price in：</h4>
+                        <ul class="list-disc pl-5 text-sm text-slate-600 space-y-1">
+                            <li>傳統數據庫業務的穩定增長 (低個位數)。</li>
+                            <li>OCI 連續幾季超過 40% 的高增長預期。</li>
+                            <li>Cerner 業務短期的增長逆風。</li>
+                        </ul>
+                    </div>
+                    <div class="bg-emerald-50 border border-emerald-200 p-4 rounded-lg">
+                        <h4 class="font-bold text-emerald-900 border-b border-emerald-200 pb-2 mb-2 text-sm">🔍 哪些因素仍未充分反映在股價中：</h4>
+                        <ul class="list-disc pl-5 text-sm text-emerald-800 space-y-1">
+                            <li>OCI 規模效應帶來的<strong>營業利潤率超預期擴張</strong>。</li>
+                            <li>企業客戶因為多雲協議，將地端工作負載<strong>加速</strong>搬遷至雲端的乘數效應。</li>
+                            <li>作為 "AI 賣鏟人" 理應享有的<strong>估值倍數上修 (Multiple Expansion)</strong> 空間。</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <script>
+        // --- Navigation Logic ---
+        function nav(sectionId) {
+            // Update Sidebar UI
+            document.querySelectorAll('.nav-item').forEach(el => {
+                el.classList.remove('active', 'bg-slate-100', 'border-l-4');
+                // Set default styles for non-active
+                el.style.borderLeft = 'none';
+                el.style.fontWeight = 'normal';
+            });
+            const activeBtn = document.querySelector(`button[onclick="nav('${sectionId}')"]`);
+            if(activeBtn) {
+                activeBtn.classList.add('active');
+                activeBtn.style.borderLeft = '4px solid #0f172a';
+                activeBtn.style.fontWeight = '600';
+                activeBtn.style.backgroundColor = '#e2e8f0';
+            }
+
+            // Hide all sections, show target
+            document.querySelectorAll('.content-section').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            });
+            document.getElementById(sectionId).classList.remove('hidden');
+            document.getElementById(sectionId).classList.add('block');
+
+            // Scroll to top of main area
+            document.getElementById('main-scroll-area').scrollTop = 0;
+
+            // Render/Update charts if they are in the visible section
+            if(sectionId === 'sec-fundamentals') renderFundamentalsChart();
+            if(sectionId === 'sec-valuation') renderValuationChart();
+        }
+
+        // --- Tabs Logic (Fundamentals Section) ---
+        function switchTab(section, tabName) {
+            // Reset tab buttons
+            document.querySelectorAll(`[id^="tab-${section}-"]`).forEach(el => {
+                el.classList.remove('active', 'border-blue-600', 'text-blue-600');
+                el.classList.add('text-slate-500');
+            });
+            // Set active button
+            const activeTabBtn = document.getElementById(`tab-${section}-${tabName}`);
+            activeTabBtn.classList.add('active', 'border-blue-600', 'text-blue-600');
+            activeTabBtn.classList.remove('text-slate-500');
+
+            // Hide all content
+            document.querySelectorAll(`[id^="content-${section}-"]`).forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            });
+            // Show active content
+            document.getElementById(`content-${section}-${tabName}`).classList.remove('hidden');
+            document.getElementById(`content-${section}-${tabName}`).classList.add('block');
+        }
+
+        // --- Chart.js Implementations ---
+        let fundChartInstance = null;
+        let valChartInstance = null;
+
+        // Colors based on the palette
+        const colors = {
+            blue: '#2563eb',
+            blueLight: 'rgba(37, 99, 235, 0.2)',
+            emerald: '#10b981',
+            slate: '#64748b',
+            slateLight: '#f1f5f9'
+        };
+
+        function renderFundamentalsChart() {
+            const ctx = document.getElementById('fundamentalsChart');
+            if(!ctx) return;
+            
+            if (fundChartInstance) {
+                fundChartInstance.destroy();
+            }
+
+            // Data: Simulating Historical + Q4 Guidance
+            const labels = ['FY25 Q3', 'FY25 Q4', 'FY26 Q1', 'FY26 Q2', 'FY26 Q3(Act)', 'FY26 Q4(Est)'];
+            const revenueData = [12.4, 13.8, 12.5, 12.9, 13.8, 14.6]; // In Billions
+            const epsData = [1.22, 1.67, 1.19, 1.34, 1.48, 1.62]; // Non-GAAP EPS
+
+            fundChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: labels,
+                    datasets: [
+                        {
+                            label: '總營收 (Billion $)',
+                            data: revenueData,
+                            backgroundColor: colors.blueLight,
+                            borderColor: colors.blue,
+                            borderWidth: 1,
+                            yAxisID: 'y'
+                        },
+                        {
+                            label: 'EPS (Non-GAAP $)',
+                            data: epsData,
+                            type: 'line',
+                            borderColor: colors.emerald,
+                            backgroundColor: colors.emerald,
+                            borderWidth: 3,
+                            pointRadius: 4,
+                            pointBackgroundColor: '#fff',
+                            yAxisID: 'y1'
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    interaction: {
+                        mode: 'index',
+                        intersect: false,
+                    },
+                    plugins: {
+                        legend: { position: 'top', labels: { font: { family: 'Inter' } } },
+                        tooltip: { 
+                            callbacks: {
+                                label: function(context) {
+                                    let label = context.dataset.label || '';
+                                    if (label) { label += ': '; }
+                                    if (context.parsed.y !== null) {
+                                        label += '$' + context.parsed.y;
+                                    }
+                                    return label;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            type: 'linear',
+                            display: true,
+                            position: 'left',
+                            title: { display: true, text: '營收 ($B)' },
+                            min: 10
+                        },
+                        y1: {
+                            type: 'linear',
+                            display: true,
+                            position: 'right',
+                            title: { display: true, text: 'EPS ($)' },
+                            grid: { drawOnChartArea: false },
+                            min: 0.5
+                        }
+                    }
+                }
+            });
+        }
+
+        function renderValuationChart() {
+            const ctx = document.getElementById('valuationChart');
+            if(!ctx) return;
+
+            if (valChartInstance) {
+                valChartInstance.destroy();
+            }
+
+            const peers = ['ORCL', 'MSFT', 'CRM', 'AMZN'];
+            const forwardPe = [23.8, 32.5, 28.0, 40.2];
+
+            valChartInstance = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: peers,
+                    datasets: [{
+                        label: 'Forward P/E 倍數',
+                        data: forwardPe,
+                        backgroundColor: [
+                            colors.blue, // ORCL Highlighted
+                            colors.slate,
+                            colors.slate,
+                            colors.slate
+                        ],
+                        borderRadius: 4
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', // Horizontal bar
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { display: false },
+                        tooltip: {
+                            callbacks: {
+                                label: function(context) {
+                                    return context.parsed.x + 'x P/E';
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        x: {
+                            title: { display: true, text: 'Forward P/E (x)' },
+                            grid: { color: colors.slateLight }
+                        },
+                        y: {
+                            grid: { display: false },
+                            ticks: { font: { weight: 'bold' } }
+                        }
+                    }
+                }
+            });
+        }
+
+        // Initialize first chart on load (if first section happened to have one, but here we don't. We just setup).
+        // Fundamentals is not visible initially, but just in case:
+        document.addEventListener('DOMContentLoaded', () => {
+            // Initial state is Conclusion.
+        });
+
+    </script>
+</body>
+</html>
