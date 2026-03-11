@@ -6,9 +6,8 @@
     <title>甲骨文 (ORCL) 深度研究报告 | NTAM 资深分析师</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Noto Sans SC', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        body { font-family: sans-serif; background-color: #f8fafc; color: #1e293b; }
         .chart-container { position: relative; width: 100%; max-width: 800px; margin: 0 auto; height: 350px; max-height: 400px; }
         @media (min-width: 768px) { .chart-container { height: 400px; } }
         .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
@@ -21,14 +20,15 @@
     </style>
 </head>
 <body class="antialiased">
+
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <div class="flex items-center space-x-3">
                     <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto">
                     <div class="flex flex-col">
-                        <h1 class="text-2xl font-black text-slate-900">甲骨文公司 <span class="text-blue-600">ORCL</span></h1>
-                        <span class="text-sm text-slate-500 font-medium hidden md:block">NTAM 资深分析师 深度研究报告</span>
+                        <h1 class="text-2xl font-black text-slate-900 tracking-tight">甲骨文公司 <span class="text-blue-600">ORCL</span></h1>
+                        <span class="text-sm text-slate-500 font-medium hidden md:block">NTAM 资深分析师 深度研究报告 | 2026年3月更新</span>
                     </div>
                 </div>
                 <div class="flex items-center space-x-4">
@@ -37,124 +37,448 @@
                         <option value="orcl-sc.html" selected>简体中文</option>
                         <option value="orcl-en.html">English</option>
                     </select>
-                    <div class="px-4 py-2 bg-emerald-100 text-emerald-800 font-bold rounded-full text-sm hidden sm:block">评级：强力买入</div>
+                    <div class="text-right hidden md:block">
+                        <div class="text-xs text-slate-400">目前预估价</div>
+                        <div class="text-xl font-bold text-slate-800">$155.00 USD</div>
+                    </div>
+                    <div class="px-4 py-2 bg-emerald-100 text-emerald-800 font-bold rounded-full border border-emerald-200 text-sm md:text-base hidden sm:block">
+                        评级：强力买入
+                    </div>
                 </div>
             </div>
             
             <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-2" id="nav-tabs">
-                <button onclick="switchTab(event, 'summary')" class="tab-btn active whitespace-nowrap py-4 px-1 text-sm font-medium text-blue-600">一. 投资结论</button>
-                <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">二. 财务业绩</button>
-                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">三. 估值共识</button>
-                <button onclick="switchTab(event, 'sentiment')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">四. 市场情绪</button>
-                <button onclick="switchTab(event, 'technical')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">五. 技术面</button>
-                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">六. 风险因素</button>
-                <button onclick="switchTab(event, 'scenarios')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">七. 情境分析</button>
-                <button onclick="switchTab(event, 'recommendation')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">八. 最终建议</button>
-                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">九. 免责声明</button>
+                <button onclick="switchTab('summary')" class="tab-btn active whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">一. 投资结论</button>
+                <button onclick="switchTab('financials')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">二. 财务业绩</button>
+                <button onclick="switchTab('valuation')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">三. 估值与共识</button>
+                <button onclick="switchTab('sentiment')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">四. 市场情绪</button>
+                <button onclick="switchTab('technical')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">五. 技术面</button>
+                <button onclick="switchTab('risks')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">六. 风险因素</button>
+                <button onclick="switchTab('scenarios')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">七. 情境分析</button>
+                <button onclick="switchTab('recommendation')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">八. 最终建议</button>
+                <button onclick="switchTab('disclaimer')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500">九. 免责声明</button>
             </nav>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 py-8">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
         <section id="summary" class="tab-content active">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">执行摘要 (Executive Summary)</h2></div>
-            <div class="metric-card">
-                <h3 class="text-lg font-bold mb-4">核心逻辑：</h3>
-                <ol class="list-decimal list-inside space-y-2 text-slate-600">
-                    <li><strong>OCI 超高速增长：</strong> 受惠 NVIDIA AI 集群强劲需求，OCI Gen2 营收维持 40%+ 增速。</li>
-                    <li><strong>多云战略护城河：</strong> 与微软及谷歌云达成互连协议，跨云底层优势确立。</li>
-                    <li><strong>显著估值折价：</strong> 远低于微软与 Salesforce，具备巨大倍数扩张空间。</li>
-                </ol>
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">执行摘要 (Executive Summary)</h2>
+                <p class="mt-2 text-slate-600">从传统数据库巨头成功转型为 AI 时代的核心基础设施提供商。云端基础设施 (OCI) 正迎来爆发式增长，估值重评 (Re-rating) 正在发生。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="metric-card">
+                        <h3 class="text-lg font-bold text-slate-800 mb-4">一、投资结论</h3>
+                        <div class="flex flex-wrap items-center mb-4 gap-2">
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded font-semibold text-sm">投资评级：强力买入 (Strong Buy)</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded font-semibold text-sm">目标价区间：$175.00 - $190.00</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-800 rounded font-semibold text-sm">置信度：8.5 / 10</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-4 font-semibold">机会属性：<span class="text-blue-600">成长重评 + 价值投资</span></p>
+                        
+                        <h4 class="font-bold text-slate-700 mt-4 mb-2">3 个最核心理由：</h4>
+                        <ol class="list-decimal list-inside space-y-2 text-slate-600 text-sm md:text-base">
+                            <li><strong>OCI 进入超高速增长轨道：</strong> 受惠于 NVIDIA AI 集群的强劲需求，OCI Gen2 营收持续以 40%+ 的速度增长，超越 AWS 与 Azure。</li>
+                            <li><strong>多云战略 (Multi-Cloud) 护城河成型：</strong> 与 Microsoft Azure, Google Cloud 达成数据库互连协议，让 Oracle Database 成为跨云环境不可或缺的底层。</li>
+                            <li><strong>显著的估值折价：</strong> 尽管增长强劲，Forward P/E 仅约 24x，远低于微软 (32x) 与 Salesforce (28x)，具备巨大的倍数扩张空间。</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="metric-card text-center">
+                        <h3 class="text-sm font-bold text-slate-500 uppercase tracking-wide mb-2">平均目标价预期</h3>
+                        <div class="text-4xl font-black text-slate-800 mb-1">$175.00</div>
+                        <div class="text-sm text-emerald-600 font-bold mb-4">潜在上涨空间: +13%</div>
+                        <div class="text-xs text-slate-400">基于华尔街分析师平均共识</div>
+                        <div class="mt-4 w-full bg-slate-200 rounded-full h-2.5">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 13%"></div>
+                        </div>
+                        <div class="flex justify-between text-xs text-slate-400 mt-1">
+                            <span>现价 $155</span>
+                            <span>目标 $175</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
-        
+
         <section id="financials" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、财务业绩</h2></div>
-            <div class="metric-card"><h3 class="text-lg font-bold mb-4">营收与 EPS 趋势</h3><div class="chart-container"><canvas id="financialChart"></canvas></div></div>
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、财务业绩回顾与展望</h2>
+                <p class="mt-2 text-slate-600">最新季度财报 (FY26 Q3) 强劲 Beat，云端营收维持高增速。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="metric-card">
+                    <h4 class="text-xs font-bold text-slate-500 uppercase">实际营收 (FY26 Q3)</h4>
+                    <p class="text-2xl font-bold text-slate-800 mt-1">$13.8 亿</p>
+                    <p class="text-sm text-emerald-600 font-semibold mt-1">YoY: +9.1% | QoQ: +6.5%</p>
+                    <p class="text-xs text-slate-400 mt-2">与预期相比: <span class="font-bold text-emerald-600">Beat</span></p>
+                </div>
+                <div class="metric-card">
+                    <h4 class="text-xs font-bold text-slate-500 uppercase">实际 EPS (Non-GAAP)</h4>
+                    <p class="text-2xl font-bold text-slate-800 mt-1">$1.48</p>
+                    <p class="text-sm text-emerald-600 font-semibold mt-1">YoY: +16.0%</p>
+                    <p class="text-xs text-slate-400 mt-2">与预期相比: <span class="font-bold text-emerald-600">Beat</span></p>
+                </div>
+                <div class="metric-card bg-blue-50">
+                    <h4 class="text-xs font-bold text-slate-500 uppercase">Q4 官方营收指引</h4>
+                    <p class="text-2xl font-bold text-blue-800 mt-1">$14.6 亿</p>
+                    <p class="text-sm text-slate-600 font-semibold mt-1">YoY 增长约 5-7%</p>
+                    <p class="text-xs text-slate-500 mt-2">OCI 预估增长维持 40%+</p>
+                </div>
+                <div class="metric-card bg-slate-100">
+                    <h4 class="text-xs font-bold text-slate-500 uppercase">Q4 EPS 官方指引</h4>
+                    <p class="text-xl font-bold text-slate-800 mt-1">$1.60 - $1.65</p>
+                    <p class="text-sm text-emerald-600 font-semibold mt-1">优于市场共识</p>
+                    <p class="text-xs text-slate-500 mt-2">利润率持续扩张</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 metric-card">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-bold text-slate-800">历史营收与 EPS 趋势</h3>
+                        <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">单位: 亿美元 / $</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="financialChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="metric-card">
+                        <h3 class="text-md font-bold text-slate-800 mb-3 border-b pb-2">业绩趋势判断</h3>
+                        <div class="text-center py-3 bg-blue-100 rounded mb-3">
+                            <span class="text-lg font-black text-blue-800">加速成长 (Accelerating)</span>
+                        </div>
+                        <p class="text-sm text-slate-600"><strong>判断依据：</strong> EPS QoQ 增速高于营收，显示市场极度看好其经营杠杆效应。剩余履约义务 (RPO) 创下逾 $85B 的历史新高 (YoY +35%)，未来 4-6 个季度业绩衰退风险极低。</p>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h3 class="text-md font-bold text-slate-800 mb-3 border-b pb-2">Earnings Call 重点</h3>
+                        <ul class="text-xs text-slate-600 list-disc list-inside mt-1 space-y-2">
+                            <li><span class="font-bold text-emerald-600">利多：</span>全球 AI 主权云 (Sovereign Cloud) 签约量大幅超预期。</li>
+                            <li><span class="font-bold text-emerald-600">利多：</span>多云互连协议推动了传统数据库向云端迁移的速度。</li>
+                            <li><span class="font-bold text-rose-600">风险：</span>数据中心建设的资本支出 (CAPEX) 将大幅增加，短期压缩现金流。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </section>
-        
+
         <section id="valuation" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值共识</h2></div>
-            <div class="metric-card"><h3 class="text-lg font-bold mb-4">同业估值比较 (Forward P/E)</h3><div class="chart-container" style="height:250px;"><canvas id="valuationChart"></canvas></div></div>
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值与市场共识</h2>
+                <p class="mt-2 text-slate-600">由于 ORCL 获利稳定且具备高成长性，采用 Forward P/E (未来预估市盈率) 进行同业比较。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                <div class="metric-card">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">分析师一致目标价分布</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 bg-slate-50 rounded">
+                            <span class="text-slate-600 font-medium">最高目标价 (Bull)</span>
+                            <span class="text-lg font-bold text-emerald-600">$195.00</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-blue-50 rounded border border-blue-100">
+                            <span class="text-slate-800 font-bold">平均目标价 (Consensus)</span>
+                            <span class="text-xl font-black text-blue-700">$168.50</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-slate-50 rounded">
+                            <span class="text-slate-600 font-medium">最低目标价 (Bear)</span>
+                            <span class="text-lg font-bold text-rose-600">$135.00</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-100 text-sm">
+                        <p><strong>评级分布：</strong> 买入 (65%) / 持有 (30%) / 卖出 (5%)</p>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">估值结论与分析</h3>
+                    <p class="text-xl font-bold text-blue-600 mb-2">结论：显著低估 (Undervalued)</p>
+                    <div class="space-y-3 text-sm text-slate-600">
+                        <p><strong>为何应享有估值溢价？</strong> 目前 ORCL 的 Forward P/E 仅 23.8x，相较于微软 (MSFT) 的 32.5x 存在明显折价。市场资金仍部分将其视为“低增长传统软件股”。</p>
+                        <p>然而，其云端基础设施 (OCI) 的增速高达 45%，远超 AWS 与 Azure。随着高毛利云业务占比提升，其利润结构已彻底改变。合理估值倍数应向上修正至 <strong>28x - 30x</strong>，这为股价提供了极大的安全边际。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-4">同业估值比较 (Forward P/E)</h3>
+                <div class="chart-container" style="height: 300px; max-height: 350px;">
+                    <canvas id="valuationChart"></canvas>
+                </div>
+            </div>
         </section>
 
         <section id="sentiment" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、市场情绪</h2></div>
-            <div class="metric-card"><p class="text-slate-600">目前情绪：<span class="font-bold text-blue-600">偏多 (Bullish) 但未达狂热</span>。散户与机构将其视为 "Value AI Play"，无过度拥挤风险。</p></div>
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、市场情绪面分析</h2>
+            </div>
+
+            <div class="metric-card mb-6">
+                <h3 class="text-lg font-bold text-slate-800 mb-4">过去 30 天重要消息</h3>
+                <ul class="space-y-4">
+                    <li class="border-l-2 border-emerald-500 pl-3">
+                        <span class="text-xs font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">利多</span>
+                        <span class="text-sm font-bold text-slate-800 ml-2">扩大与 NVIDIA 合作部署超级电脑</span>
+                        <p class="text-xs text-slate-500 mt-1">强化了“AI 卖铲人”认知，带动云端业务重评。</p>
+                    </li>
+                    <li class="border-l-2 border-emerald-500 pl-3">
+                        <span class="text-xs font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">利多</span>
+                        <span class="text-sm font-bold text-slate-800 ml-2">Google Cloud 与 ORCL 达成跨云整合协议</span>
+                        <p class="text-xs text-slate-500 mt-1">消除被竞争对手孤立的风险，确认其不可替代性。</p>
+                    </li>
+                    <li class="border-l-2 border-slate-400 pl-3">
+                        <span class="text-xs font-bold bg-slate-100 text-slate-800 px-2 py-0.5 rounded">中性</span>
+                        <span class="text-sm font-bold text-slate-800 ml-2">宣布大幅提升未来两年 CAPEX </span>
+                        <p class="text-xs text-slate-500 mt-1">证明需求强劲，但短期引发自由现金流下降担忧。</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="metric-card">
+                <h4 class="text-sm font-bold text-slate-700">社交平台风向 (Reddit / X)</h4>
+                <p class="text-sm text-slate-600 mt-2">目前情绪：<span class="font-bold text-blue-600">偏多 (Bullish) 但未达狂热</span>。散户与机构主要将其视为 "Value AI Play" (估值合理的 AI 概念股)，因为比起 NVDA，ORCL 更具防守性，目前无过度拥挤风险。</p>
+            </div>
         </section>
 
         <section id="technical" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、技术面分析</h2></div>
-            <div class="metric-card"><p class="text-slate-600">RSI: 62.5 (中性偏强) | MACD: 黄金交叉。20日均线 ($148.50) 提供强力支撑。</p></div>
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、技术面分析</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="metric-card">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">动能指标</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 rounded text-center border border-slate-100">
+                            <div class="text-xs font-bold text-slate-500 mb-1">RSI (14)</div>
+                            <div class="text-2xl font-black text-slate-800">62.5</div>
+                            <div class="text-sm font-semibold text-blue-600">中性偏强 (未超买)</div>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded text-center border border-slate-100">
+                            <div class="text-xs font-bold text-slate-500 mb-1">MACD</div>
+                            <div class="text-lg font-black text-emerald-600">黄金交叉</div>
+                            <div class="text-sm font-semibold text-slate-600">多头动能延续</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">均线结构与关键点位</h3>
+                    <div class="space-y-3 text-sm text-slate-600">
+                        <ul class="list-none space-y-2">
+                            <li>• <strong class="text-emerald-600">强势上升趋势</strong>，股价呈明显多头排列。</li>
+                            <li>• 20日均线 ($148.50) 提供强力短线支撑。</li>
+                            <li>• 放量突破前期盘整区，上行空间打开。</li>
+                        </ul>
+                        
+                        <div class="flex justify-between mt-4 p-4 bg-slate-800 text-white rounded-lg">
+                            <div>
+                                <span class="block text-xs text-slate-400">强支撑位 (S1 / S2)</span>
+                                <span class="font-bold text-emerald-400 text-lg">$148.50 / $138.00</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-xs text-slate-400">压力位 (R1 / R2)</span>
+                                <span class="font-bold text-rose-400 text-lg">$160.00 / $168.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="risks" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">六、风险因素</h2></div>
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">六、风险因素</h2>
+            </div>
+
             <div class="metric-card">
-                <ul class="list-disc list-inside space-y-2 text-slate-600">
-                    <li><strong class="text-rose-600">最高风险：</strong> AI 资本支出回报递延。</li>
-                    <li><strong>高风险：</strong> AWS 等巨头发起价格战。</li>
-                </ul>
+                <h3 class="text-lg font-bold text-slate-800 mb-4 text-rose-600">关键风险因素 (按严重度排序)</h3>
+                <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
+                    <li class="pb-3 border-b border-slate-100">
+                        <strong class="text-rose-700 text-base">AI 资本支出回报递延 (最高风险)：</strong> 若扩建数据中心速度快于客户实际部署 AI 应用速度，或 GPU 交付延迟，将造成短期利润率承压与现金流下滑。
+                    </li>
+                    <li class="pb-3 border-b border-slate-100">
+                        <strong class="text-base">Hyperscaler 价格战：</strong> AWS, Azure 等拥有更深口袋的巨头若发起降价战，将压缩 OCI 目前的高毛利率。
+                    </li>
+                    <li class="pb-3 border-b border-slate-100">
+                        <strong class="text-base">Cerner 整合拖累：</strong> 医疗业务向 SaaS 转型过程漫长，可能持续拉低整体营收增长率。
+                    </li>
+                    <li class="pb-3 border-b border-slate-100">
+                        <strong class="text-base">宏观经济与汇率：</strong> 全球 IT 预算若因经济衰退而收缩，及强势美元造成的汇损。
+                    </li>
+                    <li class="pb-2">
+                        <strong class="text-base">管理层接班：</strong> 创办人 Larry Ellison 年事已高，未来治理结构过渡可能引发市场不确定性。
+                    </li>
+                </ol>
             </div>
         </section>
 
         <section id="scenarios" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">七、情境分析</h2></div>
-            <div class="metric-card bg-slate-900 text-white">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">七、情境分析 (Scenario Analysis)</h2>
+            </div>
+
+            <div class="metric-card bg-slate-900 text-white border-none">
                 <div class="flex space-x-2 mb-6 bg-slate-800 p-1 rounded-lg w-full max-w-md mx-auto">
-                    <button onclick="showScenario('base')" id="btn-base" class="flex-1 py-2 text-sm font-bold bg-blue-600 text-white rounded shadow transition">基准 ($175)</button>
-                    <button onclick="showScenario('bull')" id="btn-bull" class="flex-1 py-2 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition">牛市 ($195)</button>
+                    <button onclick="showScenario('bull')" id="btn-bull" class="flex-1 py-2 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition">牛市</button>
+                    <button onclick="showScenario('base')" id="btn-base" class="flex-1 py-2 text-sm font-bold bg-blue-600 text-white rounded shadow transition">基准</button>
+                    <button onclick="showScenario('bear')" id="btn-bear" class="flex-1 py-2 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition">熊市</button>
                 </div>
-                <div id="scenario-base" class="scenario-panel block text-center"><p>OCI 稳步夺取市场份额；估值折价小幅收敛。</p></div>
-                <div id="scenario-bull" class="scenario-panel hidden text-center"><p>AI 主权云供不应求；市场完全视为 AI 核心受益者。</p></div>
+
+                <div id="scenario-bull" class="scenario-panel hidden max-w-2xl mx-auto text-center">
+                    <h4 class="text-2xl font-black text-emerald-400 mb-4">牛市情境 (Bull) - 目标价: $195.00+</h4>
+                    <ul class="text-sm space-y-4 text-slate-300 text-left bg-slate-800 p-6 rounded-lg">
+                        <li><span class="font-bold text-slate-100 block mb-1">触发条件：</span> AI 主权云供不应求，OCI 连续四个季度维持 50%+ 增速；Cerner 业务恢复正增长。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">财务影响：</span> FY27 EPS 突破 $7.00，自由现金流激增。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">股价反应：</span> 市场将其完全视为 AI 核心受益者，Forward P/E 扩张至 28x-30x。</li>
+                    </ul>
+                </div>
+
+                <div id="scenario-base" class="scenario-panel block max-w-2xl mx-auto text-center">
+                    <h4 class="text-2xl font-black text-blue-400 mb-4">基准情境 (Base) - 目标价: $175.00</h4>
+                    <ul class="text-sm space-y-4 text-slate-300 text-left bg-slate-800 p-6 rounded-lg">
+                        <li><span class="font-bold text-slate-100 block mb-1">触发条件：</span> OCI 稳步夺取市场份额 (增速 ~40%)；多云协议顺利推进。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">财务影响：</span> EPS 每年稳定双位数增长 (12-15%)。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">股价反应：</span> 估值折价小幅收敛，Forward P/E 稳定在 25x-26x。</li>
+                    </ul>
+                </div>
+
+                <div id="scenario-bear" class="scenario-panel hidden max-w-2xl mx-auto text-center">
+                    <h4 class="text-2xl font-black text-rose-400 mb-4">熊市情境 (Bear) - 目标价: $130.00</h4>
+                    <ul class="text-sm space-y-4 text-slate-300 text-left bg-slate-800 p-6 rounded-lg">
+                        <li><span class="font-bold text-slate-100 block mb-1">触发条件：</span> 宏观 IT 支出大滑坡；AWS 等竞争对手发起价格战。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">财务影响：</span> 营收增长停滞，庞大的 CAPEX 投入变成折旧负担，拖累 EPS。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">股价反应：</span> 增长逻辑破灭，重回“传统收息股”定价，Forward P/E 压缩至 18x-20x。</li>
+                    </ul>
+                </div>
             </div>
         </section>
 
         <section id="recommendation" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">八、最终建议</h2></div>
-            <div class="metric-card bg-slate-900 text-white"><p class="font-bold text-emerald-400 text-xl">立即买入核心底仓，逢缺口回调 ($148-$150) 加码。</p></div>
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">八、最终投资建议 (Final Recommendation)</h2>
+            </div>
+
+            <div class="metric-card bg-slate-900 text-white border-none p-6 md:p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm md:text-base">
+                    <div>
+                        <p class="text-slate-400 mb-2 font-bold">核心逻辑：</p>
+                        <p class="mb-6 leading-relaxed">ORCL 正在经历罕见的“第二春”基本面质变。其独特的 RDMA 网络架构使其成为训练 AI 模型的首选，提供极高的转换成本与防守性。</p>
+                        
+                        <p class="text-slate-400 mb-2 font-bold">主要催化剂 (1-3个月)：</p>
+                        <p class="mb-6 leading-relaxed">新财报 OCI 增速确认、新一代 AI 数据中心扩建细节与主权云合约落地。</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-400 mb-2 font-bold">建议策略：</p>
+                        <p class="mb-6 font-bold text-emerald-400 text-xl">立即买入核心底仓，逢缺口回调 ($148-$150) 加码。</p>
+
+                        <p class="text-slate-400 mb-2 font-bold">市场定价落差：</p>
+                        <p class="text-emerald-300 mb-2">未充分反映：OCI 规模效应带来的营业利润率超预期扩张。</p>
+                        <p class="text-slate-300">已 Price in：传统数据库低个位数增长与 Cerner 医疗业务整合拖累。</p>
+                    </div>
+                </div>
+            </div>
         </section>
 
         <section id="disclaimer" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">九、免责声明</h2></div>
-            <div class="metric-card bg-slate-50" id="disclaimer-container">载入中...</div>
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">九、免责声明 (Disclaimer)</h2>
+            </div>
+            <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+                <div class="text-center py-10">
+                    <p class="text-sm text-slate-500 animate-pulse font-bold">正在载入免责声明，请稍候...</p>
+                </div>
+            </div>
         </section>
+
     </main>
 
     <script>
-        function switchTab(e, tabId) {
+        function switchTab(tabId) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(el => {
-                el.classList.remove('active', 'border-blue-600', 'text-blue-600');
-                el.classList.add('text-slate-500');
-            });
+            document.querySelectorAll('.tab-btn').forEach(el => el.classList.remove('active'));
             document.getElementById(tabId).classList.add('active');
-            e.currentTarget.classList.remove('text-slate-500');
-            e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+            event.currentTarget.classList.add('active');
         }
 
         function showScenario(type) {
-            document.querySelectorAll('.scenario-panel').forEach(el => { el.classList.add('hidden'); el.classList.remove('block'); });
-            document.getElementById('btn-bull').className = 'flex-1 py-2 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition';
-            document.getElementById('btn-base').className = 'flex-1 py-2 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition';
+            document.querySelectorAll('.scenario-panel').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            });
+            ['bull', 'base', 'bear'].forEach(btn => {
+                document.getElementById('btn-' + btn).className = 'flex-1 py-2 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition';
+            });
             document.getElementById('scenario-' + type).classList.remove('hidden');
             document.getElementById('scenario-' + type).classList.add('block');
-            document.getElementById('btn-' + type).className = type === 'bull' ? 'flex-1 py-2 text-sm font-bold bg-emerald-600 text-white rounded shadow transition' : 'flex-1 py-2 text-sm font-bold bg-blue-600 text-white rounded shadow transition';
+            
+            const activeBtn = document.getElementById('btn-' + type);
+            if(type === 'bull') activeBtn.className = 'flex-1 py-2 text-sm font-bold bg-emerald-600 text-white rounded shadow transition';
+            if(type === 'base') activeBtn.className = 'flex-1 py-2 text-sm font-bold bg-blue-600 text-white rounded shadow transition';
+            if(type === 'bear') activeBtn.className = 'flex-1 py-2 text-sm font-bold bg-rose-600 text-white rounded shadow transition';
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            new Chart(document.getElementById('financialChart'), { type: 'bar', data: { labels: ['Q3', 'Q4', 'Q1', 'Q2', 'Q3', 'Q4(E)'], datasets: [{ label: '营收 ($B)', data: [12.4, 13.8, 12.5, 12.9, 13.8, 14.6], backgroundColor: '#2563eb', yAxisID: 'y', order: 2 }, { label: 'EPS ($)', data: [1.22, 1.67, 1.19, 1.34, 1.48, 1.62], type: 'line', borderColor: '#10b981', backgroundColor: '#10b981', borderWidth: 3, yAxisID: 'y1', order: 1 }] }, options: { maintainAspectRatio: false, scales: { y1: { position: 'right', grid: { drawOnChartArea: false } }, x: { grid: { display: false } } } } });
-            new Chart(document.getElementById('valuationChart'), { type: 'bar', data: { labels: ['Amazon', 'Microsoft', 'Salesforce', 'Oracle'], datasets: [{ label: 'P/E', data: [40.2, 32.5, 28.0, 23.8], backgroundColor: ['#cbd5e1', '#cbd5e1', '#cbd5e1', '#2563eb'] }] }, options: { indexAxis: 'y', maintainAspectRatio: false, plugins: { legend: { display: false } } } });
-            
-            // 讀取免責聲明 - 指定抓取 sc
-            fetch('disclaimer.html').then(res => res.text()).then(data => {
-                const c = document.getElementById('disclaimer-container');
-                if(c) {
-                    c.innerHTML = data;
-                    const sc = document.getElementById('disc-sc');
-                    if(sc) sc.style.display = 'block';
+            const ctxFin = document.getElementById('financialChart').getContext('2d');
+            new Chart(ctxFin, {
+                type: 'bar',
+                data: {
+                    labels: ['FY25 Q3', 'FY25 Q4', 'FY26 Q1', 'FY26 Q2', 'FY26 Q3(Act)', 'FY26 Q4(Est)'],
+                    datasets: [
+                        { label: '营收 ($B)', data: [12.4, 13.8, 12.5, 12.9, 13.8, 14.6], backgroundColor: 'rgba(37, 99, 235, 0.7)', borderColor: 'rgba(37, 99, 235, 1)', borderWidth: 1, yAxisID: 'y', order: 2 },
+                        { label: 'EPS ($)', data: [1.22, 1.67, 1.19, 1.34, 1.48, 1.62], type: 'line', backgroundColor: 'rgba(16, 185, 129, 1)', borderColor: 'rgba(16, 185, 129, 1)', borderWidth: 3, pointRadius: 4, pointBackgroundColor: 'white', yAxisID: 'y1', order: 1 }
+                    ]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
+                    plugins: { legend: { position: 'top' } },
+                    scales: {
+                        y: { type: 'linear', display: true, position: 'left', title: { display: true, text: '营收 (十亿美元)' }, grid: { color: '#f1f5f9' }, min: 10 },
+                        y1: { type: 'linear', display: true, position: 'right', title: { display: true, text: 'EPS (美元)' }, grid: { drawOnChartArea: false }, min: 0.5 },
+                        x: { grid: { display: false } }
+                    }
                 }
             });
+
+            const ctxVal = document.getElementById('valuationChart').getContext('2d');
+            new Chart(ctxVal, {
+                type: 'bar',
+                data: {
+                    labels: ['Amazon (AMZN)', 'Microsoft (MSFT)', 'Salesforce (CRM)', 'Oracle (ORCL) - 现价'],
+                    datasets: [{
+                        label: 'Forward P/E 倍数', data: [40.2, 32.5, 28.0, 23.8],
+                        backgroundColor: ['rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(37, 99, 235, 0.9)'],
+                        borderWidth: 0, borderRadius: 4
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(context) { return context.parsed.x + 'x P/E'; } } } },
+                    scales: { x: { beginAtZero: true, title: { display: true, text: '市盈率倍数 (x)' }, grid: { color: '#f1f5f9' } }, y: { grid: { display: false }, ticks: { font: { weight: 'bold' } } } }
+                }
+            });
+
+            // 载入免责声明并自动选择简体中文
+            fetch('disclaimer.html')
+                .then(res => res.text())
+                .then(data => {
+                    const c = document.getElementById('disclaimer-container');
+                    if(c) {
+                        c.innerHTML = data;
+                        const tab = document.getElementById('disc-tab-sc'); // SC selector
+                        if(tab) tab.checked = true;
+                    }
+                });
         });
     </script>
 </body>
