@@ -83,11 +83,13 @@
             </div>
             
             <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-2" id="nav-tabs">
-                <button onclick="switchTab('summary')" class="tab-btn active whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">一. 投資結論與建議</button>
-                <button onclick="switchTab('financials')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 財務業績與展望</button>
+                <button onclick="switchTab('summary')" class="tab-btn active whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">一. 投資結論</button>
+                <button onclick="switchTab('financials')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 財務業績</button>
                 <button onclick="switchTab('valuation')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值與共識</button>
-                <button onclick="switchTab('sentiment')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 情緒與技術面</button>
-                <button onclick="switchTab('risks')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 風險與情境分析</button>
+                <button onclick="switchTab('sentiment')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 市場情緒</button>
+                <button onclick="switchTab('technical')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 技術面</button>
+                <button onclick="switchTab('risks')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 風險因素</button>
+                <button onclick="switchTab('scenarios')" class="tab-btn whitespace-nowrap py-4 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">七. 情境分析</button>
             </nav>
         </div>
     </header>
@@ -248,7 +250,7 @@
                         </div>
                     </div>
                     <div class="mt-4 pt-4 border-t border-slate-100 text-sm">
-                        <p><strong>評級分布：</strong> 買入 (65%) / 持有 (30%) / 賣出 (5%)</p>
+                        <p><strong>評級分布：</strong> 買入 (65%) / 持休 (30%) / 賣出 (5%)</p>
                     </div>
                 </div>
 
@@ -272,70 +274,75 @@
 
         <section id="sentiment" class="tab-content">
             <div class="mb-6">
-                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、市場情緒與 五、技術面分析</h2>
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、市場情緒面分析</h2>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="space-y-6">
-                    <div class="metric-card">
-                        <h3 class="text-lg font-bold text-slate-800 mb-4">市場情緒 (Sentiment)</h3>
-                        <ul class="space-y-4">
-                            <li class="border-l-2 border-emerald-500 pl-3">
-                                <span class="text-xs font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">利多</span>
-                                <span class="text-sm font-bold text-slate-800 ml-2">擴大與 NVIDIA 合作部署超級電腦</span>
-                                <p class="text-xs text-slate-500 mt-1">強化了「AI 賣鏟人」認知，帶動雲端業務重評。</p>
-                            </li>
-                            <li class="border-l-2 border-emerald-500 pl-3">
-                                <span class="text-xs font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">利多</span>
-                                <span class="text-sm font-bold text-slate-800 ml-2">Google Cloud 與 ORCL 達成跨雲整合協議</span>
-                                <p class="text-xs text-slate-500 mt-1">消除被競爭對手孤立的風險，確認其不可替代性。</p>
-                            </li>
-                            <li class="border-l-2 border-slate-400 pl-3">
-                                <span class="text-xs font-bold bg-slate-100 text-slate-800 px-2 py-0.5 rounded">中性</span>
-                                <span class="text-sm font-bold text-slate-800 ml-2">宣布大幅提升未來兩年 CAPEX </span>
-                                <p class="text-xs text-slate-500 mt-1">證明需求強勁，但短期引發自由現金流下降擔憂。</p>
-                            </li>
-                        </ul>
-                        <div class="mt-4 pt-4 border-t border-slate-100">
-                            <h4 class="text-sm font-bold text-slate-700">社交平台風向</h4>
-                            <p class="text-sm text-slate-600 mt-1">目前情緒：<span class="font-bold text-blue-600">偏多 (Bullish) 但未達狂熱</span>。散戶與機構將其視為 "Value AI Play" (估值合理的 AI 概念股)，無過度擁擠風險。</p>
+            <div class="metric-card mb-6">
+                <h3 class="text-lg font-bold text-slate-800 mb-4">過去 30 天重要消息</h3>
+                <ul class="space-y-4">
+                    <li class="border-l-2 border-emerald-500 pl-3">
+                        <span class="text-xs font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">利多</span>
+                        <span class="text-sm font-bold text-slate-800 ml-2">擴大與 NVIDIA 合作部署超級電腦</span>
+                        <p class="text-xs text-slate-500 mt-1">強化了「AI 賣鏟人」認知，帶動雲端業務重評。</p>
+                    </li>
+                    <li class="border-l-2 border-emerald-500 pl-3">
+                        <span class="text-xs font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">利多</span>
+                        <span class="text-sm font-bold text-slate-800 ml-2">Google Cloud 與 ORCL 達成跨雲整合協議</span>
+                        <p class="text-xs text-slate-500 mt-1">消除被競爭對手孤立的風險，確認其不可替代性。</p>
+                    </li>
+                    <li class="border-l-2 border-slate-400 pl-3">
+                        <span class="text-xs font-bold bg-slate-100 text-slate-800 px-2 py-0.5 rounded">中性</span>
+                        <span class="text-sm font-bold text-slate-800 ml-2">宣布大幅提升未來兩年 CAPEX </span>
+                        <p class="text-xs text-slate-500 mt-1">證明需求強勁，但短期引發自由現金流下降擔憂。</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="metric-card">
+                <h4 class="text-sm font-bold text-slate-700">社交平台風向 (Reddit / X)</h4>
+                <p class="text-sm text-slate-600 mt-2">目前情緒：<span class="font-bold text-blue-600">偏多 (Bullish) 但未達狂熱</span>。散戶與機構主要將其視為 "Value AI Play" (估值合理的 AI 概念股)，因為比起 NVDA，ORCL 更具防守性，目前無過度擁擠風險。</p>
+            </div>
+        </section>
+
+        <section id="technical" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、技術面分析</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="metric-card">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">動能指標</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 rounded text-center border border-slate-100">
+                            <div class="text-xs font-bold text-slate-500 mb-1">RSI (14)</div>
+                            <div class="text-2xl font-black text-slate-800">62.5</div>
+                            <div class="text-sm font-semibold text-blue-600">中性偏強 (未超買)</div>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded text-center border border-slate-100">
+                            <div class="text-xs font-bold text-slate-500 mb-1">MACD</div>
+                            <div class="text-lg font-black text-emerald-600">黃金交叉</div>
+                            <div class="text-sm font-semibold text-slate-600">多頭動能延續</div>
                         </div>
                     </div>
                 </div>
-
-                <div class="space-y-6">
-                    <div class="metric-card">
-                        <h3 class="text-lg font-bold text-slate-800 mb-4">技術面分析 (Technical)</h3>
-                        <div class="grid grid-cols-2 gap-4 mb-4">
-                            <div class="p-4 bg-slate-50 rounded text-center">
-                                <div class="text-xs font-bold text-slate-500 mb-1">RSI (14)</div>
-                                <div class="text-2xl font-black text-slate-800">62.5</div>
-                                <div class="text-sm font-semibold text-blue-600">中性偏強 (未超買)</div>
-                            </div>
-                            <div class="p-4 bg-slate-50 rounded text-center">
-                                <div class="text-xs font-bold text-slate-500 mb-1">MACD</div>
-                                <div class="text-lg font-black text-emerald-600">黃金交叉</div>
-                                <div class="text-sm font-semibold text-slate-600">多頭動能延續</div>
-                            </div>
-                        </div>
+                
+                <div class="metric-card">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">均線結構與關鍵點位</h3>
+                    <div class="space-y-3 text-sm text-slate-600">
+                        <ul class="list-none space-y-2">
+                            <li>• <strong class="text-emerald-600">強勢上升趨勢</strong>，股價呈明顯多頭排列。</li>
+                            <li>• 20日均線 ($148.50) 提供強力短線支撐。</li>
+                            <li>• 放量突破前期盤整區，上行空間打開。</li>
+                        </ul>
                         
-                        <div class="space-y-3 text-sm text-slate-600">
-                            <p><strong>均線結構與趨勢：</strong></p>
-                            <ul class="list-none space-y-1">
-                                <li>• <strong class="text-emerald-600">強勢上升趨勢</strong>，股價呈明顯多頭排列。</li>
-                                <li>• 20日均線 ($148.50) 提供強力短線支撐。</li>
-                                <li>• 放量突破前期盤整區，上行空間打開。</li>
-                            </ul>
-                            
-                            <div class="flex justify-between mt-4 p-3 bg-slate-800 text-white rounded">
-                                <div>
-                                    <span class="block text-xs text-slate-400">強支撐位 (S1 / S2)</span>
-                                    <span class="font-bold text-emerald-400">$148.50 / $138.00</span>
-                                </div>
-                                <div class="text-right">
-                                    <span class="block text-xs text-slate-400">壓力位 (R1 / R2)</span>
-                                    <span class="font-bold text-rose-400">$160.00 / $168.00</span>
-                                </div>
+                        <div class="flex justify-between mt-4 p-4 bg-slate-800 text-white rounded-lg">
+                            <div>
+                                <span class="block text-xs text-slate-400">強支撐位 (S1 / S2)</span>
+                                <span class="font-bold text-emerald-400 text-lg">$148.50 / $138.00</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-xs text-slate-400">壓力位 (R1 / R2)</span>
+                                <span class="font-bold text-rose-400 text-lg">$160.00 / $168.00</span>
                             </div>
                         </div>
                     </div>
@@ -345,66 +352,68 @@
 
         <section id="risks" class="tab-content">
             <div class="mb-6">
-                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">六、風險因素 與 七、情境分析</h2>
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">六、風險因素</h2>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
-                <div class="metric-card">
-                    <h3 class="text-lg font-bold text-slate-800 mb-4 text-rose-600">關鍵風險因素 (按嚴重度)</h3>
-                    <ol class="space-y-3 list-decimal list-inside text-sm text-slate-700">
-                        <li class="pb-2 border-b border-slate-100">
-                            <strong class="text-rose-700">AI 資本支出回報遞延 (最高風險)：</strong> 若擴建資料中心速度快於客戶實際部署 AI 應用速度，將造成短期利潤率承壓與現金流下滑。
-                        </li>
-                        <li class="pb-2 border-b border-slate-100">
-                            <strong>Hyperscaler 價格戰：</strong> AWS, Azure 若發起降價戰，將壓縮 OCI 目前的高毛利率。
-                        </li>
-                        <li class="pb-2 border-b border-slate-100">
-                            <strong>Cerner 整合拖累：</strong> 醫療業務向 SaaS 轉型過程漫長，可能持續拉低整體營收增長率。
-                        </li>
-                        <li class="pb-2 border-b border-slate-100">
-                            <strong>宏觀與匯率：</strong> 全球 IT 預算收縮及強勢美元造成的匯損。
-                        </li>
-                        <li class="pb-2">
-                            <strong>管理層接班：</strong> 創辦人 Larry Ellison 年事已高，未來治理結構過渡可能引發不確定性。
-                        </li>
-                    </ol>
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-4 text-rose-600">關鍵風險因素 (按嚴重度排序)</h3>
+                <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
+                    <li class="pb-3 border-b border-slate-100">
+                        <strong class="text-rose-700 text-base">AI 資本支出回報遞延 (最高風險)：</strong> 若擴建資料中心速度快於客戶實際部署 AI 應用速度，或 GPU 交付延遲，將造成短期利潤率承壓與現金流下滑。
+                    </li>
+                    <li class="pb-3 border-b border-slate-100">
+                        <strong class="text-base">Hyperscaler 價格戰：</strong> AWS, Azure 等擁有更深口袋的巨頭若發起降價戰，將壓縮 OCI 目前的高毛利率。
+                    </li>
+                    <li class="pb-3 border-b border-slate-100">
+                        <strong class="text-base">Cerner 整合拖累：</strong> 醫療業務向 SaaS 轉型過程漫長，可能持續拉低整體營收增長率。
+                    </li>
+                    <li class="pb-3 border-b border-slate-100">
+                        <strong class="text-base">宏觀經濟與匯率：</strong> 全球 IT 預算若因經濟衰退而收縮，及強勢美元造成的匯損。
+                    </li>
+                    <li class="pb-2">
+                        <strong class="text-base">管理層接班：</strong> 創辦人 Larry Ellison 年事已高，未來治理結構過渡可能引發市場不確定性。
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="scenarios" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">七、情境分析 (Scenario Analysis)</h2>
+            </div>
+
+            <div class="metric-card bg-slate-900 text-white border-none">
+                <div class="flex space-x-2 mb-6 bg-slate-800 p-1 rounded-lg w-full max-w-md mx-auto">
+                    <button onclick="showScenario('bull')" id="btn-bull" class="flex-1 py-2 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition">牛市</button>
+                    <button onclick="showScenario('base')" id="btn-base" class="flex-1 py-2 text-sm font-bold bg-blue-600 text-white rounded shadow transition">基準</button>
+                    <button onclick="showScenario('bear')" id="btn-bear" class="flex-1 py-2 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition">熊市</button>
                 </div>
 
-                <div class="metric-card bg-slate-900 text-white">
-                    <h3 class="text-lg font-bold mb-4 text-blue-400">七、情境分析 (Scenario Analysis)</h3>
-                    
-                    <div class="flex space-x-2 mb-4 bg-slate-800 p-1 rounded-lg w-full max-w-sm">
-                        <button onclick="showScenario('bull')" id="btn-bull" class="flex-1 py-1 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition">牛市</button>
-                        <button onclick="showScenario('base')" id="btn-base" class="flex-1 py-1 text-sm font-bold bg-blue-600 text-white rounded shadow transition">基準</button>
-                        <button onclick="showScenario('bear')" id="btn-bear" class="flex-1 py-1 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition">熊市</button>
-                    </div>
+                <div id="scenario-bull" class="scenario-panel hidden max-w-2xl mx-auto text-center">
+                    <h4 class="text-2xl font-black text-emerald-400 mb-4">牛市情境 (Bull) - 目標價: $195.00+</h4>
+                    <ul class="text-sm space-y-4 text-slate-300 text-left bg-slate-800 p-6 rounded-lg">
+                        <li><span class="font-bold text-slate-100 block mb-1">觸發條件：</span> AI 主權雲供不應求，OCI 連續四個季度維持 50%+ 增速；Cerner 業務恢復正增長。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">財務影響：</span> FY27 EPS 突破 $7.00，自由現金流激增。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">股價反應：</span> 市場將其完全視為 AI 核心受益者，Forward P/E 擴張至 28x-30x。</li>
+                    </ul>
+                </div>
 
-                    <div id="scenario-bull" class="scenario-panel hidden">
-                        <h4 class="text-xl font-black text-emerald-400 mb-2">牛市情境 (Bull) - 目標價: $195.00+</h4>
-                        <ul class="text-sm space-y-2 text-slate-300">
-                            <li><span class="font-bold text-slate-100">觸發條件：</span> AI 主權雲供不應求，OCI 連續四個季度維持 50%+ 增速；Cerner 業務恢復增長。</li>
-                            <li><span class="font-bold text-slate-100">財務影響：</span> FY27 EPS 突破 $7.00，自由現金流激增。</li>
-                            <li><span class="font-bold text-slate-100">股價反應：</span> 市場將其完全視為 AI 核心受益者，Forward P/E 擴張至 28x-30x。</li>
-                        </ul>
-                    </div>
+                <div id="scenario-base" class="scenario-panel block max-w-2xl mx-auto text-center">
+                    <h4 class="text-2xl font-black text-blue-400 mb-4">基準情境 (Base) - 目標價: $175.00</h4>
+                    <ul class="text-sm space-y-4 text-slate-300 text-left bg-slate-800 p-6 rounded-lg">
+                        <li><span class="font-bold text-slate-100 block mb-1">觸發條件：</span> OCI 穩步奪取市場份額 (增速 ~40%)；多雲協議順利推進。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">財務影響：</span> EPS 每年穩定雙位數增長 (12-15%)。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">股價反應：</span> 估值折價小幅收斂，Forward P/E 穩定在 25x-26x。</li>
+                    </ul>
+                </div>
 
-                    <div id="scenario-base" class="scenario-panel block">
-                        <h4 class="text-xl font-black text-blue-400 mb-2">基準情境 (Base) - 目標價: $175.00</h4>
-                        <ul class="text-sm space-y-2 text-slate-300">
-                            <li><span class="font-bold text-slate-100">觸發條件：</span> OCI 穩步奪取市場份額 (增速 ~40%)；多雲協議順利推進。</li>
-                            <li><span class="font-bold text-slate-100">財務影響：</span> EPS 每年穩定雙位數增長 (12-15%)。</li>
-                            <li><span class="font-bold text-slate-100">股價反應：</span> 估值折價小幅收斂，Forward P/E 穩定在 25x-26x。</li>
-                        </ul>
-                    </div>
-
-                    <div id="scenario-bear" class="scenario-panel hidden">
-                        <h4 class="text-xl font-black text-rose-400 mb-2">熊市情境 (Bear) - 目標價: $130.00</h4>
-                        <ul class="text-sm space-y-2 text-slate-300">
-                            <li><span class="font-bold text-slate-100">觸發條件：</span> 宏觀 IT 支出大滑坡；AWS 發起價格戰。</li>
-                            <li><span class="font-bold text-slate-100">財務影響：</span> 營收增長停滯，CAPEX 變成折舊負擔拖累 EPS。</li>
-                            <li><span class="font-bold text-slate-100">股價反應：</span> 重回「傳統收息股」定價，Forward P/E 壓縮至 18x-20x。</li>
-                        </ul>
-                    </div>
+                <div id="scenario-bear" class="scenario-panel hidden max-w-2xl mx-auto text-center">
+                    <h4 class="text-2xl font-black text-rose-400 mb-4">熊市情境 (Bear) - 目標價: $130.00</h4>
+                    <ul class="text-sm space-y-4 text-slate-300 text-left bg-slate-800 p-6 rounded-lg">
+                        <li><span class="font-bold text-slate-100 block mb-1">觸發條件：</span> 宏觀 IT 支出大滑坡；AWS 等競爭對手發起價格戰。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">財務影響：</span> 營收增長停滯，龐大的 CAPEX 投入變成折舊負擔，拖累 EPS。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">股價反應：</span> 增長邏輯破滅，重回「傳統收息股」定價，Forward P/E 壓縮至 18x-20x。</li>
+                    </ul>
                 </div>
             </div>
         </section>
@@ -430,16 +439,16 @@
             
             ['bull', 'base', 'bear'].forEach(btn => {
                 const el = document.getElementById('btn-' + btn);
-                el.className = 'flex-1 py-1 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition';
+                el.className = 'flex-1 py-2 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition';
             });
 
             document.getElementById('scenario-' + type).classList.remove('hidden');
             document.getElementById('scenario-' + type).classList.add('block');
             
             const activeBtn = document.getElementById('btn-' + type);
-            if(type === 'bull') activeBtn.className = 'flex-1 py-1 text-sm font-bold bg-emerald-600 text-white rounded shadow transition';
-            if(type === 'base') activeBtn.className = 'flex-1 py-1 text-sm font-bold bg-blue-600 text-white rounded shadow transition';
-            if(type === 'bear') activeBtn.className = 'flex-1 py-1 text-sm font-bold bg-rose-600 text-white rounded shadow transition';
+            if(type === 'bull') activeBtn.className = 'flex-1 py-2 text-sm font-bold bg-emerald-600 text-white rounded shadow transition';
+            if(type === 'base') activeBtn.className = 'flex-1 py-2 text-sm font-bold bg-blue-600 text-white rounded shadow transition';
+            if(type === 'bear') activeBtn.className = 'flex-1 py-2 text-sm font-bold bg-rose-600 text-white rounded shadow transition';
         }
 
         // --- 3. Chart.js Initialization ---
