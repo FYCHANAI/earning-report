@@ -1,4 +1,40 @@
-<div class="text-sm text-slate-600 leading-relaxed space-y-4">
+<style>
+    /* CSS 語言切換邏輯 (無需 JS) */
+    .disc-content { display: none; }
+    #disc-tab-tc:checked ~ #disc-content-tc,
+    #disc-tab-sc:checked ~ #disc-content-sc,
+    #disc-tab-en:checked ~ #disc-content-en { display: block; }
+    
+    .disc-label { 
+        cursor: pointer; 
+        padding: 4px 12px; 
+        border-radius: 4px; 
+        font-size: 0.875rem; 
+        font-weight: bold; 
+        color: #64748b; /* slate-500 */
+        transition: all 0.2s ease;
+    }
+    .disc-label:hover { background-color: #f1f5f9; }
+    
+    #disc-tab-tc:checked ~ .lang-tabs label[for="disc-tab-tc"],
+    #disc-tab-sc:checked ~ .lang-tabs label[for="disc-tab-sc"],
+    #disc-tab-en:checked ~ .lang-tabs label[for="disc-tab-en"] { 
+        background-color: #e2e8f0; /* slate-200 */
+        color: #1e293b; /* slate-800 */
+    }
+</style>
+
+<input type="radio" id="disc-tab-tc" name="disc-lang" class="hidden" checked>
+<input type="radio" id="disc-tab-sc" name="disc-lang" class="hidden">
+<input type="radio" id="disc-tab-en" name="disc-lang" class="hidden">
+
+<div class="lang-tabs mb-6 flex space-x-2 border-b border-slate-200 pb-3">
+    <label for="disc-tab-tc" class="disc-label">繁體中文</label>
+    <label for="disc-tab-sc" class="disc-label">简体中文</label>
+    <label for="disc-tab-en" class="disc-label">English</label>
+</div>
+
+<div id="disc-content-tc" class="disc-content text-sm text-slate-600 leading-relaxed space-y-4 text-justify">
     <p class="font-bold text-slate-800">過去的表現並不能保證未來的表現。本檔僅供機構投資者及專業投資者使用。</p>
     <p>本文件僅向《證券及期貨條例》（香港法例第571章）及根據其制定的規則所定義的「專業投資者」分發、傳閱或發出。</p>
     <p>本檔僅供收件人參考，並不擬供收件人以外的任何人使用。未經俊賢資產管理有限公司（「本公司」）事先書面同意，不得將本檔全部或部分出版、傳閱、複製或分發給任何其他人。本檔內所提及的任何證券的認購、購買或出售不應被解釋為相關的要約或招攬。鑒於此類要約或招攬在該司法管轄區並不合法，或提出此類要約或招攬的人在該司法管轄區沒有資格提出此類要約或招攬，或在該司法管轄區向任何人提出此類要約或招攬屬於非法的要約或招攬，本檔並不構成對任何人於任何司法管轄區的要約或招攬。</p>
@@ -6,10 +42,41 @@
     <p>在沒有取得獨立及專業意見並驗證本檔的內容之前，您不應就本檔的資訊內容採取任何行動。本文件中包含的任何意見、管理層預測或估計均基於截至本檔日期的可用資訊，並反映了當前情況和我們截至本檔日期的觀點，所有這些資訊和觀點都可能隨時間改變，而不會另行通知。此類意見、預測和估計以及此處包含與各種指數歷史資料和表現有關的資訊僅供參考，並不代表及不應被解釋為本公司或本檔中提及的證券的未來或可能的表現。過去的表現並不保證未來的表現結果。投資涉及風險，投資價值及收益可升亦可跌。基金/投資的價值可能會波動，並可能在短時間內大幅下跌。您的投資可能會完全損失。</p>
     <p>投資者不應僅根據本檔作出投資決定。投資者應參閱發售檔（如適用）以瞭解詳情，包括風險因素。</p>
     <p>本公司對本檔內容之準確性、充分性或完整性不作任何表示或保證，也不就本檔中提及的任何資訊向任何人作出建議、要約或招攬。</p>
-    <p>本公司已根據《證券及期貨條例》在香港證券及期貨事務監察委員會註冊成為持牌法團，在香港開展投資管理活動。其中央編號為 BMR849。本資料由本公司發出，未經證監會審閱。</p>
+    <p>本公司已根據《證券及期貨條例》在香港證券及期貨事務監察委員會註冊成為持牌法團，在香港開展投資管理活動。其中央編號為BMR849。本資料由本公司發出，未經證監會審閱。</p>
     
     <div class="border-t border-slate-200 pt-4 mt-6 text-xs text-slate-500">
         <p>© 2026 俊賢資產管理有限公司 版權所有</p>
         <p class="mt-1">此中文免責條款為英文版本譯本，如中、英文兩個版本有任何抵觸或不相符之處，應以英文版本為准。</p>
+    </div>
+</div>
+
+<div id="disc-content-sc" class="disc-content text-sm text-slate-600 leading-relaxed space-y-4 text-justify">
+    <p class="font-bold text-slate-800">过去的表现并不能保证未来的表现。本档仅供机构投资者及专业投资者使用。</p>
+    <p>本文件仅向《证券及期货条例》（香港法例第571章）及根据其制定的规则所定义的“专业投资者”分发、传阅或发出。</p>
+    <p>本档仅供收件人参考，并不拟供收件人以外的任何人使用。未经俊贤资产管理有限公司（“本公司”）事先书面同意，不得将本档全部或部分出版、传阅、复制或分发给任何其他人。本档内所提及的任何证券的认购、购买或出售不应被解释为相关的要约或招揽。鉴于此类要约或招揽在该司法管辖区并不合法，或提出此类要约或招揽的人在该司法管辖区没有资格提出此类要约或招揽，或在该司法管辖区向任何人提出此类要约或招揽属于非法的要约或招揽，本档并不构成对任何人于任何司法管辖区的要约或招揽。</p>
+    <p>本公司没有考虑，也没有针对收件人或任何人之投资目标、财务状况或特殊需求进行任何调查。因此，本公司明确表示，不会对任何人使用或解释本文件中包含的信息或因任何人根据本档中包含的任何信息、意见或估计采取行动而直接或间接引起的任何损失，而承担任何责任。故此，本公司强烈建议您在作出任何投资决定之前，咨询您的独立财务顾问以获得专业意见。本公司、其相关和联属公司及其各自的董事和高级职员可能拥有或持有本档中提及的证券，也可能为本档中提及证券的公司以及其他各方提供或寻求提供经纪和其他投资服务。</p>
+    <p>在没有取得独立及专业意见并验证本档的内容之前，您不应就本文件的信息内容采取任何行动。本文件中包含的任何意见、管理层预测或估计均基于截至本文件日期的可用信息，并反映了当前情况和我们截至本档日期的观点，所有这些信息和观点都可能随时间改变，而不会另行通知。此类意见、预测和估计以及此处包含与各种指数历史数据和表现有关的信息仅供参考，并不代表及不应被解释为本公司或本档中提及的证券的未来或可能的表现。过去的表现并不保证未来的表现结果。投资涉及风险，投资价值及收益可升亦可跌。基金/投资的价值可能会波动，并可能在短时间内大幅下跌。您的投资可能会完全损失。</p>
+    <p>投资者不应仅根据本档作出投资决定。投资者应参阅发售档（如适用）以了解详情，包括风险因素。</p>
+    <p>本公司对本档内容之准确性、充分性或完整性不作任何表示或保证，也不就本档中提及的任何信息向任何人作出建议、要约或招揽。</p>
+    <p>本公司已根据《证券及期货条例》在香港证券及期货事务监察委员会注册成为持牌法团，在香港开展投资管理活动。其中央编号为BMR849。本资料由本公司发出，未经证监会审阅。</p>
+    
+    <div class="border-t border-slate-200 pt-4 mt-6 text-xs text-slate-500">
+        <p>© 2026 俊贤资产管理有限公司 版权所有</p>
+        <p class="mt-1">此中文免责条款为英文版本译本，如中、英文两个版本有任何抵触或不相符之处，应以英文版本为准。</p>
+    </div>
+</div>
+
+<div id="disc-content-en" class="disc-content text-sm text-slate-600 leading-relaxed space-y-4 text-justify">
+    <p class="font-bold text-slate-800">Past performance does not guarantee future results. For institutional investors and professional investors only.</p>
+    <p>This document is only distributed, circulated or issued to professional investors as defined in the Securities and Futures Ordinance (Cap.571 of The Laws of Hong Kong) (“SFO”) and its subsidiary legislation.</p>
+    <p>This document is solely for information and is not intended for anyone other than the recipient. It may not be published, circulated, reproduced or distributed in whole or part to any other person without the prior written consent of Nice Talent Asset Management Limited (“NTAM”). This document should not be construed as an offer or solicitation for the subscription, purchase or sale of any securities mentioned herein. This information is not an offer or solicitation by anyone in any jurisdiction in which such offer or solicitation is not lawful or in which the person making such offer or solicitation is not qualified to do so or to anyone to whom it is unlawful to make such an offer or solicitation.</p>
+    <p>We have not given any consideration to and we have not made any investigation of the investment objective, financial situation or particular needs of the recipient or any class of persons, and accordingly, NTAM expressly disclaims all liability for the use or interpretation by others of information contained in this document or for any loss arising whether directly or indirectly as a result of any person acting on any information, opinion or estimate contained in this document. You are advised to consult your independent financial adviser separately for professional advice before making any decision to enter into an investment transaction. NTAM and its related and affiliated corporations together with their respective directors and officers may have or may take positions in the securities mentioned in this document and may also perform or seek to perform broking and other investment services for the corporations whose securities are mentioned in this document as well as other parties.</p>
+    <p>You should not act on it without first independently verifying its contents. Any opinion, management forecast or estimate contained in this document is based on information available as at the date of this document and reflects prevailing conditions and our views as of the date of this document, all of which are subject to change at any time without notice. Such opinions, forecasts and estimates as well as the information contained herein relating to the historical data and performance of various indices are for information only and are not indicative of the future or likely performance of NTAM and should not be construed as such. Past performance does not guarantee future performance results. The value and income from investments may fall as well as rise. The value of the fund/investment can be volatile and can go down substantially within a short period of time. It is possible that your investment could be lost.</p>
+    <p>Investors should not make investment decisions based on this document alone. Investors should refer to the Offering Document for details including risk factors where applicable.</p>
+    <p>NTAM has no guarantee, or representation or warrant as to, its accuracy, adequacy or completeness or recommends that such information on this document.</p>
+    <p>NTAM is registered as a licensed corporation under the SFO with the Securities and Futures Commission of Hong Kong to carry out investment management activities in the Hong Kong and its CE number is BMR849. This material is issued by NTAM and it has not been reviewed by the SFC.</p>
+    
+    <div class="border-t border-slate-200 pt-4 mt-6 text-xs text-slate-500">
+        <p>Copyright 2026. Nice Talent Asset Management Limited. All rights reserved.</p>
     </div>
 </div>
