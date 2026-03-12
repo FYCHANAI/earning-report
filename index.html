@@ -22,16 +22,24 @@
                 </div>
                 <h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明 / 重要声明</h2>
             </div>
+            
             <div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
                 <div class="border-l-4 border-blue-500 pl-4">
                     <p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
-                    <p>本網站及報告之內容僅供香港《證券及期貨條例》（香港法例第571章）及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
+                    <p>本網站及報告之內容僅供香港《證券及期貨條例》（香港法例第571章）及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。若您並非專業投資者，請立即點擊「拒絕」並離開此頁面。</p>
                 </div>
+                
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
+                    <p>本网站及报告之内容仅供香港《证券及期货条例》（香港法例第571章）及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者资格。若您并非专业投资者，请立即点击“拒绝”并离开此页面。</p>
+                </div>
+
                 <div class="border-l-4 border-blue-500 pl-4">
                     <p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
-                    <p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only. By clicking "I Confirm", you declare and warrant that you qualify as a Professional Investor.</p>
+                    <p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation. By clicking "I Confirm", you declare and warrant that you qualify as a Professional Investor. If you are not a Professional Investor, please click "Decline" and exit this page immediately.</p>
                 </div>
             </div>
+
             <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
                 <button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
                 <button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-blue-500/30 transition-all w-full sm:w-auto">我確認 I Confirm</button>
@@ -138,23 +146,13 @@
                     if(container) {
                         container.innerHTML = data;
                         
-                        // 抓取三種語言的區塊
                         const tc = document.getElementById('disc-tc');
                         const sc = document.getElementById('disc-sc');
                         const en = document.getElementById('disc-en');
                         
-                        // 將三種語言同時設為顯示，並加入分隔線樣式讓排版變美觀
-                        if(tc) { 
-                            tc.style.display = 'block'; 
-                            tc.classList.add('mb-10', 'pb-10', 'border-b', 'border-slate-200'); 
-                        }
-                        if(sc) { 
-                            sc.style.display = 'block'; 
-                            sc.classList.add('mb-10', 'pb-10', 'border-b', 'border-slate-200'); 
-                        }
-                        if(en) { 
-                            en.style.display = 'block'; 
-                        }
+                        if(tc) { tc.style.display = 'block'; tc.classList.add('mb-10', 'pb-10', 'border-b', 'border-slate-200'); }
+                        if(sc) { sc.style.display = 'block'; sc.classList.add('mb-10', 'pb-10', 'border-b', 'border-slate-200'); }
+                        if(en) { en.style.display = 'block'; }
                     }
                 })
                 .catch(error => {
