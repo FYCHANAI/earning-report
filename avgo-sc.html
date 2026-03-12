@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博通 (AVGO) 深度研究报告 | NTAM 资深分析师</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans SC', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+        @media (min-width: 768px) { .chart-container { height: 400px; } }
+        .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
+        <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
+            <div class="text-center mb-6">
+                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+                </div>
+                <h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明 / 重要声明</h2>
+            </div>
+            <div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
+                    <p>本網站及報告之內容僅供香港《證券及期貨條例》（香港法例第571章）及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。若您並非專業投資者，請立即點擊「拒絕」並離開此頁面。</p>
+                </div>
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
+                    <p>本网站及报告之内容仅供香港《证券及期货条例》（香港法例第571章）及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者资格。若您并非专业投资者，请立即点击“拒绝”并离开此页面。</p>
+                </div>
+                <div class="border-l-4 border-blue-500 pl-4">
+                    <p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
+                    <p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation. By clicking "I Confirm", you declare and warrant that you qualify as a Professional Investor. If you are not a Professional Investor, please click "Decline" and exit this page immediately.</p>
+                </div>
+            </div>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
+                <button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒绝 / Decline</button>
+                <button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-blue-500/30 transition-all w-full sm:w-auto">我确认 I Confirm</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            if (!sessionStorage.getItem('pi_agreed')) {
+                const modal = document.getElementById('pi-modal');
+                if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+            }
+        });
+        function acceptPI() { sessionStorage.setItem('pi_agreed', 'true'); document.getElementById('pi-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
+        function declinePI() {
+            document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied / 拒絕訪問 / 拒绝访问</h1><p style="color: #475569; max-width: 500px; line-height: 1.6;">This content is restricted to Professional Investors only.<br>本內容僅限專業投資者查看。<br>本内容仅限专业投资者查看。</p></div>`;
+        }
+    </script>
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+            <div class="flex justify-between items-start">
+                
+                <div class="flex flex-col">
+                    <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer" title="返回研究大厅">
+                        <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-8 w-auto">
+                        <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+                    </a>
+                    
+                    <div class="flex flex-col">
+                        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">博通公司 <span class="text-blue-600">AVGO</span></h1>
+                        <span class="text-sm text-slate-500 font-medium mt-1">资深分析师 财报复盘报告 | 2026年3月更新</span>
+                    </div>
+                </div>
+                
+                <div class="flex flex-col items-end space-y-3">
+                    <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
+                        <option value="avgo.html">繁體中文</option>
+                        <option value="avgo-sc.html" selected>简体中文</option>
+                        <option value="avgo-en.html">English</option>
+                    </select>
+                    
+                    <div class="flex items-center space-x-4">
+                        <div class="text-right hidden sm:block">
+                            <div class="text-xs text-slate-400">目前预估价</div>
+                            <div class="text-xl font-bold text-slate-800">$135.00 USD</div>
+                        </div>
+                        <div class="px-4 py-2 bg-emerald-100 text-emerald-800 font-bold rounded-full border border-emerald-200 text-sm whitespace-nowrap">
+                            评级：买入 (Buy)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+                <button onclick="switchTab(event, 'summary')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 投资结论</button>
+                <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 财务业绩</button>
+                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值与共识</button>
+                <button onclick="switchTab(event, 'sentiment')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 市场情绪</button>
+                <button onclick="switchTab(event, 'technical')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 技术面</button>
+                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 风险因素</button>
+                <button onclick="switchTab(event, 'scenarios')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">七. 情境分析</button>
+                <button onclick="switchTab(event, 'recommendation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">八. 最终建议</button>
+                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">九. 免责声明</button>
+            </nav>
+        </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+        <section id="summary" class="tab-content active">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">执行摘要 (Executive Summary)</h2>
+                <p class="mt-2 text-slate-600">基于最新一季财报与强劲的前瞻指引，Broadcom (博通) 再次确认了其在 AI 基础设施（ASIC 与网络芯片）领域不可撼动的领导地位。本次交出的属于高质量业绩，为市场上修全年预测提供了坚实基础。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="metric-card">
+                        <h3 class="text-lg font-bold text-slate-800 mb-4">一、投资结论</h3>
+                        <div class="flex flex-wrap items-center mb-4 gap-2">
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded font-semibold text-sm">投资评级：买入 (Buy)</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded font-semibold text-sm">目标价区间：$160.00 - $180.00</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-800 rounded font-semibold text-sm">置信度：8.5 / 10</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-4 font-semibold">机会属性：<span class="text-blue-600">质量型成长 + 现金流护城河</span></p>
+                        
+                        <h4 class="font-bold text-slate-700 mt-4 mb-2">3 个最核心理由：</h4>
+                        <ol class="list-decimal list-inside space-y-2 text-slate-600 text-sm md:text-base">
+                            <li><strong>AI 业务仍是最核心的成长引擎：</strong> Q1 AI 营收达 $8.4B，同比增长 106%。管理层预期 Q2 AI 营收进一步升至约 $10.7B，反映 Custom AI Accelerators 与 AI 网络交换机需求持续强劲。</li>
+                            <li><strong>利润率与现金流维持顶级水准：</strong> Adjusted EBITDA 达 $13.1B (占营收 68%)；自由现金流 (FCF) 达 $80.10 亿 (占营收 41%)。这代表公司在高成长期仍具备极强的变现能力。</li>
+                            <li><strong>股东回报延续，资本配置积极：</strong> 公司本季透过股息与回购合共向股东返还 $10.9B，并批准新的 $100 亿美元股票回购计划，彰显强大底气。</li>
+                        </ol>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="metric-card text-center">
+                        <h3 class="text-sm font-bold text-slate-500 uppercase tracking-wide mb-2">平均目标价预期</h3>
+                        <div class="text-4xl font-black text-slate-800 mb-1">$160.00</div>
+                        <div class="text-sm text-emerald-600 font-bold mb-4">潜在上涨空间: +18.5%</div>
+                        <div class="text-xs text-slate-400">基于华尔街分析师平均共识</div>
+                        <div class="mt-4 w-full bg-slate-200 rounded-full h-2.5">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 18.5%"></div>
+                        </div>
+                        <div class="flex justify-between text-xs text-slate-400 mt-1">
+                            <span>现价 $135</span>
+                            <span>目标 $160</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="financials" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、财务业绩回顾与展望</h2>
+                <p class="mt-2 text-slate-600">最新季度财报 (Q1 FY26) 强劲 Beat，显示营运仍处于加速区间。</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="metric-card">
+                    <h4 class="text-xs font-bold text-slate-500 uppercase">实际营收 (Q1 FY26)</h4>
+                    <p class="text-2xl font-bold text-slate-800 mt-1">$193.11 亿</p>
+                    <p class="text-sm text-emerald-600 font-semibold mt-1">YoY: +29% | QoQ: +7.2%</p>
+                    <p class="text-xs text-slate-400 mt-2">半导体营收 YoY +52%</p>
+                </div>
+                <div class="metric-card">
+                    <h4 class="text-xs font-bold text-slate-500 uppercase">Non-GAAP EPS</h4>
+                    <p class="text-2xl font-bold text-slate-800 mt-1">$2.05</p>
+                    <p class="text-sm text-emerald-600 font-semibold mt-1">优于预期</p>
+                    <p class="text-xs text-slate-400 mt-2">GAAP EPS 为 $1.50</p>
+                </div>
+                <div class="metric-card bg-blue-50">
+                    <h4 class="text-xs font-bold text-slate-500 uppercase">Q2 官方营收指引</h4>
+                    <p class="text-2xl font-bold text-blue-800 mt-1">$220.00 亿</p>
+                    <p class="text-sm text-slate-600 font-semibold mt-1">YoY +47%</p>
+                    <p class="text-xs text-slate-500 mt-2">AI 预估升至 $10.7B</p>
+                </div>
+                <div class="metric-card bg-slate-100">
+                    <h4 class="text-xs font-bold text-slate-500 uppercase">自由现金流 (FCF)</h4>
+                    <p class="text-xl font-bold text-slate-800 mt-1">$80.10 亿</p>
+                    <p class="text-sm text-emerald-600 font-semibold mt-1">高达 41% Margin</p>
+                    <p class="text-xs text-slate-500 mt-2">顶级现金创造力</p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 metric-card">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-bold text-slate-800">历史营收与毛利率趋势</h3>
+                        <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">单位: 亿美元 / %</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="financialChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="metric-card">
+                        <h3 class="text-md font-bold text-slate-800 mb-3 border-b pb-2">业绩趋势判断</h3>
+                        <div class="text-center py-3 bg-blue-100 rounded mb-3">
+                            <span class="text-lg font-black text-blue-800">加速成长 (Accelerating)</span>
+                        </div>
+                        <p class="text-sm text-slate-600"><strong>判断依据：</strong> Q1 总营收同比增长 29%，而 Q2 指引同比增长约 47%，显示短期成长斜率仍在上升。更重要的是，在规模扩张的同时，毛利率仍稳居 77% 的高位。</p>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h3 class="text-md font-bold text-slate-800 mb-3 border-b pb-2">Earnings Call 重点</h3>
+                        <ul class="text-sm text-slate-600 list-disc list-inside mt-1 space-y-2">
+                            <li><span class="font-bold text-emerald-600">利多：</span>AI 网络产品与 Custom ASIC 需求旺盛，下季度能见度极高。</li>
+                            <li><span class="font-bold text-emerald-600">利多：</span>VMware 整合顺利，协同效应与成本削减红利持续释放。</li>
+                            <li><span class="font-bold text-rose-600">风险：</span>传统企业储存与宽频业务复苏力道仍较为疲软 (软件营收年增仅 1%)。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="valuation" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值与市场共识</h2>
+                <p class="mt-2 text-slate-600">作为半导体板块中少数兼具软件经常性收入与顶级 FCF 的标的，我们采用 Forward P/E 进行同业比较。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                <div class="metric-card">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">分析师一致目标价分布</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 bg-slate-50 rounded">
+                            <span class="text-slate-600 font-medium">最高目标价 (Bull)</span>
+                            <span class="text-lg font-bold text-emerald-600">$180.00</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-blue-50 rounded border border-blue-100">
+                            <span class="text-slate-800 font-bold">平均目标价 (Consensus)</span>
+                            <span class="text-xl font-black text-blue-700">$160.00</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-slate-50 rounded">
+                            <span class="text-slate-600 font-medium">最低目标价 (Bear)</span>
+                            <span class="text-lg font-bold text-rose-600">$110.00</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-100 text-sm">
+                        <p><strong>评级分布：</strong> 买入 (80%) / 持有 (15%) / 卖出 (5%)</p>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">估值结论与分析</h3>
+                    <p class="text-xl font-bold text-blue-600 mb-2">结论：质量型成长股，估值合理</p>
+                    <div class="space-y-3 text-sm text-slate-600">
+                        <p>这份财报有助支持市场全面上修 FY26 的盈利预测。</p>
+                        <p>目前 AVGO 的 Forward P/E 约 28x。相较于 AMD (45x) 与 Marvell (40x) 的高倍数，AVGO 凭借其高达 68% 的 EBITDA margin 以及 41% 的 FCF margin，提供了极佳的安全边际。若 Q2 指引顺利落地，市场将愿意给予其更高质量的估值溢价。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-4">AI 半导体同业估值比较 (Forward P/E)</h3>
+                <div class="chart-container" style="height: 300px; max-height: 350px;">
+                    <canvas id="valuationChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="sentiment" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、市场情绪面分析</h2>
+            </div>
+
+            <div class="metric-card mb-6">
+                <h3 class="text-lg font-bold text-slate-800 mb-4">过去 30 天重要消息</h3>
+                <ul class="space-y-4">
+                    <li class="border-l-2 border-emerald-500 pl-3">
+                        <span class="text-xs font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">利多</span>
+                        <span class="text-sm font-bold text-slate-800 ml-2">Q2 AI 营收指引大幅优于华尔街预期</span>
+                        <p class="text-sm text-slate-500 mt-1">直接粉碎了先前市场担忧“AI 基础设施建设可能放缓”的疑虑。</p>
+                    </li>
+                    <li class="border-l-2 border-emerald-500 pl-3">
+                        <span class="text-xs font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">利多</span>
+                        <span class="text-sm font-bold text-slate-800 ml-2">宣布加码 100 亿美元股票回购</span>
+                        <p class="text-sm text-slate-500 mt-1">向市场传递管理层对自由现金流可持续性的绝对信心。</p>
+                    </li>
+                    <li class="border-l-2 border-slate-400 pl-3">
+                        <span class="text-xs font-bold bg-slate-100 text-slate-800 px-2 py-0.5 rounded">中性</span>
+                        <span class="text-sm font-bold text-slate-800 ml-2">基础软件业务年增长仅 1%</span>
+                        <p class="text-sm text-slate-500 mt-1">软件部分增长乏力，但因其高毛利特性，市场对此反应平淡。</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="metric-card">
+                <h4 class="text-sm font-bold text-slate-700">社交平台风向 (华尔街日报 / X)</h4>
+                <p class="text-sm text-slate-600 mt-2">目前情绪：<span class="font-bold text-emerald-600">明显偏多 (Bullish)</span>。散户与机构普遍将 AVGO 视为仅次于 NVDA 的“最稳健 AI 投资标的”。其高股息与强大现金流，让它比其他纯芯片股（如 AMD）更具防御性。</p>
+            </div>
+        </section>
+
+        <section id="technical" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、技术面分析</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="metric-card">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">动能指标</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 rounded text-center border border-slate-100">
+                            <div class="text-xs font-bold text-slate-500 mb-1">RSI (14)</div>
+                            <div class="text-2xl font-black text-slate-800">65.8</div>
+                            <div class="text-sm font-semibold text-blue-600">强势多头区间</div>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded text-center border border-slate-100">
+                            <div class="text-xs font-bold text-slate-500 mb-1">MACD</div>
+                            <div class="text-lg font-black text-emerald-600">黄金交叉发散</div>
+                            <div class="text-sm font-semibold text-slate-600">买盘动能强劲</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">均线结构与关键点位</h3>
+                    <div class="space-y-3 text-sm text-slate-600">
+                        <ul class="list-none space-y-2">
+                            <li>• <strong class="text-emerald-600">多头排列</strong>：股价稳居 20 日与 50 日均线之上。</li>
+                            <li>• 财报公布后带量跳空向上，形成强有力的支撑平台。</li>
+                            <li>• 前期高点已转为实质支撑位。</li>
+                        </ul>
+                        
+                        <div class="flex justify-between mt-4 p-4 bg-slate-800 text-white rounded-lg">
+                            <div>
+                                <span class="block text-xs text-slate-400">强支撑位 (S1 / S2)</span>
+                                <span class="font-bold text-emerald-400 text-lg">$125.00 / $118.00</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-xs text-slate-400">压力位 (R1 / R2)</span>
+                                <span class="font-bold text-rose-400 text-lg">$145.00 / $160.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="risks" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">六、风险因素</h2>
+            </div>
+
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-4 text-rose-600">关键风险因素 (按严重度排序)</h3>
+                <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
+                    <li class="pb-3 border-b border-slate-100">
+                        <strong class="text-rose-700 text-base">客户高度集中 (最高风险)：</strong> AVGO 的 AI 营收高度依赖少数超大型云端供应商 (如 Google, Meta)。若这些大客户调整资本支出节奏，将造成巨大冲击。
+                    </li>
+                    <li class="pb-3 border-b border-slate-100">
+                        <strong class="text-base">外部代工与产能依赖：</strong> 半导体制造极度依赖台积电 (TSMC) 先进制程。若产能分配或 CoWoS 封装供应不及，将限制其营收上限。
+                    </li>
+                    <li class="pb-3 border-b border-slate-100">
+                        <strong class="text-base">软件部门成长停滞：</strong> 基础软件营收年增仅 1%，若后续面临客户流失，可能开始拖累整体获利结构。
+                    </li>
+                    <li class="pb-2">
+                        <strong class="text-base">地缘政治风险：</strong> 中美芯片禁令升级可能影响其在中国市场的传统网络通讯芯片销售。
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="scenarios" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">七、情境分析 (Scenario Analysis)</h2>
+            </div>
+
+            <div class="metric-card bg-slate-900 text-white border-none">
+                <div class="flex space-x-2 mb-6 bg-slate-800 p-1 rounded-lg w-full max-w-md mx-auto">
+                    <button onclick="showScenario('bull')" id="btn-bull" class="flex-1 py-2 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition">牛市</button>
+                    <button onclick="showScenario('base')" id="btn-base" class="flex-1 py-2 text-sm font-bold bg-blue-600 text-white rounded shadow transition">基准</button>
+                    <button onclick="showScenario('bear')" id="btn-bear" class="flex-1 py-2 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition">熊市</button>
+                </div>
+
+                <div id="scenario-bull" class="scenario-panel hidden max-w-2xl mx-auto text-center">
+                    <h4 class="text-2xl font-black text-emerald-400 mb-4">牛市情境 (Bull) - 目标价: $180.00</h4>
+                    <ul class="text-sm space-y-4 text-slate-300 text-left bg-slate-800 p-6 rounded-lg">
+                        <li><span class="font-bold text-slate-100 block mb-1">触发条件：</span> 成功拿下第三家超大型客户的 Custom ASIC 大单；AI 网络基建换代需求提速。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">财务影响：</span> 全年 AI 营收突破 450 亿美元，毛利率直逼 80%。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">股价反应：</span> 估值倍数扩张至 32x-35x，完全追平 NVDA 的溢价水准。</li>
+                    </ul>
+                </div>
+
+                <div id="scenario-base" class="scenario-panel block max-w-2xl mx-auto text-center">
+                    <h4 class="text-2xl font-black text-blue-400 mb-4">基准情境 (Base) - 目标价: $160.00</h4>
+                    <ul class="text-sm space-y-4 text-slate-300 text-left bg-slate-800 p-6 rounded-lg">
+                        <li><span class="font-bold text-slate-100 block mb-1">触发条件：</span> 顺利兑现 Q2 预期的 107 亿美元 AI 营收；软件部门维持稳定不衰退。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">财务影响：</span> 获利稳定双位数增长，百亿回购计划稳定执行。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">股价反应：</span> 维持在 28x-30x Forward P/E，随获利上调稳步推升股价。</li>
+                    </ul>
+                </div>
+
+                <div id="scenario-bear" class="scenario-panel hidden max-w-2xl mx-auto text-center">
+                    <h4 class="text-2xl font-black text-rose-400 mb-4">熊市情境 (Bear) - 目标价: $110.00</h4>
+                    <ul class="text-sm space-y-4 text-slate-300 text-left bg-slate-800 p-6 rounded-lg">
+                        <li><span class="font-bold text-slate-100 block mb-1">触发条件：</span> 云端巨头突发性暂停 AI 资本支出扩张；台积电先进封装产能严重受限。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">财务影响：</span> 营收低于指引，市场对其高增长持续性产生质疑。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">股价反应：</span> 成长溢价被剥夺，估值退回 20x 左右的传统芯片股区间。</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="recommendation" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">八、最终投资建议 (Final Recommendation)</h2>
+            </div>
+
+            <div class="metric-card bg-slate-900 text-white border-none p-6 md:p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm md:text-base">
+                    <div>
+                        <p class="text-slate-400 mb-2 font-bold">核心逻辑：</p>
+                        <p class="mb-6 leading-relaxed">Broadcom 的吸引力在于“高质量”。它不仅是 AI 硬件军备竞赛的绝对受惠者（ASIC + 网通），同时拥有深厚的软件护城河，提供高达 41% 自由现金流的防御底盘。</p>
+                        
+                        <p class="text-slate-400 mb-2 font-bold">短期操作框架：</p>
+                        <p class="mb-6 leading-relaxed">财报后市场延续正面解读，建议优先观察回吐后的承接力，而非逆势做空。</p>
+                    </div>
+                    <div>
+                        <p class="text-slate-400 mb-2 font-bold">建议策略：</p>
+                        <p class="mb-6 font-bold text-emerald-400 text-xl">分批建仓与持有。若后续 AI 需求延续，中期投资逻辑非常稳固。</p>
+
+                        <p class="text-slate-400 mb-2 font-bold">市场定价落差：</p>
+                        <p class="text-emerald-300 mb-2">未充分反映：Custom ASIC（定制化芯片）的产品生命周期可能比标准 GPU 更长、更黏着。</p>
+                        <p class="text-slate-300">已 Price in：VMware 并购初期的协同效应与成本削减红利。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="disclaimer" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">九、免责声明 (Disclaimer)</h2>
+            </div>
+            <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+                <div class="text-center py-10">
+                    <p class="text-sm text-slate-500 animate-pulse font-bold">正在载入免责声明，请稍候...</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+        // --- 1. Tab Navigation Logic ---
+        function switchTab(e, tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('active', 'border-blue-600', 'text-blue-600');
+                el.classList.add('text-slate-500');
+            });
+            document.getElementById(tabId).classList.add('active');
+            e.currentTarget.classList.remove('text-slate-500');
+            e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+        }
+
+        // --- 2. Scenario Toggle Logic ---
+        function showScenario(type) {
+            document.querySelectorAll('.scenario-panel').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
+            });
+            ['bull', 'base', 'bear'].forEach(btn => {
+                document.getElementById('btn-' + btn).className = 'flex-1 py-2 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition';
+            });
+            document.getElementById('scenario-' + type).classList.remove('hidden');
+            document.getElementById('scenario-' + type).classList.add('block');
+            
+            const activeBtn = document.getElementById('btn-' + type);
+            if(type === 'bull') activeBtn.className = 'flex-1 py-2 text-sm font-bold bg-emerald-600 text-white rounded shadow transition';
+            if(type === 'base') activeBtn.className = 'flex-1 py-2 text-sm font-bold bg-blue-600 text-white rounded shadow transition';
+            if(type === 'bear') activeBtn.className = 'flex-1 py-2 text-sm font-bold bg-rose-600 text-white rounded shadow transition';
+        }
+
+        // --- 3. Chart.js Initialization ---
+        document.addEventListener('DOMContentLoaded', function() {
+            // 财务图表：历史营收精确数据 + 毛利率
+            const ctxFin = document.getElementById('financialChart').getContext('2d');
+            new Chart(ctxFin, {
+                type: 'bar',
+                data: {
+                    labels: ['Q1 FY25', 'Q2 FY25', 'Q3 FY25', 'Q4 FY25', 'Q1 FY26', 'Q2 FY26(Est)'],
+                    datasets: [
+                        { label: '营收 ($B)', data: [14.916, 15.004, 15.952, 18.015, 19.311, 22.000], backgroundColor: 'rgba(37, 99, 235, 0.7)', borderColor: 'rgba(37, 99, 235, 1)', borderWidth: 1, yAxisID: 'y', order: 2 },
+                        { label: '毛利率 (%)', data: [74.5, 75.0, 76.2, 76.8, 77.0, 77.5], type: 'line', backgroundColor: 'rgba(16, 185, 129, 1)', borderColor: 'rgba(16, 185, 129, 1)', borderWidth: 3, pointRadius: 4, pointBackgroundColor: 'white', yAxisID: 'y1', order: 1 }
+                    ]
+                },
+                options: {
+                    responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
+                    plugins: { legend: { position: 'top' } },
+                    scales: {
+                        y: { type: 'linear', display: true, position: 'left', title: { display: true, text: '营收 (十亿美元)' }, grid: { color: '#f1f5f9' }, min: 10 },
+                        y1: { type: 'linear', display: true, position: 'right', title: { display: true, text: '毛利率 (%)' }, grid: { drawOnChartArea: false }, min: 70 },
+                        x: { grid: { display: false } }
+                    }
+                }
+            });
+
+            // 估值图表
+            const ctxVal = document.getElementById('valuationChart').getContext('2d');
+            new Chart(ctxVal, {
+                type: 'bar',
+                data: {
+                    labels: ['AMD (超微)', 'Marvell (MRVL)', 'NVIDIA (NVDA)', 'Broadcom (AVGO)'],
+                    datasets: [{
+                        label: 'Forward P/E 倍数', data: [45.0, 40.2, 35.5, 28.0],
+                        backgroundColor: ['rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(37, 99, 235, 0.9)'],
+                        borderWidth: 0, borderRadius: 4
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(context) { return context.parsed.x + 'x P/E'; } } } },
+                    scales: { x: { beginAtZero: true, title: { display: true, text: '市盈率倍数 (x)' }, grid: { color: '#f1f5f9' } }, y: { grid: { display: false }, ticks: { font: { weight: 'bold' } } } }
+                }
+            });
+
+            // 读入免责声明并指定显示【简体中文】
+            fetch('disclaimer.html')
+                .then(res => res.text())
+                .then(data => {
+                    const c = document.getElementById('disclaimer-container');
+                    if(c) {
+                        c.innerHTML = data;
+                        const sc = document.getElementById('disc-sc');
+                        if(sc) sc.style.display = 'block';
+                    }
+                });
+        });
+    </script>
+</body>
+</html>
