@@ -8,53 +8,14 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Noto Sans TC', sans-serif;
-            background-color: #f8fafc; 
-            color: #1e293b; 
-        }
-        
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 350px;
-            max-height: 400px;
-        }
-
-        @media (min-width: 768px) {
-            .chart-container { height: 400px; }
-        }
-
-        .tab-btn.active {
-            border-bottom: 4px solid #2563eb;
-            color: #2563eb;
-            font-weight: 700;
-        }
-        
-        .tab-content {
-            display: none;
-            animation: fadeIn 0.3s ease-in-out;
-        }
-        
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+        @media (min-width: 768px) { .chart-container { height: 400px; } }
+        .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
         .tab-content.active { display: block; }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(5px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .metric-card {
-            background: white;
-            border-radius: 0.75rem;
-            padding: 1.25rem;
-            box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-            border: 1px solid #e2e8f0;
-        }
-        
-        /* 隱藏滾動條 */
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
@@ -63,16 +24,12 @@
 
     <div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
         <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
-            
             <div class="text-center mb-6">
                 <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" />
-                    </svg>
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
                 </div>
                 <h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明 / 重要声明</h2>
             </div>
-
             <div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
                 <div class="border-l-4 border-blue-500 pl-4">
                     <p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
@@ -87,47 +44,22 @@
                     <p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation. By clicking "I Confirm", you declare and warrant that you qualify as a Professional Investor. If you are not a Professional Investor, please click "Decline" and exit this page immediately.</p>
                 </div>
             </div>
-
             <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
-                <button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">
-                    拒絕 / Decline
-                </button>
-                <button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-blue-500/30 transition-all w-full sm:w-auto">
-                    我確認 I Confirm
-                </button>
+                <button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
+                <button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-blue-500/30 transition-all w-full sm:w-auto">我確認 I Confirm</button>
             </div>
         </div>
     </div>
-
     <script>
-        // PI 驗證邏輯
         document.addEventListener("DOMContentLoaded", function() {
             if (!sessionStorage.getItem('pi_agreed')) {
                 const modal = document.getElementById('pi-modal');
-                if (modal) {
-                    modal.style.display = 'flex';
-                    document.body.style.overflow = 'hidden';
-                }
+                if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
             }
         });
-
-        function acceptPI() {
-            sessionStorage.setItem('pi_agreed', 'true');
-            document.getElementById('pi-modal').style.display = 'none';
-            document.body.style.overflow = 'auto';
-        }
-
+        function acceptPI() { sessionStorage.setItem('pi_agreed', 'true'); document.getElementById('pi-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
         function declinePI() {
-            document.body.innerHTML = `
-                <div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;">
-                    <h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied / 拒絕訪問 / 拒绝访问</h1>
-                    <p style="color: #475569; max-width: 500px; line-height: 1.6;">
-                        This content is restricted to Professional Investors only.<br>
-                        本內容僅限專業投資者查看。<br>
-                        本内容仅限专业投资者查看。
-                    </p>
-                </div>
-            `;
+            document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied / 拒絕訪問 / 拒绝访问</h1><p style="color: #475569; max-width: 500px; line-height: 1.6;">This content is restricted to Professional Investors only.<br>本內容僅限專業投資者查看。<br>本内容仅限专业投资者查看。</p></div>`;
         }
     </script>
     <header class="bg-white border-b border-slate-200 sticky top-0 z-50">
@@ -142,7 +74,7 @@
                     
                     <div class="flex flex-col">
                         <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">博通公司 <span class="text-blue-600">AVGO</span></h1>
-                        <span class="text-sm text-slate-500 font-medium mt-1">資深分析師 深度研究報告 | 2026年3月更新</span>
+                        <span class="text-sm text-slate-500 font-medium mt-1">資深分析師 財報復盤報告 | 2026年3月更新</span>
                     </div>
                 </div>
                 
@@ -201,7 +133,7 @@
                         <h4 class="font-bold text-slate-700 mt-4 mb-2">3 個最核心理由：</h4>
                         <ol class="list-decimal list-inside space-y-2 text-slate-600 text-sm md:text-base">
                             <li><strong>AI 業務仍是最核心的成長引擎：</strong> Q1 AI 營收達 $8.4B，同比增長 106%。管理層預期 Q2 AI 營收進一步升至約 $10.7B，反映 Custom AI Accelerators 與 AI 網路交換器需求持續強勁。</li>
-                            <li><strong>利潤率與現金流維持頂級水準：</strong> Adjusted EBITDA 達 $13.1B (佔營收 68%)；自由現金流 (FCF) 達 $8.01B (佔營收 41%)。這代表公司在高成長期仍具備極強的變現能力。</li>
+                            <li><strong>利潤率與現金流維持頂級水準：</strong> Adjusted EBITDA 達 $13.1B (佔營收 68%)；自由現金流 (FCF) 達 $80.10 億 (佔營收 41%)。這代表公司在高成長期仍具備極強的變現能力。</li>
                             <li><strong>股東回報延續，資本配置積極：</strong> 公司本季透過股息與回購合共向股東返還 $10.9B，並批准新的 $100 億美元股票回購計畫，彰顯強大底氣。</li>
                         </ol>
                     </div>
@@ -234,7 +166,7 @@
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
                 <div class="metric-card">
                     <h4 class="text-xs font-bold text-slate-500 uppercase">實際營收 (Q1 FY26)</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$19.31 億</p>
+                    <p class="text-2xl font-bold text-slate-800 mt-1">$193.11 億</p>
                     <p class="text-sm text-emerald-600 font-semibold mt-1">YoY: +29% | QoQ: +7.2%</p>
                     <p class="text-xs text-slate-400 mt-2">半導體營收 YoY +52%</p>
                 </div>
@@ -246,13 +178,13 @@
                 </div>
                 <div class="metric-card bg-blue-50">
                     <h4 class="text-xs font-bold text-slate-500 uppercase">Q2 官方營收指引</h4>
-                    <p class="text-2xl font-bold text-blue-800 mt-1">$22.00 億</p>
+                    <p class="text-2xl font-bold text-blue-800 mt-1">$220.00 億</p>
                     <p class="text-sm text-slate-600 font-semibold mt-1">YoY +47%</p>
                     <p class="text-xs text-slate-500 mt-2">AI 預估升至 $10.7B</p>
                 </div>
                 <div class="metric-card bg-slate-100">
                     <h4 class="text-xs font-bold text-slate-500 uppercase">自由現金流 (FCF)</h4>
-                    <p class="text-xl font-bold text-slate-800 mt-1">$8.01 億</p>
+                    <p class="text-xl font-bold text-slate-800 mt-1">$80.10 億</p>
                     <p class="text-sm text-emerald-600 font-semibold mt-1">高達 41% Margin</p>
                     <p class="text-xs text-slate-500 mt-2">頂級現金創造力</p>
                 </div>
@@ -384,7 +316,7 @@
                         </div>
                         <div class="p-4 bg-slate-50 rounded text-center border border-slate-100">
                             <div class="text-xs font-bold text-slate-500 mb-1">MACD</div>
-                            <div class="text-lg font-black text-emerald-600">黃金交叉</div>
+                            <div class="text-lg font-black text-emerald-600">黃金交叉發散</div>
                             <div class="text-sm font-semibold text-slate-600">買盤動能強勁</div>
                         </div>
                     </div>
@@ -551,13 +483,14 @@
 
         // --- 3. Chart.js Initialization ---
         document.addEventListener('DOMContentLoaded', function() {
+            // 財務圖表：歷史營收精確數據 + 毛利率
             const ctxFin = document.getElementById('financialChart').getContext('2d');
             new Chart(ctxFin, {
                 type: 'bar',
                 data: {
                     labels: ['Q1 FY25', 'Q2 FY25', 'Q3 FY25', 'Q4 FY25', 'Q1 FY26', 'Q2 FY26(Est)'],
                     datasets: [
-                        { label: '營收 ($B)', data: [11.9, 12.4, 13.0, 18.0, 19.3, 22.0], backgroundColor: 'rgba(37, 99, 235, 0.7)', borderColor: 'rgba(37, 99, 235, 1)', borderWidth: 1, yAxisID: 'y', order: 2 },
+                        { label: '營收 ($B)', data: [14.916, 15.004, 15.952, 18.015, 19.311, 22.000], backgroundColor: 'rgba(37, 99, 235, 0.7)', borderColor: 'rgba(37, 99, 235, 1)', borderWidth: 1, yAxisID: 'y', order: 2 },
                         { label: '毛利率 (%)', data: [74.5, 75.0, 76.2, 76.8, 77.0, 77.5], type: 'line', backgroundColor: 'rgba(16, 185, 129, 1)', borderColor: 'rgba(16, 185, 129, 1)', borderWidth: 3, pointRadius: 4, pointBackgroundColor: 'white', yAxisID: 'y1', order: 1 }
                     ]
                 },
@@ -572,6 +505,7 @@
                 }
             });
 
+            // 估值圖表
             const ctxVal = document.getElementById('valuationChart').getContext('2d');
             new Chart(ctxVal, {
                 type: 'bar',
