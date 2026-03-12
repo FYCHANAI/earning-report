@@ -1,46 +1,21 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Broadcom (AVGO) Q1 財報復盤 | NTAM 資深分析師</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博通 (AVGO) 深度研究報告 | NTAM 資深分析師</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Noto Sans TC', "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #f8fafc;
-            color: #0f172a;
-        }
-
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 100%;
-            margin-left: auto;
-            margin-right: auto;
-            height: 320px;
-            max-height: 380px;
-        }
-
-        @media (min-width: 768px) { .chart-container { height: 350px; } }
-
-        .tab-btn.active {
-            border-bottom: 2px solid #4f46e5;
-            color: #4f46e5;
-            font-weight: 700;
-            background-color: #f8fafc;
-        }
-
-        .fade-in { animation: fadeIn 0.35s ease-in; }
-
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(4px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        /* 隱藏滾動條 */
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; }
+        .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+        @media (min-width: 768px) { .chart-container { height: 400px; } }
+        .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
         .hide-scrollbar::-webkit-scrollbar { display: none; }
         .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
     </style>
@@ -96,8 +71,9 @@
                         <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-8 w-auto">
                         <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
                     </a>
+                    
                     <div class="flex flex-col">
-                        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">博通公司 <span class="text-indigo-600">AVGO</span></h1>
+                        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">博通公司 <span class="text-blue-600">AVGO</span></h1>
                         <span class="text-sm text-slate-500 font-medium mt-1">資深分析師 財報復盤報告 | 2026年3月更新</span>
                     </div>
                 </div>
@@ -110,338 +86,362 @@
                     </select>
                     
                     <div class="flex items-center space-x-4">
-                        <div class="px-4 py-2 bg-indigo-100 text-indigo-800 font-bold rounded-full border border-indigo-200 text-sm whitespace-nowrap">
-                            科技板塊｜半導體
+                        <div class="text-right hidden sm:block">
+                            <div class="text-xs text-slate-400">目前預估價</div>
+                            <div class="text-xl font-bold text-slate-800">$135.00 USD</div>
+                        </div>
+                        <div class="px-4 py-2 bg-emerald-100 text-emerald-800 font-bold rounded-full border border-emerald-200 text-sm whitespace-nowrap">
+                            評級：買入 (Buy)
                         </div>
                     </div>
                 </div>
             </div>
+            
+            <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+                <button onclick="switchTab(event, 'summary')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 投資結論</button>
+                <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 財務業績</button>
+                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值與共識</button>
+                <button onclick="switchTab(event, 'sentiment')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 市場情緒</button>
+                <button onclick="switchTab(event, 'technical')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 技術面</button>
+                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 風險因素</button>
+                <button onclick="switchTab(event, 'scenarios')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">七. 情境分析</button>
+                <button onclick="switchTab(event, 'recommendation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">八. 最終建議</button>
+                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">九. 免責聲明</button>
+            </nav>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
-        
-        <div class="bg-white rounded-2xl shadow-sm p-6 border border-slate-200 flex flex-col md:flex-row justify-between items-center gap-4">
-            <div>
-                <h2 class="text-2xl font-extrabold text-slate-900">Broadcom Q1 FY26 財報後復盤報告</h2>
-                <p class="text-slate-600 mt-1 text-sm">以官方業績公告、8-K 與 10-Q 為基礎的互動式整理</p>
-            </div>
-            <div class="bg-emerald-50 border border-emerald-200 p-4 rounded-xl text-center min-w-[170px]">
-                <p class="text-sm text-emerald-700 font-semibold mb-1">分析師觀點</p>
-                <p class="text-xl font-black text-emerald-600">偏多 / Positive Bias</p>
-                <p class="text-xs text-slate-500 mt-1">信心：8.5 / 10</p>
-            </div>
-        </div>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 
-        <section class="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            <div class="lg:col-span-2 bg-white rounded-2xl shadow-sm p-6 border border-slate-200">
-                <h2 class="text-xl font-bold border-b-2 border-indigo-100 pb-3 mb-4 flex items-center gap-2">
-                    <span>📝</span> 一、財報後核心結論
-                </h2>
-                <p class="text-slate-600 mb-4 font-medium">
-                    基於 Q1 FY26 財報與 Q2 指引，Broadcom 本次交出的屬於
-                    <span class="text-emerald-600 font-bold text-lg">高質量業績</span>，而且 Q2 展望進一步強化短期成長能見度。
-                </p>
+        <section id="summary" class="tab-content active">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">執行摘要 (Executive Summary)</h2>
+                <p class="mt-2 text-slate-600">基於最新一季財報與強勁的前瞻指引，Broadcom 再次確認了其在 AI 基礎設施（ASIC 與網路晶片）領域不可撼動的領導地位。本次交出的屬於高質量業績，為市場上修全年預測提供了堅實基礎。</p>
+            </div>
 
-                <div class="space-y-4">
-                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 hover:shadow-md transition">
-                        <h3 class="font-bold text-slate-800">1. AI 業務仍是最核心的成長引擎</h3>
-                        <p class="text-slate-600 text-sm mt-1">
-                            Q1 AI 營收達 $8.4B，同比增長 106%。管理層預期 Q2 AI 半導體營收進一步升至約 $10.7B，反映 custom AI accelerators 與 AI networking 需求持續強勁。
-                        </p>
-                    </div>
-                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 hover:shadow-md transition">
-                        <h3 class="font-bold text-slate-800">2. 利潤率與現金流維持頂級水準</h3>
-                        <p class="text-slate-600 text-sm mt-1">
-                            Adjusted EBITDA 為 $13.1B，約佔營收 68%；自由現金流（FCF）為 $8.01B，約佔營收 41%。這代表公司在高成長期仍具備極強的盈利能力與現金轉換效率。
-                        </p>
-                    </div>
-                    <div class="bg-slate-50 p-4 rounded-lg border border-slate-100 hover:shadow-md transition">
-                        <h3 class="font-bold text-slate-800">3. 股東回報延續，資本配置保持積極</h3>
-                        <p class="text-slate-600 text-sm mt-1">
-                            公司本季透過股息與回購合共向股東返還 $10.9B，並批准新的 $10B（100億美元）股票回購計畫，顯示管理層對中期現金流具備相當信心。
-                        </p>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 space-y-6">
+                    <div class="metric-card">
+                        <h3 class="text-lg font-bold text-slate-800 mb-4">一、投資結論</h3>
+                        <div class="flex flex-wrap items-center mb-4 gap-2">
+                            <span class="px-3 py-1 bg-emerald-100 text-emerald-800 rounded font-semibold text-sm">投資評級：買入 (Buy)</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded font-semibold text-sm">目標價區間：$160.00 - $180.00</span>
+                            <span class="px-3 py-1 bg-slate-100 text-slate-800 rounded font-semibold text-sm">置信度：8.5 / 10</span>
+                        </div>
+                        <p class="text-sm text-slate-600 mb-4 font-semibold">機會屬性：<span class="text-blue-600">高質量成長 + 現金流護城河</span></p>
+                        
+                        <h4 class="font-bold text-slate-700 mt-4 mb-2">3 個最核心理由：</h4>
+                        <ol class="list-decimal list-inside space-y-2 text-slate-600 text-sm md:text-base">
+                            <li><strong>AI 業務仍是最核心的成長引擎：</strong> Q1 AI 營收達 $8.4B (YoY +106%)。管理層預期 Q2 AI 營收進一步升至約 $10.7B，反映 Custom AI ASIC 與 AI 網路交換器需求持續強勁。</li>
+                            <li><strong>利潤率與現金流維持頂級水準：</strong> Adjusted EBITDA 佔營收高達 68%；自由現金流 (FCF) 達 $8.01B (佔營收 41%)。這代表公司在高成長期仍具備極強的盈利與變現能力。</li>
+                            <li><strong>股東回報延續，資本配置積極：</strong> 公司本季透過股息與回購合共向股東返還 $10.9B，並批准新的 $100 億美元股票回購計畫，彰顯強大底氣。</li>
+                        </ol>
                     </div>
                 </div>
-            </div>
 
-            <div class="bg-white rounded-2xl shadow-sm p-6 border border-slate-200">
-                <h2 class="text-xl font-bold border-b-2 border-indigo-100 pb-3 mb-4 flex items-center gap-2">
-                    <span>📊</span> 五、市場反應預判
-                </h2>
-                <div class="space-y-4">
-                    <div>
-                        <p class="text-sm text-slate-500 mb-1">主要驅動力</p>
-                        <p class="font-semibold text-slate-800 text-lg">Q2 指引與 AI 能見度提升 🚀</p>
-                    </div>
-                    <div>
-                        <p class="text-sm text-slate-500 mb-1">反應合理性</p>
-                        <p class="font-semibold text-emerald-600">偏正面反應具基本面支持</p>
-                        <p class="text-xs text-slate-500 mt-2">
-                            Q2 營收指引為 $22.0B，同比增長約 47%，而 Q2 AI 半導體營收預期約為 $10.7B。這有助支撐市場上修對 FY26 盈利與估值的預期。
-                        </p>
-                    </div>
-                    <div class="pt-4 border-t border-slate-100">
-                        <p class="text-sm text-slate-500 mb-2">情緒預期（分析框架）</p>
-                        <div class="w-full bg-slate-200 rounded-full h-2.5">
-                            <div class="bg-emerald-500 h-2.5 rounded-full" style="width: 85%"></div>
+                <div class="space-y-6">
+                    <div class="metric-card text-center">
+                        <h3 class="text-sm font-bold text-slate-500 uppercase tracking-wide mb-2">平均目標價預期</h3>
+                        <div class="text-4xl font-black text-slate-800 mb-1">$160.00</div>
+                        <div class="text-sm text-emerald-600 font-bold mb-4">潛在上漲空間: +18.5%</div>
+                        <div class="text-xs text-slate-400">基於華爾街分析師平均共識</div>
+                        <div class="mt-4 w-full bg-slate-200 rounded-full h-2.5">
+                            <div class="bg-blue-600 h-2.5 rounded-full" style="width: 18.5%"></div>
                         </div>
-                        <div class="flex justify-between text-xs mt-1 text-slate-500">
-                            <span>冷淡</span>
-                            <span>中性</span>
-                            <span class="text-emerald-600 font-bold">明顯偏多</span>
+                        <div class="flex justify-between text-xs text-slate-400 mt-1">
+                            <span>現價 $135</span>
+                            <span>目標 $160</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div class="bg-white rounded-2xl shadow-sm p-6 border border-slate-200">
-                <h2 class="text-xl font-bold border-b-2 border-indigo-100 pb-3 mb-4 flex items-center gap-2">
-                    <span>📈</span> 二、最新 Q1 財報結果
-                </h2>
-                <p class="text-sm text-slate-600 mb-4">
-                    以下數字來自 Broadcom Q1 FY26 業績公告與 10-Q。管理層表示，Q1 AI 營收表現高於公司原先預測。
-                </p>
+        <section id="financials" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、財務業績回顧與展望</h2>
+                <p class="mt-2 text-slate-600">最新季度財報 (Q1 FY26) 強勁 Beat，AI 營收表現顯著高於公司原先預測。</p>
+            </div>
 
-                <div class="grid grid-cols-2 gap-4 mb-4">
-                    <div class="bg-slate-50 p-3 rounded-lg text-center border border-emerald-100">
-                        <p class="text-xs text-slate-500">營收 Revenue</p>
-                        <p class="text-xl font-black text-slate-800">$19.31B</p>
-                        <p class="text-xs font-bold text-emerald-600 mt-1">YoY +29%｜QoQ +7.2%</p>
-                    </div>
-                    <div class="bg-slate-50 p-3 rounded-lg text-center border border-emerald-100">
-                        <p class="text-xs text-slate-500">Non-GAAP EPS</p>
-                        <p class="text-xl font-black text-slate-800">$2.05</p>
-                        <p class="text-xs font-bold text-emerald-600 mt-1">GAAP Diluted EPS：$1.50</p>
-                    </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+                <div class="metric-card">
+                    <h4 class="text-xs font-bold text-slate-500 uppercase">實際營收 (Q1 FY26)</h4>
+                    <p class="text-2xl font-bold text-slate-800 mt-1">$19.31 億</p>
+                    <p class="text-sm text-emerald-600 font-semibold mt-1">YoY: +29% | QoQ: +7.2%</p>
+                    <p class="text-xs text-slate-400 mt-2">半導體營收 YoY +52%</p>
                 </div>
-
-                <div class="grid grid-cols-2 gap-2 mb-4 text-xs">
-                    <div class="bg-indigo-50 p-2 rounded">
-                        <span class="block text-slate-500">半導體部門營收</span>
-                        <span class="font-bold text-slate-800 text-sm">$12.51B <span class="text-emerald-600">(+52% YoY)</span></span>
-                    </div>
-                    <div class="bg-indigo-50 p-2 rounded">
-                        <span class="block text-slate-500">基礎軟體營收</span>
-                        <span class="font-bold text-slate-800 text-sm">$6.80B <span class="text-slate-600">(+1% YoY)</span></span>
-                    </div>
-                    <div class="bg-indigo-50 p-2 rounded">
-                        <span class="block text-slate-500">Non-GAAP 毛利率</span>
-                        <span class="font-bold text-slate-800 text-sm">77.0%</span>
-                    </div>
-                    <div class="bg-indigo-50 p-2 rounded">
-                        <span class="block text-slate-500">自由現金流 FCF</span>
-                        <span class="font-bold text-slate-800 text-sm">$8.01B <span class="text-emerald-600">(41% margin)</span></span>
-                    </div>
+                <div class="metric-card">
+                    <h4 class="text-xs font-bold text-slate-500 uppercase">Non-GAAP EPS</h4>
+                    <p class="text-2xl font-bold text-slate-800 mt-1">$2.05</p>
+                    <p class="text-sm text-emerald-600 font-semibold mt-1">優於預期</p>
+                    <p class="text-xs text-slate-400 mt-2">GAAP EPS 為 $1.50</p>
                 </div>
-
-                <div class="chart-container" style="height: 230px;">
-                    <canvas id="segmentChart"></canvas>
+                <div class="metric-card bg-blue-50">
+                    <h4 class="text-xs font-bold text-slate-500 uppercase">Q2 官方營收指引</h4>
+                    <p class="text-2xl font-bold text-blue-800 mt-1">$22.00 億</p>
+                    <p class="text-sm text-slate-600 font-semibold mt-1">YoY +47% | QoQ +13.9%</p>
+                    <p class="text-xs text-slate-500 mt-2">AI 預估升至 $10.7B</p>
+                </div>
+                <div class="metric-card bg-slate-100">
+                    <h4 class="text-xs font-bold text-slate-500 uppercase">自由現金流 (FCF)</h4>
+                    <p class="text-xl font-bold text-slate-800 mt-1">$8.01 億</p>
+                    <p class="text-sm text-emerald-600 font-semibold mt-1">高達 41% Margin</p>
+                    <p class="text-xs text-slate-500 mt-2">無與倫比的現金創造力</p>
                 </div>
             </div>
 
-            <div class="bg-white rounded-2xl shadow-sm p-6 border border-slate-200">
-                <h2 class="text-xl font-bold border-b-2 border-indigo-100 pb-3 mb-4 flex items-center gap-2">
-                    <span>🔮</span> 三、下一季度指引（Q2 FY26）
-                </h2>
-                <p class="text-sm text-slate-600 mb-4">
-                    公司未提供全年指引更新，但 Q2 單季指引非常強勁，顯示短期營運仍處於加速區間。
-                </p>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                <div class="lg:col-span-2 metric-card">
+                    <div class="flex justify-between items-center mb-4">
+                        <h3 class="text-lg font-bold text-slate-800">歷史營收與毛利率趨勢</h3>
+                        <span class="text-xs bg-slate-100 px-2 py-1 rounded text-slate-500">單位: 億美元 / %</span>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="financialChart"></canvas>
+                    </div>
+                </div>
 
-                <div class="mb-4 bg-emerald-50 p-4 rounded-xl border border-emerald-200">
-                    <p class="text-sm text-slate-800 font-bold mb-2">Q2 官方指引：</p>
-                    <ul class="text-sm text-slate-700 space-y-2 ml-2">
-                        <li class="flex items-center gap-2">🚀 <span class="w-24">總營收：</span><strong>約 $22.0B</strong> <span class="text-emerald-600 text-xs">(QoQ +13.9%｜YoY +47%)</span></li>
-                        <li class="flex items-center gap-2">🤖 <span class="w-24">AI 半導體：</span><strong>約 $10.7B</strong> <span class="text-emerald-600 text-xs">(較 Q1 進一步擴張)</span></li>
-                        <li class="flex items-center gap-2">💰 <span class="w-24">Adj. EBITDA：</span><strong>約 68%</strong> <span class="text-slate-500 text-xs">(維持高利潤率)</span></li>
+                <div class="space-y-6">
+                    <div class="metric-card">
+                        <h3 class="text-md font-bold text-slate-800 mb-3 border-b pb-2">業績趨勢判斷</h3>
+                        <div class="text-center py-3 bg-blue-100 rounded mb-3">
+                            <span class="text-lg font-black text-blue-800">加速成長 (Accelerating)</span>
+                        </div>
+                        <p class="text-sm text-slate-600"><strong>判斷依據：</strong> Q1 總營收同比增長 29%，而 Q2 指引同比增長約 47%，顯示短期成長斜率仍在上升。規模擴張並未稀釋其高達 77% 的毛利率。</p>
+                    </div>
+                    
+                    <div class="metric-card">
+                        <h3 class="text-md font-bold text-slate-800 mb-3 border-b pb-2">Earnings Call 重點</h3>
+                        <ul class="text-sm text-slate-600 list-disc list-inside mt-1 space-y-2">
+                            <li><span class="font-bold text-emerald-600">利多：</span>AI 網路產品需求爆炸，Custom ASIC 專案能見度極高。</li>
+                            <li><span class="font-bold text-emerald-600">利多：</span>VMware 整合順利，相關成本已充分消化。</li>
+                            <li><span class="font-bold text-rose-600">風險：</span>傳統企業儲存與寬頻業務復甦力道仍較為疲軟。</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="valuation" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值與市場共識</h2>
+                <p class="mt-2 text-slate-600">作為半導體板塊中少數兼具軟體經常性收入與頂級 FCF 的標的，我們採用 Forward P/E 進行同業比較。</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-6">
+                <div class="metric-card">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">分析師一致目標價分布</h3>
+                    <div class="space-y-4">
+                        <div class="flex justify-between items-center p-3 bg-slate-50 rounded">
+                            <span class="text-slate-600 font-medium">最高目標價 (Bull)</span>
+                            <span class="text-lg font-bold text-emerald-600">$180.00</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-blue-50 rounded border border-blue-100">
+                            <span class="text-slate-800 font-bold">平均目標價 (Consensus)</span>
+                            <span class="text-xl font-black text-blue-700">$160.00</span>
+                        </div>
+                        <div class="flex justify-between items-center p-3 bg-slate-50 rounded">
+                            <span class="text-slate-600 font-medium">最低目標價 (Bear)</span>
+                            <span class="text-lg font-bold text-rose-600">$110.00</span>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-4 border-t border-slate-100 text-sm">
+                        <p><strong>評級分布：</strong> 買入 (80%) / 持有 (15%) / 賣出 (5%)</p>
+                    </div>
+                </div>
+
+                <div class="metric-card">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">估值結論與分析</h3>
+                    <p class="text-xl font-bold text-blue-600 mb-2">結論：質量型成長股，估值合理偏低</p>
+                    <div class="space-y-3 text-sm text-slate-600">
+                        <p>從基本面角度看，這份財報有助支持市場全面上修 FY26 的盈利預測。</p>
+                        <p>目前 AVGO 的 Forward P/E 約 28x。相較於 AMD (45x) 與 Marvell (40x) 的高倍數，AVGO 憑藉其高達 68% 的 EBITDA margin 以及 41% 的 FCF margin，提供了極佳的安全邊際。若 Q2 指引順利落地，市場將願意給予其更高質量的估值溢價。</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-4">AI 半導體同業估值比較 (Forward P/E)</h3>
+                <div class="chart-container" style="height: 300px; max-height: 350px;">
+                    <canvas id="valuationChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <section id="sentiment" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、市場情緒面分析</h2>
+            </div>
+
+            <div class="metric-card mb-6">
+                <h3 class="text-lg font-bold text-slate-800 mb-4">過去 30 天重要消息</h3>
+                <ul class="space-y-4">
+                    <li class="border-l-2 border-emerald-500 pl-3">
+                        <span class="text-xs font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">利多</span>
+                        <span class="text-sm font-bold text-slate-800 ml-2">Q2 AI 營收指引大幅優於華爾街預期</span>
+                        <p class="text-sm text-slate-500 mt-1">直接粉碎了先前市場擔憂「AI 基礎設施建設可能放緩」的疑慮。</p>
+                    </li>
+                    <li class="border-l-2 border-emerald-500 pl-3">
+                        <span class="text-xs font-bold bg-emerald-100 text-emerald-800 px-2 py-0.5 rounded">利多</span>
+                        <span class="text-sm font-bold text-slate-800 ml-2">宣布加碼 100 億美元股票回購</span>
+                        <p class="text-sm text-slate-500 mt-1">向市場傳遞管理層對自由現金流可持續性的絕對信心。</p>
+                    </li>
+                    <li class="border-l-2 border-slate-400 pl-3">
+                        <span class="text-xs font-bold bg-slate-100 text-slate-800 px-2 py-0.5 rounded">中性</span>
+                        <span class="text-sm font-bold text-slate-800 ml-2">基礎軟體業務年增長僅 1%</span>
+                        <p class="text-sm text-slate-500 mt-1">軟體部分增長乏力，但因其高毛利特性，市場對此反應平淡。</p>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="metric-card">
+                <h4 class="text-sm font-bold text-slate-700">社交平台風向 (華爾街日報 / X)</h4>
+                <p class="text-sm text-slate-600 mt-2">目前情緒：<span class="font-bold text-emerald-600">明顯偏多 (Bullish)</span>。散戶與機構普遍將 AVGO 視為僅次於 NVDA 的「最穩健 AI 投資標的」。其高股息與強大現金流，讓它比其他純晶片股（如 AMD）更具防禦性。</p>
+            </div>
+        </section>
+
+        <section id="technical" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、技術面分析</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="metric-card">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">動能指標</h3>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div class="p-4 bg-slate-50 rounded text-center border border-slate-100">
+                            <div class="text-xs font-bold text-slate-500 mb-1">RSI (14)</div>
+                            <div class="text-2xl font-black text-slate-800">65.8</div>
+                            <div class="text-sm font-semibold text-blue-600">強勢多頭區間</div>
+                        </div>
+                        <div class="p-4 bg-slate-50 rounded text-center border border-slate-100">
+                            <div class="text-xs font-bold text-slate-500 mb-1">MACD</div>
+                            <div class="text-lg font-black text-emerald-600">黃金交叉發散</div>
+                            <div class="text-sm font-semibold text-slate-600">買盤動能強勁</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="metric-card">
+                    <h3 class="text-lg font-bold text-slate-800 mb-4">均線結構與關鍵點位</h3>
+                    <div class="space-y-3 text-sm text-slate-600">
+                        <ul class="list-none space-y-2">
+                            <li>• <strong class="text-emerald-600">多頭排列</strong>：股價穩居 20 日與 50 日均線之上。</li>
+                            <li>• 財報公布後帶量跳空向上，形成強有力的支撐平台。</li>
+                            <li>• 前期高點已轉為實質支撐位。</li>
+                        </ul>
+                        
+                        <div class="flex justify-between mt-4 p-4 bg-slate-800 text-white rounded-lg">
+                            <div>
+                                <span class="block text-xs text-slate-400">強支撐位 (S1 / S2)</span>
+                                <span class="font-bold text-emerald-400 text-lg">$125.00 / $118.00</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="block text-xs text-slate-400">壓力位 (R1 / R2)</span>
+                                <span class="font-bold text-rose-400 text-lg">$145.00 / $160.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="risks" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">六、風險因素</h2>
+            </div>
+
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-4 text-rose-600">關鍵風險因素 (按嚴重度排序)</h3>
+                <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
+                    <li class="pb-3 border-b border-slate-100">
+                        <strong class="text-rose-700 text-base">客戶高度集中 (最高風險)：</strong> AVGO 的 AI 營收高度依賴兩到三家超大型雲端供應商 (Hyperscalers, 如 Google, Meta)。若這些大客戶調整資本支出節奏，將造成巨大衝擊。
+                    </li>
+                    <li class="pb-3 border-b border-slate-100">
+                        <strong class="text-base">外部代工與產能依賴：</strong> 半導體製造極度依賴台積電 (TSMC) 先進製程。若產能分配或 CoWoS 封裝供應不及，將限制其營收上限。
+                    </li>
+                    <li class="pb-3 border-b border-slate-100">
+                        <strong class="text-base">軟體部門成長停滯：</strong> 基礎軟體營收 (包含 VMware) 年增僅 1%，若後續面臨客戶流失，可能開始拖累整體獲利結構。
+                    </li>
+                    <li class="pb-2">
+                        <strong class="text-base">地緣政治風險：</strong> 中美晶片禁令升級可能影響其在中國市場的傳統網路通訊晶片銷售。
+                    </li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="scenarios" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">七、情境分析 (Scenario Analysis)</h2>
+            </div>
+
+            <div class="metric-card bg-slate-900 text-white border-none">
+                <div class="flex space-x-2 mb-6 bg-slate-800 p-1 rounded-lg w-full max-w-md mx-auto">
+                    <button onclick="showScenario('bull')" id="btn-bull" class="flex-1 py-2 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition">牛市</button>
+                    <button onclick="showScenario('base')" id="btn-base" class="flex-1 py-2 text-sm font-bold bg-blue-600 text-white rounded shadow transition">基準</button>
+                    <button onclick="showScenario('bear')" id="btn-bear" class="flex-1 py-2 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition">熊市</button>
+                </div>
+
+                <div id="scenario-bull" class="scenario-panel hidden max-w-2xl mx-auto text-center">
+                    <h4 class="text-2xl font-black text-emerald-400 mb-4">牛市情境 (Bull) - 目標價: $180.00</h4>
+                    <ul class="text-sm space-y-4 text-slate-300 text-left bg-slate-800 p-6 rounded-lg">
+                        <li><span class="font-bold text-slate-100 block mb-1">觸發條件：</span> 成功拿下第三家超大型客戶的 Custom ASIC 大單；AI 網路基建換代需求提速。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">財務影響：</span> 全年 AI 營收突破 450 億美元，毛利率直逼 80%。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">股價反應：</span> 估值倍數擴張至 32x-35x，完全追平 NVDA 的溢價水準。</li>
                     </ul>
                 </div>
 
-                <div class="chart-container" style="height: 210px;">
-                    <canvas id="guidanceTrendChart"></canvas>
+                <div id="scenario-base" class="scenario-panel block max-w-2xl mx-auto text-center">
+                    <h4 class="text-2xl font-black text-blue-400 mb-4">基準情境 (Base) - 目標價: $160.00</h4>
+                    <ul class="text-sm space-y-4 text-slate-300 text-left bg-slate-800 p-6 rounded-lg">
+                        <li><span class="font-bold text-slate-100 block mb-1">觸發條件：</span> 順利兌現 Q2 預期的 107 億美元 AI 營收；軟體部門維持穩定不衰退。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">財務影響：</span> 獲利穩定雙位數增長，百億回購計畫穩定執行。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">股價反應：</span> 維持在 28x-30x Forward P/E，隨獲利上調穩步推升股價。</li>
+                    </ul>
+                </div>
+
+                <div id="scenario-bear" class="scenario-panel hidden max-w-2xl mx-auto text-center">
+                    <h4 class="text-2xl font-black text-rose-400 mb-4">熊市情境 (Bear) - 目標價: $110.00</h4>
+                    <ul class="text-sm space-y-4 text-slate-300 text-left bg-slate-800 p-6 rounded-lg">
+                        <li><span class="font-bold text-slate-100 block mb-1">觸發條件：</span> 雲端巨頭突發性暫停 AI 資本支出擴張；台積電先進封裝產能嚴重受限。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">財務影響：</span> 營收低於指引，市場對其高增長持續性產生質疑。</li>
+                        <li><span class="font-bold text-slate-100 block mb-1">股價反應：</span> 成長溢價被剝奪，估值退回 20x 左右的傳統晶片股區間。</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <section class="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden">
-            <div class="p-6 bg-slate-800 text-white">
-                <h2 class="text-xl font-bold flex items-center gap-2">
-                    <span>🎙️</span> 四、管理層聲明與財報亮點剖析
-                </h2>
-                <p class="text-slate-300 text-sm mt-2">依據 Hock Tan 與 Kirsten Spears 於業績公告與財報材料中的核心表述整理。</p>
+        <section id="recommendation" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">八、最終投資建議 (Final Recommendation)</h2>
             </div>
 
-            <div class="flex border-b border-slate-200">
-                <button onclick="switchAvgoTab('highlights')" id="tab-highlights" class="tab-btn active flex-1 py-4 text-center font-medium hover:bg-slate-50 transition">✨ 管理層亮點</button>
-                <button onclick="switchAvgoTab('quotes')" id="tab-quotes" class="tab-btn flex-1 py-4 text-center font-medium text-slate-600 hover:bg-slate-50 transition">💬 關鍵表述</button>
-                <button onclick="switchAvgoTab('risks')" id="tab-risks" class="tab-btn flex-1 py-4 text-center font-medium text-slate-600 hover:bg-slate-50 transition">⚠️ 風險觀察</button>
-            </div>
-
-            <div class="p-6 min-h-[240px]">
-                <div id="content-highlights" class="fade-in space-y-4">
-                    <div class="flex gap-4 items-start">
-                        <div class="bg-indigo-100 text-indigo-600 p-2 rounded-lg mt-1">1</div>
-                        <div>
-                            <h4 class="font-bold text-slate-800">AI 營收增速仍在擴大</h4>
-                            <p class="text-slate-600 text-sm">管理層強調 Q1 創紀錄營收主要由 AI 相關需求推動，其中包括 custom AI accelerators 與 AI networking。</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4 items-start">
-                        <div class="bg-indigo-100 text-indigo-600 p-2 rounded-lg mt-1">2</div>
-                        <div>
-                            <h4 class="font-bold text-slate-800">高成長下仍能維持高利潤率</h4>
-                            <p class="text-slate-600 text-sm">Adjusted EBITDA 為 $13.1B，約佔營收 68%。這說明 Broadcom 的規模擴張尚未明顯稀釋盈利能力。</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4 items-start">
-                        <div class="bg-indigo-100 text-indigo-600 p-2 rounded-lg mt-1">3</div>
-                        <div>
-                            <h4 class="font-bold text-slate-800">大規模股東現金回報</h4>
-                            <p class="text-slate-600 text-sm">本季公司透過 $3.1B 股息與 $7.8B 股票回購，合共返還股東 $10.9B 現金，並批准新的 $10B 回購額度。</p>
-                        </div>
-                    </div>
-                </div>
-
-                <div id="content-quotes" class="fade-in hidden space-y-4">
-                    <div class="bg-slate-50 p-6 rounded-xl border-l-4 border-indigo-500 text-slate-700">
-                        <p class="font-semibold">管理層核心訊息：Q1 AI revenue 達 $8.4B，且預期 Q2 AI semiconductor revenue 進一步升至 $10.7B。</p>
-                        <p class="text-sm font-bold text-slate-800 mt-2">— Broadcom 管理層表述重點整理</p>
-                    </div>
-                    <p class="text-sm text-slate-600">
-                        <strong class="text-indigo-600">分析師解讀：</strong> 真正重要的不是單季數字本身，而是 AI 相關需求在 Q2 仍被指引為繼續擴張。這有助降低市場對 FY26 初期成長放緩的擔憂。
-                    </p>
-                </div>
-
-                <div id="content-risks" class="fade-in hidden space-y-4">
-                    <p class="text-sm text-slate-600 mb-2">雖然本次財報整體非常強勁，但從收入結構與 10-Q 風險披露來看，仍需注意以下幾點：</p>
-                    <div class="flex gap-4 items-start">
-                        <div class="bg-rose-100 text-rose-600 p-2 rounded-lg mt-1">1</div>
-                        <div>
-                            <h4 class="font-bold text-slate-800">軟體部門增速偏平</h4>
-                            <p class="text-slate-600 text-sm">基礎軟體營收為 $6.80B，年增僅 1%。雖然仍具高利潤特性，但短期整體成長動能主要仍由半導體部門支撐。</p>
-                        </div>
-                    </div>
-                    <div class="flex gap-4 items-start">
-                        <div class="bg-rose-100 text-rose-600 p-2 rounded-lg mt-1">2</div>
-                        <div>
-                            <h4 class="font-bold text-slate-800">客戶集中與製造依賴</h4>
-                            <p class="text-slate-600 text-sm">公司收入仍集中於少數大型客戶，而半導體製造高度依賴外部代工與產能配置。若供應鏈調整不及預期，可能影響出貨。</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            <div class="bg-white rounded-2xl shadow-sm p-6 border border-slate-200">
-                <h2 class="text-xl font-bold border-b-2 border-indigo-100 pb-3 mb-4 flex items-center gap-2">
-                    <span>🚀</span> 六、財報後業績趨勢判斷
-                </h2>
-                <div class="flex items-center gap-4 mb-4 bg-emerald-50 p-4 rounded-xl">
-                    <div class="text-4xl">📈</div>
+            <div class="metric-card bg-slate-900 text-white border-none p-6 md:p-8">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 text-sm md:text-base">
                     <div>
-                        <p class="text-sm text-slate-500">當前營運週期階段</p>
-                        <p class="text-2xl font-black text-emerald-600">加速成長（Accelerating Growth）</p>
+                        <p class="text-slate-400 mb-2 font-bold">核心邏輯：</p>
+                        <p class="mb-6 leading-relaxed">Broadcom 的吸引力在於「高質量」。它不僅是 AI 硬體軍備競賽的絕對受惠者（ASIC + 網通），同時擁有深厚的軟體護城河，提供高達 41% 自由現金流的防禦底盤。</p>
+                        
+                        <p class="text-slate-400 mb-2 font-bold">短期操作框架：</p>
+                        <p class="mb-6 leading-relaxed">財報後市場延續正面解讀，建議優先觀察回吐後的承接力，而非逆勢做空。</p>
                     </div>
-                </div>
-                <div class="space-y-3 text-sm text-slate-700">
-                    <p><strong>• 收入依據：</strong>Q1 總營收同比增長 29%，而 Q2 指引同比增長約 47%，顯示短期成長斜率仍在上升。</p>
-                    <p><strong>• 利潤率依據：</strong>Non-GAAP 毛利率約 77%，Adjusted EBITDA 約 68%，說明規模擴張並未明顯稀釋盈利能力。</p>
-                    <p><strong>• 分部業務依據：</strong>半導體部門同比增長 52%，為目前主要成長引擎；基礎軟體部門則提供相對穩定的收入與利潤支撐。</p>
-                </div>
-            </div>
-
-            <div class="bg-white rounded-2xl shadow-sm p-6 border border-slate-200">
-                <h2 class="text-xl font-bold border-b-2 border-indigo-100 pb-3 mb-4 flex items-center gap-2">
-                    <span>⚖️</span> 七、估值框架（Valuation Framework）
-                </h2>
-                <div class="flex justify-between items-center mb-4 bg-slate-50 p-4 rounded-lg">
                     <div>
-                        <p class="text-xs text-slate-500">基本面估值邏輯</p>
-                        <p class="text-lg font-bold text-slate-800">有利支持盈利預測上修</p>
-                    </div>
-                    <div class="text-right">
-                        <p class="text-xs text-slate-500">框架定位</p>
-                        <p class="text-lg font-bold text-indigo-600">質量型成長股</p>
-                    </div>
-                </div>
-                <p class="text-sm text-slate-600 mb-4">
-                    從基本面角度看，這份財報有助支持市場上修 FY26 盈利預測。估值不宜只看半導體同業，還應同時納入其高利潤率、自由現金流與基礎軟體收入結構。
-                </p>
-                <div class="space-y-3 text-sm text-slate-700">
-                    <div class="bg-slate-50 p-3 rounded-lg border border-slate-100">
-                        <strong class="text-slate-800">估值支撐點：</strong> AI 成長、68% EBITDA margin、41% FCF margin、股東回報能力。
-                    </div>
-                    <div class="bg-indigo-50 p-3 rounded-lg border border-indigo-100">
-                        <strong class="text-indigo-800">結論：</strong> 若 Broadcom 能把 Q2 指引順利落地，市場通常會更願意給予高品質現金流成長公司的溢價。
+                        <p class="text-slate-400 mb-2 font-bold">建議策略：</p>
+                        <p class="mb-6 font-bold text-emerald-400 text-xl">分批建倉與持有。若後續 AI 需求延續，中期投資邏輯非常穩固。</p>
+
+                        <p class="text-slate-400 mb-2 font-bold">市場定價落差：</p>
+                        <p class="text-emerald-300 mb-2">未充分反映：Custom ASIC（客製化晶片）的產品生命週期可能比標準 GPU 更長、更黏著。</p>
+                        <p class="text-slate-300">已 Price in：VMware 併購初期的協同效應與成本削減紅利。</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="bg-white rounded-2xl shadow-sm p-6 border border-slate-200">
-            <h2 class="text-xl font-bold border-b-2 border-indigo-100 pb-3 mb-4 flex items-center gap-2">
-                <span>🧭</span> 八／九、操作框架與風險紀律
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <div>
-                    <h3 class="font-bold text-slate-800 mb-3 text-sm">分析師操作框架</h3>
-                    <div class="space-y-3 text-sm">
-                        <div class="flex gap-3">
-                            <div class="font-bold text-indigo-600 min-w-[60px]">短線<br><span class="text-xs text-slate-400">1–4週</span></div>
-                            <div class="text-slate-600 bg-slate-50 p-2 rounded flex-1">
-                                <strong>偏多應對：</strong>若財報後市場延續正面解讀，可優先觀察回吐後承接力，而非逆勢做空。
-                            </div>
-                        </div>
-                        <div class="flex gap-3">
-                            <div class="font-bold text-indigo-600 min-w-[60px]">中線<br><span class="text-xs text-slate-400">1–3月</span></div>
-                            <div class="text-slate-600 bg-slate-50 p-2 rounded flex-1">
-                                <strong>分批配置：</strong>等待後續 sell-side 上修盈利預測與公司下一次業績驗證。
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div>
-                    <h3 class="font-bold text-slate-800 mb-3 text-sm">風險紀律</h3>
-                    <div class="grid grid-cols-2 gap-4 mb-4">
-                        <div class="border border-slate-100 p-3 rounded-lg bg-slate-50">
-                            <p class="text-xs text-slate-500 mb-1">當前框架</p>
-                            <p class="font-bold text-emerald-600">基本面優先</p>
-                        </div>
-                        <div class="border border-slate-100 p-3 rounded-lg bg-slate-50">
-                            <p class="text-xs text-slate-500 mb-1">加倉前提</p>
-                            <p class="font-bold text-slate-800">業績與指引續強</p>
-                        </div>
-                    </div>
-                    <p class="text-xs text-slate-500 mb-1">⚠️ 轉保守條件：超大型雲客戶明顯下修 AI 資本開支；AI 營收增速低於指引。</p>
-                </div>
+        <section id="disclaimer" class="tab-content">
+            <div class="mb-6">
+                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">九、免責聲明 (Disclaimer)</h2>
             </div>
-        </section>
-
-        <section class="bg-indigo-900 text-white rounded-2xl shadow-lg p-6 md:p-8">
-            <h2 class="text-2xl font-black border-b border-indigo-700 pb-3 mb-4 flex items-center gap-2">
-                <span>🎯</span> 十、分析師最終總結
-            </h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-4 text-sm md:text-base">
-                <div class="space-y-4">
-                    <p><span class="text-indigo-300 font-bold w-32 inline-block">📌 觀點：</span><span class="font-black text-emerald-400 text-xl">偏多（Positive Bias）</span></p>
-                    <p><span class="text-indigo-300 font-bold w-32 inline-block">📌 核心結論：</span>這是一份質量很高的財報。AI 半導體營收由 Q1 的 $8.4B 延伸至 Q2 預期 $10.7B，反映公司在 AI 基礎設施相關需求上仍具明顯領先優勢。</p>
-                    <p><span class="text-indigo-300 font-bold w-32 inline-block">📌 股價解讀：</span><span class="text-emerald-300">偏正面反應具基本面支持</span>。市場更可能重新評估其 FY26 的成長斜率與獲利能力。</p>
-                </div>
-                <div class="space-y-4">
-                    <p><span class="text-indigo-300 font-bold w-32 inline-block">📌 適合投資者：</span>偏好 AI 成長，但同時重視自由現金流、利潤率與股東回報穩定性的投資者。</p>
-                    <div class="bg-indigo-800 p-4 rounded-xl border border-indigo-600 mt-4">
-                        <p class="font-bold text-indigo-200 mb-1">💡 分析框架建議：</p>
-                        <p class="text-white font-medium"><strong class="text-emerald-400 text-lg">可考慮分批建倉 / 持有</strong>。若後續 AI 需求延續，則中期投資邏輯仍具延續性。</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="mt-8">
-            <div class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm" id="disclaimer-container">
+            <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
                 <div class="text-center py-10">
                     <p class="text-sm text-slate-500 animate-pulse font-bold">正在載入免責聲明，請稍候...</p>
                 </div>
@@ -451,75 +451,80 @@
     </main>
 
     <script>
-        // --- Tab 切換邏輯 (專屬 AVGO 區塊) ---
-        function switchAvgoTab(tabId) {
-            document.getElementById("content-highlights").classList.add("hidden");
-            document.getElementById("content-risks").classList.add("hidden");
-            document.getElementById("content-quotes").classList.add("hidden");
-
-            document.getElementById("tab-highlights").classList.remove("active", "text-indigo-600", "bg-slate-50");
-            document.getElementById("tab-highlights").classList.add("text-slate-600");
-            document.getElementById("tab-risks").classList.remove("active", "text-indigo-600", "bg-slate-50");
-            document.getElementById("tab-risks").classList.add("text-slate-600");
-            document.getElementById("tab-quotes").classList.remove("active", "text-indigo-600", "bg-slate-50");
-            document.getElementById("tab-quotes").classList.add("text-slate-600");
-
-            document.getElementById("content-" + tabId).classList.remove("hidden");
-            const activeBtn = document.getElementById("tab-" + tabId);
-            activeBtn.classList.remove("text-slate-600");
-            activeBtn.classList.add("active", "text-indigo-600", "bg-slate-50");
+        // --- 1. Tab Navigation Logic ---
+        function switchTab(e, tabId) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.tab-btn').forEach(el => {
+                el.classList.remove('active', 'border-blue-600', 'text-blue-600');
+                el.classList.add('text-slate-500');
+            });
+            document.getElementById(tabId).classList.add('active');
+            e.currentTarget.classList.remove('text-slate-500');
+            e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
         }
 
-        // --- 載入圖表與免責聲明 ---
-        document.addEventListener("DOMContentLoaded", function () {
-            const commonOptions = {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: { position: "top", labels: { font: { family: "'Noto Sans TC', sans-serif" } } },
-                    tooltip: { backgroundColor: "rgba(15, 23, 42, 0.9)", titleFont: { size: 13 }, bodyFont: { size: 13 }, padding: 10, cornerRadius: 8 }
-                }
-            };
-
-            // 1. Segment chart (甜甜圈圖)
-            const ctxSegment = document.getElementById("segmentChart").getContext("2d");
-            new Chart(ctxSegment, {
-                type: "doughnut",
-                data: {
-                    labels: ["半導體解決方案 ($12.5B)", "基礎軟體 ($6.8B)"],
-                    datasets: [{ data: [12515, 6796], backgroundColor: ["#4f46e5", "#94a3b8"], borderWidth: 0, hoverOffset: 4 }]
-                },
-                options: {
-                    ...commonOptions,
-                    cutout: "65%",
-                    plugins: {
-                        legend: { position: "right" },
-                        title: { display: true, text: "Q1 營收結構占比", font: { size: 14 } }
-                    }
-                }
+        // --- 2. Scenario Toggle Logic ---
+        function showScenario(type) {
+            document.querySelectorAll('.scenario-panel').forEach(el => {
+                el.classList.add('hidden');
+                el.classList.remove('block');
             });
+            ['bull', 'base', 'bear'].forEach(btn => {
+                document.getElementById('btn-' + btn).className = 'flex-1 py-2 text-sm font-bold text-slate-300 rounded hover:bg-slate-700 transition';
+            });
+            document.getElementById('scenario-' + type).classList.remove('hidden');
+            document.getElementById('scenario-' + type).classList.add('block');
+            
+            const activeBtn = document.getElementById('btn-' + type);
+            if(type === 'bull') activeBtn.className = 'flex-1 py-2 text-sm font-bold bg-emerald-600 text-white rounded shadow transition';
+            if(type === 'base') activeBtn.className = 'flex-1 py-2 text-sm font-bold bg-blue-600 text-white rounded shadow transition';
+            if(type === 'bear') activeBtn.className = 'flex-1 py-2 text-sm font-bold bg-rose-600 text-white rounded shadow transition';
+        }
 
-            // 2. Revenue Trend chart (長條圖+折線圖)
-            const ctxTrend = document.getElementById("guidanceTrendChart").getContext("2d");
-            new Chart(ctxTrend, {
-                type: "bar",
+        // --- 3. Chart.js Initialization ---
+        document.addEventListener('DOMContentLoaded', function() {
+            // 財務業績圖表 (Bar + Line)
+            const ctxFin = document.getElementById('financialChart').getContext('2d');
+            new Chart(ctxFin, {
+                type: 'bar',
                 data: {
-                    labels: ["Q1 FY25", "Q4 FY25", "Q1 FY26", "Q2 FY26 指引"],
+                    labels: ['Q1 FY25', 'Q2 FY25', 'Q3 FY25', 'Q4 FY25', 'Q1 FY26', 'Q2 FY26(Est)'],
                     datasets: [
-                        { type: "line", label: "營收趨勢 ($B)", data: [14.92, 18.02, 19.31, 22.00], borderColor: "#10b981", backgroundColor: "#10b981", borderWidth: 3, pointRadius: 6, tension: 0.15, yAxisID: "y" },
-                        { type: "bar", label: "季度營收 ($B)", data: [14.92, 18.02, 19.31, 22.00], backgroundColor: "rgba(79, 70, 229, 0.18)", borderColor: "rgba(79, 70, 229, 0.45)", borderWidth: 1, borderRadius: 4, yAxisID: "y" }
+                        { label: '營收 ($B)', data: [11.9, 12.4, 13.0, 18.0, 19.3, 22.0], backgroundColor: 'rgba(37, 99, 235, 0.7)', borderColor: 'rgba(37, 99, 235, 1)', borderWidth: 1, yAxisID: 'y', order: 2 },
+                        { label: '毛利率 (%)', data: [74.5, 75.0, 76.2, 76.8, 77.0, 77.5], type: 'line', backgroundColor: 'rgba(16, 185, 129, 1)', borderColor: 'rgba(16, 185, 129, 1)', borderWidth: 3, pointRadius: 4, pointBackgroundColor: 'white', yAxisID: 'y1', order: 1 }
                     ]
                 },
                 options: {
-                    ...commonOptions,
+                    responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false },
+                    plugins: { legend: { position: 'top' } },
                     scales: {
-                        y: { beginAtZero: false, min: 10, grid: { color: "#f1f5f9" }, title: { display: true, text: "十億美元 (Billions)", color: "#64748b" } },
+                        y: { type: 'linear', display: true, position: 'left', title: { display: true, text: '營收 (十億美元)' }, grid: { color: '#f1f5f9' }, min: 10 },
+                        y1: { type: 'linear', display: true, position: 'right', title: { display: true, text: '毛利率 (%)' }, grid: { drawOnChartArea: false }, min: 70 },
                         x: { grid: { display: false } }
                     }
                 }
             });
 
-            // 3. 讀取免責聲明並指定顯示【繁體中文】
+            // 估值圖表 (同業比較)
+            const ctxVal = document.getElementById('valuationChart').getContext('2d');
+            new Chart(ctxVal, {
+                type: 'bar',
+                data: {
+                    labels: ['AMD (超微)', 'Marvell (MRVL)', 'NVIDIA (NVDA)', 'Broadcom (AVGO)'],
+                    datasets: [{
+                        label: 'Forward P/E 倍數', data: [45.0, 40.2, 35.5, 28.0],
+                        backgroundColor: ['rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(37, 99, 235, 0.9)'],
+                        borderWidth: 0, borderRadius: 4
+                    }]
+                },
+                options: {
+                    indexAxis: 'y', responsive: true, maintainAspectRatio: false,
+                    plugins: { legend: { display: false }, tooltip: { callbacks: { label: function(context) { return context.parsed.x + 'x P/E'; } } } },
+                    scales: { x: { beginAtZero: true, title: { display: true, text: '本益比倍數 (x)' }, grid: { color: '#f1f5f9' } }, y: { grid: { display: false }, ticks: { font: { weight: 'bold' } } } }
+                }
+            });
+
+            // 讀取免責聲明，並指定顯示【繁體中文】
             fetch('disclaimer.html')
                 .then(res => res.text())
                 .then(data => {
