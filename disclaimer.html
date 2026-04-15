@@ -112,7 +112,7 @@
             <div class="metric-card bg-slate-900 text-white border-none p-6 md:p-8">
                 <div class="flex items-center mb-6 border-b border-slate-700 pb-4">
                     <span class="text-3xl mr-3">🎯</span>
-                    <h3 class="text-2xl font-black text-blue-400 tracking-tight">Key Conclusions</h3>
+                    <h3 class="text-2xl font-black text-blue-400 tracking-tight">核心結論</h3>
                 </div>
                 <ul class="space-y-6">
                     <li class="flex items-start">
@@ -139,7 +139,7 @@
                     <li class="flex items-start">
                         <span class="text-emerald-400 mr-4 text-xl font-black">4.</span>
                         <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">估值重評 (Re-rating) 空間依然存在</strong>
+                            <strong class="text-emerald-400 block mb-1 text-lg">估值重評空間依然存在</strong>
                             <p class="text-slate-300 text-sm leading-relaxed">儘管股價已反映部分利多，但其 Forward P/E (約 28x) 仍大幅落後於 NVDA、AMD 等純 AI 晶片同業。基於 100 億美元新回購計畫的支撐，下檔風險極低，維持「買入」評級。</p>
                         </div>
                     </li>
@@ -278,28 +278,8 @@
 
         <section id="disclaimer" class="tab-content">
             <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">七、免責聲明</h2></div>
-            <div class="metric-card bg-slate-50 border-slate-200">
-                <div class="space-y-6 text-xs md:text-sm text-slate-600 leading-relaxed text-justify">
-                    <div>
-                        <h4 class="font-bold text-slate-800 mb-1 text-base">1. 僅供專業投資者使用 (For Professional Investors Only)</h4>
-                        <p>本報告及網站之內容僅供香港法例第 571 章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。非專業投資者請勿依賴本報告之任何內容進行交易操作。</p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-800 mb-1 text-base">2. 非投資建議 (No Investment Advice)</h4>
-                        <p>本報告所載之資訊及分析僅供參考，並不構成對任何證券、衍生品或其他金融工具的買賣要約、招攬、建議或保證。本報告未考量個別投資者的具體投資目標、財務狀況及特殊需求。投資者應基於自身狀況獨立評估，並在必要時尋求獨立的專業財務顧問意見。</p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-800 mb-1 text-base">3. 資訊準確性與前瞻性陳述 (Accuracy and Forward-Looking Statements)</h4>
-                        <p>本報告之數據皆取自公開且據信為可靠之來源（如 Bloomberg 等），但 NTAM (Nice Talent Asset Management) 不對其準確性、完整性或及時性做出任何明示或暗示之保證。報告中涉及之「目標價」、「預估營收」等前瞻性陳述伴隨著已知與未知的市場風險與不確定性，實際結果可能與預期存在重大差異。過往業績不代表未來表現。</p>
-                    </div>
-                    <div>
-                        <h4 class="font-bold text-slate-800 mb-1 text-base">4. 利益衝突聲明 (Conflict of Interest)</h4>
-                        <p>NTAM、其關聯機構、董事、高級職員或員工可能在任何時間持有本報告中所提及之公司證券的長倉或短倉，或參與相關金融交易，亦可能與上述公司存在業務往來。投資者閱讀本報告時應充分考量潛在之利益衝突。</p>
-                    </div>
-                    <div class="pt-6 border-t border-slate-200 text-center text-slate-400">
-                        <p>© 2026 Nice Talent Asset Management. All Rights Reserved.</p>
-                    </div>
-                </div>
+            <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+                <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在載入免責聲明，請稍候...</p></div>
             </div>
         </section>
 
@@ -395,7 +375,17 @@
                 options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
             });
 
-            // (已移除 fetch disclaimer 的腳本，避免覆蓋寫死的完整版)
+            // 💯 完美還原：從本地端讀取 disclaimer.html
+            fetch('disclaimer.html')
+                .then(res => {
+                    if (!res.ok) throw new Error('檔案讀取失敗');
+                    return res.text();
+                })
+                .then(data => {
+                    const c = document.getElementById('disclaimer-container');
+                    if(c) c.innerHTML = data;
+                })
+                .catch(err => console.error('免責聲明讀取錯誤:', err));
         });
 
         // AI Core
