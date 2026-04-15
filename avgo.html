@@ -42,7 +42,7 @@
             <div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
                 <div class="border-l-4 border-blue-500 pl-4">
                     <p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
-                    <p>本網站及報告之內容僅供香港《證券及期貨條例》（香港法例第571章）及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
+                    <p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
                 </div>
                 <div class="border-l-4 border-blue-500 pl-4">
                     <p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
@@ -93,10 +93,11 @@
             <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
                 <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我們的觀點 (Our Comments)</button>
                 <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 財務業績</button>
-                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值與同行比較</button>
-                <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 華爾街觀點 (Street Comments)</button>
+                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比較</button>
+                <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 華爾街觀點</button>
                 <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 風險因素</button>
-                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免責聲明</button>
+                <button onclick="switchTab(event, 'sandbox')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-indigo-500 hover:text-indigo-700">六. AI 互動沙盒 ✨</button>
+                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">七. 免責聲明</button>
             </nav>
         </div>
     </header>
@@ -190,43 +191,43 @@
         <section id="street-comments" class="tab-content">
             <div class="mb-6">
                 <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點 (Comments from the Street)</h2>
-                <p class="mt-2 text-sm text-slate-500">Extracts from latest broker reports via Bloomberg ANR.</p>
+                <p class="mt-2 text-sm text-slate-500">摘要自 Bloomberg ANR 最新投行研究報告：</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="metric-card border-t-4 border-t-blue-600">
                     <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">J.P. Morgan</h3>
-                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Overweight</span>
+                        <h3 class="font-black text-slate-800">摩根大通 (J.P. Morgan)</h3>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>AI momentum is unstoppable:</b> Raised FY26 AI revenue estimates to $12B based on strong hyperscaler ASIC demand.</li>
-                        <li><b>VMware integration ahead of schedule:</b> Synergies are driving operating margins higher than our initial models suggested.</li>
-                        <li><b>Valuation gap to narrow:</b> Broadcom is trading at a significant discount to peers despite superior FCF generation.</li>
+                        <li><b>AI 動能勢不可擋：</b> 基於超大型雲端供應商對 ASIC 的強勁需求，我們將 FY26 的 AI 營收預估上調至 120 億美元。</li>
+                        <li><b>VMware 整合進度超前：</b> 協同效應推動的營業利潤率，遠高於我們最初的模型預測。</li>
+                        <li><b>估值差距將縮小：</b> 儘管自由現金流表現優異，但博通目前的估值仍大幅低於同業，具備重估潛力。</li>
                     </ul>
                 </div>
 
                 <div class="metric-card border-t-4 border-t-slate-800">
                     <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">Morgan Stanley</h3>
-                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Overweight</span>
+                        <h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>Networking dominance:</b> Networking segment surged, compensating for weakness in legacy broadband.</li>
-                        <li><b>Capital allocation masterclass:</b> The new $10B buyback authorization provides a strong floor for the stock.</li>
-                        <li><b>Custom silicon moat:</b> Google and Meta relationships are deepening, securing long-term revenue visibility.</li>
+                        <li><b>網路設備主導地位：</b> 網路部門營收激增，完美彌補了傳統寬頻業務的短期疲軟。</li>
+                        <li><b>資本配置典範：</b> 全新的 100 億美元股票回購計畫，為股價提供了強大的下檔支撐。</li>
+                        <li><b>客製化晶片護城河：</b> 與 Google 和 Meta 的合作關係日益加深，確保了長期的營收能見度。</li>
                     </ul>
                 </div>
 
                 <div class="metric-card border-t-4 border-t-sky-500">
                     <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">Goldman Sachs</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
+                        <h3 class="font-black text-slate-800">高盛 (Goldman Sachs)</h3>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">買入 (Buy)</span>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>Software transition:</b> VMware's shift to subscription models will create a predictable, high-margin revenue stream.</li>
-                        <li><b>Defensive AI play:</b> AVGO offers the best risk-adjusted exposure to AI infrastructure without the hyper-volatility of pure-play GPUs.</li>
-                        <li><b>Target Price raised:</b> Upgraded target to $170 reflecting multiple expansion and higher EPS clarity.</li>
+                        <li><b>軟體業務轉型：</b> VMware 轉向訂閱制將創造可預測、高利潤的經常性收入流。</li>
+                        <li><b>防禦性 AI 標的：</b> AVGO 提供了經風險調整後最佳的 AI 基礎設施投資曝險，且沒有純 GPU 廠的極端波動性。</li>
+                        <li><b>上調目標價：</b> 將目標價上調至 170 美元，反映了估值倍數的擴張與更高的 EPS 確定性。</li>
                     </ul>
                 </div>
             </div>
@@ -252,8 +253,31 @@
             </div>
         </section>
 
+        <section id="sandbox" class="tab-content">
+            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-indigo-500 pl-3">六、AI 客製化情境推演 (Sandbox)</h2></div>
+            
+            <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 md:p-8 shadow-sm">
+                <div class="flex items-center mb-3">
+                    <span class="text-2xl mr-3">✨</span>
+                    <h3 class="text-xl font-black text-indigo-900 tracking-tight">AI 即時沙盤推演</h3>
+                </div>
+                <p class="text-sm text-indigo-700 mb-6 leading-relaxed">請在下方輸入您假設的宏觀經濟變化或產業突發事件（例如：地緣政治事件、同業競爭），AI 將基於 AVGO 當前的財務體質，為您即時推演潛在影響。</p>
+                <div class="flex flex-col md:flex-row gap-3">
+                    <input type="text" id="custom-scenario-input" placeholder="試試輸入：如果美國全面禁止高階晶片出口至亞洲..." class="flex-1 border border-indigo-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-inner">
+                    <button onclick="generateCustomScenario()" id="btn-generate-scenario" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg text-sm font-bold shadow-md transition-all whitespace-nowrap">
+                        開始推演
+                    </button>
+                </div>
+                <div id="scenario-loading" class="hidden mt-6 text-sm text-indigo-600 font-bold flex items-center bg-indigo-100/50 p-4 rounded-lg">
+                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                    AI 正在透過 Vercel 後端計算數據...
+                </div>
+                <div id="scenario-result" class="mt-6 hidden bg-white p-6 rounded-xl border border-indigo-200 text-sm text-slate-800 leading-relaxed shadow-sm"></div>
+            </div>
+        </section>
+
         <section id="disclaimer" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免責聲明 (Disclaimer)</h2></div>
+            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">七、免責聲明 (Disclaimer)</h2></div>
             <div class="metric-card bg-slate-50 border-slate-200">
                 <div class="space-y-6 text-xs md:text-sm text-slate-600 leading-relaxed text-justify">
                     <div>
@@ -370,6 +394,8 @@
                 },
                 options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
             });
+            
+            // 🚨 修正：移除 Fetch Disclaimer 邏輯，改為直接使用 HTML 中的硬編碼文字，保證不變形。
         });
 
         // AI Core
@@ -428,6 +454,23 @@
             document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
         }
         function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
+        
+        // 🔮 沙盒生成腳本
+        async function generateCustomScenario() {
+            const inputEl = document.getElementById('custom-scenario-input'); const btnEl = document.getElementById('btn-generate-scenario'); 
+            const loadingEl = document.getElementById('scenario-loading'); const resultEl = document.getElementById('scenario-result');
+            const scenarioText = inputEl.value.trim(); if (!scenarioText) { alert('請先輸入假設情境！'); return; }
+            btnEl.disabled = true; btnEl.classList.add('opacity-50'); loadingEl.classList.remove('hidden'); resultEl.classList.add('hidden');
+            
+            const sysPrompt = `你是華爾街資深分析師。基於 Broadcom (AVGO) 百億回購計畫、41% 自由現金流等事實，評估用戶的「假設情境」。
+請簡明扼要地回覆：1. 初步評估 2. 對營收潛在影響 3. 股價可能反應。
+使用繁體中文，並用 HTML <b> 標籤加粗重點，嚴禁使用 markdown 語法。總字數約 200 字。`;
+
+            const aiAnalysis = await callGeminiAPI(`推演這個情境：${scenarioText}`, sysPrompt);
+            loadingEl.classList.add('hidden'); btnEl.disabled = false; btnEl.classList.remove('opacity-50');
+            resultEl.innerHTML = `<h4 class="font-bold text-indigo-900 mb-3 border-b border-indigo-100 pb-2">🎯 AI 情境推演結果</h4>` + aiAnalysis; 
+            resultEl.classList.remove('hidden');
+        }
     </script>
 </body>
 </html>
