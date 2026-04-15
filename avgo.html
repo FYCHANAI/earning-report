@@ -94,8 +94,8 @@
                 <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我們的觀點 (Our Comments)</button>
                 <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 財務業績</button>
                 <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值與同行比較</button>
-                <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 華爾街觀點</button>
-                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 風險與情境推演</button>
+                <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 華爾街觀點 (Street Comments)</button>
+                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 風險因素</button>
                 <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免責聲明</button>
             </nav>
         </div>
@@ -190,61 +190,59 @@
         <section id="street-comments" class="tab-content">
             <div class="mb-6">
                 <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點 (Comments from the Street)</h2>
-                <p class="mt-2 text-sm text-slate-500">以下資訊由 Bloomberg ANR 頁面擷取，並透過 AI 總結重點：</p>
+                <p class="mt-2 text-sm text-slate-500">Extracts from latest broker reports via Bloomberg ANR.</p>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <div class="metric-card border-t-4 border-t-blue-600">
                     <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
                         <h3 class="font-black text-slate-800">J.P. Morgan</h3>
-                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Overweight (增持)</span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Overweight</span>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>AI 動能無可阻擋：</b> 基於超大型雲端供應商對 ASIC 的強勁需求，將 FY26 的 AI 營收預估上調至 120 億美元。</li>
-                        <li><b>VMware 整合進度超前：</b> 協同效應所推動的營業利益率，已高於我們先前模型的預期。</li>
-                        <li><b>估值折價將收斂：</b> 儘管 AVGO 創造自由現金流的能力極其卓越，但其估值仍大幅低於同業，預期此差距將縮小。</li>
+                        <li><b>AI momentum is unstoppable:</b> Raised FY26 AI revenue estimates to $12B based on strong hyperscaler ASIC demand.</li>
+                        <li><b>VMware integration ahead of schedule:</b> Synergies are driving operating margins higher than our initial models suggested.</li>
+                        <li><b>Valuation gap to narrow:</b> Broadcom is trading at a significant discount to peers despite superior FCF generation.</li>
                     </ul>
                 </div>
 
                 <div class="metric-card border-t-4 border-t-slate-800">
                     <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
                         <h3 class="font-black text-slate-800">Morgan Stanley</h3>
-                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Overweight (增持)</span>
+                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Overweight</span>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>網路設備的統治力：</b> 網路部門的營收激增，完美彌補了傳統寬頻業務的疲軟。</li>
-                        <li><b>資本配置的教科書：</b> 全新 100 億美元的股票回購授權，為股價提供了極強的下檔支撐。</li>
-                        <li><b>客製化晶片護城河：</b> 與 Google 和 Meta 的合作關係持續深化，確保了長期的營收能見度。</li>
+                        <li><b>Networking dominance:</b> Networking segment surged, compensating for weakness in legacy broadband.</li>
+                        <li><b>Capital allocation masterclass:</b> The new $10B buyback authorization provides a strong floor for the stock.</li>
+                        <li><b>Custom silicon moat:</b> Google and Meta relationships are deepening, securing long-term revenue visibility.</li>
                     </ul>
                 </div>
 
                 <div class="metric-card border-t-4 border-t-sky-500">
                     <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
                         <h3 class="font-black text-slate-800">Goldman Sachs</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Buy (買入)</span>
+                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>軟體業務轉型：</b> VMware 轉向訂閱制模型，將創造出高度可預測且高利潤的營收流。</li>
-                        <li><b>防禦型的 AI 標的：</b> AVGO 提供了最佳的「風險調整後」AI 基礎設施曝險，且避開了純 GPU 概念股的劇烈波動。</li>
-                        <li><b>調升目標價：</b> 反映出估值倍數的擴張與更高的 EPS 確定性，將目標價上調至 170 美元。</li>
+                        <li><b>Software transition:</b> VMware's shift to subscription models will create a predictable, high-margin revenue stream.</li>
+                        <li><b>Defensive AI play:</b> AVGO offers the best risk-adjusted exposure to AI infrastructure without the hyper-volatility of pure-play GPUs.</li>
+                        <li><b>Target Price raised:</b> Upgraded target to $170 reflecting multiple expansion and higher EPS clarity.</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section id="risks" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、風險與情境推演 (Risks & Sandbox)</h2></div>
-            
-            <div class="metric-card mb-8">
-                <h3 class="text-lg font-bold text-slate-800 mb-4 border-b border-slate-100 pb-2">主要風險因素 (Key Risks)</h3>
+            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、風險因素 (Risk Factors)</h2></div>
+            <div class="metric-card">
                 <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
-                    <li class="pb-3 border-b border-slate-50">
+                    <li class="pb-3 border-b border-slate-100">
                         <strong class="text-rose-700 text-base">客戶高度集中風險：</strong> 營收高度依賴少數頂級雲端服務供應商 (Hyperscalers)，若主要客戶改變硬體架構或自研策略轉向，將對 Custom ASIC 業務造成重大衝擊。
                     </li>
-                    <li class="pb-3 border-b border-slate-50">
+                    <li class="pb-3 border-b border-slate-100">
                         <strong class="text-base">供應鏈與地緣政治：</strong> 極度依賴台積電 (TSMC) 的先進製程與 CoWoS 封裝產能，且面臨潛在的晶片出口管制升級風險。
                     </li>
-                    <li class="pb-3 border-b border-slate-50">
+                    <li class="pb-3 border-b border-slate-100">
                         <strong class="text-base">VMware 整合陣痛期：</strong> 強制轉向全訂閱制可能導致部分中小型企業客戶流失至競爭對手。
                     </li>
                     <li class="pb-1">
@@ -252,43 +250,31 @@
                     </li>
                 </ol>
             </div>
-
-            <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 md:p-8 shadow-sm">
-                <div class="flex items-center mb-3">
-                    <span class="text-2xl mr-3">✨</span>
-                    <h3 class="text-xl font-black text-indigo-900 tracking-tight">AI 客製化情境推演 (Risk Sandbox)</h3>
-                </div>
-                <p class="text-sm text-indigo-700 mb-6 leading-relaxed">輸入您擔憂的宏觀變數或突發事件（如加息、供應鏈斷鏈等），AI 將即時評估該風險對 AVGO 的潛在衝擊。</p>
-                <div class="flex flex-col md:flex-row gap-3">
-                    <input type="text" id="custom-scenario-input" placeholder="試試輸入：如果美國全面禁止高階晶片出口至中東..." class="flex-1 border border-indigo-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-inner">
-                    <button onclick="generateCustomScenario()" id="btn-generate-scenario" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg text-sm font-bold shadow-md transition-all whitespace-nowrap">
-                        風險推演
-                    </button>
-                </div>
-                <div id="scenario-loading" class="hidden mt-6 text-sm text-indigo-600 font-bold flex items-center bg-indigo-100/50 p-4 rounded-lg">
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                    AI 正在透過 Vercel 後端計算分析數據...
-                </div>
-                <div id="scenario-result" class="mt-6 hidden bg-white p-6 rounded-xl border border-indigo-200 text-sm text-slate-800 leading-relaxed shadow-sm"></div>
-            </div>
         </section>
 
         <section id="disclaimer" class="tab-content">
             <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免責聲明 (Disclaimer)</h2></div>
-            <div class="metric-card bg-slate-50 border-slate-200 p-6 md:p-8">
-                <h3 class="text-lg font-black text-slate-800 mb-4 border-b border-slate-200 pb-2">NICE TALENT ASSET MANAGEMENT (NTAM) 官方免責聲明</h3>
-                <div class="space-y-4 text-xs md:text-sm text-slate-500 leading-relaxed text-justify">
-                    <p>本報告由 NICE TALENT ASSET MANAGEMENT（以下簡稱「NTAM」或「本公司」）製作與發布。本報告之內容及觀點僅供具有專業投資者（Professional Investors）資格之機構或個人參考。若您並非相關司法管轄區定義之專業投資者，請立即停止閱讀或使用本報告之任何內容。</p>
-                    
-                    <p><strong>1. 資訊來源與準確性：</strong> 本報告所載之資料、意見及預測均基於本公司認為可靠之公開可用資訊（包含但不限於 Bloomberg、公司財報、官方聲明等）。然而，NTAM 對此等資料之準確性、完整性或絕對可靠性不作任何明示或暗示之保證。報告中的推演與數據（包含由 AI 輔助生成之情境分析與術語解釋）僅供學術與技術展示參考，可能因市場環境變化而不再適用。</p>
-                    
-                    <p><strong>2. 非投資建議：</strong> 本報告所包含之所有觀點、目標價、評級與情境推演，僅反映本公司研究團隊於報告發布當日之獨立判斷，絕不構成對任何特定證券、金融商品之買賣邀約、建議或推薦。投資涉及高度風險，歷史數據與過往表現不代表或保證未來之投資收益。</p>
-                    
-                    <p><strong>3. 風險承擔：</strong> 投資者在做出任何投資決策前，應依據自身之財務狀況、投資目標與風險承受能力進行獨立評估，並尋求獨立的專業財務、法律及稅務顧問之意見。投資者應自行承擔依據本報告資訊所進行之任何投資行為可能產生之所有直接或間接風險與損失。</p>
-                    
-                    <p><strong>4. 利益衝突聲明：</strong> NTAM 及其關聯企業、董事、高管或員工可能在任何時間持有本報告中所提及之公司證券的長倉或短倉，或與其發生業務往來。此等潛在之利益衝突可能影響本報告之客觀性，投資者應知悉並自行評估。</p>
-                    
-                    <p><strong>5. 智慧財產權與版權：</strong> 本報告之版權歸 NTAM 所有。未經本公司事先書面授權，任何人不得以任何形式（包含電子、機械、影印、錄音或其他方式）複製、轉發、出版或引用本報告之全部或部分內容。NTAM 保留隨時修改本報告內容且不另行通知之權利，亦無義務更新本報告中所述之任何前瞻性陳述。</p>
+            <div class="metric-card bg-slate-50 border-slate-200">
+                <div class="space-y-6 text-xs md:text-sm text-slate-600 leading-relaxed text-justify">
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-1 text-base">1. 僅供專業投資者使用 (For Professional Investors Only)</h4>
+                        <p>本報告及網站之內容僅供香港法例第 571 章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。非專業投資者請勿依賴本報告之任何內容進行交易操作。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-1 text-base">2. 非投資建議 (No Investment Advice)</h4>
+                        <p>本報告所載之資訊及分析僅供參考，並不構成對任何證券、衍生品或其他金融工具的買賣要約、招攬、建議或保證。本報告未考量個別投資者的具體投資目標、財務狀況及特殊需求。投資者應基於自身狀況獨立評估，並在必要時尋求獨立的專業財務顧問意見。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-1 text-base">3. 資訊準確性與前瞻性陳述 (Accuracy and Forward-Looking Statements)</h4>
+                        <p>本報告之數據皆取自公開且據信為可靠之來源（如 Bloomberg 等），但 NTAM (Nice Talent Asset Management) 不對其準確性、完整性或及時性做出任何明示或暗示之保證。報告中涉及之「目標價」、「預估營收」等前瞻性陳述伴隨著已知與未知的市場風險與不確定性，實際結果可能與預期存在重大差異。過往業績不代表未來表現。</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-800 mb-1 text-base">4. 利益衝突聲明 (Conflict of Interest)</h4>
+                        <p>NTAM、其關聯機構、董事、高級職員或員工可能在任何時間持有本報告中所提及之公司證券的長倉或短倉，或參與相關金融交易，亦可能與上述公司存在業務往來。投資者閱讀本報告時應充分考量潛在之利益衝突。</p>
+                    </div>
+                    <div class="pt-6 border-t border-slate-200 text-center text-slate-400">
+                        <p>© 2026 Nice Talent Asset Management. All Rights Reserved.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -420,21 +406,6 @@
             input.value = ''; appendMessage(text, true); showTypingIndicator();
             const res = await callGeminiAPI(text, standardPrompt);
             document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
-        }
-
-        // Scenario Sandbox AI
-        async function generateCustomScenario() {
-            const inputEl = document.getElementById('custom-scenario-input'); const btnEl = document.getElementById('btn-generate-scenario');
-            const loadingEl = document.getElementById('scenario-loading'); const resultEl = document.getElementById('scenario-result');
-            const scenarioText = inputEl.value.trim(); if (!scenarioText) { alert('請先輸入假設情境！'); return; }
-            btnEl.disabled = true; btnEl.classList.add('opacity-50'); loadingEl.classList.remove('hidden'); resultEl.classList.add('hidden');
-
-            const sysPrompt = `你是華爾街資深分析師。請推演用戶的假設情境對 AVGO 的潛在影響。請簡明扼要，用繁體中文回覆，並用 HTML <b> 標籤加粗重點。嚴禁使用 markdown 語法。總字數約 200 字。`;
-
-            const aiAnalysis = await callGeminiAPI(`推演這個情境：${scenarioText}`, sysPrompt);
-            loadingEl.classList.add('hidden'); btnEl.disabled = false; btnEl.classList.remove('opacity-50');
-            resultEl.innerHTML = `<h4 class="font-bold text-indigo-900 mb-3 border-b border-indigo-100 pb-2">🎯 AI 情境推演結果</h4>` + aiAnalysis;
-            resultEl.classList.remove('hidden');
         }
 
         // Highlight AI
