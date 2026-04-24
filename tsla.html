@@ -235,10 +235,10 @@
             <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比較</h2></div>
             <div class="metric-card">
                 <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-lg font-bold text-slate-800">汽車與科技同業 Forward P/E 倍數比較</h3>
+                    <h3 class="text-lg font-bold text-slate-800">汽車同業 FY 2026 Forward P/E 倍數比較</h3>
                 </div>
                 <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
-                <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg / NTAM Estimates</p>
+                <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg</p>
             </div>
         </section>
 
@@ -434,14 +434,32 @@
                 options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } }, x: { grid: { display: false } } } }
             });
 
-            // Chart 3: Valuation
+            // ✅ 更新 Chart 3: Valuation (FY2026 Forward P/E from Bloomberg)
             new Chart(document.getElementById('valuationChart').getContext('2d'), {
                 type: 'bar',
                 data: {
                     labels: ['GM (通用汽車)', 'Ford (福特)', 'BYD (比亞迪)', 'Tesla (特斯拉)'],
-                    datasets: [{ label: 'Forward P/E 倍數', data: [5.1, 6.2, 15.5, 55.0], backgroundColor: ['rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(37, 99, 235, 0.9)'], borderRadius: 4 }]
+                    datasets: [{ 
+                        label: 'FY 2026 Forward P/E 倍數', 
+                        data: [6.45, 8.24, 18.63, 197.21], 
+                        backgroundColor: ['rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(37, 99, 235, 0.9)'], 
+                        borderRadius: 4 
+                    }]
                 },
-                options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
+                options: { 
+                    indexAxis: 'y', 
+                    responsive: true, 
+                    maintainAspectRatio: false, 
+                    plugins: { legend: { display: false } },
+                    scales: {
+                        x: {
+                            title: {
+                                display: true,
+                                text: '倍數 (x)'
+                            }
+                        }
+                    }
+                }
             });
 
             // 讀取外部 disclaimer.html 檔案
