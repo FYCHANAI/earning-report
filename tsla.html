@@ -264,7 +264,7 @@
                 <div class="metric-card border-t-4 border-t-slate-500">
                     <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
                         <h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3>
-                        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">中立 (In-Line)</span>
+                        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">中性 (Neutral)</span>
                     </div>
                     <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
                         <li><b>汽車業務放緩：</b> 高達 5 萬輛的庫存積壓顯示短期需求面臨挑戰，核心汽車業務進入過渡期。</li>
@@ -291,16 +291,16 @@
             <div class="metric-card">
                 <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
                     <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-rose-700 text-base">庫存積壓與毛利率壓力：</strong> 單季高達 5 萬輛的產銷缺口，若透過降價促銷去化庫存，將進一步打擊原本就已疲軟的汽車毛利率。
+                        <strong class="text-rose-700 text-base">生產與交付差距擴大，潛在庫存與毛利率壓力：</strong> Q1 2026 Tesla 生產量高於交付量 50,363 輛，反映潛在庫存增加或交付時間差。若後續需要透過價格優惠或促銷去消化庫存，汽車毛利率可能進一步受壓。
                     </li>
                     <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">資本支出飆升侵蝕現金流：</strong> 為了訓練 FSD 網路並建立基礎設施，管理層預告了大規模的 CapEx 擴張，在獲利放緩之際，將導致現金流快速消耗。
+                        <strong class="text-base">資本支出上升，短期自由現金流承壓：</strong> Tesla 正加大 AI 算力、Robotaxi / Cybercab、能源及相關基礎設施投資。這有助支持長期增長選擇權，但短期將推高 CapEx，並可能限制自由現金流對估值的支撐。
                     </li>
                     <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">FSD 監管與訴訟風險：</strong> 依賴純視覺 (Vision-only) 系統遭遇 NHTSA 嚴格審查，法規若要求硬體召回，將產生龐大成本。
+                        <strong class="text-base">FSD 監管與訴訟風險仍未解除：</strong> NHTSA 已就 Tesla FSD 在低能見度環境下的系統偵測與駕駛警示能力展開深入審查。若監管結果要求召回、額外軟件修正或更嚴格披露，Tesla 可能面對合規、法律及品牌信任成本上升。
                     </li>
                     <li class="pb-1">
-                        <strong class="text-base">電動車宏觀需求疲軟：</strong> 全球 EV 滲透率放緩，加上中國比亞迪 (BYD) 等本土車企的低價競爭，TSLA 市佔率面臨威脅。
+                        <strong class="text-base">EV 價格競爭與中國車企壓力加劇：</strong> 全球 EV 需求並非全面疲弱，但增長節奏在不同地區分化。Tesla 面對的主要風險，是中國及歐洲市場價格競爭加劇，加上 BYD 等中國車企在成本、產品更新及海外擴張上的壓力，可能限制 Tesla 的市佔率與估值倍數。
                     </li>
                 </ol>
             </div>
@@ -434,7 +434,7 @@
                 options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } }, x: { grid: { display: false } } } }
             });
 
-            // ✅ 更新 Chart 3: Valuation (FY2026 Forward P/E from Bloomberg)
+            // Chart 3: Valuation (FY2026 Forward P/E)
             new Chart(document.getElementById('valuationChart').getContext('2d'), {
                 type: 'bar',
                 data: {
