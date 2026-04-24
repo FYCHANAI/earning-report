@@ -3,181 +3,106 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NTAM 深度研究報告中心 | Institutional Research Portal</title>
+    <title>Institutional Research Portal | NTAM</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: #f1f5f9; color: #1e293b; }
-        .report-card { transition: all 0.3s ease; }
-        .report-card:hover { transform: translateY(-5px); box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1); }
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #f4f6f9; color: #1e293b; }
+        .card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .card-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1); }
+        /* 限制文字行數的 CSS */
+        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
     </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col">
-
-    <div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
-        <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
-            <div class="text-center mb-6">
-                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
-                </div>
-                <h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明 / 重要声明</h2>
+    
+    <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-4">
+                <img src="NTAM Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+                <div class="h-8 w-px bg-slate-200 hidden sm:block"></div>
+                <span class="text-xl font-black text-slate-900 tracking-tight hidden sm:block">Institutional Research Portal</span>
             </div>
-            
-            <div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
-                    <p>本網站及報告之內容僅供香港《證券及期貨條例》（香港法例第571章）及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。若您並非專業投資者，請立即點擊「拒絕」並離開此頁面。</p>
-                </div>
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
-                    <p>本网站及报告之内容仅供香港《证券及期货条例》（香港法例第571章）及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者资格。若您并非专业投资者，请立即点击“拒绝”并离开此页面。</p>
-                </div>
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
-                    <p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation. By clicking "I Confirm", you declare and warrant that you qualify as a Professional Investor. If you are not a Professional Investor, please click "Decline" and exit this page immediately.</p>
-                </div>
-            </div>
-
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
-                <button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
-                <button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg hover:shadow-blue-500/30 transition-all w-full sm:w-auto">我確認 I Confirm</button>
-            </div>
-        </div>
-    </div>
-    <header class="bg-white border-b border-slate-200">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div class="flex flex-col md:flex-row justify-between items-center gap-4">
-                <div class="flex items-center space-x-3">
-                    <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto">
-                    <div class="h-8 w-px bg-slate-300 hidden md:block"></div>
-                    <span class="text-xl font-black text-slate-800 hidden md:block tracking-tight">Institutional Research Portal</span>
-                </div>
-                <div class="text-sm font-semibold text-slate-500 bg-slate-100 px-4 py-2 rounded-full">
-                    NTAM 資深分析師團隊
-                </div>
+            <div>
+                <span class="bg-slate-100 text-slate-600 px-4 py-2 rounded-full text-sm font-bold shadow-inner border border-slate-200">NTAM 資深分析師團隊</span>
             </div>
         </div>
     </header>
 
-    <main class="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
-        
-        <div class="mb-10 text-center md:text-left">
-            <h1 class="text-3xl md:text-4xl font-black text-slate-900 mb-3 tracking-tight">深度投資研究報告</h1>
-            <p class="text-slate-600 text-lg">發掘具備護城河與估值重評潛力的核心資產。</p>
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
+        <div class="mb-12">
+            <h1 class="text-3xl md:text-4xl font-black text-slate-900 mb-4 tracking-tight">深度投資研究報告</h1>
+            <p class="text-lg text-slate-600">發掘具備護城河與估值重評潛力的核心資產。</p>
         </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             
-            <a href="orcl.html" class="report-card block bg-white rounded-2xl p-6 border border-slate-200 cursor-pointer">
-                <div class="flex justify-between items-start mb-4">
-                    <div class="px-3 py-1 bg-blue-100 text-blue-700 text-xs font-bold rounded-full">科技 / AI 基礎設施</div>
-                    <span class="text-xs text-slate-400 font-semibold">2026年3月更新</span>
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='orcl.html'">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="bg-blue-50 text-blue-600 text-xs font-bold px-3 py-1.5 rounded-full">科技 / AI 基礎設施</span>
+                    <span class="text-xs text-slate-400 font-medium">2026年3月更新</span>
                 </div>
-                <h2 class="text-2xl font-black text-slate-900 mb-1">甲骨文公司</h2>
-                <div class="text-blue-600 font-bold text-xl mb-4">ORCL</div>
-                <p class="text-slate-600 text-sm mb-6 line-clamp-2">從傳統數據庫巨頭成功轉型為 AI 時代的核心基礎設施提供商，雲端業務迎來爆發式增長。</p>
-                <div class="flex justify-between items-center pt-4 border-t border-slate-100">
-                    <span class="text-sm font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">評級：強力買入</span>
-                    <span class="text-sm font-bold text-blue-600 flex items-center">
-                        閱讀報告 
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                    </span>
+                <div class="mb-4">
+                    <h2 class="text-2xl font-black text-slate-900">甲骨文公司</h2>
+                    <h3 class="text-xl font-bold text-blue-600 mt-1">ORCL</h3>
                 </div>
-            </a>
-
-            <a href="nio.html" class="report-card block bg-white rounded-2xl p-6 border border-slate-200 cursor-pointer">
-                <div class="flex justify-between items-start mb-4">
-                    <div class="px-3 py-1 bg-slate-100 text-slate-700 text-xs font-bold rounded-full">新能源汽車 / 智駕</div>
-                    <span class="text-xs text-slate-400 font-semibold">2026年3月更新</span>
-                </div>
-                <h2 class="text-2xl font-black text-slate-900 mb-1">蔚來汽車</h2>
-                <div class="text-blue-600 font-bold text-xl mb-4">NIO</div>
-                <p class="text-slate-600 text-sm mb-6 line-clamp-2">憑藉子品牌「樂道」切入大眾市場，換電聯盟 (BaaS) 的擴大為其帶來獨特護城河，規模效應開始顯現。</p>
-                <div class="flex justify-between items-center pt-4 border-t border-slate-100">
-                    <span class="text-sm font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">評級：買入</span>
-                    <span class="text-sm font-bold text-blue-600 flex items-center">
-                        閱讀報告 
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                    </span>
-                </div>
-            </a>
-
-            <a href="avgo.html" class="report-card block bg-white rounded-2xl p-6 border border-slate-200 cursor-pointer">
-                <div class="flex justify-between items-start mb-4">
-                    <div class="px-3 py-1 bg-indigo-100 text-indigo-700 text-xs font-bold rounded-full">科技板塊 / 半導體</div>
-                    <span class="text-xs text-slate-400 font-semibold">2026年3月更新</span>
-                </div>
-                <h2 class="text-2xl font-black text-slate-900 mb-1">博通公司</h2>
-                <div class="text-blue-600 font-bold text-xl mb-4">AVGO</div>
-                <p class="text-slate-600 text-sm mb-6 line-clamp-2">受惠於 Custom ASIC 與 AI 網路交換器需求爆發，展現出極強的現金流與高質量成長雙引擎。</p>
-                <div class="flex justify-between items-center pt-4 border-t border-slate-100">
-                    <span class="text-sm font-bold text-emerald-600 bg-emerald-50 px-2 py-1 rounded">評級：買入</span>
-                    <span class="text-sm font-bold text-blue-600 flex items-center">
-                        閱讀報告 
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg>
-                    </span>
-                </div>
-            </a>
-
-        </div>
-
-        <div class="mt-8">
-            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3 mb-6">完整免責聲明 (Full Disclaimer)</h2>
-            <div class="bg-white rounded-2xl p-6 md:p-8 border border-slate-200 shadow-sm" id="disclaimer-container">
-                <div class="text-center py-10">
-                    <p class="text-sm text-slate-500 animate-pulse font-bold">正在載入免責聲明，請稍候... / Loading Disclaimer...</p>
+                <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">從傳統數據庫巨頭成功轉型為 AI 時代的核心基礎設施提供商，雲端業務迎來爆發性成長與利潤率擴張...</p>
+                <div class="pt-4 border-t border-slate-100 flex justify-between items-center mt-auto">
+                    <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded">評級：強力買入</span>
+                    <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></span>
                 </div>
             </div>
-        </div>
 
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='nio.html'">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full">新能源汽車 / 智駕</span>
+                    <span class="text-xs text-slate-400 font-medium">2026年3月更新</span>
+                </div>
+                <div class="mb-4">
+                    <h2 class="text-2xl font-black text-slate-900">蔚來汽車</h2>
+                    <h3 class="text-xl font-bold text-blue-600 mt-1">NIO</h3>
+                </div>
+                <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">憑藉子品牌「樂道」切入大眾市場，換電聯盟 (BaaS) 的擴大為其帶來獨特護城河與經常性服務收入...</p>
+                <div class="pt-4 border-t border-slate-100 flex justify-between items-center mt-auto">
+                    <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded">評級：買入</span>
+                    <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></span>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='avgo.html'">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="bg-indigo-50 text-indigo-600 text-xs font-bold px-3 py-1.5 rounded-full">科技板塊 / 半導體</span>
+                    <span class="text-xs text-slate-400 font-medium">2026年3月更新</span>
+                </div>
+                <div class="mb-4">
+                    <h2 class="text-2xl font-black text-slate-900">博通公司</h2>
+                    <h3 class="text-xl font-bold text-blue-600 mt-1">AVGO</h3>
+                </div>
+                <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">受惠於 Custom ASIC 與 AI 網路交換器需求爆發，展現出極強的現金流與高質量 VMware 併購整合能力...</p>
+                <div class="pt-4 border-t border-slate-100 flex justify-between items-center mt-auto">
+                    <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded">評級：買入</span>
+                    <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></span>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='tsla.html'">
+                <div class="flex justify-between items-center mb-6">
+                    <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full">新能源汽車 / AI</span>
+                    <span class="text-xs text-slate-400 font-medium">2026年3月更新</span>
+                </div>
+                <div class="mb-4">
+                    <h2 class="text-2xl font-black text-slate-900">特斯拉</h2>
+                    <h3 class="text-xl font-bold text-blue-600 mt-1">TSLA</h3>
+                </div>
+                <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">交付量不及預期與嚴重庫存積壓，戰略重心全面轉向 AI 算力與 Robotaxi，面臨重資產轉型陣痛期...</p>
+                <div class="pt-4 border-t border-slate-100 flex justify-between items-center mt-auto">
+                    <span class="bg-slate-100 text-slate-600 text-sm font-bold px-3 py-1.5 rounded">評級：中性</span>
+                    <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" /></svg></span>
+                </div>
+            </div>
+
+        </div>
     </main>
 
-    <footer class="bg-slate-900 text-slate-400 py-6 text-center text-xs">
-        <div class="max-w-7xl mx-auto px-4">
-            <p>© 2026 NICE TALENT ASSET MANAGEMENT. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
-        // --- 1. PI Modal 邏輯 ---
-        document.addEventListener("DOMContentLoaded", function() {
-            if (!sessionStorage.getItem('pi_agreed')) {
-                const modal = document.getElementById('pi-modal');
-                if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
-            }
-            
-            // --- 2. 讀取並同時展示三語免責聲明 ---
-            fetch('disclaimer.html')
-                .then(res => res.text())
-                .then(data => {
-                    const container = document.getElementById('disclaimer-container');
-                    if(container) {
-                        container.innerHTML = data;
-                        
-                        const tc = document.getElementById('disc-tc');
-                        const sc = document.getElementById('disc-sc');
-                        const en = document.getElementById('disc-en');
-                        
-                        if(tc) { tc.style.display = 'block'; tc.classList.add('mb-10', 'pb-10', 'border-b', 'border-slate-200'); }
-                        if(sc) { sc.style.display = 'block'; sc.classList.add('mb-10', 'pb-10', 'border-b', 'border-slate-200'); }
-                        if(en) { en.style.display = 'block'; }
-                    }
-                })
-                .catch(error => {
-                    console.error('Error fetching disclaimer:', error);
-                    document.getElementById('disclaimer-container').innerHTML = '<p class="text-center text-rose-500">免責聲明載入失敗，請重新整理網頁。</p>';
-                });
-        });
-
-        function acceptPI() { 
-            sessionStorage.setItem('pi_agreed', 'true'); 
-            document.getElementById('pi-modal').style.display = 'none'; 
-            document.body.style.overflow = 'auto'; 
-        }
-
-        function declinePI() {
-            document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied / 拒絕訪問 / 拒绝访问</h1><p style="color: #475569; max-width: 500px; line-height: 1.6;">This content is restricted to Professional Investors only.</p></div>`;
-        }
-    </script>
 </body>
 </html>
