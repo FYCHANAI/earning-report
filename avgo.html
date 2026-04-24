@@ -182,7 +182,7 @@
         </section>
 
         <section id="valuation" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值與同行比較</h2></div>
+            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比較</h2></div>
             <div class="metric-card">
                 <div class="flex justify-between items-center mb-4">
                     <h3 class="text-lg font-bold text-slate-800">Forward P/E 倍數比較</h3>
@@ -282,21 +282,8 @@
 
         <section id="disclaimer" class="tab-content">
             <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">七、免責聲明</h2></div>
-            <div class="metric-card bg-slate-50 border-slate-200">
-                <div class="space-y-4 text-xs md:text-sm text-slate-600 leading-relaxed text-justify">
-                    <p><strong>過去的表現並不能保證未來的表現。本檔僅供機構投資者及專業投資者使用。</strong></p>
-                    <p>本文件僅向《證券及期貨條例》（香港法例第571章）及根據其制定的規則所定義的「專業投資者」分發、傳閱或發出。</p>
-                    <p>本檔僅供收件人參考，並不擬供收件人以外的任何人使用。未經俊賢資產管理有限公司（「本公司」）事先書面同意，不得將本檔全部或部分出版、傳閱、複製或分發給任何其他人。本檔內所提及的任何證券的認購、購買或出售不應被解釋為相關的要約或招攬。鑒於此類要約或招攬在該司法管轄區並不合法，或提出此類要約或招攬的人在該司法管轄區沒有資格提出此類要約或招攬，或在該司法管轄區向任何人提出此類要約或招攬屬於非法的要約或招攬，本檔並不構成對任何人於任何司法管轄區的要約或招攬。</p>
-                    <p>本公司沒有考慮，也沒有針對收件人或任何人之投資目標、財務狀況或特殊需求進行任何調查。因此，本公司明確表示，不會對任何人使用或解釋本檔中包含的資訊或因任何人根據本檔中包含的任何資訊、意見或估計採取行動而直接或間接引起的任何損失，而承擔任何責任。故此，本公司強烈建議您在作出任何投資決定之前，諮詢您的獨立財務顧問以獲得專業意見。本公司、其相關和聯屬公司及其各自的董事和高級職員可能擁有或持有本檔中提及的證券，也可能為本檔中提及證券的公司以及其他各方提供或尋求提供經紀和其他投資服務。</p>
-                    <p>在沒有取得獨立及專業意見並驗證本檔的內容之前，您不應就本檔的資訊內容採取任何行動。本文件中包含的任何意見、管理層預測或估計均基於截至本檔日期的可用資訊，並反映了當前情況和我們截至本檔日期的觀點，所有這些資訊和觀點都可能隨時間改變，而不會另行通知。此類意見、預測和估計以及此處包含與各種指數歷史資料和表現有關的資訊僅供參考，並不代表及不應被解釋為本公司或本檔中提及的證券的未來或可能的表現。過去的表現並不保證未來的表現結果。投資涉及風險，投資價值及收益可升亦可跌。基金/投資的價值可能會波動，並可能在短時間內大幅下跌。您的投資可能會完全損失。</p>
-                    <p>投資者不應僅根據本檔作出投資決定。投資者應參閱發售檔（如適用）以瞭解詳情，包括風險因素。</p>
-                    <p>本公司對本檔內容之準確性、充分性或完整性不作任何表示或保證，也不就本檔中提及的任何資訊向任何人作出建議、要約或招攬。</p>
-                    <p>本公司已根據《證券及期貨條例》在香港證券及期貨事務監察委員會註冊成為持牌法團，在香港開展投資管理活動。其中央編號為BMR849。本資料由本公司發出，未經證監會審閱。</p>
-                    <div class="pt-4 border-t border-slate-200 text-center text-slate-500">
-                        <p>© 2026 俊賢資產管理有限公司 版權所有</p>
-                        <p class="mt-1 text-xs">此中文免責條款為英文版本譯本，如中、英文兩個版本有任何抵觸或不相符之處，應以英文版本為准。</p>
-                    </div>
-                </div>
+            <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+                <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在載入免責聲明，請稍候...</p></div>
             </div>
         </section>
 
@@ -391,6 +378,22 @@
                 },
                 options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
             });
+
+            // 讀取外部 disclaimer.html 檔案
+            fetch('disclaimer.html')
+                .then(response => {
+                    if (!response.ok) throw new Error('無法讀取 disclaimer.html');
+                    return response.text();
+                })
+                .then(html => {
+                    const container = document.getElementById('disclaimer-container');
+                    if(container) container.innerHTML = html;
+                })
+                .catch(error => {
+                    console.error('載入免責聲明失敗:', error);
+                    const container = document.getElementById('disclaimer-container');
+                    if(container) container.innerHTML = '<div class="p-6 text-center text-red-500 font-bold">無法載入 disclaimer.html，請確認檔案存在。</div>';
+                });
         });
 
         // AI Core
