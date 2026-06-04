@@ -95,8 +95,7 @@
             <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比較</button>
             <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 華爾街觀點</button>
             <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 風險因素</button>
-            <button onclick="switchTab(event, 'sandbox')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-indigo-500 hover:text-indigo-700">六. AI 互動沙盒 ✨</button>
-            <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">七. 免責聲明</button>
+            <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免責聲明</button>
         </nav>
     </div>
 </header>
@@ -246,7 +245,7 @@
                     <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
                 </div>
                 <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                    <li><b>客製化 AI 晶片贏家：</b> 博通與超大型資料中心客戶的客製化 AI 加加速器合作進度卓越，這將成為可持續的高天花板增長動能。</li>
+                    <li><b>客製化 AI 晶片贏家：</b> 博通與超大型資料中心客戶的客製化 AI 加速器合作進度卓越，這將成為可持續的高天花板增長動能。</li>
                     <li><b>下檔保護強勁：</b> 毛利及自由現金流轉換極佳，強大的現金分紅政策與回購計畫為其股價提供穩固的市場支撐。</li>
                 </ul>
                 <div class="mt-4 pt-2 border-t border-slate-100 text-xs font-mono text-slate-400">ANR 目標價: $502.00 USD</div>
@@ -298,31 +297,8 @@
         </div>
     </section>
 
-    <section id="sandbox" class="tab-content">
-        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-indigo-500 pl-3">六、AI 客製化情境推演 (Sandbox)</h2></div>
-
-        <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 md:p-8 shadow-sm">
-            <div class="flex items-center mb-3">
-                <span class="text-2xl mr-3">✨</span>
-                <h3 class="text-xl font-black text-indigo-900 tracking-tight">AI 即時沙盤推演</h3>
-            </div>
-            <p class="text-sm text-indigo-700 mb-6 leading-relaxed">請在下方輸入您假設的產業變數（例如：台積電先進封裝 CoWoS 產能吃緊影響客製化 ASIC 出貨、大客戶自研晶片策略轉變），AI 將基於 AVGO 當前的半導體與軟體營收結構，為您即時推演潛在影響。</p>
-            <div class="flex flex-col md:flex-row gap-3">
-                <input type="text" id="custom-scenario-input" placeholder="試試輸入：如果未來一季晶圓代工廠產能嚴重受限，導致客製化 AI 加加速器出貨遞延 15%..." class="flex-1 border border-indigo-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-inner">
-                <button onclick="avgoScenarioAnalysis()" id="btn-generate-scenario" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg text-sm font-bold shadow-md transition-all whitespace-nowrap">
-                    開始推演
-                </button>
-            </div>
-            <div id="scenario-loading" class="hidden mt-6 text-sm text-indigo-600 font-bold flex items-center bg-indigo-100/50 p-4 rounded-lg">
-                <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                AI 正在透過 Vercel 後端計算數據模型...
-            </div>
-            <div id="scenario-result" class="mt-6 hidden bg-white p-6 rounded-xl border border-indigo-200 text-sm text-slate-800 leading-relaxed shadow-sm"></div>
-        </div>
-    </section>
-
     <section id="disclaimer" class="tab-content">
-        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">七、免責聲明</h2></div>
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免責聲明</h2></div>
         <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
             <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在從 disclaimer.html 載入全站統一免責聲明安全模組，請稍候...</p></div>
         </div>
@@ -455,7 +431,7 @@
             options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } } } }
         });
 
-        // 圖表 3: BBG EEO 晶片龍頭遠期估值比較（已更正標籤細節）
+        // 圖表 3: BBG EEO 晶片龍頭遠期估值比較
         window.charts.avgoValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
             type: 'bar',
             data: {
@@ -483,7 +459,7 @@
             .catch(error => {
                 console.error('安全連動調閱失敗:', error);
                 const container = document.getElementById('disclaimer-container');
-                if(container) container.innerHTML = '<div class="p-6 text-center text-rose-600 font-bold">【安全連動錯誤】無法動態加載外部合責聲明，請確保根目錄下的 disclaimer.html 存在並可供調配。</div>';
+                if(container) container.innerHTML = '<div class="p-6 text-center text-rose-600 font-bold">【安全連動錯誤】無法動態加載外部免責聲明，請確保根目錄下的 disclaimer.html 存在並可供調配。</div>';
             });
     });
 
@@ -546,23 +522,6 @@
         document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
     }
     function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
-
-    // 六、AI 沙盒即時演算
-    async function avgoScenarioAnalysis() {
-        const inputEl = document.getElementById('custom-scenario-input'); const btnEl = document.getElementById('btn-generate-scenario');
-        const loadingEl = document.getElementById('scenario-loading'); const resultEl = document.getElementById('scenario-result');
-        const scenarioText = inputEl.value.trim(); if (!scenarioText) { alert('請先輸入假設變數情境！'); return; }
-        btnEl.disabled = true; btnEl.classList.add('opacity-50'); loadingEl.classList.remove('hidden'); resultEl.classList.add('hidden');
-
-        const sysPrompt = `你是華爾街頂級半導體產業資深分析師。基於博通 (AVGO) 本季營收大增48%、AI半導體收入達108億美元(暴增143%)、自由現金流率高達46%以及高達149.28億美元的Non-GAAP營業利潤的事實，深度推演評估用戶的「假設產業變數情境」。
-請簡明扼要地回覆：1. 初步敏感度分析 2. 對營收、自由現金流與利潤率的定量/定性影響 3. 機構投資者的股價反應與長期防禦力。
-必須使用繁體中文，並用 HTML <b> 標籤加粗重點，嚴禁使用 markdown 語法。字數在 200 到 250 字之間。`;
-
-        const aiAnalysis = await callGeminiAPI(`推演這個情境：${scenarioText}`, sysPrompt);
-        loadingEl.classList.add('hidden'); btnEl.disabled = false; btnEl.classList.remove('opacity-50');
-        resultEl.innerHTML = `<h4 class="font-bold text-indigo-900 mb-3 border-b border-indigo-100 pb-2">🎯 AI 情境矩陣推演結果</h4><div class="leading-relaxed text-slate-700">${aiAnalysis}</div>`;
-        resultEl.classList.remove('hidden');
-    }
 </script>
 </body>
 </html>
