@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>花旗集團 (C) 深度研究報告 | NTAM 資深分析師</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+        .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+        @media (min-width: 768px) { .chart-container { height: 400px; } }
+        .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+        .tab-content.active { display: block; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+        .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+        .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+        .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
+        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+        @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+        #selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+<div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
+    <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
+        <div class="text-center mb-6">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77-1.333.192 3 1.732 3z" /></svg>
+            </div>
+            <h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明</h2>
+        </div>
+        <div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
+            <div class="border-l-4 border-blue-500 pl-4">
+                <p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
+                <p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
+            </div>
+            <div class="border-l-4 border-blue-500 pl-4">
+                <p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
+                <p>本页面所含信息仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者身份。</p>
+            </div>
+            <div class="border-l-4 border-blue-500 pl-4">
+                <p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
+                <p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
+            <button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
+            <button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">我確認 I Confirm</button>
+        </div>
+    </div>
+</div>
+
+<header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex justify-between items-start">
+            <div class="flex flex-col">
+                <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
+                    <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+                    <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+                </a>
+                <div class="flex flex-col">
+                    <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">花旗集團 <span class="text-blue-600">C</span></h1>
+                    <span class="text-sm text-slate-500 font-medium mt-1">資深分析師 營運與戰略報告 | 2Q2026 財報特輯</span>
+                </div>
+            </div>
+            <div class="flex flex-col items-end space-y-3">
+                <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
+                    <option value="c.html" selected>繁體中文</option>
+                    <option value="c-sc.html">简体中文</option>
+                    <option value="c-en.html">English</option>
+                </select>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right hidden sm:block">
+                        <div class="text-xs text-slate-400 font-bold">目標價 <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
+                        <div class="text-xl font-bold text-slate-800">$153.51 USD</div>
+                    </div>
+                    <div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">評級：強力買入 (Strong Buy)</div>
+                </div>
+            </div>
+        </div>
+        <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+            <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我們的觀點</button>
+            <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 營運與財務數據</button>
+            <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比較</button>
+            <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 華爾街觀點</button>
+            <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 風險因素</button>
+            <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免責聲明</button>
+        </nav>
+    </div>
+</header>
+
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+
+    <section id="our-comments" class="tab-content active">
+        <div class="mb-6">
+            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我們的觀點</h2>
+            <p class="mt-2 text-sm text-slate-500">基於 2Q2026 財報及管理層投資者會議揭露資訊，NTAM 研究團隊核心觀點提煉如下：</p>
+        </div>
+        <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
+            <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
+                <span class="text-3xl mr-3">🎯</span>
+                <h3 class="text-2xl font-black text-blue-600 tracking-tight">核心經營結論</h3>
+            </div>
+            <ul class="space-y-6">
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">創十年最佳單季營收，核心業務展現全面增長動能</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">受惠於旗下五大核心交織業務的同步發力，本季營業收入飆升至 248 億美元（年增 14%），創下過去十年來單季最高營收紀錄，展現卓越的多元化獲利韌性。</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">重大組織與戰略轉型加速推進，全球資產配置大幅優化</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">公司持續精簡非核心非主流市場。本季已全面完成波蘭消費金融業務出售，並順利交割墨西哥 Banamex 24% 股權戰略配售中 22.6% 的份額，顯著充實資本緩衝並釋放管理層執行力。</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">費用控管步入甜美期，正向營運槓桿大幅擴張</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">隨著重組轉型開支的逐步回落與生產力效益釋放，本季 GAAP 效率比（Efficiency Ratio）顯著優化至 57.4%（同比大幅改善約 530 個基點），成功確立積極的正向營運槓桿。</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">大額股東資本回饋計畫，彰顯資產負債表強大實力</strong>
+                    2Q26 透過常規普通股股息發放與公開市場股份回購已向股東退還近 50 億美元。同時，公司正式宣布自 3Q26 起調升每股常規股息 12%，並積極啟動全新的 300 億美元跨年度重額回購邏輯。</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="financials" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、營運與財務數據</h2></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div class="metric-card border-t-4 border-t-emerald-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">2Q26 季度總營收</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">$24,766 M</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +14% / QoQ +1%</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-blue-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">季度歸母淨利潤</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">$5,831 M</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +45% / 創十年新高</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-indigo-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">稀釋後每股盈餘 (EPS)</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">$3.15 USD</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +61% / 結構重組見效</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-purple-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">有形普通股權益報酬率 (RoTCE)</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">13.0%</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ 同比大幅改善 +430 bps</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-2">2Q26 各核心板塊營收結構拆解 (Million USD)</h3>
+                <p class="text-xs text-slate-500 mb-4">市場部門（Markets）與服務部門（Services）合計貢獻超過全站營收之 54%。</p>
+                <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+            </div>
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-2">主要業務部門 Allocated TCE 與 RoTCE 表現</h3>
+                <p class="text-xs text-slate-500 mb-4">服務部門（Services）回報率大放異彩，單季 RoTCE 攀升至 30.9% 歷史絕對高位。</p>
+                <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
+            </div>
+        </div>
+
+        <div class="metric-card mt-6">
+            <h3 class="text-lg font-bold text-slate-800 mb-4">季度核心財務數據綜合對比綜合明細 Table</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left border-collapse">
+                    <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
+                        <tr>
+                            <th class="px-6 py-3 font-bold">主要會計明細項目科目</th>
+                            <th class="px-6 py-3 font-bold text-right">2Q26 財務數據</th>
+                            <th class="px-6 py-3 font-bold text-right text-blue-600">2Q25 歷史同期</th>
+                            <th class="px-6 py-3 font-bold text-right text-emerald-600">YoY 年變動率</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-700">
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">利潤淨收入 (Net Interest Income)</td>
+                            <td class="px-6 py-4 text-right font-bold">$17,125 M</td>
+                            <td class="px-6 py-4 text-right">$15,175 M</td>
+                            <td class="px-6 py-4 text-right text-emerald-500 font-bold">+13%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">非利息手續費收入 (Non-Interest Revenue)</td>
+                            <td class="px-6 py-4 text-right font-bold">$7,641 M</td>
+                            <td class="px-6 py-4 text-right">$6,493 M</td>
+                            <td class="px-6 py-4 text-right text-emerald-500 font-bold">+18%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">總營運費用 (Operating Expenses)</td>
+                            <td class="px-6 py-4 text-right font-bold">$14,215 M</td>
+                            <td class="px-6 py-4 text-right">$13,577 M</td>
+                            <td class="px-6 py-4 text-right text-amber-600 font-bold">+5%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">信用損失準備金提撥 (Provision for Credit Losses)</td>
+                            <td class="px-6 py-4 text-right font-bold">$2,522 M</td>
+                            <td class="px-6 py-4 text-right">$2,872 M</td>
+                            <td class="px-6 py-4 text-right text-emerald-500 font-bold">-12%</td>
+                        </tr>
+                        <tr class="bg-slate-50 font-bold">
+                            <td class="px-6 py-4 text-slate-800">每股有形資產淨值與核心資本比</td>
+                            <td class="px-6 py-4 text-right text-slate-500">TBVPS: $100.89</td>
+                            <td class="px-6 py-4 text-right text-blue-600">BVPS: $114.74</td>
+                            <td class="px-6 py-4 text-right text-purple-600">CET1 Ratio: 12.8%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="valuation" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比較</h2></div>
+        <div class="metric-card">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-slate-800">全球華爾街大型綜合銀行巨頭遠期本益比 (Next 4 Qtrs Est Forward P/E) 倍數橫向長條圖對比</h3>
+            </div>
+            <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
+            <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates as of July 2026</p>
+        </div>
+    </section>
+
+    <section id="street-comments" class="tab-content">
+        <div class="mb-6">
+            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點</h2>
+            <p class="mt-2 text-sm text-slate-500">摘要頂級投行對花旗集團重組簡化與中期財務指引的權威解讀：</p>
+        </div>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3>
+                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
+                </div>
+                <div class="text-xs text-slate-400 mb-2 font-bold">目標價：$164.00 USD (07/15/26)</div>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>服務部門市場份額大幅領先：</b> 花旗在 TTS 與證券服務領域的領先優勢顯著，Banamex 股權剝離帶來的資本解凍能進一步轉化為實質的每股淨資產增厚空間。</li>
+                    <li><b>資產負債表防禦屬性佳：</b> 12.8% 的 CET1 資本充足率遠高於監管底線，這給其在下半年開展大額回購提供了充裕的財務彈性。</li>
+                </ul>
+            </div>
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">摩根大通 (J.P. Morgan)</h3>
+                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
+                </div>
+                <div class="text-xs text-slate-400 mb-2 font-bold">目標價：$149.00 USD (07/15/26)</div>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>跨境財資解決方案具強黏性：</b> 核心跨國業務平台 Worldlink 的高頻交易流動性不易受單一宏觀週期波及。跨境交易價值攀升 13% 證實其具有極高壟斷性護城河。</li>
+                    <li><b>中期財務目標具高度可達性：</b> 管理層重申 2026 年 10-11% 的 RoTCE 指引並給出 14-15% 的中期長遠願景，表明利潤大拐點已經到來。</li>
+                </ul>
+            </div>
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">瑞銀集團 (UBS)</h3>
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">買入 (Buy)</span>
+                </div>
+                <div class="text-xs text-slate-400 mb-2 font-bold">評級更新：重組紅利確立</div>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>成本曲線頂部已經確立：</b> 轉型費用與遣散費開支對利潤的蠶食已過高位，本季毛效率比顯著改善至 57.4%，展示轉型已步入紅利期。</li>
+                    <li><b>回購權益具強大提振效應：</b> 高達 300 億美元的跨年度重額股票回購計畫一旦全面啟動，將有效註銷發行在外股數，在中期內對 EPS 帶來強大結構性拉抬。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="risks" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、風險因素</h2></div>
+        <div class="metric-card">
+            <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-rose-700 text-base">全球宏觀地緣政治不確定性溢價：</strong> 管理層明確指出高通膨壓力、中東衝突延續等全球地緣環境 overhang，可能對跨國財資清算與零售信用卡資產品質帶來突發性壞帳干擾風險。
+                </li>
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-base">美國消费卡 (USCC) 短期信用成本壞帳準備金計提壓力：</strong> 由於本季新導入美航 co-branded 卡片資產組合，加上信貸週期步入高位，本季大幅提列達 25 億美元的信用損失準備金。未來信用成本仍與總體經濟衰退機率深度掛鉤。
+                </li>
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-base">國際匯率大幅波動干擾與海外利潤折算摩擦风险：</strong> 作為具備高度跨境網絡的金融巨頭，非利息收入及營運開支極易受外匯換算影響。阿根廷比索的持續貶值及披索強勢，對其海外新興市場板塊利潤折算產生了一定干擾。
+                </li>
+                <li class="pb-1">
+                    <strong class="text-base">重資產非核心業務海外剝離的交期與執行摩擦風險：</strong> Banamex 的完全 deconsolidation 拆分和後續剩餘小額股權市場配售流程複雜，若後續上市交期或外資法規環評出現卡頓，恐對中期效率比改善路徑造成執行進度摩擦。
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="disclaimer" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免責聲明</h2></div>
+        <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+            <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在從 disclaimer.html 線上安全讀取最新免責聲明組件...</p></div>
+        </div>
+    </section>
+</main>
+
+<div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
+            <div class="flex items-center">
+                <span class="text-2xl mr-2">🤖</span>
+                <div><h4 class="font-bold text-sm">研究員專屬 AI 助理</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
+            </div>
+            <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
+            <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
+                分析師您好！我是您的專屬花旗集團 (C) 數據輔助 AI。您可以隨時詢問我關於本次 2Q26 總營收達 $24.8B、效率比優化至 57.4%、全新的 $30B 跨年度回購計畫，或是海外市場 Banamex 剝離進展對核心回報率（RoTCE）的中遠期量化財務利多影響。
+            </div>
+        </div>
+        <div class="p-3 bg-white border-t border-slate-200">
+            <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
+                <input type="text" id="chat-input" placeholder="輸入您的研究指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+    <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center"><span class="text-2xl">✨</span></button>
+</div>
+
+<div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
+    <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600"><span>✨</span> AI 白話文解釋</button>
+</div>
+
+<div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+            <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 術語解釋</h3>
+            <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查詢的詞彙：</div>
+            <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
+            <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
+                <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                AI 正在生成解釋...
+            </div>
+            <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
+        </div>
+        <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+            <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">關閉</button>
+        </div>
+    </div>
+</div>
+
+<script>
+window.charts = {};
+
+function switchTab(e, tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => {
+        el.classList.remove('active', 'border-blue-600', 'text-blue-600');
+        el.classList.add('text-slate-500');
+    });
+    document.getElementById(tabId).classList.add('active');
+    e.currentTarget.classList.remove('text-slate-500');
+    e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+
+    if (tabId === 'financials') {
+        if (window.charts.cSegment) window.charts.cSegment.resize();
+        if (window.charts.cProfit) window.charts.cProfit.resize();
+    } else if (tabId === 'valuation') {
+        if (window.charts.cValuation) window.charts.cValuation.resize();
+    }
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    if (!sessionStorage.getItem('pi_agreed')) {
+        const modal = document.getElementById('pi-modal');
+        if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+    }
+
+    // 圖表 1: 花旗集團 2Q26 各大部門營收結構 (Doughnut)
+    window.charts.cSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
+        type: 'doughnut',
+        data: {
+            labels: ['市場部門 (Markets)', '服務部門 (Services)', '財富管理 (Wealth)', '銀行部門 (Banking)', '其他業務 (All Other)'],
+            datasets: [{
+                data: [7007, 6382, 3177, 1922, 1737],
+                backgroundColor: ['#1e3a8a', '#2563eb', '#3b82f6', '#60a5fa', '#94a3b8'],
+                borderWidth: 0
+            }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } }, cutout: '65%' }
+    });
+
+    // 圖表 2: 主要業務Allocated TCE 與 RoTCE 表現 (Grouped Bar Chart)
+    window.charts.cProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['Services (服務)', 'Markets (市場)', 'Banking (銀行)', 'Wealth (財富)'],
+            datasets: [
+                { label: 'Allocated Average TCE (十億美元)', data: [34, 56, 8, 16], backgroundColor: '#3b82f6', borderRadius: 4 },
+                { label: '部門年化 RoTCE (%)', data: [30.9, 17.0, 18.0, 14.4], backgroundColor: '#10b981', borderRadius: 4, yAxisID: 'percentageAxis' }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { position: 'bottom', labels: { boxWidth: 12, font: { size: 11 } } } },
+            scales: {
+                y: { beginAtZero: true, position: 'left', grid: { color: '#f1f5f9' } },
+                percentageAxis: { beginAtZero: true, max: 40, position: 'right', grid: { display: false } }
+            }
+        }
+    });
+
+    // 圖表 3: 華爾街綜合銀行遠期本益比比較 (Horizontal Bar)
+    window.charts.cValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['高盛集團 (GS)', '摩根大通 (JPM)', '美國銀行 (BAC)', '花旗集團 (C)'],
+            datasets: [{
+                label: 'Next 4 Qtrs Est Forward P/E',
+                data: [17.51, 14.80, 12.53, 11.46],
+                backgroundColor: ['rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)', 'rgba(37, 99, 235, 0.95)'],
+                borderRadius: 4
+            }]
+        },
+        options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
+    });
+
+    // 動態外部 disclaimer 異步讀取
+    fetch('disclaimer.html')
+        .then(response => { if (!response.ok) throw new Error(); return response.text(); })
+        .then(html => { const c = document.getElementById('disclaimer-container'); if(c) c.innerHTML = html; })
+        .catch(() => {
+            const c = document.getElementById('disclaimer-container');
+            if(c) c.innerHTML = '<div class="p-6 text-center text-rose-600 font-bold">【安全連動錯誤】外部合規免責聲明檔案加載失敗，請聯絡系統運維團隊。</div>';
+        });
+});
+
+async function callGeminiAPI(prompt, systemInstruction) {
+    try {
+        const response = await fetch('/api/gemini', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })
+        });
+        const data = await response.json();
+        if (!response.ok) return `連線錯誤：${data.error || '未知錯誤'}`;
+        let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，無法產生有效回覆。";
+        return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+    } catch (error) { return `網路連線失敗。(${error.message})`; }
+}
+
+const standardPrompt = `你是一位精通 NTAM 投資研究框架且深度熟悉全球銀行板塊的資深 AI 助理。請針對使用者對花旗集團 (C) 2026年第二季財報的提問，提供符合專業機構投資人水準、客觀、高密度的定量與定性答覆。重點用 <b> 標籤包覆，嚴禁使用 markdown。`;
+
+function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
+function appendMessage(text, isUser) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
+    msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
+    document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+}
+function showTypingIndicator() {
+    const ind = document.createElement('div'); ind.id = 'typing-indicator';
+    ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
+    ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
+    document.getElementById('chat-messages').appendChild(ind);
+}
+async function handleChatSubmit(e) {
+    e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
+    input.value = ''; appendMessage(text, true); showTypingIndicator();
+    const res = await callGeminiAPI(text, standardPrompt);
+    document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
+}
+
+let selectedText = "";
+document.addEventListener('mouseup', function(e) {
+    const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
+    if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
+    if (text.length > 1 && text.length < 50) {
+        selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
+        tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${window.scrollY + rect.top - 40}px`;
+        tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
+    } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+});
+document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
+
+async function explainSelectedTerm() {
+    document.getElementById('selection-tooltip').classList.add('hidden');
+    document.getElementById('explain-term-title').textContent = selectedText;
+    document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
+    const res = await callGeminiAPI(`解釋這個花旗集團 C 財報相關金融詞彙：${selectedText}`, "你是全球大型綜合銀行與貨幣中心銀行研究專家，用最白話的專業繁體中文解釋詞彙。限 150 字，重點使用 <b> 標籤包覆。");
+    document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
+}
+function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
+function acceptPI() { sessionStorage.setItem('pi_agreed', 'true'); document.getElementById('pi-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
+function declinePI() { document.body.innerHTML = '<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>'; }
+</script>
+</body>
+</html>
