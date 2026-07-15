@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>高盛集团 (GS) 2Q2026 深度研究报告 | NTAM 资深分析师</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Noto Sans SC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+.chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+@media (min-width: 768px) { .chart-container { height: 400px; } }
+.tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+.tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+.tab-content.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+/* AI Animations */
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+.typing-dot { animation: typing 1.4s infinite ease-in-out both; }
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+@keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+#selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
+</style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+<div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
+<div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
+<div class="text-center mb-6">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77-1.333.192 3 1.732 3z" /></svg>
+</div>
+<h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要声明</h2>
+</div>
+<div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
+<p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
+</div>
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
+<p>本页面所含信息仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者身份。</p>
+</div>
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
+<p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
+<button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
+<button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">我確認 I Confirm</button>
+</div>
+</div>
+</div>
+<header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
+<img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+<span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+</a>
+<div class="flex flex-col">
+<h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">高盛集团 <span class="text-blue-600">GS</span></h1>
+<span class="text-sm text-slate-500 font-medium mt-1">资深分析师 运营与战略报告 | 2Q2026 财报特辑</span>
+</div>
+</div>
+<div class="flex flex-col items-end space-y-3">
+<select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
+<option value="gs.html">繁體中文</option>
+<option value="gs-sc.html" selected>简体中文</option>
+<option value="gs-en.html">English</option>
+</select>
+<div class="flex items-center space-x-4">
+<div class="text-right hidden sm:block">
+<div class="text-xs text-slate-400 font-bold">共识目标价 (截至 2026/07/15) <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
+<div class="text-xl font-bold text-slate-800">$1,089.95 USD</div>
+</div>
+<div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-slate-600 font-bold rounded-full border border-slate-200 text-sm whitespace-nowrap">ANR 共识评级：中性 (Neutral)</div>
+</div>
+</div>
+</div>
+<nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+    <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我们的观点</button>
+    <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 运营与财务数据</button>
+    <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比较</button>
+    <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 华尔街观点</button>
+    <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 风险因素</button>
+    <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免责声明</button>
+</nav>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+<section id="our-comments" class="tab-content active">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我们的观点</h2>
+        <p class="mt-2 text-sm text-slate-500">基于 2Q2026 财报及管理层大会披露信息，以下为 NTAM 研究团队提炼之高盛集团 (GS) 核心结论：</p>
+    </div>
+    <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
+        <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
+            <span class="text-3xl mr-3">🎯</span>
+            <h3 class="text-2xl font-black text-blue-600 tracking-tight">核心经营结论</h3>
+        </div>
+        <ul class="space-y-6">
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">全球银行与市场业务 (GBM) 创历史营收纪录，跨业务客户活动飞轮加速</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">得益于投行承销、资产管理与交易活动的相互带动，本季 GBM 业务录得 155.20 亿美元历史新高营收（同比增长 53%）。其中股票板块、债券承销、FICC 融资表现皆打破历史高位，一体化特许经营实力稳固。</p>
+                </div>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">受监督资产规模 (AUS) 破里程碑，经常性管理费基础稳固</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">受监督资产规模 (AUS) 攀升至 4.04 万亿美元历史峰值，创下连续 34 个季度长期收费型资产净流入的卓越纪录。单季第三方另类投资总筹资额达 590 亿美元，进一步夯实管理手续费利润转化基础。</p>
+                </div>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">零售金融出清仍处执行阶段，Apple Card 资产减值逆风尚存波动</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">Platform Solutions 业务本季净营收同比下降 64% 至 2.21 亿美元，主要反映已转列待售的 Apple Card 贷款组合相关净估值下调。该计划转移程序预计需约 24 个月完成，过渡期间高盛仍将持续运营并确认相关损益。</p>
+                </div>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">大额股份回购降低流通股数，常规季度股息大幅提高 11%</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">本季度公司共向股东返还资本达 53.6 亿美元，内含在公开市场公开回购 410 万股普通股，有助于降低流通股数。同时，董事会决议自 3Q26 起调升每股常规季度股息至 $5.00。</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<section id="financials" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、运营与财务数据</h2></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div class="metric-card border-t-4 border-t-emerald-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">2Q26 季度总营业收入</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">$20,338 M</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +39% / 历史新高纪录</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">季度净利润 (Net Earnings)</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">$6,628 M</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +78% / 公司历来第二高季度</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-indigo-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">稀释后每股收益 (EPS)</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">$20.98 USD</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +92% / 创单季历史新高</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-purple-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">有形普通股股东权益回报率 (ROTE)</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">25.5%</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">● Non-GAAP / GAAP ROE 为 23.5%</p>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="metric-card">
+            <h3 class="text-lg font-bold text-slate-800 mb-2">2Q26 各核心三大板块营收结构拆解 (GAAP, 百万美元)</h3>
+            <p class="text-xs text-slate-500 mb-4">全球银行与市场部门（GBM）营收表现强劲，本季贡献占比高达 76.3%。</p>
+            <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+        </div>
+        <div class="metric-card">
+            <h3 class="text-lg font-bold text-slate-800 mb-2">2Q26 三大业务线营收与分部 ROE 对比 (百万美元 / %)</h3>
+            <p class="text-xs text-slate-500 mb-4">GBM 季度平均普通股权益回报率升至 27.5%，较去年同期大幅提高 13.1 个百分点。</p>
+            <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
+        </div>
+    </div>
+    <div class="metric-card mt-6">
+        <h3 class="text-lg font-bold text-slate-800 mb-4">2Q26 核心财务数据综合对比明细 Table (GAAP vs Non-GAAP)</h3>
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left border-collapse">
+                <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
+                    <tr>
+                        <th class="px-6 py-3 font-bold">主要会计科目明细项目</th>
+                        <th class="px-6 py-3 font-bold text-right">2Q26 GAAP</th>
+                        <th class="px-6 py-3 font-bold text-right text-blue-600">2Q26 Non-GAAP</th>
+                        <th class="px-6 py-3 font-bold text-right text-emerald-600">YoY 变动率</th>
+                    </tr>
+                </thead>
+                <tbody class="text-slate-700">
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">总营业收入 (Total Net Revenues)</td>
+                        <td class="px-6 py-4 text-right">$20,338 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$20,338 M</td>
+                        <td class="px-6 py-4 text-right text-emerald-500 font-bold">+39%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">净利息收入 (Net Interest Income)</td>
+                        <td class="px-6 py-4 text-right">$3,954 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$3,954 M</td>
+                        <td class="px-6 py-4 text-right text-emerald-500 font-bold">+27%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">总运营费用 (Total Operating Expenses)</td>
+                        <td class="px-6 py-4 text-right">$11,673 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$11,673 M</td>
+                        <td class="px-6 py-4 text-right text-rose-600 font-bold">+26%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">信贷损失准备金 (Provision for Credit Losses)</td>
+                        <td class="px-6 py-4 text-right">$102 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$102 M</td>
+                        <td class="px-6 py-4 text-right text-emerald-500 font-bold">-73%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">每股普通股账面价值 (BVPS)</td>
+                        <td class="px-6 py-4 text-right">$367.67</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$367.67</td>
+                        <td class="px-6 py-4 text-right text-emerald-500 font-bold">+5.1%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">每股有形普通股账面价值 (TBVPS)</td>
+                        <td class="px-6 py-4 text-right">$336.61</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$336.61</td>
+                        <td class="px-6 py-4 text-right text-emerald-500 font-bold">+2.7%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">标准法核心一级资本充足率 (Standardized CET1 Ratio)</td>
+                        <td class="px-6 py-4 text-right">12.9% (初步估算)</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">12.9% (初步估算)</td>
+                        <td class="px-6 py-4 text-right text-rose-600 font-bold">-1.6 ppts</td>
+                    </tr>
+                    <tr class="bg-slate-50 font-bold">
+                        <td class="px-6 py-4 text-slate-800">季度普通股稀释每股收益 (Diluted EPS) 与 ROE</td>
+                        <td class="px-6 py-4 text-right text-slate-500">GAAP Diluted EPS: $20.98</td>
+                        <td class="px-6 py-4 text-right text-blue-600">Non-GAAP ROTE: 25.5%</td>
+                        <td class="px-6 py-4 text-right text-purple-600">季度净利润: $6,628 M</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<section id="valuation" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比较</h2></div>
+    <div class="metric-card">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-bold text-slate-800">全球华尔街金融巨头远期市盈率 (Next 4 Qtrs Est Forward P/E) 倍数横向长条图对比（截至 2026/07/15）</h3>
+        </div>
+        <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
+        <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
+    </div>
+</section>
+<section id="street-comments" class="tab-content">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、华尔街观点</h2>
+        <p class="mt-2 text-sm text-slate-500">摘要华尔街顶级投行对高盛核心承销业务流复苏的解读（评级与目标价：Bloomberg ANR，截至 2026/07/15）：</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3>
+                <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">中性 (Neutral)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>投行承销核心动能季增（目标价 $1,145）：</b> 费用 backlog 环比增长主要受财务顾问（Advisory）业务推动，但债券承销 backlog 显著下降，显示后续产品线动能并非完全同步。</li>
+                <li><b>手续费资产吸金规模雄厚：</b> AWM 旗下受监督资产规模 (AUS) 冲高至 4.04 万亿美元历史新高，单季录得 910 亿美元长期净流入，经常性管理费收入基础健全。</li>
+            </ul>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">摩根大通 (J.P. Morgan)</h3>
+                <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">中性 (Neutral)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>单季盈利指标跨过高基期（目标价 $955）：</b> 季度稀释后 EPS 录得 $20.98 创下历史新高，年化 ROTE 达 25.5%，显示其高弹性的资产配置结构在买方市场具备极高业务杠杆。</li>
+                <li><b>Platform Solutions 转型进程：</b> 虽然转列待售的 Apple Card 卡片贷款计提拖累短期分部数据，但随着 24 个月过渡计划推进，零售逆风下半年可逐步厘清。</li>
+            </ul>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">瑞银集团 (UBS)</h3>
+                <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">中性 (Neutral)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>风险资产回落支持资本充足（目标价 $1,120）：</b> 市场和信用 RWA 规模缩减带动 Standardized CET1 比率回升至 12.9%，季度内实施 40 亿美元大额股份回购，有助降低流通股数。</li>
+                <li><b>派息上调彰显特许经营价值：</b> 季度股息提高 11% 至每股 $5.00，在重估周期中为股东权益回报率提供了极佳的定量防御性支撑。</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section id="risks" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、风险因素</h2></div>
+    <div class="metric-card">
+        <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-rose-700 text-base">全球总体经济放缓与资本市场订单变更风险：</strong> 整体宏观景气不确定性、全球 GDP 增长停滞、利率及通胀剧烈起伏，可能导致大型承销项目或财务顾问交易遭遇取消或结构修改。
+            </li>
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-base">国际地缘冲突恶化与地缘贸易关税不确定性：</strong> 中东地缘突发冲突恶化，或是国际贸易政策的更改变动（如潜在新设、调高关税），均可能对全球证券市场流动性及发行主体造成不利冲击。
+            </li>
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-base">Marcus 存款息差及资金定价竞争成本风险：</strong> AWM 板块下的 Private banking and lending 收入同比下降 13%，主要受到 Marcus 存款相关净息差下降影响，虽然较高的 Marcus 及私人银行平均存款余额提供部分抵消。若存款定价竞争或资金成本维持高位，该业务收入仍可能承压。
+            </li>
+            <li class="pb-1">
+                <strong class="text-base">Apple Card 计划剥离过渡程序的执行时间进度摩擦：</strong> 针对已转列待售的 Apple Card 贷款组合转移程序目前仍处执行阶段。该交易预计需约 24 个月方能完成过渡，此期间若满足交割条件有所延迟，后续收入及估值影响仍可能大幅波动。
+            </li>
+        </ol>
+    </div>
+</section>
+<section id="disclaimer" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免责声明</h2></div>
+    <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+        <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在从 disclaimer.html 线上安全读取最新免责声明组件...</p></div>
+    </div>
+</section>
+</main>
+<div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+<div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+<div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
+<div class="flex items-center">
+<span class="text-2xl mr-2">🤖</span>
+<div><h4 class="font-bold text-sm">研究员专属 AI 助理</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
+</div>
+<button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+</button>
+</div>
+<div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
+<div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
+分析师您好！我是您的专属高盛集团 (GS) 数据辅助 AI 助理。您可以随时询问我关于本次 2Q26 总营业收入达 $20.34B、稀释后每股收益（EPS）创下 $20.98 历史新高、三大板块资产配置分布、受监督资产规模 (AUS) 突破 4.04 万亿美元大关，或者是 Platform Solutions 出清 Apple Card 卡片资产进度对核心回报率 (ROTE) 的量化财务利好影响。
+</div>
+</div>
+<div class="p-3 bg-white border-t border-slate-200">
+<form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
+<input type="text" id="chat-input" placeholder="输入您的研究指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
+<button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+</button>
+</form>
+</div>
+</div>
+<button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
+<span class="text-2xl">✨</span>
+</button>
+</div>
+<div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
+<button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
+<span>✨</span> AI 白话文解释
+</button>
+</div>
+<div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
+<div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+<div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+<h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 术语解释</h3>
+<button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+</button>
+</div>
+<div class="p-6">
+<div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查询的词汇：</div>
+<div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
+<div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
+<svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+AI 正在生成解释...
+</div>
+<div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
+</div>
+<div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+<button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">关闭</button>
+</div>
+</div>
+</div>
+<script>
+// 注册全局图表实例缓存
+window.charts = {};
+// PI 拦截视窗控制函式（依 index.html 标准写法补回）
+function acceptPI() {
+    sessionStorage.setItem('pi_agreed', 'true');
+    document.getElementById('pi-modal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+function declinePI() {
+    document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;
+}
+function switchTab(e, tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => {
+        el.classList.remove('active', 'border-blue-600', 'text-blue-600');
+        el.classList.add('text-slate-500');
+    });
+    document.getElementById(tabId).classList.add('active');
+    e.currentTarget.classList.remove('text-slate-500');
+    e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+    // 彻底修复 hidden 画布无宽高像素之 Chart.js 原生缺陷
+    if (tabId === 'financials') {
+        if (window.charts.gsSegment) window.charts.gsSegment.resize();
+        if (window.charts.gsProfit) window.charts.gsProfit.resize();
+    } else if (tabId === 'valuation') {
+        if (window.charts.gsValuation) window.charts.gsValuation.resize();
+    }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    // 专业投资者拦截门户验证
+    if (!sessionStorage.getItem('pi_agreed')) {
+        const modal = document.getElementById('pi-modal');
+        if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+    }
+    // 图表 1: GS 三大板块营收拆解 (Doughnut)
+    window.charts.gsSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
+        type: 'doughnut',
+        data: {
+            labels: ['全球银行与市场部门 (GBM)', '资产与财富管理 (AWM)', '平台解决方案 (Platform Solutions)'],
+            datasets: [{
+                data: [15520, 4597, 221],
+                backgroundColor: ['rgba(37, 99, 235, 0.85)', 'rgba(16, 185, 129, 0.85)', 'rgba(99, 102, 241, 0.85)'],
+                borderWidth: 0
+            }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
+    });
+    // 图表 2: 三大业务线营收与分部 ROE 对比 (Grouped Bar Chart)
+    // 银行类补充惯例：分部 ROE 含负值时，双轴零线须对齐（左轴 min = -max/4；右轴 min:-25 / max:100，两轴各五等分）
+    window.charts.gsProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['GBM (银行与市场)', 'AWM (资产财富)', 'Platform (平台方案)'],
+            datasets: [
+                {
+                    label: '部门营收 (百万美元)',
+                    data: [15520, 4597, 221],
+                    backgroundColor: '#3b82f6',
+                    borderRadius: 4
+                },
+                {
+                    label: '分部 ROE (%)',
+                    data: [27.5, 13.8, -5.8],
+                    backgroundColor: '#10b981',
+                    borderRadius: 4,
+                    yAxisID: 'percentageAxis'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { position: 'bottom' } },
+            scales: {
+                y: { min: -4000, max: 16000, position: 'left', grid: { color: '#f1f5f9' }, ticks: { stepSize: 4000 } },
+                percentageAxis: { min: -25, max: 100, position: 'right', grid: { display: false }, ticks: { stepSize: 25 } }
+            }
+        }
+    });
+    // 图表 3: 全球华尔街金融巨头远期市盈率比较 (Horizontal Bar)
+    window.charts.gsValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['高盛集团 (GS)', '摩根大通 (JPM)', '美国银行 (BAC)', '花旗集团 (C)'],
+            datasets: [{
+                label: 'Next 4 Qtrs Est Forward P/E',
+                data: [17.51, 14.80, 12.53, 11.46],
+                backgroundColor: ['rgba(37, 99, 235, 0.95)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)'],
+                borderRadius: 4
+            }]
+        },
+        options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
+    });
+    // 安全调阅外部 disclaimer.html 连动模组
+    fetch('disclaimer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('无法载入 disclaimer.html');
+            return response.text();
+        })
+        .then(html => {
+            const container = document.getElementById('disclaimer-container');
+            if(container) container.innerHTML = html;
+        })
+        .catch(error => {
+            console.error('安全连动调阅失败:', error);
+            const container = document.getElementById('disclaimer-container');
+            if(container) container.innerHTML = '<div class="p-6 text-center text-rose-600 font-bold">【安全连动错误】外部合规免责声明档案加载失败，请联络系统运维团队。</div>';
+        });
+});
+// NTAM 后端 AI 调度核心
+async function callGeminiAPI(prompt, systemInstruction) {
+    try {
+        const response = await fetch('/api/gemini', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })
+        });
+        const data = await response.json();
+        if (!response.ok) return `连线错误：${data.error || '未知错误'}`;
+        let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，无法产生有效回复。";
+        return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+    } catch (error) { return `网络连线失败。(${error.message})`; }
+}
+// AI 助理 Widget 逻辑
+const standardPrompt = `你是一位精通 NTAM 投资研究框架且深度熟悉全球银行板块的资深 AI 助理。请针对使用者对高盛集团 (GS) 2026年第二季度财报的提问，提供符合专业机构投资人水准、客观、高密度的定量与定性答复。重点用 <b> 标签包覆，严禁使用 markdown。`;
+function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
+function appendMessage(text, isUser) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
+    msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
+    document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+}
+function showTypingIndicator() {
+    const ind = document.createElement('div'); ind.id = 'typing-indicator';
+    ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
+    ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
+    document.getElementById('chat-messages').appendChild(ind);
+}
+async function handleChatSubmit(e) {
+    e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
+    input.value = ''; appendMessage(text, true); showTypingIndicator();
+    const res = await callGeminiAPI(text, standardPrompt);
+    document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
+}
+// 划词解说机制
+let selectedText = "";
+document.addEventListener('mouseup', function(e) {
+    const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
+    if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
+    if (text.length > 1 && text.length < 50) {
+        selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
+        tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${window.scrollY + rect.top - 40}px`;
+        tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
+    } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+});
+document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
+async function explainSelectedTerm() {
+    document.getElementById('selection-tooltip').classList.add('hidden');
+    document.getElementById('explain-term-title').textContent = selectedText;
+    document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
+    const res = await callGeminiAPI(`解释这个高盛集团 GS 财报相关金融词汇：${selectedText}`, "你是全球大型综合银行与货币中心银行研究专家，用最白话的专业简体中文解释词汇。限 150 字，重点使用 <b> 标签包覆。");
+    document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
+}
+function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
+</script>
+</body>
+</html>
