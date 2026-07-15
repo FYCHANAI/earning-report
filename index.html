@@ -14,7 +14,6 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f4f6f9; color
 </style>
 </head>
 <body class="antialiased min-h-screen flex flex-col">
-
 <div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
 <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
 <div class="text-center mb-6">
@@ -43,7 +42,6 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f4f6f9; color
 </div>
 </div>
 </div>
-
 <script>
 document.addEventListener("DOMContentLoaded", function() {
 if (!sessionStorage.getItem('pi_agreed')) {
@@ -63,7 +61,6 @@ function declinePI() {
 document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;
 }
 </script>
-
 <header class="bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex justify-between items-center">
 <div class="flex items-center space-x-4">
@@ -76,242 +73,239 @@ document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direct
 </div>
 </div>
 </header>
-
 <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 flex-grow w-full">
 <div class="mb-12">
 <h1 class="text-3xl md:text-4xl font-black text-slate-900 mb-2 tracking-tight">
 投資研究報告 <span class="text-2xl text-slate-400 font-bold block sm:inline mt-2 sm:mt-0 sm:ml-2">Investment Research</span>
 </h1>
 </div>
-
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-
-    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='mu.html'">
-        <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
-            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">半導體 / 記憶體儲存</span>
-            <span class="text-xs text-blue-600 font-bold bg-blue-50 px-2 py-0.5 rounded whitespace-nowrap">2026年6月24日更新 ✨</span>
-        </div>
-        <div class="mb-4">
-            <h2 class="text-2xl font-black text-slate-900">美光科技 <span class="text-lg font-bold text-slate-400 ml-1">Micron</span></h2>
-            <h3 class="text-xl font-bold text-blue-600 mt-1">MU</h3>
-        </div>
-        <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">FQ3 總營收達 414.56 億美元年增 346%，資料中心年化運行率破千億美元。與全球 16 家大廠簽署五年期戰略客戶協議 (SCAs)，鎖定最低千億美元營收能見度與 220 億美元預付現金承諾...</p>
-        <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
-            <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：強力買入</span>
-            <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
-        </div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='jpm.html'">
+    <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
+        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">金融 / 環球銀行</span>
+        <span class="text-xs text-blue-600 font-bold bg-blue-50 px-2 py-0.5 rounded whitespace-nowrap">2026年7月15日更新 ✨</span>
     </div>
-
-    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='orcl.html'">
-        <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
-            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">科技 / AI 基礎設施</span>
-            <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年6月10日更新</span>
-        </div>
-        <div class="mb-4">
-            <h2 class="text-2xl font-black text-slate-900">甲骨文 <span class="text-lg font-bold text-slate-400 ml-1">Oracle</span></h2>
-            <h3 class="text-xl font-bold text-blue-600 mt-1">ORCL</h3>
-        </div>
-        <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">2026 財年第四季總營收達 192 億美元年增 21%，雲端基礎設施 (IaaS) 在 AI 強勁拉動下暴增 93% 至 58 億美元。剩餘履約義務 (RPO) 飆升至 6,380 億美元創歷史新高，預付款項大幅降低資本支出集資壓力...</p>
-        <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
-            <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
-            <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
-        </div>
+    <div class="mb-4">
+        <h2 class="text-2xl font-black text-slate-900">摩根大通 <span class="text-lg font-bold text-slate-400 ml-1">JPMorgan</span></h2>
+        <h3 class="text-xl font-bold text-blue-600 mt-1">JPM</h3>
     </div>
-
-    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='avgo.html'">
-        <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
-            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">半導體 / AI 網路</span>
-            <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年6月4日更新</span>
-        </div>
-        <div class="mb-4">
-            <h2 class="text-2xl font-black text-slate-900">博通 <span class="text-lg font-bold text-slate-400 ml-1">Broadcom</span></h2>
-            <h3 class="text-xl font-bold text-blue-600 mt-1">AVGO</h3>
-        </div>
-        <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">2026 財年次季營收達 221.87 億美元年增 48%，AI 半導體營收飆升 143% 至 108 億美元。客製化 AI 加速器與網路交換器需求強勁，單季創造 102.62 億美元自由現金流...</p>
-        <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
-            <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：增持</span>
-            <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
-        </div>
+    <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">2Q26 淨利 212 億美元（EPS $7.70）年增 41%，CCB、CIB、AWM 三大業務線營收全數創紀錄；剔除 Visa 等重大項目後 EPS $6.14、ROTCE 仍達 23%。Markets 營收年增 35%、IB 費用創 2021 年以來新高，FY26 NII 指引上調至約 1,055 億美元...</p>
+    <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
+        <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
+        <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
     </div>
-
-    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='nio.html'">
-        <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
-            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">新能源汽車 / 智駕</span>
-            <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
-        </div>
-        <div class="mb-4">
-            <h2 class="text-2xl font-black text-slate-900">蔚來 <span class="text-lg font-bold text-slate-400 ml-1">NIO</span></h2>
-            <h3 class="text-xl font-bold text-blue-600 mt-1">NIO</h3>
-        </div>
-        <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">憑藉子品牌「樂道」切入大眾市場，換電聯盟 (BaaS) 的擴大為其帶來獨特護城河與經常性服務收入...</p>
-        <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
-            <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
-            <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
-        </div>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='mu.html'">
+    <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
+        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">半導體 / 記憶體儲存</span>
+        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年6月24日更新</span>
     </div>
-
-    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='nvda.html'">
-        <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
-            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">半導體 / AI 晶片</span>
-            <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
-        </div>
-        <div class="mb-4">
-            <h2 class="text-2xl font-black text-slate-900">輝達 <span class="text-lg font-bold text-slate-400 ml-1">NVIDIA</span></h2>
-            <h3 class="text-xl font-bold text-blue-600 mt-1">NVDA</h3>
-        </div>
-        <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">2027 財年首季營收達 816 億美元年增 85%，資料中心營收飆升 92%。Blackwell 晶片出貨強勁，專為代理式 AI 打造的 Rubin 架構蓄勢待發...</p>
-        <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
-            <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
-            <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
-        </div>
+    <div class="mb-4">
+        <h2 class="text-2xl font-black text-slate-900">美光科技 <span class="text-lg font-bold text-slate-400 ml-1">Micron</span></h2>
+        <h3 class="text-xl font-bold text-blue-600 mt-1">MU</h3>
     </div>
-
-    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='mcd.html'">
-        <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
-            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">餐飲 / 跨國連鎖</span>
-            <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
-        </div>
-        <div class="mb-4">
-            <h2 class="text-2xl font-black text-slate-900">麥當勞 <span class="text-lg font-bold text-slate-400 ml-1">McDonald's</span></h2>
-            <h3 class="text-xl font-bold text-blue-600 mt-1">MCD</h3>
-        </div>
-        <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">2026 年第一季全球同店銷售穩定成長 3.8%，系統性銷售額突破 340 億美元。常客忠誠計畫貢獻強勁，展現卓越的定價能力與抗風險護城河...</p>
-        <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
-            <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
-            <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
-        </div>
+    <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">FQ3 總營收達 414.56 億美元年增 346%，資料中心年化運行率破千億美元。與全球 16 家大廠簽署五年期戰略客戶協議 (SCAs)，鎖定最低千億美元營收能見度與 220 億美元預付現金承諾...</p>
+    <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
+        <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：強力買入</span>
+        <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
     </div>
-
-    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='amd.html'">
-        <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
-            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">半導體 / AI 算力</span>
-            <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
-        </div>
-        <div class="mb-4">
-            <h2 class="text-2xl font-black text-slate-900">超微半導體 <span class="text-lg font-bold text-slate-400 ml-1">AMD</span></h2>
-            <h3 class="text-xl font-bold text-blue-600 mt-1">AMD</h3>
-        </div>
-        <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">2026 年第一季總營收達 102.5 億美元，年增 38%，資料中心營收大增 57%。Meta 擴大部署 Instinct GPU，展現強大營運槓桿與獲利能力...</p>
-        <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
-            <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
-            <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
-        </div>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='orcl.html'">
+    <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
+        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">科技 / AI 基礎設施</span>
+        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年6月10日更新</span>
     </div>
-
-    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='pltr.html'">
-        <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
-            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">大數據 / AI 軟體</span>
-            <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
-        </div>
-        <div class="mb-4">
-            <h2 class="text-2xl font-black text-slate-900">Palantir</h2>
-            <h3 class="text-xl font-bold text-blue-600 mt-1">PLTR</h3>
-        </div>
-        <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">2026 年第一季總營收達 16.3 億美元年增 85%，美國商業業務受 AIP 驅動年增高達 133%。Rule of 40 飆升至 145%，展現極強獲利與成長動能...</p>
-        <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
-            <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
-            <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
-        </div>
+    <div class="mb-4">
+        <h2 class="text-2xl font-black text-slate-900">甲骨文 <span class="text-lg font-bold text-slate-400 ml-1">Oracle</span></h2>
+        <h3 class="text-xl font-bold text-blue-600 mt-1">ORCL</h3>
     </div>
-
-    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='meta.html'">
-        <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
-            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">社交媒體 / AI</span>
-            <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
-        </div>
-        <div class="mb-4">
-            <h2 class="text-2xl font-black text-slate-900">Meta Platforms</h2>
-            <h3 class="text-xl font-bold text-blue-600 mt-1">META</h3>
-        </div>
-        <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">廣告營收大增 33%，資本支出上調至 1,450 億美元以建置 AI 算力。Muse Spark 模型大幅提升 Meta AI 助理能力，帶動互動率創新高...</p>
-        <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
-            <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
-            <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
-        </div>
+    <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">2026 財年第四季總營收達 192 億美元年增 21%，雲端基礎設施 (IaaS) 在 AI 強勁拉動下暴增 93% 至 58 億美元。剩餘履約義務 (RPO) 飆升至 6,380 億美元創歷史新高，預付款項大幅降低資本支出集資壓力...</p>
+    <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
+        <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
+        <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
     </div>
-
-    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='msft.html'">
-        <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
-            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">科技 / AI 基礎設施</span>
-            <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
-        </div>
-        <div class="mb-4">
-            <h2 class="text-2xl font-black text-slate-900">微軟 <span class="text-lg font-bold text-slate-400 ml-1">Microsoft</span></h2>
-            <h3 class="text-xl font-bold text-blue-600 mt-1">MSFT</h3>
-        </div>
-        <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">開源模型及相關應用年化營收突破 370 億美元，Azure 強勢增長 40%。資本支出大幅擴張至 319 億美元，全力穩固 AI 基礎設施護城河...</p>
-        <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
-            <span class="bg-slate-100 text-slate-600 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：增持</span>
-            <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
-        </div>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='avgo.html'">
+    <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
+        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">半導體 / AI 網路</span>
+        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年6月4日更新</span>
     </div>
-
-    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='aapl.html'">
-        <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
-            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">消費電子 / AI</span>
-            <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
-        </div>
-        <div class="mb-4">
-            <h2 class="text-2xl font-black text-slate-900">蘋果 <span class="text-lg font-bold text-slate-400 ml-1">Apple</span></h2>
-            <h3 class="text-xl font-bold text-blue-600 mt-1">AAPL</h3>
-        </div>
-        <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">總營收達 1,112 億美元創同期新高，服務收入達 309.76 億美元。啟動 1000 億美元回購計畫，iPhone 17 系列需求強勁...</p>
-        <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
-            <span class="bg-slate-100 text-slate-600 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：增持</span>
-            <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
-        </div>
+    <div class="mb-4">
+        <h2 class="text-2xl font-black text-slate-900">博通 <span class="text-lg font-bold text-slate-400 ml-1">Broadcom</span></h2>
+        <h3 class="text-xl font-bold text-blue-600 mt-1">AVGO</h3>
     </div>
-
-    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='amzn.html'">
-        <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
-            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">電商 / AWS 雲端</span>
-            <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
-        </div>
-        <div class="mb-4">
-            <h2 class="text-2xl font-black text-slate-900">亞馬遜 <span class="text-lg font-bold text-slate-400 ml-1">Amazon</span></h2>
-            <h3 class="text-xl font-bold text-blue-600 mt-1">AMZN</h3>
-        </div>
-        <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">AWS 營收達 376 億美元強勢年增 28%，創近 15 季新高。資本支出大幅擴張至 593 億美元以建置 AI 算力，並受惠於 Anthropic 投資收益...</p>
-        <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
-            <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
-            <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
-        </div>
+    <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">2026 財年次季營收達 221.87 億美元年增 48%，AI 半導體營收飆升 143% 至 108 億美元。客製化 AI 加速器與網路交換器需求強勁，單季創造 102.62 億美元自由現金流...</p>
+    <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
+        <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：增持</span>
+        <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
     </div>
-
-    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='googl.html'">
-        <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
-            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">數位廣告 / 雲端</span>
-            <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
-        </div>
-        <div class="mb-4">
-            <h2 class="text-2xl font-black text-slate-900">Alphabet</h2>
-            <h3 class="text-xl font-bold text-blue-600 mt-1">GOOGL</h3>
-        </div>
-        <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">Google Cloud 營收大增 63% 突破 200 億美元，Gemini 帶動訂閱與企業端活躍度。今年資本支出上調至 1800 億美元，搜尋動能依舊強勁...</p>
-        <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
-            <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
-            <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
-        </div>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='nio.html'">
+    <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
+        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">新能源汽車 / 智駕</span>
+        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
     </div>
-
-    <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='tsla.html'">
-        <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
-            <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">新能源汽車 / AI</span>
-            <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年3月更新</span>
-        </div>
-        <div class="mb-4">
-            <h2 class="text-2xl font-black text-slate-900">特斯拉 <span class="text-lg font-bold text-slate-400 ml-1">Tesla</span></h2>
-            <h3 class="text-xl font-bold text-blue-600 mt-1">TSLA</h3>
-        </div>
-        <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">交付量不及預期與嚴重庫存積壓，戰略重心全面轉向 AI 算力與 Robotaxi，面臨重資產轉型陣痛期...</p>
-        <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
-            <span class="bg-slate-100 text-slate-600 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：中性</span>
-            <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
-        </div>
+    <div class="mb-4">
+        <h2 class="text-2xl font-black text-slate-900">蔚來 <span class="text-lg font-bold text-slate-400 ml-1">NIO</span></h2>
+        <h3 class="text-xl font-bold text-blue-600 mt-1">NIO</h3>
     </div>
-
+    <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">憑藉子品牌「樂道」切入大眾市場，換電聯盟 (BaaS) 的擴大為其帶來獨特護城河與經常性服務收入...</p>
+    <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
+        <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
+        <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
+    </div>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='nvda.html'">
+    <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
+        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">半導體 / AI 晶片</span>
+        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
+    </div>
+    <div class="mb-4">
+        <h2 class="text-2xl font-black text-slate-900">輝達 <span class="text-lg font-bold text-slate-400 ml-1">NVIDIA</span></h2>
+        <h3 class="text-xl font-bold text-blue-600 mt-1">NVDA</h3>
+    </div>
+    <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">2027 財年首季營收達 816 億美元年增 85%，資料中心營收飆升 92%。Blackwell 晶片出貨強勁，專為代理式 AI 打造的 Rubin 架構蓄勢待發...</p>
+    <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
+        <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
+        <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
+    </div>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='mcd.html'">
+    <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
+        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">餐飲 / 跨國連鎖</span>
+        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
+    </div>
+    <div class="mb-4">
+        <h2 class="text-2xl font-black text-slate-900">麥當勞 <span class="text-lg font-bold text-slate-400 ml-1">McDonald's</span></h2>
+        <h3 class="text-xl font-bold text-blue-600 mt-1">MCD</h3>
+    </div>
+    <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">2026 年第一季全球同店銷售穩定成長 3.8%，系統性銷售額突破 340 億美元。常客忠誠計畫貢獻強勁，展現卓越的定價能力與抗風險護城河...</p>
+    <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
+        <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
+        <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
+    </div>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='amd.html'">
+    <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
+        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">半導體 / AI 算力</span>
+        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
+    </div>
+    <div class="mb-4">
+        <h2 class="text-2xl font-black text-slate-900">超微半導體 <span class="text-lg font-bold text-slate-400 ml-1">AMD</span></h2>
+        <h3 class="text-xl font-bold text-blue-600 mt-1">AMD</h3>
+    </div>
+    <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">2026 年第一季總營收達 102.5 億美元，年增 38%，資料中心營收大增 57%。Meta 擴大部署 Instinct GPU，展現強大營運槓桿與獲利能力...</p>
+    <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
+        <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
+        <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
+    </div>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='pltr.html'">
+    <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
+        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">大數據 / AI 軟體</span>
+        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
+    </div>
+    <div class="mb-4">
+        <h2 class="text-2xl font-black text-slate-900">Palantir</h2>
+        <h3 class="text-xl font-bold text-blue-600 mt-1">PLTR</h3>
+    </div>
+    <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">2026 年第一季總營收達 16.3 億美元年增 85%，美國商業業務受 AIP 驅動年增高達 133%。Rule of 40 飆升至 145%，展現極強獲利與成長動能...</p>
+    <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
+        <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
+        <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
+    </div>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='meta.html'">
+    <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
+        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">社交媒體 / AI</span>
+        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
+    </div>
+    <div class="mb-4">
+        <h2 class="text-2xl font-black text-slate-900">Meta Platforms</h2>
+        <h3 class="text-xl font-bold text-blue-600 mt-1">META</h3>
+    </div>
+    <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">廣告營收大增 33%，資本支出上調至 1,450 億美元以建置 AI 算力。Muse Spark 模型大幅提升 Meta AI 助理能力，帶動互動率創新高...</p>
+    <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
+        <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
+        <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
+    </div>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='msft.html'">
+    <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
+        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">科技 / AI 基礎設施</span>
+        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
+    </div>
+    <div class="mb-4">
+        <h2 class="text-2xl font-black text-slate-900">微軟 <span class="text-lg font-bold text-slate-400 ml-1">Microsoft</span></h2>
+        <h3 class="text-xl font-bold text-blue-600 mt-1">MSFT</h3>
+    </div>
+    <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">開源模型及相關應用年化營收突破 370 億美元，Azure 強勢增長 40%。資本支出大幅擴張至 319 億美元，全力穩固 AI 基礎設施護城河...</p>
+    <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
+        <span class="bg-slate-100 text-slate-600 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：增持</span>
+        <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
+    </div>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='aapl.html'">
+    <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
+        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">消費電子 / AI</span>
+        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
+    </div>
+    <div class="mb-4">
+        <h2 class="text-2xl font-black text-slate-900">蘋果 <span class="text-lg font-bold text-slate-400 ml-1">Apple</span></h2>
+        <h3 class="text-xl font-bold text-blue-600 mt-1">AAPL</h3>
+    </div>
+    <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">總營收達 1,112 億美元創同期新高，服務收入達 309.76 億美元。啟動 1000 億美元回購計畫，iPhone 17 系列需求強勁...</p>
+    <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
+        <span class="bg-slate-100 text-slate-600 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：增持</span>
+        <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
+    </div>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='amzn.html'">
+    <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
+        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">電商 / AWS 雲端</span>
+        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
+    </div>
+    <div class="mb-4">
+        <h2 class="text-2xl font-black text-slate-900">亞馬遜 <span class="text-lg font-bold text-slate-400 ml-1">Amazon</span></h2>
+        <h3 class="text-xl font-bold text-blue-600 mt-1">AMZN</h3>
+    </div>
+    <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">AWS 營收達 376 億美元強勢年增 28%，創近 15 季新高。資本支出大幅擴張至 593 億美元以建置 AI 算力，並受惠於 Anthropic 投資收益...</p>
+    <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
+        <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
+        <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
+    </div>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='googl.html'">
+    <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
+        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">數位廣告 / 雲端</span>
+        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年5月更新</span>
+    </div>
+    <div class="mb-4">
+        <h2 class="text-2xl font-black text-slate-900">Alphabet</h2>
+        <h3 class="text-xl font-bold text-blue-600 mt-1">GOOGL</h3>
+    </div>
+    <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">Google Cloud 營收大增 63% 突破 200 億美元，Gemini 帶動訂閱與企業端活躍度。今年資本支出上調至 1800 億美元，搜尋動能依舊強勁...</p>
+    <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
+        <span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
+        <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
+    </div>
+</div>
+<div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='tsla.html'">
+    <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
+        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">新能源汽車 / AI</span>
+        <span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年3月更新</span>
+    </div>
+    <div class="mb-4">
+        <h2 class="text-2xl font-black text-slate-900">特斯拉 <span class="text-lg font-bold text-slate-400 ml-1">Tesla</span></h2>
+        <h3 class="text-xl font-bold text-blue-600 mt-1">TSLA</h3>
+    </div>
+    <p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">交付量不及預期與嚴重庫存積壓，戰略重心全面轉向 AI 算力與 Robotaxi，面臨重資產轉型陣痛期...</p>
+    <div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
+        <span class="bg-slate-100 text-slate-600 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：中性</span>
+        <span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
+    </div>
+</div>
 </div>
 </main>
-
 </body>
 </html>
