@@ -102,11 +102,11 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
 <div class="flex items-center space-x-4">
 <div class="text-right hidden sm:block">
 <!-- ✏️ 替換：目標價（Source 徽章文字固定） -->
-<div class="text-xs text-slate-400 font-bold">目標價 <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
+<div class="text-xs text-slate-400 font-bold">共識目標價 (截至 2026/07/15) <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
 <div class="text-xl font-bold text-slate-800">$359.40 USD</div>
 </div>
 <!-- ✏️ 替換：評級文字（膠囊樣式固定） -->
-<div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">評級：買入 (Buy)</div>
+<div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">ANR 共識評級：買入 (Buy)</div>
 </div>
 </div>
 </div>
@@ -139,15 +139,15 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
             <li class="flex items-start">
                 <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
                 <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">歷史級季度：四大業務線營收全數創紀錄</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">2Q26 淨利 212 億美元（EPS $7.70，同比 +47%），管理營收 580 億美元同比 +27%；即使剔除 Visa 股份淨收益（EPS +$1.27）與股權投資收益（EPS +$0.29）兩項重大項目，核心淨利仍達 169 億美元（EPS $6.14、ROTCE 23%、剔除後營收 +15%），盈利含金量極高。</p>
+                    <strong class="text-slate-900 block mb-1 text-lg">三大業務線營收全數創紀錄，Corporate 受重大項目推高</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">2Q26 淨利 212 億美元（EPS $7.70，同比 +47%），管理營收 580 億美元同比 +27%；CCB、CIB、AWM 三大業務線營收全數創紀錄，Corporate 之 60.5 億美元收入則主要受 Visa 股份淨收益（EPS +$1.27）與股權投資收益（EPS +$0.29）推高。剔除重大項目後核心淨利 169 億美元（EPS $6.14、ROTCE 23%、營收 +15%），核心經營表現仍然強勁，惟本季亦受惠於市場活躍度與交易環境顯著改善。</p>
                 </div>
             </li>
             <li class="flex items-start">
                 <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
                 <div>
                     <strong class="text-slate-900 block mb-1 text-lg">CIB 雙引擎全開：市場業務與投行費用同步爆發</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">Markets 營收 121 億美元同比 +35%，其中股票市場 +86% 為主要推手；IB 費用 32.8 億美元同比 +30%，創 2021 年以來單季新高，並以 9.3% 錢包份額穩居全球投行費用第一。管理層明示市場情緒對後續活動仍具建設性。</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">Markets 營收 121 億美元同比 +35%，其中股票市場 +86% 為主要推手；IB 費用 32.8 億美元同比 +30%，創 2021 年以來單季新高，並以 9.3% 錢包份額穩居全球投行費用第一（Dealogic，截至 2026/7/1）。管理層明示市場情緒對後續活動仍具建設性。</p>
                 </div>
             </li>
             <li class="flex items-start">
@@ -196,59 +196,59 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div class="metric-card">
             <!-- ✏️ 替換：圖 1 標題與說明（canvas id 固定） -->
-            <h3 class="text-lg font-bold text-slate-800 mb-2">2Q26 各業務線營收結構 (Million USD)</h3>
-            <p class="text-xs text-slate-500 mb-4">CIB 單季營收達 24,853 百萬美元，佔管理營收約 43%，為集團最大收入引擎。</p>
+            <h3 class="text-lg font-bold text-slate-800 mb-2">2Q26 業務部門及 Corporate 營收結構 (Million USD)</h3>
+            <p class="text-xs text-slate-500 mb-4">CIB 單季營收達 24,853 百萬美元，佔管理營收約 43%；Corporate 之 6,046 百萬美元主要受 Visa 與股權投資收益推高。</p>
             <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
         </div>
         <div class="metric-card">
             <!-- ✏️ 替換：圖 2 標題與說明（canvas id 固定） -->
             <h3 class="text-lg font-bold text-slate-800 mb-2">三大業務線營收與股本回報率 (ROE) 表現</h3>
-            <p class="text-xs text-slate-500 mb-4">各業務線營收全數創同期紀錄；AWM 以 48% ROE 領先，CIB 受惠市場業務放量 ROE 升至 22%。</p>
+            <p class="text-xs text-slate-500 mb-4">三大業務線營收全數創紀錄；AWM 以 48% ROE 領先，CIB 受惠市場業務放量 ROE 升至 22%。</p>
             <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
         </div>
     </div>
     <div class="metric-card mt-6">
-        <h3 class="text-lg font-bold text-slate-800 mb-4">核心財務數據綜合對比明細 Table (GAAP vs Non-GAAP)</h3>
+        <h3 class="text-lg font-bold text-slate-800 mb-4">2Q26 報告結果與剔除重大項目後結果對比明細 Table</h3>
         <div class="overflow-x-auto">
             <!-- ✏️ 替換區：表格內容（每列固定 4 格：科目 / GAAP / Non-GAAP / 變動率；末列灰底彙總列） -->
             <table class="w-full text-sm text-left border-collapse">
                 <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
                     <tr>
                         <th class="px-6 py-3 font-bold">會計明細科目項目</th>
-                        <th class="px-6 py-3 font-bold text-right">2Q26 報告值</th>
-                        <th class="px-6 py-3 font-bold text-right text-blue-600">2Q26 剔除重大項目 (Non-GAAP)</th>
+                        <th class="px-6 py-3 font-bold text-right">2Q26 報告結果</th>
+                        <th class="px-6 py-3 font-bold text-right text-blue-600">剔除重大項目後 (Non-GAAP)</th>
                         <th class="px-6 py-3 font-bold text-right text-emerald-600">YoY 年變動率</th>
                     </tr>
                 </thead>
                 <tbody class="text-slate-700">
                     <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">季度管理營收 (Managed Revenue)</td>
+                        <td class="px-6 py-4 font-medium">季度管理營收 (Managed Revenue・Non-GAAP)</td>
                         <td class="px-6 py-4 text-right">$58,022 M</td>
                         <td class="px-6 py-4 text-right font-bold text-blue-600">$52,446 M</td>
-                        <td class="px-6 py-4 text-right font-bold text-emerald-500">+27%</td>
+                        <td class="px-6 py-4 text-right font-bold text-emerald-500">報告 +27%｜剔除後 +15%</td>
                     </tr>
                     <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">季度淨利潤 (Net Income)</td>
+                        <td class="px-6 py-4 font-medium">季度淨利潤 (Net Income・GAAP)</td>
                         <td class="px-6 py-4 text-right">$21,155 M</td>
                         <td class="px-6 py-4 text-right font-bold text-blue-600">$16,936 M</td>
-                        <td class="px-6 py-4 text-right text-emerald-500">+41%</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">報告 +41%｜剔除後 +13%</td>
                     </tr>
                     <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">攤薄後每股盈餘 (Diluted EPS)</td>
+                        <td class="px-6 py-4 font-medium">攤薄後每股盈餘 (Diluted EPS・GAAP)</td>
                         <td class="px-6 py-4 text-right">$7.70</td>
                         <td class="px-6 py-4 text-right font-bold text-blue-600">$6.14</td>
-                        <td class="px-6 py-4 text-right text-emerald-500">+47%</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">報告 +47%｜剔除後 +17%</td>
                     </tr>
                     <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">有形普通股回報率 (ROTCE)</td>
+                        <td class="px-6 py-4 font-medium">有形普通股回報率 (ROTCE・Non-GAAP)</td>
                         <td class="px-6 py-4 text-right">29%</td>
                         <td class="px-6 py-4 text-right font-bold text-blue-600">23%</td>
-                        <td class="px-6 py-4 text-right text-emerald-600">+8 ppts</td>
+                        <td class="px-6 py-4 text-right text-emerald-600">報告 +8 ppts｜剔除後 +2 ppts</td>
                     </tr>
                     <tr class="bg-slate-50 font-bold">
-                        <td class="px-6 py-4 text-slate-800">重大項目彙總 (Significant Items)</td>
-                        <td class="px-6 py-4 text-right text-slate-500">Visa 淨收益: $4,550 M (稅前)</td>
-                        <td class="px-6 py-4 text-right text-blue-600">股權投資收益: $1,026 M (稅前)</td>
+                        <td class="px-6 py-4 text-slate-800">重大項目與 GAAP 對照</td>
+                        <td class="px-6 py-4 text-right text-slate-500">GAAP 報告營收: $57,347 M (+28%)</td>
+                        <td class="px-6 py-4 text-right text-blue-600">Visa $4,550 M＋股權投資 $1,026 M (稅前)</td>
                         <td class="px-6 py-4 text-right text-purple-600">EPS 影響合計: +$1.56</td>
                     </tr>
                 </tbody>
@@ -262,7 +262,7 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
     <div class="metric-card">
         <div class="flex justify-between items-center mb-4">
             <!-- ✏️ 替換：圖表標題（行業描述可換，Forward P/E 字樣保留） -->
-            <h3 class="text-lg font-bold text-slate-800">美國大型銀行遠期市盈率 (Next 4 Qtrs Est Forward P/E) 倍數橫向長條圖比較</h3>
+            <h3 class="text-lg font-bold text-slate-800">美國大型銀行遠期市盈率 (Next 4 Qtrs Est Forward P/E) 倍數橫向長條圖比較（截至 2026/07/14）</h3>
         </div>
         <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
         <!-- 🔒 固定：資料來源標註 -->
@@ -274,7 +274,7 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
     <div class="mb-6">
         <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點</h2>
         <!-- ✏️ 替換：導言 -->
-        <p class="mt-2 text-sm text-slate-500">摘要華爾街頂級投行對摩根大通 2Q26 財報的解讀（評級與目標價來源：Bloomberg ANR）：</p>
+        <p class="mt-2 text-sm text-slate-500">以下評級、目標價與分析員資訊取自 Bloomberg ANR 終端（截至 2026/07/15；共識 12 個月目標價 $359.40、25/38 位分析師、共識評級 4.06/5）；各卡片「NTAM 解讀」為本團隊基於公司披露之分析，並非引述各投行研究報告原文：</p>
     </div>
     <!-- ✏️ 替換區：3 家投行卡片（投行名、評級徽章、2 點觀點）。
          評級徽章配色規則：買入 Buy = bg-emerald-100 text-emerald-800；
@@ -286,8 +286,8 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
                 <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">中性 (Neutral)</span>
             </div>
             <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                <li><b>基本面強勁但估值已充分反映（目標價 $370）：</b> 2Q26 各業務線全面超預期，惟現價對應約 14.8 倍遠期市盈率，明顯高於美銀與花旗等大型銀行同業，潛在上行空間相對有限。</li>
-                <li><b>費用與投資週期同步上行：</b> FY2026 調整後費用指引上調至約 1,075 億美元，主因交易量與營收掛鉤費用隨業務放量走高，經營槓桿的持續改善仍待觀察。</li>
+                <li><b>Bloomberg ANR 紀錄：</b> 分析員 Manan Gosalia，評級 Equal-weight（中性），12 個月目標價 $370（2026/07/15 更新）。</li>
+                <li><b>NTAM 解讀：</b> 2Q26 各業務線全面超預期，惟現價對應約 14.8 倍遠期市盈率高於美銀與花旗等同業，且 FY2026 調整後費用指引上調至約 1,075 億美元；中性立場或反映估值與費用壓力之平衡考量。</li>
             </ul>
         </div>
         <div class="metric-card border-t-4 border-t-blue-600">
@@ -296,8 +296,8 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
                 <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">買入 (Buy)</span>
             </div>
             <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                <li><b>資本市場動能具延續性（目標價 $418）：</b> IB 費用同比 +30% 創 2021 年以來新高，以 9.3% 錢包份額穩居全球投行費用第一；管理層明示市場情緒對後續活動仍具建設性，交易管道保持健康。</li>
-                <li><b>資本回報空間巨大：</b> CET1 14.1% 遠高於監管要求，500 億美元新回購授權已於 7 月 1 日生效，LTM 淨派息率達 73%，每股有形帳面值 (TBVPS) 同比 +10%。</li>
+                <li><b>Bloomberg ANR 紀錄：</b> 分析員 Richard Ramsden，評級買入 (Buy)，12 個月目標價 $418（2026/07/14 更新），為三家中最高。</li>
+                <li><b>NTAM 解讀：</b> 買入立場與資本市場動能相符：IB 費用同比 +30% 創 2021 年以來新高（YTD 錢包份額 9.3%，Dealogic 截至 2026/7/1），500 億美元新回購授權已於 7 月 1 日生效，LTM 淨派息率達 73%。</li>
             </ul>
         </div>
         <div class="metric-card border-t-4 border-t-blue-600">
@@ -306,8 +306,8 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
                 <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">買入 (Buy)</span>
             </div>
             <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                <li><b>多元引擎有效對沖利率下行（目標價 $384）：</b> 降息背景下 NII（除 Markets）仍同比 +4%，AWM 管理費與卡業務高增長抵銷存款利差壓力，FY2026 NII 指引上修至約 1,055 億美元。</li>
-                <li><b>信貸質量優於同業預期：</b> 淨核銷 24 億美元同比微降，卡服務 NCO 率 3.34% 環比改善、全年指引約 3.2%，信貸損失準備總額達 314 億美元，緩衝充足。</li>
+                <li><b>Bloomberg ANR 紀錄：</b> 分析員 Erika Najarian，評級買入 (Buy)，12 個月目標價 $384（2026/07/07 更新）。</li>
+                <li><b>NTAM 解讀：</b> 買入立場呼應盈利引擎多元化：NII（除 Markets）在降息下仍同比 +4%、FY2026 NII 指引約 1,055 億美元；卡服務 NCO 率 3.34% 環比改善，信貸損失準備總額達 314 億美元。</li>
             </ul>
         </div>
     </div>
@@ -325,7 +325,7 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
                 <strong class="text-base">資本市場收入的高基數與波動性：</strong> 2Q26 Markets 營收 +35%（股票 +86%）與 IB 費用 +30% 受惠於「特別有利的市場環境」與高市場活躍度，該類收入具高度週期性，難以線性外推至後續季度。
             </li>
             <li class="pb-3 border-b border-slate-100">
-                <strong class="text-base">利率下行持續壓縮淨利息收入：</strong> Corporate 板塊 NII 同比減少 6.67 億美元，主因利率下降；NII（除 Markets）增速已放緩至 +4%，若聯儲降息幅度超出預期，存款利差恐進一步收窄。
+                <strong class="text-base">利率下降對部分淨息差構成壓力：</strong> Corporate 板塊 NII 因較低利率同比減少 6.67 億美元，惟較高存款、卡循環貸款與批發貸款餘額支撐集團 NII 同比 +10%（除 Markets 仍 +4%）。若政策利率下行速度快於管理層假設，存款利差與資產負債管理收益恐進一步受壓。
             </li>
             <li class="pb-1">
                 <strong class="text-base">信貸正常化與消費端風險：</strong> 本季淨準備金增提 1.49 億美元（主要在批發端），卡服務全年 NCO 率指引約 3.2%；若就業市場轉弱，消費信貸損失存在上行壓力，撥備需求或隨之增加。
@@ -357,7 +357,7 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
 <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
 <!-- ✏️ 替換：Widget 歡迎詞（公司名 + 本期亮點數字，數字須與內文一致） -->
 <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
-分析師您好！我是您的專屬摩根大通 (JPM) 數據輔助 AI。您可以隨時詢問我關於本次 2Q26 $58.0B 管理營收與 $21.2B 淨利雙創紀錄、$4.6B Visa 股份淨收益等重大項目影響、或是 FY2026 約 $105.5B NII 指引上調的長遠財務意涵。
+分析師您好！我是您的專屬摩根大通 (JPM) 數據輔助 AI。您可以隨時詢問我關於本次 2Q26 $58.0B 管理營收（同比 +27%）與 $7.70 EPS、$4.6B Visa 股份淨收益等重大項目影響、或是 FY2026 約 $105.5B NII 指引的長遠財務意涵。
 </div>
 </div>
 <div class="p-3 bg-white border-t border-slate-200">
