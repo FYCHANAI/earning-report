@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+<!--
+═══════════════════════════════════════════════════════════════════
+ NTAM 報告頁（繁體中文版）｜強生公司 JNJ 2Q2026｜以黃金範本逐字複製
+═══════════════════════════════════════════════════════════════════
+-->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ✏️ 替換：頁面標題（公司名 + Ticker） -->
 <title>強生公司 (JNJ) 深度研究報告 | NTAM 資深分析師</title>
+<!-- 🔒 固定區：框架與字體引用（繁體版固定 Noto Sans TC） -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/dompurify@3.1.6/dist/purify.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
 body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
@@ -13,7 +21,7 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
 @media (min-width: 768px) { .chart-container { height: 400px; } }
 .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
 .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
-.tab-content.active { display: block !important; }
+.tab-content.active { display: block; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
 .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
 .hide-scrollbar::-webkit-scrollbar { display: none; }
@@ -29,6 +37,7 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
 </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
+<!-- 🔒 固定區開始：專業投資者 (PI) 三語攔截視窗（勿改任何文字與結構） -->
 <div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
 <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
 <div class="text-center mb-6">
@@ -57,21 +66,24 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
 </div>
 </div>
 </div>
-
+<!-- 🔒 固定區結束：PI 攔截視窗 -->
 <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
 <div class="flex justify-between items-start">
 <div class="flex flex-col">
+<!-- 🔒 固定：Logo 連回首頁（檔名含 URL 編碼空格，勿改） -->
 <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
 <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
 <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
 </a>
 <div class="flex flex-col">
+<!-- ✏️ 替換：公司名 + Ticker、副標題（財季） -->
 <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">強生公司 <span class="text-blue-600">JNJ</span></h1>
 <span class="text-sm text-slate-500 font-medium mt-1">資深分析師 營運與戰略報告 | 2Q2026 財報特輯</span>
 </div>
 </div>
 <div class="flex flex-col items-end space-y-3">
+<!-- ✏️ 替換：語言切換選單的三個檔名（換成新 ticker），selected 固定在繁體 -->
 <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
 <option value="jnj.html" selected>繁體中文</option>
 <option value="jnj-sc.html">简体中文</option>
@@ -79,13 +91,16 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
 </select>
 <div class="flex items-center space-x-4">
 <div class="text-right hidden sm:block">
+<!-- ✏️ 替換：目標價（Source 徽章文字固定） -->
 <div class="text-xs text-slate-400 font-bold">共識目標價 (截至 2026/07/16) <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
 <div class="text-xl font-bold text-slate-800">$271.14 USD</div>
 </div>
+<!-- ✏️ 替換：評級文字（膠囊樣式固定） -->
 <div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">ANR 共識評級：買入 (Buy)</div>
 </div>
 </div>
 </div>
+<!-- 🔒 固定：6 個 Tabs 的名稱、順序、onclick 目標一律不變 -->
 <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
     <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我們的觀點</button>
     <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 營運與財務數據</button>
@@ -96,11 +111,12 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
 </nav>
 </div>
 </header>
-
 <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+<!-- ══════════ Tab 一：我們的觀點 ══════════ -->
 <section id="our-comments" class="tab-content active">
     <div class="mb-6">
         <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我們的觀點</h2>
+        <!-- ✏️ 替換：導言（財季 + 公司名） -->
         <p class="mt-2 text-sm text-slate-500">基於 2Q2026 財報與相關披露文件，以下為 NTAM 研究團隊提煉之強生公司 (JNJ) 核心結論：</p>
     </div>
     <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
@@ -108,78 +124,83 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
             <span class="text-3xl mr-3">🎯</span>
             <h3 class="text-2xl font-black text-blue-600 tracking-tight">核心經營結論</h3>
         </div>
+        <!-- ✏️ 替換區：3–4 點核心結論（每點 = 編號 + 粗標題 + 說明段，li 結構與 class 不變） -->
         <ul class="space-y-6">
             <li class="flex items-start">
                 <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
                 <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">創新藥物新藥雙引擎營運穩健，成功抵消重磅藥物專利到期衝擊</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">儘管重磅藥物 <b>STELARA</b> 面臨生物相似藥競爭 [cite: 525, 588]（拖累創新藥物板塊約 760 個基點的營運增長 [cite: 517, 529, 588]），但受惠於多發性骨髓瘤重磅藥 <b>DARZALEX</b> (+17.6%) [cite: 677]、CAR-T 療法 <b>CARVYKTI</b> (+47.7%) [cite: 678] 及 <b>TREMFYA</b> (+71.0%) [cite: 684] 的強勁增長，創新藥物板塊全球營運銷售仍錄得 6.8% 的穩健增幅 [cite: 516, 529, 586]。</p>
+                    <strong class="text-slate-900 block mb-1 text-lg">創新藥物雙引擎營運穩健，抵消重磅藥物專利到期衝擊</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">儘管 <b>STELARA</b> 面臨生物相似藥競爭（對創新藥物板塊造成約 760 個基點的營運增長拖累），但受惠於多發性骨髓瘤藥物 <b>DARZALEX</b>（營運增長 +17.6%）、CAR-T 療法 <b>CARVYKTI</b>（+47.7%）與 <b>TREMFYA</b>（+71.0%）的增長，創新藥物板塊全球營運銷售仍錄得 6.8% 的穩健增幅。</p>
                 </div>
             </li>
             <li class="flex items-start">
                 <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
                 <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">醫療科技 (MedTech) 高價值併購效益顯現，心血管與電生理領域高增長</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">醫療科技板塊單季銷售達 89.26 億美元 [cite: 535, 541, 583]，營運年增 3.6% [cite: 518, 535, 583, 589]。其中心血管業務（+3.1% 營運增長 [cite: 535, 703]）受益於新收購的 <b>Shockwave</b> 血管內鋰電波碎石系統之雙位數增長 [cite: 531]以及 <b>VARIPULSE</b> 電生理平台在歐洲的強勁推出 [cite: 531, 905]，有效對沖了中國集採 (VBP) 對手術器械帶來的定價下行壓力 [cite: 532]。</p>
+                    <strong class="text-slate-900 block mb-1 text-lg">MedTech 維持穩健增長，Shockwave 延續雙位數擴張</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">醫療科技板塊單季銷售額為 89.26 億美元，營運增長 3.6%。心血管業務營運增長 3.1%，其中新收購的 <b>Shockwave 血管內震波碎石系統（Intravascular Lithotripsy）</b>受冠狀動脈及周邊血管產品採用與新產品推出支持，營運增長 14.7%；電生理學（Electrophysiology）業務營運增長 3.1%，並受 <b>VARIPULSE</b> 平台在歐洲推出所帶動。</p>
                 </div>
             </li>
             <li class="flex items-start">
                 <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
                 <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">2026 全年財務預測期中值全面上調，140 年來首度跨越千億營收大關</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">得益於上半年強勁的營運表現，管理層將 2026 全年估計報告銷售額上調至 <b>1,008 億至 1,014 億美元</b> [cite: 549, 593]（期中值調升至 1,011 億美元 [cite: 569, 593]，增長 7.3% [cite: 569, 593]），這意味著強生將在成立 140 年歷史中首度跨越年營收千億美元大關 [cite: 573]，具備極強的防禦性抗風險能力。</p>
+                    <strong class="text-slate-900 block mb-1 text-lg">公司上調 2026 年銷售額及調整後 EPS 指引</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">得益於上半年營運表現，管理層將 2026 全年報告銷售額指引上調至 <b>1,008 億至 1,014 億美元</b>（中值 1,011 億美元，較上年增長 7.3%），並將調整後報告每股盈餘（Adjusted Reported EPS）指引中值上調至 <b>11.68 美元</b>。按目前指引，公司預計首度突破 1,000 億美元年度營收。</p>
                 </div>
             </li>
             <li class="flex items-start">
                 <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
                 <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">資本配置戰略清晰不變，高額研發投入沉澱管道價值</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">公司持續貫徹清晰的資本配置優先級 [cite: 544]，單季投入高達 <b>37 億美元進行研發</b> [cite: 544]（占銷售額 14.4% [cite: 537]），有力推進包含 nipocalimab 在內的多個三期臨床試驗 [cite: 557, 561]。同時，季內支付 33 億美元現金股息 [cite: 544]，並宣佈第三季股息維持每股 $1.34 [cite: 946]，彰顯極其充沛的現金流實力與股東回報誠意 [cite: 544]。</p>
+                    <strong class="text-slate-900 block mb-1 text-lg">研發投入維持高位，資本回報保持穩定</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">公司本季投入約 <b>37 億美元研發費用</b>（約佔銷售額 14.4%），持續推進包含 nipocalimab 在內的後期臨床管線。多元化業務組合有助降低單一產品依賴風險，穩定的現金流則反映公司維持穩定的資本回報能力。</p>
                 </div>
             </li>
         </ul>
     </div>
 </section>
-
+<!-- ══════════ Tab 二：營運與財務數據 ══════════ -->
 <section id="financials" class="tab-content">
     <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、營運與財務數據</h2></div>
+    <!-- ✏️ 替換區：4 個 KPI 卡（只換標題/數字/註記文字；border-t 顏色依序 emerald→blue→indigo→purple 固定） -->
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
         <div class="metric-card border-t-4 border-t-emerald-500">
             <h4 class="text-xs font-bold text-slate-500 uppercase">2Q26 全球總營收 (Total Revenue)</h4>
             <p class="text-2xl font-bold text-slate-800 mt-1">$25,310 M</p>
-            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ Reported +6.6% / Operational +5.6% [cite: 523, 569]</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ Reported +6.6% / Operational +5.6%</p>
         </div>
         <div class="metric-card border-t-4 border-t-blue-500">
             <h4 class="text-xs font-bold text-slate-500 uppercase">創新藥物單季營收 (Innovative Medicine)</h4>
             <p class="text-2xl font-bold text-slate-800 mt-1">$16,384 M</p>
-            <p class="text-sm text-blue-600 font-semibold mt-1">▲ 營運年增 6.8% / 佔營收 64.7% [cite: 529, 583]</p>
+            <p class="text-sm text-blue-600 font-semibold mt-1">● 營運增長 +6.8% / 佔營收 64.7%</p>
         </div>
         <div class="metric-card border-t-4 border-t-indigo-500">
-            <h4 class="text-xs font-bold text-slate-500 uppercase">Non-GAAP 調整後稅前淨利率</h4>
+            <h4 class="text-xs font-bold text-slate-500 uppercase">Non-GAAP 調整後稅前利潤率</h4>
             <p class="text-2xl font-bold text-slate-800 mt-1">34.2%</p>
-            <p class="text-sm text-emerald-600 font-semibold mt-1">● 調整後稅前利潤 $8,660 M [cite: 538, 650]</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">● 調整後稅前利潤 $8,660 M</p>
         </div>
         <div class="metric-card border-t-4 border-t-purple-500">
-            <h4 class="text-xs font-bold text-slate-500 uppercase">單季自由現金流 (Free Cash Flow)</h4>
+            <h4 class="text-xs font-bold text-slate-500 uppercase">2026 上半年估算自由現金流 (1H26 FCF)</h4>
             <p class="text-xl font-bold text-slate-800 mt-1">~$8.7 Billion</p>
-            <p class="text-sm text-emerald-600 font-semibold mt-1">● 帳面現金及短期證券達 $20.8B [cite: 544]</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">● 上半年累計自由現金流</p>
         </div>
     </div>
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
         <div class="metric-card">
+            <!-- ✏️ 替換：圖 1 標題與說明（canvas id 固定） -->
             <h3 class="text-lg font-bold text-slate-800 mb-2">2Q26 兩大核心板塊營收結構 (Million USD)</h3>
-            <p class="text-xs text-slate-500 mb-4">創新藥物依舊為核心支柱，醫療科技 (MedTech) 銷售佔比達到 35.3% [cite: 583]。</p>
+            <p class="text-xs text-slate-500 mb-4">創新藥物為核心支柱，醫療科技 (MedTech) 銷售額佔比約 35.3%。</p>
             <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
         </div>
         <div class="metric-card">
-            <h3 class="text-lg font-bold text-slate-800 mb-2">創新藥物四大領域銷售與營運增速 (Million USD)</h3>
-            <p class="text-xs text-slate-500 mb-4">受 DARZALEX 帶動，腫瘤領域 (Oncology) 年增達 16.1%，表現居首 [cite: 677]。</p>
+            <!-- ✏️ 替換：圖 2 標題與說明（canvas id 固定） -->
+            <h3 class="text-lg font-bold text-slate-800 mb-2">兩大板塊營收規模與分部稅前利潤率 (Million USD)</h3>
+            <p class="text-xs text-slate-500 mb-4">分部稅前利潤率以各板塊調整後稅前利潤除以板塊銷售額計算。</p>
             <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
         </div>
     </div>
     <div class="metric-card mt-6">
         <h3 class="text-lg font-bold text-slate-800 mb-4">核心財務數據綜合對比明細 Table (GAAP vs Non-GAAP)</h3>
         <div class="overflow-x-auto">
+            <!-- ✏️ 替換區：表格內容（每列固定 4 格：科目 / GAAP / Non-GAAP / 變動率；末列灰底彙總列） -->
             <table class="w-full text-sm text-left border-collapse">
                 <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
                     <tr>
@@ -191,57 +212,63 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
                 </thead>
                 <tbody class="text-slate-700">
                     <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">季度總營收 (Net Revenue)</td>
-                        <td class="px-6 py-4 text-right">$25,310 M [cite: 537]</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$25,310 M [cite: 537]</td>
-                        <td class="px-6 py-4 text-right font-bold text-emerald-500">+6.6% [cite: 537]</td>
+                        <td class="px-6 py-4 font-medium">季度總營收 (Sales to customers)</td>
+                        <td class="px-6 py-4 text-right">$25,310 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$25,310 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-emerald-500">+6.6%</td>
                     </tr>
                     <tr class="border-b border-slate-100">
                         <td class="px-6 py-4 font-medium">總毛利 (Gross Profit)</td>
-                        <td class="px-6 py-4 text-right">$17,259 M (68.2%) [cite: 537]</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$17,259 M (68.2%) [cite: 537]</td>
-                        <td class="px-6 py-4 text-right text-emerald-500">+7.1% [cite: 537]</td>
+                        <td class="px-6 py-4 text-right">$17,259 M (68.2%)</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">[待補：Non-GAAP 毛利]</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+7.1% (GAAP)</td>
                     </tr>
                     <tr class="border-b border-slate-100">
                         <td class="px-6 py-4 font-medium">稅前利潤 (Earnings Before Tax)</td>
-                        <td class="px-6 py-4 text-right">$6,747 M (26.7%) [cite: 537]</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$8,660 M (34.2%) [cite: 538]</td>
-                        <td class="px-6 py-4 text-right text-emerald-500">+3.9% [cite: 537] / +5.8% [cite: 538]</td>
+                        <td class="px-6 py-4 text-right">$6,747 M (26.7%)</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$8,660 M (34.2%)</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+3.9% (GAAP) / +5.8%</td>
                     </tr>
                     <tr class="border-b border-slate-100">
                         <td class="px-6 py-4 font-medium">季度淨利潤 (Net Earnings)</td>
-                        <td class="px-6 py-4 text-right">$5,534 M [cite: 538]</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$7,081 M [cite: 538]</td>
-                        <td class="px-6 py-4 text-right text-rose-600">-0.1% [cite: 538] / +5.7% [cite: 538]</td>
+                        <td class="px-6 py-4 text-right">$5,534 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$7,081 M</td>
+                        <td class="px-6 py-4 text-right"><span class="text-rose-600">-0.1% (GAAP)</span> / <span class="text-emerald-500">+5.7%</span></td>
                     </tr>
                     <tr class="bg-slate-50 font-bold">
-                        <td class="px-6 py-4 text-slate-800">每股盈餘與單季自由現金流</td>
-                        <td class="px-6 py-4 text-right text-slate-500">GAAP Diluted EPS: $2.27 [cite: 538]</td>
-                        <td class="px-6 py-4 text-right text-blue-600">Non-GAAP EPS: $2.90 [cite: 538]</td>
-                        <td class="px-6 py-4 text-right text-purple-600">單季自由現金流: ~$8.7 B [cite: 544, 574]</td>
+                        <td class="px-6 py-4 text-slate-800">每股盈餘與上半年自由現金流</td>
+                        <td class="px-6 py-4 text-right text-slate-500">GAAP Diluted EPS: $2.27</td>
+                        <td class="px-6 py-4 text-right text-blue-600">Non-GAAP EPS: $2.90</td>
+                        <td class="px-6 py-4 text-right text-purple-600">1H26 自由現金流: ~$8.7 B</td>
                     </tr>
                 </tbody>
             </table>
         </div>
     </div>
 </section>
-
+<!-- ══════════ Tab 三：估值比較 ══════════ -->
 <section id="valuation" class="tab-content">
     <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比較</h2></div>
     <div class="metric-card">
         <div class="flex justify-between items-center mb-4">
-            <h3 class="text-lg font-bold text-slate-800">環球跨國製藥巨頭遠期市盈率比較 (Next 4 Qtrs Est Forward P/E) (截至 2026/07/16)</h3>
+            <!-- ✏️ 替換：圖表標題（行業描述可換，Forward P/E 字樣保留） -->
+            <h3 class="text-lg font-bold text-slate-800">環球跨國製藥巨頭遠期市盈率 (Next 4 Qtrs Est Forward P/E) 倍數橫向長條圖比較 (截至 2026/07/16)</h3>
         </div>
         <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
+        <!-- 🔒 固定：資料來源標註 -->
         <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
     </div>
 </section>
-
+<!-- ══════════ Tab 四：華爾街觀點 ══════════ -->
 <section id="street-comments" class="tab-content">
     <div class="mb-6">
         <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點</h2>
-        <p class="mt-2 text-sm text-slate-500">摘要華爾街頂級投行對強生公司長遠戰略轉型的解讀 (評級與目標價：Bloomberg ANR，截至 2026/07/16)：</p>
+        <!-- ✏️ 替換：導言 -->
+        <p class="mt-2 text-sm text-slate-500">摘要華爾街頂級投行對強生公司長遠戰略轉型的解讀（評級與目標價：Bloomberg ANR，截至 2026/07/16）：</p>
     </div>
+    <!-- ✏️ 替換區：3 家投行卡片（投行名、評級徽章、2 點觀點）。
+         評級徽章配色規則：買入 Buy = bg-emerald-100 text-emerald-800；
+         增持 Overweight = bg-blue-100 text-blue-800；其他評級先與使用者確認。 -->
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         <div class="metric-card border-t-4 border-t-blue-600">
             <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
@@ -249,8 +276,8 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
                 <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
             </div>
             <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                <li><b>新藥管道防禦力優異 (目標價：$294.00)：</b> 雖然 Stelara 的生物相似藥競爭對業績造成了預期內的拖累 [cite: 525, 588]，但 <b>DARZALEX</b> 的份額擴張 [cite: 524] 和 <b>CARVYKTI</b> 的持續產線擴建 [cite: 524] 正在確立強生在腫瘤領域的長期主導地位。</li>
-                <li><b>財務指引調升支持估值：</b> 公司在不確定性宏觀環境下 tightening 且調升了全年營收與 EPS 指引期中值 [cite: 547, 548, 551]，彰顯其多元化醫療巨頭的強大韌性。</li>
+                <li><b>新藥管道防禦力優異 (目標價：$294.00)：</b> STELARA 的生物相似藥競爭為預期內拖累，但 DARZALEX 的份額擴張與 CARVYKTI 的持續產能爬坡，強化其在腫瘤治療領域的競爭定位。</li>
+                <li><b>指引上調支持估值：</b> 公司在宏觀不確定下仍收窄並上調全年營收與 EPS 指引中值，反映多元化醫療業務組合的韌性。</li>
             </ul>
         </div>
         <div class="metric-card border-t-4 border-t-blue-600">
@@ -259,8 +286,8 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
                 <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">買入 (Buy)</span>
             </div>
             <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                <li><b>醫療科技併購帶來高度協同 (目標價：$280.00)：</b> 收購 <b>Shockwave</b> 後，心血管部門展現出高雙位數強勁增長 [cite: 531]。隨著 <b>VARIPULSE</b> 電生理平台在全球的落地 [cite: 531, 905]，醫療科技板塊將成為下半年的增長加速器。</li>
-                <li><b>研發再投資率處於行業高位：</b> 單季投放 37 億美元於研發 [cite: 544]，強大且高勝率的臨床三期管線（如 nipocalimab 在自體免疫疾病上的進展 [cite: 557, 560]）將在 2026-2027 年迎來密集催化劑 [cite: 555]。</li>
+                <li><b>收購資產貢獻增長 (目標價：$280.00)：</b> Shockwave 於心血管業務營運增長 14.7%，隨著 VARIPULSE 電生理平台在歐洲推出，收購資產開始貢獻收入增長。</li>
+                <li><b>研發再投資率處於行業高位：</b> 本季投入約 37 億美元研發，後期臨床管線（如 nipocalimab 在自體免疫疾病的進展）預計於 2026–2027 年帶來催化劑。</li>
             </ul>
         </div>
         <div class="metric-card border-t-4 border-t-blue-600">
@@ -269,33 +296,35 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
                 <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">買入 (Buy)</span>
             </div>
             <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                <li><b>跨越千億營收具備歷史意義 (目標價：$298.00)：</b> 季度销售額超越 250 億美元 [cite: 537, 573]，全年有極高勝率首度跨越 1,000 億美元收入大關 [cite: 573]，在美股大盤波動時具備極高的避險和資產配置防守價值。</li>
-                <li><b>現金回報具備護城河優勢：</b> 單季產生近 87 億美元自由現金流 [cite: 544, 574]，充沛的資本實力支持了穩定的高額股息 [cite: 544]，為長線機構股東提供了強有力的下行保護。</li>
+                <li><b>邁向千億營收里程碑 (目標價：$298.00)：</b> 季度銷售額超越 250 億美元，按目前指引全年預計首度突破 1,000 億美元營收，於大盤波動時具備相對防禦特性。</li>
+                <li><b>資本回報維持穩定：</b> 2026 上半年估算自由現金流約 87 億美元，充沛的資本實力支持穩定股息，為長線機構股東提供下行保護。</li>
             </ul>
         </div>
     </div>
 </section>
-
+<!-- ══════════ Tab 五：風險因素 ══════════ -->
 <section id="risks" class="tab-content">
     <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、風險因素</h2></div>
     <div class="metric-card">
+        <!-- ✏️ 替換區：3–4 點風險（第一點 strong 用 text-rose-700，其餘不加色） -->
         <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
             <li class="pb-3 border-b border-slate-100">
-                <strong class="text-rose-700 text-base">重磅藥物 STELARA 的生物相似藥全面侵蝕風險：</strong> 專利到期引發的生物相似藥競爭已對本季創新藥物板塊造成約 760 個基點的顯著負面衝擊 [cite: 517, 529, 588]。隨著市場競爭加劇，若新藥推動速率不及預期，恐面臨板塊毛利承壓。
+                <strong class="text-rose-700 text-base">重磅藥物 STELARA 的生物相似藥侵蝕風險：</strong> 專利到期引發的生物相似藥競爭，已對本季創新藥物板塊造成約 760 個基點的營運增長拖累。若後續新藥推動速率不及預期，板塊毛利可能承壓。
             </li>
             <li class="pb-3 border-b border-slate-100">
-                <strong class="text-base">骨科業務拆分 (Orthopaedics Planned Separation) 的摩擦成本：</strong> 公司正在執行骨科業務的獨立拆分計畫 [cite: 490, 636]，拆分重組與供應鏈優化過程中的管理與執行摩擦成本 [cite: 659, 826]，可能對短期 MedTech 的出貨與產能開出速率造成不確定性。
+                <strong class="text-base">骨科業務規劃分拆 (Orthopaedics Planned Separation) 的執行摩擦：</strong> 公司正推進骨科業務的規劃分拆，重組與供應鏈調整過程中的管理與執行摩擦，可能對短期 MedTech 的出貨與產能造成不確定性。
             </li>
             <li class="pb-3 border-b border-slate-100">
-                <strong class="text-base">國際集採政策與手術轉型帶來的利潤空間擠壓：</strong> 中國市場醫療器械集中採購 (VBP) 政策持續對 MedTech 旗下的進階內鏡 (Endocutters) 和能量手術器械 (Energy) 帶來定價及競爭下行壓力 [cite: 532]，手術部門業務轉型仍處於短期陣痛期 [cite: 532, 663]。
+                <strong class="text-base">國際集採政策與手術轉型的利潤空間擠壓：</strong> 中國市場醫療器械集中帶量採購 (VBP) 政策，持續對 MedTech 的手術器械帶來定價與競爭下行壓力，相關業務轉型仍處於短期調整期。
             </li>
             <li class="pb-1">
-                <strong class="text-base">滑石粉等遺留法律訴訟案件的潛在賠償不確定性：</strong> 儘管管理層積極推進重組與和解方案，但遺留的滑石粉 (Talc) 產品法律訴訟與潛在賠償金規模 [cite: 600] 仍是資產負債表上的長期不确定性因素 [cite: 486, 632]，且可能面臨監管機構的進一步審查。
+                <strong class="text-base">滑石粉等遺留法律訴訟的潛在賠償不確定性：</strong> 遺留的滑石粉 (Talc) 產品法律訴訟與潛在賠償金規模，仍是資產負債表上的長期不確定性因素，且可能面臨監管機構的進一步審查。
             </li>
         </ol>
     </div>
 </section>
-
+<!-- ══════════ Tab 六：免責聲明 ══════════ -->
+<!-- 🔒 固定區：免責聲明以 fetch 載入，嚴禁寫死內文 -->
 <section id="disclaimer" class="tab-content">
     <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免責聲明</h2></div>
     <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
@@ -303,7 +332,7 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
     </div>
 </section>
 </main>
-
+<!-- 🔒 固定區開始：右下角 AI 助理 Widget（結構固定；僅 ✏️ 標示處換文字） -->
 <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
 <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
 <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
@@ -316,8 +345,9 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
 </button>
 </div>
 <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
+<!-- ✏️ 替換：Widget 歡迎詞（公司名 + 本期亮點數字，數字須與內文一致） -->
 <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
-分析師您好！我是您的專屬強生公司 (JNJ) 數據輔助 AI。您可以隨時詢問我關於本次 2Q26 $25.31B 季度營收表現、DARZALEX 新藥管線爆發，或者是全年估計 reported sales 指引調升至 $101.1B 對投資配置的防禦價值。
+分析師您好！我是您的專屬強生公司 (JNJ) 數據輔助 AI。您可以隨時詢問我關於本次 2Q26 253.10 億美元季度營收、DARZALEX 等創新藥物管線表現，或全年報告銷售額指引上調至 1,011 億美元（中值）等相關問題。
 </div>
 </div>
 <div class="p-3 bg-white border-t border-slate-200">
@@ -333,13 +363,11 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
 <span class="text-2xl">✨</span>
 </button>
 </div>
-
 <div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
 <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
 <span>✨</span> AI 白話文解釋
 </button>
 </div>
-
 <div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
 <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
 <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
@@ -362,9 +390,11 @@ AI 正在生成解釋...
 </div>
 </div>
 </div>
-
+<!-- 🔒 固定區結束：AI Widget / 劃詞解釋 -->
 <script>
+// 🔒 註冊全域圖表實例快取
 window.charts = {};
+// 🔒 PI 攔截視窗控制函式（依 index.html 標準寫法）
 function acceptPI() {
     sessionStorage.setItem('pi_agreed', 'true');
     document.getElementById('pi-modal').style.display = 'none';
@@ -373,6 +403,7 @@ function acceptPI() {
 function declinePI() {
     document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;
 }
+// 🔒 Tab 切換邏輯（✏️ 僅 resize 的圖表鍵名需隨新 ticker 更名）
 function switchTab(e, tabId) {
     document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(el => {
@@ -382,6 +413,7 @@ function switchTab(e, tabId) {
     document.getElementById(tabId).classList.add('active');
     e.currentTarget.classList.remove('text-slate-500');
     e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+    // 徹底修復 hidden 畫布無寬高像素之 Chart.js 原生缺陷
     if (tabId === 'financials') {
         if (window.charts.jnjSegment) window.charts.jnjSegment.resize();
         if (window.charts.jnjProfit) window.charts.jnjProfit.resize();
@@ -389,14 +421,13 @@ function switchTab(e, tabId) {
         if (window.charts.jnjValuation) window.charts.jnjValuation.resize();
     }
 }
-
 document.addEventListener('DOMContentLoaded', function() {
+    // 🔒 專業投資者攔截門戶驗證
     if (!sessionStorage.getItem('pi_agreed')) {
         const modal = document.getElementById('pi-modal');
         if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
     }
-
-    // 圖表 1：兩大核心板塊結構拆解 (Doughnut)
+    // ✏️ 圖表 1：營收拆解 (Doughnut)。鍵名改 jnjSegment；labels/data 換新數據；顏色與 options 固定
     window.charts.jnjSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
         type: 'doughnut',
         data: {
@@ -409,22 +440,21 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
     });
-
-    // 圖表 2：創新藥物四大板塊營收與營運增速
+    // ✏️ 圖表 2：業務單位表現 (Grouped Bar 雙軸)。鍵名改 jnjProfit；labels/data 換新數據；顏色 #3b82f6 / #10b981 與雙軸設定固定
     window.charts.jnjProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
         type: 'bar',
         data: {
-            labels: ['腫瘤領域 (Oncology)', '免疫領域 (Immunology)', '神經科學 (Neuroscience)', '其他 PH/ID/CVM'],
+            labels: ['創新藥物 (Innovative Medicine)', '醫療科技 (MedTech)'],
             datasets: [
                 {
-                    label: '板塊銷售額 (百萬美元)',
-                    data: [7406, 3844, 2337, 2795],
+                    label: '板塊營收 (百萬美元)',
+                    data: [16384, 8926],
                     backgroundColor: '#3b82f6',
                     borderRadius: 4
                 },
                 {
-                    label: '營運增長率 (Operational Growth %)',
-                    data: [16.1, -4.6, 13.4, -2.4],
+                    label: '分部稅前利潤率 (%)',
+                    data: [42.5, 22.0],
                     backgroundColor: '#10b981',
                     borderRadius: 4,
                     yAxisID: 'percentageAxis'
@@ -437,12 +467,12 @@ document.addEventListener('DOMContentLoaded', function() {
             plugins: { legend: { position: 'bottom' } },
             scales: {
                 y: { beginAtZero: true, position: 'left', grid: { color: '#f1f5f9' } },
-                percentageAxis: { position: 'right', grid: { display: false } }
+                percentageAxis: { beginAtZero: true, max: 100, position: 'right', grid: { display: false } }
             }
         }
     });
-
-    // 圖表 3：環球製藥巨頭遠期市盈率比較
+    // ✏️ 圖表 3：Forward P/E 橫向比較。鍵名改 jnjValuation；
+    //    ⚠️ backgroundColor 陣列中「藍色 rgba(37,99,235,0.95)」的位置必須對應主角公司在 labels 中的位置，其餘同業一律灰色
     window.charts.jnjValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
         type: 'bar',
         data: {
@@ -456,7 +486,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
     });
-
+    // 🔒 安全調閱外部 disclaimer.html 連動模組（嚴禁寫死免責聲明）
     fetch('disclaimer.html')
         .then(response => {
             if (!response.ok) throw new Error('無法載入 disclaimer.html');
@@ -472,7 +502,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if(container) container.innerHTML = '<div class="p-6 text-center text-rose-600 font-bold">【安全連動錯誤】外部合規免責聲明檔案加載失敗，請聯絡系統運維團隊。</div>';
         });
 });
-
+// 🔒 NTAM 後端 AI 調度核心（端點 /api/gemini 與後處理邏輯嚴禁更動）
 async function callGeminiAPI(prompt, systemInstruction) {
     try {
         const response = await fetch('/api/gemini', {
@@ -485,15 +515,23 @@ async function callGeminiAPI(prompt, systemInstruction) {
         return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
     } catch (error) { return `網路連線失敗。(${error.message})`; }
 }
-
-const standardPrompt = `你是一位精通 NTAM 投資研究框架的資深 AI 助理。請針對使用者對強生公司 (JNJ) 2026年最新財報與大會摘要的提問，提供符合專業機構投資人水準、客觀、高密度的定量與定性答覆。重點用 <b> 標籤包覆，嚴禁使用 markdown。`;
-
+// ✏️ AI 助理 systemPrompt（收嚴版：僅用核實資料、禁自造數字與券商評論）
+const standardPrompt = `你是一位精通 NTAM 投資研究框架的資深 AI 助理，協助分析強生公司 (JNJ) 2Q2026 財報。請遵守：(1) 僅使用下方核實資料回答；(2) 不得自行估算或發明銷售、增長率、現金流、目標價或券商評論；(3) 無相關資料時回答「官方資料或本報告未披露此項資訊。」；(4) ~US$8.7bn 為 2026 上半年 (1H26) 估算自由現金流，非季度數字；(5) 不得把公司財報內容歸因於任何券商；(6) 保持專業、冷靜、中立，不提供個人化投資建議，不引用即時股價；(7) 回覆僅允許 <b>、<strong>、<em>、<br> 標籤，嚴禁 markdown。
+核實資料：2Q26 sales US$25.310bn（reported +6.6% / operational +5.6%）；Innovative Medicine US$16.384bn（operational +6.8%）；MedTech US$8.926bn（operational +3.6%）；Adjusted net earnings US$7.081bn；Adjusted EPS US$2.90；GAAP net earnings US$5.534bn；GAAP diluted EPS US$2.27；1H26 estimated FCF ~US$8.7bn；DARZALEX +17.6%；CARVYKTI +47.7%；TREMFYA +71.0%；STELARA drag ~760bps；Cardiovascular +3.1%；Electrophysiology +3.1%；Shockwave +14.7%；2026 reported sales guidance US$100.8–101.4bn（midpoint US$101.1bn, +7.3%）；adjusted reported EPS guidance midpoint US$11.68。`;
+// 🔒 Widget 互動邏輯（勿改）
 function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
 function appendMessage(text, isUser) {
     const msgDiv = document.createElement('div');
     msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
-    msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
-    document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+    // 🔒 安全：使用者訊息用 textContent 防注入；AI 回覆經 DOMPurify 消毒後僅允許 b/strong/em/br
+    if (isUser) {
+        msgDiv.textContent = text;
+    } else {
+        msgDiv.innerHTML = DOMPurify.sanitize(text, { ALLOWED_TAGS: ['b', 'strong', 'em', 'br'], ALLOWED_ATTR: [] });
+    }
+    const chatMessages = document.getElementById('chat-messages');
+    chatMessages.appendChild(msgDiv);
+    chatMessages.scrollTop = chatMessages.scrollHeight;
 }
 function showTypingIndicator() {
     const ind = document.createElement('div'); ind.id = 'typing-indicator';
@@ -507,14 +545,16 @@ async function handleChatSubmit(e) {
     const res = await callGeminiAPI(text, standardPrompt);
     document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
 }
-
+// 🔒 劃詞解說機制（勿改）
 let selectedText = "";
 document.addEventListener('mouseup', function(e) {
     const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
     if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
     if (text.length > 1 && text.length < 50) {
         selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
-        tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${window.scrollY + rect.top - 40}px`;
+        // 🔒 tooltip 為 position:fixed，使用視口座標（不加 scrollY），並箝制不超出畫面
+        tooltip.style.left = `${Math.min(window.innerWidth - 150, Math.max(8, rect.left + rect.width / 2 - 60))}px`;
+        tooltip.style.top = `${Math.max(8, rect.top - 44)}px`;
         tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
     } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
 });
@@ -523,8 +563,12 @@ async function explainSelectedTerm() {
     document.getElementById('selection-tooltip').classList.add('hidden');
     document.getElementById('explain-term-title').textContent = selectedText;
     document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
-    const res = await callGeminiAPI(`解釋這個強生公司 JNJ 財報相關詞彙：${selectedText}`, "你是強生醫療板塊儲存與製藥專家，用最白話的專業繁體中文解釋詞彙。限 150 字，重點使用 <b> 標籤包覆。");
-    document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
+    // ✏️ 劃詞解釋 prompt 與 systemInstruction：公司名須換成新報告，其餘格式（限 150 字、<b> 標籤、語言）保留
+    const res = await callGeminiAPI(`解釋這個強生公司 JNJ 財報相關詞彙：${selectedText}`, "你是醫療器械與製藥產業專家，用最白話的專業繁體中文解釋詞彙。限 150 字，重點使用 <b> 標籤包覆。");
+    // 🔒 安全：AI 回覆經 DOMPurify 消毒後僅允許 b/strong/em/br
+    document.getElementById('explain-loading').classList.add('hidden');
+    document.getElementById('explain-result').innerHTML = DOMPurify.sanitize(res, { ALLOWED_TAGS: ['b', 'strong', 'em', 'br'], ALLOWED_ATTR: [] });
+    document.getElementById('explain-result').classList.remove('hidden');
 }
 function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
 </script>
