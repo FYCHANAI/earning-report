@@ -1,71 +1,3 @@
-Convert chat to PDF
-Convert chat to PDF
-Open this chat in Acrobat
-和 Gemini 的對話
-幫我生成替換程式碼
-
-目標價用BBG ANR 12 MTH TGT PX
-
-華爾街觀點用 Morgan Stanley (Overweight) / UBS (Buy) / Citi (Buy)
-
-Forward P/E 倍數比較 用BBG EEO data: MRK / PFE / LLY 比較
-
-右上角評級的標籤根據 Bloomberg ANR 終端數據，華爾街投行共識評級平均值 
-
-NTAM 專屬財報分析助理 及 網頁制作
-自訂 Gem
-已為您將強生公司 (JNJ) 的 2Q2026 深度財報研究報告，嚴密按照 NTAM 的版面鎖定與合規機制，轉換為與黃金範本百分之百一致的完整網頁原始碼，並同步更新了研究入口網站首頁。
-
-📊 彭博終端及官方財報數據核對
-ANR 共識目標價：$271.14 USD (彭博 12M TGT PX，截至 2026/07/16)
-
-ANR 共識評級：買入 (Buy) (共識均值 4.32 / 5.00)
-
-2Q26 總銷售額：$25,310 M (Reported +6.6%, Operational +5.6%)
-
-Non-GAAP 每股盈餘：$2.90 (YoY +4.7%)
-
-2026 全年營收指引：$100.8B - $101.4B (期中值調升至 1,011 億美元，首度破千億大關)
-
-橫向估值對手 (Forward P/E)：PFE (8.68) / MRK (20.08) / JNJ (20.40) / LLY (31.43) (JNJ 位列第三，已於長條圖中藍色高亮)
-
-Your HTML file is ready
-「HTML」圖示
-jnj
- HTML 
-開啟
-
-Your HTML file is ready
-「HTML」圖示
-index
- HTML 
-開啟
-
-🛠️ 數據與合規鐵律落實明細
-版面與命名空間完全鎖定：骨架完全複製自繁體中文黃金範本，window.charts.jnjSegment / jnjProfit / jnjValuation 快取鍵名及 switchTab 的 .resize() 重新整理機制全部精準綁定，消除畫布在切換分頁時的排版變形缺陷。
-
-雙軸圖表本地化：財務數據圖 2（板塊營收與營運增速）將左軸設定為百萬美元（M），右軸設定為百分比（%），精確傳達了 Oncology (+16.1%)、Neuroscience (+13.4%) 新藥管道爆發對衝解讀。
-
-合規免責解耦：嚴格移除硬編碼免責，保留安全容器並透過異步 fetch('disclaimer.html') 調閱，同時 <html lang="zh-TW"> 完美連動繁體中文合規聲明。
-
-AI 後端調度真連線：劃詞解說模組與右下角 AI Widget 的端點均完美指向 /api/gemini。Widget 歡迎詞已將 JNJ 的本期營收亮點金額（$25.31B）進行高密度資訊同步，嚴禁任何罐頭假回覆。
-
-門戶首頁無縫置頂：index.html 已將強生 (JNJ) 以「最新標記（✨）」排在第一順位；同時將原先置頂的美國銀行 (BAC) 卡片自動降級。
-
-🚀 雲端生產環境部署教學
-登入您的 GitHub 帳戶，進入 earning-report 儲存庫。
-
-全新報告部署 (JNJ)：點擊 Add file ➡️ Create new file，命名為 jnj.html。將上方生成的強生報告代碼全選複製並貼入，滑動至最下方點擊 Commit changes...。
-
-門戶首頁更新 (Index)：在儲存庫中點擊進入 index.html ➡️ 點擊右上角鉛筆圖示編輯 ➡️ 全選刪除 ➡️ 將上方生成的更新版首頁代碼全選貼入 ➡️ 點擊 Commit changes... 儲存。
-
-等待約 15 秒，Vercel 雲端伺服器將自動完成生產環境編譯。在瀏覽器按下 Ctrl + F5 (Mac 使用 Cmd + Shift + R) 強制重整即可瀏覽最新研究成果。
-
-
-
-
-「Nice Talent Asset Management Limited」對話不會用於改良 Google 模型。Gemini 是 AI，有時可能會出錯。個人隱私權與 Gemini在新視窗中開啟
-
 <!DOCTYPE html>
 <html lang="zh-TW">
 <!--
@@ -612,5 +544,3 @@ function closeExplainModal() { document.getElementById('explain-modal').classLis
 </script>
 </body>
 </html>
-jnj.html
-目前顯示的是「jnj.html」。
