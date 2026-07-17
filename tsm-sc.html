@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>台积电 (TSM) 深度研究报告 | NTAM 资深分析师</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Noto Sans SC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+.chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+@media (min-width: 768px) { .chart-container { height: 400px; } }
+.tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+.tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+.tab-content.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+/* AI Animations */
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+.typing-dot { animation: typing 1.4s infinite ease-in-out both; }
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+@keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+#selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
+</style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+<div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
+<div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
+<div class="text-center mb-6">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+</div>
+<h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要声明</h2>
+</div>
+<div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
+<p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
+</div>
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
+<p>本页面所含信息仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者身份。</p>
+</div>
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
+<p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
+<button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
+<button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">我確認 I Confirm</button>
+</div>
+</div>
+</div>
+<header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
+<img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+<span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+</a>
+<div class="flex flex-col">
+<h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">台积电 <span class="text-blue-600">TSM</span></h1>
+<span class="text-sm text-slate-500 font-medium mt-1">资深分析师 运营与战略报告 | 2Q26 财报特辑</span>
+</div>
+</div>
+<div class="flex flex-col items-end space-y-3">
+<select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
+<option value="tsm.html">繁體中文</option>
+<option value="tsm-sc.html" selected>简体中文</option>
+<option value="tsm-en.html">English</option>
+</select>
+<div class="flex items-center space-x-4">
+<div class="text-right hidden sm:block">
+<div class="text-xs text-slate-400 font-bold">共识目标价 (截至 2026/07/17) <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
+<div class="text-xl font-bold text-slate-800">$624.59 USD</div>
+</div>
+<div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">ANR 共识评级：买入</div>
+</div>
+</div>
+</div>
+<nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+    <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我们的观点</button>
+    <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 运营与财务数据</button>
+    <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比较</button>
+    <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 华尔街观点</button>
+    <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 风险因素</button>
+    <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免责声明</button>
+</nav>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+<section id="our-comments" class="tab-content active">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我们的观点</h2>
+    </div>
+    <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
+        <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
+            <span class="text-3xl mr-3">🎯</span>
+            <h3 class="text-2xl font-black text-blue-600 tracking-tight">核心经营结论</h3>
+        </div>
+        <ul class="space-y-6">
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">营收达财测上缘，毛利率与营业利益率双双超越指引上限</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">2Q26 营收 NT$1,270.38B（美元计 US$40.20B，达指引区间 US$39.0B&ndash;40.2B 上缘），环比增长 12.0%、同比增长 36.0%；毛利率 67.7% 与营业利益率 60.3% 双双高于指引上限（65.5%&ndash;67.5% / 56.5%&ndash;58.5%），归属母公司净利 NT$706.56B、同比增长 77.4%，稀释 EPS NT$27.25。管理层归因于领先制程强劲需求、成本改善与产能利用率提升。</p>
+                </div>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">2 纳米首度贡献营收，先进制程与 HPC 结构持续深化</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">2nm 于本季首度贡献晶圆营收 3%，3nm／5nm 分别占 30%／33%，7nm 及以下先进制程合计 77%；分平台看，HPC 营收环比增长 20%、占比升至 66%。我们认为先进制程与 HPC 组合升级支撑中长期盈利能力，但 3Q26 毛利率指引中位数约 66%（低于 2Q26 的 67.7%），N2 陡峭爬坡与海外厂毛利稀释将使短期毛利率承压。</p>
+                </div>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">3Q26 指引续强，2026 全年美元营收同比增长「略高于 40%」</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">管理层预期 3Q26 营收 US$44.6B&ndash;45.8B（中位数约 US$45.2B，环比增长约 12.4%），毛利率 65%&ndash;67%、营业利益率 56%&ndash;58%（汇率假设 1 美元兑 32 元新台币），并指出 2 纳米技术将进入陡峭爬坡；同时维持 2026 全年美元营收同比增长略高于 40% 的展望。</p>
+                </div>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">VIS 处置及评估收益增厚业外，高投资下财务体质依然稳健</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">业外收益 NT$95.83B，其中 NT$63.20B 来自世界先进 (VIS) 股份的处置及按市价评估收益，属非核心且具波动性的盈利来源；2Q26 资本支出 US$15.70B（上半年累计 US$26.80B），自由现金流 NT$287.36B、净现金 NT$2,486.33B，并将派发 1Q26 每股 NT$7.00 现金股利（2026/09/16 除息）。</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<section id="financials" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、运营与财务数据</h2></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div class="metric-card border-t-4 border-t-emerald-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">2Q26 总营收 (Net Revenue)</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">NT$1,270.38 B</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +36.0% / QoQ +12.0%</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">稀释每股收益 (Diluted EPS)</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">NT$27.25</p>
+            <p class="text-sm text-blue-600 font-semibold mt-1">▲ YoY +77.4%（每 ADR US$4.31）</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-indigo-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">毛利率 (Gross Margin)</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">67.7%</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +9.1 ppts，优于指引上限</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-purple-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">营业利益率 (Operating Margin)</h4>
+            <p class="text-xl font-bold text-slate-800 mt-1">60.3%</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +10.7 ppts，优于指引上限</p>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="metric-card">
+            <h3 class="text-lg font-bold text-slate-800 mb-2">2Q26 按平台划分营收结构 (% of Net Revenue)</h3>
+            <p class="text-xs text-slate-500 mb-4">HPC 平台占比升至 66%（环比增长 20%），智能手机占 22%；7nm 及以下先进制程占晶圆营收 77%。</p>
+            <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+        </div>
+        <div class="metric-card">
+            <h3 class="text-lg font-bold text-slate-800 mb-2">2Q25、1Q26 与 2Q26 营收与毛利率比较 (NT$ Billion / %)</h3>
+            <p class="text-xs text-slate-500 mb-4">营收由 2Q25 的 NT$933.79B 升至 2Q26 的 NT$1,270.38B，毛利率同步由 58.6% 升至 67.7%（营业利益率 60.3%）。</p>
+            <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
+        </div>
+    </div>
+    <div class="metric-card mt-6">
+        <h3 class="text-lg font-bold text-slate-800 mb-4">2Q26 报告结果同比对比明细 Table (TIFRS)</h3>
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left border-collapse">
+                <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
+                    <tr>
+                        <th class="px-6 py-3 font-bold">会计明细科目项目</th>
+                        <th class="px-6 py-3 font-bold text-right">2Q26 (Reported)</th>
+                        <th class="px-6 py-3 font-bold text-right text-blue-600">2Q25 (Reported)</th>
+                        <th class="px-6 py-3 font-bold text-right text-emerald-600">YoY 同比变动率</th>
+                    </tr>
+                </thead>
+                <tbody class="text-slate-700">
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">季度营收 (Net Revenue)</td>
+                        <td class="px-6 py-4 text-right">NT$1,270.38 B</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">NT$933.79 B</td>
+                        <td class="px-6 py-4 text-right font-bold text-emerald-500">+36.0%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">毛利 (Gross Profit)</td>
+                        <td class="px-6 py-4 text-right">NT$860.31 B (67.7%)</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">NT$547.37 B (58.6%)</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+57.2%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">营业利益 (Operating Income)</td>
+                        <td class="px-6 py-4 text-right">NT$766.60 B (60.3%)</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">NT$463.42 B (49.6%)</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+65.4%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">归属母公司净利 (Net Income)</td>
+                        <td class="px-6 py-4 text-right">NT$706.56 B (55.6%)</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">NT$398.27 B (42.7%)</td>
+                        <td class="px-6 py-4 text-right font-bold text-emerald-600">+77.4%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">稀释 EPS (Diluted EPS)</td>
+                        <td class="px-6 py-4 text-right">NT$27.25</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">NT$15.36</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+77.4%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">晶圆出货 (12英寸约当, kpcs)</td>
+                        <td class="px-6 py-4 text-right">4,336</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">3,718</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+16.6%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">年化 ROE (Annualized)</td>
+                        <td class="px-6 py-4 text-right">45.9%</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">34.8%</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+11.1 ppts</td>
+                    </tr>
+                    <tr class="bg-slate-50 font-bold">
+                        <td class="px-6 py-4 text-slate-800">平均汇率 (USD/NTD)</td>
+                        <td class="px-6 py-4 text-right text-slate-500">31.60</td>
+                        <td class="px-6 py-4 text-right text-blue-600">31.05</td>
+                        <td class="px-6 py-4 text-right text-purple-600">+1.8%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<section id="valuation" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比较</h2></div>
+    <div class="metric-card">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-bold text-slate-800">全球晶圆制造大厂远期市盈率 (Next 4 Qtrs Est Forward P/E) 倍数横向长条图比较（截至 2026/07/17）</h3>
+        </div>
+        <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
+        <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
+    </div>
+</section>
+<section id="street-comments" class="tab-content">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、华尔街观点</h2>
+        <p class="mt-2 text-sm text-slate-500">以 2026/07/16 收盘价 409.74 美元计，ANR 12 个月共识目标价 624.59 美元隐含 52.4% 上行空间。以下摘要三家投行对台积电 2Q26 财报的解读（评级与目标价：Bloomberg ANR，截至 2026/07/17）：</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">高盛 (Goldman Sachs)</h3>
+                <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">买入 (Buy)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>2 纳米放量在即（目标价 620 美元）：</b> 2nm 本季首度贡献 3% 晶圆营收，管理层预期 3Q26 进入陡峭爬坡；配合 HPC 平台占比升至 66%，先进制程需求能见度延伸至 2027 年。</li>
+                <li><b>盈利结构全面上修：</b> 毛利率 67.7%、营业利益率 60.3% 双双超越指引上限，成本改善与高产能利用率有效抵消海外厂毛利稀释压力。</li>
+            </ul>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">法国巴黎银行 (BNP Paribas)</h3>
+                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>AI 需求集中度持续提升（目标价 526 美元）：</b> HPC 营收环比增长 20%、占营收 66%，北美客户贡献 78% 营收，反映领先客户对先进制程产能的高度依赖与长期绑定。</li>
+                <li><b>指引隐含下半年动能不减：</b> 3Q26 营收指引 US$44.6B&ndash;45.8B（中位数环比增长约 12.4%），毛利率 65%&ndash;67%；管理层并维持 2026 全年美元营收同比增长略高于 40% 的展望。</li>
+            </ul>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">巴克莱 (Barclays)</h3>
+                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>高强度扩产下现金流依然稳健（目标价 650 美元）：</b> 上半年资本支出 US$26.80B（2Q26 为 US$15.70B），2Q26 自由现金流 NT$287.36B、净现金 NT$2,486.33B，兼顾扩产与股东回报。</li>
+                <li><b>核心盈利趋势须还原非核心损益：</b> 业外收益 NT$95.83B 含 VIS 处置及按市价评估收益 NT$63.20B，有效税率因未分配盈余税升至 18.1%，评估核心盈利动能时应予剔除。</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section id="risks" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、风险因素</h2></div>
+    <div class="metric-card">
+        <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-base">汇率波动侵蚀营收换算与利润率：</strong> 3Q26 指引基于 1 美元兑 32 元新台币的汇率假设（2Q26 平均为 31.60）；若新台币相对假设走升，将直接压缩以新台币列报的营收与利润率表现。
+            </li>
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-base">海外晶圆厂带来的毛利率稀释：</strong> 管理层指出 2Q26 毛利率提升部分被海外厂毛利稀释所抵消；随美国、日本与欧洲产能持续开出，海外成本结构恐对长期毛利率构成持续性压力。
+            </li>
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-base">客户与地域集中及地缘政治风险：</strong> 北美客户占 2Q26 营收 78%、HPC 平台占 66%；公司于 Safe Harbor 声明亦列示产业周期、竞争、主要客户订单变动、汇率波动与突发事件等风险，贸易与地缘政治发展仍可能影响终端需求。
+            </li>
+            <li class="pb-1">
+                <strong class="text-base">高额资本支出与 N2 爬坡执行风险：</strong> 上半年资本支出达 US$26.80B，存货天数因 N2 产能爬坡环比增加 7 天至 87 天；若先进制程量产进度或终端需求不如预期，折旧负担与库存消化将压抑盈利表现。
+            </li>
+        </ol>
+    </div>
+</section>
+<section id="disclaimer" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免责声明</h2></div>
+    <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+        <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在从 disclaimer.html 线上安全读取最新免责声明组件...</p></div>
+    </div>
+</section>
+</main>
+<div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+<div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+<div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
+<div class="flex items-center">
+<span class="text-2xl mr-2">🤖</span>
+<div><h4 class="font-bold text-sm">研究员专属 AI 助理</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
+</div>
+<button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+</button>
+</div>
+<div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
+<div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
+分析师您好！我是您的专属台积电 (TSM) 数据辅助 AI。您可以随时询问我关于本次 2Q26 NT$1,270.38B 营收（同比增长 36.0%）、67.7% 毛利率与 2 纳米量产爬坡、或 3Q26 US$44.6B&ndash;45.8B 营收指引的财务细节。
+</div>
+</div>
+<div class="p-3 bg-white border-t border-slate-200">
+<form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
+<input type="text" id="chat-input" placeholder="输入您的研究指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
+<button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+</button>
+</form>
+</div>
+</div>
+<button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
+<span class="text-2xl">✨</span>
+</button>
+</div>
+<div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
+<button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
+<span>✨</span> AI 白话文解释
+</button>
+</div>
+<div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
+<div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+<div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+<h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 术语解释</h3>
+<button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+</button>
+</div>
+<div class="p-6">
+<div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查询的词汇：</div>
+<div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
+<div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
+<svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+AI 正在生成解释...
+</div>
+<div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
+</div>
+<div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+<button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">关闭</button>
+</div>
+</div>
+</div>
+<script>
+// 注册全局图表实例缓存
+window.charts = {};
+// PI 拦截视窗控制函式（依 index.html 标准写法补回）
+function acceptPI() {
+    sessionStorage.setItem('pi_agreed', 'true');
+    document.getElementById('pi-modal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+function declinePI() {
+    document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;
+}
+function switchTab(e, tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => {
+        el.classList.remove('active', 'border-blue-600', 'text-blue-600');
+        el.classList.add('text-slate-500');
+    });
+    document.getElementById(tabId).classList.add('active');
+    e.currentTarget.classList.remove('text-slate-500');
+    e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+    // 彻底修复 hidden 画布无宽高像素之 Chart.js 原生缺陷
+    if (tabId === 'financials') {
+        if (window.charts.tsmSegment) window.charts.tsmSegment.resize();
+        if (window.charts.tsmProfit) window.charts.tsmProfit.resize();
+    } else if (tabId === 'valuation') {
+        if (window.charts.tsmValuation) window.charts.tsmValuation.resize();
+    }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    // 专业投资者拦截门户验证
+    if (!sessionStorage.getItem('pi_agreed')) {
+        const modal = document.getElementById('pi-modal');
+        if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+    }
+    // 图表 1: MU 技术营收拆解 (Doughnut)
+    window.charts.tsmSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
+        type: 'doughnut',
+        data: {
+            labels: ['HPC 高性能计算', '智能手机', 'IoT 物联网', '汽车电子', 'DCE 数字消费电子', '其他'],
+            datasets: [{
+                data: [66, 22, 5, 4, 1, 2],
+                backgroundColor: ['rgba(37, 99, 235, 0.85)', 'rgba(16, 185, 129, 0.85)', 'rgba(99, 102, 241, 0.85)', 'rgba(168, 85, 247, 0.85)', 'rgba(245, 158, 11, 0.85)', 'rgba(148, 163, 184, 0.85)'],
+                borderWidth: 0
+            }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
+    });
+    // 图表 2: 四大业务单位 Non-GAAP 数据表现 (Grouped Bar Chart)
+    window.charts.tsmProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['2Q25', '1Q26', '2Q26'],
+            datasets: [
+                {
+                    label: '单季营收 (NT$ Billion)',
+                    data: [933.79, 1134.10, 1270.38],
+                    backgroundColor: '#3b82f6',
+                    borderRadius: 4
+                },
+                {
+                    label: '毛利率 (Gross Margin %)',
+                    data: [58.6, 66.2, 67.7],
+                    backgroundColor: '#10b981',
+                    borderRadius: 4,
+                    yAxisID: 'percentageAxis'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { position: 'bottom' } },
+            scales: {
+                y: { beginAtZero: true, position: 'left', grid: { color: '#f1f5f9' } },
+                percentageAxis: { beginAtZero: true, max: 100, position: 'right', grid: { display: false } }
+            }
+        }
+    });
+    // 图表 3: 全球存储半导体巨头远期市盈率比较 (Horizontal Bar)
+    window.charts.tsmValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['Samsung (三星电子)', 'TSM (台积电)', 'SMIC (中芯国际)', 'INTC (英特尔)'],
+            datasets: [{
+                label: 'Next 4 Qtrs Est Forward P/E',
+                data: [4.69, 21.82, 52.65, 86.98],
+                backgroundColor: ['rgba(148, 163, 184, 0.6)', 'rgba(37, 99, 235, 0.95)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)'],
+                borderRadius: 4
+            }]
+        },
+        options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
+    });
+    // 安全调阅外部 disclaimer.html 连动模组
+    fetch('disclaimer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('无法载入 disclaimer.html');
+            return response.text();
+        })
+        .then(html => {
+            const container = document.getElementById('disclaimer-container');
+            if(container) container.innerHTML = html;
+        })
+        .catch(error => {
+            console.error('安全连动调阅失败:', error);
+            const container = document.getElementById('disclaimer-container');
+            if(container) container.innerHTML = '<div class="p-6 text-center text-rose-600 font-bold">【安全连动错误】外部合规免责声明档案加载失败，请联络系统运维团队。</div>';
+        });
+});
+// NTAM 后端 AI 调度核心
+async function callGeminiAPI(prompt, systemInstruction) {
+    try {
+        const response = await fetch('/api/gemini', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })
+        });
+        const data = await response.json();
+        if (!response.ok) return `连线错误：${data.error || '未知错误'}`;
+        let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，无法产生有效回复。";
+        return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+    } catch (error) { return `网络连线失败。(${error.message})`; }
+}
+// AI 助理 Widget 逻辑
+const standardPrompt = `你是一位精通 NTAM 投资研究框架的资深 AI 助理。请针对使用者对台积电 (TSM) 2026年最新财报与大会摘要的提问，提供符合专业机构投资人水准、客观、高密度的定量与定性答复。重点用 <b> 标签包覆，严禁使用 markdown。`;
+function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
+function appendMessage(text, isUser) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
+    msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
+    document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+}
+function showTypingIndicator() {
+    const ind = document.createElement('div'); ind.id = `typing-indicator-${Date.now()}`;
+    ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
+    ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
+    document.getElementById('chat-messages').appendChild(ind);
+    return ind.id;
+}
+async function handleChatSubmit(e) {
+    e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
+    const sendBtn = e.target.querySelector('button[type="submit"]'); if (sendBtn && sendBtn.disabled) return;
+    if (sendBtn) { sendBtn.disabled = true; sendBtn.classList.add('opacity-50', 'cursor-not-allowed'); }
+    input.value = ''; appendMessage(text, true); const typingId = showTypingIndicator();
+    try {
+        const res = await callGeminiAPI(text, standardPrompt);
+        document.getElementById(typingId)?.remove(); appendMessage(res, false);
+    } finally {
+        document.getElementById(typingId)?.remove();
+        if (sendBtn) { sendBtn.disabled = false; sendBtn.classList.remove('opacity-50', 'cursor-not-allowed'); }
+    }
+}
+// 划词解说机制
+let selectedText = "";
+document.addEventListener('mouseup', function(e) {
+    const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
+    if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
+    if (text.length > 1 && text.length < 50) {
+        selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
+        tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${Math.max(8, rect.top - 40)}px`;
+        tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
+    } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+});
+document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
+async function explainSelectedTerm() {
+    document.getElementById('selection-tooltip').classList.add('hidden');
+    document.getElementById('explain-term-title').textContent = selectedText;
+    document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
+    const res = await callGeminiAPI(`解释这个台积电 TSM 财报相关词汇：${selectedText}`, "你是台积电晶圆代工专家，用最白话的专业简体中文解释词汇。限 150 字，重点使用 <b> 标签包覆。");
+    document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
+}
+function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
+</script>
+</body>
+</html>
