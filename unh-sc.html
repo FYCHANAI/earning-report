@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>联合健康集团 (UNH) 深度研究报告 | NTAM 资深分析师</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Noto Sans SC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+.chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+@media (min-width: 768px) { .chart-container { height: 400px; } }
+.tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+.tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+.tab-content.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+/* AI Animations */
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+.typing-dot { animation: typing 1.4s infinite ease-in-out both; }
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+@keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+#selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
+</style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+<div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
+<div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
+<div class="text-center mb-6">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77-1.333.192 3 1.732 3z" /></svg>
+</div>
+<h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要声明</h2>
+</div>
+<div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
+<p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
+</div>
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
+<p>本页面所含信息仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者身份。</p>
+</div>
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
+<p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
+<button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
+<button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">我確認 I Confirm</button>
+</div>
+</div>
+</div>
+<header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
+<img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+<span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+</a>
+<div class="flex flex-col">
+<h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">联合健康集团 <span class="text-blue-600">UNH</span></h1>
+<span class="text-sm text-slate-500 font-medium mt-1">资深分析师 运营与战略报告 | Q2 2026 财报特辑</span>
+</div>
+</div>
+<div class="flex flex-col items-end space-y-3">
+<select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
+<option value="unh.html">繁體中文</option>
+<option value="unh-sc.html" selected>简体中文</option>
+<option value="unh-en.html">English</option>
+</select>
+<div class="flex items-center space-x-4">
+<div class="text-right hidden sm:block">
+<div class="text-xs text-slate-400 font-bold">共识目标价 (截至 2026/07/17) <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
+<div class="text-xl font-bold text-slate-800">$455.08 USD</div>
+</div>
+<div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">ANR 共识评级：买入</div>
+</div>
+</div>
+</div>
+<nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+    <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我们的观点</button>
+    <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 运营与财务数据</button>
+    <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比较</button>
+    <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 华尔街观点</button>
+    <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 风险因素</button>
+    <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免责声明</button>
+</nav>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+<section id="our-comments" class="tab-content active">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我们的观点</h2>
+    </div>
+    <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
+        <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
+            <span class="text-3xl mr-3">🎯</span>
+            <h3 class="text-2xl font-black text-blue-600 tracking-tight">核心经营结论</h3>
+        </div>
+        <ul class="space-y-6">
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">盈利拐点确立，全年指引大幅上调</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">2Q26 调整后 EPS 达 6.38 美元（同比增长 56.4%），运营收益 79.9 亿美元（同比增长 55.2%）；管理层将全年调整后 EPS 指引自“高于 17.75 美元”上调至 19.50–20.00 美元区间，集团运营收益指引上调至高于 254.5 亿美元；我们认为其重建市场信任的进程快于预期。</p>
+                </div>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">医疗成本率显著改善，但板块表现分化</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">2Q26 医疗成本率 (MCR) 为 86.7%，较去年同期 89.4% 改善 270 个基点，受惠于福利设计、定价纪律与 8.6 亿美元净有利前期医疗准备金发展（多数与 2026 年服务日期相关）；Medicare 成本趋势低于年初约 10% 的假设，但商业险成本趋势略升逾 11%、Medicaid 费率落差未解，全年 MCR 指引 88.1%±25 个基点隐含下半年成本压力犹存。</p>
+                </div>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">Optum 重返增长轨道，利润率全面扩张</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">Optum 季度运营收益 40.5 亿美元（同比增长 31.7%），利润率 6.2%（同比提升 160 个基点）：Optum Health 重心回归整合式价值医疗，利润率回升至 5.1%；Optum Insight 利润率达 25.3%，并于 7 月 2 日完成收购 Alegeus；Optum Rx 透明化收费模式获市场认可，客户留存率维持 90% 后段高位。</p>
+                </div>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">资本回报加码，估值具修复空间</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">季度运营现金流 111 亿美元（1.9 倍净利润），全年回购目标自 25 亿美元倍增至至少 50 亿美元，年化股息上调至 9.28 美元，债务资本比降至 41.2% 并朝年底约 40% 目标迈进。以 2026/07/16 收盘价 423.38 美元计，Bloomberg ANR 共识目标价 455.08 美元隐含约 7.5% 潜在上行空间；我们认为在指引兑现的前提下，估值具修复空间。</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<section id="financials" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、运营与财务数据</h2></div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div class="metric-card border-t-4 border-t-emerald-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">2Q26 总营收 (Total Revenues)</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">$112,032 M</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +0.4% (2Q25: $111,616 M)</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">调整后每股收益 (Adjusted EPS)</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">$6.38</p>
+            <p class="text-sm text-blue-600 font-semibold mt-1">● YoY +56.4% (2Q25: $4.08)</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-indigo-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">医疗成本率 (Medical Care Ratio)</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">86.7%</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▼ YoY -270 bps (2Q25: 89.4%)</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-purple-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">运营收益 (Earnings from Operations)</h4>
+            <p class="text-xl font-bold text-slate-800 mt-1">$7,991 M</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +55.2% (2Q25: $5,150 M)</p>
+        </div>
+    </div>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="metric-card">
+            <h3 class="text-lg font-bold text-slate-800 mb-2">2Q26 各业务线列报营收结构（抵销前）(Million USD)</h3>
+            <p class="text-xs text-slate-500 mb-4">各业务线列报营收含集团内部交易，不可直接加总为合并营收：抵销前合计 153,183 百万美元，经 Optum 内部抵销 1,503 百万美元与集团层面抵销 39,648 百万美元（合计 41,151 百万美元）后，合并总营收为 112,032 百万美元。</p>
+            <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+        </div>
+        <div class="metric-card">
+            <h3 class="text-lg font-bold text-slate-800 mb-2">主要业务单位营收与运营利润率表现 (Million USD)</h3>
+            <p class="text-xs text-slate-500 mb-4">UnitedHealthcare 运营利润率自 2.4% 修复至 4.6%；Optum Insight 以 25.3% 居各单位之冠，Optum 整体利润率同比提升 160 个基点至 6.2%。</p>
+            <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
+        </div>
+    </div>
+    <div class="metric-card mt-6">
+        <h3 class="text-lg font-bold text-slate-800 mb-4">核心财务数据综合对比明细 Table (GAAP vs Non-GAAP)</h3>
+        <div class="overflow-x-auto">
+            <table class="w-full text-sm text-left border-collapse">
+                <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
+                    <tr>
+                        <th class="px-6 py-3 font-bold">会计明细科目项目</th>
+                        <th class="px-6 py-3 font-bold text-right">2Q26 GAAP</th>
+                        <th class="px-6 py-3 font-bold text-right text-blue-600">2Q26 Non-GAAP</th>
+                        <th class="px-6 py-3 font-bold text-right text-emerald-600">Non-GAAP YoY 同比变动率</th>
+                    </tr>
+                </thead>
+                <tbody class="text-slate-700">
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">季度总营收 (Total Revenues)</td>
+                        <td class="px-6 py-4 text-right">$112,032 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$112,031 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-emerald-500">+0.4%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">运营收益 (Earnings from Operations)</td>
+                        <td class="px-6 py-4 text-right">$7,991 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$7,979 M</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+54.9%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">归属股东净利润 (Net Earnings)</td>
+                        <td class="px-6 py-4 text-right">$5,484 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$5,792 M</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+55.9%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">稀释后每股收益 (Diluted EPS)</td>
+                        <td class="px-6 py-4 text-right">$6.04</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$6.38</td>
+                        <td class="px-6 py-4 text-right text-emerald-600">+56.4%</td>
+                    </tr>
+                    <tr class="bg-slate-50 font-bold">
+                        <td class="px-6 py-4 text-slate-800">其他列报运营指标 (Reported)</td>
+                        <td class="px-6 py-4 text-right text-slate-500">医疗成本率 MCR: 86.7%</td>
+                        <td class="px-6 py-4 text-right text-blue-600">运营成本率 OCR: 12.7%</td>
+                        <td class="px-6 py-4 text-right text-purple-600">运营现金流: $11.1 B</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<section id="valuation" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比较</h2></div>
+    <div class="metric-card">
+        <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-bold text-slate-800">美国管理式医疗巨头远期市盈率 (Next 4 Qtrs Est Forward P/E) 倍数横向长条图比较（截至 2026/07/16）</h3>
+        </div>
+        <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
+        <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
+    </div>
+</section>
+<section id="street-comments" class="tab-content">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、华尔街观点</h2>
+        <p class="mt-2 text-sm text-slate-500">摘要华尔街顶级投行对联合健康 2Q26 盈利拐点与指引上调的解读（评级与目标价：Bloomberg ANR，截至 2026/07/17）：</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3>
+                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>指引上调验证执行纪律 (目标价 468 美元)：</b> 2Q26 调整后 EPS 6.38 美元远超去年同期 4.08 美元，全年指引上调至 19.50–20.00 美元区间，管理层“更一致、更可预期”的运营纪律正在兑现。</li>
+                <li><b>Medicare Advantage 为核心修复引擎：</b> 医疗成本率 86.7% 显著优于去年同期 89.4%，Medicare 成本趋势低于年初约 10% 的假设，福利设计与网络管理成效可支撑 2027 年利润率续步改善。</li>
+            </ul>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">瑞银 (UBS)</h3>
+                <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">买入 (Buy)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>盈利上修驱动估值重估 (目标价 460 美元)：</b> 2Q 大幅超预期后，全年调整后 EPS 指引上调至 19.50–20.00 美元区间；以 21.47 倍未来四季预估市盈率计，盈利预测上修构成股价重估的主要驱动。</li>
+                <li><b>资本回报全面加码：</b> 全年回购目标自 25 亿美元倍增至至少 50 亿美元，年化股息上调至 9.28 美元，债务资本比降至 41.2%，资产负债表修复强化股东回报能见度。</li>
+            </ul>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">巴克莱 (Barclays)</h3>
+                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>立场相对审慎的增持 (目标价 429 美元)：</b> 目标价低于 ANR 共识 455.08 美元，反映商业险医疗成本趋势略升逾 11%、Medicaid 费率落差短期难解，利润率修复节奏仍需逐季验证。</li>
+                <li><b>Optum 复苏为估值上修关键：</b> Optum Health 利润率回升至 5.1%，但价值医疗患者同比减少约 70 万人；2027 年费率谈判与规模重建进展，将决定估值上修的节奏与幅度。</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<section id="risks" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、风险因素</h2></div>
+    <div class="metric-card">
+        <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-base">商业险医疗成本趋势未见缓和：</strong> 商业险成本趋势略高于先前 11% 的水平，《No Surprises Act》独立争议解决程序（仅适用于商业保险）与医疗服务方更高的编码强度、单次就诊成本构成持续压力，管理层坦言商业险利润率修复期将长于原先预期。
+            </li>
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-base">政府业务政策与监管不确定性：</strong> 美国司法部 (DOJ) 就 Medicare 业务参与的法律行动、CMS 星级评级变动与风险调整数据验证 (RADV) 审计、以及 Medicaid 费率与资格重审，均可能对营收与利润造成实质影响。
+            </li>
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-base">会员基础收缩拖累营收动能：</strong> 全年 Medicare Advantage 会员预计净减约 110 万人，Optum Health 价值医疗患者减少约 70 万人，Optum Rx 季度调整后处方量同比下降 6.5%（387 对 414 百万张），若留存与费率改善不及预期，营收增长恐持续承压。
+            </li>
+            <li class="pb-1">
+                <strong class="text-base">转型投资推高成本与执行风险：</strong> 2Q26 运营成本率升至 12.7%（去年同期 12.3%），反映科技、AI 与医疗服务体验的持续投入；大规模转型与 AI 应用的效益兑现时点与幅度存在不确定性。
+            </li>
+        </ol>
+    </div>
+</section>
+<section id="disclaimer" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免责声明</h2></div>
+    <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+        <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在从 disclaimer.html 线上安全读取最新免责声明组件...</p></div>
+    </div>
+</section>
+</main>
+<div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+<div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+<div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
+<div class="flex items-center">
+<span class="text-2xl mr-2">🤖</span>
+<div><h4 class="font-bold text-sm">研究员专属 AI 助理</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
+</div>
+<button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+</button>
+</div>
+<div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
+<div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
+分析师您好！我是您的专属联合健康集团 (UNH) 数据辅助 AI。您可以随时询问我关于本次 2Q26 调整后 EPS $6.38（同比增长 56.4%）、全年指引上调至 $19.50–$20.00、医疗成本率降至 86.7%、或 Optum 利润率扩张 160 个基点的财务影响。
+</div>
+</div>
+<div class="p-3 bg-white border-t border-slate-200">
+<form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
+<input type="text" id="chat-input" placeholder="输入您的研究指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
+<button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+</button>
+</form>
+</div>
+</div>
+<button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
+<span class="text-2xl">✨</span>
+</button>
+</div>
+<div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
+<button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
+<span>✨</span> AI 白话文解释
+</button>
+</div>
+<div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
+<div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+<div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+<h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 术语解释</h3>
+<button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+</button>
+</div>
+<div class="p-6">
+<div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查询的词汇：</div>
+<div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
+<div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
+<svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+AI 正在生成解释...
+</div>
+<div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
+</div>
+<div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+<button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">关闭</button>
+</div>
+</div>
+</div>
+<script>
+// 注册全局图表实例缓存
+window.charts = {};
+// PI 拦截视窗控制函式（依 index.html 标准写法补回）
+function acceptPI() {
+    sessionStorage.setItem('pi_agreed', 'true');
+    document.getElementById('pi-modal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+function declinePI() {
+    document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;
+}
+function switchTab(e, tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => {
+        el.classList.remove('active', 'border-blue-600', 'text-blue-600');
+        el.classList.add('text-slate-500');
+    });
+    document.getElementById(tabId).classList.add('active');
+    e.currentTarget.classList.remove('text-slate-500');
+    e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+    // 彻底修复 hidden 画布无宽高像素之 Chart.js 原生缺陷
+    if (tabId === 'financials') {
+        if (window.charts.unhSegment) window.charts.unhSegment.resize();
+        if (window.charts.unhProfit) window.charts.unhProfit.resize();
+    } else if (tabId === 'valuation') {
+        if (window.charts.unhValuation) window.charts.unhValuation.resize();
+    }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    // 专业投资者拦截门户验证
+    if (!sessionStorage.getItem('pi_agreed')) {
+        const modal = document.getElementById('pi-modal');
+        if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+    }
+    // 图表 1: UNH 业务线营收拆解 (Doughnut)
+    window.charts.unhSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
+        type: 'doughnut',
+        data: {
+            labels: ['E&I 雇主与个人', 'M&R 医疗保险与退休', 'C&S 社区与州政府', 'Optum Health', 'Optum Insight', 'Optum Rx'],
+            datasets: [{
+                data: [19992, 42390, 23635, 23472, 5402, 38292],
+                backgroundColor: ['rgba(37, 99, 235, 0.85)', 'rgba(16, 185, 129, 0.85)', 'rgba(99, 102, 241, 0.85)', 'rgba(168, 85, 247, 0.85)', 'rgba(14, 165, 233, 0.85)', 'rgba(20, 184, 166, 0.85)'],
+                borderWidth: 0
+            }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
+    });
+    // 图表 2: 主要业务单位营收与运营利润率表现 (Grouped Bar Chart)
+    window.charts.unhProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['UnitedHealthcare', 'Optum Health', 'Optum Insight', 'Optum Rx'],
+            datasets: [
+                {
+                    label: '单位营收 (百万美元)',
+                    data: [86017, 23472, 5402, 38292],
+                    backgroundColor: '#3b82f6',
+                    borderRadius: 4
+                },
+                {
+                    label: '运营利润率 (Operating Margin %)',
+                    data: [4.6, 5.1, 25.3, 3.9],
+                    backgroundColor: '#10b981',
+                    borderRadius: 4,
+                    yAxisID: 'percentageAxis'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { position: 'bottom' } },
+            scales: {
+                y: { beginAtZero: true, position: 'left', grid: { color: '#f1f5f9' } },
+                percentageAxis: { beginAtZero: true, max: 100, position: 'right', grid: { display: false } }
+            }
+        }
+    });
+    // 图表 3: 美国管理式医疗巨头远期市盈率比较 (Horizontal Bar)
+    window.charts.unhValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['ELV (Elevance Health)', 'CNC (Centene)', 'UNH (联合健康集团)', 'HUM (Humana)'],
+            datasets: [{
+                label: 'Next 4 Qtrs Est Forward P/E',
+                data: [13.75, 18.34, 21.47, 34.87],
+                backgroundColor: ['rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)', 'rgba(37, 99, 235, 0.95)', 'rgba(148, 163, 184, 0.6)'],
+                borderRadius: 4
+            }]
+        },
+        options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
+    });
+    // 安全调阅外部 disclaimer.html 连动模组
+    fetch('disclaimer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('无法载入 disclaimer.html');
+            return response.text();
+        })
+        .then(html => {
+            const container = document.getElementById('disclaimer-container');
+            if(container) container.innerHTML = html;
+        })
+        .catch(error => {
+            console.error('安全连动调阅失败:', error);
+            const container = document.getElementById('disclaimer-container');
+            if(container) container.innerHTML = '<div class="p-6 text-center text-rose-600 font-bold">【安全连动错误】外部合规免责声明档案加载失败，请联络系统运维团队。</div>';
+        });
+});
+// NTAM 后端 AI 调度核心
+async function callGeminiAPI(prompt, systemInstruction) {
+    try {
+        const response = await fetch('/api/gemini', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })
+        });
+        const data = await response.json();
+        if (!response.ok) return `连线错误：${data.error || '未知错误'}`;
+        let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，无法产生有效回复。";
+        return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+    } catch (error) { return `网络连线失败。(${error.message})`; }
+}
+// AI 助理 Widget 逻辑
+const standardPrompt = `你是一位精通 NTAM 投资研究框架的资深 AI 助理。请针对使用者对联合健康集团 (UNH) 2026年最新财报与大会摘要的提问，提供符合专业机构投资人水准、客观、高密度的定量与定性答复。重点用 <b> 标签包覆，严禁使用 markdown。`;
+function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
+function appendMessage(text, isUser) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
+    msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
+    document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+}
+function showTypingIndicator() {
+    const ind = document.createElement('div'); ind.id = 'typing-indicator';
+    ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
+    ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
+    document.getElementById('chat-messages').appendChild(ind);
+}
+async function handleChatSubmit(e) {
+    e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
+    input.value = ''; appendMessage(text, true); showTypingIndicator();
+    const res = await callGeminiAPI(text, standardPrompt);
+    document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
+}
+// 划词解说机制
+let selectedText = "";
+document.addEventListener('mouseup', function(e) {
+    const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
+    if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
+    if (text.length > 1 && text.length < 50) {
+        selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
+        tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${window.scrollY + rect.top - 40}px`;
+        tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
+    } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+});
+document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
+async function explainSelectedTerm() {
+    document.getElementById('selection-tooltip').classList.add('hidden');
+    document.getElementById('explain-term-title').textContent = selectedText;
+    document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
+    const res = await callGeminiAPI(`解释这个联合健康集团 UNH 财报相关词汇：${selectedText}`, "你是联合健康集团医疗保健行业专家，用最白话的专业简体中文解释词汇。限 150 字，重点使用 <b> 标签包覆。");
+    document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
+}
+function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
+</script>
+</body>
+</html>
