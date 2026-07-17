@@ -121,15 +121,15 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
             <li class="flex items-start">
                 <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
                 <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">業績觸及並超越財測指引，獲利能力大幅躍升</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">2Q26 營收 NT$1,270.38B（美元計 US$40.20B，觸及指引區間 US$39.0B–40.2B 上緣），季增 12.0%、年增 36.0%；毛利率 67.7% 與營業利益率 60.3% 雙雙高於指引上限（65.5%–67.5% / 56.5%–58.5%），歸屬母公司淨利 NT$706.56B、年增 77.4%，稀釋 EPS NT$27.25。管理層歸因於領先製程強勁需求、成本改善與產能利用率提升。</p>
+                    <strong class="text-slate-900 block mb-1 text-lg">營收達財測上緣，毛利率與營業利益率雙雙超越指引上限</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">2Q26 營收 NT$1,270.38B（美元計 US$40.20B，達指引區間 US$39.0B–40.2B 上緣），季增 12.0%、年增 36.0%；毛利率 67.7% 與營業利益率 60.3% 雙雙高於指引上限（65.5%–67.5% / 56.5%–58.5%），歸屬母公司淨利 NT$706.56B、年增 77.4%，稀釋 EPS NT$27.25。管理層歸因於領先製程強勁需求、成本改善與產能利用率提升。</p>
                 </div>
             </li>
             <li class="flex items-start">
                 <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
                 <div>
                     <strong class="text-slate-900 block mb-1 text-lg">2 奈米首度貢獻營收，先進製程與 HPC 結構持續深化</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">2nm 於本季首度貢獻晶圓營收 3%，3nm／5nm 分別佔 30%／33%，7nm 及以下先進製程合計 77%；平台別 HPC 營收季增 20%、佔比升至 66%。我們認為技術組合升級與 AI 需求集中，是毛利率結構性走高的核心支撐。</p>
+                    <p class="text-slate-600 text-sm leading-relaxed">2nm 於本季首度貢獻晶圓營收 3%，3nm／5nm 分別佔 30%／33%，7nm 及以下先進製程合計 77%；平台別 HPC 營收季增 20%、佔比升至 66%。我們認為先進製程與 HPC 組合升級支撐中長期獲利能力，惟 3Q26 毛利率指引中位數約 66%（低於 2Q26 的 67.7%），N2 陡峭爬坡與海外廠毛利稀釋將使短期毛利率承壓。</p>
                 </div>
             </li>
             <li class="flex items-start">
@@ -142,8 +142,8 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
             <li class="flex items-start">
                 <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
                 <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">一次性處分收益增厚業外，高投資下財務體質依然穩健</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">業外收益 NT$95.83B，主要來自處分及評價世界先進 (VIS) 股份利益 NT$63.20B，屬一次性性質；2Q26 資本支出 US$15.70B（上半年累計 US$26.80B），自由現金流 NT$287.36B、淨現金 NT$2,486.33B，並將配發 1Q26 每股 NT$7.00 現金股利（2026/09/16 除息）。</p>
+                    <strong class="text-slate-900 block mb-1 text-lg">VIS 處分及評價收益增厚業外，高投資下財務體質依然穩健</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">業外收益 NT$95.83B，其中 NT$63.20B 來自世界先進 (VIS) 股份之處分及按市價評價收益，屬非核心且具波動性的獲利來源；2Q26 資本支出 US$15.70B（上半年累計 US$26.80B），自由現金流 NT$287.36B、淨現金 NT$2,486.33B，並將配發 1Q26 每股 NT$7.00 現金股利（2026/09/16 除息）。</p>
                 </div>
             </li>
         </ul>
@@ -184,7 +184,7 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
         </div>
         <div class="metric-card">
             <!-- ✏️ 替換：圖 2 標題與說明（canvas id 固定） -->
-            <h3 class="text-lg font-bold text-slate-800 mb-2">近三季營收與毛利率趨勢 (NT$ Billion / %)</h3>
+            <h3 class="text-lg font-bold text-slate-800 mb-2">2Q25、1Q26 與 2Q26 營收與毛利率比較 (NT$ Billion / %)</h3>
             <p class="text-xs text-slate-500 mb-4">營收由 2Q25 的 NT$933.79B 升至 2Q26 的 NT$1,270.38B，毛利率同步由 58.6% 升至 67.7%（營業利益率 60.3%）。</p>
             <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
         </div>
@@ -227,11 +227,29 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
                         <td class="px-6 py-4 text-right font-bold text-blue-600">NT$398.27 B (42.7%)</td>
                         <td class="px-6 py-4 text-right font-bold text-emerald-600">+77.4%</td>
                     </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">稀釋 EPS (Diluted EPS)</td>
+                        <td class="px-6 py-4 text-right">NT$27.25</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">NT$15.36</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+77.4%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">晶圓出貨 (12吋約當, kpcs)</td>
+                        <td class="px-6 py-4 text-right">4,336</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">3,718</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+16.6%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">年化 ROE (Annualized)</td>
+                        <td class="px-6 py-4 text-right">45.9%</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">34.8%</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+11.1 ppts</td>
+                    </tr>
                     <tr class="bg-slate-50 font-bold">
-                        <td class="px-6 py-4 text-slate-800">其他列報營運指標 (Reported)</td>
-                        <td class="px-6 py-4 text-right text-slate-500">稀釋 EPS: NT$27.25 (+77.4%)</td>
-                        <td class="px-6 py-4 text-right text-blue-600">晶圓出貨: 4,336 kpcs (+16.6%)</td>
-                        <td class="px-6 py-4 text-right text-purple-600">ROE: 45.9%</td>
+                        <td class="px-6 py-4 text-slate-800">平均匯率 (USD/NTD)</td>
+                        <td class="px-6 py-4 text-right text-slate-500">31.60</td>
+                        <td class="px-6 py-4 text-right text-blue-600">31.05</td>
+                        <td class="px-6 py-4 text-right text-purple-600">+1.8%</td>
                     </tr>
                 </tbody>
             </table>
@@ -289,7 +307,7 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
             </div>
             <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
                 <li><b>高強度擴產下現金流依然穩健（目標價 650 美元）：</b> 上半年資本支出 US$26.80B（2Q26 為 US$15.70B），2Q26 自由現金流 NT$287.36B、淨現金 NT$2,486.33B，兼顧擴產與股東回報。</li>
-                <li><b>核心獲利趨勢須還原一次性因素：</b> 業外收益 NT$95.83B 含 VIS 處分及評價利益 NT$63.20B，有效稅率因未分配盈餘稅升至 18.1%，評估核心獲利動能時應予剔除。</li>
+                <li><b>核心獲利趨勢須還原非核心損益：</b> 業外收益 NT$95.83B 含 VIS 處分及按市價評價收益 NT$63.20B，有效稅率因未分配盈餘稅升至 18.1%，評估核心獲利動能時應予剔除。</li>
             </ul>
         </div>
     </div>
