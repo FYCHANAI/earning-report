@@ -18,7 +18,7 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f4f6f9; color
 <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
 <div class="text-center mb-6">
 <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77-1.333.192 3 1.732 3z" /></svg>
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
 </div>
 <h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明</h2>
 </div>
@@ -80,10 +80,25 @@ document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direct
 </h1>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+<div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='tsm.html'">
+<div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
+<span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">半導體 / 晶圓代工</span>
+<span class="text-xs text-blue-600 font-bold bg-blue-50 px-2 py-0.5 rounded whitespace-nowrap">2026年7月17日更新 ✨</span>
+</div>
+<div class="mb-4">
+<h2 class="text-2xl font-black text-slate-900">台積電 <span class="text-lg font-bold text-slate-400 ml-1">Taiwan Semiconductor</span></h2>
+<h3 class="text-xl font-bold text-blue-600 mt-1">TSM</h3>
+</div>
+<p class="text-sm text-slate-600 line-clamp-3 mb-8 flex-grow leading-relaxed">2Q26 營收 NT$1,270.38B（402 億美元）年增 36.0%、稀釋 EPS NT$27.25 年增 77.4%，毛利率 67.7% 與營業利益率 60.3% 雙雙超越指引上限；2nm 首度貢獻營收、HPC 佔比 66%，3Q26 營收指引 446 億至 458 億美元，全年美元營收增長略高於 40%...</p>
+<div class="pt-4 border-t border-slate-100 flex flex-wrap justify-between items-center mt-auto gap-2">
+<span class="bg-emerald-50 text-emerald-700 text-sm font-bold px-3 py-1.5 rounded whitespace-nowrap">評級：買入</span>
+<span class="text-blue-600 text-sm font-bold flex items-center group-hover:text-blue-800 transition-colors whitespace-nowrap">閱讀報告 <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 5l7 7-7 7" stroke-width="2" /></svg></span>
+</div>
+</div>
 <div class="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm card-hover flex flex-col h-full cursor-pointer group" onclick="window.location.href='unh.html'">
 <div class="flex xl:flex-row flex-col justify-between xl:items-center items-start gap-2 mb-6">
 <span class="bg-slate-100 text-slate-600 text-xs font-bold px-3 py-1.5 rounded-full whitespace-nowrap">醫療保健 / 管理式醫療</span>
-<span class="text-xs text-blue-600 font-bold bg-blue-50 px-2 py-0.5 rounded whitespace-nowrap">2026年7月17日更新 ✨</span>
+<span class="text-xs text-slate-400 font-medium whitespace-nowrap">2026年7月17日更新</span>
 </div>
 <div class="mb-4">
 <h2 class="text-2xl font-black text-slate-900">聯合健康集團 <span class="text-lg font-bold text-slate-400 ml-1">UnitedHealth Group</span></h2>
