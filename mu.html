@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>美光科技 (MU) 深度研究報告 | NTAM 資深分析師</title>
 <script src="https://cdn.tailwindcss.com"></script>
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
     body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
@@ -35,7 +35,7 @@
     <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
         <div class="text-center mb-6">
             <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77-1.333.192 3 1.732 3z" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
             </div>
             <h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明</h2>
         </div>
@@ -291,7 +291,7 @@
         <div class="metric-card">
             <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
                 <li class="pb-3 border-b border-slate-100">
-                    <strong class="text-rose-700 text-base">全球 Greenfield 晶圓廠擴產的結構性限制：</strong> 新建綠地工廠 (greenfield fab) 項目陣容龐大且極度耗時，擴產進度受到全球長交期建廠設備、高技能勞工短缺、複雜的法規許可環評以及能源電力基建吃緊等多重瓶頸限制。
+                    <strong class="text-base">全球 Greenfield 晶圓廠擴產的結構性限制：</strong> 新建綠地工廠 (greenfield fab) 項目陣容龐大且極度耗時，擴產進度受到全球長交期建廠設備、高技能勞工短缺、複雜的法規許可環評以及能源電力基建吃緊等多重瓶頸限制。
                 </li>
                 <li class="pb-3 border-b border-slate-100">
                     <strong class="text-base">先進技術轉渡驅動的混合每位元成本攀升：</strong> 從 LP5 升級至 LP6、DDR5 至 DDR6 以及新型 HBM 晶粒堆疊技術使得製程極度複雜，隨著重大資本開支在未來的持續投入，預期將顯著推升混合 DRAM 的每位元生產成本。
@@ -394,6 +394,15 @@
         } else if (tabId === 'valuation') {
             if (window.charts.muValuation) window.charts.muValuation.resize();
         }
+    }
+
+    function acceptPI() {
+        sessionStorage.setItem('pi_agreed', 'true');
+        document.getElementById('pi-modal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    function declinePI() {
+        document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;
     }
 
     document.addEventListener('DOMContentLoaded', function() {
@@ -505,16 +514,24 @@
         document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
     }
     function showTypingIndicator() {
-        const ind = document.createElement('div'); ind.id = 'typing-indicator';
+        const ind = document.createElement('div'); ind.id = `typing-indicator-${Date.now()}`;
         ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
         ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
         document.getElementById('chat-messages').appendChild(ind);
+        return ind.id;
     }
     async function handleChatSubmit(e) {
         e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
-        input.value = ''; appendMessage(text, true); showTypingIndicator();
-        const res = await callGeminiAPI(text, standardPrompt);
-        document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
+        const sendBtn = e.target.querySelector('button[type="submit"]'); if (sendBtn && sendBtn.disabled) return;
+        if (sendBtn) { sendBtn.disabled = true; sendBtn.classList.add('opacity-50', 'cursor-not-allowed'); }
+        input.value = ''; appendMessage(text, true); const typingId = showTypingIndicator();
+        try {
+            const res = await callGeminiAPI(text, standardPrompt);
+            document.getElementById(typingId)?.remove(); appendMessage(res, false);
+        } finally {
+            document.getElementById(typingId)?.remove();
+            if (sendBtn) { sendBtn.disabled = false; sendBtn.classList.remove('opacity-50', 'cursor-not-allowed'); }
+        }
     }
 
     // 劃詞解說機制
@@ -524,7 +541,7 @@
         if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
         if (text.length > 1 && text.length < 50) {
             selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
-            tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${window.scrollY + rect.top - 40}px`;
+            tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${Math.max(8, rect.top - 40)}px`;
             tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
         } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
     });
