@@ -1,545 +1,614 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+<!--
+═══════════════════════════════════════════════════════════════════
+ NTAM 報告頁｜Alphabet (GOOGL) FQ2 2026 財報特輯（繁體中文版）
+═══════════════════════════════════════════════════════════════════
+ 1. 本檔骨架逐字複製自 NTAM_report_template_tc.html（黃金範本 v2）。
+ 2. 🔒 固定區未經任何改動；✏️ 替換區已套用 GOOGL FQ2 2026 數據。
+ 3. chart 鍵名：googlSegment / googlProfit / googlValuation。
+ 4. lang 固定 zh-TW（繁體）。簡/英版以 googl-sc.html / googl-en.html 命名。
+ 5. 標記註解（🔒/✏️）不影響網頁顯示，保留供後續維護。
+ 6. 本頁例外：圖 2 右軸上限 50%（利潤率集中於 20–42%，經審核採納）。
+═══════════════════════════════════════════════════════════════════
+-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alphabet (GOOGL) 深度研究報告 | NTAM 資深分析師</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
-        .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
-        @media (min-width: 768px) { .chart-container { height: 400px; } }
-        .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
-        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
-        .tab-content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-        .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* AI Animations */
-        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
-        .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
-        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
-        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
-        @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
-        #selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ✏️ 替換：頁面標題（公司名 + Ticker） -->
+<title>Alphabet (GOOGL) 深度研究報告 | NTAM 資深分析師</title>
+<!-- 🔒 固定區：框架與字體引用（繁體版固定 Noto Sans TC） -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+.chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+@media (min-width: 768px) { .chart-container { height: 400px; } }
+.tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+.tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+.tab-content.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+/* AI Animations */
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+.typing-dot { animation: typing 1.4s infinite ease-in-out both; }
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+@keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+#selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
+</style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
-
-    <div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
-        <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
-            <div class="text-center mb-6">
-                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77-1.333.192 3 1.732 3z" /></svg>
+<!-- 🔒 固定區開始：專業投資者 (PI) 三語攔截視窗（勿改任何文字與結構） -->
+<div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
+<div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
+<div class="text-center mb-6">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+</div>
+<h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明</h2>
+</div>
+<div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
+<p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
+</div>
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
+<p>本页面所含信息仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者身份。</p>
+</div>
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
+<p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
+<button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
+<button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">我確認 I Confirm</button>
+</div>
+</div>
+</div>
+<!-- 🔒 固定區結束：PI 攔截視窗 -->
+<header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<!-- 🔒 固定：Logo 連回首頁（檔名含 URL 編碼空格，勿改） -->
+<a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
+<img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+<span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+</a>
+<div class="flex flex-col">
+<!-- ✏️ 替換：公司名 + Ticker、副標題（財季） -->
+<h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Alphabet <span class="text-blue-600">GOOGL</span></h1>
+<span class="text-sm text-slate-500 font-medium mt-1">資深分析師 營運與戰略報告 | FQ2 2026 財報特輯</span>
+</div>
+</div>
+<div class="flex flex-col items-end space-y-3">
+<!-- ✏️ 替換：語言切換選單的三個檔名（換成新 ticker），selected 固定在繁體 -->
+<select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
+<option value="googl.html" selected>繁體中文</option>
+<option value="googl-sc.html">简体中文</option>
+<option value="googl-en.html">English</option>
+</select>
+<div class="flex items-center space-x-4">
+<div class="text-right hidden sm:block">
+<!-- ✏️ 替換：目標價（Source 徽章文字固定） -->
+<div class="text-xs text-slate-400 font-bold">共識目標價 (截至 2026/07/23) <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
+<div class="text-xl font-bold text-slate-800">$434.51 USD</div>
+</div>
+<!-- ✏️ 替換：評級文字（膠囊樣式固定） -->
+<div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">ANR 共識評級：買入</div>
+</div>
+</div>
+</div>
+<!-- 🔒 固定：6 個 Tabs 的名稱、順序、onclick 目標一律不變 -->
+<nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+    <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我們的觀點</button>
+    <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 營運與財務數據</button>
+    <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比較</button>
+    <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 華爾街觀點</button>
+    <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 風險因素</button>
+    <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免責聲明</button>
+</nav>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+<!-- ══════════ Tab 一：我們的觀點 ══════════ -->
+<section id="our-comments" class="tab-content active">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我們的觀點</h2>
+        <!-- ✏️ 替換：導言（財季 + 公司名） -->
+        <p class="mt-2 text-sm text-slate-500">基於 FQ2 2026 財報與相關披露文件，以下為 NTAM 研究團隊提煉之 Alphabet (GOOGL) 核心結論：</p>
+    </div>
+    <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
+        <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
+            <span class="text-3xl mr-3">🎯</span>
+            <h3 class="text-2xl font-black text-blue-600 tracking-tight">核心經營結論</h3>
+        </div>
+        <!-- ✏️ 替換區：3–4 點核心結論（每點 = 編號 + 粗標題 + 說明段，li 結構與 class 不變） -->
+        <ul class="space-y-6">
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">Cloud 增長加速至 +82%，AI 全棧策略進入收成期</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">Google Cloud 營收 $24,768 M、年增 82%，營業利潤率由 20.7% 大幅擴張至 35.6%；積壓訂單環比增加逾 $50B、達 $514B（約 5,140 億美元），未來 24 個月預計認列略高於五成。我們認為本季首次認列的 TPU 系統銷售，加上 Gemini Enterprise 獲近 90% Fortune 100 企業採用，顯示 AI 投資正轉化為可驗證的收入曲線。</p>
                 </div>
-                <h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明</h2>
-            </div>
-            <div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
-                    <p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">Search AI 化推動主業韌性，連續 12 季雙位數增長</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">合併營收 $119,796 M、年增 24%（固定匯率 +23%）；Search &amp; other +17%、YouTube 廣告 +13%、訂閱平台與裝置 +15%。AI Overviews 與 AI Mode 整合後查詢量持續增長，AI Mode 月活躍用戶突破 10 億、Gemini App 達 9.5 億，世界盃期間逾 17 億獨立觀眾收看相關 YouTube 影片。</p>
                 </div>
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
-                    <p>本网站及报告之内容仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者资格。</p>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">表面 EPS 受一次性因素推升，宜以營業利益衡量核心動能</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">稀釋 EPS $9.11（+294%）主要受 $99,031 M 股權證券淨收益（公司表示其他收益淨額大增主要由未實現收益帶動）推升；剔除公司披露之影響後，NTAM 機械式估算 EPS 約 $2.85——此並非 Alphabet 公布之 Non-GAAP 指標，且去年同期亦含同類收益，不宜直接計算同比。我們認為營業利益 +30%、營業利益率提升 1.6 個百分點至 34.0%，更能反映本季核心經營表現。</p>
                 </div>
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
-                    <p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">資本開支週期升溫，融資結構主動擴張</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">本季 CapEx $44,924 M（約 +100%），全年指引上調至 $195–205B，本季自由現金流轉負 $5,855 M；公司同步完成 $49.6B 股權融資與 $20.3B 債券發行以支應 AI 基建。我們認為在供給受限環境下，資本配置節奏與回報實現時點（TPU 協議收入絕大部分於 2027 年認列）將是後續估值的關鍵變數。</p>
                 </div>
-            </div>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
-                <button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
-                <button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">我確認 I Confirm</button>
-            </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- ══════════ Tab 二：營運與財務數據 ══════════ -->
+<section id="financials" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、營運與財務數據</h2></div>
+    <!-- ✏️ 替換區：4 個 KPI 卡（只換標題/數字/註記文字；border-t 顏色依序 emerald→blue→indigo→purple 固定） -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div class="metric-card border-t-4 border-t-emerald-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">FQ2 總營收 (Total Revenue)</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">$119,796 M</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +24%（固定匯率 +23%）</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">稀釋 EPS (Diluted EPS)</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">$9.11</p>
+            <p class="text-sm text-blue-600 font-semibold mt-1">▲ +294%；NTAM 估算剔除後約 $2.85</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-indigo-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">Google Cloud 營收</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">$24,768 M</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +82%｜積壓訂單 $514B</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-purple-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">GAAP 營業利益率</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">34.0%</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ +1.6 個百分點 (32.4% → 34.0%)</p>
         </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() { if (!sessionStorage.getItem('pi_agreed')) { const modal = document.getElementById('pi-modal'); if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; } } });
-        function acceptPI() { sessionStorage.setItem('pi_agreed', 'true'); document.getElementById('pi-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
-        function declinePI() { document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`; }
-    </script>
-
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex justify-between items-start">
-                <div class="flex flex-col">
-                    <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
-                        <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-8 w-auto" onerror="this.style.display='none'">
-                        <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
-                    </a>
-                    <div class="flex flex-col">
-                        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Alphabet <span class="text-blue-600">GOOGL</span></h1>
-                        <span class="text-sm text-slate-500 font-medium mt-1">資深分析師 營運與戰略報告 | Q1 2026</span>
-                    </div>
-                </div>
-                <div class="flex flex-col items-end space-y-3">
-                    <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
-                        <option value="googl.html" selected>繁體中文</option>
-                        <option value="googl-sc.html">简体中文</option>
-                        <option value="googl-en.html">English</option>
-                    </select>
-                    <div class="flex items-center space-x-4">
-                        <div class="text-right hidden sm:block">
-                            <div class="text-xs text-slate-400 font-bold">目標價 <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
-                            <div class="text-xl font-bold text-slate-800">$419.14 USD</div>
-                        </div>
-                        <div class="px-4 py-2 bg-blue-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">評級：買入 (Buy)</div>
-                    </div>
-                </div>
-            </div>
-            
-            <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
-                <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我們的觀點</button>
-                <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 營運與財務數據</button>
-                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比較</button>
-                <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 華爾街觀點</button>
-                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 風險因素</button>
-                <button onclick="switchTab(event, 'sandbox')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-indigo-500 hover:text-indigo-700">六. AI 互動沙盒 ✨</button>
-                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">七. 免責聲明</button>
-            </nav>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="metric-card">
+            <!-- ✏️ 替換：圖 1 標題與說明（canvas id 固定） -->
+            <h3 class="text-lg font-bold text-slate-800 mb-2">Q2'26 營收組合 (Million USD)</h3>
+            <p class="text-xs text-slate-500 mb-4">「Google 廣告」與「訂閱、平台與裝置」屬 Google Services 分部內收入類別；避險收益 $106 M 未列入圖中，四項加計避險收益後即總營收 $119,796 M。</p>
+            <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
         </div>
-    </header>
-
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
-
-        <section id="our-comments" class="tab-content active">
-            <div class="mb-6">
-                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我們的觀點</h2>
-                <p class="mt-2 text-sm text-slate-500">基於 FY26 Q1 財報與管理層會議，以下為 NTAM 研究團隊提煉之 Alphabet 核心結論：</p>
-            </div>
-            <div class="metric-card bg-slate-900 text-white border-none p-6 md:p-8">
-                <div class="flex items-center mb-6 border-b border-slate-700 pb-4">
-                    <span class="text-3xl mr-3">🎯</span>
-                    <h3 class="text-2xl font-black text-blue-400 tracking-tight">核心結論</h3>
-                </div>
-                <ul class="space-y-6">
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">1.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">Google Cloud 強勁成長</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">受惠於企業 AI 解決方案與基礎設施的強勁需求，Google Cloud 營收年增 63% 突破 200 億美元，且積壓訂單 (Backlog) 季增近一倍至超過 4,600 億美元。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">2.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">AI 應用與訂閱大增</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">Gemini App 帶動消費者 AI 計畫創下史上最佳季度表現，總付費訂閱人數達 3.5 億；企業端 Gemini Enterprise 付費月活躍用戶數亦達成季增 40%。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-amber-400 mr-4 text-xl font-black">3.</span>
-                        <div>
-                            <strong class="text-amber-400 block mb-1 text-lg">資本支出 (CapEx) 大幅上調</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">因應前所未有的 AI 運算需求，2026 全年資本支出預期上調至 1,800 億至 1,900 億美元，並預告 2027 年的資本支出將進一步顯著增加。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">4.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">AI 推升搜尋引擎動能與效率</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">AI Overviews 等體驗帶動搜尋查詢量創下歷史新高，使「搜尋與其他」營收年增 19%；同時，透過硬體與工程突破，核心 AI 回應成本已降低逾 30%。</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="financials" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、營運與財務數據</h2></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                <div class="metric-card border-t-4 border-t-emerald-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">總營收 (Total Revenue)</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$109.90 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +22%</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-blue-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">Google Cloud 營收成長</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">+63%</p>
-                    <p class="text-sm text-blue-600 font-semibold mt-1">▲ 營收達 $20.03 B</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-indigo-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">GAAP 營業利潤</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$39.70 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ 利潤率擴張至 36.1%</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-purple-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">GAAP 淨利潤</h4>
-                    <p class="text-xl font-bold text-slate-800 mt-1">$62.58 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +81% (含未實現投資收益)</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="metric-card">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">Q1 營收部門結構 (Billion USD)</h3>
-                    <p class="text-xs text-slate-500 mb-4">Google Cloud 增長率高達 63%，成為增長的重要引擎。</p>
-                    <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
-                </div>
-
-                <div class="metric-card">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">獲利能力指標 (Billion USD)</h3>
-                    <p class="text-xs text-slate-500 mb-4">營業利潤按年增長 30%，顯示在 AI 基礎設施巨額投資下仍具備極佳的槓桿效應。</p>
-                    <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
-                </div>
-            </div>
-
-            <div class="metric-card mt-6">
-                <h3 class="text-lg font-bold text-slate-800 mb-4">各事業群營運明細 (FY26 Q1)</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-left border-collapse">
-                        <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
-                            <tr>
-                                <th class="px-6 py-3 font-bold">事業群 (Segment)</th>
-                                <th class="px-6 py-3 font-bold text-right">營收 (Billion)</th>
-                                <th class="px-6 py-3 font-bold text-right">年增率 (YoY)</th>
-                                <th class="px-6 py-3 font-bold text-right">營業利潤 (Billion)</th>
-                                <th class="px-6 py-3 font-bold text-right text-emerald-600">利潤增長 (YoY)</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-slate-700">
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">Google Services</td>
-                                <td class="px-6 py-4 text-right">$89.64</td>
-                                <td class="px-6 py-4 text-right font-bold text-emerald-500">+16%</td>
-                                <td class="px-6 py-4 text-right">$40.59</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">+24%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">Google Cloud</td>
-                                <td class="px-6 py-4 text-right">$20.03</td>
-                                <td class="px-6 py-4 text-right font-bold text-emerald-500">+63%</td>
-                                <td class="px-6 py-4 text-right">$6.60</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">+203%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">Other Bets</td>
-                                <td class="px-6 py-4 text-right">$0.41</td>
-                                <td class="px-6 py-4 text-right text-rose-500">-9%</td>
-                                <td class="px-6 py-4 text-right">-$2.10</td>
-                                <td class="px-6 py-4 text-right text-slate-400 font-bold">N/A</td>
-                            </tr>
-                            <tr class="bg-slate-50 font-bold">
-                                <td class="px-6 py-4 text-slate-800">總計 (Total)</td>
-                                <td class="px-6 py-4 text-right text-slate-800">$109.90</td>
-                                <td class="px-6 py-4 text-right text-emerald-600">+22%</td>
-                                <td class="px-6 py-4 text-right text-slate-800">$39.70</td>
-                                <td class="px-6 py-4 text-right text-emerald-600">+30%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <section id="valuation" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比較</h2></div>
-            <div class="metric-card">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-lg font-bold text-slate-800">大型科技巨頭 (Magnificent 7) FY 2026 Forward P/E 倍數比較</h3>
-                </div>
-                <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
-                <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
-            </div>
-        </section>
-
-        <section id="street-comments" class="tab-content">
-            <div class="mb-6">
-                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點</h2>
-                <p class="mt-2 text-sm text-slate-500">摘要自 Bloomberg ANR 最新投行研究報告與法說會對答：</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>ROIC 與運算配置：</b> 關注 Alphabet 在面臨運算資源限制下，如何將下一代運算資源配置於搜尋業務以提升投資資本回報率 (ROIC)。</li>
-                        <li><b>TPU 銷售潛力：</b> 對於向第三方資料中心銷售 TPU 硬體設備的定價與長期戰略抱持高度興趣。</li>
-                    </ul>
-                </div>
-
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">摩根大通 (J.P. Morgan)</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>CapEx 軌跡：</b> 聚焦於 2027 年將大幅增加的資本支出軌跡，並探討其如何消化目前龐大（超過 4600 億美元）的雲端積壓訂單。</li>
-                        <li><b>廣告覆蓋率：</b> 關注 AI 搜尋查詢（如 AI Overviews）的廣告覆蓋率是否有進一步提升的空間。</li>
-                    </ul>
-                </div>
-
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">花旗銀行 (Citi)</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">買入 (Buy)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>雲端利潤率擴張：</b> 關注雲端業務的利潤率擴張表現，認為其營業利益率大幅改善的幅度令人驚豔。</li>
-                        <li><b>需求與定價：</b> 探討在市場普遍認為 AI 運算毛利較低的情況下，強勁的需求與定價能力如何推動整體獲利增長。</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="risks" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、風險因素</h2></div>
-            <div class="metric-card">
-                <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-rose-700 text-base">運算產能受限 (Compute Constraints)：</strong> 管理層坦言目前在運算資源上處於「極度受限」的狀態，若能滿足所有需求，雲端業務的營收本可進一步提升。
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">基礎設施投資帶來的利潤壓力：</strong> 為支援 AI 發展而大幅增加的技術基礎設施投資，將帶來更高的折舊費用以及資料中心營運成本（如能源花費），進而對損益表帶來壓力。
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">供應鏈複雜性與通膨：</strong> 在積極擴充 AI 產能與硬體的同時，公司必須應對複雜的供應鏈環境，以及潛在的成本通膨與供應限制。
-                    </li>
-                    <li class="pb-1">
-                        <strong class="text-base">AI 應用引發的新型資安威脅：</strong> 隨著 AI 模型普及，相關的網路安全威脅正加速擴大，迫使 Alphabet 必須加強投資（如收購 Wiz）來強化其 AI 與網路防禦產品。
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <section id="sandbox" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-indigo-500 pl-3">六、AI 客製化情境推演 (Sandbox)</h2></div>
-            
-            <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 md:p-8 shadow-sm">
-                <div class="flex items-center mb-3">
-                    <span class="text-2xl mr-3">✨</span>
-                    <h3 class="text-xl font-black text-indigo-900 tracking-tight">AI 即時沙盤推演</h3>
-                </div>
-                <p class="text-sm text-indigo-700 mb-6 leading-relaxed">請在下方輸入您假設的產業變數（例如：AI 搜尋廣告轉換率不如預期、Google Cloud 贏得大額企業訂單），AI 將基於 GOOGL 當前暴增的資本支出與高達 4,600 億美元的積壓訂單，為您即時推演潛在影響。</p>
-                <div class="flex flex-col md:flex-row gap-3">
-                    <input type="text" id="custom-scenario-input" placeholder="試試輸入：如果因為運算資源持續短缺，導致 Google Cloud 無法如期消化 4600 億美元的積壓訂單..." class="flex-1 border border-indigo-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-inner">
-                    <button onclick="generateCustomScenario()" id="btn-generate-scenario" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg text-sm font-bold shadow-md transition-all whitespace-nowrap">
-                        開始推演
-                    </button>
-                </div>
-                <div id="scenario-loading" class="hidden mt-6 text-sm text-indigo-600 font-bold flex items-center bg-indigo-100/50 p-4 rounded-lg">
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                    AI 正在透過 Vercel 後端計算數據...
-                </div>
-                <div id="scenario-result" class="mt-6 hidden bg-white p-6 rounded-xl border border-indigo-200 text-sm text-slate-800 leading-relaxed shadow-sm"></div>
-            </div>
-        </section>
-
-        <section id="disclaimer" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">七、免責聲明</h2></div>
-            <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
-                <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在從 disclaimer.html 載入免責聲明，請稍候...</p></div>
-            </div>
-        </section>
-
-    </main>
-
-    <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
-            <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
-                <div class="flex items-center">
-                    <span class="text-2xl mr-2">🤖</span>
-                    <div><h4 class="font-bold text-sm">研究員專屬 AI 助理</h4><p class="text-xs text-blue-200">Powered by Vercel & Gemini ✨</p></div>
-                </div>
-                <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
-            </div>
-            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
-                <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
-                    分析師您好！我是您的專屬 Alphabet (GOOGL) 報告輔助 AI。您可以隨時詢問我關於本次 Google Cloud 成長 63%、AI Overviews 的影響，或是 1800-1900 億美元資本支出的考量。
-                </div>
-            </div>
-            <div class="p-3 bg-white border-t border-slate-200">
-                <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
-                    <input type="text" id="chat-input" placeholder="輸入您的指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
-                    </button>
-                </form>
-            </div>
-        </div>
-        <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
-            <span class="text-2xl">✨</span>
-        </button>
-    </div>
-
-    <div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
-        <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
-            <span>✨</span> AI 白話文解釋
-        </button>
-    </div>
-    <div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
-            <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
-                <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 術語解釋</h3>
-                <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
-            </div>
-            <div class="p-6">
-                <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查詢的詞彙：</div>
-                <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
-                <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
-                    <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                    AI 正在生成解釋...
-                </div>
-                <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
-            </div>
-            <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
-                <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">關閉</button>
-            </div>
+        <div class="metric-card">
+            <!-- ✏️ 替換：圖 2 標題與說明（canvas id 固定） -->
+            <h3 class="text-lg font-bold text-slate-800 mb-2">Google Services 與 Google Cloud 分部表現 (Million USD)</h3>
+            <p class="text-xs text-slate-500 mb-4">Cloud 營業利潤率由 20.7% 大幅擴張至 35.6%、Services 由 40.1% 升至 41.8%（右軸：利潤率 %，本頁上限 50%）。</p>
+            <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
         </div>
     </div>
-
-    <script>
-        function switchTab(e, tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(el => { el.classList.remove('active', 'border-blue-600', 'text-blue-600'); el.classList.add('text-slate-500'); });
-            document.getElementById(tabId).classList.add('active');
-            e.currentTarget.classList.remove('text-slate-500'); e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+    <div class="metric-card mt-6">
+        <h3 class="text-lg font-bold text-slate-800 mb-4">FQ2 2026 GAAP 報告結果 vs NTAM 機械式剔除股權證券淨收益影響 對比明細 Table</h3>
+        <div class="overflow-x-auto">
+            <!-- ✏️ 替換區：表格內容（每列固定 4 格：科目 / GAAP / Non-GAAP / 變動率；末列灰底彙總列） -->
+            <table class="w-full text-sm text-left border-collapse">
+                <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
+                    <tr>
+                        <th class="px-6 py-3 font-bold">會計明細科目項目</th>
+                        <th class="px-6 py-3 font-bold text-right">FQ2-26 GAAP 報告</th>
+                        <th class="px-6 py-3 font-bold text-right text-blue-600">剔除股權證券淨收益影響後*</th>
+                        <th class="px-6 py-3 font-bold text-right text-emerald-600">YoY 同比變動率 (GAAP 報告基準)</th>
+                    </tr>
+                </thead>
+                <tbody class="text-slate-700">
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">季度總營收 (Revenues)</td>
+                        <td class="px-6 py-4 text-right">$119,796 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$119,796 M（不受影響）</td>
+                        <td class="px-6 py-4 text-right font-bold text-emerald-500">+24%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">營業利益 (Operating Income)</td>
+                        <td class="px-6 py-4 text-right">$40,770 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$40,770 M（不受影響）</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+30%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">其他收益（費用）淨額 (OI&amp;E)</td>
+                        <td class="px-6 py-4 text-right">$97,983 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">-$1,048 M</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+3,581%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">稅前利益 (Income Before Income Taxes)</td>
+                        <td class="px-6 py-4 text-right">$138,753 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$39,722 M</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+309%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">所得稅費用 (Provision for Income Taxes)</td>
+                        <td class="px-6 py-4 text-right">$26,560 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$4,660 M</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+363%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">歸屬普通股股東淨利 (Net Income to Common)</td>
+                        <td class="px-6 py-4 text-right">$112,107 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$35,007 M</td>
+                        <td class="px-6 py-4 text-right text-emerald-600">+298%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">稀釋 EPS (Diluted EPS)</td>
+                        <td class="px-6 py-4 text-right">$9.11</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$2.85</td>
+                        <td class="px-6 py-4 text-right text-emerald-600">+294%</td>
+                    </tr>
+                    <tr class="bg-slate-50 font-bold">
+                        <td class="px-6 py-4 text-slate-800">其他列報營運指標 (Reported)</td>
+                        <td class="px-6 py-4 text-right text-slate-500">TAC: $16,179 M (+10%)</td>
+                        <td class="px-6 py-4 text-right text-blue-600">員工人數: 198,933</td>
+                        <td class="px-6 py-4 text-right text-purple-600">普通股季息: $0.22/股</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="text-[11px] text-slate-400 mt-3 leading-relaxed">* NTAM 機械式估算：依公司披露，FQ2 2026 股權證券淨收益 $99,031 M（含已實現及未實現損益；公司表示其他收益淨額大增主要由未實現收益帶動）使所得稅費用、淨利及稀釋 EPS 分別增加約 $21.9B、$77.1B 及 $6.26，本欄據此推算。此並非 Alphabet 公布之 Non-GAAP 指標；且 FQ2 2025 同項亦含股權證券淨收益 $1,286 M，故不宜以剔除後數字直接計算同比增長。</p>
+        <div class="mt-4 pt-4 border-t border-slate-100">
+            <h4 class="text-sm font-bold text-slate-700 mb-2">現金流與投資 (Reported)</h4>
+            <p class="text-xs text-slate-600 leading-relaxed">經營現金流 $39,069 M（+41%）；資本支出 (CapEx) $44,924 M（約 +100%）；本季自由現金流 -$5,855 M（去年同期 +$5,301 M）；過去十二個月 (TTM) 自由現金流 $53,273 M（-20%）。公司將 FY2026 全年 CapEx 指引由 $180–190B 上調至 $195–205B。</p>
+        </div>
+    </div>
+</section>
+<!-- ══════════ Tab 三：估值比較 ══════════ -->
+<section id="valuation" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比較</h2></div>
+    <div class="metric-card">
+        <div class="flex justify-between items-center mb-4">
+            <!-- ✏️ 替換：圖表標題（行業描述可換，Forward P/E 字樣保留） -->
+            <h3 class="text-lg font-bold text-slate-800">美國大型科技巨頭遠期市盈率 (Next 4 Qtrs Est Forward P/E) 倍數橫向長條圖比較（截至 2026/07/22）</h3>
+        </div>
+        <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
+        <p class="text-xs text-slate-500 mt-4 leading-relaxed">註：各公司採 Bloomberg 個股預設 EPS 口徑——AAPL 與 MSFT 為 Adjusted EPS、AMZN 與 GOOGL 為 GAAP+——數值僅供指示性比較。我們認為 GOOGL 現價估值相對同業並不高；依 2026/07/22 收盤價 $342.09 計，距 Bloomberg ANR 12 個月共識目標價 $434.51 之潛在上行空間約 +27.0%。</p>
+        <!-- 🔒 固定：資料來源標註 -->
+        <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
+    </div>
+</section>
+<!-- ══════════ Tab 四：華爾街觀點 ══════════ -->
+<section id="street-comments" class="tab-content">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點</h2>
+        <!-- ✏️ 替換：導言 -->
+        <p class="mt-2 text-sm text-slate-500">（評級與目標價：Bloomberg ANR，截至 2026/07/23）Bloomberg 12 個月共識目標價 $434.51，畫面顯示 58/83 個目標價樣本；另有 74 個有效評級——66 個買入、8 個持有、0 個賣出——市場共識偏向買入。以下投行觀點為 NTAM 基於公司披露文件之解讀：</p>
+    </div>
+    <!-- ✏️ 替換區：3 家投行卡片（投行名、評級徽章、2 點觀點）。
+         評級徽章配色規則：買入 Buy = bg-emerald-100 text-emerald-800；
+         增持 Overweight = bg-blue-100 text-blue-800；其他評級先與使用者確認。 -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">瑞銀 (UBS)</h3>
+                <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">中性 (Neutral)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>AI 動能已大幅反映於股價（目標價 $400）：</b> Search &amp; other +17%、Cloud +82% 動能俱佳，惟股價經大幅上漲後，現價距其目標價空間相對有限，估值已計入多數 AI 上行情境。</li>
+                <li><b>資本開支與現金流壓力待消化：</b> FY2026 CapEx 指引上調至 $195–205B、本季自由現金流轉負 $5.9B；第三方算力橋接與 Wiz 整合成本亦將短期壓抑 Cloud 利潤率。</li>
+            </ul>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">花旗 (Citi)</h3>
+                <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">買入 (Buy)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>Cloud 加速與廣告韌性並進（目標價 $447）：</b> Cloud 增速由上年同期 +32% 跳升至 +82%、積壓訂單達 $514B；Search 於 AI Overviews／AI Mode 全面鋪開下仍交出 +17% 增長，全棧 AI 布局進入收成期。</li>
+                <li><b>Gemini 深度整合廣告基建：</b> AI Max 已逾 50 萬廣告主採用，採用 AI 驅動廣告活動之客戶於相近 ROAS 下平均多獲 15% 轉換；零售與金融為 Search 增長最大貢獻垂直領域。</li>
+            </ul>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">巴克萊 (Barclays)</h3>
+                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>TPU 外售開啟新增長曲線（目標價 $425）：</b> 本季首次認列交付客戶資料中心之 TPU 系統銷售收入，相關協議收入絕大部分將於 2027 年實現，疊加 $514B 積壓訂單，中期營收能見度顯著提升。</li>
+                <li><b>模型迭代節奏加快：</b> Gemini 3.6 Flash 等新模型密集推出、Gemini 4 已展開預訓練；Gemini 及 Google 第一方模型 API 每分鐘處理約 220 億 tokens（上季逾 160 億），推理需求持續供不應求。</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ══════════ Tab 五：風險因素 ══════════ -->
+<section id="risks" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、風險因素</h2></div>
+    <div class="metric-card">
+        <!-- ✏️ 替換區：3–4 點風險（各點 strong 一律黑色粗體 class="text-base"，嚴禁 text-rose-700 紅字） -->
+        <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-base">資本開支週期與自由現金流壓力：</strong> FY2026 CapEx 指引由 $180–190B 上調至 $195–205B，管理層並預告 2027 年將顯著增加；本季自由現金流轉負 $5,855 M。公司已透過 $49.6B 股權融資、$20.3B 高級無抵押票據及 $40B ATM 計畫（截至 6 月底未動用）補充資本，長期債務升至 $98.2B；折舊與資料中心營運成本（如能源）將持續加壓損益表。
+            </li>
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-base">Cloud 利潤率短期承壓：</strong> 管理層明示 Q3 起將擴大使用第三方算力作為過渡策略，其成本連同 Wiz 整合費用，將於近期對 Cloud 營業利潤率構成壓力；TPU 系統銷售之利潤結構亦未單獨披露。
+            </li>
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-base">股權證券投資收益之高波動性：</strong> 本季股權證券淨收益 $99,031 M（公司表示其他收益淨額大增主要由未實現收益帶動）推升稀釋 EPS 達 $6.26；公司明示投資價值波動可能顯著加大未來 OI&amp;E 之波動，表面盈利指標之期間可比性下降。
+            </li>
+            <li class="pb-1">
+                <strong class="text-base">競爭、匯率與法規環境：</strong> 前沿模型競賽激烈，供給受限下算力配置存在取捨；管理層預期 Q3 匯率轉為輕微逆風（主要影響 Search 與 YouTube 廣告）；本季 G&amp;A 增長亦部分來自若干法律及其他事項之計提。
+            </li>
+        </ol>
+    </div>
+</section>
+<!-- ══════════ Tab 六：免責聲明 ══════════ -->
+<!-- 🔒 固定區：免責聲明以 fetch 載入，嚴禁寫死內文 -->
+<section id="disclaimer" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免責聲明</h2></div>
+    <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+        <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在從 disclaimer.html 線上安全讀取最新免責聲明組件...</p></div>
+    </div>
+</section>
+</main>
+<!-- 🔒 固定區開始：右下角 AI 助理 Widget（結構固定；僅 ✏️ 標示處換文字） -->
+<div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+<div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+<div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
+<div class="flex items-center">
+<span class="text-2xl mr-2">🤖</span>
+<div><h4 class="font-bold text-sm">研究員專屬 AI 助理</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
+</div>
+<button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+</button>
+</div>
+<div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
+<!-- ✏️ 替換：Widget 歡迎詞（公司名 + 本期亮點數字，數字須與內文一致） -->
+<div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
+分析師您好！我是您的專屬 Alphabet (GOOGL) 數據輔助 AI。您可以隨時詢問我關於本季 $119,796 M（+24%）合併營收、Google Cloud +82% 加速增長與 $514B 積壓訂單、$99.0B 股權證券淨收益對稀釋 EPS $9.11 的推升，或 $195–205B 全年資本開支指引的財務影響。
+</div>
+</div>
+<div class="p-3 bg-white border-t border-slate-200">
+<form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
+<input type="text" id="chat-input" placeholder="輸入您的研究指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
+<button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+</button>
+</form>
+</div>
+</div>
+<button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
+<span class="text-2xl">✨</span>
+</button>
+</div>
+<div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
+<button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
+<span>✨</span> AI 白話文解釋
+</button>
+</div>
+<div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
+<div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+<div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+<h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 術語解釋</h3>
+<button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+</button>
+</div>
+<div class="p-6">
+<div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查詢的詞彙：</div>
+<div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
+<div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
+<svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+AI 正在生成解釋...
+</div>
+<div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
+</div>
+<div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+<button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">關閉</button>
+</div>
+</div>
+</div>
+<!-- 🔒 固定區結束：AI Widget / 劃詞解釋 -->
+<script>
+// 🔒 註冊全域圖表實例快取
+window.charts = {};
+// 🔒 PI 攔截視窗控制函式（依 index.html 標準寫法）
+function acceptPI() {
+    sessionStorage.setItem('pi_agreed', 'true');
+    document.getElementById('pi-modal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+function declinePI() {
+    document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;
+}
+// 🔒 Tab 切換邏輯（✏️ 僅 resize 的圖表鍵名需隨新 ticker 更名）
+function switchTab(e, tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => {
+        el.classList.remove('active', 'border-blue-600', 'text-blue-600');
+        el.classList.add('text-slate-500');
+    });
+    document.getElementById(tabId).classList.add('active');
+    e.currentTarget.classList.remove('text-slate-500');
+    e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+    // 徹底修復 hidden 畫布無寬高像素之 Chart.js 原生缺陷
+    if (tabId === 'financials') {
+        if (window.charts.googlSegment) window.charts.googlSegment.resize();
+        if (window.charts.googlProfit) window.charts.googlProfit.resize();
+    } else if (tabId === 'valuation') {
+        if (window.charts.googlValuation) window.charts.googlValuation.resize();
+    }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    // 🔒 專業投資者攔截門戶驗證
+    if (!sessionStorage.getItem('pi_agreed')) {
+        const modal = document.getElementById('pi-modal');
+        if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+    }
+    // ✏️ 圖表 1：營收拆解 (Doughnut)。鍵名改 [ticker]Segment；labels/data 換新數據；顏色與 options 固定
+    window.charts.googlSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
+        type: 'doughnut',
+        data: {
+            labels: ['Google 廣告', '訂閱、平台與裝置', 'Google Cloud', 'Other Bets'],
+            datasets: [{
+                data: [81629, 12911, 24768, 382],
+                backgroundColor: ['rgba(37, 99, 235, 0.85)', 'rgba(16, 185, 129, 0.85)', 'rgba(99, 102, 241, 0.85)', 'rgba(147, 51, 234, 0.85)'],
+                borderWidth: 0
+            }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
+    });
+    // ✏️ 圖表 2：業務單位表現 (Grouped Bar 雙軸)。鍵名改 [ticker]Profit；labels/data 換新數據；顏色 #3b82f6 / #10b981 與雙軸設定固定
+    window.charts.googlProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['Google Services', 'Google Cloud'],
+            datasets: [
+                {
+                    label: "Q2'25 營收 (百萬美元)",
+                    data: [82543, 13624],
+                    backgroundColor: 'rgba(59, 130, 246, 0.35)',
+                    borderRadius: 4
+                },
+                {
+                    label: "Q2'26 營收 (百萬美元)",
+                    data: [94540, 24768],
+                    backgroundColor: '#3b82f6',
+                    borderRadius: 4
+                },
+                {
+                    label: "Q2'25 營業利潤率 (%)",
+                    data: [40.1, 20.7],
+                    backgroundColor: 'rgba(16, 185, 129, 0.35)',
+                    borderRadius: 4,
+                    yAxisID: 'percentageAxis'
+                },
+                {
+                    label: "Q2'26 營業利潤率 (%)",
+                    data: [41.8, 35.6],
+                    backgroundColor: '#10b981',
+                    borderRadius: 4,
+                    yAxisID: 'percentageAxis'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { position: 'bottom' } },
+            scales: {
+                y: { beginAtZero: true, position: 'left', grid: { color: '#f1f5f9' } },
+                percentageAxis: { beginAtZero: true, max: 50, position: 'right', grid: { display: false } }
+            }
         }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // Chart 1: Segment Revenue
-            new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
-                type: 'doughnut',
-                data: {
-                    labels: ['Google Services', 'Google Cloud', 'Other Bets'],
-                    datasets: [{
-                        data: [89.64, 20.03, 0.41],
-                        backgroundColor: ['rgba(239, 68, 68, 0.8)', 'rgba(59, 130, 246, 0.8)', 'rgba(245, 158, 11, 0.8)'],
-                        borderWidth: 0
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '60%' }
-            });
-
-            // Chart 2: Profitability
-            new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['總營收 (Total Rev)', '營業利潤 (GAAP OpInc)', '淨利潤 (GAAP Net)'],
-                    datasets: [{
-                        label: '十億美元 (Billion USD)',
-                        data: [109.90, 39.70, 62.58],
-                        backgroundColor: ['#94a3b8', '#3b82f6', '#10b981'],
-                        borderRadius: 4
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } }, x: { grid: { display: false } } } }
-            });
-
-            // Chart 3: Valuation (Peers)
-            new Chart(document.getElementById('valuationChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['GOOGL (Alphabet)', 'AAPL (蘋果)', 'AMZN (亞馬遜)', 'MSFT (微軟)'],
-                    datasets: [{ label: 'FY 2026 Forward P/E 倍數', data: [28.60, 31.86, 32.07, 24.42], backgroundColor: ['rgba(37, 99, 235, 0.9)', 'rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)'], borderRadius: 4 }]
-                },
-                options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
-            });
-
-            // 讀取外部 disclaimer.html 檔案
-            fetch('disclaimer.html')
-                .then(response => {
-                    if (!response.ok) throw new Error('無法讀取 disclaimer.html');
-                    return response.text();
-                })
-                .then(html => {
-                    const container = document.getElementById('disclaimer-container');
-                    if(container) container.innerHTML = html;
-                })
-                .catch(error => {
-                    console.error('載入免責聲明失敗:', error);
-                    const container = document.getElementById('disclaimer-container');
-                    if(container) container.innerHTML = '<div class="p-6 text-center text-red-500 font-bold">無法載入 disclaimer.html，請確認檔案存在。</div>';
-                });
+    });
+    // ✏️ 圖表 3：Forward P/E 橫向比較。鍵名改 [ticker]Valuation；
+    //    ⚠️ backgroundColor 陣列中「藍色 rgba(37,99,235,0.95)」的位置必須對應主角公司在 labels 中的位置，其餘同業一律灰色
+    window.charts.googlValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['AAPL (蘋果)', 'AMZN (亞馬遜)', 'GOOGL (Alphabet)', 'MSFT (微軟)'],
+            datasets: [{
+                label: 'Next 4 Qtrs Est Forward P/E',
+                data: [35.41, 29.05, 25.48, 20.99],
+                backgroundColor: ['rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)', 'rgba(37, 99, 235, 0.95)', 'rgba(148, 163, 184, 0.6)'],
+                borderRadius: 4
+            }]
+        },
+        options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
+    });
+    // 🔒 安全調閱外部 disclaimer.html 連動模組（嚴禁寫死免責聲明）
+    fetch('disclaimer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('無法載入 disclaimer.html');
+            return response.text();
+        })
+        .then(html => {
+            const container = document.getElementById('disclaimer-container');
+            if(container) container.innerHTML = html;
+        })
+        .catch(error => {
+            console.error('安全連動調閱失敗:', error);
+            const container = document.getElementById('disclaimer-container');
+            if(container) container.innerHTML = '<div class="p-6 text-center text-rose-600 font-bold">【安全連動錯誤】外部合規免責聲明檔案加載失敗，請聯絡系統運維團隊。</div>';
         });
-
-        // AI Core
-        async function callGeminiAPI(prompt, systemInstruction) {
-            try {
-                const response = await fetch('/api/gemini', { 
-                    method: 'POST', headers: { 'Content-Type': 'application/json' }, 
-                    body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction }) 
-                });
-                const data = await response.json();
-                if (!response.ok) return `連線錯誤：${data.error || '未知錯誤'}`;
-                let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，無法產生有效回覆。";
-                return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
-            } catch (error) { return `網路連線失敗。(${error.message})`; }
-        }
-
-        // AI Chat
-        const standardPrompt = `你是 NTAM 內部研究員的專屬 AI 助理。請協助分析師總結 Alphabet (GOOGL) Q1 2026 財報與 AI 雲端數據。請用客觀、精煉的繁體中文回答，使用 HTML <b> 加粗重點，嚴禁使用 markdown 語法。`;
-        function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
-        function appendMessage(text, isUser) {
-            const msgDiv = document.createElement('div');
-            msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
-            msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv); 
-            document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
-        }
-        function showTypingIndicator() {
-            const ind = document.createElement('div'); ind.id = 'typing-indicator'; 
-            ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
-            ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
-            document.getElementById('chat-messages').appendChild(ind);
-        }
-        async function handleChatSubmit(e) {
-            e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
-            input.value = ''; appendMessage(text, true); showTypingIndicator();
-            const res = await callGeminiAPI(text, standardPrompt);
-            document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
-        }
-
-        // Highlight AI
-        let selectedText = "";
-        document.addEventListener('mouseup', function(e) {
-            const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
-            if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
-            if (text.length > 1 && text.length < 50) {
-                selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
-                tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${rect.top - 40}px`;
-                tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
-            } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+});
+// 🔒 NTAM 後端 AI 調度核心（端點 /api/gemini 與後處理邏輯嚴禁更動）
+async function callGeminiAPI(prompt, systemInstruction) {
+    try {
+        const response = await fetch('/api/gemini', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })
         });
-        document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
-        async function explainSelectedTerm() {
-            document.getElementById('selection-tooltip').classList.add('hidden');
-            document.getElementById('explain-term-title').textContent = selectedText; 
-            document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
-            const res = await callGeminiAPI(`解釋這個 GOOGL 相關詞彙：${selectedText}`, "你是金融專家，用最白話繁體中文解釋詞彙。限 150 字，重點用 <b> 包覆。");
-            document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
-        }
-        function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
-        
-        // 🔮 沙盒生成腳本
-        async function generateCustomScenario() {
-            const inputEl = document.getElementById('custom-scenario-input'); const btnEl = document.getElementById('btn-generate-scenario'); 
-            const loadingEl = document.getElementById('scenario-loading'); const resultEl = document.getElementById('scenario-result');
-            const scenarioText = inputEl.value.trim(); if (!scenarioText) { alert('請先輸入假設情境！'); return; }
-            btnEl.disabled = true; btnEl.classList.add('opacity-50'); loadingEl.classList.remove('hidden'); resultEl.classList.add('hidden');
-            
-            const sysPrompt = `你是華爾街資深分析師。基於 Alphabet 本季 Cloud 增長63%、資本支出上調至 1800-1900億美元、以及運算產能受限等事實，評估用戶的「假設情境」。
-請簡明扼要地回覆：1. 初步評估 2. 對營收/利潤潛在影響 3. 股價可能反應。
-使用繁體中文，並用 HTML <b> 標籤加粗重點，嚴禁使用 markdown 語法。總字數約 200 字。`;
-
-            const aiAnalysis = await callGeminiAPI(`推演這個情境：${scenarioText}`, sysPrompt);
-            loadingEl.classList.add('hidden'); btnEl.disabled = false; btnEl.classList.remove('opacity-50');
-            resultEl.innerHTML = `<h4 class="font-bold text-indigo-900 mb-3 border-b border-indigo-100 pb-2">🎯 AI 情境推演結果</h4>` + aiAnalysis; 
-            resultEl.classList.remove('hidden');
-        }
-    </script>
+        const data = await response.json();
+        if (!response.ok) return `連線錯誤：${data.error || '未知錯誤'}`;
+        let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，無法產生有效回覆。";
+        return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+    } catch (error) { return `網路連線失敗。(${error.message})`; }
+}
+// ✏️ AI 助理 systemPrompt（公司名與財季須換成新報告；語言須與本頁一致）
+const standardPrompt = `你是一位精通 NTAM 投資研究框架的資深 AI 助理。請針對使用者對 Alphabet (GOOGL) 2026年最新財報與大會摘要的提問，提供符合專業機構投資人水準、客觀、高密度的定量與定性答覆。重點用 <b> 標籤包覆，嚴禁使用 markdown。`;
+// 🔒 Widget 互動邏輯（勿改）
+function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
+function appendMessage(text, isUser) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
+    msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
+    document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+}
+function showTypingIndicator() {
+    const ind = document.createElement('div'); ind.id = `typing-indicator-${Date.now()}`;
+    ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
+    ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
+    document.getElementById('chat-messages').appendChild(ind);
+    return ind.id;
+}
+async function handleChatSubmit(e) {
+    e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
+    const sendBtn = e.target.querySelector('button[type="submit"]'); if (sendBtn && sendBtn.disabled) return;
+    if (sendBtn) { sendBtn.disabled = true; sendBtn.classList.add('opacity-50', 'cursor-not-allowed'); }
+    input.value = ''; appendMessage(text, true); const typingId = showTypingIndicator();
+    try {
+        const res = await callGeminiAPI(text, standardPrompt);
+        document.getElementById(typingId)?.remove(); appendMessage(res, false);
+    } finally {
+        document.getElementById(typingId)?.remove();
+        if (sendBtn) { sendBtn.disabled = false; sendBtn.classList.remove('opacity-50', 'cursor-not-allowed'); }
+    }
+}
+// 🔒 劃詞解說機制（勿改）
+let selectedText = "";
+document.addEventListener('mouseup', function(e) {
+    const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
+    if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
+    if (text.length > 1 && text.length < 50) {
+        selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
+        tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${Math.max(8, rect.top - 40)}px`;
+        tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
+    } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+});
+document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
+async function explainSelectedTerm() {
+    document.getElementById('selection-tooltip').classList.add('hidden');
+    document.getElementById('explain-term-title').textContent = selectedText;
+    document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
+    // ✏️ 劃詞解釋 prompt 與 systemInstruction：公司名須換成新報告，其餘格式（限 150 字、<b> 標籤、語言）保留
+    const res = await callGeminiAPI(`解釋這個 Alphabet GOOGL 財報相關詞彙：${selectedText}`, "你是 Alphabet 網路廣告與雲端產業專家，用最白話的專業繁體中文解釋詞彙。限 150 字，重點使用 <b> 標籤包覆。");
+    document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
+}
+function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
+</script>
 </body>
 </html>
