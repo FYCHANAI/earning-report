@@ -122,8 +122,6 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
 <section id="our-comments" class="tab-content active">
     <div class="mb-6">
         <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我們的觀點</h2>
-        <!-- ✏️ 替換：導言（財季 + 公司名） -->
-        <p class="mt-2 text-sm text-slate-500">基於 FQ2 2026 財報與相關披露文件，以下為 NTAM 研究團隊提煉之 Alphabet (GOOGL) 核心結論：</p>
     </div>
     <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
         <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
@@ -176,7 +174,7 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
         <div class="metric-card border-t-4 border-t-blue-500">
             <h4 class="text-xs font-bold text-slate-500 uppercase">稀釋 EPS (Diluted EPS)</h4>
             <p class="text-2xl font-bold text-slate-800 mt-1">$9.11</p>
-            <p class="text-sm text-blue-600 font-semibold mt-1">▲ +294%；NTAM 估算剔除後約 $2.85</p>
+            <p class="text-sm text-blue-600 font-semibold mt-1">▲ +294%</p>
         </div>
         <div class="metric-card border-t-4 border-t-indigo-500">
             <h4 class="text-xs font-bold text-slate-500 uppercase">Google Cloud 營收</h4>
@@ -212,7 +210,7 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
                     <tr>
                         <th class="px-6 py-3 font-bold">會計明細科目項目</th>
                         <th class="px-6 py-3 font-bold text-right">FQ2-26 GAAP 報告</th>
-                        <th class="px-6 py-3 font-bold text-right text-blue-600">剔除股權證券淨收益影響後*</th>
+                        <th class="px-6 py-3 font-bold text-right text-blue-600">剔除股權證券淨收益影響後</th>
                         <th class="px-6 py-3 font-bold text-right text-emerald-600">YoY 同比變動率 (GAAP 報告基準)</th>
                     </tr>
                 </thead>
@@ -268,10 +266,35 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
                 </tbody>
             </table>
         </div>
-        <p class="text-[11px] text-slate-400 mt-3 leading-relaxed">* NTAM 機械式估算：依公司披露，FQ2 2026 股權證券淨收益 $99,031 M（含已實現及未實現損益；公司表示其他收益淨額大增主要由未實現收益帶動）使所得稅費用、淨利及稀釋 EPS 分別增加約 $21.9B、$77.1B 及 $6.26，本欄據此推算。此並非 Alphabet 公布之 Non-GAAP 指標；且 FQ2 2025 同項亦含股權證券淨收益 $1,286 M，故不宜以剔除後數字直接計算同比增長。</p>
         <div class="mt-4 pt-4 border-t border-slate-100">
-            <h4 class="text-sm font-bold text-slate-700 mb-2">現金流與投資 (Reported)</h4>
-            <p class="text-xs text-slate-600 leading-relaxed">經營現金流 $39,069 M（+41%）；資本支出 (CapEx) $44,924 M（約 +100%）；本季自由現金流 -$5,855 M（去年同期 +$5,301 M）；過去十二個月 (TTM) 自由現金流 $53,273 M（-20%）。公司將 FY2026 全年 CapEx 指引由 $180–190B 上調至 $195–205B。</p>
+            <h4 class="text-sm font-bold text-slate-700 mb-3">現金流與投資 (Reported)</h4>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+                <div class="bg-slate-50 rounded-lg p-3 text-center">
+                    <div class="text-[11px] text-slate-500 font-bold">經營現金流</div>
+                    <div class="text-base font-bold text-slate-800 mt-1">$39,069 M</div>
+                    <div class="text-xs text-emerald-600 font-semibold mt-0.5">▲ +41%</div>
+                </div>
+                <div class="bg-slate-50 rounded-lg p-3 text-center">
+                    <div class="text-[11px] text-slate-500 font-bold">資本支出 (CapEx)</div>
+                    <div class="text-base font-bold text-slate-800 mt-1">$44,924 M</div>
+                    <div class="text-xs text-emerald-600 font-semibold mt-0.5">▲ 約 +100%</div>
+                </div>
+                <div class="bg-slate-50 rounded-lg p-3 text-center">
+                    <div class="text-[11px] text-slate-500 font-bold">本季自由現金流</div>
+                    <div class="text-base font-bold text-slate-800 mt-1">-$5,855 M</div>
+                    <div class="text-xs text-slate-500 font-semibold mt-0.5">去年同期 +$5,301 M</div>
+                </div>
+                <div class="bg-slate-50 rounded-lg p-3 text-center">
+                    <div class="text-[11px] text-slate-500 font-bold">TTM 自由現金流</div>
+                    <div class="text-base font-bold text-slate-800 mt-1">$53,273 M</div>
+                    <div class="text-xs text-slate-500 font-semibold mt-0.5">▼ -20%</div>
+                </div>
+                <div class="bg-slate-50 rounded-lg p-3 text-center">
+                    <div class="text-[11px] text-slate-500 font-bold">FY2026 CapEx 指引</div>
+                    <div class="text-base font-bold text-slate-800 mt-1">$195–205B</div>
+                    <div class="text-xs text-blue-600 font-semibold mt-0.5">由 $180–190B 上調</div>
+                </div>
+            </div>
         </div>
     </div>
 </section>
@@ -294,7 +317,7 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
     <div class="mb-6">
         <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點</h2>
         <!-- ✏️ 替換：導言 -->
-        <p class="mt-2 text-sm text-slate-500">（評級與目標價：Bloomberg ANR，截至 2026/07/23）Bloomberg 12 個月共識目標價 $434.51，畫面顯示 58/83 個目標價樣本；另有 74 個有效評級——66 個買入、8 個持有、0 個賣出——市場共識偏向買入。以下投行觀點為 NTAM 基於公司披露文件之解讀：</p>
+        <p class="mt-2 text-sm text-slate-500">（評級與目標價：Bloomberg ANR，截至 2026/07/23）Bloomberg 12 個月共識目標價 $434.51，畫面顯示 58/83 個目標價樣本；另有 74 個有效評級——66 個買入、8 個持有、0 個賣出——市場共識偏向買入。</p>
     </div>
     <!-- ✏️ 替換區：3 家投行卡片（投行名、評級徽章、2 點觀點）。
          評級徽章配色規則：買入 Buy = bg-emerald-100 text-emerald-800；
@@ -337,7 +360,7 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
     <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、風險因素</h2></div>
     <div class="metric-card">
         <!-- ✏️ 替換區：3–4 點風險（各點 strong 一律黑色粗體 class="text-base"，嚴禁 text-rose-700 紅字） -->
-        <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
+        <ol class="space-y-4 list-decimal list-outside ml-5 text-sm text-slate-700">
             <li class="pb-3 border-b border-slate-100">
                 <strong class="text-base">資本開支週期與自由現金流壓力：</strong> FY2026 CapEx 指引由 $180–190B 上調至 $195–205B，管理層並預告 2027 年將顯著增加；本季自由現金流轉負 $5,855 M。公司已透過 $49.6B 股權融資、$20.3B 高級無抵押票據及 $40B ATM 計畫（截至 6 月底未動用）補充資本，長期債務升至 $98.2B；折舊與資料中心營運成本（如能源）將持續加壓損益表。
             </li>
