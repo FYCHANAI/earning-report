@@ -1,557 +1,573 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+<!--
+ NTAM 報告頁｜特斯拉 (TSLA) Q2 2026｜以 NTAM_report_template_tc.html 黃金範本逐字產生
+ 固定區（🔒）零偏離；僅替換區（✏️）更新內容。
+-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>特斯拉 (TSLA) 深度研究報告 | NTAM 資深分析師</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
-        .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
-        @media (min-width: 768px) { .chart-container { height: 400px; } }
-        .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
-        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
-        .tab-content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-        .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* AI Animations */
-        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
-        .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
-        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
-        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
-        @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
-        #selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ✏️ 替換：頁面標題（公司名 + Ticker） -->
+<title>特斯拉 (TSLA) 深度研究報告 | NTAM 資深分析師</title>
+<!-- 🔒 固定區：框架與字體引用（繁體版固定 Noto Sans TC） -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+.chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+@media (min-width: 768px) { .chart-container { height: 400px; } }
+.tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+.tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+.tab-content.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+/* AI Animations */
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+.typing-dot { animation: typing 1.4s infinite ease-in-out both; }
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+@keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+#selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
+</style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
-
-    <div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
-        <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
-            <div class="text-center mb-6">
-                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77-1.333.192 3 1.732 3z" /></svg>
+<!-- 🔒 固定區開始：專業投資者 (PI) 三語攔截視窗（勿改任何文字與結構） -->
+<div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
+<div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
+<div class="text-center mb-6">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+</div>
+<h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明</h2>
+</div>
+<div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
+<p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
+</div>
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
+<p>本页面所含信息仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者身份。</p>
+</div>
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
+<p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
+<button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
+<button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">我確認 I Confirm</button>
+</div>
+</div>
+</div>
+<!-- 🔒 固定區結束：PI 攔截視窗 -->
+<header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<!-- 🔒 固定：Logo 連回首頁（檔名含 URL 編碼空格，勿改） -->
+<a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
+<img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+<span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+</a>
+<div class="flex flex-col">
+<!-- ✏️ 替換：公司名 + Ticker、副標題（財季） -->
+<h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">特斯拉 <span class="text-blue-600">TSLA</span></h1>
+<span class="text-sm text-slate-500 font-medium mt-1">資深分析師 營運與戰略報告 | Q2 2026 財報特輯</span>
+</div>
+</div>
+<div class="flex flex-col items-end space-y-3">
+<!-- ✏️ 替換：語言切換選單的三個檔名（換成新 ticker），selected 固定在繁體 -->
+<select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
+<option value="tsla.html" selected>繁體中文</option>
+<option value="tsla-sc.html">简体中文</option>
+<option value="tsla-en.html">English</option>
+</select>
+<div class="flex items-center space-x-4">
+<div class="text-right hidden sm:block">
+<!-- ✏️ 替換：目標價（Source 徽章文字固定） -->
+<div class="text-xs text-slate-400 font-bold">共識目標價 (截至 2026/07/23) <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
+<div class="text-xl font-bold text-slate-800">$417.17 USD</div>
+</div>
+<!-- ✏️ 替換：評級文字（膠囊樣式固定） -->
+<div class="px-4 py-2 bg-slate-100 text-slate-600 font-bold rounded-full border border-slate-200 text-sm whitespace-nowrap">ANR 共識評級：持有</div>
+</div>
+</div>
+</div>
+<!-- 🔒 固定：6 個 Tabs 的名稱、順序、onclick 目標一律不變 -->
+<nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+    <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我們的觀點</button>
+    <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 營運與財務數據</button>
+    <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比較</button>
+    <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 華爾街觀點</button>
+    <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 風險因素</button>
+    <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免責聲明</button>
+</nav>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+<!-- ══════════ Tab 一：我們的觀點 ══════════ -->
+<section id="our-comments" class="tab-content active">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我們的觀點</h2>
+    </div>
+    <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
+        <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
+            <span class="text-3xl mr-3">🎯</span>
+            <h3 class="text-2xl font-black text-blue-600 tracking-tight">核心經營結論</h3>
+        </div>
+        <!-- ✏️ 替換區：3–4 點核心結論（每點 = 編號 + 粗標題 + 說明段，li 結構與 class 不變） -->
+        <ul class="space-y-6">
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">Q2 交付創歷年同期新高，TTM 營收首破千億美元</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">Q2 總交付 480,126 輛（YoY +25%，創第二季歷史新高），總營收 282.36 億美元（YoY +26%），滾動十二個月營收首次突破 1,000 億美元；儲能部署 13.5 GWh 為史上次高單季，服務及其他業務毛利 6.48 億美元創紀錄。我們認為核心業務需求動能已重回增長軌道，公司披露之訂單積壓為 2023 年以來最高。</p>
                 </div>
-                <h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明</h2>
-            </div>
-            <div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
-                    <p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">「量增利減」矛盾突出，盈利結構性承壓</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">Q2 營業利潤 3.98 億美元（YoY −57%），營業利潤率僅 1.4%（−269bp），受車輛 ASP 下行、監管積分收入銳減（4.39 億→1.46 億美元）、營運開支 +47%（受 AI 及其他研發項目、股份支付費用（含 2025 年 CEO 績效獎勵）與 SG&A 增加推動），以及能源業務約 2.4 億美元供應商電芯保修撥備拖累。歸屬普通股股東 GAAP 淨利 11.14 億美元，其中包含約 10.05 億美元 SpaceX 股權未實現公允價值收益（稅前；稅後 Non-GAAP 調整 7.63 億美元），我們認為評估核心盈利時應將此非營運、未實現項目分開考量。</p>
                 </div>
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
-                    <p>本网站及报告之内容仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者资格。</p>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">史上最大資本開支週期開啟，自由現金流轉負</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">Q2 資本開支 57.89 億美元（YoY +142%，環比倍增），自由現金流轉負至 −10.92 億美元；管理層指引全年資本開支將超過 250 億美元且未來兩至三年持續增長，並正安排最高 300 億美元債務融資，投向 Robotaxi 車隊、Optimus 產能、半導體廠與太陽能製造。我們認為此輪投資回報週期較長，執行力將成為估值走向的關鍵。</p>
                 </div>
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
-                    <p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">FSD 與 Robotaxi 商業化提速，惟估值已高度定價</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">活躍付費 FSD 客戶達 148 萬（含一次性買斷與月費訂閱，不含免費試用；YoY +56%），北美新交付 FSD 附加率逾 55%；Robotaxi 已覆蓋全美 7 個都會區，其中灣區仍配備安全駕駛，其餘 6 個市場處於無人監督服務擴張階段，Cybercab 亦於德州超級工廠開始投產。以 2026/07/22 收盤價 US$374.01 計，較 Bloomberg ANR 共識目標價 US$417.17 具約 11.5% 潛在升幅；惟遠期市盈率約 177 倍，顯著高於比亞迪與理想汽車、與蔚來相若，我們認為市場已提前定價自動駕駛與機器人業務的長期期權價值，Bloomberg ANR 共識評級為「持有」。</p>
                 </div>
-            </div>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
-                <button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
-                <button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">我確認 I Confirm</button>
-            </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- ══════════ Tab 二：營運與財務數據 ══════════ -->
+<section id="financials" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、營運與財務數據</h2></div>
+    <!-- ✏️ 替換區：4 個 KPI 卡（只換標題/數字/註記文字；border-t 顏色依序 emerald→blue→indigo→purple 固定） -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div class="metric-card border-t-4 border-t-emerald-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">Q2 總營收 (Total Revenues)</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">$28,236 M</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +26% / TTM 首破 $100B</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">季度總交付量 (Deliveries)</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">480,126 輛</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +25%（Q2 歷史新高）</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-indigo-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">GAAP 攤薄 EPS</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">$0.32</p>
+            <p class="text-sm text-slate-500 font-semibold mt-1">● YoY −3%（Non-GAAP $0.33）</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-purple-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">儲能部署 (Storage Deployed)</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">13.5 GWh</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +41% / QoQ +53%</p>
         </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() { if (!sessionStorage.getItem('pi_agreed')) { const modal = document.getElementById('pi-modal'); if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; } } });
-        function acceptPI() { sessionStorage.setItem('pi_agreed', 'true'); document.getElementById('pi-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
-        function declinePI() { document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`; }
-    </script>
-
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex justify-between items-start">
-                <div class="flex flex-col">
-                    <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
-                        <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-8 w-auto" onerror="this.style.display='none'">
-                        <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
-                    </a>
-                    <div class="flex flex-col">
-                        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">特斯拉 <span class="text-blue-600">TSLA</span></h1>
-                        <span class="text-sm text-slate-500 font-medium mt-1">資深分析師 營運與戰略報告 | Q1 2026</span>
-                    </div>
-                </div>
-                <div class="flex flex-col items-end space-y-3">
-                    <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
-                        <option value="tsla.html" selected>繁體中文</option>
-                        <option value="tsla-sc.html">简体中文</option>
-                        <option value="tsla-en.html">English</option>
-                    </select>
-                    <div class="flex items-center space-x-4">
-                        <div class="text-right hidden sm:block">
-                            <div class="text-xs text-slate-400 font-bold">目標價 <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
-                            <div class="text-xl font-bold text-slate-800">$414.97 USD</div>
-                        </div>
-                        <div class="px-4 py-2 bg-slate-100 text-slate-800 font-bold rounded-full border border-slate-300 text-sm whitespace-nowrap">評級：中性 (Hold)</div>
-                    </div>
-                </div>
-            </div>
-            
-            <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
-                <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我們的觀點</button>
-                <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 營運與財務數據</button>
-                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比較</button>
-                <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 華爾街觀點</button>
-                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 風險因素</button>
-                <button onclick="switchTab(event, 'sandbox')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-indigo-500 hover:text-indigo-700">六. AI 互動沙盒 ✨</button>
-                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">七. 免責聲明</button>
-            </nav>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="metric-card">
+            <!-- ✏️ 替換：圖 1 標題與說明（canvas id 固定） -->
+            <h3 class="text-lg font-bold text-slate-800 mb-2">Q2 2026 三大業務營收結構 (Million USD)</h3>
+            <p class="text-xs text-slate-500 mb-4">汽車業務單季營收 20,516 百萬美元，佔總營收約 72.7%；服務及其他佔 16.2%、能源生產與儲存佔 11.1%。</p>
+            <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
         </div>
-    </header>
-
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
-
-        <section id="our-comments" class="tab-content active">
-            <div class="mb-6">
-                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我們的觀點</h2>
-                <p class="mt-2 text-sm text-slate-500">基於最新財報、交付數據與管理層戰略轉向，以下為 NTAM 研究團隊提煉之核心結論：</p>
-            </div>
-            <div class="metric-card bg-slate-900 text-white border-none p-6 md:p-8">
-                <div class="flex items-center mb-6 border-b border-slate-700 pb-4">
-                    <span class="text-3xl mr-3">🎯</span>
-                    <h3 class="text-2xl font-black text-blue-400 tracking-tight">核心結論</h3>
-                </div>
-                <ul class="space-y-6">
-                    <li class="flex items-start">
-                        <span class="text-rose-400 mr-4 text-xl font-black">1.</span>
-                        <div>
-                            <strong class="text-rose-400 block mb-1 text-lg">交付低於市場預期，生產與交付差距擴大</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">Q1 總交付量為 358,023 輛，低於市場預期約 36.5 萬輛。同季總產量為 408,386 輛，較交付量高出 50,363 輛，反映潛在庫存增加或交付時間差，但仍需結合地區銷售、物流安排及期末庫存數據判斷，不宜直接等同於滯銷庫存。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-blue-400 mr-4 text-xl font-black">2.</span>
-                        <div>
-                            <strong class="text-blue-400 block mb-1 text-lg">戰略重心加速轉向 AI、自動駕駛與基礎設施</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">Elon Musk 在財報電話會議中重申，Tesla 將加大 AI 算力、Robotaxi / Cybercab 及相關基礎設施投資。這有助支持長期估值想像空間，但短期亦可能推高 CapEx，令自由現金流承壓。市場需要看到更清晰的商業化進度，才足以支持 Tesla 由汽車製造商向 AI / 自動化平台的估值切換。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-yellow-400 mr-4 text-xl font-black">3.</span>
-                        <div>
-                            <strong class="text-yellow-400 block mb-1 text-lg">能源業務仍具戰略價值，但短期動能不宜誇大</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">Q1 儲能部署為 8.8 GWh，仍是 Tesla 長期能源平台的重要部分。然而，相比 Q1 2025 的 10.4 GWh，部署量按年下跌約 15%，因此不應形容為「強勁增長」。Megapack 3 及產能擴張可為中長期毛利帶來支撐，但短期仍需觀察訂單轉化與部署節奏。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-rose-400 mr-4 text-xl font-black">4.</span>
-                        <div>
-                            <strong class="text-rose-400 block mb-1 text-lg">FSD 監管風險仍是 Robotaxi 估值落地的主要障礙</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">NHTSA 對 Tesla FSD / 攝影機感知系統的審查，反映市場對純視覺方案在強光、灰塵及低能見度環境下的安全性仍有疑慮。Tesla 的軟件更新或可降低部分風險，但實際效果仍待監管機構評估。對投資者而言，Robotaxi 估值是否能落地，關鍵不只是技術進展，而是監管批准、事故責任與大規模商業化時間表。</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="financials" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、營運與財務數據</h2></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                <div class="metric-card border-t-4 border-t-rose-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">總交付量 (Deliveries)</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">358,023 輛</p>
-                    <p class="text-sm text-rose-500 font-semibold mt-1">▼ 低於共識 (365k)</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-yellow-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">儲能部署 (Energy Storage)</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">8.8 GWh</p>
-                    <p class="text-sm text-yellow-600 font-semibold mt-1">▼ 年減約 15%</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-blue-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">GAAP 營業利潤</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$0.9 B</p>
-                    <p class="text-sm text-slate-500 font-semibold mt-1">核心營運獲利</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-indigo-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">Non-GAAP 淨利潤</h4>
-                    <p class="text-xl font-bold text-slate-800 mt-1">$1.5 B</p>
-                    <p class="text-sm text-slate-500 font-semibold mt-1">經調整獲利</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="metric-card">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">庫存落差：產量 vs. 交付量</h3>
-                    <p class="text-xs text-slate-500 mb-4">第一季生產了 408,386 輛，但僅交付 358,023 輛，產生逾 5 萬輛庫存缺口。</p>
-                    <div class="chart-container"><canvas id="productionGapChart"></canvas></div>
-                </div>
-
-                <div class="metric-card">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">利潤結構拆解 (Billion USD)</h3>
-                    <p class="text-xs text-slate-500 mb-4">GAAP 淨利潤 ($0.5B) 與 Non-GAAP ($1.5B) 存在巨大落差，反映高額股權獎勵或一次性調整。</p>
-                    <div class="chart-container"><canvas id="financialsChart"></canvas></div>
-                </div>
-            </div>
-
-            <div class="metric-card mt-6">
-                <h3 class="text-lg font-bold text-slate-800 mb-4">Q1 生產與交付明細</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-left border-collapse">
-                        <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
-                            <tr>
-                                <th class="px-6 py-3 font-bold">車型 (Model)</th>
-                                <th class="px-6 py-3 font-bold text-right">產量 (Production)</th>
-                                <th class="px-6 py-3 font-bold text-right">交付量 (Deliveries)</th>
-                                <th class="px-6 py-3 font-bold text-right">租賃佔比</th>
-                                <th class="px-6 py-3 font-bold text-right text-rose-600">庫存缺口 (Gap)</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-slate-700">
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">Model 3 / Y</td>
-                                <td class="px-6 py-4 text-right">394,611</td>
-                                <td class="px-6 py-4 text-right">341,893</td>
-                                <td class="px-6 py-4 text-right text-slate-400">1%</td>
-                                <td class="px-6 py-4 text-right text-rose-500 font-bold">+52,718</td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">Other Models</td>
-                                <td class="px-6 py-4 text-right">13,775</td>
-                                <td class="px-6 py-4 text-right">16,130</td>
-                                <td class="px-6 py-4 text-right text-slate-400">2%</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">-2,355</td>
-                            </tr>
-                            <tr class="bg-slate-50 font-bold">
-                                <td class="px-6 py-4 text-slate-800">Total</td>
-                                <td class="px-6 py-4 text-right text-slate-800">408,386</td>
-                                <td class="px-6 py-4 text-right text-slate-800">358,023</td>
-                                <td class="px-6 py-4 text-right text-slate-400">1%</td>
-                                <td class="px-6 py-4 text-right text-rose-600 text-lg">+50,363</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <section id="valuation" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比較</h2></div>
-            <div class="metric-card">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-lg font-bold text-slate-800">汽車同業 FY 2026 Forward P/E 倍數比較</h3>
-                </div>
-                <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
-                <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg</p>
-            </div>
-        </section>
-
-        <section id="street-comments" class="tab-content">
-            <div class="mb-6">
-                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點</h2>
-                <p class="mt-2 text-sm text-slate-500">摘要自 Bloomberg ANR 最新投行研究報告：</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="metric-card border-t-4 border-t-slate-500">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">瑞銀 (UBS)</h3>
-                        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">中性 (Neutral)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>利潤率壓力持續：</b> 電動車核心業務面臨降價與競爭雙重壓力，短期內利潤率復甦空間有限。</li>
-                        <li><b>AI 願景需時間兌現：</b> 雖然 Robotaxi 與 AI 算力投資規模龐大，但距離實質貢獻自由現金流仍有數年之遙。</li>
-                        <li><b>估值處於合理區間：</b> 考量到近期交付量疲軟與資本支出增加，目前的估值已充分反映市場預期。</li>
-                    </ul>
-                </div>
-
-                <div class="metric-card border-t-4 border-t-slate-500">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3>
-                        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">中性 (Neutral)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>汽車業務放緩：</b> 高達 5 萬輛的庫存積壓顯示短期需求面臨挑戰，核心汽車業務進入過渡期。</li>
-                        <li><b>儲能業務為關鍵支撐：</b> 8.8 GWh 的儲能部署是亮點，Megapack 的高利潤率一定程度上緩衝了汽車部門的衰退。</li>
-                        <li><b>等待下一個催化劑：</b> 在 Robotaxi 展現實質商業化進展前，股價缺乏強勁的上行動能。</li>
-                    </ul>
-                </div>
-
-                <div class="metric-card border-t-4 border-t-slate-500">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">高盛 (Goldman Sachs)</h3>
-                        <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">中性 (Neutral)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>定價能力受限：</b> 交付量不及預期意味著全球電動車競爭加劇，特斯拉可能需要進一步降價來消化庫存。</li>
-                        <li><b>FSD 監管迷霧：</b> NHTSA 對視覺鏡頭的審查提醒了市場，全自動駕駛的落地除了技術，還有巨大的法規風險。</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="risks" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、風險因素</h2></div>
-            <div class="metric-card">
-                <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-rose-700 text-base">生產與交付差距擴大，潛在庫存與毛利率壓力：</strong> Q1 2026 Tesla 生產量高於交付量 50,363 輛，反映潛在庫存增加或交付時間差。若後續需要透過價格優惠或促銷去消化庫存，汽車毛利率可能進一步受壓。
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">資本支出上升，短期自由現金流承壓：</strong> Tesla 正加大 AI 算力、Robotaxi / Cybercab、能源及相關基礎設施投資。這有助支持長期增長選擇權，但短期將推高 CapEx，並可能限制自由現金流對估值的支撐。
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">FSD 監管與訴訟風險仍未解除：</strong> NHTSA 已就 Tesla FSD 在低能見度環境下的系統偵測與駕駛警示能力展開深入審查。若監管結果要求召回、額外軟件修正或更嚴格披露，Tesla 可能面對合規、法律及品牌信任成本上升。
-                    </li>
-                    <li class="pb-1">
-                        <strong class="text-base">EV 價格競爭與中國車企壓力加劇：</strong> 全球 EV 需求並非全面疲弱，但增長節奏在不同地區分化。Tesla 面對的主要風險，是中國及歐洲市場價格競爭加劇，加上 BYD 等中國車企在成本、產品更新及海外擴張上的壓力，可能限制 Tesla 的市佔率與估值倍數。
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <section id="sandbox" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-indigo-500 pl-3">六、AI 客製化情境推演 (Sandbox)</h2></div>
-            
-            <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 md:p-8 shadow-sm">
-                <div class="flex items-center mb-3">
-                    <span class="text-2xl mr-3">✨</span>
-                    <h3 class="text-xl font-black text-indigo-900 tracking-tight">AI 即時沙盤推演</h3>
-                </div>
-                <p class="text-sm text-indigo-700 mb-6 leading-relaxed">請在下方輸入您假設的產業變數（例如：FSD法規通過、競品大降價），AI 將基於 TSLA 當前庫存與高資本支出的體質，為您即時推演潛在影響。</p>
-                <div class="flex flex-col md:flex-row gap-3">
-                    <input type="text" id="custom-scenario-input" placeholder="試試輸入：如果 FSD v12 獲得中國監管機構全面批准..." class="flex-1 border border-indigo-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-inner">
-                    <button onclick="generateCustomScenario()" id="btn-generate-scenario" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg text-sm font-bold shadow-md transition-all whitespace-nowrap">
-                        開始推演
-                    </button>
-                </div>
-                <div id="scenario-loading" class="hidden mt-6 text-sm text-indigo-600 font-bold flex items-center bg-indigo-100/50 p-4 rounded-lg">
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                    AI 正在透過 Vercel 後端計算數據...
-                </div>
-                <div id="scenario-result" class="mt-6 hidden bg-white p-6 rounded-xl border border-indigo-200 text-sm text-slate-800 leading-relaxed shadow-sm"></div>
-            </div>
-        </section>
-
-        <section id="disclaimer" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">七、免責聲明</h2></div>
-            <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
-                <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在從 disclaimer.html 載入免責聲明，請稍候...</p></div>
-            </div>
-        </section>
-
-    </main>
-
-    <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
-            <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
-                <div class="flex items-center">
-                    <span class="text-2xl mr-2">🤖</span>
-                    <div><h4 class="font-bold text-sm">研究員專屬 AI 助理</h4><p class="text-xs text-blue-200">Powered by Vercel & Gemini ✨</p></div>
-                </div>
-                <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
-            </div>
-            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
-                <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
-                    分析師您好！我是您的專屬 TSLA 報告輔助 AI。您可以隨時詢問我關於本次交付缺口或 Robotaxi 戰略的影響。
-                </div>
-            </div>
-            <div class="p-3 bg-white border-t border-slate-200">
-                <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
-                    <input type="text" id="chat-input" placeholder="輸入您的指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
-                    </button>
-                </form>
-            </div>
-        </div>
-        <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
-            <span class="text-2xl">✨</span>
-        </button>
-    </div>
-
-    <div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
-        <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
-            <span>✨</span> AI 白話文解釋
-        </button>
-    </div>
-    <div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
-            <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
-                <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 術語解釋</h3>
-                <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
-            </div>
-            <div class="p-6">
-                <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查詢的詞彙：</div>
-                <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
-                <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
-                    <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                    AI 正在生成解釋...
-                </div>
-                <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
-            </div>
-            <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
-                <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">關閉</button>
-            </div>
+        <div class="metric-card">
+            <!-- ✏️ 替換：圖 2 標題與說明（canvas id 固定） -->
+            <h3 class="text-lg font-bold text-slate-800 mb-2">近五季總營收與 GAAP 毛利率趨勢 (Million USD / %)</h3>
+            <p class="text-xs text-slate-500 mb-4">Q2 2026 總營收按年增長 26%，惟整體 GAAP 毛利率受 ASP 下行與監管積分收入減少影響回落至 16.8%。</p>
+            <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
         </div>
     </div>
-
-    <script>
-        function switchTab(e, tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(el => { el.classList.remove('active', 'border-blue-600', 'text-blue-600'); el.classList.add('text-slate-500'); });
-            document.getElementById(tabId).classList.add('active');
-            e.currentTarget.classList.remove('text-slate-500'); e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
-        }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // Chart 1: Production vs Delivery Gap
-            new Chart(document.getElementById('productionGapChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['Model 3 / Y', 'Other Models', 'Total'],
-                    datasets: [
-                        { label: '產量 (Production)', data: [394611, 13775, 408386], backgroundColor: 'rgba(59, 130, 246, 0.8)', borderRadius: 4 },
-                        { label: '交付量 (Deliveries)', data: [341893, 16130, 358023], backgroundColor: 'rgba(16, 185, 129, 0.8)', borderRadius: 4 }
-                    ]
+    <div class="metric-card mt-6">
+        <h3 class="text-lg font-bold text-slate-800 mb-4">核心財務數據綜合對比明細 Table (GAAP vs Non-GAAP)</h3>
+        <div class="overflow-x-auto">
+            <!-- ✏️ 替換區：表格內容（每列固定 4 格：科目 / GAAP / Non-GAAP / 變動率；末列灰底彙總列） -->
+            <table class="w-full text-sm text-left border-collapse">
+                <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
+                    <tr>
+                        <th class="px-6 py-3 font-bold">會計明細科目項目</th>
+                        <th class="px-6 py-3 font-bold text-right">Q2-26 GAAP</th>
+                        <th class="px-6 py-3 font-bold text-right text-blue-600">Q2-26 Non-GAAP</th>
+                        <th class="px-6 py-3 font-bold text-right text-emerald-600">YoY 同比變動率</th>
+                    </tr>
+                </thead>
+                <tbody class="text-slate-700">
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">季度總營收 (Total Revenues)</td>
+                        <td class="px-6 py-4 text-right">$28,236 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$28,236 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-emerald-500">+26%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">營業利潤 (Income from Operations)</td>
+                        <td class="px-6 py-4 text-right">$398 M（利潤率 1.4%）</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">—</td>
+                        <td class="px-6 py-4 text-right font-bold text-rose-500">−57%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">調整後 EBITDA (Adjusted EBITDA)</td>
+                        <td class="px-6 py-4 text-right">—</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$3,273 M（利潤率 11.6%）</td>
+                        <td class="px-6 py-4 text-right font-bold text-rose-500">−4%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">歸屬普通股股東淨利潤 (Net Income Attr. to Common Stockholders)</td>
+                        <td class="px-6 py-4 text-right">$1,114 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$1,153 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-rose-500">GAAP −5% / Non-GAAP −17%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">攤薄後 EPS (Diluted EPS)</td>
+                        <td class="px-6 py-4 text-right">$0.32</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$0.33</td>
+                        <td class="px-6 py-4 text-right font-bold text-rose-500">GAAP −3% / Non-GAAP −18%</td>
+                    </tr>
+                    <tr class="bg-slate-50 font-bold">
+                        <td class="px-6 py-4 text-slate-800">其他列報營運指標 (Reported)</td>
+                        <td class="px-6 py-4 text-right text-slate-500">營運現金流: $4,697 M (+85%)</td>
+                        <td class="px-6 py-4 text-right text-blue-600">資本開支: $5,789 M (+142%)</td>
+                        <td class="px-6 py-4 text-right text-purple-600">自由現金流: −$1,092 M</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+<!-- ══════════ Tab 三：估值比較 ══════════ -->
+<section id="valuation" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比較</h2></div>
+    <div class="metric-card">
+        <div class="flex justify-between items-center mb-4">
+            <!-- ✏️ 替換：圖表標題（行業描述可換，Forward P/E 字樣保留） -->
+            <h3 class="text-lg font-bold text-slate-800">全球電動車產業鏈龍頭遠期市盈率 (Next 4 Qtrs Est Forward P/E) 倍數橫向長條圖比較（截至 2026/07/23）</h3>
+        </div>
+        <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
+        <!-- 🔒 固定：資料來源標註 -->
+        <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
+    </div>
+</section>
+<!-- ══════════ Tab 四：華爾街觀點 ══════════ -->
+<section id="street-comments" class="tab-content">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點</h2>
+        <!-- ✏️ 替換：導言 -->
+        <p class="mt-2 text-sm text-slate-500">（評級與目標價：Bloomberg ANR，截至 2026/07/23）</p>
+    </div>
+    <!-- ✏️ 替換區：3 家投行卡片（投行名、評級徽章、2 點觀點）。
+         評級徽章配色規則：買入 Buy = bg-emerald-100 text-emerald-800；
+         增持 Overweight = bg-blue-100 text-blue-800；其他評級先與使用者確認。 -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3>
+                <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">等權重 (Equal-weight)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>等權重評級（目標價 US$400）：</b> 聚焦 Robotaxi 於全美 7 個都會區的擴張節奏與 Cybercab 投產進度，自動駕駛商業化兌現速度為長期價值的核心變數。</li>
+                <li><b>關注投資期的現金流壓力：</b> 資本開支倍增令季度自由現金流轉負，疊加最高 300 億美元債務融資安排，重資產投放的執行與回報時點成為評級關鍵。</li>
+            </ul>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">高盛 (Goldman Sachs)</h3>
+                <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">中性 (Neutral)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>中性評級（目標價 US$360）：</b> 汽車毛利率（剔除監管積分）由 19.2% 環比回落至 16.3%，ASP 下行與監管積分收入銳減令短期盈利能見度受限。</li>
+                <li><b>FSD 滲透為結構性亮點：</b> 活躍付費 FSD 客戶達 148 萬（含買斷與訂閱，+56%）、北美新交付附加率逾 55%，軟體收入佔比提升有助長期利潤結構改善。</li>
+            </ul>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">瑞銀 (UBS)</h3>
+                <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">中性 (Neutral)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>中性評級（目標價 US$385）：</b> 能源業務毛利率由 39.5% 大幅回落至 20.4%，保修撥備與工業儲能 ASP 競爭加劇，令第二增長曲線的盈利貢獻暫受壓抑。</li>
+                <li><b>估值已反映樂觀預期：</b> 遠期市盈率約 177 倍，顯著高於比亞迪與理想汽車、與蔚來相若；Robotaxi 與 Optimus 里程碑需持續兌現，方能支撐當前估值水平。</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ══════════ Tab 五：風險因素 ══════════ -->
+<section id="risks" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、風險因素</h2></div>
+    <div class="metric-card">
+        <!-- ✏️ 替換區：3–4 點風險（各點 strong 一律黑色粗體 class="text-base"，嚴禁 text-rose-700 紅字） -->
+        <ol class="space-y-4 list-decimal list-outside ml-5 text-sm text-slate-700">
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-base">高額資本開支與自由現金流轉負風險：</strong> Q2 資本開支倍增至 57.89 億美元，季度自由現金流轉負至 −10.92 億美元；管理層指引全年資本開支將超過 250 億美元並於未來兩至三年持續增長，同時安排最高 300 億美元債務融資，若投產進度或回報不及預期，將加重財務負擔。
+            </li>
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-base">汽車業務利潤率持續承壓：</strong> Q2 汽車毛利率（剔除監管積分）由 19.2% 環比降至 16.3%，監管積分收入按年由 4.39 億美元銳減至 1.46 億美元，疊加車輛 ASP 下行、商品價格上漲與利率補貼成本前置認列，短期盈利能見度受限。
+            </li>
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-base">能源業務毛利率波動與保修撥備：</strong> Q2 能源業務毛利率由 39.5% 回落至 20.4%，受約 2.4 億美元供應商電芯保修撥備、上季關稅利益不再重複及工業儲能 ASP 競爭加劇影響；管理層預期長期常態化毛利率僅處於 20% 出頭至中段區間。
+            </li>
+            <li class="pb-1">
+                <strong class="text-base">自動駕駛監管與供應鏈瓶頸風險：</strong> Robotaxi 擴張須逐州取得監管許可，管理層點名新澤西州的州級法規進展令人失望；同時電池組產能與電子元件（含記憶體）供應仍為公司披露之近期產量增長主要限制因素。
+            </li>
+        </ol>
+    </div>
+</section>
+<!-- ══════════ Tab 六：免責聲明 ══════════ -->
+<!-- 🔒 固定區：免責聲明以 fetch 載入，嚴禁寫死內文 -->
+<section id="disclaimer" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免責聲明</h2></div>
+    <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+        <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在從 disclaimer.html 線上安全讀取最新免責聲明組件...</p></div>
+    </div>
+</section>
+</main>
+<!-- 🔒 固定區開始：右下角 AI 助理 Widget（結構固定；僅 ✏️ 標示處換文字） -->
+<div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+<div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+<div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
+<div class="flex items-center">
+<span class="text-2xl mr-2">🤖</span>
+<div><h4 class="font-bold text-sm">研究員專屬 AI 助理</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
+</div>
+<button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+</button>
+</div>
+<div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
+<!-- ✏️ 替換：Widget 歡迎詞（公司名 + 本期亮點數字，數字須與內文一致） -->
+<div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
+分析師您好！我是您的專屬特斯拉 (TSLA) 數據輔助 AI。您可以隨時詢問我關於本次 Q2 $28.24B 營收（+26%）、480,126 輛歷年第二季交付新高、13.5 GWh 儲能部署，或 Robotaxi 與 Optimus 大規模資本開支週期的財務影響。
+</div>
+</div>
+<div class="p-3 bg-white border-t border-slate-200">
+<form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
+<input type="text" id="chat-input" placeholder="輸入您的研究指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
+<button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+</button>
+</form>
+</div>
+</div>
+<button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
+<span class="text-2xl">✨</span>
+</button>
+</div>
+<div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
+<button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
+<span>✨</span> AI 白話文解釋
+</button>
+</div>
+<div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
+<div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+<div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+<h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 術語解釋</h3>
+<button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+</button>
+</div>
+<div class="p-6">
+<div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查詢的詞彙：</div>
+<div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
+<div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
+<svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+AI 正在生成解釋...
+</div>
+<div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
+</div>
+<div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+<button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">關閉</button>
+</div>
+</div>
+</div>
+<!-- 🔒 固定區結束：AI Widget / 劃詞解釋 -->
+<script>
+// 🔒 註冊全域圖表實例快取
+window.charts = {};
+// 🔒 PI 攔截視窗控制函式（依 index.html 標準寫法）
+function acceptPI() {
+    sessionStorage.setItem('pi_agreed', 'true');
+    document.getElementById('pi-modal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+function declinePI() {
+    document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;
+}
+// 🔒 Tab 切換邏輯（✏️ 僅 resize 的圖表鍵名需隨新 ticker 更名）
+function switchTab(e, tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => {
+        el.classList.remove('active', 'border-blue-600', 'text-blue-600');
+        el.classList.add('text-slate-500');
+    });
+    document.getElementById(tabId).classList.add('active');
+    e.currentTarget.classList.remove('text-slate-500');
+    e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+    // 徹底修復 hidden 畫布無寬高像素之 Chart.js 原生缺陷
+    if (tabId === 'financials') {
+        if (window.charts.tslaSegment) window.charts.tslaSegment.resize();
+        if (window.charts.tslaProfit) window.charts.tslaProfit.resize();
+    } else if (tabId === 'valuation') {
+        if (window.charts.tslaValuation) window.charts.tslaValuation.resize();
+    }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    // 🔒 專業投資者攔截門戶驗證
+    if (!sessionStorage.getItem('pi_agreed')) {
+        const modal = document.getElementById('pi-modal');
+        if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+    }
+    // ✏️ 圖表 1：營收拆解 (Doughnut)。鍵名改 [ticker]Segment；labels/data 換新數據；顏色與 options 固定
+    window.charts.tslaSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
+        type: 'doughnut',
+        data: {
+            labels: ['汽車業務營收', '能源生產與儲存營收', '服務及其他營收'],
+            datasets: [{
+                data: [20516, 3139, 4581],
+                backgroundColor: ['rgba(37, 99, 235, 0.85)', 'rgba(16, 185, 129, 0.85)', 'rgba(99, 102, 241, 0.85)'],
+                borderWidth: 0
+            }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
+    });
+    // ✏️ 圖表 2：業務單位表現 (Grouped Bar 雙軸)。鍵名改 [ticker]Profit；labels/data 換新數據；顏色 #3b82f6 / #10b981 與雙軸設定固定
+    window.charts.tslaProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['Q2-2025', 'Q3-2025', 'Q4-2025', 'Q1-2026', 'Q2-2026'],
+            datasets: [
+                {
+                    label: '總營收 (百萬美元)',
+                    data: [22496, 28095, 24901, 22387, 28236],
+                    backgroundColor: '#3b82f6',
+                    borderRadius: 4
                 },
-                options: { responsive: true, maintainAspectRatio: false, interaction: { mode: 'index', intersect: false }, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } }, x: { grid: { display: false } } } }
-            });
-
-            // Chart 2: Financials (GAAP vs Non-GAAP)
-            new Chart(document.getElementById('financialsChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['GAAP 營業利潤', 'GAAP 淨利潤', 'Non-GAAP 淨利潤'],
-                    datasets: [{
-                        label: '十億美元 (Billion USD)',
-                        data: [0.9, 0.5, 1.5],
-                        backgroundColor: ['#3b82f6', '#f43f5e', '#8b5cf6'],
-                        borderRadius: 4
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } }, x: { grid: { display: false } } } }
-            });
-
-            // Chart 3: Valuation (FY2026 Forward P/E)
-            new Chart(document.getElementById('valuationChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['GM (通用汽車)', 'Ford (福特)', 'BYD (比亞迪)', 'Tesla (特斯拉)'],
-                    datasets: [{ 
-                        label: 'FY 2026 Forward P/E 倍數', 
-                        data: [6.45, 8.24, 18.63, 197.21], 
-                        backgroundColor: ['rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(37, 99, 235, 0.9)'], 
-                        borderRadius: 4 
-                    }]
-                },
-                options: { 
-                    indexAxis: 'y', 
-                    responsive: true, 
-                    maintainAspectRatio: false, 
-                    plugins: { legend: { display: false } },
-                    scales: {
-                        x: {
-                            title: {
-                                display: true,
-                                text: '倍數 (x)'
-                            }
-                        }
-                    }
+                {
+                    label: 'GAAP 毛利率 (Gross Margin %)',
+                    data: [17.2, 18.0, 20.1, 21.1, 16.8],
+                    backgroundColor: '#10b981',
+                    borderRadius: 4,
+                    yAxisID: 'percentageAxis'
                 }
-            });
-
-            // 讀取外部 disclaimer.html 檔案
-            fetch('disclaimer.html')
-                .then(response => {
-                    if (!response.ok) throw new Error('無法讀取 disclaimer.html');
-                    return response.text();
-                })
-                .then(html => {
-                    const container = document.getElementById('disclaimer-container');
-                    if(container) container.innerHTML = html;
-                })
-                .catch(error => {
-                    console.error('載入免責聲明失敗:', error);
-                    const container = document.getElementById('disclaimer-container');
-                    if(container) container.innerHTML = '<div class="p-6 text-center text-red-500 font-bold">無法載入 disclaimer.html，請確認檔案存在。</div>';
-                });
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { position: 'bottom' } },
+            scales: {
+                y: { beginAtZero: true, position: 'left', grid: { color: '#f1f5f9' } },
+                percentageAxis: { beginAtZero: true, max: 100, position: 'right', grid: { display: false } }
+            }
+        }
+    });
+    // ✏️ 圖表 3：Forward P/E 橫向比較。鍵名改 [ticker]Valuation；
+    //    ⚠️ backgroundColor 陣列中「藍色 rgba(37,99,235,0.95)」的位置必須對應主角公司在 labels 中的位置，其餘同業一律灰色
+    window.charts.tslaValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['特斯拉 (TSLA)', '比亞迪 (1211.HK)', '理想汽車 (2015.HK)', '蔚來 (NIO)'],
+            datasets: [{
+                label: 'Next 4 Qtrs Est Forward P/E',
+                data: [177.09, 16.95, 83.61, 173.74],
+                backgroundColor: ['rgba(37, 99, 235, 0.95)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)'],
+                borderRadius: 4
+            }]
+        },
+        options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
+    });
+    // 🔒 安全調閱外部 disclaimer.html 連動模組（嚴禁寫死免責聲明）
+    fetch('disclaimer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('無法載入 disclaimer.html');
+            return response.text();
+        })
+        .then(html => {
+            const container = document.getElementById('disclaimer-container');
+            if(container) container.innerHTML = html;
+        })
+        .catch(error => {
+            console.error('安全連動調閱失敗:', error);
+            const container = document.getElementById('disclaimer-container');
+            if(container) container.innerHTML = '<div class="p-6 text-center text-rose-600 font-bold">【安全連動錯誤】外部合規免責聲明檔案加載失敗，請聯絡系統運維團隊。</div>';
         });
-
-        // AI Core
-        async function callGeminiAPI(prompt, systemInstruction) {
-            try {
-                const response = await fetch('/api/gemini', { 
-                    method: 'POST', headers: { 'Content-Type': 'application/json' }, 
-                    body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction }) 
-                });
-                const data = await response.json();
-                if (!response.ok) return `連線錯誤：${data.error || '未知錯誤'}`;
-                let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，無法產生有效回覆。";
-                return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
-            } catch (error) { return `網路連線失敗。(${error.message})`; }
-        }
-
-        // AI Chat
-        const standardPrompt = `你是 NTAM 內部研究員的專屬 AI 助理。請協助分析師總結 Tesla (TSLA) Q1 財報與交付數據。請用客觀、精煉的繁體中文回答，使用 HTML <b> 加粗重點，嚴禁使用 markdown 語法。`;
-        function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
-        function appendMessage(text, isUser) {
-            const msgDiv = document.createElement('div');
-            msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
-            msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv); 
-            document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
-        }
-        function showTypingIndicator() {
-            const ind = document.createElement('div'); ind.id = 'typing-indicator'; 
-            ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
-            ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
-            document.getElementById('chat-messages').appendChild(ind);
-        }
-        async function handleChatSubmit(e) {
-            e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
-            input.value = ''; appendMessage(text, true); showTypingIndicator();
-            const res = await callGeminiAPI(text, standardPrompt);
-            document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
-        }
-
-        // Highlight AI
-        let selectedText = "";
-        document.addEventListener('mouseup', function(e) {
-            const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
-            if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
-            if (text.length > 1 && text.length < 50) {
-                selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
-                tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${rect.top - 40}px`;
-                tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
-            } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+});
+// 🔒 NTAM 後端 AI 調度核心（端點 /api/gemini 與後處理邏輯嚴禁更動）
+async function callGeminiAPI(prompt, systemInstruction) {
+    try {
+        const response = await fetch('/api/gemini', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })
         });
-        document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
-        async function explainSelectedTerm() {
-            document.getElementById('selection-tooltip').classList.add('hidden');
-            document.getElementById('explain-term-title').textContent = selectedText; 
-            document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
-            const res = await callGeminiAPI(`解釋這個 TSLA 相關詞彙：${selectedText}`, "你是金融專家，用最白話繁體中文解釋詞彙。限 150 字，重點用 <b> 包覆。");
-            document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
-        }
-        function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
-        
-        // 🔮 沙盒生成腳本
-        async function generateCustomScenario() {
-            const inputEl = document.getElementById('custom-scenario-input'); const btnEl = document.getElementById('btn-generate-scenario'); 
-            const loadingEl = document.getElementById('scenario-loading'); const resultEl = document.getElementById('scenario-result');
-            const scenarioText = inputEl.value.trim(); if (!scenarioText) { alert('請先輸入假設情境！'); return; }
-            btnEl.disabled = true; btnEl.classList.add('opacity-50'); loadingEl.classList.remove('hidden'); resultEl.classList.add('hidden');
-            
-            const sysPrompt = `你是華爾街資深分析師。基於 TSLA 交付量不及預期、庫存積壓5萬輛、大幅增加資本支出發展 Robotaxi 等事實，評估用戶的「假設情境」。
-請簡明扼要地回覆：1. 初步評估 2. 對營收/利潤潛在影響 3. 股價可能反應。
-使用繁體中文，並用 HTML <b> 標籤加粗重點，嚴禁使用 markdown 語法。總字數約 200 字。`;
-
-            const aiAnalysis = await callGeminiAPI(`推演這個情境：${scenarioText}`, sysPrompt);
-            loadingEl.classList.add('hidden'); btnEl.disabled = false; btnEl.classList.remove('opacity-50');
-            resultEl.innerHTML = `<h4 class="font-bold text-indigo-900 mb-3 border-b border-indigo-100 pb-2">🎯 AI 情境推演結果</h4>` + aiAnalysis; 
-            resultEl.classList.remove('hidden');
-        }
-    </script>
+        const data = await response.json();
+        if (!response.ok) return `連線錯誤：${data.error || '未知錯誤'}`;
+        let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，無法產生有效回覆。";
+        return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+    } catch (error) { return `網路連線失敗。(${error.message})`; }
+}
+// ✏️ AI 助理 systemPrompt（公司名與財季須換成新報告；語言須與本頁一致）
+const standardPrompt = `你是一位精通 NTAM 投資研究框架的資深 AI 助理。請針對使用者對特斯拉 (TSLA) 2026年第二季最新財報與電話會議摘要的提問，提供符合專業機構投資人水準、客觀、高密度的定量與定性答覆。重點用 <b> 標籤包覆，嚴禁使用 markdown。`;
+// 🔒 Widget 互動邏輯（勿改）
+function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
+function appendMessage(text, isUser) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
+    msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
+    document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+}
+function showTypingIndicator() {
+    const ind = document.createElement('div'); ind.id = `typing-indicator-${Date.now()}`;
+    ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
+    ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
+    document.getElementById('chat-messages').appendChild(ind);
+    return ind.id;
+}
+async function handleChatSubmit(e) {
+    e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
+    const sendBtn = e.target.querySelector('button[type="submit"]'); if (sendBtn && sendBtn.disabled) return;
+    if (sendBtn) { sendBtn.disabled = true; sendBtn.classList.add('opacity-50', 'cursor-not-allowed'); }
+    input.value = ''; appendMessage(text, true); const typingId = showTypingIndicator();
+    try {
+        const res = await callGeminiAPI(text, standardPrompt);
+        document.getElementById(typingId)?.remove(); appendMessage(res, false);
+    } finally {
+        document.getElementById(typingId)?.remove();
+        if (sendBtn) { sendBtn.disabled = false; sendBtn.classList.remove('opacity-50', 'cursor-not-allowed'); }
+    }
+}
+// 🔒 劃詞解說機制（勿改）
+let selectedText = "";
+document.addEventListener('mouseup', function(e) {
+    const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
+    if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
+    if (text.length > 1 && text.length < 50) {
+        selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
+        tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${Math.max(8, rect.top - 40)}px`;
+        tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
+    } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+});
+document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
+async function explainSelectedTerm() {
+    document.getElementById('selection-tooltip').classList.add('hidden');
+    document.getElementById('explain-term-title').textContent = selectedText;
+    document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
+    // ✏️ 劃詞解釋 prompt 與 systemInstruction：公司名須換成新報告，其餘格式（限 150 字、<b> 標籤、語言）保留
+    const res = await callGeminiAPI(`解釋這個特斯拉 TSLA 財報相關詞彙：${selectedText}`, "你是特斯拉電動車與人工智能產業專家，用最白話的專業繁體中文解釋詞彙。限 150 字，重點使用 <b> 標籤包覆。");
+    document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
+}
+function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
+</script>
 </body>
 </html>
