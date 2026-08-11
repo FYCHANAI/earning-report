@@ -1,545 +1,567 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>苹果 (AAPL) 深度研究报告 | NTAM 资深分析师</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Noto Sans SC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
-        .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
-        @media (min-width: 768px) { .chart-container { height: 400px; } }
-        .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
-        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
-        .tab-content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-        .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* AI Animations */
-        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
-        .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
-        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
-        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
-        @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
-        #selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>苹果公司 (AAPL) 深度研究报告 | NTAM 资深分析师</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+    body { font-family: 'Noto Sans SC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+    .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+    @media (min-width: 768px) { .chart-container { height: 400px; } }
+    .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+    .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+    .tab-content.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* AI Animations */
+    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+    .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
+    .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+    .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+    @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+    #selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
+</style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
 
-    <div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
-        <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
-            <div class="text-center mb-6">
-                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77-1.333.192 3 1.732 3z" /></svg>
-                </div>
-                <h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要声明</h2>
+<div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
+    <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
+        <div class="text-center mb-6">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77-1.333.192 3 1.732 3z" /></svg>
             </div>
-            <div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
-                    <p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
-                </div>
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
-                    <p>本网站及报告之内容仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者资格。</p>
-                </div>
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
-                    <p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
-                </div>
+            <h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要声明</h2>
+        </div>
+        <div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
+            <div class="border-l-4 border-blue-500 pl-4">
+                <p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
+                <p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
             </div>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
-                <button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒绝 / Decline</button>
-                <button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">我确认 I Confirm</button>
+            <div class="border-l-4 border-blue-500 pl-4">
+                <p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
+                <p>本页面所含信息仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者身份。</p>
             </div>
+            <div class="border-l-4 border-blue-500 pl-4">
+                <p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
+                <p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
+            <button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
+            <button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">我確認 I Confirm</button>
         </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() { if (!sessionStorage.getItem('pi_agreed')) { const modal = document.getElementById('pi-modal'); if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; } } });
-        function acceptPI() { sessionStorage.setItem('pi_agreed', 'true'); document.getElementById('pi-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
-        function declinePI() { document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`; }
-    </script>
+</div>
 
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex justify-between items-start">
+<header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex justify-between items-start">
+            <div class="flex flex-col">
+                <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
+                    <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+                    <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+                </a>
                 <div class="flex flex-col">
-                    <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
-                        <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-8 w-auto" onerror="this.style.display='none'">
-                        <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
-                    </a>
-                    <div class="flex flex-col">
-                        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">苹果 <span class="text-blue-600">AAPL</span></h1>
-                        <span class="text-sm text-slate-500 font-medium mt-1">资深分析师 运营与战略报告 | Q2 2026</span>
-                    </div>
-                </div>
-                <div class="flex flex-col items-end space-y-3">
-                    <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
-                        <option value="aapl.html">繁體中文</option>
-                        <option value="aapl-sc.html" selected>简体中文</option>
-                        <option value="aapl-en.html">English</option>
-                    </select>
-                    <div class="flex items-center space-x-4">
-                        <div class="text-right hidden sm:block">
-                            <div class="text-xs text-slate-400 font-bold">目标价 <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
-                            <div class="text-xl font-bold text-slate-800">$309.55 USD</div>
-                        </div>
-                        <div class="px-4 py-2 bg-blue-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">评级：增持 (Overweight)</div>
-                    </div>
+                    <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">苹果公司 <span class="text-blue-600">AAPL</span></h1>
+                    <span class="text-sm text-slate-500 font-medium mt-1">资深分析师 运营与战略报告 | FQ3 2026 财报特辑</span>
                 </div>
             </div>
-            
-            <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
-                <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我们的观点</button>
-                <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 运营与财务数据</button>
-                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比较</button>
-                <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 华尔街观点</button>
-                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 风险因素</button>
-                <button onclick="switchTab(event, 'sandbox')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-indigo-500 hover:text-indigo-700">六. AI 互动沙盒 ✨</button>
-                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">七. 免责声明</button>
-            </nav>
+            <div class="flex flex-col items-end space-y-3">
+                <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
+                    <option value="aapl.html">繁體中文</option>
+                    <option value="aapl-sc.html" selected>简体中文</option>
+                    <option value="aapl-en.html">English</option>
+                </select>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right hidden sm:block">
+                        <div class="text-xs text-slate-400 font-bold">共识目标价 (截至 2026/07/31) <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
+                        <div class="text-xl font-bold text-slate-800">$323.27 USD</div>
+                    </div>
+                    <div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">ANR 共识评级：买入</div>
+                </div>
+            </div>
         </div>
-    </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+        <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+            <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我们的观点</button>
+            <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 运营与财务数据</button>
+            <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比较</button>
+            <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 华尔街观点</button>
+            <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 风险因素</button>
+            <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免责声明</button>
+        </nav>
+    </div>
+</header>
 
-        <section id="our-comments" class="tab-content active">
-            <div class="mb-6">
-                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我们的观点</h2>
-                <p class="mt-2 text-sm text-slate-500">基于 FY26 Q2 财报与相关文件，以下为 NTAM 研究团队提炼之苹果 (AAPL) 核心结论：</p>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+
+    <section id="our-comments" class="tab-content active">
+        <div class="mb-6">
+            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我们的观点</h2>
+        </div>
+        <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
+            <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
+                <span class="text-3xl mr-3">🎯</span>
+                <h3 class="text-2xl font-black text-blue-600 tracking-tight">核心经营结论</h3>
             </div>
-            <div class="metric-card bg-slate-900 text-white border-none p-6 md:p-8">
-                <div class="flex items-center mb-6 border-b border-slate-700 pb-4">
-                    <span class="text-3xl mr-3">🎯</span>
-                    <h3 class="text-2xl font-black text-blue-400 tracking-tight">核心结论</h3>
+            <ul class="space-y-6">
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">史上最强六月季：双位数增长遍及三大品类与所有地区</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">FQ3 总营收同比增长 16.4% 至 $109,417 M、摊薄后 EPS 同比增长 28.7% 至 $2.02，整体营收与 EPS 均创六月季新高；iPhone（+21.7%）、Mac（+28.7%）与服务（+12.1%）营收同创六月季纪录，五大地理分部全部实现双位数增长，公司称本季为其历来最强的六月季。</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">毛利率突破 50%，惟需辨识关税退款之有利影响</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">毛利率 50.1%（同比提升 3.6 个百分点）含关税退款有利影响约 2 个百分点，摊薄后 EPS 亦含 +$0.11 之有利影响。我们认为剔除退款后之结构性改善仍属正面，但改善幅度应以审慎口径评估，并留意政策反复之可能。</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">服务与装机量构筑生态黏性，AI 投入显著加码</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">服务营收 $30,739 M（+12.1%）创六月季新高，活跃设备装机量于所有主要产品类别与地理分部创历史新高；本季研发费用同比增长 32.3%，叠加 WWDC26 发布之全新 Siri AI 与最新软件创新，AI 布局进入落地期。</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">现价已高于共识目标价，估值隐含高预期</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">我们认为市场已提前反映乐观情境：以 2026/07/30 收盘价 $333.43 计，现价高于 Bloomberg ANR 12 个月共识目标价 $323.27 约 3.0%（Return Potential −3.0%）；Forward P/E 35.34 倍亦居同业比较组之首，后续上行需以基本面持续超越预期为前提。</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="financials" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、运营与财务数据</h2></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div class="metric-card border-t-4 border-t-emerald-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">FQ3 总营收 (Total Revenue)</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">$109,417 M</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ 同比 +16.4%（创六月季新高）</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-blue-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">摊薄后 EPS (Diluted EPS)</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">$2.02</p>
+                <p class="text-sm text-blue-600 font-semibold mt-1">▲ 同比 +28.7%（含关税退款 +$0.11）</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-indigo-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">毛利率 (Gross Margin)</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">50.1%</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ 同比 +3.6 ppts（含关税退款约 +2 ppts）</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-purple-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">营业利润 (Operating Income)</h4>
+                <p class="text-xl font-bold text-slate-800 mt-1">$35,695 M</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ 同比 +26.6%</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-2">FQ3 分类营收结构 (Million USD)</h3>
+                <p class="text-xs text-slate-500 mb-4">iPhone 单季营收达 54,252 百万美元，占总营收约 49.6%；服务营收 30,739 百万美元，占比约 28.1%。</p>
+                <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+            </div>
+
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-2">整体营收与毛利率年度对比 (Million USD / %)</h3>
+                <p class="text-xs text-slate-500 mb-4">FQ3 FY26 总营收同比增长 16.4% 至 109,417 百万美元；毛利率由 46.5% 升至 50.1%（含关税退款有利影响约 2 个百分点）。</p>
+                <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
+            </div>
+        </div>
+
+        <div class="metric-card mt-6">
+            <h3 class="text-lg font-bold text-slate-800 mb-4">核心财务数据综合对比明细 Table (列报 GAAP 基准)</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left border-collapse">
+                    <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
+                        <tr>
+                            <th class="px-6 py-3 font-bold">会计明细科目项目</th>
+                            <th class="px-6 py-3 font-bold text-right">FQ3-26 GAAP 报告</th>
+                            <th class="px-6 py-3 font-bold text-right text-blue-600">FQ3-25 GAAP 报告</th>
+                            <th class="px-6 py-3 font-bold text-right text-emerald-600">YoY 同比变动率 (GAAP 报告基准)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-700">
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">季度总营收 (Total Net Sales)</td>
+                            <td class="px-6 py-4 text-right">$109,417 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$94,036 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-emerald-500">+16.4%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">产品营收 (Products)</td>
+                            <td class="px-6 py-4 text-right">$78,678 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$66,613 M</td>
+                            <td class="px-6 py-4 text-right text-emerald-500">+18.1%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">服务营收 (Services)</td>
+                            <td class="px-6 py-4 text-right">$30,739 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$27,423 M</td>
+                            <td class="px-6 py-4 text-right text-emerald-500">+12.1%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">毛利 (Gross Margin)</td>
+                            <td class="px-6 py-4 text-right">$54,770 M (50.1%)</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$43,718 M (46.5%)</td>
+                            <td class="px-6 py-4 text-right text-emerald-500">+25.3%（毛利率 +3.6 ppts）</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">营业利润 (Operating Income)</td>
+                            <td class="px-6 py-4 text-right">$35,695 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$28,202 M</td>
+                            <td class="px-6 py-4 text-right text-emerald-500">+26.6%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">季度净利润 (Net Income)</td>
+                            <td class="px-6 py-4 text-right">$29,789 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$23,434 M</td>
+                            <td class="px-6 py-4 text-right text-emerald-600">+27.1%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">摊薄后 EPS (Diluted EPS)</td>
+                            <td class="px-6 py-4 text-right">$2.02</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$1.57</td>
+                            <td class="px-6 py-4 text-right text-emerald-600">+28.7%</td>
+                        </tr>
+                        <tr class="bg-slate-50 font-bold">
+                            <td class="px-6 py-4 text-slate-800">其他列报运营指标 (Reported)</td>
+                            <td class="px-6 py-4 text-right text-slate-500">研发费用: $11,729 M (+32.3%)</td>
+                            <td class="px-6 py-4 text-right text-blue-600">九个月运营现金流: $116,996 M</td>
+                            <td class="px-6 py-4 text-right text-purple-600">宣派季息: $0.27/股</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="valuation" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比较</h2></div>
+        <div class="metric-card">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-slate-800">美国大型科技巨头远期市盈率 (Next 4 Qtrs Est Forward P/E) 倍数横向长条图比较（截至 2026/07/31）</h3>
+            </div>
+            <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
+            <p class="text-xs text-slate-500 mt-4 leading-relaxed">注：各公司采 Bloomberg 个股默认 EPS 口径——AAPL 与 MSFT 为 Adjusted EPS、AMZN 与 GOOGL 为 GAAP+——数值仅供指示性比较。我们认为 AAPL 之估值溢价已计入市场对其增长与生态黏性之乐观预期；以 2026/07/30 收盘价 $333.43 计，现价已高于 Bloomberg ANR 12 个月共识目标价 $323.27 约 3.0%（Return Potential −3.0%）。</p>
+            <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
+        </div>
+    </section>
+
+    <section id="street-comments" class="tab-content">
+        <div class="mb-6">
+            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、华尔街观点</h2>
+            <p class="mt-2 text-sm text-slate-500">（评级与目标价：Bloomberg ANR，截至 2026/07/31）Bloomberg 12 个月共识目标价 $323.27，画面显示 47/64 个目标价样本；另有 58 个有效评级——36 个买入、18 个持有、4 个卖出——买入占比 62.1%。</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">瑞银 (UBS)</h3>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">中性 (Neutral)</span>
                 </div>
-                <ul class="space-y-6">
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">1.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">总营收创同期新高</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">第二季总营收达 1,112 亿美元，年增 17%，创下历年 3 月季度最高纪录，主要受惠于 iPhone 17 系列的强劲市场需求。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">2.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">服务收入创历史新高</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">服务部门（Services）营收达 309.76 亿美元，年增 16%，再次缔造历史新高纪录。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">3.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">扩大股东回报计划</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">董事会授权了高达 1,000 亿美元的全新股票回购计划，并将季度现金股息调升 4% 至每股 0.27 美元。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">4.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">新产品线推升安装量</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">推出包含 iPhone 17e、搭载 M4 芯片的 iPad Air 以及 MacBook Neo 等新产品，推动所有主要产品类别与地区的活跃装置安装量创下新高。</p>
-                        </div>
-                    </li>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>估值已充分反映基本面（目标价 $296）：</b> 目标价低于 2026/07/30 收盘价 $333.43 约 11.2%，隐含本季双位数增长与毛利率扩张已大致计入股价，现价安全边际有限。</li>
+                    <li><b>关税退款属有利影响、非结构性动能：</b> 本季毛利率 50.1% 含关税退款约 2 个百分点、摊薄后 EPS 含 +$0.11，剔除后之基本面改善幅度应以更审慎口径检视。</li>
                 </ul>
             </div>
-        </section>
-
-        <section id="financials" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、运营与财务数据</h2></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                <div class="metric-card border-t-4 border-t-emerald-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">总营收 (Total Net Sales)</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$111.18 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +17%</p>
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">花旗 (Citi)</h3>
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">买入 (Buy)</span>
                 </div>
-                <div class="metric-card border-t-4 border-t-blue-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">服务营收 (Services)</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$30.98 B</p>
-                    <p class="text-sm text-blue-600 font-semibold mt-1">▲ YoY +16%</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-indigo-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">GAAP 营业利润</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$35.89 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +21.3%</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-purple-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">GAAP 净利润</h4>
-                    <p class="text-xl font-bold text-slate-800 mt-1">$29.58 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ 摊薄 EPS $2.01 (+22%)</p>
-                </div>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>AI 产品周期驱动上行（目标价 $365）：</b> 目标价较现价隐含约 +9.5% 空间；全新 Siri AI 于 WWDC26 发布，叠加 iPhone 营收同比增长 21.7% 创六月季新高，换机动能有望延续。</li>
+                    <li><b>服务高毛利结构强化盈利质量：</b> 服务营收同比增长 12.1% 创六月季新高，分部毛利率 75.6% 远高于产品之 40.1%，收入结构持续向高毛利倾斜。</li>
+                </ul>
             </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="metric-card">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">Q2 地区营收结构 (Billion USD)</h3>
-                    <p class="text-xs text-slate-500 mb-4">大中华区 (Greater China) 强势反弹年增 28%，美洲区维持稳健成长。</p>
-                    <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">高盛 (Goldman Sachs)</h3>
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">买入 (Buy)</span>
                 </div>
-
-                <div class="metric-card">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">获利能力指标 (Billion USD)</h3>
-                    <p class="text-xs text-slate-500 mb-4">受惠于 iPhone 17 周期与服务高毛利，总营收与利润同步创下 3 月季度新高。</p>
-                    <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
-                </div>
-            </div>
-
-            <div class="metric-card mt-6">
-                <h3 class="text-lg font-bold text-slate-800 mb-4">各区域运营明细 (FY26 Q2)</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-left border-collapse">
-                        <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
-                            <tr>
-                                <th class="px-6 py-3 font-bold">地区 (Region)</th>
-                                <th class="px-6 py-3 font-bold text-right">营收 (Billion)</th>
-                                <th class="px-6 py-3 font-bold text-right text-emerald-600">年增率 (YoY)</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-slate-700">
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">美洲地区 (Americas)</td>
-                                <td class="px-6 py-4 text-right">$45.09</td>
-                                <td class="px-6 py-4 text-right font-bold text-emerald-500">+12%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">欧洲地区 (Europe)</td>
-                                <td class="px-6 py-4 text-right">$28.05</td>
-                                <td class="px-6 py-4 text-right font-bold text-emerald-500">+15%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">大中华区 (Greater China)</td>
-                                <td class="px-6 py-4 text-right">$20.50</td>
-                                <td class="px-6 py-4 text-right font-bold text-emerald-500">+28%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">日本 (Japan)</td>
-                                <td class="px-6 py-4 text-right">$8.40</td>
-                                <td class="px-6 py-4 text-right font-bold text-emerald-500">+15%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">亚太其他地区 (Rest of Asia Pacific)</td>
-                                <td class="px-6 py-4 text-right">$9.14</td>
-                                <td class="px-6 py-4 text-right font-bold text-emerald-500">+25%</td>
-                            </tr>
-                            <tr class="bg-slate-50 font-bold">
-                                <td class="px-6 py-4 text-slate-800">总计 (Total)</td>
-                                <td class="px-6 py-4 text-right text-slate-800">$111.18</td>
-                                <td class="px-6 py-4 text-right text-emerald-600">+17%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <section id="valuation" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比较</h2></div>
-            <div class="metric-card">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-lg font-bold text-slate-800">大型科技巨头 (Magnificent 7) FY 2026 Forward P/E 倍数比较</h3>
-                </div>
-                <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
-                <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
-            </div>
-        </section>
-
-        <section id="street-comments" class="tab-content">
-            <div class="mb-6">
-                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、华尔街观点</h2>
-                <p class="mt-2 text-sm text-slate-500">基于最新财报表现与投行共识，摘要各大机构观点：</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>超级周期确立：</b> iPhone 17 系列在 3 月季度的强劲表现，以及大中华区高达 28% 的成长，显示换机超级周期已具体成形。</li>
-                        <li><b>强大的股东回报：</b> 高达 1,000 亿美元的全新股票回购计划将为苹果股价提供强而有力的下档保护与资金支撑。</li>
-                    </ul>
-                </div>
-
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">摩根大通 (J.P. Morgan)</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>服务收入护城河：</b> 服务营收年增 16% 达到近 310 亿美元的历史新高，显示苹果在扩大活跃装置安装量后，成功实现深度的生态系变现。</li>
-                        <li><b>毛利率扩张：</b> 整体毛利率攀升至 49.3%，服务业务的高毛利率（76.7%）将持续优化整体的获利结构。</li>
-                    </ul>
-                </div>
-
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">花旗银行 (Citi)</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">买入 (Buy)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>硬件创新动能：</b> 新品如 MacBook Neo 及搭载 M4 的 iPad Air，为非 iPhone 产品线注入了急需的成长动能。</li>
-                        <li><b>监管风险已定价：</b> 尽管面临美国司法部反垄断诉讼与欧盟 DMA 规范挑战，但市场对这些长期法律风险已大致反映在预期中。</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="risks" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、风险因素</h2></div>
-            <div class="metric-card">
-                <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-rose-700 text-base">反垄断诉讼与法规审查：</strong> 面临美国司法部（DOJ）针对智能手机垄断的诉讼，以及欧盟委员会基于《数字市场法案》（DMA）对 App Store 规范的正式调查及潜在巨额罚款。
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">供应链限制与零部件成本上升：</strong> 先进半导体、存储（NAND）及内存（DRAM）等零部件面临产业供需失衡，预期此趋势将加剧，导致供应受限且成本增加。
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">关税与贸易争端：</strong> 美国实施的新进口关税及他国的报复性措施，可能冲击供应链、稀土等原材料的取得，进而影响产品定价与毛利率。
-                    </li>
-                    <li class="pb-1">
-                        <strong class="text-base">宏观经济压力：</strong> 通货膨胀、利率变化及外汇汇率波动，已对公司的运营结果与财务状况造成直接与间接的影响。
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <section id="sandbox" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-indigo-500 pl-3">六、AI 定制化情境推演 ✨</h2></div>
-            
-            <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 md:p-8 shadow-sm">
-                <div class="flex items-center mb-3">
-                    <span class="text-2xl mr-3">✨</span>
-                    <h3 class="text-xl font-black text-indigo-900 tracking-tight">AI 即时沙盘推演</h3>
-                </div>
-                <p class="text-sm text-indigo-700 mb-6 leading-relaxed">请在下方输入您假设的产业变量（例如：欧盟 DMA 裁定重罚、NAND/DRAM 成本大涨），AI 将基于 AAPL 当前的营收结构与千亿回购计划，为您即时推演潜在影响。</p>
-                <div class="flex flex-col md:flex-row gap-3">
-                    <input type="text" id="custom-scenario-input" placeholder="试试输入：如果欧盟 DMA 裁定针对 App Store 垄断重罚 Apple 全球营收的 10%..." class="flex-1 border border-indigo-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-inner">
-                    <button onclick="generateCustomScenario()" id="btn-generate-scenario" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg text-sm font-bold shadow-md transition-all whitespace-nowrap">
-                        开始推演
-                    </button>
-                </div>
-                <div id="scenario-loading" class="hidden mt-6 text-sm text-indigo-600 font-bold flex items-center bg-indigo-100/50 p-4 rounded-lg">
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                    AI 正在通过 Vercel 后端计算数据...
-                </div>
-                <div id="scenario-result" class="mt-6 hidden bg-white p-6 rounded-xl border border-indigo-200 text-sm text-slate-800 leading-relaxed shadow-sm"></div>
-            </div>
-        </section>
-
-        <section id="disclaimer" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">七、免责声明</h2></div>
-            <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
-                <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在从 disclaimer.html 载入免责声明，请稍候...</p></div>
-            </div>
-        </section>
-
-    </main>
-
-    <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
-            <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
-                <div class="flex items-center">
-                    <span class="text-2xl mr-2">🤖</span>
-                    <div><h4 class="font-bold text-sm">研究员专属 AI 助理</h4><p class="text-xs text-blue-200">Powered by Vercel & Gemini ✨</p></div>
-                </div>
-                <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
-            </div>
-            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
-                <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
-                    分析师您好！我是您的专属 苹果 (AAPL) 报告辅助 AI。您可以随时询问我关于本次 iPhone 17 销售表现、$30.98B 服务营收，或是 1000 亿美元回购计划的影响。
-                </div>
-            </div>
-            <div class="p-3 bg-white border-t border-slate-200">
-                <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
-                    <input type="text" id="chat-input" placeholder="输入您的指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
-                    </button>
-                </form>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>装机量生态价值支撑长期变现（目标价 $370）：</b> 目标价较现价隐含约 +11.0% 空间；活跃设备装机量于所有主要产品类别与地理分部创历史新高，为服务变现提供长期基础。</li>
+                    <li><b>全地区双位数增长印证需求广度：</b> 五大地理分部营收全部实现双位数增长，其中欧洲与大中华各同比增长 22.4%，增长动能并非依赖单一市场。</li>
+                </ul>
             </div>
         </div>
-        <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
-            <span class="text-2xl">✨</span>
-        </button>
-    </div>
+    </section>
 
-    <div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
-        <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
-            <span>✨</span> AI 白话文解释
-        </button>
-    </div>
-    <div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
-            <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
-                <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 术语解释</h3>
-                <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
+    <section id="risks" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、风险因素</h2></div>
+        <div class="metric-card">
+            <ol class="space-y-4 list-decimal list-outside ml-5 text-sm text-slate-700">
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-base">关税与贸易政策不确定性：</strong> 本季毛利率 50.1% 含关税退款有利影响约 2 个百分点、摊薄后 EPS 含 +$0.11；公司风险披露亦明列政府政策、贸易与其他国际争端及地缘政治紧张之潜在冲击。相关政策若反复，此有利影响恐难以延续甚至逆转。
+                </li>
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-base">估值溢价与共识目标价倒挂：</strong> Forward P/E 35.34 倍居同业比较组之首，且 2026/07/30 收盘价 $333.43 已高于 Bloomberg ANR 共识目标价 $323.27 约 3.0%；若后续增长动能放缓，估值收缩风险上升。
+                </li>
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-base">AI 竞争与新产品执行风险：</strong> 全新 Siri AI（WWDC26 发布）之落地体验与商业化尚待验证；本季研发费用同比增长 32.3% 至 $11,729 M 反映投入强度，若 AI 功能渗透与变现不及预期，恐压缩运营杠杆。
+                </li>
+                <li class="pb-1">
+                    <strong class="text-base">法律程序与监管环境风险：</strong> 公司于披露文件中提示不利法律程序、政府调查以及复杂多变之法律法规，可能对业务、声誉、经营成果、财务状况与股价造成影响。
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="disclaimer" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免责声明</h2></div>
+        <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+            <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在从 disclaimer.html 线上安全读取最新免责声明组件...</p></div>
+        </div>
+    </section>
+
+</main>
+
+<div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
+            <div class="flex items-center">
+                <span class="text-2xl mr-2">🤖</span>
+                <div><h4 class="font-bold text-sm">研究员专属 AI 助理</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
             </div>
-            <div class="p-6">
-                <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查询的词汇：</div>
-                <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
-                <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
-                    <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                    AI 正在生成解释...
-                </div>
-                <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
-            </div>
-            <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
-                <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">关闭</button>
+            <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
+            <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
+                分析师您好！我是您的专属苹果公司 (AAPL) 数据辅助 AI。您可以随时询问我关于本季 $109,417 M（+16.4%）创六月季新高营收、毛利率 50.1% 中约 2 个百分点的关税退款有利影响、服务营收 $30,739 M 与活跃设备装机量历史新高，或 $0.27/股 宣派季息的财务含义。
             </div>
         </div>
+        <div class="p-3 bg-white border-t border-slate-200">
+            <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
+                <input type="text" id="chat-input" placeholder="输入您的研究指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+                </button>
+            </form>
+        </div>
     </div>
+    <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
+        <span class="text-2xl">✨</span>
+    </button>
+</div>
 
-    <script>
-        function switchTab(e, tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(el => { el.classList.remove('active', 'border-blue-600', 'text-blue-600'); el.classList.add('text-slate-500'); });
-            document.getElementById(tabId).classList.add('active');
-            e.currentTarget.classList.remove('text-slate-500'); e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+<div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
+    <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
+        <span>✨</span> AI 白话文解释
+    </button>
+</div>
+<div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+            <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 术语解释</h3>
+            <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查询的词汇：</div>
+            <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
+            <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
+                <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                AI 正在生成解释...
+            </div>
+            <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
+        </div>
+        <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+            <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">关闭</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 注册全局图表实例缓存
+    window.charts = {};
+
+    function acceptPI() {
+        sessionStorage.setItem('pi_agreed', 'true');
+        document.getElementById('pi-modal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    function declinePI() {
+        document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;
+    }
+
+    function switchTab(e, tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(el => { 
+            el.classList.remove('active', 'border-blue-600', 'text-blue-600'); 
+            el.classList.add('text-slate-500'); 
+        });
+        document.getElementById(tabId).classList.add('active');
+        e.currentTarget.classList.remove('text-slate-500'); 
+        e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+
+        // 彻底修复 hidden 画布无宽高像素之 Chart.js 原生缺陷
+        if (tabId === 'financials') {
+            if (window.charts.aaplSegment) window.charts.aaplSegment.resize();
+            if (window.charts.aaplProfit) window.charts.aaplProfit.resize();
+        } else if (tabId === 'valuation') {
+            if (window.charts.aaplValuation) window.charts.aaplValuation.resize();
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // 专业投资者拦截门户验证
+        if (!sessionStorage.getItem('pi_agreed')) { 
+            const modal = document.getElementById('pi-modal'); 
+            if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; } 
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // Chart 1: Segment Revenue (Geographic)
-            new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
-                type: 'doughnut',
-                data: {
-                    labels: ['美洲地区', '欧洲地区', '大中华区', '日本', '亚太其他'],
-                    datasets: [{
-                        data: [45.09, 28.05, 20.50, 8.40, 9.14],
-                        backgroundColor: ['rgba(59, 130, 246, 0.8)', 'rgba(16, 185, 129, 0.8)', 'rgba(239, 68, 68, 0.8)', 'rgba(245, 158, 11, 0.8)', 'rgba(139, 92, 246, 0.8)'],
-                        borderWidth: 0
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '60%' }
-            });
+        // 图表 1: AAPL 分类营收拆解 (Doughnut)
+        window.charts.aaplSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ['iPhone', 'Mac', 'iPad', '穿戴设备、家居及配件', '服务'],
+                datasets: [{
+                    data: [54252, 10352, 6191, 7883, 30739],
+                    backgroundColor: ['rgba(37, 99, 235, 0.85)', 'rgba(16, 185, 129, 0.85)', 'rgba(99, 102, 241, 0.85)', 'rgba(147, 51, 234, 0.85)', 'rgba(245, 158, 11, 0.85)'],
+                    borderWidth: 0
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
+        });
 
-            // Chart 2: Profitability
-            new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['总营收 (Total Rev)', '营业利润 (GAAP OpInc)', '净利润 (GAAP Net)'],
-                    datasets: [{
-                        label: '十亿美元 (Billion USD)',
-                        data: [111.18, 35.89, 29.58],
-                        backgroundColor: ['#94a3b8', '#3b82f6', '#10b981'],
+        // 图表 2: 整体营收与毛利率年度对比 (Grouped Bar Chart)
+        window.charts.aaplProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['FQ3 FY25', 'FQ3 FY26'],
+                datasets: [
+                    {
+                        label: '总营收 (百万美元)',
+                        data: [94036, 109417],
+                        backgroundColor: '#3b82f6',
                         borderRadius: 4
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } }, x: { grid: { display: false } } } }
-            });
-
-            // Chart 3: Valuation (Peers)
-            new Chart(document.getElementById('valuationChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['GOOGL (Alphabet)', 'AAPL (苹果)', 'AMZN (亚马逊)', 'MSFT (微软)'],
-                    datasets: [{ label: 'FY 2026 Forward P/E 倍数', data: [28.60, 31.86, 32.07, 24.42], backgroundColor: ['rgba(148, 163, 184, 0.5)', 'rgba(37, 99, 235, 0.9)', 'rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)'], borderRadius: 4 }]
-                },
-                options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
-            });
-
-            // 读取外部 disclaimer.html 文件
-            fetch('disclaimer.html')
-                .then(response => {
-                    if (!response.ok) throw new Error('无法读取 disclaimer.html');
-                    return response.text();
-                })
-                .then(html => {
-                    const container = document.getElementById('disclaimer-container');
-                    if(container) container.innerHTML = html;
-                })
-                .catch(error => {
-                    console.error('载入免责声明失败:', error);
-                    const container = document.getElementById('disclaimer-container');
-                    if(container) container.innerHTML = '<div class="p-6 text-center text-red-500 font-bold">无法载入 disclaimer.html，请确认文件存在。</div>';
-                });
+                    },
+                    {
+                        label: '毛利率 (Gross Margin %)',
+                        data: [46.5, 50.1],
+                        backgroundColor: '#10b981',
+                        borderRadius: 4,
+                        yAxisID: 'percentageAxis'
+                    }
+                ]
+            },
+            options: { 
+                responsive: true, 
+                maintainAspectRatio: false, 
+                plugins: { legend: { position: 'bottom' } }, 
+                scales: { 
+                    y: { beginAtZero: true, position: 'left', grid: { color: '#f1f5f9' } },
+                    percentageAxis: { beginAtZero: true, max: 100, position: 'right', grid: { display: false } }
+                } 
+            }
         });
 
-        // AI Core
-        async function callGeminiAPI(prompt, systemInstruction) {
-            try {
-                const response = await fetch('/api/gemini', { 
-                    method: 'POST', headers: { 'Content-Type': 'application/json' }, 
-                    body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction }) 
-                });
-                const data = await response.json();
-                if (!response.ok) return `连线错误：${data.error || '未知错误'}`;
-                let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，无法产生有效回复。";
-                return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
-            } catch (error) { return `网络连线失败。(${error.message})`; }
-        }
-
-        // AI Chat
-        const standardPrompt = `你是 NTAM 内部研究员的专属 AI 助理。请协助分析师总结 苹果 (AAPL) Q2 2026 财报数据。请用客观、精炼的简体中文回答，使用 HTML <b> 加粗重点，严禁使用 markdown 语法。`;
-        function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
-        function appendMessage(text, isUser) {
-            const msgDiv = document.createElement('div');
-            msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
-            msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv); 
-            document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
-        }
-        function showTypingIndicator() {
-            const ind = document.createElement('div'); ind.id = 'typing-indicator'; 
-            ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
-            ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
-            document.getElementById('chat-messages').appendChild(ind);
-        }
-        async function handleChatSubmit(e) {
-            e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
-            input.value = ''; appendMessage(text, true); showTypingIndicator();
-            const res = await callGeminiAPI(text, standardPrompt);
-            document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
-        }
-
-        // Highlight AI
-        let selectedText = "";
-        document.addEventListener('mouseup', function(e) {
-            const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
-            if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
-            if (text.length > 1 && text.length < 50) {
-                selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
-                tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${rect.top - 40}px`;
-                tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
-            } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+        // 图表 3: 美国大型科技巨头远期市盈率比较 (Horizontal Bar)
+        window.charts.aaplValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['AAPL (苹果公司)', 'AMZN (亚马逊)', 'GOOGL (Alphabet)', 'MSFT (微软)'],
+                datasets: [{ 
+                    label: 'Next 4 Qtrs Est Forward P/E', 
+                    data: [35.34, 25.87, 24.83, 22.95], 
+                    backgroundColor: ['rgba(37, 99, 235, 0.95)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)'], 
+                    borderRadius: 4 
+                }]
+            },
+            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
         });
-        document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
-        async function explainSelectedTerm() {
-            document.getElementById('selection-tooltip').classList.add('hidden');
-            document.getElementById('explain-term-title').textContent = selectedText; 
-            document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
-            const res = await callGeminiAPI(`解释这个 AAPL 相关词汇：${selectedText}`, "你是金融专家，用最白话简体中文解释词汇。限 150 字，重点用 <b> 包覆。");
-            document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
-        }
-        function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
-        
-        // 🔮 沙盒生成脚本
-        async function generateCustomScenario() {
-            const inputEl = document.getElementById('custom-scenario-input'); const btnEl = document.getElementById('btn-generate-scenario'); 
-            const loadingEl = document.getElementById('scenario-loading'); const resultEl = document.getElementById('scenario-result');
-            const scenarioText = inputEl.value.trim(); if (!scenarioText) { alert('请先输入假设情境！'); return; }
-            btnEl.disabled = true; btnEl.classList.add('opacity-50'); loadingEl.classList.remove('hidden'); resultEl.classList.add('hidden');
-            
-            const sysPrompt = `你是华尔街资深分析师。基于 AAPL 本季营收大增17%、启动1000亿美元回购、面临欧盟 DMA 及 DOJ 监管等事实，评估用户的“假设情境”。
-请简明扼要地回复：1. 初步评估 2. 对营收/利润潜在影响 3. 股价可能反应。
-使用简体中文，并用 HTML <b> 标签加粗重点，严禁使用 markdown 语法。总字数约 200 字。`;
 
-            const aiAnalysis = await callGeminiAPI(`推演这个情境：${scenarioText}`, sysPrompt);
-            loadingEl.classList.add('hidden'); btnEl.disabled = false; btnEl.classList.remove('opacity-50');
-            resultEl.innerHTML = `<h4 class="font-bold text-indigo-900 mb-3 border-b border-indigo-100 pb-2">🎯 AI 情境推演结果</h4>` + aiAnalysis; 
-            resultEl.classList.remove('hidden');
-        }
-    </script>
+        // 安全调阅外部 disclaimer.html 连动模组
+        fetch('disclaimer.html')
+            .then(response => {
+                if (!response.ok) throw new Error('无法载入 disclaimer.html');
+                return response.text();
+            })
+            .then(html => {
+                const container = document.getElementById('disclaimer-container');
+                if(container) container.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('安全连动调阅失败:', error);
+                const container = document.getElementById('disclaimer-container');
+                if(container) container.innerHTML = '<div class="p-6 text-center text-rose-600 font-bold">【安全连动错误】外部合规免责声明档案加载失败，请联络系统运维团队。</div>';
+            });
+    });
+
+    // NTAM 后端 AI 调度核心
+    async function callGeminiAPI(prompt, systemInstruction) {
+        try {
+            const response = await fetch('/api/gemini', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })
+            });
+            const data = await response.json();
+            if (!response.ok) return `连线错误：${data.error || '未知错误'}`;
+            let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，无法产生有效回复。";
+            return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+        } catch (error) { return `网络连线失败。(${error.message})`; }
+    }
+
+    // AI 助理 Widget 逻辑
+    const standardPrompt = `你是一位精通 NTAM 投资研究框架的资深 AI 助理。请针对使用者对苹果公司 (AAPL) 2026 财年第三季度最新财报与大会摘要的提问，提供符合专业机构投资人水准、客观、高密度的定量与定性答复。重点用 <b> 标签包覆，严禁使用 markdown。`;
+    function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
+    function appendMessage(text, isUser) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
+        msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
+        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+    }
+    function showTypingIndicator() {
+        const ind = document.createElement('div'); ind.id = 'typing-indicator';
+        ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
+        ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
+        document.getElementById('chat-messages').appendChild(ind);
+    }
+    async function handleChatSubmit(e) {
+        e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
+        input.value = ''; appendMessage(text, true); showTypingIndicator();
+        const res = await callGeminiAPI(text, standardPrompt);
+        document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
+    }
+
+    // 划词解说机制
+    let selectedText = "";
+    document.addEventListener('mouseup', function(e) {
+        const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
+        if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
+        if (text.length > 1 && text.length < 50) {
+            selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
+            tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${window.scrollY + rect.top - 40}px`;
+            tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
+        } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+    });
+    document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
+    async function explainSelectedTerm() {
+        document.getElementById('selection-tooltip').classList.add('hidden');
+        document.getElementById('explain-term-title').textContent = selectedText;
+        document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
+        const res = await callGeminiAPI(`解释这个苹果公司 AAPL 财报相关词汇：${selectedText}`, "你是苹果公司消费电子与服务生态专家，用最白话的专业简体中文解释词汇。限 150 字，重点使用 <b> 标签包覆。");
+        document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
+    }
+    function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
+</script>
 </body>
 </html>
