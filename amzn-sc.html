@@ -1,545 +1,550 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>亚马逊 (AMZN) 深度研究报告 | NTAM 资深分析师</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Noto Sans SC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
-        .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
-        @media (min-width: 768px) { .chart-container { height: 400px; } }
-        .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
-        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
-        .tab-content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-        .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* AI Animations */
-        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
-        .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
-        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
-        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
-        @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
-        #selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>亚马逊 (AMZN) 深度研究报告 | NTAM 资深分析师</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+    body { font-family: 'Noto Sans SC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+    .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+    @media (min-width: 768px) { .chart-container { height: 400px; } }
+    .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+    .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+    .tab-content.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* AI Animations */
+    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+    .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
+    .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+    .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+    @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+    #selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
+</style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
 
-    <div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
-        <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
-            <div class="text-center mb-6">
-                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77-1.333.192 3 1.732 3z" /></svg>
-                </div>
-                <h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要声明</h2>
+<div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
+    <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
+        <div class="text-center mb-6">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77-1.333.192 3 1.732 3z" /></svg>
             </div>
-            <div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
-                    <p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
-                </div>
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
-                    <p>本网站及报告之内容仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者资格。</p>
-                </div>
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
-                    <p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
-                </div>
+            <h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要声明</h2>
+        </div>
+        <div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
+            <div class="border-l-4 border-blue-500 pl-4">
+                <p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
+                <p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
             </div>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
-                <button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒绝 / Decline</button>
-                <button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">我确认 I Confirm</button>
+            <div class="border-l-4 border-blue-500 pl-4">
+                <p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
+                <p>本页面所含信息仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者身份。</p>
             </div>
+            <div class="border-l-4 border-blue-500 pl-4">
+                <p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
+                <p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
+            <button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
+            <button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">我確認 I Confirm</button>
         </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() { if (!sessionStorage.getItem('pi_agreed')) { const modal = document.getElementById('pi-modal'); if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; } } });
-        function acceptPI() { sessionStorage.setItem('pi_agreed', 'true'); document.getElementById('pi-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
-        function declinePI() { document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`; }
-    </script>
+</div>
 
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex justify-between items-start">
+<header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex justify-between items-start">
+            <div class="flex flex-col">
+                <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
+                    <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+                    <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+                </a>
                 <div class="flex flex-col">
-                    <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
-                        <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-8 w-auto" onerror="this.style.display='none'">
-                        <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
-                    </a>
-                    <div class="flex flex-col">
-                        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">亚马逊 <span class="text-blue-600">AMZN</span></h1>
-                        <span class="text-sm text-slate-500 font-medium mt-1">资深分析师 运营与战略报告 | Q1 2026</span>
-                    </div>
-                </div>
-                <div class="flex flex-col items-end space-y-3">
-                    <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
-                        <option value="amzn.html">繁體中文</option>
-                        <option value="amzn-sc.html" selected>简体中文</option>
-                        <option value="amzn-en.html">English</option>
-                    </select>
-                    <div class="flex items-center space-x-4">
-                        <div class="text-right hidden sm:block">
-                            <div class="text-xs text-slate-400 font-bold">目标价 <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
-                            <div class="text-xl font-bold text-slate-800">$307.81 USD</div>
-                        </div>
-                        <div class="px-4 py-2 bg-blue-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">评级：买入 (Buy)</div>
-                    </div>
+                    <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">亚马逊 <span class="text-blue-600">AMZN</span></h1>
+                    <span class="text-sm text-slate-500 font-medium mt-1">资深分析师 运营与战略报告 | Q2 2026 财报特辑</span>
                 </div>
             </div>
-            
-            <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
-                <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我们的观点</button>
-                <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 运营与财务数据</button>
-                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比较</button>
-                <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 华尔街观点</button>
-                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 风险因素</button>
-                <button onclick="switchTab(event, 'sandbox')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-indigo-500 hover:text-indigo-700">六. AI 互动沙盒 ✨</button>
-                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">七. 免责声明</button>
-            </nav>
+            <div class="flex flex-col items-end space-y-3">
+                <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
+                    <option value="amzn.html">繁體中文</option>
+                    <option value="amzn-sc.html" selected>简体中文</option>
+                    <option value="amzn-en.html">English</option>
+                </select>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right hidden sm:block">
+                        <div class="text-xs text-slate-400 font-bold">共识目标价 (截至 2026/07/31) <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
+                        <div class="text-xl font-bold text-slate-800">$316.05 USD</div>
+                    </div>
+                    <div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">ANR 共识评级：买入</div>
+                </div>
+            </div>
         </div>
-    </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+        <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+            <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我们的观点</button>
+            <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 运营与财务数据</button>
+            <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比较</button>
+            <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 华尔街观点</button>
+            <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 风险因素</button>
+            <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免责声明</button>
+        </nav>
+    </div>
+</header>
 
-        <section id="our-comments" class="tab-content active">
-            <div class="mb-6">
-                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我们的观点</h2>
-                <p class="mt-2 text-sm text-slate-500">基于 FY26 Q1 财报与管理层会议，以下为 NTAM 研究团队提炼之亚马逊 (AMZN) 核心结论：</p>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+
+    <section id="our-comments" class="tab-content active">
+        <div class="mb-6">
+            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我们的观点</h2>
+        </div>
+        <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
+            <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
+                <span class="text-3xl mr-3">🎯</span>
+                <h3 class="text-2xl font-black text-blue-600 tracking-tight">核心经营结论</h3>
             </div>
-            <div class="metric-card bg-slate-900 text-white border-none p-6 md:p-8">
-                <div class="flex items-center mb-6 border-b border-slate-700 pb-4">
-                    <span class="text-3xl mr-3">🎯</span>
-                    <h3 class="text-2xl font-black text-blue-400 tracking-tight">核心结论</h3>
+            <ul class="space-y-6">
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">AWS 增速重加速至 +37%，为 18 个季度以来最快</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">AWS 单季净销售额 $42,232 M（YoY +37%），公司披露其年化营收运行率达 1,690 亿美元，AI 业务与芯片业务年化运行率并各自突破 250 亿美元、同比呈三位数增长；分部营业利润 $16,621 M（+64%）、营业利润率 39.4%。我们认为 AWS 重回高增长轨道为本季最关键的运营信号。</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">净利润 +245% 须辨识非经营性收益的推高效果</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">本季净利润 $62,647 M、摊薄后 EPS $5.75（+242%），但其中含税前、非经营性其他收益 534 亿美元（主要来自对 Anthropic 的投资），不属核心运营盈利；我们认为核心经营面应以营业利润 $27,461 M（+43%）与营业利润率 13.7%（上年同期 11.4%）衡量。</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">零售与广告动能扎实，但 AI 资本开支令 TTM 自由现金流转负</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">北美分部 +16%、国际分部 +15%，广告服务营收 $19,809 M（+26%），公司披露上半年再创 Prime 会员配送速度纪录。TTM 经营现金流（GAAP）1,614 亿美元（+33%），但 TTM 净资本开支达 1,690 亿美元（同比增加 661 亿美元，公司称主要反映 AI 投资），致 TTM 自由现金流（Non-GAAP）转为 -76 亿美元。</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">Q3 指引稳健，现价较共识目标价留有上行空间</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">公司指引 Q3 2026 净销售额 1,970–2,020 亿美元（+9%–12%；若剔除 2025 及 2026 两年 Prime Day 影响，YoY 增速将高近 400 个基点；汇率约构成 80 个基点逆风），营业利润 225–265 亿美元（上年同期 174 亿美元）。以 2026/07/30 收盘价 $235.50 计，Bloomberg ANR 12 个月共识目标价 $316.05 隐含约 +34.2% 上行空间（Return Potential +34.2%）；我们认为后续观察重点在 AWS 增速能否持续消化资本开支强度。</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="financials" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、运营与财务数据</h2></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div class="metric-card border-t-4 border-t-emerald-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Q2 净销售额 (Net Sales)</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">$200,606 M</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +20%（剔除汇率 +20%）</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-blue-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">营业利润 (Operating Income)</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">$27,461 M</p>
+                <p class="text-sm text-blue-600 font-semibold mt-1">▲ YoY +43%（营业利润率 13.7%）</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-indigo-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">AWS 净销售额 (AWS Net Sales)</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">$42,232 M</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +37%（18 个季度以来最快）</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-purple-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">摊薄后 EPS (Diluted EPS)</h4>
+                <p class="text-xl font-bold text-slate-800 mt-1">$5.75</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +242%（含非经营性收益推高）</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-2">Q2 2026 分部净销售额结构 (Million USD)</h3>
+                <p class="text-xs text-slate-500 mb-4">北美 $116,177 M（58%）、国际 $42,197 M（21%）、AWS $42,232 M（21%）；三分部合计即为合并净销售额 $200,606 M（无抵销项）。</p>
+                <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+            </div>
+
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-2">近五季净销售额与营业利润率趋势 (Million USD)</h3>
+                <p class="text-xs text-slate-500 mb-4">合并营业利润率自 Q3 2025 的 9.7% 连续回升至本季 13.7%，上年同期为 11.4%。</p>
+                <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
+            </div>
+        </div>
+
+        <div class="metric-card mt-6">
+            <h3 class="text-lg font-bold text-slate-800 mb-4">Q2 2026 报告结果同比对比明细 Table (GAAP)</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left border-collapse">
+                    <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
+                        <tr>
+                            <th class="px-6 py-3 font-bold">会计明细科目项目</th>
+                            <th class="px-6 py-3 font-bold text-right">Q2-26 GAAP 报告</th>
+                            <th class="px-6 py-3 font-bold text-right text-blue-600">Q2-25 GAAP 报告</th>
+                            <th class="px-6 py-3 font-bold text-right text-emerald-600">YoY 同比变动率 (GAAP 报告基准)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-700">
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">净销售额 (Net Sales)</td>
+                            <td class="px-6 py-4 text-right">$200,606 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$167,702 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-emerald-500">+20%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">营业利润 (Operating Income)</td>
+                            <td class="px-6 py-4 text-right">$27,461 M (13.7%)</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$19,171 M (11.4%)</td>
+                            <td class="px-6 py-4 text-right text-emerald-500">+43%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">净利润 (Net Income)（含 534 亿美元税前非经营性其他收益，主要来自对 Anthropic 的投资）</td>
+                            <td class="px-6 py-4 text-right">$62,647 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$18,164 M</td>
+                            <td class="px-6 py-4 text-right text-emerald-500">+245%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">摊薄后 EPS (Diluted EPS)</td>
+                            <td class="px-6 py-4 text-right">$5.75</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$1.68</td>
+                            <td class="px-6 py-4 text-right text-emerald-500">+242%</td>
+                        </tr>
+                        <tr class="bg-slate-50 font-bold">
+                            <td class="px-6 py-4 text-slate-800">其他公司列报指标</td>
+                            <td class="px-6 py-4 text-right text-slate-500">TTM 经营现金流 (GAAP): $161,403 M (+33%)</td>
+                            <td class="px-6 py-4 text-right text-blue-600">TTM 自由现金流 (Non-GAAP): -$7,604 M</td>
+                            <td class="px-6 py-4 text-right text-purple-600">TTM 净资本开支: $169,007 M</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="valuation" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比较</h2></div>
+        <div class="metric-card">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-slate-800">美国大型科技巨头远期市盈率 (Next 4 Qtrs Est Forward P/E) 倍数横向长条图比较（截至 2026/07/31）</h3>
+            </div>
+            <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
+            <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
+        </div>
+    </section>
+
+    <section id="street-comments" class="tab-content">
+        <div class="mb-6">
+            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、华尔街观点</h2>
+            <p class="mt-2 text-sm text-slate-500">（评级与目标价：Bloomberg ANR，截至 2026/07/31）Bloomberg 12 个月共识目标价 $316.05，画面显示 64/92 个目标价样本；另有 83 个有效评级——79 个买入、4 个持有、0 个卖出——买入占比 95.2%，共识高度一致偏多。</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">瑞银 (UBS)</h3>
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">买入 (Buy)</span>
                 </div>
-                <ul class="space-y-6">
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">1.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">AWS 云端业务强劲成长</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">AWS 第一季营收达 376 亿美元，年增高达 28%，这是在庞大基数下创下近 15 个季度以来的最快增速，显示生成式 AI 工作负载正实质转化为云端收入。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-amber-400 mr-4 text-xl font-black">2.</span>
-                        <div>
-                            <strong class="text-amber-400 block mb-1 text-lg">AI 相关资本支出大幅扩张</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">过去 12 个月的自由现金流降至 12 亿美元，主因为投资人工智能导致房地产与设备的采购支出（扣除销售和奖励）较去年同期大幅增加 593 亿美元，突显亚马逊正大举建置算力基础设施。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">3.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">自研 AI 芯片与模型生态圈爆发</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">包含 Graviton、Trainium 和 Nitro 在内的自研芯片业务年营收运转率已突破 200 亿美元（呈三位数年增长）。此外，OpenAI 与 Anthropic 皆承诺将大量使用 Amazon 的 Trainium 芯片基础设施来训练其先进 AI 模型。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">4.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">巨额业外投资收益挹注净利</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">2026 年第一季净利表现亮眼达 303 亿美元，其中包含了投资 AI 初创公司 Anthropic 所带来的 168 亿美元税前收益，显示其战略投资眼光获得巨大回报。</p>
-                        </div>
-                    </li>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>AWS 增速重回高档支撑买入立场（目标价 $305）：</b> AWS 本季 +37% 为 18 个季度以来最快，年化营收运行率 1,690 亿美元，构成评级的核心支撑。</li>
+                    <li><b>目标价低于共识、资本开支为主要验证变量：</b> $305 低于 ANR 共识 $316.05 约 3.5%，属本页三家中相对保守；TTM 净资本开支 1,690 亿美元（同比增加 661 亿美元）致自由现金流转负，回报实现节奏仍须逐季验证。</li>
                 </ul>
             </div>
-        </section>
 
-        <section id="financials" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、运营与财务数据</h2></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                <div class="metric-card border-t-4 border-t-emerald-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">总营收 (Total Net Sales)</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$181.52 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +17%</p>
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">花旗银行 (Citi)</h3>
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">买入 (Buy)</span>
                 </div>
-                <div class="metric-card border-t-4 border-t-blue-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">AWS 营收成长</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">+28%</p>
-                    <p class="text-sm text-blue-600 font-semibold mt-1">▲ 营收达 $37.59 B</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-indigo-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">GAAP 营业利润</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$23.85 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +30%</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-purple-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">GAAP 净利润</h4>
-                    <p class="text-xl font-bold text-slate-800 mt-1">$30.26 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ 含 Anthropic $16.8B 收益</p>
-                </div>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>运营杠杆与利润率改善驱动的积极定位（目标价 $325）：</b> 目标价高于 ANR 共识 $316.05 约 2.8%；本季合并营业利润率 13.7%（上年同期 11.4%）持续走高。</li>
+                    <li><b>零售与广告构成 AWS 以外的多元动能：</b> 北美分部 +16%、国际分部 +15%，广告服务营收 $19,809 M（+26%）延续高速增长；叠加 AWS 分部营业利润率 39.4%，整体盈利结构同步向上。</li>
+                </ul>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="metric-card">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">Q1 营收部门结构 (Billion USD)</h3>
-                    <p class="text-xs text-slate-500 mb-4">北美零售仍为营收主力，但 AWS 成长率最高（28%）。</p>
-                    <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3>
+                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
                 </div>
-
-                <div class="metric-card">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">获利能力指标 (Billion USD)</h3>
-                    <p class="text-xs text-slate-500 mb-4">本季净利润因业外投资收益大幅跃升，核心营业利润亦稳健双位数成长。</p>
-                    <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
-                </div>
-            </div>
-
-            <div class="metric-card mt-6">
-                <h3 class="text-lg font-bold text-slate-800 mb-4">各事业群运营明细 (FY26 Q1)</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-left border-collapse">
-                        <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
-                            <tr>
-                                <th class="px-6 py-3 font-bold">事业群 (Segment)</th>
-                                <th class="px-6 py-3 font-bold text-right">营收 (Billion)</th>
-                                <th class="px-6 py-3 font-bold text-right">年增率 (YoY)</th>
-                                <th class="px-6 py-3 font-bold text-right">营业利润 (Billion)</th>
-                                <th class="px-6 py-3 font-bold text-right text-emerald-600">利润增长 (YoY)</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-slate-700">
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">北美地区 (North America)</td>
-                                <td class="px-6 py-4 text-right">$104.14</td>
-                                <td class="px-6 py-4 text-right font-bold text-emerald-500">+12%</td>
-                                <td class="px-6 py-4 text-right">$8.27</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">+42%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">国际地区 (International)</td>
-                                <td class="px-6 py-4 text-right">$39.79</td>
-                                <td class="px-6 py-4 text-right font-bold text-emerald-500">+19%</td>
-                                <td class="px-6 py-4 text-right">$1.42</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">+40%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">亚马逊云端 (AWS)</td>
-                                <td class="px-6 py-4 text-right">$37.59</td>
-                                <td class="px-6 py-4 text-right font-bold text-emerald-500">+28%</td>
-                                <td class="px-6 py-4 text-right">$14.16</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">+23%</td>
-                            </tr>
-                            <tr class="bg-slate-50 font-bold">
-                                <td class="px-6 py-4 text-slate-800">总计 (Total)</td>
-                                <td class="px-6 py-4 text-right text-slate-800">$181.52</td>
-                                <td class="px-6 py-4 text-right text-emerald-600">+17%</td>
-                                <td class="px-6 py-4 text-right text-slate-800">$23.85</td>
-                                <td class="px-6 py-4 text-right text-emerald-600">+30%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <section id="valuation" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比较</h2></div>
-            <div class="metric-card">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-lg font-bold text-slate-800">大型科技巨头 (Magnificent 7) FY 2026 Forward P/E 倍数比较</h3>
-                </div>
-                <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
-                <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
-            </div>
-        </section>
-
-        <section id="street-comments" class="tab-content">
-            <div class="mb-6">
-                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、华尔街观点</h2>
-                <p class="mt-2 text-sm text-slate-500">摘要自 Bloomberg ANR 最新投行研究报告与法说会后点评：</p>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>AWS 重新加速：</b> 高度肯定 AWS 营收增长加速至 28%，认为这是企业从云端成本优化周期完全转向 AI 驱动扩张的明确讯号。</li>
-                        <li><b>自研芯片护城河：</b> 强调 Trainium 与 Inferentia 等自研芯片达到 200 億美元的年化营收，將成为亚马逊在长期 AI 算力竞争中的关键成本优势。</li>
-                    </ul>
-                </div>
-
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">高盛 (Goldman Sachs)</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">买入 (Buy)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>资本支出扩张合理：</b> 尽管 CapEx 年增近 600 亿美元导致自由现金流下降，但认为有 OpenAI 與 Anthropic 庞大的基建承诺背书，这项投资具有极高的确定性。</li>
-                        <li><b>零售利润率扩张：</b> 北美零售营运利润率达 7.9%（利润增长 42%），显示仓储与配送区域化效益持续发酵，核心零售业务健康度极高。</li>
-                    </ul>
-                </div>
-
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">瑞银 (UBS)</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">买入 (Buy)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>业外收益验证眼光：</b> 来自 Anthropic 的 168 亿美元未实现收益，完美验证了亚马逊在基础大模型生态圈布局的精准度。</li>
-                        <li><b>广告与订阅双引擎：</b> 特别指出广告服务营收（增长 24%）與订阅服务（增长 15%）持續成为除了 AWS 外，推升整體毛利率的重要引擎。</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="risks" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、风险因素</h2></div>
-            <div class="metric-card">
-                <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-rose-700 text-base">经济与需求衰退风险：</strong> 财报强调，客户需求与支出的变化（包含市场对经济衰退的担忧）、通货膨胀以及利率变动，可能直接冲击零售电商與企业云端支出。
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">供应链与资源波动：</strong> 资源與供应链的波动性，财报中特別点名了「記憶體芯片 (memory chips)」的供应风险，可能限制 AWS 資料中心的扩张速度。
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">宏观经济与地缘政治：</strong> 全球经济状况、地缘政治条件的變化、贸易與关稅政策，以及世界性不可預期事件的發生。
-                    </li>
-                    <li class="pb-1">
-                        <strong class="text-base">外汇與运营成本：</strong> 国际业务容易受到外汇汇率波动影响；此外，能源价格波动及区域性劳动力市场的限制，亦可能增加物流履约的成本压力。
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <section id="sandbox" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-indigo-500 pl-3">六、AI 互动沙盒 ✨</h2></div>
-            
-            <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 md:p-8 shadow-sm">
-                <div class="flex items-center mb-3">
-                    <span class="text-2xl mr-3">✨</span>
-                    <h3 class="text-xl font-black text-indigo-900 tracking-tight">AI 即时沙盘推演</h3>
-                </div>
-                <p class="text-sm text-indigo-700 mb-6 leading-relaxed">请在下方输入您假设的产业变量（例如：记忆体芯片严重缺货、美国零售消费大幅衰退），AI 将基于 AMZN 当前激增的资本支出與 AWS 成长动能，为您即时推演潜在影响。</p>
-                <div class="flex flex-col md:flex-row gap-3">
-                    <input type="text" id="custom-scenario-input" placeholder="试试输入：如果因为记忆体芯片 (Memory Chips) 供应链断链，导致 AWS 无法如期交付 OpenAI 的基建订单..." class="flex-1 border border-indigo-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-inner">
-                    <button onclick="generateCustomScenario()" id="btn-generate-scenario" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg text-sm font-bold shadow-md transition-all whitespace-nowrap">
-                        开始推演
-                    </button>
-                </div>
-                <div id="scenario-loading" class="hidden mt-6 text-sm text-indigo-600 font-bold flex items-center bg-indigo-100/50 p-4 rounded-lg">
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                    AI 正在透过 Vercel 后端计算数据...
-                </div>
-                <div id="scenario-result" class="mt-6 hidden bg-white p-6 rounded-xl border border-indigo-200 text-sm text-slate-800 leading-relaxed shadow-sm"></div>
-            </div>
-        </section>
-
-        <section id="disclaimer" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">七、免责声明</h2></div>
-            <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
-                <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在从 disclaimer.html 载入免责声明，请稍候...</p></div>
-            </div>
-        </section>
-
-    </main>
-
-    <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
-            <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
-                <div class="flex items-center">
-                    <span class="text-2xl mr-2">🤖</span>
-                    <div><h4 class="font-bold text-sm">研究员专属 AI 助理</h4><p class="text-xs text-blue-200">Powered by Vercel & Gemini ✨</p></div>
-                </div>
-                <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
-            </div>
-            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
-                <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
-                    分析师您好！我是您的专属 亚马逊 (AMZN) 报告辅助 AI。您可以随时询问我关于本次 AWS 成长 28%、自研芯片布局，或是自由现金流大幅下降的原因。
-                </div>
-            </div>
-            <div class="p-3 bg-white border-t border-slate-200">
-                <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
-                    <input type="text" id="chat-input" placeholder="输入您的指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
-                    </button>
-                </form>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>AI 投资周期受益者、本页最高目标价（目标价 $330）：</b> 目标价较 ANR 共识高约 4.4%；AWS AI 业务与芯片业务年化运行率各逾 250 亿美元、同比呈三位数增长。</li>
+                    <li><b>指引显示高资本开支下盈利仍具扩张性：</b> 公司指引 Q3 2026 营业利润 225–265 亿美元（上年同期 174 亿美元）；若剔除 2025 及 2026 两年 Prime Day 影响，Q3 净销售额 YoY 增速将高近 400 个基点。</li>
+                </ul>
             </div>
         </div>
-        <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
-            <span class="text-2xl">✨</span>
-        </button>
-    </div>
+    </section>
 
-    <div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
-        <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
-            <span>✨</span> AI 白话文解释
-        </button>
-    </div>
-    <div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
-            <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
-                <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 术语解释</h3>
-                <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
+    <section id="risks" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、风险因素</h2></div>
+        <div class="metric-card">
+            <ol class="space-y-4 list-decimal list-outside ml-5 text-sm text-slate-700">
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-base">AI 资本开支周期的执行与回收风险：</strong> TTM 净资本开支达 1,690 亿美元（同比增加 661 亿美元，公司称主要反映 AI 投资），带动 TTM 自由现金流（Non-GAAP）转为 -76 亿美元；本季折旧摊销 $19,988 M（上年同期 $15,227 M）。若 AWS 与 AI 需求增速放缓，折旧上升恐压缩利润率并延长自由现金流为负的期间。
+                </li>
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-base">非经营性收益的波动性：</strong> 本季净利润含 534 亿美元税前、非经营性其他收益（主要来自对 Anthropic 的投资），该类与投资相关的项目金额具不确定性，未来期间可能反向波动并显著影响列报净利润与 EPS，投资者应以营业利润衡量核心经营趋势。
+                </li>
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-base">公司自列宏观与供应风险：</strong> 指引明列汇率与能源价格波动、全球经济与地缘政治形势、关税与贸易政策、资源与供应波动（含内存芯片）、消费需求与支出（含衰退疑虑）等不确定因素；Q3 2026 指引并已计入约 80 个基点的汇率逆风。
+                </li>
+                <li class="pb-1">
+                    <strong class="text-base">竞争、监管与法律程序：</strong> 公司于前瞻性声明中自列竞争、政府监管与税务、诉讼与政府调查及其他法律程序等风险因素；云计算与 AI 领域的投资竞赛亦可能延长全行业高资本开支周期，影响回报实现节奏。
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="disclaimer" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免责声明</h2></div>
+        <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+            <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在从 disclaimer.html 线上安全读取最新免责声明组件...</p></div>
+        </div>
+    </section>
+
+</main>
+
+<div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
+            <div class="flex items-center">
+                <span class="text-2xl mr-2">🤖</span>
+                <div><h4 class="font-bold text-sm">研究员专属 AI 助理</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
             </div>
-            <div class="p-6">
-                <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查询的词汇：</div>
-                <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
-                <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
-                    <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                    AI 正在生成解释...
-                </div>
-                <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
-            </div>
-            <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
-                <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">关闭</button>
+            <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
+            <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
+                分析师您好！我是您的专属亚马逊 (AMZN) 数据辅助 AI。您可以随时询问我关于本季净销售额 $200,606 M（+20%）、AWS +37%（18 个季度以来最快、年化运行率 1,690 亿美元）、营业利润 $27,461 M（+43%），或 534 亿美元 Anthropic 相关非经营性收益对净利润 $62,647 M 的推高影响。
             </div>
         </div>
+        <div class="p-3 bg-white border-t border-slate-200">
+            <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
+                <input type="text" id="chat-input" placeholder="输入您的研究指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+                </button>
+            </form>
+        </div>
     </div>
+    <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
+        <span class="text-2xl">✨</span>
+    </button>
+</div>
 
-    <script>
-        function switchTab(e, tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(el => { el.classList.remove('active', 'border-blue-600', 'text-blue-600'); el.classList.add('text-slate-500'); });
-            document.getElementById(tabId).classList.add('active');
-            e.currentTarget.classList.remove('text-slate-500'); e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+<div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
+    <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
+        <span>✨</span> AI 白话文解释
+    </button>
+</div>
+<div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+            <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 术语解释</h3>
+            <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查询的词汇：</div>
+            <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
+            <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
+                <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                AI 正在生成解释...
+            </div>
+            <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
+        </div>
+        <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+            <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">关闭</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 注册全局图表实例缓存
+    window.charts = {};
+
+    function acceptPI() {
+        sessionStorage.setItem('pi_agreed', 'true');
+        document.getElementById('pi-modal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    function declinePI() {
+        document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;
+    }
+
+    function switchTab(e, tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(el => { 
+            el.classList.remove('active', 'border-blue-600', 'text-blue-600'); 
+            el.classList.add('text-slate-500'); 
+        });
+        document.getElementById(tabId).classList.add('active');
+        e.currentTarget.classList.remove('text-slate-500'); 
+        e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+
+        // 彻底修复 hidden 画布无宽高像素之 Chart.js 原生缺陷
+        if (tabId === 'financials') {
+            if (window.charts.amznSegment) window.charts.amznSegment.resize();
+            if (window.charts.amznProfit) window.charts.amznProfit.resize();
+        } else if (tabId === 'valuation') {
+            if (window.charts.amznValuation) window.charts.amznValuation.resize();
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // 专业投资者拦截门户验证
+        if (!sessionStorage.getItem('pi_agreed')) { 
+            const modal = document.getElementById('pi-modal'); 
+            if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; } 
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // Chart 1: Segment Revenue
-            new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
-                type: 'doughnut',
-                data: {
-                    labels: ['北美地区', '国际地区', '亚马逊云端 (AWS)'],
-                    datasets: [{
-                        data: [104.14, 39.79, 37.59],
-                        backgroundColor: ['rgba(245, 158, 11, 0.8)', 'rgba(59, 130, 246, 0.8)', 'rgba(16, 185, 129, 0.8)'],
-                        borderWidth: 0
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '60%' }
-            });
+        // 图表 1: AMZN 三大分部净销售额拆解 (Doughnut)
+        window.charts.amznSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ['北美 (North America)', '国际 (International)', 'AWS'],
+                datasets: [{
+                    data: [116177, 42197, 42232],
+                    backgroundColor: ['rgba(37, 99, 235, 0.85)', 'rgba(16, 185, 129, 0.85)', 'rgba(99, 102, 241, 0.85)'],
+                    borderWidth: 0
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
+        });
 
-            // Chart 2: Profitability
-            new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['总营收 (Total Rev)', '营业利润 (GAAP OpInc)', '净利润 (GAAP Net)'],
-                    datasets: [{
-                        label: '十亿美元 (Billion USD)',
-                        data: [181.52, 23.85, 30.26],
-                        backgroundColor: ['#94a3b8', '#3b82f6', '#10b981'],
+        // 图表 2: 近五季净销售额与营业利润率趋势 (Grouped Bar Chart)
+        window.charts.amznProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['Q2 2025', 'Q3 2025', 'Q4 2025', 'Q1 2026', 'Q2 2026'],
+                datasets: [
+                    {
+                        label: '净销售额 (百万美元)',
+                        data: [167702, 180169, 213386, 181519, 200606],
+                        backgroundColor: '#3b82f6',
                         borderRadius: 4
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } }, x: { grid: { display: false } } } }
-            });
-
-            // Chart 3: Valuation (Peers)
-            new Chart(document.getElementById('valuationChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['GOOGL (Alphabet)', 'AAPL (苹果)', 'AMZN (亚马逊)', 'MSFT (微软)'],
-                    datasets: [{ label: 'FY 2026 Forward P/E 倍数', data: [31.01, 30.49, 32.07, 24.42], backgroundColor: ['rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(245, 158, 11, 0.9)', 'rgba(148, 163, 184, 0.5)'], borderRadius: 4 }]
-                },
-                options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
-            });
-
-            // 读取外部 disclaimer.html 文件
-            fetch('disclaimer.html')
-                .then(response => {
-                    if (!response.ok) throw new Error('无法读取 disclaimer.html');
-                    return response.text();
-                })
-                .then(html => {
-                    const container = document.getElementById('disclaimer-container');
-                    if(container) container.innerHTML = html;
-                })
-                .catch(error => {
-                    console.error('载入免责声明失败:', error);
-                    const container = document.getElementById('disclaimer-container');
-                    if(container) container.innerHTML = '<div class="p-6 text-center text-red-500 font-bold">无法载入 disclaimer.html，请确认文件存在。</div>';
-                });
+                    },
+                    {
+                        label: '营业利润率 (Operating Margin %)',
+                        data: [11.4, 9.7, 11.7, 13.1, 13.7],
+                        backgroundColor: '#10b981',
+                        borderRadius: 4,
+                        yAxisID: 'percentageAxis'
+                    }
+                ]
+            },
+            options: { 
+                responsive: true, 
+                maintainAspectRatio: false, 
+                plugins: { legend: { position: 'bottom' } }, 
+                scales: { 
+                    y: { beginAtZero: true, position: 'left', grid: { color: '#f1f5f9' } },
+                    percentageAxis: { beginAtZero: true, max: 100, position: 'right', grid: { display: false } }
+                } 
+            }
         });
 
-        // AI Core
-        async function callGeminiAPI(prompt, systemInstruction) {
-            try {
-                const response = await fetch('/api/gemini', { 
-                    method: 'POST', headers: { 'Content-Type': 'application/json' }, 
-                    body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction }) 
-                });
-                const data = await response.json();
-                if (!response.ok) return `连线错误：${data.error || '未知错误'}`;
-                let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，无法产生有效回复。";
-                return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
-            } catch (error) { return `网络连线失败。(${error.message})`; }
-        }
-
-        // AI Chat
-        const standardPrompt = `你是 NTAM 内部研究员的专属 AI 助理。请协助分析师总结 亚马逊 (AMZN) Q1 2026 财报与 AI 云端数据。请用客观、精炼的简体中文回答，使用 HTML <b> 加粗重点，严禁使用 markdown 语法。`;
-        function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
-        function appendMessage(text, isUser) {
-            const msgDiv = document.createElement('div');
-            msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
-            msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv); 
-            document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
-        }
-        function showTypingIndicator() {
-            const ind = document.createElement('div'); ind.id = 'typing-indicator'; 
-            ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
-            ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
-            document.getElementById('chat-messages').appendChild(ind);
-        }
-        async function handleChatSubmit(e) {
-            e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
-            input.value = ''; appendMessage(text, true); showTypingIndicator();
-            const res = await callGeminiAPI(text, standardPrompt);
-            document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
-        }
-
-        // Highlight AI
-        let selectedText = "";
-        document.addEventListener('mouseup', function(e) {
-            const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
-            if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
-            if (text.length > 1 && text.length < 50) {
-                selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
-                tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${rect.top - 40}px`;
-                tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
-            } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+        // 图表 3: 美国大型科技巨头远期市盈率比较 (Horizontal Bar)
+        window.charts.amznValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['AMZN (亚马逊)', 'AAPL (苹果)', 'GOOGL (Alphabet)', 'MSFT (微软)'],
+                datasets: [{ 
+                    label: 'Next 4 Qtrs Est Forward P/E', 
+                    data: [25.87, 35.34, 24.83, 22.95], 
+                    backgroundColor: ['rgba(37, 99, 235, 0.95)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)'], 
+                    borderRadius: 4 
+                }]
+            },
+            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
         });
-        document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
-        async function explainSelectedTerm() {
-            document.getElementById('selection-tooltip').classList.add('hidden');
-            document.getElementById('explain-term-title').textContent = selectedText; 
-            document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
-            const res = await callGeminiAPI(`解释这个 AMZN 相关词汇：${selectedText}`, "你是金融专家，用最白话简体中文解释词汇。限 150 字，重点用 <b> 包覆。");
-            document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
-        }
-        function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
-        
-        // 🔮 沙盒生成脚本
-        async function generateCustomScenario() {
-            const inputEl = document.getElementById('custom-scenario-input'); const btnEl = document.getElementById('btn-generate-scenario'); 
-            const loadingEl = document.getElementById('scenario-loading'); const resultEl = document.getElementById('scenario-result');
-            const scenarioText = inputEl.value.trim(); if (!scenarioText) { alert('请先输入假设情境！'); return; }
-            btnEl.disabled = true; btnEl.classList.add('opacity-50'); loadingEl.classList.remove('hidden'); resultEl.classList.add('hidden');
-            
-            const sysPrompt = `你是华尔街资深分析师。基于 AMZN 本季 AWS 增长28%、资本支出大增 593亿美元、记忆体芯片短缺隐忧等事实，评估用户的“假设情境”。
-请简明扼要地回复：1. 初步评估 2. 对营收/利润潜在影响 3. 股价可能反应。
-使用简体中文，并用 HTML <b> 标签加粗重点，严禁使用 markdown 语法。总字数约 200 字。`;
 
-            const aiAnalysis = await callGeminiAPI(`推演这个情境：${scenarioText}`, sysPrompt);
-            loadingEl.classList.add('hidden'); btnEl.disabled = false; btnEl.classList.remove('opacity-50');
-            resultEl.innerHTML = `<h4 class="font-bold text-indigo-900 mb-3 border-b border-indigo-100 pb-2">🎯 AI 情境推演结果</h4>` + aiAnalysis; 
-            resultEl.classList.remove('hidden');
-        }
-    </script>
+        // 安全调阅外部 disclaimer.html 连动模组
+        fetch('disclaimer.html')
+            .then(response => {
+                if (!response.ok) throw new Error('无法载入 disclaimer.html');
+                return response.text();
+            })
+            .then(html => {
+                const container = document.getElementById('disclaimer-container');
+                if(container) container.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('安全连动调阅失败:', error);
+                const container = document.getElementById('disclaimer-container');
+                if(container) container.innerHTML = '<div class="p-6 text-center text-rose-600 font-bold">【安全连动错误】外部合规免责声明档案加载失败，请联络系统运维团队。</div>';
+            });
+    });
+
+    // NTAM 后端 AI 调度核心
+    async function callGeminiAPI(prompt, systemInstruction) {
+        try {
+            const response = await fetch('/api/gemini', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })
+            });
+            const data = await response.json();
+            if (!response.ok) return `连线错误：${data.error || '未知错误'}`;
+            let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，无法产生有效回复。";
+            return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+        } catch (error) { return `网络连线失败。(${error.message})`; }
+    }
+
+    // AI 助理 Widget 逻辑
+    const standardPrompt = `你是一位精通 NTAM 投资研究框架的资深 AI 助理。请针对使用者对亚马逊 (AMZN) 2026 年第二季度最新财报与大会摘要的提问，提供符合专业机构投资人水准、客观、高密度的定量与定性答复。重点用 <b> 标签包覆，严禁使用 markdown。`;
+    function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
+    function appendMessage(text, isUser) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
+        msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
+        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+    }
+    function showTypingIndicator() {
+        const ind = document.createElement('div'); ind.id = 'typing-indicator';
+        ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
+        ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
+        document.getElementById('chat-messages').appendChild(ind);
+    }
+    async function handleChatSubmit(e) {
+        e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
+        input.value = ''; appendMessage(text, true); showTypingIndicator();
+        const res = await callGeminiAPI(text, standardPrompt);
+        document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
+    }
+
+    // 划词解说机制
+    let selectedText = "";
+    document.addEventListener('mouseup', function(e) {
+        const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
+        if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
+        if (text.length > 1 && text.length < 50) {
+            selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
+            tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${window.scrollY + rect.top - 40}px`;
+            tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
+        } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+    });
+    document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
+    async function explainSelectedTerm() {
+        document.getElementById('selection-tooltip').classList.add('hidden');
+        document.getElementById('explain-term-title').textContent = selectedText;
+        document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
+        const res = await callGeminiAPI(`解释这个亚马逊 AMZN 财报相关词汇：${selectedText}`, "你是亚马逊 (Amazon) 云计算与电商行业专家，用最白话的专业简体中文解释词汇。限 150 字，重点使用 <b> 标签包覆。");
+        document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
+    }
+    function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
+</script>
 </body>
 </html>
