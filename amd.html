@@ -1,538 +1,597 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
+<!--
+═══════════════════════════════════════════════════════════════════
+ NTAM 報告頁黃金範本（繁體中文版）｜本頁：Advanced Micro Devices (AMD) Q2 2026
+═══════════════════════════════════════════════════════════════════
+ 使用規則：
+ 1. 產生任何新報告頁時，逐字複製本檔骨架，只修改「✏️ 替換區」。
+ 2. 「🔒 固定區」的結構、class、樣式、JS 邏輯一律逐位元保留。
+ 3. 全域替換：本檔內容為 Advanced Micro Devices (AMD)，新報告須把
+    「amd」→ 新 ticker（小寫）、chart 鍵名 amdSegment/amdProfit/amdValuation
+    → [ticker]Segment/[ticker]Profit/[ticker]Valuation，
+    並同步修改 switchTab 內的 .resize() 鍵名。
+ 4. 本檔 lang 固定 zh-TW（繁體）。簡/英版另以 amd-sc.html / amd-en.html
+    為骨架（字體：簡=Noto Sans SC、英=Inter）。
+ 5. 標記註解（🔒/✏️）不影響網頁顯示，輸出時可保留。
+ 6. v2（2026/07/17）：修正劃詞 tooltip 座標（fixed 定位不加 scrollY）、PI 警示三角
+    SVG path 錯字、AI Widget 送出防重複（唯一 typing ID＋按鈕鎖定與復原）、
+    Chart.js 鎖定版本 @4.5.1。
+ 7. 風險因素各點標題一律黑色粗體（strong class="text-base"），全站禁用
+    text-rose-700 紅字標題（含本註解所述舊規則，一併作廢）。
+═══════════════════════════════════════════════════════════════════
+-->
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>超微半導體 (AMD) 深度研究報告 | NTAM 資深分析師</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
-        .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
-        @media (min-width: 768px) { .chart-container { height: 400px; } }
-        .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
-        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
-        .tab-content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-        .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* AI Animations */
-        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
-        .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
-        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
-        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
-        @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
-        #selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- ✏️ 替換：頁面標題（公司名 + Ticker） -->
+<title>Advanced Micro Devices (AMD) 深度研究報告 | NTAM 資深分析師</title>
+<!-- 🔒 固定區：框架與字體引用（繁體版固定 Noto Sans TC） -->
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+.chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+@media (min-width: 768px) { .chart-container { height: 400px; } }
+.tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+.tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+.tab-content.active { display: block; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+.metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+.hide-scrollbar::-webkit-scrollbar { display: none; }
+.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+/* AI Animations */
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+.animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+.typing-dot { animation: typing 1.4s infinite ease-in-out both; }
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+@keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+#selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
+</style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
-
-    <div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
-        <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
-            <div class="text-center mb-6">
-                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77-1.333.192 3 1.732 3z" /></svg>
+<!-- 🔒 固定區開始：專業投資者 (PI) 三語攔截視窗（勿改任何文字與結構） -->
+<div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
+<div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
+<div class="text-center mb-6">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+</div>
+<h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明</h2>
+</div>
+<div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
+<p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
+</div>
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
+<p>本页面所含信息仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者身份。</p>
+</div>
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
+<p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
+<button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
+<button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">我確認 I Confirm</button>
+</div>
+</div>
+</div>
+<!-- 🔒 固定區結束：PI 攔截視窗 -->
+<header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<!-- 🔒 固定：Logo 連回首頁（檔名含 URL 編碼空格，勿改） -->
+<a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
+<img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+<span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+</a>
+<div class="flex flex-col">
+<!-- ✏️ 替換：公司名 + Ticker、副標題（財季） -->
+<h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Advanced Micro Devices <span class="text-blue-600">AMD</span></h1>
+<span class="text-sm text-slate-500 font-medium mt-1">資深分析師 營運與戰略報告 | Q2 2026 財報特輯</span>
+</div>
+</div>
+<div class="flex flex-col items-end space-y-3">
+<!-- ✏️ 替換：語言切換選單的三個檔名（換成新 ticker），selected 固定在繁體 -->
+<select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
+<option value="amd.html" selected>繁體中文</option>
+<option value="amd-sc.html">简体中文</option>
+<option value="amd-en.html">English</option>
+</select>
+<div class="flex items-center space-x-4">
+<div class="text-right hidden sm:block">
+<!-- ✏️ 替換：目標價（Source 徽章文字固定） -->
+<div class="text-xs text-slate-400 font-bold">共識目標價 (截至 2026/08/13) <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
+<div class="text-xl font-bold text-slate-800">$619.33 USD</div>
+</div>
+<!-- ✏️ 替換：評級文字（膠囊樣式固定） -->
+<div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">ANR 共識評級：買入</div>
+</div>
+</div>
+</div>
+<!-- 🔒 固定：6 個 Tabs 的名稱、順序、onclick 目標一律不變 -->
+<nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+    <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我們的觀點</button>
+    <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 營運與財務數據</button>
+    <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比較</button>
+    <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 華爾街觀點</button>
+    <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 風險因素</button>
+    <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免責聲明</button>
+</nav>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+<!-- ══════════ Tab 一：我們的觀點 ══════════ -->
+<section id="our-comments" class="tab-content active">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我們的觀點</h2>
+    </div>
+    <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
+        <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
+            <span class="text-3xl mr-3">🎯</span>
+            <h3 class="text-2xl font-black text-blue-600 tracking-tight">核心經營結論</h3>
+        </div>
+        <!-- ✏️ 替換區：3–4 點核心結論（每點 = 編號 + 粗標題 + 說明段，li 結構與 class 不變） -->
+        <ul class="space-y-6">
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">資料中心營收倍增帶動整體營收創單季新高，AI 加速器與伺服器 CPU 雙引擎並進</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">2Q26 總營收 115.36 億美元（+50% YoY／+13% QoQ），為公司披露之單季新高，並為連續第六個季度年增率逾 30%；其中資料中心營收 67.18 億美元（+107% YoY，創單季新高），占總營收比重由去年同期 42% 升至 58%。管理層指出 EPYC 伺服器 CPU 銷售年增逾 70%（企業端銷售創紀錄），Instinct 加速器營收年增逾一倍。我們認為 AI 需求正同步拉動加速器與伺服器 CPU 兩條成長曲線，公司營收結構已由單一產品週期轉為雙引擎驅動。</p>
                 </div>
-                <h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明</h2>
-            </div>
-            <div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
-                    <p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">Helios 機櫃方案本季啟動出貨，三大前沿 AI 客戶鎖定 2027 年放量</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">公司本季推出 Helios 機櫃級 AI 平台（整合 EPYC Venice CPU、Instinct MI450 系列 GPU、Pensando 網通與 ROCm 軟體），初始出貨預定 3Q26 啟動、4Q26 起放大。除 OpenAI 與 Meta 既有吉瓦級合作外，本季新增與 Anthropic 之策略合作（於 Helios 機櫃部署最多 2 吉瓦 MI450 系列 GPU，首個吉瓦自 2027 年上半年起部署），並擴大與 Microsoft 合作於 Azure 大規模部署 Helios。管理層預期 2026 年下半年伺服器營收年增逾 80%，2027 年資料中心分部營收年增逾一倍。我們認為訂單能見度已顯著提升，惟放量節奏仍繫於客戶資料中心建置進度。</p>
                 </div>
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
-                    <p>本网站及报告之内容仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者资格。</p>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">獲利結構同步升級：可比口徑毛利率與 EPS 擴張，現金部位創新高</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">Non-GAAP 毛利率 56%（可比口徑年增 200 個基點以上，主因資料中心營收占比提升）、Non-GAAP 營業利益 30.94 億美元（創單季新高，利益率 27%）；Non-GAAP 稀釋 EPS 1.66 美元（創單季新高，可比口徑年增 82%）。期末現金、約當現金及短期投資 131.11 億美元（創新高），單季自由現金流 15.58 億美元（利潤率 14%）。公司指引 3Q26 營收約 130 億美元（±3 億美元，中點年增約 41%）、Non-GAAP 毛利率約 56%。（可比口徑係剔除 2Q25 因美國出口管制認列之 8 億美元存貨及相關費用。）</p>
                 </div>
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
-                    <p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
+            </li>
+            <li class="flex items-start">
+                <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
+                <div>
+                    <strong class="text-slate-900 block mb-1 text-lg">共識目標價隱含約 +28.2% 上行空間，估值溢價落於 AI 半導體同業區間之內</strong>
+                    <p class="text-slate-600 text-sm leading-relaxed">以 2026/08/12 收盤價 US$482.93 計，Bloomberg ANR 共識目標價 US$619.33 隱含約 +28.2% 上行空間；共識評級為買入（買入 81.8%／持有 18.2%／賣出 0.0%）。以未來四季預估 EPS 計之市盈率為 43.16 倍，高於 NVDA 之 22.42 倍與 AVGO 之 26.44 倍、低於 INTC 之 62.35 倍（四家均為 Bloomberg EEO 調整後 EPS 口徑，基準一致）。我們認為溢價反映市場對 Helios／MI450 於 2027 年放量之預期；倘出貨爬坡、良率改善或客戶資料中心就緒進度不及預期，估值收縮風險將放大股價波動。</p>
                 </div>
-            </div>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
-                <button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
-                <button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">我確認 I Confirm</button>
-            </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- ══════════ Tab 二：營運與財務數據 ══════════ -->
+<section id="financials" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、營運與財務數據</h2></div>
+    <!-- ✏️ 替換區：4 個 KPI 卡（只換標題/數字/註記文字；border-t 顏色依序 emerald→blue→indigo→purple 固定） -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+        <div class="metric-card border-t-4 border-t-emerald-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">Q2 總營收 (Total Revenue)</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">$11,536 M</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +50% / QoQ +13%</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">Non-GAAP 毛利率 (Gross Margin)</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">56%</p>
+            <p class="text-sm text-blue-600 font-semibold mt-1">▲ 可比口徑 YoY +200bps 以上</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-indigo-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">Non-GAAP 稀釋 EPS</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">$1.66</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ 可比口徑 YoY +82%</p>
+        </div>
+        <div class="metric-card border-t-4 border-t-purple-500">
+            <h4 class="text-xs font-bold text-slate-500 uppercase">資料中心營收 (Data Center)</h4>
+            <p class="text-2xl font-bold text-slate-800 mt-1">$6,718 M</p>
+            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +107% / QoQ +16%</p>
         </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() { if (!sessionStorage.getItem('pi_agreed')) { const modal = document.getElementById('pi-modal'); if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; } } });
-        function acceptPI() { sessionStorage.setItem('pi_agreed', 'true'); document.getElementById('pi-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
-        function declinePI() { document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`; }
-    </script>
-
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex justify-between items-start">
-                <div class="flex flex-col">
-                    <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
-                        <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-8 w-auto" onerror="this.style.display='none'">
-                        <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
-                    </a>
-                    <div class="flex flex-col">
-                        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">超微半導體 <span class="text-blue-600">AMD</span></h1>
-                        <span class="text-sm text-slate-500 font-medium mt-1">資深分析師 營運與戰略報告 | Q1 2026</span>
-                    </div>
-                </div>
-                <div class="flex flex-col items-end space-y-3">
-                    <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
-                        <option value="amd.html" selected>繁體中文</option>
-                        <option value="amd-sc.html">简体中文</option>
-                        <option value="amd-en.html">English</option>
-                    </select>
-                    <div class="flex items-center space-x-4">
-                        <div class="text-right hidden sm:block">
-                            <div class="text-xs text-slate-400 font-bold">目標價 <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
-                            <div class="text-xl font-bold text-slate-800">$388.77 USD <sup class="text-xs text-slate-400 font-normal"></sup></div>
-                        </div>
-                        <div class="px-4 py-2 bg-blue-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">評級：買入 (Buy) <sup class="text-[10px] font-normal"></sup></div>
-                    </div>
-                </div>
-            </div>
-            
-            <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
-                <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我們的觀點</button>
-                <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 營運與財務數據</button>
-                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比較</button>
-                <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 華爾街觀點</button>
-                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 風險因素</button>
-                <button onclick="switchTab(event, 'sandbox')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-indigo-500 hover:text-indigo-700">六. AI 互動沙盒 ✨</button>
-                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">七. 免責聲明</button>
-            </nav>
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+        <div class="metric-card">
+            <!-- ✏️ 替換：圖 1 標題與說明（canvas id 固定） -->
+            <h3 class="text-lg font-bold text-slate-800 mb-2">Q2 2026 分部營收結構 (Million USD)</h3>
+            <p class="text-xs text-slate-500 mb-4">資料中心、客戶端與遊戲、嵌入式三分部營收合計即為合併總營收 11,536 百萬美元（無分部間抵銷項）；資料中心占比約 58%。</p>
+            <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
         </div>
-    </header>
-
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
-
-        <section id="our-comments" class="tab-content active">
-            <div class="mb-6">
-                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我們的觀點</h2>
-                <p class="mt-2 text-sm text-slate-500">基於 FY26 Q1 財報與法說會簡報，以下為 NTAM 研究團隊提煉之 AMD 核心結論：</p>
-            </div>
-            <div class="metric-card bg-slate-900 text-white border-none p-6 md:p-8">
-                <div class="flex items-center mb-6 border-b border-slate-700 pb-4">
-                    <span class="text-3xl mr-3">🎯</span>
-                    <h3 class="text-2xl font-black text-blue-400 tracking-tight">核心結論</h3>
-                </div>
-                <ul class="space-y-6">
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">1.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">營收雙位數強勁成長</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">2026 年第一季總營收達 102.5 億美元，年增率高達 38%，主要由資料中心業務與客戶端 PC 業務的強勁需求所驅動。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">2.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">資料中心業務爆發</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">資料中心營收達 58 億美元，年增 57%。此外，Meta 計畫部署高達 6 GW 的 AMD Instinct GPU，並將成為第 6 代 EPYC 處理器的首發客戶，顯示 AMD 在高階 AI 算力市場的市佔率正穩步提升。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">3.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">利潤率持續擴張</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">受惠於高毛利的資料中心營收佔比提升，Non-GAAP 毛利率提升至 55%。Non-GAAP 營業利潤達 25.4 億美元（年增 43%），展現了強大的營運槓桿效應。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">4.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">樂觀的未來指引</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">預期 2026 年第二季營收約為 112 億美元（上下浮動 3 億美元），隱含約 46% 的年增長率，反映 AI 基礎設施需求正持續加速。</p>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </section>
-
-        <section id="financials" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、營運與財務數據</h2></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                <div class="metric-card border-t-4 border-t-emerald-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">總營收 (Total Revenue)</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$10.25 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +38%</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-blue-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">資料中心營收 (Data Center)</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$5.78 B</p>
-                    <p class="text-sm text-blue-600 font-semibold mt-1">▲ YoY +57%</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-indigo-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">Non-GAAP 營業利潤</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$2.54 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +43%</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-purple-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">Non-GAAP 淨利潤</h4>
-                    <p class="text-xl font-bold text-slate-800 mt-1">$2.27 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ EPS $1.37 (+43%)</p>
-                </div>
-            </div>
-
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="metric-card">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">Q1 營收部門結構 (Billion USD)</h3>
-                    <p class="text-xs text-slate-500 mb-4">資料中心已成為最大營收與獲利引擎，Client 部門亦穩健復甦。</p>
-                    <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
-                </div>
-
-                <div class="metric-card">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">獲利能力指標 (Billion USD)</h3>
-                    <p class="text-xs text-slate-500 mb-4">本季展現出極強的營運槓桿，Non-GAAP 利潤率穩步擴張。</p>
-                    <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
-                </div>
-            </div>
-
-            <div class="metric-card mt-6">
-                <h3 class="text-lg font-bold text-slate-800 mb-4">各事業群營運明細 (FY26 Q1)</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-left border-collapse">
-                        <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
-                            <tr>
-                                <th class="px-6 py-3 font-bold">事業群 (Segment)</th>
-                                <th class="px-6 py-3 font-bold text-right">營收 (Million)</th>
-                                <th class="px-6 py-3 font-bold text-right">營業利潤 (Million)</th>
-                                <th class="px-6 py-3 font-bold text-right text-emerald-600">營收增長 (YoY)</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-slate-700">
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">資料中心 (Data Center)</td>
-                                <td class="px-6 py-4 text-right">$5,775</td>
-                                <td class="px-6 py-4 text-right">$1,599</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">+57%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">客戶端 (Client)</td>
-                                <td class="px-6 py-4 text-right">$2,885</td>
-                                <td class="px-6 py-4 text-right" rowspan="2">$575</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">+26%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">遊戲 (Gaming)</td>
-                                <td class="px-6 py-4 text-right">$720</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">+11%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">嵌入式 (Embedded)</td>
-                                <td class="px-6 py-4 text-right">$873</td>
-                                <td class="px-6 py-4 text-right">$338</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">+6%</td>
-                            </tr>
-                            <tr class="bg-slate-50 font-bold">
-                                <td class="px-6 py-4 text-slate-800">總計 (Total)</td>
-                                <td class="px-6 py-4 text-right text-slate-800">$10,253</td>
-                                <td class="px-6 py-4 text-right text-slate-800">$1,476 (GAAP)</td>
-                                <td class="px-6 py-4 text-right text-emerald-600">+38%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <section id="valuation" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比較</h2></div>
-            <div class="metric-card">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-lg font-bold text-slate-800">大型科技巨頭 (Magnificent 7) FY 2026 Forward P/E 倍數比較</h3>
-                </div>
-                <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
-                <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates <span class="font-normal"></span></p>
-            </div>
-        </section>
-
-        <section id="street-comments" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點</h2></div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">Morgan Stanley</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>強勁的資料中心動能：</b> 分析師看好 AMD 在 AI 基礎設施的加速需求，特別是資料中心營收年增達 57%。</li>
-                    </ul>
-                </div>
-
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">Goldman Sachs</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">買入 (Buy)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>目標價 450 美元：</b> 分析師給予買入評級並設定 450 美元目標價。預期隨著 MI450 系列與 Meta 等大客戶的擴大部署，伺服器成長將有意義地加速。</li>
-                    </ul>
-                </div>
-
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">UBS</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">買入 (Buy)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>利潤率擴張展現營運槓桿：</b> 第一季 Non-GAAP 毛利率提升至 55%，營業利潤年增 43%，展現了在投資加速成長的同時，依然能有效擴張獲利能力的強大營運模型。</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="risks" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、風險因素</h2></div>
-            <div class="metric-card">
-                <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-rose-700 text-base">供應鏈與製造風險：</strong> 依賴第三方製造與供應鏈物流，可能面臨記憶體等關鍵零組件短缺及製造良率問題。
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">地緣政治與法規限制：</strong> 政府行動、出口管制、關稅及貿易保護措施可能對產品銷售與營運造成重大影響。
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">高度競爭的市場與客戶集中度：</strong> 半導體產業具週期性且面臨激烈競爭，失去單一重要客戶可能對營收造成顯著衝擊。
-                    </li>
-                    <li class="pb-1">
-                        <strong class="text-base">軟體生態系依賴：</strong> 依賴微軟及其他軟體供應商支援開發運行於 AMD 產品上的軟體，若生態系整合不順將影響產品競爭力。
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <section id="sandbox" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-indigo-500 pl-3">六、AI 客製化情境推演 (Sandbox)</h2></div>
-            
-            <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 md:p-8 shadow-sm">
-                <div class="flex items-center mb-3">
-                    <span class="text-2xl mr-3">✨</span>
-                    <h3 class="text-xl font-black text-indigo-900 tracking-tight">AI 即時沙盤推演</h3>
-                </div>
-                <p class="text-sm text-indigo-700 mb-6 leading-relaxed">請在下方輸入您假設的產業變數（例如：HBM 記憶體供應嚴重短缺、Meta 擴大部署 Instinct GPU 計畫），AI 將基於 AMD 當前的資料中心營收佔比與獲利結構，為您即時推演潛在影響。</p>
-                <div class="flex flex-col md:flex-row gap-3">
-                    <input type="text" id="custom-scenario-input" placeholder="試試輸入：如果 Meta 的 6 GW Instinct GPU 部署計畫提前完成，對 AMD 資料中心營收的影響..." class="flex-1 border border-indigo-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-inner">
-                    <button onclick="generateCustomScenario()" id="btn-generate-scenario" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg text-sm font-bold shadow-md transition-all whitespace-nowrap">
-                        開始推演
-                    </button>
-                </div>
-                <div id="scenario-loading" class="hidden mt-6 text-sm text-indigo-600 font-bold flex items-center bg-indigo-100/50 p-4 rounded-lg">
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                    AI 正在透過 Vercel 後端計算數據...
-                </div>
-                <div id="scenario-result" class="mt-6 hidden bg-white p-6 rounded-xl border border-indigo-200 text-sm text-slate-800 leading-relaxed shadow-sm"></div>
-            </div>
-        </section>
-
-        <section id="disclaimer" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">七、免責聲明</h2></div>
-            <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
-                <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在從 disclaimer.html 載入免責聲明，請稍候...</p></div>
-            </div>
-        </section>
-
-    </main>
-
-    <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
-            <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
-                <div class="flex items-center">
-                    <span class="text-2xl mr-2">🤖</span>
-                    <div><h4 class="font-bold text-sm">研究員專屬 AI 助理</h4><p class="text-xs text-blue-200">Powered by Vercel & Gemini ✨</p></div>
-                </div>
-                <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
-            </div>
-            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
-                <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
-                    分析師您好！我是您的專屬 超微半導體 (AMD) 報告輔助 AI。您可以隨時詢問我關於本次資料中心營收大增 57%、Meta 的 Instinct GPU 部署計畫，或是供應鏈的潛在風險。
-                </div>
-            </div>
-            <div class="p-3 bg-white border-t border-slate-200">
-                <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
-                    <input type="text" id="chat-input" placeholder="輸入您的指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
-                    </button>
-                </form>
-            </div>
-        </div>
-        <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
-            <span class="text-2xl">✨</span>
-        </button>
-    </div>
-
-    <div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
-        <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
-            <span>✨</span> AI 白話文解釋
-        </button>
-    </div>
-    <div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
-            <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
-                <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 術語解釋</h3>
-                <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
-            </div>
-            <div class="p-6">
-                <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查詢的詞彙：</div>
-                <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
-                <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
-                    <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                    AI 正在生成解釋...
-                </div>
-                <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
-            </div>
-            <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
-                <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">關閉</button>
-            </div>
+        <div class="metric-card">
+            <!-- ✏️ 替換：圖 2 標題與說明（canvas id 固定） -->
+            <h3 class="text-lg font-bold text-slate-800 mb-2">Q2 2026 三大分部營收與分部營業利益率 (Million USD / %)</h3>
+            <p class="text-xs text-slate-500 mb-4">資料中心、客戶端與遊戲、嵌入式分部營業利益率分別為 31%、15%、40%。註：圖示為分部口徑之營業利益率，未含未分配至各分部之 All Other 項目（2Q26 為 -1,081 百萬美元，主要為收購相關無形資產攤銷、股權激勵及收購相關費用），不可與合併營業利益率直接比較。</p>
+            <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
         </div>
     </div>
-
-    <script>
-        function switchTab(e, tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(el => { el.classList.remove('active', 'border-blue-600', 'text-blue-600'); el.classList.add('text-slate-500'); });
-            document.getElementById(tabId).classList.add('active');
-            e.currentTarget.classList.remove('text-slate-500'); e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+    <div class="metric-card mt-6">
+        <h3 class="text-lg font-bold text-slate-800 mb-4">核心財務數據綜合對比明細 Table (GAAP vs Non-GAAP)</h3>
+        <div class="overflow-x-auto">
+            <!-- ✏️ 替換區：表格內容（每列固定 4 格：科目 / GAAP / Non-GAAP / 變動率；末列灰底彙總列） -->
+            <table class="w-full text-sm text-left border-collapse">
+                <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
+                    <tr>
+                        <th class="px-6 py-3 font-bold">會計明細科目項目</th>
+                        <th class="px-6 py-3 font-bold text-right">2Q26 GAAP</th>
+                        <th class="px-6 py-3 font-bold text-right text-blue-600">2Q26 Non-GAAP</th>
+                        <th class="px-6 py-3 font-bold text-right text-emerald-600">Non-GAAP YoY 同比變動率</th>
+                    </tr>
+                </thead>
+                <tbody class="text-slate-700">
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">季度總營收 (Revenue)</td>
+                        <td class="px-6 py-4 text-right">$11,536 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$11,536 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-emerald-500">+50%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">毛利與毛利率 (Gross Profit &amp; Margin)</td>
+                        <td class="px-6 py-4 text-right">$6,203 M (54%)</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$6,488 M (56%)</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+13 ppts</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">營業費用 (Operating Expenses)</td>
+                        <td class="px-6 py-4 text-right">$4,213 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$3,394 M</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+40%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">營業利益與利益率 (Operating Income &amp; Margin)</td>
+                        <td class="px-6 py-4 text-right">$1,990 M (17%)</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$3,094 M (27%)</td>
+                        <td class="px-6 py-4 text-right text-emerald-500">+245%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">淨利 (Net Income)</td>
+                        <td class="px-6 py-4 text-right">$2,297 M</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$2,760 M</td>
+                        <td class="px-6 py-4 text-right text-emerald-600">+253%</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                        <td class="px-6 py-4 font-medium">稀釋每股盈餘 (Diluted EPS)</td>
+                        <td class="px-6 py-4 text-right">$1.38</td>
+                        <td class="px-6 py-4 text-right font-bold text-blue-600">$1.66</td>
+                        <td class="px-6 py-4 text-right text-emerald-600">+246%</td>
+                    </tr>
+                    <tr class="bg-slate-50 font-bold">
+                        <td class="px-6 py-4 text-slate-800">其他列報營運指標 (Reported)</td>
+                        <td class="px-6 py-4 text-right text-slate-500">調整後 EBITDA: $3,315 M</td>
+                        <td class="px-6 py-4 text-right text-blue-600">自由現金流: $1,558 M (利潤率 14%)</td>
+                        <td class="px-6 py-4 text-right text-purple-600">現金及短期投資: $13,111 M</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <p class="text-xs text-slate-400 mt-3 leading-relaxed">註 1：Non-GAAP YoY 以 2Q25 列報 Non-GAAP 數為基期；2Q25 基期含因美國出口管制認列之 8 億美元存貨及相關費用，剔除該費用之可比口徑下，Non-GAAP 毛利率年增 200 個基點以上、Non-GAAP 稀釋 EPS 年增 82%。註 2：調整後 EBITDA 與自由現金流為公司提供之補充性 Non-GAAP 指標。</p>
+    </div>
+</section>
+<!-- ══════════ Tab 三：估值比較 ══════════ -->
+<section id="valuation" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比較</h2></div>
+    <div class="metric-card">
+        <div class="flex justify-between items-center mb-4">
+            <!-- ✏️ 替換：圖表標題（行業描述可換，Forward P/E 字樣保留） -->
+            <h3 class="text-lg font-bold text-slate-800">AI 半導體同業遠期市盈率 (Next 4 Qtrs Est Forward P/E) 倍數橫向長條圖比較（截至 2026/08/13）</h3>
+        </div>
+        <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
+        <!-- 🔒 固定：資料來源標註 -->
+        <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
+    </div>
+</section>
+<!-- ══════════ Tab 四：華爾街觀點 ══════════ -->
+<section id="street-comments" class="tab-content">
+    <div class="mb-6">
+        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點</h2>
+        <!-- ✏️ 替換：導言 -->
+        <p class="mt-2 text-sm text-slate-500">（評級與目標價：Bloomberg ANR，截至 2026/08/13）</p>
+    </div>
+    <!-- ✏️ 替換區：3 家投行卡片（投行名、評級徽章、2 點觀點）。
+         評級徽章配色規則：買入 Buy = bg-emerald-100 text-emerald-800；
+         增持 Overweight = bg-blue-100 text-blue-800；其他評級先與使用者確認。 -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3>
+                <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">中性 (Neutral)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>評級中性（目標價 465 美元）：</b> 在資料中心營收年增 107%、Helios 本季啟動出貨之基本面下，評級處於中性檔位，反映對現階段風險回報趨於均衡之立場。</li>
+                <li><b>法說會提問聚焦伺服器 CPU 供給與新製程爬坡：</b> 其分析師於財報電話會議關注伺服器 CPU 供應緊俏之延續性，以及 2 奈米新節點產能爬坡之執行挑戰；管理層回應 2027 年伺服器供給可望優於 2026 年，且 chiplet 架構可降低新節點之晶圓需求。</li>
+            </ul>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">瑞銀 (UBS)</h3>
+                <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">買入 (Buy)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>評級買入（目標價 730 美元）：</b> 為本次選取三家投行中最積極之立場，目標價亦為三家之最高者。</li>
+                <li><b>法說會提問聚焦資料中心成長節奏與長期市場空間：</b> 其分析師於電話會議追問 Q3／Q4 伺服器 CPU 與資料中心 AI 之成長組成，以及公司能否超越約 40% 之市場年複合增速；管理層明確回應公司整體營收成長將高於市場增速。</li>
+            </ul>
+        </div>
+        <div class="metric-card border-t-4 border-t-blue-600">
+            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                <h3 class="font-black text-slate-800">摩根大通 (JP Morgan)</h3>
+                <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">中性 (Neutral)</span>
+            </div>
+            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                <li><b>評級中性（目標價 550 美元）：</b> 與摩根士丹利同屬中性立場，顯示部分大型投行於股價大幅上漲後（過去十二個月報酬 161.9%，Bloomberg ANR）採取較審慎之風險回報評估。</li>
+                <li><b>中性陣營著眼量產驗證與估值消化：</b> 我們認為，中性評級群體傾向以 Helios 於 2026 年下半年之實際出貨爬坡、良率改善與 2027 年放量執行數據，作為重新評價之依據。</li>
+            </ul>
+        </div>
+    </div>
+</section>
+<!-- ══════════ Tab 五：風險因素 ══════════ -->
+<section id="risks" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、風險因素</h2></div>
+    <div class="metric-card">
+        <!-- ✏️ 替換區：3–4 點風險（各點 strong 一律黑色粗體 class="text-base"，嚴禁 text-rose-700 紅字） -->
+        <ol class="space-y-4 list-decimal list-outside ml-5 text-sm text-slate-700">
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-base">出口管制與地緣政治風險：</strong> 美國政府對 Instinct MI308 資料中心 GPU 之出口管制，曾致公司於 2Q25 認列 8 億美元存貨及相關費用；出口法規、關稅與授權要求之後續變動，仍可能影響特定產品線之可銷售範圍與獲利表現。
+            </li>
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-base">供應鏈與記憶體成本壓力：</strong> 伺服器 CPU 供應於 2026 年上半年持續緊俏，Helios 放量倚賴 2 奈米新節點、先進封裝、基板與 HBM 記憶體產能到位；管理層並指出記憶體與元件成本上升已對 PC 與顯示卡需求構成壓力，公司預期下半年 PC 市場走軟。
+            </li>
+            <li class="pb-3 border-b border-slate-100">
+                <strong class="text-base">大型客戶集中與資料中心建置節奏：</strong> 2027 年資料中心 AI 之高成長預期，高度倚賴 OpenAI、Meta、Anthropic 等前沿 AI 客戶及雲端夥伴之吉瓦級部署；倘客戶資料中心之土地、電力與機櫃就緒進度延宕，出貨與收入認列節奏將受影響。
+            </li>
+            <li class="pb-1">
+                <strong class="text-base">競爭與產品執行風險：</strong> AI 加速器與伺服器 CPU 市場競爭激烈；Helios 屬高複雜度系統級產品，管理層表示初期良率仍在爬坡改善；同時遊戲業務（2Q26 年減 31%）處於主機週期後段，短期仍為分部營收之拖累。
+            </li>
+        </ol>
+    </div>
+</section>
+<!-- ══════════ Tab 六：免責聲明 ══════════ -->
+<!-- 🔒 固定區：免責聲明以 fetch 載入，嚴禁寫死內文 -->
+<section id="disclaimer" class="tab-content">
+    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免責聲明</h2></div>
+    <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+        <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在從 disclaimer.html 線上安全讀取最新免責聲明組件...</p></div>
+    </div>
+</section>
+</main>
+<!-- 🔒 固定區開始：右下角 AI 助理 Widget（結構固定；僅 ✏️ 標示處換文字） -->
+<div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+<div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+<div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
+<div class="flex items-center">
+<span class="text-2xl mr-2">🤖</span>
+<div><h4 class="font-bold text-sm">研究員專屬 AI 助理</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
+</div>
+<button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+</button>
+</div>
+<div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
+<!-- ✏️ 替換：Widget 歡迎詞（公司名 + 本期亮點數字，數字須與內文一致） -->
+<div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
+分析師您好！我是您的專屬 Advanced Micro Devices (AMD) 數據輔助 AI。您可以隨時詢問我關於本季營收 115.36 億美元（+50% YoY）、資料中心營收 67.18 億美元（+107% YoY）、Non-GAAP 毛利率 56%，或 3Q26 營收指引約 130 億美元等本期亮點。
+</div>
+</div>
+<div class="p-3 bg-white border-t border-slate-200">
+<form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
+<input type="text" id="chat-input" placeholder="輸入您的研究指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
+<button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+</button>
+</form>
+</div>
+</div>
+<button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
+<span class="text-2xl">✨</span>
+</button>
+</div>
+<div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
+<button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
+<span>✨</span> AI 白話文解釋
+</button>
+</div>
+<div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
+<div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+<div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+<h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 術語解釋</h3>
+<button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
+<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+</button>
+</div>
+<div class="p-6">
+<div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查詢的詞彙：</div>
+<div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
+<div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
+<svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+AI 正在生成解釋...
+</div>
+<div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
+</div>
+<div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+<button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">關閉</button>
+</div>
+</div>
+</div>
+<!-- 🔒 固定區結束：AI Widget / 劃詞解釋 -->
+<script>
+// 🔒 註冊全域圖表實例快取
+window.charts = {};
+// 🔒 PI 攔截視窗控制函式（依 index.html 標準寫法）
+function acceptPI() {
+    sessionStorage.setItem('pi_agreed', 'true');
+    document.getElementById('pi-modal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+}
+function declinePI() {
+    document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;
+}
+// 🔒 Tab 切換邏輯（✏️ 僅 resize 的圖表鍵名需隨新 ticker 更名）
+function switchTab(e, tabId) {
+    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(el => {
+        el.classList.remove('active', 'border-blue-600', 'text-blue-600');
+        el.classList.add('text-slate-500');
+    });
+    document.getElementById(tabId).classList.add('active');
+    e.currentTarget.classList.remove('text-slate-500');
+    e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+    // 徹底修復 hidden 畫布無寬高像素之 Chart.js 原生缺陷
+    if (tabId === 'financials') {
+        if (window.charts.amdSegment) window.charts.amdSegment.resize();
+        if (window.charts.amdProfit) window.charts.amdProfit.resize();
+    } else if (tabId === 'valuation') {
+        if (window.charts.amdValuation) window.charts.amdValuation.resize();
+    }
+}
+document.addEventListener('DOMContentLoaded', function() {
+    // 🔒 專業投資者攔截門戶驗證
+    if (!sessionStorage.getItem('pi_agreed')) {
+        const modal = document.getElementById('pi-modal');
+        if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
+    }
+    // ✏️ 圖表 1：營收拆解 (Doughnut)。鍵名改 [ticker]Segment；labels/data 換新數據；顏色與 options 固定
+    window.charts.amdSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
+        type: 'doughnut',
+        data: {
+            labels: ['資料中心 (Data Center)', '客戶端與遊戲 (Client & Gaming)', '嵌入式 (Embedded)'],
+            datasets: [{
+                data: [6718, 3841, 977],
+                backgroundColor: ['rgba(37, 99, 235, 0.85)', 'rgba(16, 185, 129, 0.85)', 'rgba(99, 102, 241, 0.85)'],
+                borderWidth: 0
+            }]
+        },
+        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
+    });
+    // ✏️ 圖表 2：業務單位表現 (Grouped Bar 雙軸)。鍵名改 [ticker]Profit；labels/data 換新數據；顏色 #3b82f6 / #10b981 與雙軸設定固定
+    window.charts.amdProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['資料中心', '客戶端與遊戲', '嵌入式'],
+            datasets: [
+                {
+                    label: '分部營收 (百萬美元)',
+                    data: [6718, 3841, 977],
+                    backgroundColor: '#3b82f6',
+                    borderRadius: 4
+                },
+                {
+                    label: '分部營業利益率 (Segment Operating Margin %)',
+                    data: [31, 15, 40],
+                    backgroundColor: '#10b981',
+                    borderRadius: 4,
+                    yAxisID: 'percentageAxis'
+                }
+            ]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: { legend: { position: 'bottom' } },
+            scales: {
+                y: { beginAtZero: true, position: 'left', grid: { color: '#f1f5f9' } },
+                percentageAxis: { beginAtZero: true, max: 100, position: 'right', grid: { display: false } }
+            }
         }
-
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // Chart 1: Segment Revenue
-            new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
-                type: 'doughnut',
-                data: {
-                    labels: ['資料中心 (Data Center)', '客戶端 (Client)', '遊戲 (Gaming)', '嵌入式 (Embedded)'],
-                    datasets: [{
-                        data: [5.775, 2.885, 0.720, 0.873],
-                        backgroundColor: ['rgba(59, 130, 246, 0.8)', 'rgba(16, 185, 129, 0.8)', 'rgba(245, 158, 11, 0.8)', 'rgba(139, 92, 246, 0.8)'],
-                        borderWidth: 0
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '60%' }
-            });
-
-            // Chart 2: Profitability
-            new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['總營收 (Total Rev)', 'GAAP 營業利潤', 'GAAP 淨利潤'],
-                    datasets: [{
-                        label: '十億美元 (Billion USD)',
-                        data: [10.25, 1.48, 1.38],
-                        backgroundColor: ['#94a3b8', '#3b82f6', '#10b981'],
-                        borderRadius: 4
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } }, x: { grid: { display: false } } } }
-            });
-
-            // Chart 3: Valuation (Peers)
-            new Chart(document.getElementById('valuationChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['GOOGL (Alphabet)', 'AAPL (蘋果)', 'AMZN (亞馬遜)', 'AMD (超微半導體)'],
-                    datasets: [{ label: 'FY 2026 Forward P/E 倍數', data: [24.42, 28.60, 32.07, 50.93], backgroundColor: ['rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(37, 99, 235, 0.9)'], borderRadius: 4 }]
-                },
-                options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
-            });
-
-            // 讀取外部 disclaimer.html 檔案
-            fetch('disclaimer.html')
-                .then(response => {
-                    if (!response.ok) throw new Error('無法讀取 disclaimer.html');
-                    return response.text();
-                })
-                .then(html => {
-                    const container = document.getElementById('disclaimer-container');
-                    if(container) container.innerHTML = html;
-                })
-                .catch(error => {
-                    console.error('載入免責聲明失敗:', error);
-                    const container = document.getElementById('disclaimer-container');
-                    if(container) container.innerHTML = '<div class="p-6 text-center text-red-500 font-bold">無法載入 disclaimer.html，請確認檔案存在。</div>';
-                });
+    });
+    // ✏️ 圖表 3：Forward P/E 橫向比較。鍵名改 [ticker]Valuation；
+    //    ⚠️ backgroundColor 陣列中「藍色 rgba(37,99,235,0.95)」的位置必須對應主角公司在 labels 中的位置，其餘同業一律灰色
+    window.charts.amdValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
+        type: 'bar',
+        data: {
+            labels: ['AMD (超微)', 'INTC (英特爾)', 'AVGO (博通)', 'NVDA (輝達)'],
+            datasets: [{
+                label: 'Next 4 Qtrs Est Forward P/E',
+                data: [43.16, 62.35, 26.44, 22.42],
+                backgroundColor: ['rgba(37, 99, 235, 0.95)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)'],
+                borderRadius: 4
+            }]
+        },
+        options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
+    });
+    // 🔒 安全調閱外部 disclaimer.html 連動模組（嚴禁寫死免責聲明）
+    fetch('disclaimer.html')
+        .then(response => {
+            if (!response.ok) throw new Error('無法載入 disclaimer.html');
+            return response.text();
+        })
+        .then(html => {
+            const container = document.getElementById('disclaimer-container');
+            if(container) container.innerHTML = html;
+        })
+        .catch(error => {
+            console.error('安全連動調閱失敗:', error);
+            const container = document.getElementById('disclaimer-container');
+            if(container) container.innerHTML = '<div class="p-6 text-center text-rose-600 font-bold">【安全連動錯誤】外部合規免責聲明檔案加載失敗，請聯絡系統運維團隊。</div>';
         });
-
-        // AI Core
-        async function callGeminiAPI(prompt, systemInstruction) {
-            try {
-                const response = await fetch('/api/gemini', { 
-                    method: 'POST', headers: { 'Content-Type': 'application/json' }, 
-                    body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction }) 
-                });
-                const data = await response.json();
-                if (!response.ok) return `連線錯誤：${data.error || '未知錯誤'}`;
-                let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，無法產生有效回覆。";
-                return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
-            } catch (error) { return `網路連線失敗。(${error.message})`; }
-        }
-
-        // AI Chat
-        const standardPrompt = `你是 NTAM 內部研究員的專屬 AI 助理。請協助分析師總結 超微半導體 (AMD) Q1 2026 財報數據。請用客觀、精煉的繁體中文回答，使用 HTML <b> 加粗重點，嚴禁使用 markdown 語法。`;
-        function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
-        function appendMessage(text, isUser) {
-            const msgDiv = document.createElement('div');
-            msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
-            msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv); 
-            document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
-        }
-        function showTypingIndicator() {
-            const ind = document.createElement('div'); ind.id = 'typing-indicator'; 
-            ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
-            ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
-            document.getElementById('chat-messages').appendChild(ind);
-        }
-        async function handleChatSubmit(e) {
-            e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
-            input.value = ''; appendMessage(text, true); showTypingIndicator();
-            const res = await callGeminiAPI(text, standardPrompt);
-            document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
-        }
-
-        // Highlight AI
-        let selectedText = "";
-        document.addEventListener('mouseup', function(e) {
-            const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
-            if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
-            if (text.length > 1 && text.length < 50) {
-                selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
-                tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${rect.top - 40}px`;
-                tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
-            } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+});
+// 🔒 NTAM 後端 AI 調度核心（端點 /api/gemini 與後處理邏輯嚴禁更動）
+async function callGeminiAPI(prompt, systemInstruction) {
+    try {
+        const response = await fetch('/api/gemini', {
+            method: 'POST', headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })
         });
-        document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
-        async function explainSelectedTerm() {
-            document.getElementById('selection-tooltip').classList.add('hidden');
-            document.getElementById('explain-term-title').textContent = selectedText; 
-            document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
-            const res = await callGeminiAPI(`解釋這個 AMD 相關詞彙：${selectedText}`, "你是金融專家，用最白話繁體中文解釋詞彙。限 150 字，重點用 <b> 包覆。");
-            document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
-        }
-        function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
-        
-        // 🔮 沙盒生成腳本
-        async function generateCustomScenario() {
-            const inputEl = document.getElementById('custom-scenario-input'); const btnEl = document.getElementById('btn-generate-scenario'); 
-            const loadingEl = document.getElementById('scenario-loading'); const resultEl = document.getElementById('scenario-result');
-            const scenarioText = inputEl.value.trim(); if (!scenarioText) { alert('請先輸入假設情境！'); return; }
-            btnEl.disabled = true; btnEl.classList.add('opacity-50'); loadingEl.classList.remove('hidden'); resultEl.classList.add('hidden');
-            
-            const sysPrompt = `你是華爾街資深分析師。基於 AMD 本季資料中心營收大增 57%、Meta 大規模採購 Instinct GPU、面臨供應鏈風險等事實，評估用戶的「假設情境」。
-請簡明扼要地回覆：1. 初步評估 2. 對營收/利潤潛在影響 3. 股價可能反應。
-使用繁體中文，並用 HTML <b> 標籤加粗重點，嚴禁使用 markdown 語法。總字數約 200 字。`;
-
-            const aiAnalysis = await callGeminiAPI(`推演這個情境：${scenarioText}`, sysPrompt);
-            loadingEl.classList.add('hidden'); btnEl.disabled = false; btnEl.classList.remove('opacity-50');
-            resultEl.innerHTML = `<h4 class="font-bold text-indigo-900 mb-3 border-b border-indigo-100 pb-2">🎯 AI 情境推演結果</h4>` + aiAnalysis; 
-            resultEl.classList.remove('hidden');
-        }
-    </script>
+        const data = await response.json();
+        if (!response.ok) return `連線錯誤：${data.error || '未知錯誤'}`;
+        let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，無法產生有效回覆。";
+        return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+    } catch (error) { return `網路連線失敗。(${error.message})`; }
+}
+// ✏️ AI 助理 systemPrompt（公司名與財季須換成新報告；語言須與本頁一致）
+const standardPrompt = `你是一位精通 NTAM 投資研究框架的資深 AI 助理。請針對使用者對 Advanced Micro Devices (AMD) 2026年最新財報與大會摘要的提問，提供符合專業機構投資人水準、客觀、高密度的定量與定性答覆。重點用 <b> 標籤包覆，嚴禁使用 markdown。`;
+// 🔒 Widget 互動邏輯（勿改）
+function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
+function appendMessage(text, isUser) {
+    const msgDiv = document.createElement('div');
+    msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
+    msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
+    document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+}
+function showTypingIndicator() {
+    const ind = document.createElement('div'); ind.id = `typing-indicator-${Date.now()}`;
+    ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
+    ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
+    document.getElementById('chat-messages').appendChild(ind);
+    return ind.id;
+}
+async function handleChatSubmit(e) {
+    e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
+    const sendBtn = e.target.querySelector('button[type="submit"]'); if (sendBtn && sendBtn.disabled) return;
+    if (sendBtn) { sendBtn.disabled = true; sendBtn.classList.add('opacity-50', 'cursor-not-allowed'); }
+    input.value = ''; appendMessage(text, true); const typingId = showTypingIndicator();
+    try {
+        const res = await callGeminiAPI(text, standardPrompt);
+        document.getElementById(typingId)?.remove(); appendMessage(res, false);
+    } finally {
+        document.getElementById(typingId)?.remove();
+        if (sendBtn) { sendBtn.disabled = false; sendBtn.classList.remove('opacity-50', 'cursor-not-allowed'); }
+    }
+}
+// 🔒 劃詞解說機制（勿改）
+let selectedText = "";
+document.addEventListener('mouseup', function(e) {
+    const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
+    if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
+    if (text.length > 1 && text.length < 50) {
+        selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
+        tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${Math.max(8, rect.top - 40)}px`;
+        tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
+    } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+});
+document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
+async function explainSelectedTerm() {
+    document.getElementById('selection-tooltip').classList.add('hidden');
+    document.getElementById('explain-term-title').textContent = selectedText;
+    document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
+    // ✏️ 劃詞解釋 prompt 與 systemInstruction：公司名須換成新報告，其餘格式（限 150 字、<b> 標籤、語言）保留
+    const res = await callGeminiAPI(`解釋這個 Advanced Micro Devices AMD 財報相關詞彙：${selectedText}`, "你是 Advanced Micro Devices 半導體與 AI 運算專家，用最白話的專業繁體中文解釋詞彙。限 150 字，重點使用 <b> 標籤包覆。");
+    document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
+}
+function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
+</script>
 </body>
 </html>
