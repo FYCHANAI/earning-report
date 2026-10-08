@@ -157,9 +157,9 @@
     }
   },
   "sha256": {
-    "mu.html": "9b1f8e1a850e4e691a091b4f43abf661bae56e261c8df979341cd99a61f472dc",
-    "mu-sc.html": "8172f3b8adfe2acd238737dd2d08b72ee034ab05cd7811b66b297f50ed7e863f",
-    "mu-en.html": "dab7e18b9a483caa1ac9c6ac7ee2c787c574a29ea3b0914cdc44044908f975d2",
+    "mu.html": "e155de93b5735042d3cf927065401e2516be4dfa4e0eead145fb2baefe0b909c",
+    "mu-sc.html": "e228bb95c354dbd415b16908d292cc5e2e29e957e616c31c077bd3fa9d784f27",
+    "mu-en.html": "c427e657a7a9549d4bbdc43b937703e25eadcf7989eee53f7820471d62745a5c",
     "index.html": "84cc7e4a169bcaf08c619164c0c298cb0f309ba4f5aeb2fb9ff1b516fdb238da"
   },
   "limitations": [
@@ -183,6 +183,35 @@
       "Financial, valuation, risk and disclaimer sections unchanged",
       "Broker prices, dates and implied returns unchanged",
       "Homepage unchanged"
+    ]
+  },
+  "broker_priority_revision": {
+    "requested_on": "2026-10-08",
+    "baseline": "55240cb4442e3908217f4b2a42c0662242450461",
+    "our_views_replacements_per_language": 2,
+    "selected_brokers": [
+      "UBS",
+      "Morgan Stanley",
+      "JP Morgan"
+    ],
+    "ratings": [
+      "Buy",
+      "Overweight",
+      "Overweight"
+    ],
+    "new_card": {
+      "source": "Owner-provided MU ANR screenshot, row 16; independently checked by two reviewers",
+      "analyst": "Harlan Sur",
+      "date": "2026-10-01",
+      "target_usd": 1540,
+      "reference_price_usd": 1088,
+      "implied_return_pct": 41.5
+    },
+    "checks": [
+      "Raw HTML tags, attributes, CSS and fixed JavaScript preserved except company prompt",
+      "Financial, valuation, risk and disclaimer sections unchanged",
+      "Homepage unchanged",
+      "Existing three-card layout preserved"
     ]
   }
 }
