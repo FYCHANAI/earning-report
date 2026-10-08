@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Advanced Micro Devices (AMD) 深度研究报告 | NTAM 资深分析师</title>
+<title>超威半导体 (AMD) 深度研究报告 | NTAM 资深分析师</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
@@ -69,7 +69,7 @@
                     <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
                 </a>
                 <div class="flex flex-col">
-                    <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Advanced Micro Devices <span class="text-blue-600">AMD</span></h1>
+                    <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">超威半导体 <span class="text-blue-600">AMD</span></h1>
                     <span class="text-sm text-slate-500 font-medium mt-1">资深分析师 运营与战略报告 | Q2 2026 财报特辑</span>
                 </div>
             </div>
@@ -340,7 +340,7 @@
         </div>
         <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
             <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
-                分析师您好！我是您的专属 Advanced Micro Devices (AMD) 数据辅助 AI。您可以随时询问我关于本季营收 115.36 亿美元（同比 +50%）、数据中心营收 67.18 亿美元（同比 +107%）、Non-GAAP 毛利率 56%，或 3Q26 营收指引约 130 亿美元等本期亮点。
+                分析师您好！我是您的专属 超威半导体 (AMD) 数据辅助 AI。您可以随时询问我关于本季营收 115.36 亿美元（同比 +50%）、数据中心营收 67.18 亿美元（同比 +107%）、Non-GAAP 毛利率 56%，或 3Q26 营收指引约 130 亿美元等本期亮点。
             </div>
         </div>
         <div class="p-3 bg-white border-t border-slate-200">
@@ -514,7 +514,7 @@
     }
 
     // AI 助理 Widget 逻辑
-    const standardPrompt = `你是一位精通 NTAM 投资研究框架的资深 AI 助理。请针对使用者对 Advanced Micro Devices (AMD) 2026 年第二季度最新财报与大会摘要的提问，提供符合专业机构投资人水准、客观、高密度的定量与定性答复。重点用 <b> 标签包覆，严禁使用 markdown。`;
+    const standardPrompt = `你是一位精通 NTAM 投资研究框架的资深 AI 助理。请针对使用者对 超威半导体 (AMD) 2026 年第二季度最新财报与大会摘要的提问，提供符合专业机构投资人水准、客观、高密度的定量与定性答复。重点用 <b> 标签包覆，严禁使用 markdown。`;
     function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
     function appendMessage(text, isUser) {
         const msgDiv = document.createElement('div');
@@ -551,7 +551,7 @@
         document.getElementById('selection-tooltip').classList.add('hidden');
         document.getElementById('explain-term-title').textContent = selectedText;
         document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
-        const res = await callGeminiAPI(`解释这个 Advanced Micro Devices AMD 财报相关词汇：${selectedText}`, "你是 Advanced Micro Devices 半导体与 AI 运算专家，用最白话的专业简体中文解释词汇。限 150 字，重点使用 <b> 标签包覆。");
+        const res = await callGeminiAPI(`解释这个 超威半导体 AMD 财报相关词汇：${selectedText}`, "你是 超威半导体 半导体与 AI 运算专家，用最白话的专业简体中文解释词汇。限 150 字，重点使用 <b> 标签包覆。");
         document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
     }
     function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }

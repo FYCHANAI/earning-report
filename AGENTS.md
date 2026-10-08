@@ -14,6 +14,7 @@ The owner's latest instruction (8 October 2026) makes the latest MU three-langua
 
 ## Research and translation
 
+- Company names on Traditional/Simplified Chinese pages must use the company's verified official name for that locale, including the page title, heading, company references, chart labels and company-specific AI text. Keep stock tickers unchanged. Use official corporate or regulatory evidence; do not infer an official name from a common media translation or mechanically convert regional names. Current examples: NVDA = 輝達 / 英伟达; AMD = 超微半導體 / 超威半导体; AVGO = 博通 / 博通. Retain English when no official Chinese name is verified (including the owner's Alphabet / Meta examples); preserve English product brands and source titles where appropriate. English pages retain English company names. A naming-only correction does not refresh financial dates or require unrelated layout changes.
 - Use corporate disclosures, filings, company IR materials and original institutional research. Obtain the owner's permission before using mass-market finance platforms when authoritative evidence is insufficient. Do not use editable sites.
 - Bloomberg ANR/EEO require dated original evidence or user-provided screenshots. Existing website labels are historical claims, not current evidence.
 - Distinguish actuals, guidance, consensus and NTAM calculations/opinions. Do not attribute NTAM inference to a bank without its original report.

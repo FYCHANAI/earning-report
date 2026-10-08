@@ -1,5 +1,11 @@
 # NTAM investment research website
 
+## Official Chinese company names — 8 October 2026
+
+Traditional/Simplified Chinese report names use verified official local-language names. NVDA uses 輝達 / 英伟达, AMD uses 超微半導體 / 超威半导体, and AVGO uses 博通 in both versions. Titles, headings, chart labels and company AI text follow this convention; tickers, English pages, research dates and financial figures are unchanged. Alphabet and Meta retain English under the owner's instruction; Netflix and Palantir also retain English because this review did not establish a company-adopted Chinese name. This is a naming correction, with no layout or homepage-order change.
+
+- [Naming evidence and verification](research/chinese-company-names-2026-10-08.json)
+
 ## Canonical MU layout — 8 October 2026
 
 The owner's latest instruction makes `mu.html`, `mu-sc.html` and `mu-en.html` the respective language masters for every new company report and future report update. The NVDA conversion adopts MU's six-section white/blue layout, financial comparison table, chart instance storage/resize behavior, and chat/explain-AI interfaces while preserving NVIDIA's verified FY2027 Q2 research and dated Bloomberg evidence. Other older reports migrate when next updated; this change does not authorize a bulk conversion.
