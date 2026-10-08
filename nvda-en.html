@@ -1,33 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NVIDIA (NVDA) FY2027 Q2 In-Depth Research Report | NTAM Senior Analyst</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
-        .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
-        @media (min-width: 768px) { .chart-container { height: 400px; } }
-        .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
-        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
-        .tab-content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-        .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* AI Animations */
-        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
-        .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
-        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
-        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
-        @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
-        #selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NVIDIA (NVDA) FY2027 Q2 In-Depth Research Report | NTAM Senior Analyst</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+    .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+    @media (min-width: 768px) { .chart-container { height: 400px; } }
+    .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+    .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+    .tab-content.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* AI Animations */
+    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+    .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
+    .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+    .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+    @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+    #selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
+</style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
 
@@ -59,477 +59,485 @@
             </div>
         </div>
     </div>
-    <script>
-        document.addEventListener("DOMContentLoaded", function() { if (!sessionStorage.getItem('pi_agreed')) { const modal = document.getElementById('pi-modal'); if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; } } });
-        function acceptPI() { sessionStorage.setItem('pi_agreed', 'true'); document.getElementById('pi-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
-        function declinePI() { document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`; }
-    </script>
 
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex justify-between items-start">
+<header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex justify-between items-start">
+            <div class="flex flex-col">
+                <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
+                    <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+                    <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+                </a>
                 <div class="flex flex-col">
-                    <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
-                        <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-8 w-auto" onerror="this.style.display='none'">
-                        <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
-                    </a>
-                    <div class="flex flex-col">
-                        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">NVIDIA <span class="text-blue-600">NVDA</span></h1>
-                        <span class="text-sm text-slate-500 font-medium mt-1">Senior Analyst Operational & Strategic Report | FY2027 Q2</span>
-                    </div>
-                </div>
-                <div class="flex flex-col items-end space-y-3">
-                    <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
-                        <option value="nvda.html">繁體中文</option>
-                        <option value="nvda-sc.html">简体中文</option>
-                        <option value="nvda-en.html" selected>English</option>
-                    </select>
-                    <div class="flex items-center space-x-4">
-                        <div class="text-right hidden sm:block">
-                            <div class="text-xs text-slate-400 font-bold">Consensus Target <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Bloomberg ANR 2026/10/08)</span></div>
-                            <div class="text-xl font-bold text-slate-800">$323.89 USD <sup class="text-xs text-slate-400 font-normal"></sup></div>
-                        </div>
-                        <div class="px-4 py-2 bg-blue-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">Consensus: Buy <sup class="text-[10px] font-normal"></sup></div>
-                    </div>
+                    <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">NVIDIA <span class="text-blue-600">NVDA</span></h1>
+                    <span class="text-sm text-slate-500 font-medium mt-1">Senior Analyst Operational & Strategic Report | FY2027 Q2</span>
                 </div>
             </div>
-            
-            <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
-                <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">I. Our Views</button>
-                <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">II. Operational & Financial Data</button>
-                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">III. Valuation Comparison</button>
-                <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">IV. Wall Street Views</button>
-                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">V. Risk Factors</button>
-                <button onclick="switchTab(event, 'sandbox')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-indigo-500 hover:text-indigo-700">VI. AI Interactive Sandbox ✨</button>
-                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">VII. Disclaimer</button>
-            </nav>
+            <div class="flex flex-col items-end space-y-3">
+                <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
+                    <option value="nvda.html">繁體中文</option>
+                    <option value="nvda-sc.html">简体中文</option>
+                    <option value="nvda-en.html" selected>English</option>
+                </select>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right hidden sm:block">
+                        <div class="text-xs text-slate-400 font-bold">Consensus Target Price <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Bloomberg ANR · 2026/10/08)</span></div>
+                        <div class="text-xl font-bold text-slate-800">$323.89 USD</div>
+                    </div>
+                    <div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">Consensus: Buy (4.88/5)</div>
+                </div>
+            </div>
         </div>
-    </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+        <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+            <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">1. Our Views</button>
+            <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">2. Financials & Operations</button>
+            <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">3. Valuation Comparison</button>
+            <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">4. Analyst Views</button>
+            <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">5. Risk Factors</button>
+            <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">6. Disclaimer</button>
+        </nav>
+    </div>
+</header>
 
-        <section id="our-comments" class="tab-content active">
-            <div class="mb-6">
-                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">I. Our Views</h2>
-                <p class="mt-2 text-sm text-slate-500">FY2027 Q2 ended 2026/07/26; earnings released 2026/08/26; report updated 2026/10/08. Our views draw on corporate results, CFO commentary and Bloomberg data:</p>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+
+    <section id="our-comments" class="tab-content active">
+        <div class="mb-6">
+            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">I. Our Views</h2>
+            <p class="mt-2 text-sm text-slate-500">FY2027 Q2 ended 2026/07/26; earnings released 2026/08/26; report updated 2026/10/08. Our views draw on corporate results, CFO commentary and Bloomberg data:</p>
+        </div>
+        <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
+            <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
+                <span class="text-3xl mr-3">🎯</span>
+                <h3 class="text-2xl font-black text-blue-600 tracking-tight">Core Operational Conclusions</h3>
             </div>
-            <div class="metric-card bg-slate-900 text-white border-none p-6 md:p-8">
-                <div class="flex items-center mb-6 border-b border-slate-700 pb-4">
-                    <span class="text-3xl mr-3">🎯</span>
-                    <h3 class="text-2xl font-black text-blue-400 tracking-tight">Core Conclusions</h3>
+            <ul class="space-y-6">
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">Demand Growth Supports a Positive Investment View</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">We believe AI compute demand supports a positive investment view: Q2 revenue reached $96.221 billion, up 105.9% YoY and 17.9% QoQ. The Blackwell Ultra ramp drove Data Center revenue to $89.023 billion, up 116.6% YoY. Actual deployment and cash collection remain key indicators to monitor.</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">Rubin Shipments and Q3 Guidance Provide Catalysts</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">Vera Rubin production shipments began in FY2027 Q3. We believe this supports the next growth phase. Q3 revenue guidance is $108 billion ±2%, implying 12.2% sequential growth at the midpoint. However, guided non-GAAP gross margin of 74% is 1 percentage point below Q2, so deliveries and margins must be monitored together.</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">Earnings Growth Requires Valuation Discipline</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">We believe earnings growth remains supportive: non-GAAP net income was $53.954 billion and diluted EPS was $2.22, up 119.8% YoY. Bloomberg next-four-quarter adjusted P/E is 19.69x. The ANR 12-month consensus target of $323.89 implies 36.4% upside to the 10/07 quote of $237.47. Valuation appeal depends on delivering expected earnings.</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">Cash Conversion and Supply Commitments Shape Position Sizing</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">We believe additional exposure should depend on improving cash conversion. Days sales outstanding rose from 45 to 60 days; quarterly operating cash flow fell from $50.344 billion to $24.077 billion. Free cash flow was $21.341 billion, down 56.0% QoQ. Supply and capacity commitments increased from $119 billion to $279 billion. Continued collection delays would warrant reducing position concentration.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="financials" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">II. Financials & Operations</h2></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div class="metric-card border-t-4 border-t-emerald-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Q2 Total Revenue</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">$96,221 M</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +105.9% / QoQ +17.9%</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-blue-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Data Center Quarterly Revenue</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">$89,023 M</p>
+                <p class="text-sm text-blue-600 font-semibold mt-1">● 92.5% of Revenue / YoY +116.6%</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-indigo-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Non-GAAP Operating Margin</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">66.5%</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">● GAAP Operating Margin 66.2%</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-purple-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Quarterly Free Cash Flow</h4>
+                <p class="text-xl font-bold text-slate-800 mt-1">$21,341 M</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">● FCF / Revenue 22.2%</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-2">Q2 Revenue by Market Platform (Million USD)</h3>
+                <p class="text-xs text-slate-500 mb-4">Data Center: US$89,023m; Edge: US$7,198m; total: US$96,221m. Data Center represents 92.5%. Market platforms differ from reportable segments. Source: FY2027 Q2 CFO commentary.</p>
+                <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+            </div>
+
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-2">Hyperscale / ACIE / Edge Revenue (Million USD)</h3>
+                <p class="text-xs text-slate-500 mb-4">Hyperscale: US$48,710m (YoY +101.5%); ACIE: US$40,313m (+138.1%); Edge: US$7,198m (+27.5%). Hyperscale/ACIE follow the latest recast classification and comparatives.</p>
+                <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
+            </div>
+        </div>
+
+        <div class="metric-card mt-6">
+            <h3 class="text-lg font-bold text-slate-800 mb-4">Q2 Core Financial Data (US$ Millions, Except EPS; Non-GAAP Includes Stock-Based Compensation, with Recast Comparatives)</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left border-collapse">
+                    <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
+                        <tr>
+                            <th class="px-6 py-3 font-bold">Financial Metric Items</th>
+                            <th class="px-6 py-3 font-bold text-right">Q2 FY2027 GAAP</th>
+                            <th class="px-6 py-3 font-bold text-right text-blue-600">Q2 FY2027 Non-GAAP</th>
+                            <th class="px-6 py-3 font-bold text-right text-emerald-600">Non-GAAP QoQ / Supplement</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-700">
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">Net Revenue</td>
+                            <td class="px-6 py-4 text-right">$96,221 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$96,221 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-emerald-500">+17.9%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">Gross Profit / Margin</td>
+                            <td class="px-6 py-4 text-right">$72,142 M (75.0%)</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$72,188 M (75.0%)</td>
+                            <td class="px-6 py-4 text-right text-emerald-500">Margin unchanged (0.0 ppts)</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">Operating Income</td>
+                            <td class="px-6 py-4 text-right">$63,734 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$63,956 M</td>
+                            <td class="px-6 py-4 text-right text-emerald-500">+18.9% QoQ / +124.1% YoY</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">Net Income</td>
+                            <td class="px-6 py-4 text-right">$59,688 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$53,954 M</td>
+                            <td class="px-6 py-4 text-right text-emerald-600">+18.5%</td>
+                        </tr>
+                        <tr class="bg-slate-50 font-bold">
+                            <td class="px-6 py-4 text-slate-800">Operating Cash Flow & Diluted EPS</td>
+                            <td class="px-6 py-4 text-right text-slate-500">GAAP Diluted EPS: $2.46</td>
+                            <td class="px-6 py-4 text-right text-blue-600">Non-GAAP EPS: $2.22</td>
+                            <td class="px-6 py-4 text-right text-purple-600">Operating Cash Flow: $24,077 M</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="valuation" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">III. Valuation Comparison</h2></div>
+        <div class="metric-card">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-slate-800">Semiconductor Peers: Next-Four-Quarter Adjusted P/E</h3>
+            </div>
+            <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
+            <p class="text-xs text-slate-400 mt-3 text-right">Source: supplied Bloomberg EEO screenshots; quote date displayed as 07-Oct, without a year or capture timestamp. Units: times. Uses Next 4 Qtrs Est Price/EPS, Adj+. NVDA/AVGO estimate windows end in 2027/07; AMD/INTC in 2027/06. Identical adjustments across companies have not been established; lower multiples alone do not establish undervaluation.</p>
+        </div>
+    </section>
+
+    <section id="street-comments" class="tab-content">
+        <div class="mb-6">
+            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">IV. Analyst Views</h2>
+            <p class="mt-2 text-sm text-slate-500">Source: Bloomberg ANR (2026/10/08); calculated using the 10/07 share price of US$237.47.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">UBS</h3>
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
                 </div>
-                <ul class="space-y-6">
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">1.</span>
-                        <div>
-                            <span class="text-emerald-400 font-bold block mb-1 text-lg">Demand Growth Supports a Positive Investment View</span>
-                            <p class="text-slate-300 text-sm leading-relaxed">We believe AI compute demand supports a positive investment view: Q2 revenue reached $96.221 billion, up 105.9% YoY and 17.9% QoQ. The Blackwell Ultra ramp drove Data Center revenue to $89.023 billion, up 116.6% YoY. Actual deployment and cash collection remain key indicators to monitor.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">2.</span>
-                        <div>
-                            <span class="text-emerald-400 font-bold block mb-1 text-lg">Rubin Shipments and Q3 Guidance Provide Catalysts</span>
-                            <p class="text-slate-300 text-sm leading-relaxed">Vera Rubin production shipments began in FY2027 Q3. We believe this supports the next growth phase. Q3 revenue guidance is $108 billion ±2%, implying 12.2% sequential growth at the midpoint. However, guided non-GAAP gross margin of 74% is 1 percentage point below Q2, so deliveries and margins must be monitored together.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">3.</span>
-                        <div>
-                            <span class="text-emerald-400 font-bold block mb-1 text-lg">Earnings Growth Requires Valuation Discipline</span>
-                            <p class="text-slate-300 text-sm leading-relaxed">We believe earnings growth remains supportive: non-GAAP net income was $53.954 billion and diluted EPS was $2.22, up 119.8% YoY. Bloomberg next-four-quarter adjusted P/E is 19.69x. The ANR 12-month consensus target of $323.89 implies 36.4% upside to the 10/07 quote of $237.47. Valuation appeal depends on delivering expected earnings.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">4.</span>
-                        <div>
-                            <span class="text-emerald-400 font-bold block mb-1 text-lg">Cash Conversion and Supply Commitments Shape Position Sizing</span>
-                            <p class="text-slate-300 text-sm leading-relaxed">We believe additional exposure should depend on improving cash conversion. Days sales outstanding rose from 45 to 60 days; quarterly operating cash flow fell from $50.344 billion to $24.077 billion. Free cash flow was $21.341 billion, down 56.0% QoQ. Supply and capacity commitments increased from $119 billion to $279 billion. Continued collection delays would warrant reducing position concentration.</p>
-                        </div>
-                    </li>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>Rating and Date:</b> Timothy M Arcuri; Buy; 2026/09/28.</li>
+                    <li><b>Target and Implied Return:</b> US$300.00; +26.3%.</li>
                 </ul>
             </div>
-        </section>
 
-        <section id="financials" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">II. Operational & Financial Data</h2></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                <div class="metric-card border-t-4 border-t-emerald-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">Total Revenue</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$96.22 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +105.9%</p>
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">Morgan Stanley</h3>
+                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Overweight</span>
                 </div>
-                <div class="metric-card border-t-4 border-t-blue-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">Data Center Revenue</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$89.02 B</p>
-                    <p class="text-sm text-blue-600 font-semibold mt-1">▲ YoY +116.6%</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-indigo-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">Non-GAAP Operating Income</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$63.96 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +124.1%</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-purple-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">Non-GAAP Net Income</h4>
-                    <p class="text-xl font-bold text-slate-800 mt-1">$53.95 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ EPS $2.22 (+119.8%)</p>
-                </div>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>Rating and Date:</b> Joseph Moore; Overweight; 2026/10/02.</li>
+                    <li><b>Target and Implied Return:</b> US$300.00; +26.3%.</li>
+                </ul>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="metric-card">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">Q2 Revenue by Market Platform (Billion USD)</h3>
-                    <p class="text-xs text-slate-500 mb-4">Data Center represents 92.5% of revenue. Hyperscale/ACIE use the latest recast classification; market platforms differ from reportable segments. Source: FY2027 Q2 CFO commentary.</p>
-                    <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">Citi</h3>
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
                 </div>
-
-                <div class="metric-card">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">Profitability Metrics (Billion USD)</h3>
-                    <p class="text-xs text-slate-500 mb-4">Non-GAAP operating margin: 66.5%. From FY2027, non-GAAP includes stock-based compensation and comparatives are recast. GAAP/non-GAAP diluted EPS: $2.46/$2.22.</p>
-                    <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
-                </div>
-            </div>
-
-            <div class="metric-card mt-6">
-                <h3 class="text-lg font-bold text-slate-800 mb-4">Market Platform Revenue Details (FY2027 Q2)</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-left border-collapse">
-                        <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
-                            <tr>
-                                <th class="px-6 py-3 font-bold">Market Platform</th>
-                                <th class="px-6 py-3 font-bold text-right">Revenue (USD Million)</th>
-                                <th class="px-6 py-3 font-bold text-right text-emerald-600">YoY Growth</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-slate-700">
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium pl-6">Data Center</td>
-                                <td class="px-6 py-4 text-right">$89,023</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">+116.6%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100 bg-slate-50/50">
-                                <td class="px-6 py-2 text-slate-500 pl-10">- Hyperscale</td>
-                                <td class="px-6 py-4 text-right text-slate-500">$48,710</td>
-                                <td class="px-6 py-2 text-right text-emerald-500/80 font-bold">+101.5%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100 bg-slate-50/50">
-                                <td class="px-6 py-2 text-slate-500 pl-10">- ACIE (AI Cloud, Industrial & Enterprise)</td>
-                                <td class="px-6 py-4 text-right text-slate-500">$40,313</td>
-                                <td class="px-6 py-2 text-right text-emerald-500/80 font-bold">+138.1%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium pl-6">Edge Computing</td>
-                                <td class="px-6 py-4 text-right">$7,198</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">+27.5%</td>
-                            </tr>
-                            <tr class="bg-slate-50 font-bold border-t-2 border-slate-300">
-                                <td class="px-6 py-4 text-slate-800">Total Revenue</td>
-                                <td class="px-6 py-4 text-right text-slate-800">$96,221</td>
-                                <td class="px-6 py-4 text-right text-emerald-600">+105.9%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
-
-        <section id="valuation" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">III. Valuation Comparison</h2></div>
-            <div class="metric-card">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-lg font-bold text-slate-800">Semiconductor Peers: Next-Four-Quarter Adjusted P/E</h3>
-                </div>
-                <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
-                <p class="text-xs text-slate-400 mt-3 text-right">Source: supplied Bloomberg EEO screenshots; quote date displayed as 07-Oct, without a year or capture timestamp. Units: times.<span class="font-normal"></span></p>
-                <p class="text-xs text-slate-400 mt-1 text-right">Uses Next 4 Qtrs Est Price/EPS, Adj+. NVDA/AVGO estimate windows end in 2027/07; AMD/INTC in 2027/06. Identical adjustments across companies have not been established; lower multiples alone do not establish undervaluation.</p>
-            </div>
-        </section>
-
-        <section id="street-comments" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">IV. Wall Street Views</h2></div>
-            <p class="text-xs text-slate-500 mb-4">Source: Bloomberg ANR (2026/10/08); calculated using the 10/07 share price of US$237.47.</p>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">UBS</h3>
-                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>Target US$300.00:</b> Analyst Timothy M Arcuri; rating dated 2026/09/28; implied share-price return +26.3%.</li>
-                    </ul>
-                </div>
-
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">Morgan Stanley</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Overweight</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>Target US$300.00:</b> Analyst Joseph Moore; rating dated 2026/10/02; implied share-price return +26.3%.</li>
-                    </ul>
-                </div>
-
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">Citi</h3>
-                        <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>Target US$315.00:</b> Analyst Atif Malik; rating dated 2026/10/06; implied share-price return +32.6%.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="risks" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">V. Risk Factors</h2></div>
-            <div class="metric-card">
-                <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-rose-700 text-base">Export Controls and China Uncertainty:</strong> China shipments of Data Center Hopper products were less than 1% of Data Center revenue in Q2. Q3 guidance assumes no China Data Center compute revenue. Licensing, product restrictions or changes in customer purchases could still affect realized sales.
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">Collection Terms, Financing and Infrastructure Execution:</strong> Extended terms on large, multi-quarter agreements with certain investment-grade customers raised days sales outstanding to 60 days. The August SB Energy guarantee has a maximum gross exposure of $105 billion, is conditional and phased, and is not drawn debt. Power, construction or customer financing delays could postpone deployment and cash collection.
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">Supply Commitments and Product Transitions:</strong> Supply and capacity commitments increased to $279 billion, primarily reflecting memory procurement. Vera Rubin production shipments began in Q3. Weaker demand, delivery delays or difficult transitions could increase inventory and procurement losses; commitments are not current cash payments.
-                    </li>
-                    <li class="pb-1">
-                        <strong class="text-base">Customer Concentration and Custom Chip Competition:</strong> One direct customer represented 16% of Q2 revenue, which does not identify the distribution of end users. Cloud ASICs, competing platforms and more efficient models could change GPU purchasing needs. Actual deployment and utilization remain key indicators.
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <section id="sandbox" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-indigo-500 pl-3">VI. AI Interactive Sandbox ✨</h2></div>
-            
-            <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 md:p-8 shadow-sm">
-                <div class="flex items-center mb-3">
-                    <span class="text-2xl mr-3">✨</span>
-                    <h3 class="text-xl font-black text-indigo-900 tracking-tight">AI Scenario Simulation</h3>
-                </div>
-                <p class="text-sm text-indigo-700 mb-6 leading-relaxed">Enter a hypothetical scenario, such as delayed data center construction or longer customer payment terms. AI uses this report as of 2026/10/08, with FY2027 Q2 actuals; market prices are not live.</p>
-                <div class="flex flex-col md:flex-row gap-3">
-                    <input type="text" id="custom-scenario-input" placeholder="Try: If major customer payment terms extend by another 15 days, how could NVDA cash flow and valuation change?" class="flex-1 border border-indigo-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-inner">
-                    <button onclick="generateCustomScenario()" id="btn-generate-scenario" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg text-sm font-bold shadow-md transition-all whitespace-nowrap">
-                        Start Simulation
-                    </button>
-                </div>
-                <div id="scenario-loading" class="hidden mt-6 text-sm text-indigo-600 font-bold flex items-center bg-indigo-100/50 p-4 rounded-lg">
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                    AI is processing data via Vercel backend...
-                </div>
-                <div id="scenario-result" class="mt-6 hidden bg-white p-6 rounded-xl border border-indigo-200 text-sm text-slate-800 leading-relaxed shadow-sm"></div>
-            </div>
-        </section>
-
-        <section id="disclaimer" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">VII. Disclaimer</h2></div>
-            <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
-                <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">Loading disclaimer from disclaimer.html, please wait...</p></div>
-            </div>
-        </section>
-
-    </main>
-
-    <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
-            <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
-                <div class="flex items-center">
-                    <span class="text-2xl mr-2">🤖</span>
-                    <div><h4 class="font-bold text-sm">Researcher's Exclusive AI Assistant</h4><p class="text-xs text-blue-200">Powered by Vercel & Gemini ✨</p></div>
-                </div>
-                <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
-            </div>
-            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
-                <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
-                    Hello! I am the NVIDIA (NVDA) report AI assistant. Information is current through 2026/10/08 and covers FY2027 Q2 results, Rubin shipments, Q3 guidance and cash conversion risks. I can explain the report but do not provide live market prices.
-                </div>
-            </div>
-            <div class="p-3 bg-white border-t border-slate-200">
-                <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
-                    <input type="text" id="chat-input" placeholder="Enter your command..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
-                    </button>
-                </form>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>Rating and Date:</b> Atif Malik; Buy; 2026/10/06.</li>
+                    <li><b>Target and Implied Return:</b> US$315.00; +32.6%.</li>
+                </ul>
             </div>
         </div>
-        <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
-            <span class="text-2xl">✨</span>
-        </button>
-    </div>
+    </section>
 
-    <div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
-        <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
-            <span>✨</span> Plain English AI Explanation
-        </button>
-    </div>
-    <div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
-            <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
-                <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> Terminology Explanation</h3>
-                <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
+    <section id="risks" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">V. Risk Factors</h2></div>
+        <div class="metric-card">
+            <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-rose-700 text-base">Export Controls and China Uncertainty:</strong> China shipments of Data Center Hopper products were less than 1% of Data Center revenue in Q2. Q3 guidance assumes no China Data Center compute revenue. Licensing, product restrictions or changes in customer purchases could still affect realized sales.
+                </li>
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-base">Collection Terms, Financing and Infrastructure Execution:</strong> Extended terms on large, multi-quarter agreements with certain investment-grade customers raised days sales outstanding to 60 days. The August SB Energy guarantee has a maximum gross exposure of $105 billion, is conditional and phased, and is not drawn debt. Power, construction or customer financing delays could postpone deployment and cash collection.
+                </li>
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-base">Supply Commitments and Product Transitions:</strong> Supply and capacity commitments increased to $279 billion, primarily reflecting memory procurement. Vera Rubin production shipments began in Q3. Weaker demand, delivery delays or difficult transitions could increase inventory and procurement losses; commitments are not current cash payments.
+                </li>
+                <li class="pb-1">
+                    <strong class="text-base">Customer Concentration and Custom Chip Competition:</strong> One direct customer represented 16% of Q2 revenue, which does not identify the distribution of end users. Cloud ASICs, competing platforms and more efficient models could change GPU purchasing needs. Actual deployment and utilization remain key indicators.
+                </li>
+            </ol>
+        </div>
+    </section>
+
+    <section id="disclaimer" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">6. Disclaimer</h2></div>
+        <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+            <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">Securing live connection to fetch the latest disclaimer components from disclaimer.html...</p></div>
+        </div>
+    </section>
+
+</main>
+
+<div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
+            <div class="flex items-center">
+                <span class="text-2xl mr-2">🤖</span>
+                <div><h4 class="font-bold text-sm">Analyst AI Assistant</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
             </div>
-            <div class="p-6">
-                <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Term queried:</div>
-                <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
-                <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
-                    <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                    AI is generating explanation...
-                </div>
-                <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
-            </div>
-            <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
-                <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">Close</button>
+            <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
+            <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
+                Hello! I am the NVIDIA (NVDA) report AI assistant. Information is current through 2026/10/08 and covers FY2027 Q2 results, Rubin shipments, Q3 guidance and cash conversion risks. I can explain the report but do not provide live market prices.
             </div>
         </div>
+        <div class="p-3 bg-white border-t border-slate-200">
+            <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
+                <input type="text" id="chat-input" placeholder="Enter your research command..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+                </button>
+            </form>
+        </div>
     </div>
+    <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
+        <span class="text-2xl">✨</span>
+    </button>
+</div>
 
-    <script>
-        function switchTab(e, tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(el => { el.classList.remove('active', 'border-blue-600', 'text-blue-600'); el.classList.add('text-slate-500'); });
-            document.getElementById(tabId).classList.add('active');
-            e.currentTarget.classList.remove('text-slate-500'); e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+<div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
+    <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
+        <span>✨</span> AI Simple Explanation
+    </button>
+</div>
+<div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+            <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> Term Explainer</h3>
+            <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Your Queried Term:</div>
+            <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
+            <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
+                <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                AI is generating explanation...
+            </div>
+            <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
+        </div>
+        <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+            <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Global chart instances registry
+    window.charts = {};
+
+    function switchTab(e, tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(el => {
+            el.classList.remove('active', 'border-blue-600', 'text-blue-600');
+            el.classList.add('text-slate-500');
+        });
+        document.getElementById(tabId).classList.add('active');
+        e.currentTarget.classList.remove('text-slate-500');
+        e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+
+        // Fix hidden canvas sizing bugs native to Chart.js
+        if (tabId === 'financials') {
+            if (window.charts.nvdaSegment) window.charts.nvdaSegment.resize();
+            if (window.charts.nvdaProfit) window.charts.nvdaProfit.resize();
+        } else if (tabId === 'valuation') {
+            if (window.charts.nvdaValuation) window.charts.nvdaValuation.resize();
+        }
+    }
+
+    function acceptPI() {
+        sessionStorage.setItem('pi_agreed', 'true');
+        document.getElementById('pi-modal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    function declinePI() {
+        document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // Professional Investors Gate verification
+        if (!sessionStorage.getItem('pi_agreed')) {
+            const modal = document.getElementById('pi-modal');
+            if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
         }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // Chart 1: Segment Revenue
-            new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
-                type: 'doughnut',
-                data: {
-                    labels: ['Data Center', 'Edge Computing'],
-                    datasets: [{
-                        data: [89.023, 7.198],
-                        backgroundColor: ['rgba(16, 185, 129, 0.8)', 'rgba(59, 130, 246, 0.8)'],
-                        borderWidth: 0
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '60%' }
-            });
+        // Chart 1: NVIDIA Market Platform Revenue (Doughnut)
+        window.charts.nvdaSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ['Data Center', 'Edge Computing'],
+                datasets: [{
+                    data: [89023, 7198],
+                    backgroundColor: ['rgba(37, 99, 235, 0.85)', 'rgba(16, 185, 129, 0.85)'],
+                    borderWidth: 0
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
+        });
 
-            // Chart 2: Profitability
-            new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['Total Rev', 'GAAP OpInc', 'Non-GAAP Net'],
-                    datasets: [{
-                        label: 'Billion USD',
-                        data: [96.221, 63.734, 53.954],
-                        backgroundColor: ['#94a3b8', '#3b82f6', '#10b981'],
+        // Chart 2: NVIDIA Hyperscale / ACIE / Edge Revenue (Bar Chart)
+        window.charts.nvdaProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['Hyperscale', 'ACIE', 'Edge Computing'],
+                datasets: [
+                    {
+                        label: 'Revenue ($M)',
+                        data: [48710, 40313, 7198],
+                        backgroundColor: '#3b82f6',
                         borderRadius: 4
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } }, x: { grid: { display: false } } } }
-            });
-
-            // Chart 3: Valuation (Peers)
-            new Chart(document.getElementById('valuationChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['INTC (Intel)', 'AMD (Advanced Micro Devices)', 'AVGO (Broadcom)', 'NVDA (NVIDIA)'],
-                    datasets: [{ label: 'Next 4 Qtrs Price/EPS, Adj+ (x)', data: [67.13, 57.67, 21.62, 19.69], backgroundColor: ['rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(37, 99, 235, 0.9)'], borderRadius: 4 }]
-                },
-                options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
-            });
-
-            // Load external disclaimer.html
-            fetch('disclaimer.html')
-                .then(response => {
-                    if (!response.ok) throw new Error('Cannot load disclaimer.html');
-                    return response.text();
-                })
-                .then(html => {
-                    const container = document.getElementById('disclaimer-container');
-                    if(container) container.innerHTML = html;
-                })
-                .catch(error => {
-                    console.error('Failed to load disclaimer:', error);
-                    const container = document.getElementById('disclaimer-container');
-                    if(container) container.innerHTML = '<div class="p-6 text-center text-red-500 font-bold">Failed to load disclaimer.html. Please ensure the file exists.</div>';
-                });
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'bottom' } },
+                scales: {
+                    y: { beginAtZero: true, position: 'left', grid: { color: '#f1f5f9' } }
+                }
+            }
         });
 
-        // AI Core
-        async function callGeminiAPI(prompt, systemInstruction) {
-            try {
-                const response = await fetch('/api/gemini', { 
-                    method: 'POST', headers: { 'Content-Type': 'application/json' }, 
-                    body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction }) 
-                });
-                const data = await response.json();
-                if (!response.ok) return `Connection Error: ${data.error || 'Unknown Error'}`;
-                let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Sorry, unable to generate a valid response.";
-                return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
-            } catch (error) { return `Network connection failed. (${error.message})`; }
-        }
-
-        // AI Chat
-        const standardPrompt = `You are the exclusive AI assistant for NTAM internal researchers. Information is as of 2026/10/08; you have no live market data. NVIDIA (NVDA) FY2027 Q2 ended 2026/07/26 and results were released 2026/08/26. Revenue was $96.221bn, up105.9% YoY; Data Center revenue $89.023bn, up116.6%; GAAP operating income $63.734bn; non-GAAP operating income $63.956bn, net income $53.954bn, diluted EPS $2.22, gross margin75%. GAAP diluted EPS was $2.46. Non-GAAP now includes stock-based compensation and comparatives are recast. Company Q3 guidance is revenue $108bn ±2% and non-GAAP gross margin74% ±0.5 percentage points, assuming no China Data Center compute revenue. Rubin production shipments began in Q3. Operating cash flow was $24.077bn versus $50.344bn in Q1; free cash flow $21.341bn, down56.0% QoQ; DSO60 versus45 days; supply and capacity commitments $279bn versus $119bn. The August SB Energy guarantee is capped at $105bn gross, conditional and phased, and is not drawn debt. Bloomberg ANR dated2026/10/08 shows consensus target $323.89; 10/07 reference share price $237.47 implies36.4% share-price upside. EEO Next 4 Qtrs Price/EPS, Adj+ is NVDA19.69x, AMD57.67x, AVGO21.62x and INTC67.13x, with differing forecast windows and adjustments. Distinguish actuals, company guidance, Bloomberg consensus and our analysis. Say when data are unavailable and do not invent broker rationales. Please answer objectively and concisely in English, using HTML <b> tags for emphasis, strictly no markdown syntax.`;
-        function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
-        function appendMessage(text, isUser) {
-            const msgDiv = document.createElement('div');
-            msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
-            msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv); 
-            document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
-        }
-        function showTypingIndicator() {
-            const ind = document.createElement('div'); ind.id = 'typing-indicator'; 
-            ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
-            ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
-            document.getElementById('chat-messages').appendChild(ind);
-        }
-        async function handleChatSubmit(e) {
-            e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
-            input.value = ''; appendMessage(text, true); showTypingIndicator();
-            const res = await callGeminiAPI(text, standardPrompt);
-            document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
-        }
-
-        // Highlight AI
-        let selectedText = "";
-        document.addEventListener('mouseup', function(e) {
-            const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
-            if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
-            if (text.length > 1 && text.length < 50) {
-                selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
-                tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${rect.top - 40}px`;
-                tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
-            } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+        // Chart 3: Semiconductor Peer Forward P/E (Horizontal Bar)
+        window.charts.nvdaValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ['INTC (Intel)', 'AMD (Advanced Micro Devices)', 'AVGO (Broadcom)', 'NVDA (NVIDIA)'],
+                datasets: [{
+                    label: 'Next 4 Qtrs Price/EPS, Adj+ (x)',
+                    data: [67.13, 57.67, 21.62, 19.69],
+                    backgroundColor: ['rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)', 'rgba(37, 99, 235, 0.95)'],
+                    borderRadius: 4
+                }]
+            },
+            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
         });
-        document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
-        async function explainSelectedTerm() {
-            document.getElementById('selection-tooltip').classList.add('hidden');
-            document.getElementById('explain-term-title').textContent = selectedText; 
-            document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
-            const res = await callGeminiAPI(`Explain this NVDA related term: ${selectedText}`, "You are a financial expert. Explain the term in simple, plain English. Limit to 150 words, wrap key points in <b> tags.");
-            document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
-        }
-        function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
-        
-        // 🔮 Sandbox AI simulation
-        async function generateCustomScenario() {
-            const inputEl = document.getElementById('custom-scenario-input'); const btnEl = document.getElementById('btn-generate-scenario'); 
-            const loadingEl = document.getElementById('scenario-loading'); const resultEl = document.getElementById('scenario-result');
-            const scenarioText = inputEl.value.trim(); if (!scenarioText) { alert('Please enter a hypothetical scenario first!'); return; }
-            btnEl.disabled = true; btnEl.classList.add('opacity-50'); loadingEl.classList.remove('hidden'); resultEl.classList.add('hidden');
-            
-            const sysPrompt = `You are a senior Wall Street analyst. Evaluate the user's hypothetical scenario using the following report context. Do not treat assumptions as realized events or imply access to live market prices. Information is as of 2026/10/08; you have no live market data. NVIDIA (NVDA) FY2027 Q2 ended 2026/07/26 and results were released 2026/08/26. Revenue was $96.221bn, up105.9% YoY; Data Center revenue $89.023bn, up116.6%; GAAP operating income $63.734bn; non-GAAP operating income $63.956bn, net income $53.954bn, diluted EPS $2.22, gross margin75%. GAAP diluted EPS was $2.46. Non-GAAP now includes stock-based compensation and comparatives are recast. Company Q3 guidance is revenue $108bn ±2% and non-GAAP gross margin74% ±0.5 percentage points, assuming no China Data Center compute revenue. Rubin production shipments began in Q3. Operating cash flow was $24.077bn versus $50.344bn in Q1; free cash flow $21.341bn, down56.0% QoQ; DSO60 versus45 days; supply and capacity commitments $279bn versus $119bn. The August SB Energy guarantee is capped at $105bn gross, conditional and phased, and is not drawn debt. Bloomberg ANR dated2026/10/08 shows consensus target $323.89; 10/07 reference share price $237.47 implies36.4% share-price upside. EEO Next 4 Qtrs Price/EPS, Adj+ is NVDA19.69x, AMD57.67x, AVGO21.62x and INTC67.13x, with differing forecast windows and adjustments. Distinguish actuals, company guidance, Bloomberg consensus and our analysis. Say when data are unavailable and do not invent broker rationales.
-Reply concisely: 1. Initial Assessment 2. Potential Impact on Revenue/Profit 3. Likely Stock Price Reaction.
-Use English, wrap key points in HTML <b> tags, strictly no markdown syntax. Total around 200 words.`;
 
-            const aiAnalysis = await callGeminiAPI(`Simulate this scenario: ${scenarioText}`, sysPrompt);
-            loadingEl.classList.add('hidden'); btnEl.disabled = false; btnEl.classList.remove('opacity-50');
-            resultEl.innerHTML = `<h4 class="font-bold text-indigo-900 mb-3 border-b border-indigo-100 pb-2">🎯 AI Scenario Simulation Results</h4>` + aiAnalysis; 
-            resultEl.classList.remove('hidden');
-        }
-    </script>
+        // Dynamic asynchronous linkage for external disclaimer.html
+        fetch('disclaimer.html')
+            .then(response => {
+                if (!response.ok) throw new Error('Unable to load disclaimer.html');
+                return response.text();
+            })
+            .then(html => {
+                const container = document.getElementById('disclaimer-container');
+                if(container) container.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('Compliance compilation failed:', error);
+                const container = document.getElementById('disclaimer-container');
+                if(container) container.innerHTML = '<div class="p-6 text-center text-rose-600 font-bold">[Security Link Error] Failed to load the external compliance disclaimer file. Please contact the DevOps team.</div>';
+            });
+    });
+
+    // NTAM Backend AI Gateway Engine
+    async function callGeminiAPI(prompt, systemInstruction) {
+        try {
+            const response = await fetch('/api/gemini', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })
+            });
+            const data = await response.json();
+            if (!response.ok) return `Connection Error: ${data.error || 'Unknown Error'}`;
+            let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "Apologies, unable to generate a valid response.";
+            return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+        } catch (error) { return `Network connection failed. (${error.message})`; }
+    }
+
+    // AI Chat Widget Logic
+    const standardPrompt = `You are the exclusive AI assistant for NTAM internal researchers. Information is as of 2026/10/08; you have no live market data. NVIDIA (NVDA) FY2027 Q2 ended 2026/07/26 and results were released 2026/08/26. Revenue was $96.221bn, up105.9% YoY; Data Center revenue $89.023bn, up116.6%; GAAP operating income $63.734bn; non-GAAP operating income $63.956bn, net income $53.954bn, diluted EPS $2.22, gross margin75%. GAAP diluted EPS was $2.46. Non-GAAP now includes stock-based compensation and comparatives are recast. Company Q3 guidance is revenue $108bn ±2% and non-GAAP gross margin74% ±0.5 percentage points, assuming no China Data Center compute revenue. Rubin production shipments began in Q3. Operating cash flow was $24.077bn versus $50.344bn in Q1; free cash flow $21.341bn, down56.0% QoQ; DSO60 versus45 days; supply and capacity commitments $279bn versus $119bn. The August SB Energy guarantee is capped at $105bn gross, conditional and phased, and is not drawn debt. Bloomberg ANR dated2026/10/08 shows consensus target $323.89; 10/07 reference share price $237.47 implies36.4% share-price upside. EEO Next 4 Qtrs Price/EPS, Adj+ is NVDA19.69x, AMD57.67x, AVGO21.62x and INTC67.13x, with differing forecast windows and adjustments. Distinguish actuals, company guidance, Bloomberg consensus and our analysis. Say when data are unavailable and do not invent broker rationales. Please answer objectively and concisely in English, using HTML <b> tags for emphasis, strictly no markdown syntax.`;
+    function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
+    function appendMessage(text, isUser) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
+        msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
+        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+    }
+    function showTypingIndicator() {
+        const ind = document.createElement('div'); ind.id = 'typing-indicator';
+        ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
+        ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
+        document.getElementById('chat-messages').appendChild(ind);
+    }
+    async function handleChatSubmit(e) {
+        e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
+        input.value = ''; appendMessage(text, true); showTypingIndicator();
+        const res = await callGeminiAPI(text, standardPrompt);
+        document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
+    }
+
+    // Contextual Text Highlight Explainer Mechanism
+    let selectedText = "";
+    document.addEventListener('mouseup', function(e) {
+        const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
+        if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
+        if (text.length > 1 && text.length < 50) {
+            selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
+            tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${window.scrollY + rect.top - 40}px`;
+            tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
+        } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+    });
+    document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
+    async function explainSelectedTerm() {
+        document.getElementById('selection-tooltip').classList.add('hidden');
+        document.getElementById('explain-term-title').textContent = selectedText;
+        document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
+        const res = await callGeminiAPI(`Explain this NVIDIA (NVDA) financial/earnings term; report information is as of 2026/10/08: ${selectedText}`, "You are a NVIDIA semiconductor and AI compute expert. Explain the term using accessible yet professional English. Limit your response to 150 words, and wrap key emphasis points in <b> tags.");
+        document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
+    }
+    function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
+</script>
 </body>
 </html>

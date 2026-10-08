@@ -1,0 +1,1365 @@
+{
+  "report": "NVDA migration to corresponding MU three-language template",
+  "checked_on": "2026-10-08",
+  "base_commit": "2eba1f5cf35cb2da6031d7c82061f1e19c6a31e5",
+  "authorization": "Explicit owner instruction to use the latest MU layout for NVDA and future reports; supersedes seven-tab preservation.",
+  "status": "pass",
+  "checks": [
+    {
+      "check": "nvda.html:mu_structure_and_layout_attributes",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:mu_styles_fonts_and_script_versions",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:six_tabs",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:no_dead_sandbox",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:three_chart_containers",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:nvda_pi_legal_dom_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:header_consensus_preserved",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:no_micron_entities_or_distinctive_values",
+      "status": "pass",
+      "detail": []
+    },
+    {
+      "check": "nvda.html:research_dates_preserved",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:four_column_five_row_table",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:gaap_nongaap_table_and_qoq_math",
+      "status": "pass",
+      "detail": [
+        {
+          "observed": [
+            [
+              96221.0
+            ],
+            [
+              96221.0
+            ],
+            [
+              17.9
+            ]
+          ],
+          "expected": [
+            [
+              96221
+            ],
+            [
+              96221
+            ],
+            [
+              17.9
+            ]
+          ],
+          "ok": true
+        },
+        {
+          "observed": [
+            [
+              72142.0,
+              75.0
+            ],
+            [
+              72188.0,
+              75.0
+            ],
+            [
+              0.0
+            ]
+          ],
+          "expected": [
+            [
+              72142,
+              75
+            ],
+            [
+              72188,
+              75
+            ],
+            [
+              0
+            ]
+          ],
+          "ok": true
+        },
+        {
+          "observed": [
+            [
+              63734.0
+            ],
+            [
+              63956.0
+            ],
+            [
+              18.9,
+              124.1
+            ]
+          ],
+          "expected": [
+            [
+              63734
+            ],
+            [
+              63956
+            ],
+            [
+              18.9,
+              124.1
+            ]
+          ],
+          "ok": true
+        },
+        {
+          "observed": [
+            [
+              59688.0
+            ],
+            [
+              53954.0
+            ],
+            [
+              18.5
+            ]
+          ],
+          "expected": [
+            [
+              59688
+            ],
+            [
+              53954
+            ],
+            [
+              18.5
+            ]
+          ],
+          "ok": true
+        },
+        {
+          "observed": [
+            [
+              2.46
+            ],
+            [
+              2.22
+            ],
+            [
+              24077.0
+            ]
+          ],
+          "expected": [
+            [
+              2.46
+            ],
+            [
+              2.22
+            ],
+            [
+              24077
+            ]
+          ],
+          "ok": true
+        }
+      ]
+    },
+    {
+      "check": "nvda.html:brokers_facts_priority_returns_colors",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:compact_anr_source",
+      "status": "pass",
+      "detail": [
+        "來源：Bloomberg ANR（2026/10/08）；以 10/07 股價 US$237.47 計算。"
+      ]
+    },
+    {
+      "check": "nvda.html:inline_js_syntax_and_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:chart_cache_keys",
+      "status": "pass",
+      "detail": [
+        "nvdaSegment",
+        "nvdaProfit",
+        "nvdaValuation"
+      ]
+    },
+    {
+      "check": "nvda.html:tab_and_chart_resize_behavior",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:pi_never_accepted_hidden_or_storage_written",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:original_nvda_pi_functions_preserved",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:disclaimer_loaded_no_api_or_live_network",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:mu_fixed_interaction_and_api_functions",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:dated_company_ai_context",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:market_platform_revenue_chart",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:breakdown_chart_no_invented_margin",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:peer_valuation_matches_eeo",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:mu_structure_and_layout_attributes",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:mu_styles_fonts_and_script_versions",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:six_tabs",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:no_dead_sandbox",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:three_chart_containers",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:nvda_pi_legal_dom_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:header_consensus_preserved",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:no_micron_entities_or_distinctive_values",
+      "status": "pass",
+      "detail": []
+    },
+    {
+      "check": "nvda-sc.html:research_dates_preserved",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:four_column_five_row_table",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:gaap_nongaap_table_and_qoq_math",
+      "status": "pass",
+      "detail": [
+        {
+          "observed": [
+            [
+              96221.0
+            ],
+            [
+              96221.0
+            ],
+            [
+              17.9
+            ]
+          ],
+          "expected": [
+            [
+              96221
+            ],
+            [
+              96221
+            ],
+            [
+              17.9
+            ]
+          ],
+          "ok": true
+        },
+        {
+          "observed": [
+            [
+              72142.0,
+              75.0
+            ],
+            [
+              72188.0,
+              75.0
+            ],
+            [
+              0.0
+            ]
+          ],
+          "expected": [
+            [
+              72142,
+              75
+            ],
+            [
+              72188,
+              75
+            ],
+            [
+              0
+            ]
+          ],
+          "ok": true
+        },
+        {
+          "observed": [
+            [
+              63734.0
+            ],
+            [
+              63956.0
+            ],
+            [
+              18.9,
+              124.1
+            ]
+          ],
+          "expected": [
+            [
+              63734
+            ],
+            [
+              63956
+            ],
+            [
+              18.9,
+              124.1
+            ]
+          ],
+          "ok": true
+        },
+        {
+          "observed": [
+            [
+              59688.0
+            ],
+            [
+              53954.0
+            ],
+            [
+              18.5
+            ]
+          ],
+          "expected": [
+            [
+              59688
+            ],
+            [
+              53954
+            ],
+            [
+              18.5
+            ]
+          ],
+          "ok": true
+        },
+        {
+          "observed": [
+            [
+              2.46
+            ],
+            [
+              2.22
+            ],
+            [
+              24077.0
+            ]
+          ],
+          "expected": [
+            [
+              2.46
+            ],
+            [
+              2.22
+            ],
+            [
+              24077
+            ]
+          ],
+          "ok": true
+        }
+      ]
+    },
+    {
+      "check": "nvda-sc.html:brokers_facts_priority_returns_colors",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:compact_anr_source",
+      "status": "pass",
+      "detail": [
+        "来源：Bloomberg ANR（2026/10/08）；以 10/07 股价 US$237.47 计算。"
+      ]
+    },
+    {
+      "check": "nvda-sc.html:inline_js_syntax_and_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:chart_cache_keys",
+      "status": "pass",
+      "detail": [
+        "nvdaSegment",
+        "nvdaProfit",
+        "nvdaValuation"
+      ]
+    },
+    {
+      "check": "nvda-sc.html:tab_and_chart_resize_behavior",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:pi_never_accepted_hidden_or_storage_written",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:original_nvda_pi_functions_preserved",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:disclaimer_loaded_no_api_or_live_network",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:mu_fixed_interaction_and_api_functions",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:dated_company_ai_context",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:market_platform_revenue_chart",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:breakdown_chart_no_invented_margin",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:peer_valuation_matches_eeo",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:mu_structure_and_layout_attributes",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:mu_styles_fonts_and_script_versions",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:six_tabs",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:no_dead_sandbox",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:three_chart_containers",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:nvda_pi_legal_dom_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:header_consensus_preserved",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:no_micron_entities_or_distinctive_values",
+      "status": "pass",
+      "detail": []
+    },
+    {
+      "check": "nvda-en.html:research_dates_preserved",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:four_column_five_row_table",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:gaap_nongaap_table_and_qoq_math",
+      "status": "pass",
+      "detail": [
+        {
+          "observed": [
+            [
+              96221.0
+            ],
+            [
+              96221.0
+            ],
+            [
+              17.9
+            ]
+          ],
+          "expected": [
+            [
+              96221
+            ],
+            [
+              96221
+            ],
+            [
+              17.9
+            ]
+          ],
+          "ok": true
+        },
+        {
+          "observed": [
+            [
+              72142.0,
+              75.0
+            ],
+            [
+              72188.0,
+              75.0
+            ],
+            [
+              0.0
+            ]
+          ],
+          "expected": [
+            [
+              72142,
+              75
+            ],
+            [
+              72188,
+              75
+            ],
+            [
+              0
+            ]
+          ],
+          "ok": true
+        },
+        {
+          "observed": [
+            [
+              63734.0
+            ],
+            [
+              63956.0
+            ],
+            [
+              18.9,
+              124.1
+            ]
+          ],
+          "expected": [
+            [
+              63734
+            ],
+            [
+              63956
+            ],
+            [
+              18.9,
+              124.1
+            ]
+          ],
+          "ok": true
+        },
+        {
+          "observed": [
+            [
+              59688.0
+            ],
+            [
+              53954.0
+            ],
+            [
+              18.5
+            ]
+          ],
+          "expected": [
+            [
+              59688
+            ],
+            [
+              53954
+            ],
+            [
+              18.5
+            ]
+          ],
+          "ok": true
+        },
+        {
+          "observed": [
+            [
+              2.46
+            ],
+            [
+              2.22
+            ],
+            [
+              24077.0
+            ]
+          ],
+          "expected": [
+            [
+              2.46
+            ],
+            [
+              2.22
+            ],
+            [
+              24077
+            ]
+          ],
+          "ok": true
+        }
+      ]
+    },
+    {
+      "check": "nvda-en.html:brokers_facts_priority_returns_colors",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:compact_anr_source",
+      "status": "pass",
+      "detail": [
+        "Source: Bloomberg ANR (2026/10/08); calculated using the 10/07 share price of US$237.47."
+      ]
+    },
+    {
+      "check": "nvda-en.html:inline_js_syntax_and_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:chart_cache_keys",
+      "status": "pass",
+      "detail": [
+        "nvdaSegment",
+        "nvdaProfit",
+        "nvdaValuation"
+      ]
+    },
+    {
+      "check": "nvda-en.html:tab_and_chart_resize_behavior",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:pi_never_accepted_hidden_or_storage_written",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:original_nvda_pi_functions_preserved",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:disclaimer_loaded_no_api_or_live_network",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:mu_fixed_interaction_and_api_functions",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:dated_company_ai_context",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:market_platform_revenue_chart",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:breakdown_chart_no_invented_margin",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:peer_valuation_matches_eeo",
+      "status": "pass"
+    },
+    {
+      "check": "three_languages:chart_dataset_styles_and_values",
+      "status": "pass"
+    },
+    {
+      "check": "three_languages:chart_numeric_arrays",
+      "status": "pass"
+    },
+    {
+      "check": "protected_files_exactly_unchanged",
+      "status": "pass",
+      "detail": [
+        "index.html",
+        "mu.html",
+        "mu-sc.html",
+        "mu-en.html",
+        "CNAME",
+        "disclaimer.html",
+        "api/gemini.js",
+        "research/nvda-fy2027-q2-2026-10-08.json"
+      ]
+    },
+    {
+      "check": "migration_ledger:protected_hashes",
+      "status": "pass"
+    },
+    {
+      "check": "migration_ledger:template_hashes",
+      "status": "pass"
+    },
+    {
+      "check": "migration_ledger:financial_columns_match_evidence",
+      "status": "pass"
+    },
+    {
+      "check": "migration_ledger:qoq_math",
+      "status": "pass"
+    },
+    {
+      "check": "html_scope_nvda_only",
+      "status": "pass",
+      "detail": [
+        "AGENTS.md",
+        "PROJECT_INSTRUCTIONS.md",
+        "README.md",
+        "nvda-en.html",
+        "nvda-sc.html",
+        "nvda.html"
+      ]
+    },
+    {
+      "check": "git_diff_whitespace",
+      "status": "pass",
+      "detail": ""
+    }
+  ],
+  "page_details": {
+    "nvda.html": {
+      "sha256": "fd040ce9d512c2339dbc015139794b5b9cfba3311149079abc1d25285a385e06",
+      "mock_runtime": {
+        "charts": [
+          {
+            "canvasId": "segmentRevenueChart",
+            "config": {
+              "type": "doughnut",
+              "data": {
+                "labels": [
+                  "資料中心 (Data Center)",
+                  "邊緣運算 (Edge Computing)"
+                ],
+                "datasets": [
+                  {
+                    "data": [
+                      89023,
+                      7198
+                    ],
+                    "backgroundColor": [
+                      "rgba(37, 99, 235, 0.85)",
+                      "rgba(16, 185, 129, 0.85)"
+                    ],
+                    "borderWidth": 0
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "cutout": "65%"
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "profitabilityChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "Hyperscale",
+                  "ACIE",
+                  "Edge Computing"
+                ],
+                "datasets": [
+                  {
+                    "label": "營收 (百萬美元)",
+                    "data": [
+                      48710,
+                      40313,
+                      7198
+                    ],
+                    "backgroundColor": "#3b82f6",
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "scales": {
+                  "y": {
+                    "beginAtZero": true,
+                    "position": "left",
+                    "grid": {
+                      "color": "#f1f5f9"
+                    }
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "valuationChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "INTC (英特爾)",
+                  "AMD (超微半導體)",
+                  "AVGO (博通)",
+                  "NVDA (NVIDIA)"
+                ],
+                "datasets": [
+                  {
+                    "label": "未來四季 Price/EPS, Adj+（倍）",
+                    "data": [
+                      67.13,
+                      57.67,
+                      21.62,
+                      19.69
+                    ],
+                    "backgroundColor": [
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(37, 99, 235, 0.95)"
+                    ],
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "indexAxis": "y",
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "display": false
+                  }
+                },
+                "scales": {
+                  "x": {
+                    "beginAtZero": true
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          }
+        ],
+        "keys": [
+          "nvdaSegment",
+          "nvdaProfit",
+          "nvdaValuation"
+        ],
+        "tabs": [
+          {
+            "id": "our-comments",
+            "ok": true
+          },
+          {
+            "id": "financials",
+            "ok": true
+          },
+          {
+            "id": "valuation",
+            "ok": true
+          },
+          {
+            "id": "street-comments",
+            "ok": true
+          },
+          {
+            "id": "risks",
+            "ok": true
+          },
+          {
+            "id": "disclaimer",
+            "ok": true
+          }
+        ],
+        "fetches": [
+          "disclaimer.html"
+        ],
+        "storageWrites": 0,
+        "piVisible": true,
+        "bodyLocked": true,
+        "disclaimerLoaded": true,
+        "standardPrompt": "你是 NTAM 內部研究員的專屬 AI 助理。資料截至 2026/10/08，無即時行情。NVIDIA (NVDA) FY2027 Q2 截至 2026/07/26，於 2026/08/26 公布。營收 96.221 十億美元，年增 105.9%；資料中心 89.023 十億美元，年增 116.6%；GAAP 營業利潤 63.734 十億美元；Non-GAAP 營業利潤 63.956 十億美元、淨利 53.954 十億美元、攤薄 EPS 2.22 美元、毛利率 75%。GAAP 攤薄 EPS 2.46 美元；Non-GAAP 已包含股份薪酬，比較期已重列。第三季公司營收指引 108 十億美元 ±2%、Non-GAAP 毛利率 74% ±0.5 個百分點，不含中國資料中心運算營收。Rubin 量產出貨於第三季開始。營運現金流 24.077 十億美元，前季 50.344 十億美元；自由現金流 21.341 十億美元，季減 56.0%；DSO 60 天，前季 45 天；供應及產能承諾 279 十億美元，前季 119 十億美元。8 月 SB Energy 擔保上限 105 十億美元，附條件且分階段，並非已提取債務。Bloomberg ANR 2026/10/08 共識目標價 323.89 美元；10/07 參考股價 237.47 美元，隱含股價回報 36.4%。EEO 未來四季 Price/EPS, Adj+ 為 NVDA19.69、AMD57.67、AVGO21.62、INTC67.13 倍，預估期間及調整口徑並非完全一致。區分公司實績、公司指引、Bloomberg 共識和我們的分析；未提供的數據應說明未知，勿臆造投行論點。 請用客觀、精煉的繁體中文回答，使用 HTML <b> 加粗重點，嚴禁使用 markdown 語法。",
+        "functions": {
+          "switchTab": "function switchTab(e, tabId) {\n        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));\n        document.querySelectorAll('.tab-btn').forEach(el => {\n            el.classList.remove('active', 'border-blue-600', 'text-blue-600');\n            el.classList.add('text-slate-500');\n        });\n        document.getElementById(tabId).classList.add('active');\n        e.currentTarget.classList.remove('text-slate-500');\n        e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');\n\n        // 徹底修復 hidden 畫布無寬高像素之 Chart.js 原生缺陷\n        if (tabId === 'financials') {\n            if (window.charts.nvdaSegment) window.charts.nvdaSegment.resize();\n            if (window.charts.nvdaProfit) window.charts.nvdaProfit.resize();\n        } else if (tabId === 'valuation') {\n            if (window.charts.nvdaValuation) window.charts.nvdaValuation.resize();\n        }\n    }",
+          "acceptPI": "function acceptPI() {\n        sessionStorage.setItem('pi_agreed', 'true');\n        document.getElementById('pi-modal').style.display = 'none';\n        document.body.style.overflow = 'auto';\n    }",
+          "declinePI": "function declinePI() {\n        document.body.innerHTML = `<div style=\"height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;\"><h1 style=\"color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;\">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;\n    }",
+          "callGeminiAPI": "async function callGeminiAPI(prompt, systemInstruction) {\n        try {\n            const response = await fetch('/api/gemini', {\n                method: 'POST', headers: { 'Content-Type': 'application/json' },\n                body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })\n            });\n            const data = await response.json();\n            if (!response.ok) return `連線錯誤：${data.error || '未知錯誤'}`;\n            let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || \"抱歉，無法產生有效回覆。\";\n            return rawText.replace(/\\n/g, '<br>').replace(/\\*\\*(.*?)\\*\\*/g, '<b>$1</b>');\n        } catch (error) { return `網路連線失敗。(${error.message})`; }\n    }",
+          "toggleChat": "function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }",
+          "appendMessage": "function appendMessage(text, isUser) {\n        const msgDiv = document.createElement('div');\n        msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';\n        msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);\n        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;\n    }",
+          "showTypingIndicator": "function showTypingIndicator() {\n        const ind = document.createElement('div'); ind.id = `typing-indicator-${Date.now()}`;\n        ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';\n        ind.innerHTML = '<div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div>';\n        document.getElementById('chat-messages').appendChild(ind);\n        return ind.id;\n    }",
+          "handleChatSubmit": "async function handleChatSubmit(e) {\n        e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;\n        const sendBtn = e.target.querySelector('button[type=\"submit\"]'); if (sendBtn && sendBtn.disabled) return;\n        if (sendBtn) { sendBtn.disabled = true; sendBtn.classList.add('opacity-50', 'cursor-not-allowed'); }\n        input.value = ''; appendMessage(text, true); const typingId = showTypingIndicator();\n        try {\n            const res = await callGeminiAPI(text, standardPrompt);\n            document.getElementById(typingId)?.remove(); appendMessage(res, false);\n        } finally {\n            document.getElementById(typingId)?.remove();\n            if (sendBtn) { sendBtn.disabled = false; sendBtn.classList.remove('opacity-50', 'cursor-not-allowed'); }\n        }\n    }",
+          "closeExplainModal": "function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }"
+        }
+      }
+    },
+    "nvda-sc.html": {
+      "sha256": "9559c6e66dece01c855269bd2d14deaf2030ec9e7ffc2e0d3171bfb97810dbb2",
+      "mock_runtime": {
+        "charts": [
+          {
+            "canvasId": "segmentRevenueChart",
+            "config": {
+              "type": "doughnut",
+              "data": {
+                "labels": [
+                  "数据中心 (Data Center)",
+                  "边缘计算 (Edge Computing)"
+                ],
+                "datasets": [
+                  {
+                    "data": [
+                      89023,
+                      7198
+                    ],
+                    "backgroundColor": [
+                      "rgba(37, 99, 235, 0.85)",
+                      "rgba(16, 185, 129, 0.85)"
+                    ],
+                    "borderWidth": 0
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "cutout": "65%"
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "profitabilityChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "Hyperscale",
+                  "ACIE",
+                  "Edge Computing"
+                ],
+                "datasets": [
+                  {
+                    "label": "营收 (百万美元)",
+                    "data": [
+                      48710,
+                      40313,
+                      7198
+                    ],
+                    "backgroundColor": "#3b82f6",
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "scales": {
+                  "y": {
+                    "beginAtZero": true,
+                    "position": "left",
+                    "grid": {
+                      "color": "#f1f5f9"
+                    }
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "valuationChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "INTC (英特尔)",
+                  "AMD (超微半导体)",
+                  "AVGO (博通)",
+                  "NVDA (NVIDIA)"
+                ],
+                "datasets": [
+                  {
+                    "label": "未来四季 Price/EPS, Adj+（倍）",
+                    "data": [
+                      67.13,
+                      57.67,
+                      21.62,
+                      19.69
+                    ],
+                    "backgroundColor": [
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(37, 99, 235, 0.95)"
+                    ],
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "indexAxis": "y",
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "display": false
+                  }
+                },
+                "scales": {
+                  "x": {
+                    "beginAtZero": true
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          }
+        ],
+        "keys": [
+          "nvdaSegment",
+          "nvdaProfit",
+          "nvdaValuation"
+        ],
+        "tabs": [
+          {
+            "id": "our-comments",
+            "ok": true
+          },
+          {
+            "id": "financials",
+            "ok": true
+          },
+          {
+            "id": "valuation",
+            "ok": true
+          },
+          {
+            "id": "street-comments",
+            "ok": true
+          },
+          {
+            "id": "risks",
+            "ok": true
+          },
+          {
+            "id": "disclaimer",
+            "ok": true
+          }
+        ],
+        "fetches": [
+          "disclaimer.html"
+        ],
+        "storageWrites": 0,
+        "piVisible": true,
+        "bodyLocked": true,
+        "disclaimerLoaded": true,
+        "standardPrompt": "你是 NTAM 内部研究员的专属 AI 助理。资料截至 2026/10/08，无实时行情。NVIDIA (NVDA) FY2027 Q2 截至 2026/07/26，于 2026/08/26 公布。营收 96.221 十亿美元，年增 105.9%；数据中心 89.023 十亿美元，年增 116.6%；GAAP 营业利润 63.734 十亿美元；Non-GAAP 营业利润 63.956 十亿美元、净利 53.954 十亿美元、摊薄 EPS 2.22 美元、毛利率 75%。GAAP 摊薄 EPS 2.46 美元；Non-GAAP 已包含股份薪酬，比较期已重列。第三季公司营收指引 108 十亿美元 ±2%、Non-GAAP 毛利率 74% ±0.5 个百分点，不含中国数据中心运算营收。Rubin 量产出货于第三季开始。运营现金流 24.077 十亿美元，前季 50.344 十亿美元；自由现金流 21.341 十亿美元，季减 56.0%；DSO 60 天，前季 45 天；供应及产能承诺 279 十亿美元，前季 119 十亿美元。8 月 SB Energy 担保上限 105 十亿美元，附条件且分阶段，并非已提取债务。Bloomberg ANR 2026/10/08 共识目标价 323.89 美元；10/07 参考股价 237.47 美元，隐含股价回报 36.4%。EEO 未来四季 Price/EPS, Adj+ 为 NVDA19.69、AMD57.67、AVGO21.62、INTC67.13 倍，预估期间及调整口径并非完全一致。区分公司实绩、公司指引、Bloomberg 共识和我们的分析；未提供的数据应说明未知，勿臆造投行论点。 请用客观、精炼的简体中文回答，使用 HTML <b> 加粗重点，严禁使用 markdown 语法。",
+        "functions": {
+          "switchTab": "function switchTab(e, tabId) {\n        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));\n        document.querySelectorAll('.tab-btn').forEach(el => {\n            el.classList.remove('active', 'border-blue-600', 'text-blue-600');\n            el.classList.add('text-slate-500');\n        });\n        document.getElementById(tabId).classList.add('active');\n        e.currentTarget.classList.remove('text-slate-500');\n        e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');\n\n        // 彻底修复 hidden 画布无宽高像素之 Chart.js 原生缺陷\n        if (tabId === 'financials') {\n            if (window.charts.nvdaSegment) window.charts.nvdaSegment.resize();\n            if (window.charts.nvdaProfit) window.charts.nvdaProfit.resize();\n        } else if (tabId === 'valuation') {\n            if (window.charts.nvdaValuation) window.charts.nvdaValuation.resize();\n        }\n    }",
+          "acceptPI": "function acceptPI() {\n        sessionStorage.setItem('pi_agreed', 'true');\n        document.getElementById('pi-modal').style.display = 'none';\n        document.body.style.overflow = 'auto';\n    }",
+          "declinePI": "function declinePI() {\n        document.body.innerHTML = `<div style=\"height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;\"><h1 style=\"color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;\">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;\n    }",
+          "callGeminiAPI": "async function callGeminiAPI(prompt, systemInstruction) {\n        try {\n            const response = await fetch('/api/gemini', {\n                method: 'POST', headers: { 'Content-Type': 'application/json' },\n                body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })\n            });\n            const data = await response.json();\n            if (!response.ok) return `连线错误：${data.error || '未知错误'}`;\n            let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || \"抱歉，无法产生有效回复。\";\n            return rawText.replace(/\\n/g, '<br>').replace(/\\*\\*(.*?)\\*\\*/g, '<b>$1</b>');\n        } catch (error) { return `网络连线失败。(${error.message})`; }\n    }",
+          "toggleChat": "function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }",
+          "appendMessage": "function appendMessage(text, isUser) {\n        const msgDiv = document.createElement('div');\n        msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';\n        msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);\n        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;\n    }",
+          "showTypingIndicator": "function showTypingIndicator() {\n        const ind = document.createElement('div'); ind.id = 'typing-indicator';\n        ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';\n        ind.innerHTML = '<div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div>';\n        document.getElementById('chat-messages').appendChild(ind);\n    }",
+          "handleChatSubmit": "async function handleChatSubmit(e) {\n        e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;\n        input.value = ''; appendMessage(text, true); showTypingIndicator();\n        const res = await callGeminiAPI(text, standardPrompt);\n        document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);\n    }",
+          "closeExplainModal": "function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }"
+        }
+      }
+    },
+    "nvda-en.html": {
+      "sha256": "09896fb3b7904aaa3ff8e0c5480121b998b5bc60bb93516184d491ef86d2c4d1",
+      "mock_runtime": {
+        "charts": [
+          {
+            "canvasId": "segmentRevenueChart",
+            "config": {
+              "type": "doughnut",
+              "data": {
+                "labels": [
+                  "Data Center",
+                  "Edge Computing"
+                ],
+                "datasets": [
+                  {
+                    "data": [
+                      89023,
+                      7198
+                    ],
+                    "backgroundColor": [
+                      "rgba(37, 99, 235, 0.85)",
+                      "rgba(16, 185, 129, 0.85)"
+                    ],
+                    "borderWidth": 0
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "cutout": "65%"
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "profitabilityChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "Hyperscale",
+                  "ACIE",
+                  "Edge Computing"
+                ],
+                "datasets": [
+                  {
+                    "label": "Revenue ($M)",
+                    "data": [
+                      48710,
+                      40313,
+                      7198
+                    ],
+                    "backgroundColor": "#3b82f6",
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "scales": {
+                  "y": {
+                    "beginAtZero": true,
+                    "position": "left",
+                    "grid": {
+                      "color": "#f1f5f9"
+                    }
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "valuationChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "INTC (Intel)",
+                  "AMD (Advanced Micro Devices)",
+                  "AVGO (Broadcom)",
+                  "NVDA (NVIDIA)"
+                ],
+                "datasets": [
+                  {
+                    "label": "Next 4 Qtrs Price/EPS, Adj+ (x)",
+                    "data": [
+                      67.13,
+                      57.67,
+                      21.62,
+                      19.69
+                    ],
+                    "backgroundColor": [
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(37, 99, 235, 0.95)"
+                    ],
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "indexAxis": "y",
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "display": false
+                  }
+                },
+                "scales": {
+                  "x": {
+                    "beginAtZero": true
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          }
+        ],
+        "keys": [
+          "nvdaSegment",
+          "nvdaProfit",
+          "nvdaValuation"
+        ],
+        "tabs": [
+          {
+            "id": "our-comments",
+            "ok": true
+          },
+          {
+            "id": "financials",
+            "ok": true
+          },
+          {
+            "id": "valuation",
+            "ok": true
+          },
+          {
+            "id": "street-comments",
+            "ok": true
+          },
+          {
+            "id": "risks",
+            "ok": true
+          },
+          {
+            "id": "disclaimer",
+            "ok": true
+          }
+        ],
+        "fetches": [
+          "disclaimer.html"
+        ],
+        "storageWrites": 0,
+        "piVisible": true,
+        "bodyLocked": true,
+        "disclaimerLoaded": true,
+        "standardPrompt": "You are the exclusive AI assistant for NTAM internal researchers. Information is as of 2026/10/08; you have no live market data. NVIDIA (NVDA) FY2027 Q2 ended 2026/07/26 and results were released 2026/08/26. Revenue was $96.221bn, up105.9% YoY; Data Center revenue $89.023bn, up116.6%; GAAP operating income $63.734bn; non-GAAP operating income $63.956bn, net income $53.954bn, diluted EPS $2.22, gross margin75%. GAAP diluted EPS was $2.46. Non-GAAP now includes stock-based compensation and comparatives are recast. Company Q3 guidance is revenue $108bn ±2% and non-GAAP gross margin74% ±0.5 percentage points, assuming no China Data Center compute revenue. Rubin production shipments began in Q3. Operating cash flow was $24.077bn versus $50.344bn in Q1; free cash flow $21.341bn, down56.0% QoQ; DSO60 versus45 days; supply and capacity commitments $279bn versus $119bn. The August SB Energy guarantee is capped at $105bn gross, conditional and phased, and is not drawn debt. Bloomberg ANR dated2026/10/08 shows consensus target $323.89; 10/07 reference share price $237.47 implies36.4% share-price upside. EEO Next 4 Qtrs Price/EPS, Adj+ is NVDA19.69x, AMD57.67x, AVGO21.62x and INTC67.13x, with differing forecast windows and adjustments. Distinguish actuals, company guidance, Bloomberg consensus and our analysis. Say when data are unavailable and do not invent broker rationales. Please answer objectively and concisely in English, using HTML <b> tags for emphasis, strictly no markdown syntax.",
+        "functions": {
+          "switchTab": "function switchTab(e, tabId) {\n        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));\n        document.querySelectorAll('.tab-btn').forEach(el => {\n            el.classList.remove('active', 'border-blue-600', 'text-blue-600');\n            el.classList.add('text-slate-500');\n        });\n        document.getElementById(tabId).classList.add('active');\n        e.currentTarget.classList.remove('text-slate-500');\n        e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');\n\n        // Fix hidden canvas sizing bugs native to Chart.js\n        if (tabId === 'financials') {\n            if (window.charts.nvdaSegment) window.charts.nvdaSegment.resize();\n            if (window.charts.nvdaProfit) window.charts.nvdaProfit.resize();\n        } else if (tabId === 'valuation') {\n            if (window.charts.nvdaValuation) window.charts.nvdaValuation.resize();\n        }\n    }",
+          "acceptPI": "function acceptPI() {\n        sessionStorage.setItem('pi_agreed', 'true');\n        document.getElementById('pi-modal').style.display = 'none';\n        document.body.style.overflow = 'auto';\n    }",
+          "declinePI": "function declinePI() {\n        document.body.innerHTML = `<div style=\"height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;\"><h1 style=\"color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;\">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;\n    }",
+          "callGeminiAPI": "async function callGeminiAPI(prompt, systemInstruction) {\n        try {\n            const response = await fetch('/api/gemini', {\n                method: 'POST', headers: { 'Content-Type': 'application/json' },\n                body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })\n            });\n            const data = await response.json();\n            if (!response.ok) return `Connection Error: ${data.error || 'Unknown Error'}`;\n            let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || \"Apologies, unable to generate a valid response.\";\n            return rawText.replace(/\\n/g, '<br>').replace(/\\*\\*(.*?)\\*\\*/g, '<b>$1</b>');\n        } catch (error) { return `Network connection failed. (${error.message})`; }\n    }",
+          "toggleChat": "function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }",
+          "appendMessage": "function appendMessage(text, isUser) {\n        const msgDiv = document.createElement('div');\n        msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';\n        msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);\n        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;\n    }",
+          "showTypingIndicator": "function showTypingIndicator() {\n        const ind = document.createElement('div'); ind.id = 'typing-indicator';\n        ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';\n        ind.innerHTML = '<div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div>';\n        document.getElementById('chat-messages').appendChild(ind);\n    }",
+          "handleChatSubmit": "async function handleChatSubmit(e) {\n        e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;\n        input.value = ''; appendMessage(text, true); showTypingIndicator();\n        const res = await callGeminiAPI(text, standardPrompt);\n        document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);\n    }",
+          "closeExplainModal": "function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }"
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Node checks use a fake DOM, fake Chart constructor and local disclaimer response; they are not real-browser visual verification.",
+    "No live AI/network call, PI acceptance, PI storage write, modal hiding/removal or access-control bypass was performed.",
+    "Desktop/mobile content rendering and actual Chart.js rasterization remain unverified behind the PI gate. Visible-gate browser screenshots do not validate hidden report content.",
+    "Primary-source and Bloomberg authenticity review is recorded in the existing research ledger; this check independently reconciles implementation to that evidence."
+  ]
+}

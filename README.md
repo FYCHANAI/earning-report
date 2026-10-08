@@ -1,12 +1,21 @@
 # NTAM investment research website
 
-## NVDA research update — 8 October 2026
+## Canonical MU layout — 8 October 2026
+
+The owner's latest instruction makes `mu.html`, `mu-sc.html` and `mu-en.html` the respective language masters for every new company report and future report update. The NVDA conversion adopts MU's six-section white/blue layout, financial comparison table, chart instance storage/resize behavior, and chat/explain-AI interfaces while preserving NVIDIA's verified FY2027 Q2 research and dated Bloomberg evidence. Other older reports migrate when next updated; this change does not authorize a bulk conversion.
+
+This rule supersedes the former seven-tab preservation and AVGO-template instructions. Company metrics and datasets must fit the business and available evidence; MU facts must never be copied into another company's research. PI legal wording and acceptance controls, disclaimer loading, API handling and shared configuration remain protected. See [maintenance rules](AGENTS.md) and [Project Instructions](PROJECT_INSTRUCTIONS.md) for the continuing standard. The prior NVDA description below records the earlier content-only release, not the current layout requirement; validation and publication status must be established from the conversion's actual checks and release records.
+
+- [MU template provenance and NVDA data mapping](research/nvda-mu-template-migration-2026-10-08.json)
+- [NVDA layout conversion validation](research/nvda-mu-template-validation-2026-10-08.json)
+
+## Earlier NVDA content update — 8 October 2026 (historical)
 
 The three NVIDIA reports cover FY2027 Q2, ended 26 July 2026 and announced on 26 August. The update combines official results, CFO commentary and filings with owner-supplied Bloomberg ANR/EEO evidence. The consensus target is US$323.89 versus the 7 October reference share price of US$237.47. Broker cards contain only the verified UBS, Morgan Stanley and Citi ratings, dates, targets and implied price returns.
 
 The report uses the latest recast Hyperscale/ACIE comparisons and the company non-GAAP basis that includes stock-based compensation. Working-capital demands, supply commitments and conditional guarantees are distinguished from growth catalysts. Peer valuation uses Bloomberg's Next 4 Qtrs Est Price/EPS, Adj+ field; the date visibility, fiscal-window and adjustment-basis limitations remain explicit.
 
-The original seven tabs, three charts, four view items, three broker cards and four risk items are retained. One compact Wall Street source paragraph implements the owner's required attribution format. PI controls, legal text, CSS, API handling and fixed JavaScript remain unchanged. AI company context is dated and does not imply live prices.
+That earlier content-only release retained the original seven tabs, three charts, four view items, three broker cards and four risk items. One compact Wall Street source paragraph implemented the owner's required attribution format. PI controls, legal text, CSS, API handling and fixed JavaScript were unchanged. AI company context was dated and did not imply live prices. Its seven-tab layout is superseded by the MU layout instruction above.
 
 The homepage is sorted by the actual earnings publication date of each report's covered quarter, not its editing date. Its leading cards are MU (30 September), AVGO (2 September) and NVDA (26 August); all other company cards retain their original content.
 
