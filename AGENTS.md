@@ -36,4 +36,4 @@ The owner requires strict preservation of the existing website skeleton. Maintai
 - Use a branch and reviewable commit. Distinguish local preparation, remote push, merge and verified production deployment. Do not claim checks or deployment that did not occur.
 - Never commit credentials. The backend reads `GEMINI_API_KEY` from its deployment environment.
 
-See `README.md` for the baseline and known issues. Later explicit owner instructions take precedence over these maintenance notes.
+See `PROJECT_INSTRUCTIONS.md` for the reusable Traditional Chinese project instructions and `README.md` for the baseline and known issues. Later explicit owner instructions take precedence over these maintenance notes.

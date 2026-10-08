@@ -7,6 +7,7 @@ Micron reports in Traditional Chinese, Simplified Chinese and English now cover 
 The original six tabs, HTML classes, styles, chart layout, language selector, legal wording and AI interfaces are preserved. Company text, financial figures, four chart datasets and dated AI context are refreshed. A separate repair restores the missing English/Simplified PI controls from the Traditional Chinese implementation and the Simplified net-income label cell.
 
 - [Maintenance rules](AGENTS.md)
+- [Project Instructions（繁體中文，可貼入專案設定）](PROJECT_INSTRUCTIONS.md)
 - [Source and calculation ledger](research/mu-fy2026-q4-2026-10-08.json)
 - [Validation record](research/mu-fy2026-q4-validation.json)
 
