@@ -1,0 +1,1416 @@
+{
+  "schema_version": 1,
+  "ticker": "MU",
+  "reporting_period": "FY2026 Q4 and full year",
+  "report_updated_on": "2026-10-08",
+  "release_date": "2026-09-30",
+  "currency": "USD unless specified",
+  "units": "Financial statement/revenue/cash flow values USD millions; EPS and share prices currency per share; diluted shares millions; percentages and P/E explicitly labelled.",
+  "period_order": [
+    "FQ4-26",
+    "FQ3-26",
+    "FQ4-25",
+    "FY-26",
+    "FY-25"
+  ],
+  "period_ends": {
+    "FQ4-26": "2026-09-03",
+    "FQ3-26": "2026-05-28",
+    "FQ4-25": "2025-08-28",
+    "FY-26": "2026-09-03",
+    "FY-25": "2025-08-28"
+  },
+  "array_policy": "All financial series, technology mix and business-unit arrays follow period_order; null means not supplied in the selected source.",
+  "sources": {
+    "release": {
+      "type": "company_disclosure",
+      "url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Fiscal-Fourth-Quarter-and-Full-Year-2026-Results/",
+      "publication_date": "2026-09-30"
+    },
+    "deck": {
+      "type": "company_disclosure",
+      "url": "https://s25.q4cdn.com/621799436/files/doc_financials/2026/q4/Q4-26-Earnings-Deck.pdf",
+      "publication_date": "2026-09-30"
+    },
+    "remarks": {
+      "type": "company_disclosure",
+      "url": "https://s25.q4cdn.com/621799436/files/doc_financials/2026/q4/Q4-FY26-Prepared-Remarks.pdf",
+      "publication_date": "2026-09-30"
+    },
+    "sec_8k_exhibit_99_1": {
+      "type": "SEC_8K_exhibit_99_1",
+      "url": "https://www.sec.gov/Archives/edgar/data/723125/000072312526000018/a2026q4ex991-pressrelease.htm",
+      "publication_date": "2026-09-30"
+    },
+    "prior_release": {
+      "type": "company_disclosure",
+      "url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Results-for-the-Third-Quarter-of-Fiscal-2026/default.aspx"
+    },
+    "mu_anr": {
+      "type": "user_provided_Bloomberg_ANR_screenshot",
+      "provided_filename": "MU ANR.png",
+      "as_of_date": "2026-10-08",
+      "provenance": "Transcribed from owner-provided original terminal screenshot; image is not included in this ledger."
+    },
+    "eeo_mu": {
+      "type": "user_provided_Bloomberg_EEO_screenshot",
+      "provided_filename": "MU EEO.png",
+      "as_of_date": null,
+      "provenance": "Transcribed from owner-provided original terminal screenshot; image is not included in this ledger."
+    },
+    "eeo_285a": {
+      "type": "user_provided_Bloomberg_EEO_screenshot",
+      "provided_filename": "KIOXIA EEO.png",
+      "as_of_date": null,
+      "provenance": "Transcribed from owner-provided original terminal screenshot; image is not included in this ledger."
+    },
+    "eeo_005930": {
+      "type": "user_provided_Bloomberg_EEO_screenshot",
+      "provided_filename": "SAMSUNG EEO.png",
+      "as_of_date": null,
+      "provenance": "Transcribed from owner-provided original terminal screenshot; image is not included in this ledger."
+    },
+    "eeo_000660": {
+      "type": "user_provided_Bloomberg_EEO_screenshot",
+      "provided_filename": "SK HYNIX EEO.png",
+      "as_of_date": null,
+      "provenance": "Transcribed from owner-provided original terminal screenshot; image is not included in this ledger."
+    }
+  },
+  "financial_actuals": [
+    {
+      "metric": "revenue",
+      "basis": "GAAP and Non-GAAP",
+      "values": [
+        54229,
+        41456,
+        11315,
+        133188,
+        37378
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1",
+      "ntam_calculated_growth_pct": {
+        "qoq": 30.81098,
+        "yoy": 379.26646,
+        "fy_yoy": 256.327251
+      }
+    },
+    {
+      "metric": "gross_profit_gaap",
+      "basis": "GAAP",
+      "values": [
+        47047,
+        35056,
+        5054,
+        107504,
+        14873
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1",
+      "ntam_calculated_growth_pct": {
+        "qoq": 34.205272,
+        "yoy": 830.886427,
+        "fy_yoy": 622.813151
+      }
+    },
+    {
+      "metric": "gross_margin_gaap_pct",
+      "basis": "GAAP",
+      "values": [
+        86.8,
+        84.6,
+        44.7,
+        80.7,
+        39.8
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1",
+      "ntam_calculated_change_ppts": {
+        "qoq": 2.2,
+        "yoy": 42.1,
+        "fy_yoy": 40.9
+      }
+    },
+    {
+      "metric": "gross_profit_nongaap",
+      "basis": "Non-GAAP",
+      "values": [
+        47204,
+        35199,
+        5169,
+        108032,
+        15286
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1",
+      "ntam_calculated_growth_pct": {
+        "qoq": 34.106083,
+        "yoy": 813.213388,
+        "fy_yoy": 606.738192
+      }
+    },
+    {
+      "metric": "gross_margin_nongaap_pct",
+      "basis": "Non-GAAP",
+      "values": [
+        87.0,
+        84.9,
+        45.7,
+        81.1,
+        40.9
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1",
+      "ntam_calculated_change_ppts": {
+        "qoq": 2.1,
+        "yoy": 41.3,
+        "fy_yoy": 40.2
+      }
+    },
+    {
+      "metric": "opex_gaap",
+      "basis": "GAAP",
+      "values": [
+        3296,
+        1738,
+        1400,
+        8164,
+        5103
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1",
+      "ntam_calculated_growth_pct": {
+        "qoq": 89.643268,
+        "yoy": 135.428571,
+        "fy_yoy": 59.984323
+      }
+    },
+    {
+      "metric": "opex_nongaap",
+      "basis": "Non-GAAP",
+      "values": [
+        2568,
+        1518,
+        1214,
+        6841,
+        4440
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1",
+      "ntam_calculated_growth_pct": {
+        "qoq": 69.16996,
+        "yoy": 111.532125,
+        "fy_yoy": 54.076577
+      }
+    },
+    {
+      "metric": "operating_income_gaap",
+      "basis": "GAAP",
+      "values": [
+        43751,
+        33318,
+        3654,
+        99340,
+        9770
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1",
+      "ntam_calculated_growth_pct": {
+        "qoq": 31.313404,
+        "yoy": 1097.345375,
+        "fy_yoy": 916.78608
+      }
+    },
+    {
+      "metric": "operating_margin_gaap_pct",
+      "basis": "GAAP",
+      "values": [
+        80.7,
+        80.4,
+        32.3,
+        74.6,
+        26.1
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1",
+      "ntam_calculated_change_ppts": {
+        "qoq": 0.3,
+        "yoy": 48.4,
+        "fy_yoy": 48.5
+      }
+    },
+    {
+      "metric": "operating_income_nongaap",
+      "basis": "Non-GAAP",
+      "values": [
+        44636,
+        33681,
+        3955,
+        101191,
+        10846
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1",
+      "ntam_calculated_growth_pct": {
+        "qoq": 32.525756,
+        "yoy": 1028.596713,
+        "fy_yoy": 832.9799
+      }
+    },
+    {
+      "metric": "operating_margin_nongaap_pct",
+      "basis": "Non-GAAP",
+      "values": [
+        82.3,
+        81.2,
+        35.0,
+        76.0,
+        29.0
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1",
+      "ntam_calculated_change_ppts": {
+        "qoq": 1.1,
+        "yoy": 47.3,
+        "fy_yoy": 47.0
+      }
+    },
+    {
+      "metric": "net_income_gaap",
+      "basis": "GAAP",
+      "values": [
+        37701,
+        28243,
+        3201,
+        84969,
+        8539
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1",
+      "ntam_calculated_growth_pct": {
+        "qoq": 33.487944,
+        "yoy": 1077.788191,
+        "fy_yoy": 895.06968
+      }
+    },
+    {
+      "metric": "net_income_nongaap",
+      "basis": "Non-GAAP",
+      "values": [
+        38398,
+        28857,
+        3469,
+        86758,
+        9470
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1",
+      "ntam_calculated_growth_pct": {
+        "qoq": 33.063035,
+        "yoy": 1006.889594,
+        "fy_yoy": 816.135164
+      }
+    },
+    {
+      "metric": "diluted_eps_gaap",
+      "basis": "GAAP",
+      "values": [
+        32.87,
+        24.67,
+        2.83,
+        74.33,
+        7.59
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1",
+      "ntam_calculated_growth_pct": {
+        "qoq": 33.238752,
+        "yoy": 1061.484099,
+        "fy_yoy": 879.314888
+      }
+    },
+    {
+      "metric": "diluted_eps_nongaap",
+      "basis": "Non-GAAP",
+      "values": [
+        33.42,
+        25.11,
+        3.03,
+        75.52,
+        8.29
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1",
+      "ntam_calculated_growth_pct": {
+        "qoq": 33.094385,
+        "yoy": 1002.970297,
+        "fy_yoy": 810.977081
+      }
+    },
+    {
+      "metric": "diluted_shares_gaap",
+      "basis": "GAAP",
+      "values": [
+        1147,
+        1145,
+        1131,
+        1143,
+        1125
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1"
+    },
+    {
+      "metric": "diluted_shares_nongaap",
+      "basis": "Non-GAAP",
+      "values": [
+        1149,
+        1149,
+        1145,
+        1149,
+        1143
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1"
+    }
+  ],
+  "technology_revenue": [
+    {
+      "technology": "DRAM",
+      "basis": "reported revenue",
+      "values": [
+        39771,
+        31328,
+        8984,
+        100679,
+        28578
+      ],
+      "reported_rounded_mix_pct": [
+        73,
+        76,
+        79,
+        76,
+        76
+      ],
+      "source_id": "deck",
+      "pages_1based": [
+        35,
+        36
+      ]
+    },
+    {
+      "technology": "NAND",
+      "basis": "reported revenue",
+      "values": [
+        14102,
+        9943,
+        2252,
+        31785,
+        8503
+      ],
+      "reported_rounded_mix_pct": [
+        26,
+        24,
+        20,
+        24,
+        23
+      ],
+      "source_id": "deck",
+      "pages_1based": [
+        35,
+        36
+      ]
+    },
+    {
+      "technology": "Other (primarily NOR)",
+      "basis": "reported revenue",
+      "values": [
+        356,
+        185,
+        79,
+        724,
+        297
+      ],
+      "reported_rounded_mix_pct": [
+        1,
+        null,
+        1,
+        1,
+        1
+      ],
+      "source_id": "deck",
+      "pages_1based": [
+        35,
+        36
+      ]
+    }
+  ],
+  "business_units": [
+    {
+      "unit": "CMBU",
+      "basis": "Non-GAAP business-unit presentation; prepared remarks p1 applies unless otherwise specified",
+      "revenue": [
+        16283,
+        13769,
+        4543,
+        43085,
+        13524
+      ],
+      "gross_margin_pct": [
+        83,
+        83,
+        59,
+        null,
+        null
+      ],
+      "operating_margin_pct": [
+        76,
+        78,
+        48,
+        null,
+        null
+      ],
+      "reported_qoq_revenue_growth_pct": 18,
+      "reported_yoy_revenue_growth_pct": 258,
+      "source_id": "deck",
+      "pages_1based": [
+        24,
+        37
+      ],
+      "corroborating_source_id": "release",
+      "basis_source_id": "remarks"
+    },
+    {
+      "unit": "CDBU",
+      "basis": "Non-GAAP business-unit presentation; prepared remarks p1 applies unless otherwise specified",
+      "revenue": [
+        18002,
+        11524,
+        1577,
+        37592,
+        7229
+      ],
+      "gross_margin_pct": [
+        90,
+        87,
+        41,
+        null,
+        null
+      ],
+      "operating_margin_pct": [
+        85,
+        83,
+        25,
+        null,
+        null
+      ],
+      "reported_qoq_revenue_growth_pct": 56,
+      "reported_yoy_revenue_growth_pct": 1042,
+      "source_id": "deck",
+      "pages_1based": [
+        24,
+        37
+      ],
+      "corroborating_source_id": "release",
+      "basis_source_id": "remarks"
+    },
+    {
+      "unit": "MCBU",
+      "basis": "Non-GAAP business-unit presentation; prepared remarks p1 applies unless otherwise specified",
+      "revenue": [
+        13114,
+        11521,
+        3760,
+        36601,
+        11859
+      ],
+      "gross_margin_pct": [
+        90,
+        87,
+        36,
+        null,
+        null
+      ],
+      "operating_margin_pct": [
+        88,
+        86,
+        29,
+        null,
+        null
+      ],
+      "reported_qoq_revenue_growth_pct": 14,
+      "reported_yoy_revenue_growth_pct": 249,
+      "source_id": "deck",
+      "pages_1based": [
+        24,
+        37
+      ],
+      "corroborating_source_id": "release",
+      "basis_source_id": "remarks"
+    },
+    {
+      "unit": "AEBU",
+      "basis": "Non-GAAP business-unit presentation; prepared remarks p1 applies unless otherwise specified",
+      "revenue": [
+        6824,
+        4634,
+        1434,
+        15886,
+        4753
+      ],
+      "gross_margin_pct": [
+        84,
+        79,
+        31,
+        null,
+        null
+      ],
+      "operating_margin_pct": [
+        79,
+        75,
+        20,
+        null,
+        null
+      ],
+      "reported_qoq_revenue_growth_pct": 47,
+      "reported_yoy_revenue_growth_pct": 376,
+      "source_id": "deck",
+      "pages_1based": [
+        24,
+        37
+      ],
+      "corroborating_source_id": "release",
+      "basis_source_id": "remarks"
+    }
+  ],
+  "cash_flow": [
+    {
+      "metric": "operating_cash_flow",
+      "basis": "GAAP",
+      "values": [
+        43973,
+        25388,
+        5730,
+        89675,
+        17525
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1"
+    },
+    {
+      "metric": "property_plant_equipment_expenditure_cash_outflow",
+      "basis": "GAAP",
+      "values": [
+        11110,
+        7826,
+        5658,
+        30712,
+        15857
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1"
+    },
+    {
+      "metric": "proceeds_pp_and_e_sales",
+      "basis": "GAAP",
+      "values": [
+        9,
+        9,
+        20,
+        29,
+        48
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1"
+    },
+    {
+      "metric": "government_incentive_proceeds",
+      "basis": "GAAP",
+      "values": [
+        327,
+        733,
+        711,
+        3316,
+        2005
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1"
+    },
+    {
+      "metric": "net_capex_cash_outflow",
+      "basis": "Non-GAAP",
+      "values": [
+        10774,
+        7084,
+        4927,
+        27367,
+        13804
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1"
+    },
+    {
+      "metric": "adjusted_free_cash_flow",
+      "basis": "Non-GAAP",
+      "values": [
+        33199,
+        18304,
+        803,
+        62308,
+        3721
+      ],
+      "source_id": "release",
+      "corroborating_source_id": "sec_8k_exhibit_99_1"
+    },
+    {
+      "metric": "cash_marketable_investments_restricted_cash",
+      "basis": "GAAP",
+      "values": [
+        73480,
+        30155,
+        11940,
+        null,
+        null
+      ],
+      "source_id": "deck",
+      "page_1based": 32
+    },
+    {
+      "metric": "adjusted_fcf_definition",
+      "basis": "Non-GAAP",
+      "formula": "operating_cash_flow - gross_PPE_expenditure + PPE_sale_proceeds + government_incentive_proceeds",
+      "source_id": "deck",
+      "page_1based": 28
+    }
+  ],
+  "guidance": [
+    {
+      "metric": "revenue",
+      "basis": "GAAP and Non-GAAP",
+      "period": "FQ1-27",
+      "value": 61500,
+      "source_id": "release",
+      "plus_minus": 1500
+    },
+    {
+      "metric": "gross_margin_pct",
+      "basis": "GAAP",
+      "period": "FQ1-27",
+      "value": 85.95,
+      "source_id": "release",
+      "precision": "approximately"
+    },
+    {
+      "metric": "gross_margin_pct",
+      "basis": "Non-GAAP",
+      "period": "FQ1-27",
+      "value": 86.25,
+      "source_id": "release",
+      "precision": "approximately"
+    },
+    {
+      "metric": "opex",
+      "basis": "GAAP",
+      "period": "FQ1-27",
+      "value": 2310,
+      "source_id": "release",
+      "precision": "approximately"
+    },
+    {
+      "metric": "opex",
+      "basis": "Non-GAAP",
+      "period": "FQ1-27",
+      "value": 2060,
+      "source_id": "release",
+      "precision": "approximately"
+    },
+    {
+      "metric": "diluted_eps",
+      "basis": "GAAP",
+      "period": "FQ1-27",
+      "value": 37.84,
+      "source_id": "release",
+      "plus_minus": 1.0
+    },
+    {
+      "metric": "diluted_eps",
+      "basis": "Non-GAAP",
+      "period": "FQ1-27",
+      "value": 38.15,
+      "source_id": "release",
+      "plus_minus": 1.0
+    },
+    {
+      "metric": "diluted_shares",
+      "basis": "GAAP and Non-GAAP",
+      "period": "FQ1-27",
+      "value": 1150,
+      "source_id": "release",
+      "precision": "approximately"
+    },
+    {
+      "metric": "net_capex",
+      "basis": "Non-GAAP, net anticipated government incentives",
+      "period": "FQ1-27",
+      "value": 11500,
+      "source_id": "remarks",
+      "precision": "approximately",
+      "page_1based": 10
+    },
+    {
+      "metric": "net_capex",
+      "basis": "Non-GAAP, net anticipated government incentives",
+      "period": "H1 FY27",
+      "value": 25000,
+      "source_id": "remarks",
+      "precision": "approximately",
+      "page_1based": 10
+    },
+    {
+      "metric": "net_capex",
+      "basis": "management outlook",
+      "period": "H2 FY27",
+      "value": "higher than H1",
+      "source_id": "remarks",
+      "page_1based": 10
+    },
+    {
+      "metric": "opex_increase_yoy",
+      "basis": "Non-GAAP management outlook",
+      "period": "FY27",
+      "value": 2500,
+      "source_id": "remarks",
+      "precision": "approximately",
+      "page_1based": 9
+    },
+    {
+      "metric": "tax_rate_pct",
+      "basis": "Non-GAAP",
+      "period": "FQ1-27 and FY27",
+      "value": 15.5,
+      "source_id": "remarks",
+      "precision": "approximately",
+      "page_1based": 9
+    },
+    {
+      "metric": "revenue_growth",
+      "basis": "management outlook",
+      "period": "FY27",
+      "value": "sequential growth each quarter",
+      "source_id": "remarks",
+      "page_1based": 9
+    },
+    {
+      "metric": "gross_margin_trajectory",
+      "basis": "Non-GAAP management outlook",
+      "period": "FY27",
+      "value": "Q1 low point; higher afterward",
+      "source_id": "remarks",
+      "page_1based": 9
+    }
+  ],
+  "operating_disclosures": [
+    {
+      "fact": "SCA_signed_count",
+      "value": 26,
+      "basis": "management disclosure",
+      "source_id": "remarks",
+      "page_1based": 3
+    },
+    {
+      "fact": "SCA_estimated_revenue_share_through_2030_pct",
+      "value": ">35",
+      "basis": "management disclosure",
+      "source_id": "remarks",
+      "page_1based": 3
+    },
+    {
+      "fact": "SCA_estimated_revenue_with_defined_pricing_pct",
+      "value": 75,
+      "basis": "management disclosure",
+      "source_id": "remarks",
+      "page_1based": 3
+    },
+    {
+      "fact": "SCA_defined_pricing",
+      "value": "majority have floor/ceiling; rest of SCA revenue periodically market-priced",
+      "basis": "management disclosure",
+      "source_id": "remarks",
+      "page_1based": 3
+    },
+    {
+      "fact": "SCA_term_extensions",
+      "value": {
+        "beyond_2030": true,
+        "two_existing_contract_extensions_to": 2031
+      },
+      "basis": "management disclosure",
+      "source_id": "remarks",
+      "page_1based": 3
+    },
+    {
+      "fact": "SCA_customer_financial_commitments_m",
+      "value": 32000,
+      "basis": "management disclosure",
+      "source_id": "remarks",
+      "page_1based": 3,
+      "qualifier": "mostly cash deposits; not all received"
+    },
+    {
+      "fact": "SCA_RPO_m",
+      "value": 150000,
+      "basis": "committed volumes times minimum price; only SCAs with determined pricing",
+      "source_id": "remarks",
+      "page_1based": 6,
+      "precision": "approximately"
+    },
+    {
+      "fact": "SCA_deposits_received_Q4_m",
+      "value": 12300,
+      "basis": "financing cashflow, excluded from adjusted FCF",
+      "source_id": "remarks",
+      "page_1based": 8,
+      "precision": "approximately"
+    },
+    {
+      "fact": "SCA_deposit_balance_Q4_m",
+      "value": 12700,
+      "basis": "management disclosure",
+      "source_id": "remarks",
+      "page_1based": 8,
+      "precision": "approximately",
+      "qualifier": "unrestricted; repayable later in term if minimum purchases met"
+    },
+    {
+      "fact": "node_leadership",
+      "value": [
+        "1-gamma DRAM",
+        "G9 NAND"
+      ],
+      "basis": "management disclosure",
+      "source_id": "deck",
+      "page_1based": 7,
+      "qualifier": "largest current production nodes"
+    },
+    {
+      "fact": "next_nodes_volume_production",
+      "value": "CY2027 H2",
+      "basis": "management disclosure",
+      "source_id": "deck",
+      "page_1based": 7
+    },
+    {
+      "fact": "HBM_Q4_revenue_growth",
+      "value": "faster than total-company quarterly revenue growth",
+      "basis": "management disclosure",
+      "source_id": "deck",
+      "page_1based": 13
+    },
+    {
+      "fact": "CY27_HBM_bit_supply_agreed",
+      "value": "vast majority",
+      "basis": "management disclosure",
+      "source_id": "deck",
+      "page_1based": 13,
+      "qualifier": "significant YoY price increases; narrows margin gap to conventional DRAM"
+    },
+    {
+      "fact": "HBM4",
+      "value": "ramping",
+      "basis": "management disclosure",
+      "source_id": "deck",
+      "page_1based": 13
+    },
+    {
+      "fact": "HBM4E_NVHBM_partner",
+      "value": "NVIDIA",
+      "basis": "management disclosure",
+      "source_id": "deck",
+      "page_1based": 13,
+      "qualifier": "custom HBM4E for next GPU and NVLink Fusion platforms"
+    },
+    {
+      "fact": "data_center_SSD_Q4_revenue_m",
+      "value": "nearly 10000",
+      "basis": "management disclosure",
+      "source_id": "deck",
+      "page_1based": 13,
+      "qualifier": ">10x YoY; >two-thirds of NAND revenue"
+    },
+    {
+      "fact": "MCBU_Q4_1gamma_revenue_share",
+      "value": "nearly half",
+      "basis": "management disclosure",
+      "source_id": "deck",
+      "page_1based": 14
+    },
+    {
+      "fact": "DRAM_Q4_bit_shipments_qoq",
+      "value": "mid-single-digit %",
+      "basis": "management disclosure",
+      "source_id": "deck",
+      "page_1based": 23
+    },
+    {
+      "fact": "DRAM_Q4_ASP_qoq",
+      "value": "high-teens %",
+      "basis": "management disclosure",
+      "source_id": "deck",
+      "page_1based": 23
+    },
+    {
+      "fact": "NAND_Q4_bit_shipments_qoq_pct",
+      "value": "approximately 10",
+      "basis": "management disclosure",
+      "source_id": "deck",
+      "page_1based": 23
+    },
+    {
+      "fact": "NAND_Q4_ASP_qoq_pct",
+      "value": "approximately 30",
+      "basis": "management disclosure",
+      "source_id": "deck",
+      "page_1based": 23
+    },
+    {
+      "fact": "CMBU_margin_mix",
+      "value": "higher HBM mix offsets pricing",
+      "basis": "management disclosure",
+      "source_id": "deck",
+      "page_1based": 25
+    },
+    {
+      "fact": "CY27_CY28_memory_balance",
+      "value": "supply-constrained",
+      "basis": "management forecast, not guaranteed",
+      "source_id": "deck",
+      "page_1based": 16
+    },
+    {
+      "fact": "CY26_CY27_server_unit_growth",
+      "value": "high-teens %",
+      "basis": "management forecast",
+      "source_id": "deck",
+      "page_1based": 12
+    },
+    {
+      "fact": "CY26_PC_and_mobile_units",
+      "value": "potential double-digit declines",
+      "basis": "management forecast",
+      "source_id": "deck",
+      "page_1based": 14
+    },
+    {
+      "fact": "FY27_capex_increment",
+      "value": "mostly construction; cleanroom acceleration late CY28 onward",
+      "basis": "management disclosure",
+      "source_id": "deck",
+      "page_1based": 17
+    },
+    {
+      "fact": "factory_initial_output_targets",
+      "value": {
+        "ID1": "mid CY2027",
+        "ID2": "late CY2028",
+        "NewYork_first": "CY2030",
+        "Japan_expansion": "late CY2028",
+        "Singapore_HBM_packaging": "early CY2027",
+        "Singapore_NAND": "CY2028 H2",
+        "Tongluo_meaningful_shipments": "mid CY2027"
+      },
+      "basis": "management timing targets",
+      "source_id": "deck",
+      "pages_1based": [
+        8,
+        9
+      ]
+    },
+    {
+      "fact": "FQ4_opex_increase_drivers",
+      "value": [
+        "incentive compensation",
+        "community investment USD300M"
+      ],
+      "basis": "management disclosure",
+      "source_id": "remarks",
+      "page_1based": 8
+    },
+    {
+      "fact": "FQ1_margin_headwind",
+      "value": "Q4 incentive cost in inventory flows into COGS",
+      "basis": "management disclosure",
+      "source_id": "remarks",
+      "page_1based": 9
+    },
+    {
+      "fact": "inventory_Q4_m",
+      "value": 10372,
+      "basis": "GAAP balance sheet",
+      "source_id": "sec_8k_exhibit_99_1"
+    },
+    {
+      "fact": "inventory_days_Q4",
+      "value": 129,
+      "basis": "management disclosure",
+      "source_id": "remarks",
+      "page_1based": 8,
+      "qoq_change_days": 9
+    },
+    {
+      "fact": "debt_Q4_m",
+      "value": 5200,
+      "basis": "management disclosure",
+      "source_id": "remarks",
+      "page_1based": 9,
+      "precision": "approximately"
+    },
+    {
+      "fact": "net_cash_Q4_m",
+      "value": 68300,
+      "basis": "management disclosure",
+      "source_id": "remarks",
+      "page_1based": 9,
+      "precision": "approximately"
+    },
+    {
+      "fact": "capital_return_start_increase",
+      "value": "2026-12-09",
+      "basis": "management intention",
+      "source_id": "remarks",
+      "page_1based": 9
+    },
+    {
+      "fact": "prior_Q4_revenue_guidance_m",
+      "value": 50000,
+      "basis": "prior guidance; superseded by actual54229",
+      "source_id": "prior_release",
+      "plus_minus": 1000
+    },
+    {
+      "fact": "prior_Q4_nongaap_eps_guidance",
+      "value": 31.0,
+      "basis": "prior guidance; superseded by actual33.42",
+      "source_id": "prior_release",
+      "plus_minus": 1.0
+    }
+  ],
+  "bloomberg": {
+    "ANR": {
+      "source_id": "mu_anr",
+      "as_of_date": "2026-10-08",
+      "quote_date": "2026-10-07",
+      "quote_header": "On 07-Oct",
+      "reference_price_usd": 1088.0,
+      "consensus_rating": 4.84,
+      "buys": {
+        "count": 58,
+        "percentage": 93.5
+      },
+      "holds": {
+        "count": 4,
+        "percentage": 6.5
+      },
+      "sells": {
+        "count": 0,
+        "percentage": 0.0
+      },
+      "rating_count": 62,
+      "target_12m_usd": 1621.44,
+      "target_sample_display": "46/68",
+      "displayed_upside_pct": 49.0,
+      "broker_cards": [
+        {
+          "firm": "UBS",
+          "analyst": "Timothy M Arcuri",
+          "recommendation_raw": "buy",
+          "recommendation_display": "Buy",
+          "target_usd": 1625.0,
+          "date_raw": "10/01/26",
+          "date": "2026-10-01"
+        },
+        {
+          "firm": "Morgan Stanley",
+          "analyst": "Joseph Moore",
+          "recommendation_raw": "Overwt/Attractive",
+          "recommendation_display": "Overweight / Attractive",
+          "target_usd": 1200.0,
+          "date_raw": "10/01/26",
+          "date": "2026-10-01"
+        },
+        {
+          "firm": "Citi",
+          "analyst": "Atif Malik",
+          "recommendation_raw": "buy",
+          "recommendation_display": "Buy",
+          "target_usd": 1300.0,
+          "date_raw": "10/01/26",
+          "date": "2026-10-01"
+        }
+      ],
+      "attribution_limit": "ANR supports the displayed ratings, targets, analyst names and dates only; it does not supply the brokers' qualitative investment theses."
+    },
+    "EEO_selection": "Current Multiples > Next 4 Qtrs Est > Price/EPS, using the displayed basis for each issuer.",
+    "EEO": [
+      {
+        "company": "Micron Technology Inc",
+        "ticker": "MU US Equity",
+        "currency": "USD",
+        "last_price": 1088.0,
+        "quote_header": "On 07-Oct",
+        "quote_date": "2026-10-07",
+        "eps_multiple_row_label": "Price/EPS, Adj+",
+        "eps_basis": "Adj+",
+        "pe": {
+          "last_4_qtrs_act": 14.41,
+          "next_4_qtrs_est": 6.27,
+          "FY2027": 6.39,
+          "FY2028": 5.32,
+          "FY2029": 5.32
+        },
+        "fiscal_year_end_basis": "Bloomberg column labels use August; actual corporate FY2026 ended 2026-09-03, so do not substitute the Bloomberg normalized date for the statutory period end.",
+        "source_id": "eeo_mu",
+        "eeo_snapshot_date": null,
+        "quote_date_year_basis": "year inferred from ANR as-of 10/08/26 in the same supplied package"
+      },
+      {
+        "company": "Kioxia Holdings Corp",
+        "ticker": "285A JP Equity",
+        "currency": "JPY",
+        "last_price": 18450,
+        "quote_header": "At 10:30",
+        "quote_date": null,
+        "eps_multiple_row_label": "Price/EPS GAAP+",
+        "eps_basis": "GAAP+",
+        "pe": {
+          "last_4_qtrs_act": 21.92,
+          "next_4_qtrs_est": 4.06,
+          "FY2027": 5.24,
+          "FY2028": 3.41,
+          "FY2029": 3.13
+        },
+        "fiscal_year_end_basis": "March, as shown by Q4 2027 ending 03/31/2027.",
+        "source_id": "eeo_285a",
+        "eeo_snapshot_date": null
+      },
+      {
+        "company": "Samsung Electronics Co Ltd",
+        "ticker": "005930 KS Equity",
+        "currency": "KRW",
+        "last_price": 265250,
+        "quote_header": "At 11:18",
+        "quote_date": null,
+        "eps_multiple_row_label": "Price/EPS, Adj+",
+        "eps_basis": "Adj+",
+        "pe": {
+          "last_4_qtrs_act": 11.49,
+          "next_4_qtrs_est": 4.23,
+          "FY2026": 5.66,
+          "FY2027": 3.73,
+          "FY2028": 3.41
+        },
+        "fiscal_year_end_basis": "December, as shown by Q4 2026 ending 12/31/2026.",
+        "source_id": "eeo_005930",
+        "eeo_snapshot_date": null,
+        "basis_warning": "The screenshot contains a separate EPS, GAAP row, but the selected multiple at the bottom is explicitly Price/EPS, Adj+."
+      },
+      {
+        "company": "SK hynix Inc",
+        "ticker": "000660 KS Equity",
+        "currency": "KRW",
+        "last_price": 1727000,
+        "quote_header": "At 11:17",
+        "quote_date": null,
+        "eps_multiple_row_label": "Price/EPS, Adj+",
+        "eps_basis": "Adj+",
+        "pe": {
+          "last_4_qtrs_act": 7.5,
+          "next_4_qtrs_est": 4.19,
+          "FY2026": 4.88,
+          "FY2027": 3.62,
+          "FY2028": 3.13
+        },
+        "fiscal_year_end_basis": "December, as shown by Q4 2026 ending 12/31/2026.",
+        "source_id": "eeo_000660",
+        "eeo_snapshot_date": null
+      }
+    ],
+    "date_caveats": [
+      "ANR explicitly states 2026-10-08. MU quote header states On 07-Oct; year 2026 is inferred from the same supplied package.",
+      "No EEO screenshot explicitly states a snapshot date. Peer headers show intraday times without a calendar date or timezone.",
+      "Do not relabel EEO estimates or peer quotes as observed on 2026-10-08; this is the report update date.",
+      "Bloomberg normalized period labels do not replace Micron statutory period end 2026-09-03."
+    ],
+    "comparison_caveats": [
+      "Next 4 Qtrs Est is the common horizon label; exact quarter windows differ by issuer.",
+      "Kioxia selected Price/EPS uses GAAP+; MU, Samsung and SK hynix use Adj+. Comparison is indicative, not fully like-for-like.",
+      "ANR 46/68 target sample and 62 ratings are separate displayed denominators; do not infer 68 buy/hold/sell ratings."
+    ],
+    "mu_eeo_cash_flow_observations": {
+      "source_id": "eeo_mu",
+      "column_label": "Q4 2026 Act",
+      "displayed_period_end": "08/31/2026",
+      "company_fiscal_period_end": "2026-09-03",
+      "free_cash_flow": {
+        "row_label": "28) Free Cash Flow",
+        "displayed_value": "32.863B",
+        "usd_millions": 32863
+      },
+      "capex": {
+        "row_label": "29) CAPEX",
+        "displayed_value": "-11.110B",
+        "usd_millions": -11110
+      },
+      "caveat": "Screenshot values transcribed directly. The displayed normalized period date is not the company legal fiscal period end. Screenshot does not document Bloomberg methodology."
+    }
+  },
+  "report_inputs": {
+    "KPI": {
+      "quarter_revenue_usd_billion": 54.229,
+      "quarter_revenue_yoy_pct": 379.26646,
+      "quarter_non_gaap_diluted_eps_usd": 33.42,
+      "quarter_non_gaap_diluted_eps_yoy_pct": 1002.970297,
+      "reference_price_usd": 1088,
+      "consensus_target_usd": 1621.44,
+      "consensus_target_upside_pct": 49.029412,
+      "sources": [
+        "release",
+        "mu_anr"
+      ]
+    },
+    "charts": {
+      "muSegment": {
+        "period": "FQ4-26",
+        "labels": [
+          "DRAM",
+          "NAND"
+        ],
+        "revenue_usd_millions": [
+          39771,
+          14102
+        ],
+        "source_id": "deck",
+        "excluded_other_usd_millions": 356,
+        "caveat": "Two displayed categories total 53873; chart excludes Other, primarily NOR. Shares of total revenue must use 54229, not the two-slice subtotal."
+      },
+      "muProfit": {
+        "period": "FQ4-26",
+        "labels": [
+          "CMBU",
+          "CDBU",
+          "MCBU",
+          "AEBU"
+        ],
+        "revenue_usd_millions": [
+          16283,
+          18002,
+          13114,
+          6824
+        ],
+        "non_gaap_operating_margin_pct": [
+          76,
+          85,
+          88,
+          79
+        ],
+        "source_ids": [
+          "deck",
+          "remarks"
+        ],
+        "reconciliation_residual_usd_millions": 6,
+        "caveat": "Four displayed BUs sum 54223, versus consolidated 54229; source deck does not label the 6 residual."
+      },
+      "muValuation": {
+        "horizon": "Next 4 Qtrs Est",
+        "labels": [
+          "SK hynix",
+          "Samsung",
+          "MU",
+          "Kioxia"
+        ],
+        "price_eps_multiple": [
+          4.19,
+          4.23,
+          6.27,
+          4.06
+        ],
+        "eps_basis": [
+          "Adj+",
+          "Adj+",
+          "Adj+",
+          "GAAP+"
+        ],
+        "source_ids": [
+          "eeo_000660",
+          "eeo_005930",
+          "eeo_mu",
+          "eeo_285a"
+        ],
+        "caveat": "EEO snapshot dates absent; mixed EPS accounting bases."
+      }
+    },
+    "table_data": "Financial table uses financial_actuals/cash_flow in period_order; business-unit table uses business_units; guidance table uses guidance; valuation and broker tables use bloomberg. These are the common numeric inputs for TC/SC/EN."
+  },
+  "derived": {
+    "basis": "NTAM arithmetic from cited inputs; not company guidance or broker opinion",
+    "formulas": {
+      "growth_pct": "(current / comparison - 1) * 100",
+      "margin_change_percentage_points": "current_margin_pct - comparison_margin_pct",
+      "target_upside_pct": "(target_price / reference_price - 1) * 100",
+      "net_capex": "gross_PPE_cash_outflow - PPE_sale_proceeds - government_incentive_proceeds",
+      "adjusted_free_cash_flow": "operating_cash_flow - net_capex",
+      "revenue_share_pct": "component_revenue / consolidated_revenue * 100",
+      "fcf_margin_pct": "adjusted_free_cash_flow / consolidated_revenue * 100",
+      "guidance_midpoint_qoq_pct": "(FQ1_guidance_midpoint / FQ4_actual - 1) * 100"
+    },
+    "reconciliation_Q4_usd_millions": {
+      "operating_cash_flow": 43973,
+      "gross_PPE_cash_outflow": 11110,
+      "PPE_sale_proceeds": 9,
+      "government_incentive_proceeds": 327,
+      "net_capex": 10774,
+      "adjusted_free_cash_flow": 33199,
+      "formula_substitution": "43973 - (11110 - 9 - 327) = 33199",
+      "source_id": "sec_8k_exhibit_99_1",
+      "Bloomberg_displayed_free_cash_flow": 32863,
+      "company_adjusted_FCF_minus_Bloomberg_displayed_FCF": 336,
+      "difference_equals_proceeds_plus_incentives": "33199 - 32863 = 9 + 327 = 336",
+      "vendor_methodology_caveat": "NTAM arithmetic reconciliation only; do not claim the screenshot documents Bloomberg methodology.",
+      "Bloomberg_source_id": "eeo_mu"
+    },
+    "official_input_calculations": {
+      "revenue_technology_sum": 54229,
+      "four_bu_sum": 54223,
+      "consolidated_minus_four_bu": 6,
+      "data_center_bu_revenue_sum": 34285,
+      "data_center_bu_revenue_share_pct": 63.22263,
+      "adjusted_fcf_margin_pct": 61.220011,
+      "q1_guidance_midpoint_qoq_pct": 13.407955,
+      "actual_revenue_above_prior_guidance_high_pct": 6.331373,
+      "gaap_operating_income_reconciles": true,
+      "nongaap_operating_income_reconciles": true,
+      "adjusted_fcf_reconciles": true
+    },
+    "target_returns_pct": {
+      "consensus": 49.029412,
+      "UBS": 49.356618,
+      "Morgan Stanley": 10.294118,
+      "Citi": 19.485294
+    },
+    "target_return_reference_price_usd": 1088,
+    "technology_share_of_consolidated_revenue_pct": {
+      "DRAM": 73.338988,
+      "NAND": 26.004536,
+      "Other": 0.656475
+    }
+  },
+  "cautions": [
+    "Actuals, management guidance, Bloomberg consensus and NTAM arithmetic remain distinct.",
+    "Release and SEC Exhibit 99.1 are the selected financial sources; do not label them an audited Form 10-K.",
+    "SCA commitments USD32B, received Q4 deposits USD12.3B, ending deposits USD12.7B and RPO approximately USD150B are different measures. Deposits are financing cash flows and do not increase operating cash flow or adjusted FCF.",
+    "No exact FY2027 full-year capex amount was supplied: H1 approximately USD25B; H2 higher than H1.",
+    "HBM agreements cover the vast majority of CY2027 bits; no absolute Q4 HBM revenue was supplied.",
+    "Higher HBM mix offset pricing gains in CMBU this quarter; do not claim HBM mix raised CMBU gross margin.",
+    "ANR supports broker rating, target, analyst and date only; qualitative bank investment theses require original institutional research."
+  ]
+}
