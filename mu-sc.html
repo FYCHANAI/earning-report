@@ -216,6 +216,7 @@
                             <td class="px-6 py-4 text-right text-emerald-500">+12 ppts</td>
                         </tr>
                         <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">净利润 (Net Income)</td>
                             <td class="px-6 py-4 text-right">$28,243 M</td>
                             <td class="px-6 py-4 text-right font-bold text-blue-600">$28,857 M</td>
                             <td class="px-6 py-4 text-right text-emerald-600">+106%</td>
@@ -393,6 +394,15 @@
         } else if (tabId === 'valuation') {
             if (window.charts.muValuation) window.charts.muValuation.resize();
         }
+    }
+
+    function acceptPI() {
+        sessionStorage.setItem('pi_agreed', 'true');
+        document.getElementById('pi-modal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    function declinePI() {
+        document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;
     }
 
     document.addEventListener('DOMContentLoaded', function() {
