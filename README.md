@@ -1,4 +1,20 @@
-# nio-report-2026.03
+# NTAM investment research website
+
+## NVDA research update — 8 October 2026
+
+The three NVIDIA reports cover FY2027 Q2, ended 26 July 2026 and announced on 26 August. The update combines official results, CFO commentary and filings with owner-supplied Bloomberg ANR/EEO evidence. The consensus target is US$323.89 versus the 7 October reference share price of US$237.47. Broker cards contain only the verified UBS, Morgan Stanley and Citi ratings, dates, targets and implied price returns.
+
+The report uses the latest recast Hyperscale/ACIE comparisons and the company non-GAAP basis that includes stock-based compensation. Working-capital demands, supply commitments and conditional guarantees are distinguished from growth catalysts. Peer valuation uses Bloomberg's Next 4 Qtrs Est Price/EPS, Adj+ field; the date visibility, fiscal-window and adjustment-basis limitations remain explicit.
+
+The original seven tabs, three charts, four view items, three broker cards and four risk items are retained. One compact Wall Street source paragraph implements the owner's required attribution format. PI controls, legal text, CSS, API handling and fixed JavaScript remain unchanged. AI company context is dated and does not imply live prices.
+
+The homepage is sorted by the actual earnings publication date of each report's covered quarter, not its editing date. Its leading cards are MU (30 September), AVGO (2 September) and NVDA (26 August); all other company cards retain their original content.
+
+- [NVDA source and calculation ledger](research/nvda-fy2027-q2-2026-10-08.json)
+- [NVDA validation record](research/nvda-fy2027-q2-validation.json)
+- [Homepage earnings-date ledger](research/homepage-earnings-order-2026-10-08.json)
+
+Original Bloomberg screenshots are not committed. Validation and deployment status are recorded separately; see the validation record, pull request and commit checks for actual results.
 
 ## MU research update — 8 October 2026
 

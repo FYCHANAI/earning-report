@@ -1,0 +1,1017 @@
+{
+  "report": "NVIDIA FY2027 Q2 update",
+  "checked_on": "2026-10-08",
+  "base_commit": "c29143da78d8269ed533b5b4820ec00c034eeb84",
+  "status": "pass",
+  "method": "Static raw-template comparison, source-ledger arithmetic, and isolated Node VM with fake DOM/Chart/fetch. No network requests.",
+  "checks": [
+    {
+      "check": "nvda.html:raw_tags_attributes_preserved",
+      "status": "pass",
+      "detail": "Only rating color tokens, scenario placeholder, and one compact ANR source paragraph are allowed."
+    },
+    {
+      "check": "nvda.html:styles_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:legal_gate_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:fixed_js_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:ai_output_language_and_format_preserved",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:seven_tabs_order",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:canvases_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:target_consensus",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:three_broker_cards",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:broker_facts_colors_returns",
+      "status": "pass",
+      "detail": [
+        {
+          "firm": "UBS",
+          "ok": true,
+          "price_return_percent": 26.3
+        },
+        {
+          "firm": "Morgan Stanley",
+          "ok": true,
+          "price_return_percent": 26.3
+        },
+        {
+          "firm": "Citi",
+          "ok": true,
+          "price_return_percent": 32.6
+        }
+      ]
+    },
+    {
+      "check": "nvda.html:one_compact_anr_source",
+      "status": "pass",
+      "detail": [
+        "來源：Bloomberg ANR（2026/10/08）；以 10/07 股價 US$237.47 計算。"
+      ]
+    },
+    {
+      "check": "nvda.html:inline_js_syntax_and_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:mock_tabs",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:mock_disclaimer",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:pi_never_accepted_or_hidden",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:dated_ai_context",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:raw_tags_attributes_preserved",
+      "status": "pass",
+      "detail": "Only rating color tokens, scenario placeholder, and one compact ANR source paragraph are allowed."
+    },
+    {
+      "check": "nvda-sc.html:styles_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:legal_gate_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:fixed_js_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:ai_output_language_and_format_preserved",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:seven_tabs_order",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:canvases_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:target_consensus",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:three_broker_cards",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:broker_facts_colors_returns",
+      "status": "pass",
+      "detail": [
+        {
+          "firm": "UBS",
+          "ok": true,
+          "price_return_percent": 26.3
+        },
+        {
+          "firm": "Morgan Stanley",
+          "ok": true,
+          "price_return_percent": 26.3
+        },
+        {
+          "firm": "Citi",
+          "ok": true,
+          "price_return_percent": 32.6
+        }
+      ]
+    },
+    {
+      "check": "nvda-sc.html:one_compact_anr_source",
+      "status": "pass",
+      "detail": [
+        "来源：Bloomberg ANR（2026/10/08）；以 10/07 股价 US$237.47 计算。"
+      ]
+    },
+    {
+      "check": "nvda-sc.html:inline_js_syntax_and_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:mock_tabs",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:mock_disclaimer",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:pi_never_accepted_or_hidden",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:dated_ai_context",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:raw_tags_attributes_preserved",
+      "status": "pass",
+      "detail": "Only rating color tokens, scenario placeholder, and one compact ANR source paragraph are allowed."
+    },
+    {
+      "check": "nvda-en.html:styles_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:legal_gate_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:fixed_js_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:ai_output_language_and_format_preserved",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:seven_tabs_order",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:canvases_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:target_consensus",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:three_broker_cards",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:broker_facts_colors_returns",
+      "status": "pass",
+      "detail": [
+        {
+          "firm": "UBS",
+          "ok": true,
+          "price_return_percent": 26.3
+        },
+        {
+          "firm": "Morgan Stanley",
+          "ok": true,
+          "price_return_percent": 26.3
+        },
+        {
+          "firm": "Citi",
+          "ok": true,
+          "price_return_percent": 32.6
+        }
+      ]
+    },
+    {
+      "check": "nvda-en.html:one_compact_anr_source",
+      "status": "pass",
+      "detail": [
+        "Source: Bloomberg ANR (2026/10/08); calculated using the 10/07 share price of US$237.47."
+      ]
+    },
+    {
+      "check": "nvda-en.html:inline_js_syntax_and_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:mock_tabs",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:mock_disclaimer",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:pi_never_accepted_or_hidden",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:dated_ai_context",
+      "status": "pass"
+    },
+    {
+      "check": "ledger:revenue_platform_reconciliation",
+      "status": "pass"
+    },
+    {
+      "check": "ledger:company_fcf_reconciliation",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:chart_data_matches_evidence",
+      "status": "pass",
+      "detail": {
+        "actual": {
+          "segmentRevenueChart": [
+            89.023,
+            7.198
+          ],
+          "profitabilityChart": [
+            96.221,
+            63.734,
+            53.954
+          ],
+          "valuationChart": [
+            67.13,
+            57.67,
+            21.62,
+            19.69
+          ]
+        },
+        "expected": {
+          "segmentRevenueChart": [
+            89.023,
+            7.198
+          ],
+          "profitabilityChart": [
+            96.22,
+            63.73,
+            53.95
+          ],
+          "valuationChart": [
+            67.13,
+            57.67,
+            21.62,
+            19.69
+          ]
+        },
+        "exact_profit_alternative": [
+          96.221,
+          63.734,
+          53.954
+        ]
+      }
+    },
+    {
+      "check": "nvda-sc.html:chart_data_matches_evidence",
+      "status": "pass",
+      "detail": {
+        "actual": {
+          "segmentRevenueChart": [
+            89.023,
+            7.198
+          ],
+          "profitabilityChart": [
+            96.221,
+            63.734,
+            53.954
+          ],
+          "valuationChart": [
+            67.13,
+            57.67,
+            21.62,
+            19.69
+          ]
+        },
+        "expected": {
+          "segmentRevenueChart": [
+            89.023,
+            7.198
+          ],
+          "profitabilityChart": [
+            96.22,
+            63.73,
+            53.95
+          ],
+          "valuationChart": [
+            67.13,
+            57.67,
+            21.62,
+            19.69
+          ]
+        },
+        "exact_profit_alternative": [
+          96.221,
+          63.734,
+          53.954
+        ]
+      }
+    },
+    {
+      "check": "nvda-en.html:chart_data_matches_evidence",
+      "status": "pass",
+      "detail": {
+        "actual": {
+          "segmentRevenueChart": [
+            89.023,
+            7.198
+          ],
+          "profitabilityChart": [
+            96.221,
+            63.734,
+            53.954
+          ],
+          "valuationChart": [
+            67.13,
+            57.67,
+            21.62,
+            19.69
+          ]
+        },
+        "expected": {
+          "segmentRevenueChart": [
+            89.023,
+            7.198
+          ],
+          "profitabilityChart": [
+            96.22,
+            63.73,
+            53.95
+          ],
+          "valuationChart": [
+            67.13,
+            57.67,
+            21.62,
+            19.69
+          ]
+        },
+        "exact_profit_alternative": [
+          96.221,
+          63.734,
+          53.954
+        ]
+      }
+    },
+    {
+      "check": "three_languages:chart_numeric_parity",
+      "status": "pass"
+    },
+    {
+      "check": "nvda.html:platform_table_matches_company",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-sc.html:platform_table_matches_company",
+      "status": "pass"
+    },
+    {
+      "check": "nvda-en.html:platform_table_matches_company",
+      "status": "pass"
+    },
+    {
+      "check": "three_languages:financial_table_numeric_parity",
+      "status": "pass"
+    },
+    {
+      "check": "homepage:all_25_cards_once",
+      "status": "pass"
+    },
+    {
+      "check": "homepage:descending_earnings_date",
+      "status": "pass"
+    },
+    {
+      "check": "homepage:other_24_cards_exact",
+      "status": "pass"
+    },
+    {
+      "check": "homepage:nvda_quarter_and_edit_date",
+      "status": "pass"
+    },
+    {
+      "check": "protected_files_unchanged",
+      "status": "pass",
+      "detail": [
+        "CNAME",
+        "disclaimer.html",
+        "api/gemini.js"
+      ]
+    },
+    {
+      "check": "no_other_company_pages_changed",
+      "status": "pass",
+      "detail": [
+        "AGENTS.md",
+        "PROJECT_INSTRUCTIONS.md",
+        "README.md",
+        "index.html",
+        "nvda-en.html",
+        "nvda-sc.html",
+        "nvda.html"
+      ]
+    }
+  ],
+  "page_details": {
+    "nvda.html": {
+      "sha256": "0da8deaa0a9311f496d9732c1b293e2875ea21cf9f39c14e33c9f7da09fccd3a",
+      "mock_runtime": {
+        "charts": [
+          {
+            "canvasId": "segmentRevenueChart",
+            "config": {
+              "type": "doughnut",
+              "data": {
+                "labels": [
+                  "資料中心 (Data Center)",
+                  "邊緣運算 (Edge Computing)"
+                ],
+                "datasets": [
+                  {
+                    "data": [
+                      89.023,
+                      7.198
+                    ],
+                    "backgroundColor": [
+                      "rgba(16, 185, 129, 0.8)",
+                      "rgba(59, 130, 246, 0.8)"
+                    ],
+                    "borderWidth": 0
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "cutout": "60%"
+              }
+            }
+          },
+          {
+            "canvasId": "profitabilityChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "總營收 (Total Rev)",
+                  "GAAP 營業利潤",
+                  "Non-GAAP 淨利潤"
+                ],
+                "datasets": [
+                  {
+                    "label": "十億美元 (Billion USD)",
+                    "data": [
+                      96.221,
+                      63.734,
+                      53.954
+                    ],
+                    "backgroundColor": [
+                      "#94a3b8",
+                      "#3b82f6",
+                      "#10b981"
+                    ],
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "display": false
+                  }
+                },
+                "scales": {
+                  "y": {
+                    "beginAtZero": true,
+                    "grid": {
+                      "color": "#f1f5f9"
+                    }
+                  },
+                  "x": {
+                    "grid": {
+                      "display": false
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "canvasId": "valuationChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "INTC (英特爾)",
+                  "AMD (超微半導體)",
+                  "AVGO (博通)",
+                  "NVDA (NVIDIA)"
+                ],
+                "datasets": [
+                  {
+                    "label": "未來四季 Price/EPS, Adj+（倍）",
+                    "data": [
+                      67.13,
+                      57.67,
+                      21.62,
+                      19.69
+                    ],
+                    "backgroundColor": [
+                      "rgba(148, 163, 184, 0.5)",
+                      "rgba(148, 163, 184, 0.5)",
+                      "rgba(148, 163, 184, 0.5)",
+                      "rgba(37, 99, 235, 0.9)"
+                    ],
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "indexAxis": "y",
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "display": false
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tabResults": [
+          {
+            "tab": "our-comments",
+            "ok": true
+          },
+          {
+            "tab": "financials",
+            "ok": true
+          },
+          {
+            "tab": "valuation",
+            "ok": true
+          },
+          {
+            "tab": "street-comments",
+            "ok": true
+          },
+          {
+            "tab": "risks",
+            "ok": true
+          },
+          {
+            "tab": "sandbox",
+            "ok": true
+          },
+          {
+            "tab": "disclaimer",
+            "ok": true
+          }
+        ],
+        "fetches": [
+          "disclaimer.html"
+        ],
+        "storageWrites": 0,
+        "piVisible": true,
+        "bodyLocked": true,
+        "disclaimerLoaded": true,
+        "standardPrompt": "你是 NTAM 內部研究員的專屬 AI 助理。資料截至 2026/10/08，無即時行情。NVIDIA (NVDA) FY2027 Q2 截至 2026/07/26，於 2026/08/26 公布。營收 96.221 十億美元，年增 105.9%；資料中心 89.023 十億美元，年增 116.6%；GAAP 營業利潤 63.734 十億美元；Non-GAAP 營業利潤 63.956 十億美元、淨利 53.954 十億美元、攤薄 EPS 2.22 美元、毛利率 75%。GAAP 攤薄 EPS 2.46 美元；Non-GAAP 已包含股份薪酬，比較期已重列。第三季公司營收指引 108 十億美元 ±2%、Non-GAAP 毛利率 74% ±0.5 個百分點，不含中國資料中心運算營收。Rubin 量產出貨於第三季開始。營運現金流 24.077 十億美元，前季 50.344 十億美元；自由現金流 21.341 十億美元，季減 56.0%；DSO 60 天，前季 45 天；供應及產能承諾 279 十億美元，前季 119 十億美元。8 月 SB Energy 擔保上限 105 十億美元，附條件且分階段，並非已提取債務。Bloomberg ANR 2026/10/08 共識目標價 323.89 美元；10/07 參考股價 237.47 美元，隱含股價回報 36.4%。EEO 未來四季 Price/EPS, Adj+ 為 NVDA19.69、AMD57.67、AVGO21.62、INTC67.13 倍，預估期間及調整口徑並非完全一致。區分公司實績、公司指引、Bloomberg 共識和我們的分析；未提供的數據應說明未知，勿臆造投行論點。 請用客觀、精煉的繁體中文回答，使用 HTML <b> 加粗重點，嚴禁使用 markdown 語法。"
+      }
+    },
+    "nvda-sc.html": {
+      "sha256": "0dd7db902d1772ed2fae5c4273b43aaa74641a3c763728f3ab611361e90d7ace",
+      "mock_runtime": {
+        "charts": [
+          {
+            "canvasId": "segmentRevenueChart",
+            "config": {
+              "type": "doughnut",
+              "data": {
+                "labels": [
+                  "数据中心 (Data Center)",
+                  "边缘计算 (Edge Computing)"
+                ],
+                "datasets": [
+                  {
+                    "data": [
+                      89.023,
+                      7.198
+                    ],
+                    "backgroundColor": [
+                      "rgba(16, 185, 129, 0.8)",
+                      "rgba(59, 130, 246, 0.8)"
+                    ],
+                    "borderWidth": 0
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "cutout": "60%"
+              }
+            }
+          },
+          {
+            "canvasId": "profitabilityChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "总营收 (Total Rev)",
+                  "GAAP 营业利润",
+                  "Non-GAAP 净利润"
+                ],
+                "datasets": [
+                  {
+                    "label": "十亿美元 (Billion USD)",
+                    "data": [
+                      96.221,
+                      63.734,
+                      53.954
+                    ],
+                    "backgroundColor": [
+                      "#94a3b8",
+                      "#3b82f6",
+                      "#10b981"
+                    ],
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "display": false
+                  }
+                },
+                "scales": {
+                  "y": {
+                    "beginAtZero": true,
+                    "grid": {
+                      "color": "#f1f5f9"
+                    }
+                  },
+                  "x": {
+                    "grid": {
+                      "display": false
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "canvasId": "valuationChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "INTC (英特尔)",
+                  "AMD (超微半导体)",
+                  "AVGO (博通)",
+                  "NVDA (NVIDIA)"
+                ],
+                "datasets": [
+                  {
+                    "label": "未来四季 Price/EPS, Adj+（倍）",
+                    "data": [
+                      67.13,
+                      57.67,
+                      21.62,
+                      19.69
+                    ],
+                    "backgroundColor": [
+                      "rgba(148, 163, 184, 0.5)",
+                      "rgba(148, 163, 184, 0.5)",
+                      "rgba(148, 163, 184, 0.5)",
+                      "rgba(37, 99, 235, 0.9)"
+                    ],
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "indexAxis": "y",
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "display": false
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tabResults": [
+          {
+            "tab": "our-comments",
+            "ok": true
+          },
+          {
+            "tab": "financials",
+            "ok": true
+          },
+          {
+            "tab": "valuation",
+            "ok": true
+          },
+          {
+            "tab": "street-comments",
+            "ok": true
+          },
+          {
+            "tab": "risks",
+            "ok": true
+          },
+          {
+            "tab": "sandbox",
+            "ok": true
+          },
+          {
+            "tab": "disclaimer",
+            "ok": true
+          }
+        ],
+        "fetches": [
+          "disclaimer.html"
+        ],
+        "storageWrites": 0,
+        "piVisible": true,
+        "bodyLocked": true,
+        "disclaimerLoaded": true,
+        "standardPrompt": "你是 NTAM 内部研究员的专属 AI 助理。资料截至 2026/10/08，无实时行情。NVIDIA (NVDA) FY2027 Q2 截至 2026/07/26，于 2026/08/26 公布。营收 96.221 十亿美元，年增 105.9%；数据中心 89.023 十亿美元，年增 116.6%；GAAP 营业利润 63.734 十亿美元；Non-GAAP 营业利润 63.956 十亿美元、净利 53.954 十亿美元、摊薄 EPS 2.22 美元、毛利率 75%。GAAP 摊薄 EPS 2.46 美元；Non-GAAP 已包含股份薪酬，比较期已重列。第三季公司营收指引 108 十亿美元 ±2%、Non-GAAP 毛利率 74% ±0.5 个百分点，不含中国数据中心运算营收。Rubin 量产出货于第三季开始。运营现金流 24.077 十亿美元，前季 50.344 十亿美元；自由现金流 21.341 十亿美元，季减 56.0%；DSO 60 天，前季 45 天；供应及产能承诺 279 十亿美元，前季 119 十亿美元。8 月 SB Energy 担保上限 105 十亿美元，附条件且分阶段，并非已提取债务。Bloomberg ANR 2026/10/08 共识目标价 323.89 美元；10/07 参考股价 237.47 美元，隐含股价回报 36.4%。EEO 未来四季 Price/EPS, Adj+ 为 NVDA19.69、AMD57.67、AVGO21.62、INTC67.13 倍，预估期间及调整口径并非完全一致。区分公司实绩、公司指引、Bloomberg 共识和我们的分析；未提供的数据应说明未知，勿臆造投行论点。 请用客观、精炼的简体中文回答，使用 HTML <b> 加粗重点，严禁使用 markdown 语法。"
+      }
+    },
+    "nvda-en.html": {
+      "sha256": "87fcfd6db6ad1416cc42090427a6423a2b395d06437a438243810fbe81d99640",
+      "mock_runtime": {
+        "charts": [
+          {
+            "canvasId": "segmentRevenueChart",
+            "config": {
+              "type": "doughnut",
+              "data": {
+                "labels": [
+                  "Data Center",
+                  "Edge Computing"
+                ],
+                "datasets": [
+                  {
+                    "data": [
+                      89.023,
+                      7.198
+                    ],
+                    "backgroundColor": [
+                      "rgba(16, 185, 129, 0.8)",
+                      "rgba(59, 130, 246, 0.8)"
+                    ],
+                    "borderWidth": 0
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "cutout": "60%"
+              }
+            }
+          },
+          {
+            "canvasId": "profitabilityChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "Total Rev",
+                  "GAAP OpInc",
+                  "Non-GAAP Net"
+                ],
+                "datasets": [
+                  {
+                    "label": "Billion USD",
+                    "data": [
+                      96.221,
+                      63.734,
+                      53.954
+                    ],
+                    "backgroundColor": [
+                      "#94a3b8",
+                      "#3b82f6",
+                      "#10b981"
+                    ],
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "display": false
+                  }
+                },
+                "scales": {
+                  "y": {
+                    "beginAtZero": true,
+                    "grid": {
+                      "color": "#f1f5f9"
+                    }
+                  },
+                  "x": {
+                    "grid": {
+                      "display": false
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "canvasId": "valuationChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "INTC (Intel)",
+                  "AMD (Advanced Micro Devices)",
+                  "AVGO (Broadcom)",
+                  "NVDA (NVIDIA)"
+                ],
+                "datasets": [
+                  {
+                    "label": "Next 4 Qtrs Price/EPS, Adj+ (x)",
+                    "data": [
+                      67.13,
+                      57.67,
+                      21.62,
+                      19.69
+                    ],
+                    "backgroundColor": [
+                      "rgba(148, 163, 184, 0.5)",
+                      "rgba(148, 163, 184, 0.5)",
+                      "rgba(148, 163, 184, 0.5)",
+                      "rgba(37, 99, 235, 0.9)"
+                    ],
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "indexAxis": "y",
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "display": false
+                  }
+                }
+              }
+            }
+          }
+        ],
+        "tabResults": [
+          {
+            "tab": "our-comments",
+            "ok": true
+          },
+          {
+            "tab": "financials",
+            "ok": true
+          },
+          {
+            "tab": "valuation",
+            "ok": true
+          },
+          {
+            "tab": "street-comments",
+            "ok": true
+          },
+          {
+            "tab": "risks",
+            "ok": true
+          },
+          {
+            "tab": "sandbox",
+            "ok": true
+          },
+          {
+            "tab": "disclaimer",
+            "ok": true
+          }
+        ],
+        "fetches": [
+          "disclaimer.html"
+        ],
+        "storageWrites": 0,
+        "piVisible": true,
+        "bodyLocked": true,
+        "disclaimerLoaded": true,
+        "standardPrompt": "You are the exclusive AI assistant for NTAM internal researchers. Information is as of 2026/10/08; you have no live market data. NVIDIA (NVDA) FY2027 Q2 ended 2026/07/26 and results were released 2026/08/26. Revenue was $96.221bn, up105.9% YoY; Data Center revenue $89.023bn, up116.6%; GAAP operating income $63.734bn; non-GAAP operating income $63.956bn, net income $53.954bn, diluted EPS $2.22, gross margin75%. GAAP diluted EPS was $2.46. Non-GAAP now includes stock-based compensation and comparatives are recast. Company Q3 guidance is revenue $108bn ±2% and non-GAAP gross margin74% ±0.5 percentage points, assuming no China Data Center compute revenue. Rubin production shipments began in Q3. Operating cash flow was $24.077bn versus $50.344bn in Q1; free cash flow $21.341bn, down56.0% QoQ; DSO60 versus45 days; supply and capacity commitments $279bn versus $119bn. The August SB Energy guarantee is capped at $105bn gross, conditional and phased, and is not drawn debt. Bloomberg ANR dated2026/10/08 shows consensus target $323.89; 10/07 reference share price $237.47 implies36.4% share-price upside. EEO Next 4 Qtrs Price/EPS, Adj+ is NVDA19.69x, AMD57.67x, AVGO21.62x and INTC67.13x, with differing forecast windows and adjustments. Distinguish actuals, company guidance, Bloomberg consensus and our analysis. Say when data are unavailable and do not invent broker rationales. Please answer objectively and concisely in English, using HTML <b> tags for emphasis, strictly no markdown syntax."
+      }
+    }
+  },
+  "limitations": [
+    "This is not a real-browser rendering verification; desktop/mobile layout has not been claimed as visually checked.",
+    "No live AI request, PI acceptance, PI storage mutation, gate hiding, or access-control bypass was performed.",
+    "Source authenticity and visual screenshot transcription rely on the separately documented primary-source and Bloomberg evidence review.",
+    "The pre-existing switchTab function has no explicit chart resize calls or stored chart instances; preserved unchanged. Charts use responsive:true.",
+    "The existing AI response formatter and API behavior remain unchanged; runtime tests intentionally do not call the API."
+  ]
+}

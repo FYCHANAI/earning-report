@@ -26,6 +26,7 @@ The owner requires strict preservation of the existing website skeleton. Maintai
 - Preserve GAAP/non-GAAP, TIFRS, reported/adjusted, diluted/basic EPS, fiscal/calendar year, quarterly/YTD and pre-/post-elimination distinctions. Check ADR and split adjustments when relevant.
 - Use one verified fact set for all three languages. Synchronize header, comments, KPI cards, tables, chart data/labels, valuation, broker views, risks and AI welcome/company context.
 - Update the matching homepage card for a substantive report update. A wording correction to a historical snapshot must not imply refreshed data.
+- Sort homepage report cards by the actual earnings publication date of the quarter covered by each report, newest first, not the report editing/update date. Verify the dates with primary sources and record them in `research/`; preserve existing order for tied dates. An older report keeps its covered quarter's publication date until its research content is updated.
 - Keep primary-source URLs and evidence in repository research notes. Missing inputs remain pending; never invent values, analyst views or dates.
 
 ## Verification and release

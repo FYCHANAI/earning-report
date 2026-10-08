@@ -1,0 +1,690 @@
+{
+  "company": "NVIDIA Corporation",
+  "ticker": "NVDA",
+  "report_update_date": "2026-10-08",
+  "fiscal_period": "FY2027 Q2",
+  "period_end": "2026-07-26",
+  "earnings_publication_date": "2026-08-26",
+  "source_version_base_commit": "c29143da78d8269ed533b5b4820ec00c034eeb84",
+  "official_company_evidence": {
+    "company": "NVIDIA Corporation",
+    "ticker": "NVDA",
+    "research_as_of": "2026-10-08",
+    "fiscal_period": "Q2 FY2027",
+    "quarter_end": "2026-07-26",
+    "earnings_release_date": "2026-08-26",
+    "currency": "USD",
+    "financial_units": "USD millions except EPS, percentages and explicit USD billions",
+    "sources": [
+      {
+        "id": "earnings_release",
+        "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/",
+        "scope": "Q2 summary, Q3 outlook, business milestones, dividend, shareholder returns"
+      },
+      {
+        "id": "cfo_commentary",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000073/q2fy27cfocommentary.htm",
+        "pdf_url": "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/Q2FY27-CFO-Commentary.pdf",
+        "scope": "Comparable GAAP and non-GAAP, segment/platform recast, margins, balance sheet, cash flows, commitments"
+      },
+      {
+        "id": "revenue_trend",
+        "url": "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q227/Q227-Revenue-by-Market-Platform-Slides.pdf",
+        "scope": "10-quarter revenue history on latest recast basis"
+      },
+      {
+        "id": "10q",
+        "url": "https://www.sec.gov/Archives/edgar/data/1045810/000104581026000075/nvda-20260726.htm",
+        "pdf_url": "https://investor.nvidia.com/files/doc_financials/2027/NVDA-2027-Q2-10Q-Final-including-exhibits.pdf",
+        "scope": "Risks, customer concentration, commitments and guarantees"
+      },
+      {
+        "id": "release_schedule",
+        "url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Sets-Conference-Call-for-Second-Quarter-Financial-Results/default.aspx",
+        "scope": "Aug26 press release around 1:20pm PT / call 2pm PT"
+      }
+    ],
+    "financials_comparable": {
+      "columns": [
+        "Q2 FY27",
+        "Q1 FY27",
+        "Q2 FY26"
+      ],
+      "source": "cfo_commentary",
+      "revenue": [
+        96221,
+        81615,
+        46743
+      ],
+      "gaap_gross_profit": [
+        72142,
+        61157,
+        33853
+      ],
+      "gaap_gross_margin_percent": [
+        75,
+        74.9,
+        72.4
+      ],
+      "gaap_operating_expenses": [
+        8408,
+        7621,
+        5413
+      ],
+      "gaap_operating_income": [
+        63734,
+        53536,
+        28440
+      ],
+      "gaap_net_income": [
+        59688,
+        58321,
+        26422
+      ],
+      "gaap_diluted_eps": [
+        2.46,
+        2.39,
+        1.08
+      ],
+      "non_gaap_gross_profit": [
+        72188,
+        61232,
+        33902
+      ],
+      "non_gaap_gross_margin_percent": [
+        75,
+        75,
+        72.5
+      ],
+      "non_gaap_operating_expenses": [
+        8232,
+        7449,
+        5361
+      ],
+      "non_gaap_operating_income": [
+        63956,
+        53783,
+        28541
+      ],
+      "non_gaap_net_income": [
+        53954,
+        45548,
+        24763
+      ],
+      "non_gaap_diluted_eps": [
+        2.22,
+        1.87,
+        1.01
+      ],
+      "diluted_weighted_average_shares_millions": [
+        24285,
+        24391,
+        24532
+      ],
+      "operating_cash_flow": [
+        24077,
+        50344,
+        15365
+      ],
+      "capex_equipment_intangibles": [
+        2677,
+        1757,
+        1894
+      ],
+      "principal_payments_equipment_intangibles": [
+        59,
+        33,
+        21
+      ],
+      "free_cash_flow": [
+        21341,
+        48554,
+        13450
+      ],
+      "gaap_equity_securities_net_gains": [
+        7771,
+        15936,
+        2247
+      ],
+      "reportable_segments": {
+        "compute_and_networking": [
+          88299,
+          74550,
+          41331
+        ],
+        "graphics": [
+          7922,
+          7065,
+          5412
+        ]
+      },
+      "market_platforms": {
+        "data_center": [
+          89023,
+          75246,
+          41096
+        ],
+        "hyperscale": [
+          48710,
+          43050,
+          24168
+        ],
+        "ai_clouds_industrial_enterprise": [
+          40313,
+          32196,
+          16928
+        ],
+        "edge_computing": [
+          7198,
+          6369,
+          5647
+        ]
+      }
+    },
+    "platform_revenue_history": {
+      "source": "revenue_trend",
+      "periods": [
+        "Q1 FY25",
+        "Q2 FY25",
+        "Q3 FY25",
+        "Q4 FY25",
+        "Q1 FY26",
+        "Q2 FY26",
+        "Q3 FY26",
+        "Q4 FY26",
+        "Q1 FY27",
+        "Q2 FY27"
+      ],
+      "data_center": [
+        22563,
+        26272,
+        30771,
+        35580,
+        39112,
+        41096,
+        51215,
+        62314,
+        75246,
+        89023
+      ],
+      "hyperscale": [
+        10930,
+        13419,
+        15636,
+        19948,
+        22260,
+        24168,
+        35140,
+        42213,
+        43050,
+        48710
+      ],
+      "ai_clouds_industrial_enterprise": [
+        11633,
+        12853,
+        15135,
+        15632,
+        16852,
+        16928,
+        16075,
+        20101,
+        32196,
+        40313
+      ],
+      "edge_computing": [
+        3481,
+        3768,
+        4311,
+        3751,
+        4950,
+        5647,
+        5791,
+        5813,
+        6369,
+        7198
+      ],
+      "total": [
+        26044,
+        30040,
+        35082,
+        39331,
+        44062,
+        46743,
+        57006,
+        68127,
+        81615,
+        96221
+      ]
+    },
+    "q3_fy27_guidance": {
+      "source": "earnings_release",
+      "revenue_midpoint": 108000,
+      "revenue_tolerance_percent": 2,
+      "revenue_low": 105840,
+      "revenue_high": 110160,
+      "gaap_gross_margin_midpoint_percent": 74,
+      "non_gaap_gross_margin_midpoint_percent": 74,
+      "gross_margin_tolerance_basis_points": 50,
+      "gaap_operating_expenses": 9200,
+      "non_gaap_operating_expenses": 9000,
+      "no_china_data_center_compute_revenue_assumed": true,
+      "fy27_gaap_and_non_gaap_tax_rate_percent_range": [
+        16,
+        18
+      ],
+      "tax_rate_exclusions": "discrete items and material changes to tax environment"
+    },
+    "balance_sheet_and_capital": {
+      "source": "cfo_commentary",
+      "as_of": "2026-07-26",
+      "cash_cash_equivalents_and_marketable_debt_securities": 56586,
+      "accounts_receivable": 63059,
+      "days_sales_outstanding": 60,
+      "prior_quarter_days_sales_outstanding": 45,
+      "reason_dso_increase_company": "Extended payment terms on large, multi-quarter agreements with certain investment-grade customers.",
+      "inventory": 31575,
+      "prior_quarter_inventory_rounded": 25800,
+      "cash": 22443,
+      "marketable_debt_securities": 34143,
+      "marketable_equity_securities": 42783,
+      "short_term_debt": 1000,
+      "long_term_debt": 32366,
+      "senior_unsecured_notes_issued_this_quarter": 25000,
+      "q2_shareholder_returns_rounded": 26000,
+      "q2_repurchase_cash_flow_payments": 19732,
+      "q2_dividends_cash_flow_payments": 6047,
+      "q2_repurchases_10q_shares_millions": 94,
+      "q2_repurchases_10q_rounded": 19700,
+      "remaining_repurchase_authorization_rounded": 99000,
+      "declared_quarterly_dividend_per_share": 0.25,
+      "dividend_record_date": "2026-09-10",
+      "dividend_payment_date": "2026-10-01",
+      "dividend_note": "As of research date this scheduled payment date has passed; describe as declared dividend payable Oct1, or paid only if verified separately."
+    },
+    "commitments_and_guarantees": {
+      "source": "cfo_commentary",
+      "units": "USD billions",
+      "as_of": "2026-07-26 unless specified",
+      "supply_capacity_commitments": 279,
+      "prior_quarter_supply_capacity_commitments": 119,
+      "company_explanation": "Increase primarily relates to memory procurement; 10Q also mentions manufacturing facilities.",
+      "cloud_service_agreements": 29,
+      "uncommenced_data_center_leases_own_use": 25,
+      "equity_investment_commitments": 25,
+      "capex_commitments": 8,
+      "company_reported_base_commitments_total": 366,
+      "ai_cloud_agreements": 36,
+      "uncommenced_third_party_data_center_leases": 20,
+      "additional_commitments_total": 56,
+      "land_power_shell_ai_cloud_guarantees_max_gross": 3.5,
+      "sb_energy_guarantee_max_gross": 105,
+      "sb_energy_agreement_date": "August 2026",
+      "total_guarantees_max_gross": 108.5,
+      "sb_energy_GW": 4.25,
+      "sb_energy_notes": "Obligation conditional and phased, first ready-for-service expected FY2029; 20-year OpenAI leases; optional extra approximately3.8GW is not base obligation.",
+      "caution": "Do not add guarantees to recognized debt or treat maximum contingent obligations as current cash payments. Base table total366 is company-reported; displayed component values sum366. Future annual displayed rounded totals may differ."
+    },
+    "business_driver_facts": [
+      {
+        "source": "cfo_commentary",
+        "claim": "Blackwell Ultra ramp drove Data Center growth; Hyperscale grew13% QoQ, ACIE25% QoQ."
+      },
+      {
+        "source": "cfo_commentary",
+        "claim": "Q2 China shipments of Data Center Hopper products were less than1% of Data Center revenue."
+      },
+      {
+        "source": "cfo_commentary",
+        "claim": "Blackwell architecture remains vast majority of revenue; Blackwell Ultra mix supported year-over-year gross margin increase."
+      },
+      {
+        "source": "cfo_commentary",
+        "claim": "Edge growth was driven by Blackwell workstations, partly offset by slower consumer PCs amid elevated memory and system prices."
+      },
+      {
+        "source": "10q",
+        "claim": "Vera Rubin began production shipments in Q3FY27. At Aug26 announcement ramping into full production, so do not attribute Rubin full-production sales to Q2."
+      },
+      {
+        "source": "earnings_release",
+        "claim": "Vera Rubin racks running with partners including CoreWeave, Google Cloud, Microsoft Azure, Oracle Cloud Infrastructure and Nebius."
+      },
+      {
+        "source": "cfo_commentary",
+        "claim": "GAAP operating expense growth driven by compute infrastructure and compensation/benefits."
+      },
+      {
+        "source": "10q",
+        "claim": "One direct customer accounted for16% of Q2 total revenue; first-half three direct customers were16%,15%,13%. Do not assign identity."
+      }
+    ],
+    "accounting_comparability_warnings": [
+      "From Q1FY27 nonGAAP no longer excludes stock-based compensation. The published historical nonGAAP figures are recast accordingly. Use Q2FY26 EPS1.01 and GM72.5 from Q2FY27 materials, not old EPS1.05 or GM72.7.",
+      "Q1FY27 changed market-platform presentation to Data Center and Edge Computing; these are market platforms, NOT reportable segments. Reportable segments remain Compute&Networking and Graphics.",
+      "Q2FY27 reclassified one company from ACIE to Hyperscale and recast historical periods. Use latest Q2 revenue-trend history for all Hyperscale/ACIE comparisons.",
+      "GAAP EPS2.46 exceeds nonGAAP2.22 due partly to equity-security gains excluded from nonGAAP; do not claim GAAP higher because nonGAAP adds back SBC.",
+      "Q2FY27 actuals plus Q1FY27 individually displayed revenue =177836 while published H1 revenue is177837. Preserve officially published values; no forced reconciliation or unsupported explanation.",
+      "FY2027 ends in January2027; do not label this calendar2027.",
+      "Bloomberg EEO standardized/adjusted EPS may not match company nonGAAP including SBC. Parent must evaluate raw screenshot basis before mixing. Do not compare Bloomberg estimates against company EPS without verified basis.",
+      "Dividend declared per-share0.25 payable2026-10-01. Do not describe as future payment at Oct8."
+    ],
+    "research_inferences_not_management_attributions": [
+      "Strong top-line and DC growth support AI-demand thesis, but cash conversion and counterparty/financing exposure require higher scrutiny.",
+      "Q3 GM midpoint74% indicates 1 percentage point sequential decline despite higher revenue; transition/mix explanation requires source support, not assumption.",
+      "Supply commitments and credit support can enable deployment but amplify loss exposure if customer utilization, financing or construction underperform."
+    ],
+    "computed_checks": {
+      "revenue": {
+        "qoq_percent": 17.896220057587463,
+        "yoy_percent": 105.85114348672526
+      },
+      "gaap_operating_income": {
+        "qoq_percent": 19.04886431560071,
+        "yoy_percent": 124.0998593530239
+      },
+      "gaap_net_income": {
+        "qoq_percent": 2.343924143961873,
+        "yoy_percent": 125.90265687684506
+      },
+      "gaap_diluted_eps": {
+        "qoq_percent": 2.9288702928870203,
+        "yoy_percent": 127.77777777777777
+      },
+      "non_gaap_operating_income": {
+        "qoq_percent": 18.914898759831168,
+        "yoy_percent": 124.08465015241231
+      },
+      "non_gaap_net_income": {
+        "qoq_percent": 18.45525599367701,
+        "yoy_percent": 117.88151677906554
+      },
+      "non_gaap_diluted_eps": {
+        "qoq_percent": 18.71657754010696,
+        "yoy_percent": 119.80198019801982
+      },
+      "operating_cash_flow": {
+        "qoq_percent": -52.17503575401239,
+        "yoy_percent": 56.7002928734136
+      },
+      "free_cash_flow": {
+        "qoq_percent": -56.046875643613305,
+        "yoy_percent": 58.66914498141264
+      },
+      "data_center": {
+        "qoq_percent": 18.3092788985461,
+        "yoy_percent": 116.6220556745182,
+        "revenue_share_percent": 92.51930451772482
+      },
+      "hyperscale": {
+        "qoq_percent": 13.147502903600472,
+        "yoy_percent": 101.54750082754056,
+        "revenue_share_percent": 50.62304486546596
+      },
+      "ai_clouds_industrial_enterprise": {
+        "qoq_percent": 25.21120636103864,
+        "yoy_percent": 138.1439035916824,
+        "revenue_share_percent": 41.89625965225886
+      },
+      "edge_computing": {
+        "qoq_percent": 13.016172083529586,
+        "yoy_percent": 27.465911103240657,
+        "revenue_share_percent": 7.480695482275179
+      },
+      "gaap_operating_margin_percent": 66.23710000935347,
+      "non_gaap_operating_margin_percent": 66.4678188752975,
+      "gaap_net_margin_percent": 62.03219671381507,
+      "non_gaap_net_margin_percent": 56.07299861776536,
+      "free_cash_flow_margin_percent": 22.17915008158302,
+      "operating_cash_flow_to_gaap_net_income_percent": 40.33809140865836,
+      "q3_guidance_midpoint_qoq_percent": 12.241610459255249,
+      "q3_guidance_midpoint_yoy_percent": 89.45374171139879
+    }
+  },
+  "bloomberg_anr": {
+    "evidence_file": "NVDA ANR.png",
+    "explicit_as_of": "2026-10-08",
+    "security": "NVDA US Equity",
+    "currency": "USD",
+    "reference_price": 237.47,
+    "reference_price_date_display": "07-Oct",
+    "reference_price_date": "2026-10-07",
+    "price_date_year_basis": "Year tied to explicit ANR as-of 10/08/26 on same screenshot. Price described as share price, not independently verified exchange close.",
+    "consensus_rating_score": 4.88,
+    "consensus_display": "Buy",
+    "buys": {
+      "count": 79,
+      "percent": 96.3
+    },
+    "holds": {
+      "count": 2,
+      "percent": 2.4
+    },
+    "sells": {
+      "count": 1,
+      "percent": 1.2
+    },
+    "consensus_target": 323.89,
+    "target_count_label": "65/93",
+    "entitlement_label": "90 of 93 sources",
+    "return_potential_display_percent": 36.4,
+    "implied_price_return_percent": 36.391965300880116,
+    "formula": "(target / reference_price - 1) * 100; excludes dividends",
+    "brokers": [
+      {
+        "firm": "UBS",
+        "analyst": "Timothy M Arcuri",
+        "raw_rating": "buy",
+        "display_rating": "Buy",
+        "target_usd": 300,
+        "rating_date": "2026-09-28",
+        "implied_price_return_percent": 26.331747168063323
+      },
+      {
+        "firm": "Morgan Stanley",
+        "analyst": "Joseph Moore",
+        "raw_rating": "Overwt/Attractive",
+        "display_rating": "Overweight",
+        "target_usd": 300,
+        "rating_date": "2026-10-02",
+        "normalization_note": "Overwt is the individual-stock Overweight rating; Attractive is an industry view and is not used as the individual-stock label.",
+        "implied_price_return_percent": 26.331747168063323
+      },
+      {
+        "firm": "Citi",
+        "analyst": "Atif Malik",
+        "raw_rating": "buy",
+        "display_rating": "Buy",
+        "target_usd": 315,
+        "rating_date": "2026-10-06",
+        "implied_price_return_percent": 32.64833452646649
+      }
+    ],
+    "selection": "UBS, Morgan Stanley, Citi are the highest-priority firms with visible verified rows. JP Morgan and HSBC are not visible in the supplied screenshot; no assertion is made about coverage outside the visible list.",
+    "prohibition": "ANR does not contain broker investment rationale. Cards disclose analyst, date, rating, target, and mechanically implied price return only."
+  },
+  "bloomberg_eeo": {
+    "evidence": {
+      "source": "User-provided Bloomberg EEO screenshots, directly inspected with view_image at original resolution",
+      "screenshots": [
+        "NVDA EEO(3).png",
+        "AMD EEO(3).png",
+        "AVGO EEO(2).png",
+        "INTC EEO(2).png"
+      ],
+      "settings": {
+        "Periodicity": "Quarters",
+        "Source": "Standard",
+        "Cur": "USD",
+        "Broker": "-------",
+        "Guidance_checkbox": "unchecked"
+      },
+      "displayed_quote_date": "07-Oct",
+      "screenshot_capture_date": null,
+      "quote_date_year_explicitly_visible": false,
+      "restrictions": [
+        "The screenshot does not show a full observation timestamp or year beside 07-Oct. Do not substitute upload date as evidence date.",
+        "The header shows a quoted price and 07-Oct; the image alone does not explicitly identify that price as an official closing price.",
+        "All financial amounts retain their visible B/M suffix: B = USD billions, M = USD millions. Per-share data in USD; percentages as displayed.",
+        "EPS, Adj+ and Net Income Adj+ are Bloomberg adjusted labels. The images do not establish that all companies use an identical non-GAAP adjustment methodology.",
+        "3 Months Ending dates below are Bloomberg displayed period dates. Verify official fiscal period end separately before representing them as the company's reporting period end.",
+        "Use Next 4 Qtrs Est for the closest cross-company valuation comparison; fiscal-year labels differ between companies and next-four-quarter windows also differ by one month.",
+        "Blank displayed cells are represented by null; do not invent, backfill or label zero.",
+        "Displayed valuation multiples are directly transcribed. Rounded quarterly EPS sums may not exactly reproduce those multiples; the screenshots do not disclose the cause of differences.",
+        "Do not commit original Bloomberg screenshots to the public repository."
+      ]
+    },
+    "selected_metric": "Current Multiples / Price/EPS, Adj+ / Next 4 Qtrs Est",
+    "peers": {
+      "NVDA": {
+        "source_file": "NVDA EEO(3).png",
+        "quote": 237.47,
+        "quote_date_display": "07-Oct",
+        "forward_pe_adj": 19.69,
+        "quarter_labels": [
+          "Q3 2027 Est",
+          "Q4 2027 Est",
+          "Q1 2028 Est",
+          "Q2 2028 Est"
+        ],
+        "displayed_period_end_dates": [
+          "10/31/2026",
+          "01/31/2027",
+          "04/30/2027",
+          "07/31/2027"
+        ],
+        "adjusted_eps_estimates": [
+          "2.477",
+          "2.736",
+          "3.184",
+          "3.665"
+        ]
+      },
+      "AMD": {
+        "source_file": "AMD EEO(3).png",
+        "quote": 645.86,
+        "quote_date_display": "07-Oct",
+        "forward_pe_adj": 57.67,
+        "quarter_labels": [
+          "Q3 2026 Est",
+          "Q4 2026 Est",
+          "Q1 2027 Est",
+          "Q2 2027 Est"
+        ],
+        "displayed_period_end_dates": [
+          "09/30/2026",
+          "12/31/2026",
+          "03/31/2027",
+          "06/30/2027"
+        ],
+        "adjusted_eps_estimates": [
+          "1.950",
+          "2.669",
+          "3.030",
+          "3.549"
+        ]
+      },
+      "AVGO": {
+        "source_file": "AVGO EEO(2).png",
+        "quote": 376.51,
+        "quote_date_display": "07-Oct",
+        "forward_pe_adj": 21.62,
+        "quarter_labels": [
+          "Q4 2026 Est",
+          "Q1 2027 Est",
+          "Q2 2027 Est",
+          "Q3 2027 Est"
+        ],
+        "displayed_period_end_dates": [
+          "10/31/2026",
+          "01/31/2027",
+          "04/30/2027",
+          "07/31/2027"
+        ],
+        "adjusted_eps_estimates": [
+          "3.831",
+          "4.112",
+          "4.504",
+          "4.966"
+        ]
+      },
+      "INTC": {
+        "source_file": "INTC EEO(2).png",
+        "quote": 113.12,
+        "quote_date_display": "07-Oct",
+        "forward_pe_adj": 67.13,
+        "quarter_labels": [
+          "Q3 2026 Est",
+          "Q4 2026 Est",
+          "Q1 2027 Est",
+          "Q2 2027 Est"
+        ],
+        "displayed_period_end_dates": [
+          "09/30/2026",
+          "12/31/2026",
+          "03/31/2027",
+          "06/30/2027"
+        ],
+        "adjusted_eps_estimates": [
+          "0.382",
+          "0.419",
+          "0.405",
+          "0.477"
+        ]
+      }
+    },
+    "free_cash_flow_caution": {
+      "nvda_eeo_q2_actual_usd_millions": 21400,
+      "company_non_gaap_fcf_usd_millions": 21341,
+      "used_in_report": "company-defined FCF21341, including equipment/intangible principal payments59; Bloomberg FCF is a separate displayed field and is not silently substituted."
+    }
+  },
+  "evidence_file_integrity": [
+    {
+      "filename": "NVDA ANR.png",
+      "sha256": "ad4eac628f6c10be03f64ca2ffea389795e7830032c7657cec9a527e8975a58b",
+      "original_committed": false
+    },
+    {
+      "filename": "NVDA EEO(3).png",
+      "sha256": "add262a9de2aa486879b26da356cbf601a4129d589ae5644b1e2eb8986bba014",
+      "original_committed": false
+    },
+    {
+      "filename": "AMD EEO(3).png",
+      "sha256": "cc8b30824e647150de06249a2f8580124d52e98572467f15e49af12060451728",
+      "original_committed": false
+    },
+    {
+      "filename": "AVGO EEO(2).png",
+      "sha256": "3efcd276c224f574d7f73c42781df0bdfb7ee14eae5a9c3a23d8a0cf4faff657",
+      "original_committed": false
+    },
+    {
+      "filename": "INTC EEO(2).png",
+      "sha256": "f342019bdf2d96144736621cc2d611683c612e52ad5920f7807650d439889737",
+      "original_committed": false
+    }
+  ],
+  "presentation_scope": {
+    "files": [
+      "nvda.html",
+      "nvda-sc.html",
+      "nvda-en.html",
+      "index.html"
+    ],
+    "preserved": [
+      "seven tabs",
+      "three charts",
+      "four views",
+      "three broker cards",
+      "four risk items",
+      "CSS",
+      "fixed JavaScript",
+      "PI controls and legal wording",
+      "disclaimer load",
+      "API route and postprocessing"
+    ],
+    "allowed_minimal_structure_change": "One compact paragraph is added within existing Wall Street heading wrapper for user-mandated Bloomberg ANR source line; broker badge color classes follow mandated rating colors.",
+    "homepage_order": "Descending actual publication date of the earnings covered by each current report; not report editing date. See homepage date ledger."
+  }
+}
