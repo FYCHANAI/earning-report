@@ -1,0 +1,1277 @@
+{
+  "report": "Oracle FY2027 Q1 — MU template update",
+  "schema_version": 1,
+  "report_updated_on": "2026-10-08",
+  "base_commit": "4898eb467ed00c049cde0e25bb11bb7b1a22b575",
+  "official_company_evidence": {
+    "ticker": "ORCL",
+    "research_as_of": "2026-10-08",
+    "currency": "USD",
+    "financial_units": "USD million unless per-share, percentage or otherwise explicitly stated",
+    "latest_period": {
+      "label": "FY2027 Q1",
+      "start": "2026-06-01",
+      "end": "2026-08-31",
+      "earnings_publication_date": "2026-09-10",
+      "publication_timing": "After US market close; earnings call 4 pm Central",
+      "source": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx"
+    },
+    "official_company_names": {
+      "en": "Oracle",
+      "tc": "甲骨文",
+      "sc": "甲骨文",
+      "tc_evidence": [
+        {
+          "url": "https://www.oracle.com/tw/",
+          "evidence": "Official page title Oracle 甲骨文台灣 | 雲應用和雲平台"
+        },
+        {
+          "url": "https://www.oracle.com/tw/corporate/contact/field-offices/",
+          "evidence": "Official Taiwan office name 美商甲骨文有限公司台灣分公司"
+        }
+      ],
+      "sc_evidence": [
+        {
+          "url": "https://www.oracle.com/cn/corporate/",
+          "evidence": "Official corporate title 关于甲骨文; body 甲骨文公司"
+        }
+      ],
+      "note": "Use short verified company name in Chinese prose; keep official product brands Oracle Cloud Infrastructure, Fusion, NetSuite etc intact."
+    },
+    "q1_comparison": {
+      "source": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx",
+      "column_order": [
+        "FY2027 Q1",
+        "FY2026 Q1"
+      ],
+      "basis": "Reported USD; same fiscal quarter, not calendar Q1",
+      "revenue": [
+        19345,
+        14926
+      ],
+      "revenue_yoy_reported_pct": 30,
+      "gaap_operating_income": [
+        6728,
+        4277
+      ],
+      "gaap_operating_income_yoy_reported_pct": 57,
+      "non_gaap_operating_income": [
+        8151,
+        6236
+      ],
+      "non_gaap_operating_income_yoy_reported_pct": 31,
+      "gaap_operating_margin_reported_pct": [
+        35,
+        29
+      ],
+      "non_gaap_operating_margin_reported_pct": [
+        42,
+        42
+      ],
+      "gaap_operating_margin_yoy_bps_reported": 612,
+      "non_gaap_operating_margin_yoy_bps_reported": 35,
+      "gaap_net_income": [
+        4760,
+        2927
+      ],
+      "gaap_net_income_yoy_reported_pct": 63,
+      "non_gaap_net_income": [
+        5839,
+        4283
+      ],
+      "non_gaap_net_income_yoy_reported_pct": 36,
+      "preferred_stock_dividends": [
+        81,
+        0
+      ],
+      "gaap_net_income_available_to_common": [
+        4679,
+        2927
+      ],
+      "gaap_net_income_available_to_common_yoy_reported_pct": 60,
+      "non_gaap_net_income_available_to_common": [
+        5758,
+        4283
+      ],
+      "non_gaap_net_income_available_to_common_yoy_reported_pct": 34,
+      "gaap_diluted_eps": [
+        1.56,
+        1.01
+      ],
+      "gaap_diluted_eps_yoy_reported_pct": 55,
+      "non_gaap_diluted_eps": [
+        1.92,
+        1.47
+      ],
+      "non_gaap_diluted_eps_yoy_reported_pct": 30,
+      "diluted_weighted_average_common_shares_m": [
+        3000,
+        2909
+      ],
+      "gaap_interest_expense": [
+        1428,
+        923
+      ],
+      "stock_based_compensation": [
+        1127,
+        1124
+      ],
+      "amortization_intangibles": [
+        202,
+        420
+      ],
+      "restructuring_and_other": [
+        94,
+        415
+      ],
+      "gaap_total_operating_expenses": [
+        12617,
+        10649
+      ],
+      "non_gaap_total_operating_expenses": [
+        11194,
+        8690
+      ],
+      "margin_note": "Official whole-percent margin display hides exact expansion: use reported bps, or clearly calculate one decimal from exact income/revenue. Net income and income available to common differ by preferred dividends in FY27."
+    },
+    "business_mix": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+      "column_order": [
+        "FY2027 Q1",
+        "FY2026 Q1"
+      ],
+      "cloud_iaas": [
+        7388,
+        3347
+      ],
+      "cloud_iaas_yoy_reported_pct": 121,
+      "cloud_iaas_yoy_constant_currency_pct": 120,
+      "cloud_saas": [
+        4219,
+        3839
+      ],
+      "cloud_saas_yoy_reported_pct": 10,
+      "total_cloud": [
+        11607,
+        7186
+      ],
+      "total_cloud_yoy_reported_pct": 62,
+      "total_cloud_yoy_constant_currency_pct": 61,
+      "software_license": [
+        655,
+        766
+      ],
+      "software_license_yoy_reported_pct": -15,
+      "software_support": [
+        4895,
+        4955
+      ],
+      "software_support_yoy_reported_pct": -1,
+      "total_software": [
+        5550,
+        5721
+      ],
+      "total_software_yoy_reported_pct": -3,
+      "hardware": [
+        774,
+        670
+      ],
+      "hardware_yoy_reported_pct": 15,
+      "services": [
+        1414,
+        1349
+      ],
+      "services_yoy_reported_pct": 5,
+      "note": "Offerings are not stand-alone reportable segments: SEC operating segments combine cloud and software. Do not invent OCI operating profit/margin. For non-overlapping pie use OCI, SaaS, total software, hardware, services."
+    },
+    "cashflow": {
+      "source": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx",
+      "column_order": [
+        "FY2027 Q1",
+        "FY2026 Q1"
+      ],
+      "operating_cashflow": [
+        23103,
+        8140
+      ],
+      "operating_cashflow_yoy_reported_pct": 184,
+      "capital_expenditures_cash_outflow": [
+        28499,
+        8502
+      ],
+      "free_cashflow": [
+        -5396,
+        -362
+      ],
+      "free_cashflow_definition": "GAAP operating cash flow less capital expenditures; non-GAAP liquidity measure used by company",
+      "customer_prepayments_significant_financing_component": [
+        11363,
+        0
+      ],
+      "other_deferred_revenues_increase": [
+        3997,
+        2550
+      ],
+      "net_cash_outlay_for_capital_expenditures": [
+        17966,
+        6544
+      ],
+      "net_cash_outlay_definition": "Capital expenditures adjusted for other short-term financing cash flows relating to capex and customer prepayments with significant financing component; not the same as capex or FCF.",
+      "net_cash_outlay_q1_fy27_calculation": "28499 + 830 repayment of capex short-term financing - 11363 customer prepayments = 17966",
+      "atm_common_equity_gross_proceeds": 20000,
+      "atm_common_equity_net_proceeds": 19909,
+      "atm_common_shares_issued_m": 141,
+      "interpretation": "OCF growth includes substantial advance customer funding. Do not describe all 23.103bn as recurring cash earnings. Quarterly FCF remains negative."
+    },
+    "balance_sheet": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+      "as_of": "2026-08-31",
+      "cash_and_equivalents": 36369,
+      "marketable_securities": 708,
+      "restricted_cash_rounded_bn": 2.6,
+      "notes_borrowings_current": 7625,
+      "notes_borrowings_noncurrent": 117712,
+      "total_borrowings_calculated": 125337,
+      "borrowings_total_definition": "Current plus noncurrent notes payable and other borrowings; exclude separate operating lease liabilities.",
+      "additional_not_commenced_lease_commitments_bn": 288,
+      "lease_commitments_note": "Substantially all data-center arrangements expected to commence between Q2 FY27 and FY29 for 15–19 years; not yet recognized in balance sheet as at 2026-08-31. Not current debt."
+    },
+    "rpo": {
+      "source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+      "current_bn": 664,
+      "prior_year_bn": 455,
+      "prior_quarter_bn": 638,
+      "prior_quarter_source": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Record-Q4-and-FY-2026-Results-Driven-by-Cloud-Infrastructure--Cloud-Applications/",
+      "yoy_increase_bn": 209,
+      "new_ai_contracts_q1_bn_lower_bound": 30,
+      "new_ai_contracts_q1_note": "Company says more than USD30bn; do not equate this gross booking figure with net RPO movement.",
+      "expected_recognition_pct": {
+        "next_12_months": 13,
+        "months_13_to_36": 37,
+        "months_37_to_60": 34,
+        "thereafter_calculated": 16
+      },
+      "definition": "Remaining performance obligations: contracted consideration allocated to unsatisfied obligations; not recognized revenue or immediate cash.",
+      "quarter_net_increase_calculated_bn": 26,
+      "quarter_net_increase_calculated_pct": 4.0752351097178785,
+      "yoy_calculated_pct": 45.93406593406593
+    },
+    "capacity": {
+      "source": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx",
+      "additional_capacity_delivered_q1_mw": 850,
+      "gpus_delivered_since_q4_lower_bound": 300000,
+      "gpu_note": "More than 300,000 GPUs; almost triple Q4 FY26 deliveries."
+    },
+    "guidance": {
+      "source": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx",
+      "as_of": "2026-09-10",
+      "basis": "Management forward-looking guidance, not actuals or consensus",
+      "q2_fy2027": {
+        "revenue_growth_usd_pct": [
+          30,
+          34
+        ],
+        "revenue_growth_constant_currency_pct": [
+          30,
+          34
+        ],
+        "cloud_growth_usd_pct": [
+          65,
+          71
+        ],
+        "cloud_growth_constant_currency_pct": [
+          64,
+          70
+        ],
+        "non_gaap_eps_usd": [
+          1.85,
+          1.93
+        ],
+        "non_gaap_eps_constant_currency": [
+          1.83,
+          1.91
+        ],
+        "non_gaap_eps_growth_usd_excluding_prior_ampere_gain_pct": [
+          21,
+          25
+        ],
+        "non_gaap_eps_growth_usd_including_prior_ampere_gain_pct": [
+          -18,
+          -14
+        ],
+        "caution": "FY26 Q2 includes one-time Ampere divestment gain. The positive growth range excludes this gain; unadjusted comparison is a decline."
+      },
+      "fy2027": {
+        "revenue_bn_minimum": 90,
+        "non_gaap_eps": 8.1,
+        "prior_non_gaap_eps_guidance": 8.05,
+        "prior_guidance_source": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Record-Q4-and-FY-2026-Results-Driven-by-Cloud-Infrastructure--Cloud-Applications/"
+      },
+      "annual_capex_guidance": {
+        "status": "Numeric target not verified in latest Q1 release or cited 10-Q; qualitative direction verified",
+        "value": null,
+        "instruction": "Do not carry forward FY26 USD50bn guidance as FY27 or invent annual capex.",
+        "qualitative": "FY2027 capital expenditures expected to be higher than FY2026 due to existing and new data-center capacity expansion.",
+        "source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm",
+        "source_location": "10-Q MD&A Capital Expenditures, page 35 (web lines 1715–1717)"
+      }
+    },
+    "history_for_charts": {
+      "periods": [
+        "FY2026 Q1",
+        "FY2026 Q2",
+        "FY2026 Q3",
+        "FY2026 Q4",
+        "FY2027 Q1"
+      ],
+      "financial_series_source": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx",
+      "revenue": [
+        14926,
+        16058,
+        17190,
+        19184,
+        19345
+      ],
+      "cloud_revenue": [
+        7186,
+        7977,
+        8914,
+        9913,
+        11607
+      ],
+      "software_revenue": [
+        5721,
+        5877,
+        6119,
+        6824,
+        5550
+      ],
+      "hardware_revenue": [
+        670,
+        776,
+        714,
+        924,
+        774
+      ],
+      "services_revenue": [
+        1349,
+        1428,
+        1443,
+        1523,
+        1414
+      ],
+      "operating_cashflow": [
+        8140,
+        2066,
+        7151,
+        14620,
+        23103
+      ],
+      "capital_expenditures_cash_outflow": [
+        8502,
+        12033,
+        18635,
+        16493,
+        28499
+      ],
+      "free_cashflow": [
+        -362,
+        -9967,
+        -11484,
+        -1873,
+        -5396
+      ],
+      "gaap_net_income": [
+        2927,
+        6135,
+        3721,
+        4304,
+        4760
+      ],
+      "gaap_diluted_eps": [
+        1.01,
+        2.1,
+        1.27,
+        1.45,
+        1.56
+      ],
+      "non_gaap_diluted_eps": [
+        1.47,
+        2.26,
+        1.79,
+        2.11,
+        1.92
+      ],
+      "eps_sources": [
+        "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx",
+        "https://investor.oracle.com/investor-news/news-details/2025/Oracle-Announces-Fiscal-Year-2026-Second-Quarter-Financial-Results/",
+        "https://www.oracle.com/news/announcement/q3fy26-earnings-release-2026-03-10/",
+        "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Record-Q4-and-FY-2026-Results-Driven-by-Cloud-Infrastructure--Cloud-Applications/",
+        "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx"
+      ],
+      "eps_comparability_caution": "Reported non-GAAP EPS is not stripped of every one-time investment gain. FY26 Q2 includes Ampere gain (USD2.7bn pre-tax). FY26 Q4 non-GAAP EPS is 2.11 as reported, 2.03 excluding one-time investment gains; do not silently replace one point with 2.03. FY26 annual reported non-GAAP EPS 7.63 versus 6.83 excluding specified one-time gains."
+    },
+    "risks_evidence": [
+      {
+        "topic": "Capacity execution",
+        "fact": "Building and securing data-center capacity, GPUs, energy and components affects delivery and revenue conversion. Company release explicitly lists data-center planning and supply risks.",
+        "source": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx"
+      },
+      {
+        "topic": "Capital intensity and funding",
+        "fact": "Q1 capex 28.499bn exceeds OCF 23.103bn; FCF -5.396bn; ATM issue 141m shares and 19.909bn net proceeds; additional not-started lease commitments 288bn.",
+        "source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm"
+      },
+      {
+        "topic": "Backlog timing and realization",
+        "fact": "Only 13% of 664bn RPO is expected to be recognized within next 12 months; much is multiyear.",
+        "source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm"
+      },
+      {
+        "topic": "Margin mix",
+        "fact": "OCI contributes 91% of constant-currency cloud growth. SEC notes cloud-and-software segment margin percentage declined as infrastructure costs rose. Consolidated GAAP operating margin nevertheless rose. Do not conflate these margins.",
+        "source": "https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm"
+      },
+      {
+        "topic": "Security and regulation",
+        "fact": "Official release names privacy/cybersecurity, changing laws including healthcare regulation, IT failures and AI product functionality risks.",
+        "source": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx"
+      }
+    ],
+    "unavailable_or_not_in_scope": [
+      "Current share price, Bloomberg estimates and bank analyst ratings must come from user-provided dated ANR/EEO; not verified by this fact sheet.",
+      "FY27 numeric annual capex target not established here. Official 10-Q does state it expects FY27 capex above FY26.",
+      "Cloud infrastructure standalone operating margin not disclosed in cited tables.",
+      "Customer-level percentage concentration not established; avoid invented dependence proportions."
+    ],
+    "source_refs": {
+      "q1_release": "turn59view0",
+      "sec_10q": "turn62view0",
+      "q4_release": "turn67view1",
+      "q2_release": "turn67search4",
+      "q3_release": "turn67search3",
+      "tc_name": "turn67view0 and turn62view1",
+      "sc_name": "turn62view2"
+    },
+    "derived_metrics": {
+      "gaap_operating_margin_pct": [
+        34.77901266477126,
+        28.654696502746884
+      ],
+      "non_gaap_operating_margin_pct": [
+        42.134918583613334,
+        41.77944526329894
+      ],
+      "cloud_share_revenue_pct": 60.0,
+      "oci_share_revenue_pct": 38.190746963039544,
+      "customer_prepayments_share_ocf_pct": 49.18408864649613,
+      "revenue_qoq_pct": 0.8392410341951706,
+      "q1_gaap_net_income_yoy_pct": 62.62384694226171,
+      "q1_non_gaap_eps_yoy_from_rounded_eps_pct": 30.612244897959172,
+      "note": "Prefer official reported growth rates; rounded EPS division can differ from company rates calculated on unrounded EPS. Derived ratios kept as calculations in research notes; no calculator attribution required in public prose."
+    }
+  },
+  "bloomberg_orcl": {
+    "ticker": "ORCL",
+    "company_screenshot_name": "Oracle Corp",
+    "extracted_on": "2026-10-08",
+    "sources": {
+      "ORCL EEO.png": {
+        "sha256": "bc8970d144ba28a647b5534102d9ad0e808f27c27c426d9bd01191bf62fb552d"
+      },
+      "ORCL ANR.png": {
+        "sha256": "9adbca4abe0a836a48d37c70f878e3a73815e3a98df0b6d638074e4ae5c1e248"
+      }
+    },
+    "ANR": {
+      "as_of_display": "10/08/26",
+      "as_of_iso": "2026-10-08",
+      "currency": "USD",
+      "consensus_rating": 4.56,
+      "buys": {
+        "percent": 82.0,
+        "count": 41
+      },
+      "holds": {
+        "percent": 16.0,
+        "count": 8
+      },
+      "sells": {
+        "percent": 2.0,
+        "count": 1
+      },
+      "12M_Tgt_Px_count_raw": "39/58",
+      "12M_target_usd": 240.01,
+      "last_price_usd": 143.56,
+      "top_bar_prev_usd": 143.56,
+      "displayed_return_potential_percent": 67.2,
+      "calculated_price_only_return_potential_percent": 67.18445249373084,
+      "LTM_return_percent": -49.7,
+      "entitled_sources_raw": "57 of 61 sources",
+      "selected_brokers_in_user_priority_order": [
+        {
+          "row": 30,
+          "firm": "Morgan Stanley",
+          "analyst": "Sanjit K Singh",
+          "raw_rating": "Equalwt/Attractive",
+          "display_rating": "Neutral",
+          "target_usd": 210.0,
+          "rating_date": "2026-09-11",
+          "mapping": {
+            "stock_component": "Equal-weight",
+            "industry_component": "Attractive",
+            "display_basis": "Editorial normalization to the owner's five-label website convention; NOT an assertion that Morgan Stanley originally used the word Neutral.",
+            "authoritative_definition": "Equal-weight means risk-adjusted total return expected in line with the relevant benchmark or coverage universe. Attractive is a separate industry view.",
+            "source_urls": [
+              "https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch",
+              "https://www.morganstanley.com/content/dam/msdotcom/en/assets/pdfs/Research_AI-Rate-of-Change.pdf"
+            ]
+          },
+          "price_only_upside_percent": 46.28030091947617
+        },
+        {
+          "row": 32,
+          "firm": "JP Morgan",
+          "analyst": "Samik Chatterjee",
+          "raw_rating": "overweight",
+          "display_rating": "Overweight",
+          "target_usd": 200.0,
+          "rating_date": "2026-09-11",
+          "mapping": {
+            "basis": "Case normalization only; preserves original stock rating."
+          },
+          "price_only_upside_percent": 39.31457230426303
+        },
+        {
+          "row": 33,
+          "firm": "Citi",
+          "analyst": "Tyler Radke",
+          "raw_rating": "buy",
+          "display_rating": "Buy",
+          "target_usd": 330.0,
+          "rating_date": "2026-09-11",
+          "mapping": {
+            "basis": "Case normalization only; preserves original stock rating."
+          },
+          "price_only_upside_percent": 129.869044302034
+        }
+      ],
+      "fallback_preferred_broker": {
+        "row": 10,
+        "firm": "HSBC",
+        "analyst": "Stephen Bersey",
+        "raw_rating": "buy",
+        "display_rating": "Buy",
+        "target_usd": 316.0,
+        "rating_date": "2026-09-30"
+      },
+      "limitations": [
+        "Rows 1–9 are outside the screenshot. UBS is not visible; no UBS rating or target may be inferred.",
+        "Screenshot shows target/rating/date, not original bank thesis. Do not invent bank-specific rationale.",
+        "12M target count is transcribed literally as 39/58; do not interpret denominator as rating-response count without Bloomberg methodology.",
+        "The quote header has bid/ask-like changing prices separate from Prev. Use ANR Last Price 143.56 for target comparisons.",
+        "ANR as-of date is not direct proof of the closing-price date. No permitted primary source successfully verified a 2026-10-07 close."
+      ],
+      "price_date_verification": {
+        "result": "unverified; use as-of-ANR reference price wording",
+        "official_pages_checked": [
+          {
+            "url": "https://investor.oracle.com/home/default.aspx",
+            "result": "No historical stock price table surfaced in page."
+          },
+          {
+            "url": "https://www.nasdaq.com/market-activity/stocks/orcl/historical",
+            "result": "Data is currently not available."
+          }
+        ],
+        "recommended_TC_source_line": "Bloomberg ANR（2026/10/08）；以該頁所示參考股價 US$143.56 計算。"
+      }
+    },
+    "EEO": {
+      "periodicity_display": "Quarters",
+      "currency": "USD",
+      "source_display": "Standard",
+      "screenshot_as_of_visible": false,
+      "received_on": "2026-10-08",
+      "periods": [
+        {
+          "label": "Q1 2027 Act",
+          "end": "2026-08-31",
+          "status": "actual"
+        },
+        {
+          "label": "Q2 2027 Est",
+          "end": "2026-11-30",
+          "status": "estimate"
+        },
+        {
+          "label": "Q3 2027 Est",
+          "end": "2027-02-28",
+          "status": "estimate"
+        },
+        {
+          "label": "Q4 2027 Est",
+          "end": "2027-05-31",
+          "status": "estimate"
+        },
+        {
+          "label": "Q1 2028 Est",
+          "end": "2027-08-31",
+          "status": "estimate"
+        }
+      ],
+      "metrics": {
+        "EPS, Adj+": {
+          "unit": "USD per share",
+          "values": [
+            1.92,
+            1.896,
+            2.026,
+            2.304,
+            2.344
+          ]
+        },
+        "EPS, GAAP": {
+          "unit": "USD per share",
+          "values": [
+            1.56,
+            1.547,
+            1.633,
+            1.925,
+            1.928
+          ]
+        },
+        "Revenue": {
+          "unit": "USD billion",
+          "values": [
+            19.345,
+            21.308,
+            23.363,
+            26.403,
+            27.612
+          ]
+        },
+        "Gross Margin %": {
+          "unit": "percent",
+          "values": [
+            61.013,
+            59.352,
+            57.692,
+            57.053,
+            54.756
+          ]
+        },
+        "Operating Income (EBIT)": {
+          "unit": "USD billion",
+          "values": [
+            8.151,
+            8.573,
+            9.234,
+            10.468,
+            10.581
+          ]
+        },
+        "EBITDA": {
+          "unit": "USD billion",
+          "values": [
+            11.307,
+            12.262,
+            13.446,
+            15.218,
+            15.951
+          ]
+        },
+        "Pre-Tax Profit": {
+          "unit": "USD billion",
+          "values": [
+            7.03,
+            7.226,
+            7.72,
+            8.823,
+            8.9
+          ]
+        },
+        "Net Income Adj+": {
+          "unit": "USD billion",
+          "values": [
+            5.839,
+            5.755,
+            6.162,
+            7.052,
+            7.112
+          ]
+        },
+        "Net Income, GAAP": {
+          "unit": "USD billion",
+          "values": [
+            4.76,
+            4.799,
+            5.1,
+            5.984,
+            6.129
+          ]
+        },
+        "Net Debt": {
+          "unit": "USD billion",
+          "values": [
+            132.066,
+            99.614,
+            107.326,
+            112.405,
+            117.715
+          ]
+        },
+        "BPS": {
+          "unit": "USD per share",
+          "values": [
+            20.427,
+            22.887,
+            25.407,
+            28.056,
+            29.388
+          ]
+        },
+        "CPS": {
+          "unit": "USD per share",
+          "values": [
+            7.789,
+            2.67,
+            5.74,
+            6.37,
+            8.43
+          ]
+        },
+        "DPS": {
+          "unit": "USD per share",
+          "values": [
+            0.5,
+            0.514,
+            0.524,
+            0.531,
+            0.525
+          ]
+        },
+        "Return on Equity %": {
+          "unit": "percent",
+          "values": [
+            43.61,
+            41.313,
+            24.648,
+            25.94,
+            19.237
+          ]
+        },
+        "Return on Assets %": {
+          "unit": "percent",
+          "values": [
+            7.823,
+            5.6,
+            5.917,
+            6.817,
+            6.227
+          ]
+        },
+        "Depreciation": {
+          "unit": "USD billion",
+          "values": [
+            3.156,
+            3.588,
+            4.147,
+            4.651,
+            5.175
+          ]
+        },
+        "Amortization": {
+          "unit": "USD million",
+          "values": [
+            null,
+            395.765,
+            385.087,
+            385.279,
+            373.303
+          ]
+        },
+        "Free Cash Flow": {
+          "unit": "USD billion; raw displayed signs",
+          "values": [
+            -5.396,
+            -14.829,
+            -8.922,
+            -5.547,
+            -6.773
+          ]
+        },
+        "CAPEX": {
+          "unit": "USD billion; raw displayed signs",
+          "values": [
+            -28.499,
+            -20.241,
+            -21.342,
+            -22.783,
+            -25.501
+          ]
+        },
+        "Net Asset Value": {
+          "unit": "USD billion",
+          "values": [
+            null,
+            69.618,
+            76.401,
+            82.818,
+            93.893
+          ]
+        }
+      },
+      "current_multiples": {
+        "columns": [
+          "Last 4 Qtrs Act",
+          "Next 4 Qtrs Est",
+          "FY 2027",
+          "FY 2028",
+          "FY 2029"
+        ],
+        "rows": {
+          "Price/EPS, Adj+": [
+            17.77,
+            16.75,
+            17.65,
+            13.01,
+            9.13
+          ],
+          "Price/Book": [
+            7.03,
+            6.27,
+            5.02,
+            3.53,
+            2.54
+          ],
+          "Price/Cash Flow": [
+            8.93,
+            6.19,
+            7.11,
+            5.73,
+            4.93
+          ],
+          "EV/Revenue": [
+            7.98,
+            5.8,
+            6.33,
+            4.36,
+            3.13
+          ],
+          "EV/EBITDA": [
+            16.34,
+            9.46,
+            10.25,
+            7.06,
+            5.02
+          ],
+          "EV/EBIT": [
+            24.84,
+            14.76,
+            15.73,
+            11.7,
+            8.35
+          ],
+          "EV/OPP": [
+            24.84,
+            14.74,
+            15.72,
+            11.68,
+            8.35
+          ],
+          "Dividend Yield": [
+            1.39,
+            1.46,
+            1.41,
+            1.43,
+            1.45
+          ]
+        },
+        "unit": "times, except Dividend Yield in percent"
+      },
+      "limitations": [
+        "No as-of date is visible within the EEO screenshot. Date provenance is the user-provided 2026-10-08 attachment batch, not a terminal timestamp.",
+        "GAAP/adjusted accounting basis is explicit only where metric label says so. Do not label generic Operating Income, Gross Margin or EBITDA GAAP without reconciling company disclosures.",
+        "Cash-flow metrics and ratios can use Bloomberg period conventions. Preserve raw values/signs; reconcile period basis with official cash-flow statements before using as a standalone quarterly cash-flow claim.",
+        "Do not manufacture annual consensus EPS by summing quarterly consensus; contributor sets and precision may differ. Use the directly displayed annual multiples.",
+        "Current Profit is excluded from the verified dataset because its accounting meaning and contributor relevance are unclear.",
+        "All directions/arrows and analyst estimate counts on EEO rows are excluded; numbers above are the visible metric values."
+      ]
+    },
+    "validation": {
+      "method": "Visual inspection with view_image plus tesseract cross-check; OCR not treated as authority over the image.",
+      "repo_edited": false
+    }
+  },
+  "bloomberg_peers": {
+    "status": "visually_transcribed_from_original_user_screenshots",
+    "review_date": "2026-10-08",
+    "review_date_is_not_market_date": true,
+    "source_provider": "Bloomberg EEO user-provided screenshots",
+    "screen_settings": {
+      "periodicity": "Quarters",
+      "source": "Standard",
+      "currency": "USD"
+    },
+    "units": {
+      "revenue": "USD billions",
+      "EPS": "USD per share",
+      "PE": "times"
+    },
+    "limitations": [
+      "No independent quote, consensus or valuation observation date is visible in these four images. Their upload/provided date must not be relabelled as valuation date.",
+      "Top line shows Prev values and intraday bid/ask; Prev has no printed date.",
+      "P/E uses Adj+ for ORCL, MSFT and CRM, but GAAP+ for AMZN; mixed accounting bases must be stated.",
+      "Fiscal years and next-four-quarter windows differ; values are a reference comparison, not fully like-for-like.",
+      "Plus signs are Bloomberg field labels retained verbatim; do not silently equate Adj+ to a particular issuer non-GAAP definition."
+    ],
+    "companies": [
+      {
+        "ticker": "ORCL",
+        "company": "Oracle Corp",
+        "source_filename": "ORCL EEO.png",
+        "previous_price_usd": 143.56,
+        "bid_ask_usd": [
+          142.51,
+          142.802
+        ],
+        "pe_basis": "Price/EPS, Adj+",
+        "next4_pe": 16.75,
+        "last4_pe": 17.77,
+        "fy_pe": {
+          "FY2027": 17.65,
+          "FY2028": 13.01,
+          "FY2029": 9.13
+        },
+        "eps_adjusted_row_label": "EPS, Adj+",
+        "eps_gaap_row_label": "EPS, GAAP",
+        "period_labels": [
+          "Q1 2027 Act",
+          "Q2 2027 Est",
+          "Q3 2027 Est",
+          "Q4 2027 Est",
+          "Q1 2028 Est"
+        ],
+        "period_ends": [
+          "2026-08-31",
+          "2026-11-30",
+          "2027-02-28",
+          "2027-05-31",
+          "2027-08-31"
+        ],
+        "revenue_usd_bn": [
+          19.345,
+          21.308,
+          23.363,
+          26.403,
+          27.612
+        ],
+        "eps_adj_usd": [
+          1.92,
+          1.896,
+          2.026,
+          2.304,
+          2.344
+        ],
+        "eps_gaap_usd": [
+          1.56,
+          1.547,
+          1.633,
+          1.925,
+          1.928
+        ],
+        "source_sha256": "bc8970d144ba28a647b5534102d9ad0e808f27c27c426d9bd01191bf62fb552d",
+        "snapshot_date_visible": false,
+        "snapshot_date": null,
+        "annual_revenue_growth": null,
+        "annual_revenue_growth_limitation": "Screenshot displays Quarters, not annual revenue or annual growth. No annual revenue-growth figure can be extracted.",
+        "rolling_next4_quarter_end_range": [
+          "2026-11-30",
+          "2027-08-31"
+        ],
+        "one_year_forward_same_quarter_revenue_growth_derived_pct": 42.734556733005945,
+        "derived_growth_limitation": "Derived from last displayed estimated quarter versus the first actual quarter one year earlier; not fiscal annual revenue growth or realized YoY growth.",
+        "displayed_next4_eps_sum_usd": 8.57,
+        "price_div_displayed_next4_eps_sum": 16.751458576429403,
+        "arithmetic_crosscheck": "Previous price divided by displayed rounded next-four EPS values agrees with displayed next-four P/E within rounding; it does not establish observation date."
+      },
+      {
+        "ticker": "MSFT",
+        "company": "Microsoft Corp",
+        "source_filename": "MSFT EEO(4).png",
+        "previous_price_usd": 529.76,
+        "bid_ask_usd": [
+          530.5,
+          531.0
+        ],
+        "pe_basis": "Price/EPS, Adj+",
+        "next4_pe": 26.95,
+        "last4_pe": 30.66,
+        "fy_pe": {
+          "FY2027": 26.75,
+          "FY2028": 22.56,
+          "FY2029": 18.48
+        },
+        "eps_adjusted_row_label": "EPS, Adj+",
+        "eps_gaap_row_label": "EPS, GAAP",
+        "period_labels": [
+          "Q4 2026 Act",
+          "Q1 2027 Est",
+          "Q2 2027 Est",
+          "Q3 2027 Est",
+          "Q4 2027 Est"
+        ],
+        "period_ends": [
+          "2026-06-30",
+          "2026-09-30",
+          "2026-12-31",
+          "2027-03-31",
+          "2027-06-30"
+        ],
+        "revenue_usd_bn": [
+          90.007,
+          90.644,
+          95.729,
+          98.173,
+          106.451
+        ],
+        "eps_adj_usd": [
+          4.74,
+          4.731,
+          4.85,
+          4.898,
+          5.179
+        ],
+        "eps_gaap_usd": [
+          4.81,
+          4.729,
+          4.849,
+          4.899,
+          5.18
+        ],
+        "source_sha256": "be981905b642385f76767d71cb83756c6ed049f779af475bf3daf81be53c177f",
+        "snapshot_date_visible": false,
+        "snapshot_date": null,
+        "annual_revenue_growth": null,
+        "annual_revenue_growth_limitation": "Screenshot displays Quarters, not annual revenue or annual growth. No annual revenue-growth figure can be extracted.",
+        "rolling_next4_quarter_end_range": [
+          "2026-09-30",
+          "2027-06-30"
+        ],
+        "one_year_forward_same_quarter_revenue_growth_derived_pct": 18.26969013521169,
+        "derived_growth_limitation": "Derived from last displayed estimated quarter versus the first actual quarter one year earlier; not fiscal annual revenue growth or realized YoY growth.",
+        "displayed_next4_eps_sum_usd": 19.658,
+        "price_div_displayed_next4_eps_sum": 26.948824905890728,
+        "arithmetic_crosscheck": "Previous price divided by displayed rounded next-four EPS values agrees with displayed next-four P/E within rounding; it does not establish observation date."
+      },
+      {
+        "ticker": "AMZN",
+        "company": "Amazon.com Inc",
+        "source_filename": "AMZN EEO(4).png",
+        "previous_price_usd": 259.92,
+        "bid_ask_usd": [
+          258.61,
+          259.09
+        ],
+        "pe_basis": "Price/EPS GAAP+",
+        "next4_pe": 27.58,
+        "last4_pe": 35.46,
+        "fy_pe": {
+          "FY2026": 20.31,
+          "FY2027": 24.17,
+          "FY2028": 18.47
+        },
+        "eps_adjusted_row_label": "EPS, Adj",
+        "eps_gaap_row_label": "EPS, GAAP+",
+        "period_labels": [
+          "Q2 2026 Act",
+          "Q3 2026 Est",
+          "Q4 2026 Est",
+          "Q1 2027 Est",
+          "Q2 2027 Est"
+        ],
+        "period_ends": [
+          "2026-06-30",
+          "2026-09-30",
+          "2026-12-31",
+          "2027-03-31",
+          "2027-06-30"
+        ],
+        "revenue_usd_bn": [
+          200.606,
+          201.926,
+          244.377,
+          208.594,
+          228.836
+        ],
+        "eps_adj_usd": [
+          2.317,
+          2.344,
+          2.831,
+          2.803,
+          3.188
+        ],
+        "eps_gaap_usd": [
+          5.75,
+          1.961,
+          2.449,
+          2.374,
+          2.64
+        ],
+        "source_sha256": "939d00ab5019263383c96a65f711895a6fcb2fb4917bcc76ee95124529ba81dd",
+        "snapshot_date_visible": false,
+        "snapshot_date": null,
+        "annual_revenue_growth": null,
+        "annual_revenue_growth_limitation": "Screenshot displays Quarters, not annual revenue or annual growth. No annual revenue-growth figure can be extracted.",
+        "rolling_next4_quarter_end_range": [
+          "2026-09-30",
+          "2027-06-30"
+        ],
+        "one_year_forward_same_quarter_revenue_growth_derived_pct": 14.072360746936784,
+        "derived_growth_limitation": "Derived from last displayed estimated quarter versus the first actual quarter one year earlier; not fiscal annual revenue growth or realized YoY growth.",
+        "displayed_next4_eps_sum_usd": 9.424,
+        "price_div_displayed_next4_eps_sum": 27.580645161290327,
+        "arithmetic_crosscheck": "Previous price divided by displayed rounded next-four EPS values agrees with displayed next-four P/E within rounding; it does not establish observation date."
+      },
+      {
+        "ticker": "CRM",
+        "company": "Salesforce Inc",
+        "source_filename": "CRM EEO.png",
+        "previous_price_usd": 224.56,
+        "bid_ask_usd": [
+          224.26,
+          225.3
+        ],
+        "pe_basis": "Price/EPS, Adj+",
+        "next4_pe": 15.27,
+        "last4_pe": 14.04,
+        "fy_pe": {
+          "FY2027": 13.42,
+          "FY2028": 13.95,
+          "FY2029": 12.13
+        },
+        "eps_adjusted_row_label": "EPS, Adj+",
+        "eps_gaap_row_label": "EPS, GAAP",
+        "period_labels": [
+          "Q2 2027 Act",
+          "Q3 2027 Est",
+          "Q4 2027 Est",
+          "Q1 2028 Est",
+          "Q2 2028 Est"
+        ],
+        "period_ends": [
+          "2026-07-31",
+          "2026-10-31",
+          "2027-01-31",
+          "2027-04-30",
+          "2027-07-31"
+        ],
+        "revenue_usd_bn": [
+          11.345,
+          11.465,
+          12.345,
+          12.216,
+          12.471
+        ],
+        "eps_adj_usd": [
+          5.9,
+          3.436,
+          3.564,
+          3.8,
+          3.904
+        ],
+        "eps_gaap_usd": [
+          4.29,
+          1.849,
+          1.845,
+          2.242,
+          2.363
+        ],
+        "source_sha256": "daf6ff0df11873f299532b2f28d68367ceb1c7b745c537d7b0a4340c8598a223",
+        "snapshot_date_visible": false,
+        "snapshot_date": null,
+        "annual_revenue_growth": null,
+        "annual_revenue_growth_limitation": "Screenshot displays Quarters, not annual revenue or annual growth. No annual revenue-growth figure can be extracted.",
+        "rolling_next4_quarter_end_range": [
+          "2026-10-31",
+          "2027-07-31"
+        ],
+        "one_year_forward_same_quarter_revenue_growth_derived_pct": 9.925077126487425,
+        "derived_growth_limitation": "Derived from last displayed estimated quarter versus the first actual quarter one year earlier; not fiscal annual revenue growth or realized YoY growth.",
+        "displayed_next4_eps_sum_usd": 14.704,
+        "price_div_displayed_next4_eps_sum": 15.272034820457018,
+        "arithmetic_crosscheck": "Previous price divided by displayed rounded next-four EPS values agrees with displayed next-four P/E within rounding; it does not establish observation date."
+      }
+    ],
+    "salesforce_locale_naming": {
+      "traditional_candidate": "賽富時",
+      "traditional_source": "https://www.salesforce.com/tw/company/salesforce-taiwan/",
+      "traditional_evidence": "Official site lists 台灣賽富時有限公司 / Salesforce Taiwan Limited, and separately identifies U.S. headquarters as Salesforce, Inc.",
+      "traditional_limit": "Chinese name is evidenced for Taiwan subsidiary; short group label 賽富時 is a presentation inference, not the U.S. legal name.",
+      "simplified_recommended": "Salesforce",
+      "simplified_source": "https://www.salesforce.com/cn/company/legal/privacy/",
+      "simplified_evidence": "Official Simplified Chinese legal page calls the entity Salesforce, Inc. and group Salesforce. Reviewed corporate pages did not establish adoption of 赛富时.",
+      "simplified_limit": "Limited official-source review; not proof that no official Chinese name exists."
+    }
+  },
+  "implementation_decisions": {
+    "template": "Corresponding latest mu.html, mu-sc.html, mu-en.html at base commit",
+    "names": {
+      "traditional": "甲骨文",
+      "simplified": "甲骨文",
+      "english": "Oracle"
+    },
+    "pi_api_and_disclaimer": "Preserve each original ORCL language file legal notice, PI functions and gating, disclaimer section/loading, and API request/response handling. MU supplies layout and chart/chat frontend interactions.",
+    "financial_table": "GAAP / non-GAAP earnings and common-shareholder income. OCF is GAAP; FCF is the company non-GAAP liquidity measure. Do not conflate total net income and income available to common.",
+    "charts": [
+      "Non-overlapping cloud/software/hardware/services revenue",
+      "GAAP/non-GAAP operating income and income available to common",
+      "Peer Next 4 Qtrs P/E in screenshot order CRM/MSFT/ORCL/AMZN with accounting-basis and window limitations"
+    ],
+    "broker_priority": "UBS is not visible in the supplied ANR screenshot. Use the next available verified three: Morgan Stanley, JP Morgan, Citi. Do not reproduce unverified prior broker narratives.",
+    "broker_display_normalization": "Morgan Stanley Equalwt maps to Neutral for the owner-specified five-label convention; Attractive is an industry view, not an equity rating. Keep raw string and official bank definition in evidence.",
+    "reference_price_date": "Exact last-price date not established. Cite 2026/10/08 ANR and the displayed reference price, without claiming 10/07 close.",
+    "crm_locale_name": "Traditional peer label 賽富時 is a short local display name based on the official Taiwan entity; not a claim about the US legal name. Simplified uses Salesforce because no official mainland Chinese name was established.",
+    "source_images": "Original restricted Bloomberg screenshots are not committed; filenames and hashes preserve evidence traceability."
+  },
+  "calculations": {
+    "implied_price_return_definition": "(target / reference price - 1) * 100; excludes dividends",
+    "consensus_price_return_pct": 67.2,
+    "brokers_price_return_pct": {
+      "Morgan Stanley": 46.3,
+      "JP Morgan": 39.3,
+      "Citi": 129.9
+    },
+    "cloud_revenue_sum_usd_m": 11607,
+    "total_revenue_sum_usd_m": 19345,
+    "free_cashflow_usd_m": -5396,
+    "gaap_to_nongaap_op_income_adjustments_usd_m": 1423,
+    "gaap_common_income_usd_m": 4679,
+    "nongaap_common_income_usd_m": 5758,
+    "gaap_operating_margin_pct": 34.8,
+    "nongaap_operating_margin_pct": 42.1,
+    "eps_growth_note": "Use company reported +30%, calculated from unrounded figures; ratio of displayed 1.92 / 1.47 differs because EPS is rounded."
+  },
+  "canonical_templates": [
+    {
+      "path": "mu.html",
+      "sha256": "7f783b0b12547b23b5526be6c3e09082d24ccb6cd7b64bbf9728e80964fed57f"
+    },
+    {
+      "path": "mu-sc.html",
+      "sha256": "8703dfd17e84332affe0215b9cffe1963f98e989b8d7412a551b73b03297d799"
+    },
+    {
+      "path": "mu-en.html",
+      "sha256": "9b632c35822e8b15931e0e18bbbfe6b1fea211ca6e0b64f240f2e73de430d589"
+    }
+  ],
+  "protected_files": {
+    "CNAME": "4d122df0d003e1c01afb46bd8a02b31a7f9041eb05674b482335b5bd62b8c960",
+    "disclaimer.html": "495e20268112a2367e5b46c91d584d61dbf75ccd35a58377fa0bc0c94f8c1b2c",
+    "api/gemini.js": "2cbd0959cf0ccd0cb788b6181b8635daf397867d5796d4ff1cf15f1d40ed963a"
+  },
+  "validation_record": "orcl-fy2027-q1-validation.json",
+  "publication_status": "Implementation and validation tracked separately; pull request records final deployment verification."
+}

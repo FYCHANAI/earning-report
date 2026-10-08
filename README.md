@@ -1,5 +1,19 @@
 # NTAM investment research website
 
+## Oracle FY2027 Q1 update — 8 October 2026
+
+The three ORCL reports use the corresponding latest MU layout and cover the quarter ended 31 August 2026, announced on 10 September. Official Oracle results and the SEC 10-Q are reconciled with owner-supplied Bloomberg ANR/EEO evidence. The homepage ORCL card moves to second, behind MU, by earnings publication date; the other 24 cards are unchanged.
+
+The research distinguishes ordinary net income from income available to common shareholders, and operating cash flow from customer advance funding. Quarterly operating cash flow of US$23.103bn includes US$11.363bn in customer prepayments; capital expenditure of US$28.499bn leaves free cash flow at negative US$5.396bn. The discussion also distinguishes RPO from near-term revenue and the two comparison bases for next-quarter EPS guidance.
+
+The 8 October ANR screen shows a US$240.01 consensus target and US$143.56 reference price, implying 67.2% price upside. The underlying price date is not verified, so the report does not label it a 7 October close. Verified broker cards follow Morgan Stanley, JP Morgan and Citi; UBS is outside the visible screenshot. Morgan Stanley's Equal-weight is displayed as Neutral under the owner's convention, with the raw rating and industry view retained in the evidence. Peer P/E comparison identifies Amazon's GAAP+ basis versus the other three companies' Adj+ basis and the different forecast windows.
+
+Original ORCL PI notices/functions, disclaimer content/loading and API handling are preserved; the MU masters, other reports and hosting configuration remain unchanged. No original Bloomberg image is committed. See the validation record for the actual checks and limitations, and the pull request for deployment verification.
+
+- [Oracle source and calculation ledger](research/orcl-fy2027-q1-2026-10-08.json)
+- [Oracle validation record](research/orcl-fy2027-q1-validation.json)
+- [Homepage earnings-date order](research/homepage-earnings-order-2026-10-08.json)
+
 ## Official Chinese company names — 8 October 2026
 
 Traditional/Simplified Chinese report names use verified official local-language names. NVDA uses 輝達 / 英伟达, AMD uses 超微半導體 / 超威半导体, and AVGO uses 博通 in both versions. Titles, headings, chart labels and company AI text follow this convention; tickers, English pages, research dates and financial figures are unchanged. Alphabet and Meta retain English under the owner's instruction; Netflix and Palantir also retain English because this review did not establish a company-adopted Chinese name. This is a naming correction, with no layout or homepage-order change.
