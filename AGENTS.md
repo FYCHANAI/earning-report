@@ -1,16 +1,16 @@
 # NTAM research website maintenance
 
-The owner requires strict preservation of the existing website skeleton. Maintain this repository and its existing hosting; do not migrate frameworks or hosting during report updates.
+The owner's latest instruction (8 October 2026) makes the latest MU three-language layout the single canonical template for all company reports. Maintain this repository and its existing hosting; do not migrate frameworks or hosting during report updates.
 
-## Preserve the template
+## Use the latest MU template
 
-- Read the ticker's three files: `<ticker>.html`, `<ticker>-sc.html`, `<ticker>-en.html`.
-- Preserve HTML structure, classes, IDs, CSS, fixed JavaScript, tab order, language selector, charts, PI notice, disclaimer and AI interfaces.
-- Respect `🔒` fixed and `✏️` replacement comments. Update only company/period text, financial values, chart data/labels and company-specific AI context within the replacement scope.
-- Do not reformat files or replace older pages with a universal template. NVDA, NIO and MCD have seven tabs including `sandbox`; most other pages have six. Preserve these differences.
-- For a new ticker, use the existing AVGO three-language template and its documented ticker/chart-key replacements, including corresponding `switchTab` resize keys.
-- Fixed-component repairs need a separately defined scope. A content update does not authorize a redesign.
-- Do not alter `CNAME`, `disclaimer.html`, PI legal wording, API route or secret configuration as part of a report update.
+- Read the target ticker's three complete files and the current corresponding masters: `mu.html`, `mu-sc.html`, `mu-en.html`. Use each language's MU file as its own layout reference.
+- All new reports and future updates to existing reports must follow the latest MU layout: six sections in this order — Our Views, Financials, Valuation, Wall Street Views, Risks, Disclaimer — with MU's white/blue presentation, header, cards, financial comparison table, chart containers, language selector, responsive layout, chat and explain-AI interfaces.
+- Carry over the MU frontend behavior needed for that layout, including chart instance storage and the matching `switchTab` resize keys. Adapt ticker-specific IDs, instance keys, links, labels and company AI context consistently. Do not retain an older ticker's seventh `sandbox` tab or its former visual design.
+- The current conversion covers NVDA's three languages only. Other older company pages migrate when they are next updated; do not bulk-convert unrelated pages without a request. The former rules preserving each ticker's old layout and using AVGO for new tickers are superseded.
+- Preserve the target company's verified research, financial period, publication date and market-data dates. Never carry MU's company facts, targets, ratings, peers or AI context into another report. Adapt financial metrics, table rows and chart datasets to the company's business and available evidence within the MU presentation; do not invent values to fill a template.
+- Respect `🔒` fixed and `✏️` replacement comments after applying the MU layout. The owner's layout instruction authorizes the necessary MU UI/frontend conversion, not unrelated refactoring or a redesign of MU itself. Unrelated fixed-component repairs still need a defined scope.
+- Preserve PI legal wording and acceptance controls, the disclaimer and its loading behavior, API handling and shared infrastructure. Do not alter `CNAME`, `disclaimer.html`, the API route, model/secret configuration or hosting configuration as part of the layout conversion or report update.
 
 ## Research and translation
 
@@ -20,7 +20,7 @@ The owner requires strict preservation of the existing website skeleton. Maintai
 - Owner display convention (8 October 2026): Wall Street rating labels use exactly `Overweight`, `Buy`, `Neutral`, `Sell`, or `Underweight`, as corrected by the owner. Current MU cards use Buy / Overweight / Overweight. Preserve raw source ratings in research notes; do not invent mappings for unused categories.
 - Wall Street rating badge colors are fixed by rating, never by broker: `Overweight` = dark blue (`bg-blue-100 text-blue-800`); `Buy` = green (`bg-emerald-100 text-emerald-800`); `Neutral` = gray (`bg-slate-100 text-slate-600`); `Sell` = pink (`bg-pink-100 text-pink-700`); `Underweight` = bright red (`bg-red-100 text-red-600`). Preserve the existing pale background badge style, sizing and layout. These explicitly requested color-class changes are allowed within the fixed skeleton.
 - In “Our Views”, write “我們認為” / “我们认为” / “We believe” instead of naming NTAM as the speaker.
-- Select Wall Street broker cards by availability in this priority: `UBS` > `Morgan Stanley` > `JP Morgan` > `Citi` > `HSBC`. Fill the existing card slots with the highest-priority available evidence; use other institutions only if the preferred list does not supply enough verified ratings. Preserve the original card count and skeleton.
+- Select Wall Street broker cards by availability in this priority: `UBS` > `Morgan Stanley` > `JP Morgan` > `Citi` > `HSBC`. Fill the MU template's card slots with the highest-priority available evidence; use other institutions only if the preferred list does not supply enough verified ratings. Preserve MU's card presentation; missing evidence remains pending rather than fabricated.
 - Public report prose omits calculator attribution such as “NTAM calculation” and repeated equivalent disclaimer wording. Keep the Wall Street source line to the Bloomberg ANR date and reference share-price date/value only. Preserve calculations and detailed provenance in research notes.
 - Record reporting period, publication date, market-data as-of date, currency, unit and accounting basis. Never relabel old prices, targets or valuations with a new date.
 - Preserve GAAP/non-GAAP, TIFRS, reported/adjusted, diluted/basic EPS, fiscal/calendar year, quarterly/YTD and pre-/post-elimination distinctions. Check ADR and split adjustments when relevant.
@@ -31,7 +31,7 @@ The owner requires strict preservation of the existing website skeleton. Maintai
 
 ## Verification and release
 
-- Review the full diff against the current upstream revision. For text-only corrections, verify raw HTML tags/attributes, script/style bodies and dates are unchanged.
+- Review the full diff against the current upstream revision and the corresponding MU language master. For a layout conversion, verify the MU structure/styles/frontend behavior and preservation of the target's research facts and protected components. For text-only corrections after migration, verify raw HTML tags/attributes, script/style bodies and dates are unchanged.
 - For financial updates, reconcile totals, units, margins, growth, EPS basis, price/target formulas and three-language chart/table parity.
 - Check tab order, language filenames, chart IDs/resize keys, internal links and changed inline JavaScript syntax. Review affected functions and desktop/mobile rendering when behavior or layout changes.
 - Use a branch and reviewable commit. Distinguish local preparation, remote push, merge and verified production deployment. Do not claim checks or deployment that did not occur.

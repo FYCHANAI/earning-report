@@ -1,0 +1,144 @@
+{
+  "change": "NVDA adoption of the latest MU layout",
+  "requested_on": "2026-10-08",
+  "base_commit": "2eba1f5cf35cb2da6031d7c82061f1e19c6a31e5",
+  "owner_instruction": "Use the latest MU layout as the sample for NVDA immediately and as the canonical layout for all future company reports.",
+  "scope": [
+    "nvda.html",
+    "nvda-sc.html",
+    "nvda-en.html",
+    "AGENTS.md",
+    "PROJECT_INSTRUCTIONS.md",
+    "README.md"
+  ],
+  "canonical_templates": [
+    {
+      "path": "mu.html",
+      "sha256": "7f783b0b12547b23b5526be6c3e09082d24ccb6cd7b64bbf9728e80964fed57f"
+    },
+    {
+      "path": "mu-sc.html",
+      "sha256": "8703dfd17e84332affe0215b9cffe1963f98e989b8d7412a551b73b03297d799"
+    },
+    {
+      "path": "mu-en.html",
+      "sha256": "9b632c35822e8b15931e0e18bbbfe6b1fea211ca6e0b64f240f2e73de430d589"
+    }
+  ],
+  "superseded_rules": [
+    "Preserve legacy company-specific six/seven-tab differences.",
+    "Use AVGO for new company templates."
+  ],
+  "current_migration": "NVDA only; other existing company reports adopt MU when subsequently updated or explicitly requested.",
+  "sections": [
+    "our-comments",
+    "financials",
+    "valuation",
+    "street-comments",
+    "risks",
+    "disclaimer"
+  ],
+  "layout_adoption": [
+    "Corresponding language MU typography, spacing, header, white/blue view card and responsive grids.",
+    "Four KPI cards, two financial chart cards, four-column/five-row financial comparison table and valuation chart.",
+    "Three broker cards with MU two-item card contents and standard rating colors.",
+    "MU chart instance registry and tab resize behavior, using nvda-specific keys.",
+    "MU floating AI assistant and selected-term explanation UI; no standalone sandbox."
+  ],
+  "company_specific_adaptations": [
+    "Preserve the NVDA PI legal block exactly.",
+    "Use the verified FY2027 Q2 NVDA source ledger for every financial and market figure.",
+    "The market-platform revenue chart has one revenue series; no unreported platform operating margins or invented secondary axis.",
+    "Use NVDA language links, prompts, labels, peer names, colors keyed to rating and source limitations."
+  ],
+  "source_ledger": "research/nvda-fy2027-q2-2026-10-08.json",
+  "financial_period": "FY2027 Q2",
+  "quarter_end": "2026-07-26",
+  "earnings_release_date": "2026-08-26",
+  "research_as_of": "2026-10-08",
+  "new_financial_display": {
+    "units": "USD millions except EPS/percentages",
+    "gaap_and_non_gaap_columns": {
+      "revenue": [
+        96221,
+        96221
+      ],
+      "gross_profit": [
+        72142,
+        72188
+      ],
+      "gross_margin_percent": [
+        75,
+        75
+      ],
+      "operating_income": [
+        63734,
+        63956
+      ],
+      "net_income": [
+        59688,
+        53954
+      ],
+      "diluted_eps": [
+        2.46,
+        2.22
+      ]
+    },
+    "operating_cash_flow": 24077,
+    "free_cash_flow": 21341,
+    "non_gaap_qoq_percent": {
+      "revenue": 17.9,
+      "gross_margin_percentage_points": 0.0,
+      "operating_income": 18.9,
+      "net_income": 18.5
+    }
+  },
+  "charts": {
+    "segmentRevenueChart": {
+      "labels": [
+        "Data Center",
+        "Edge Computing"
+      ],
+      "revenue_usd_millions": [
+        89023,
+        7198
+      ]
+    },
+    "profitabilityChart": {
+      "labels": [
+        "Hyperscale",
+        "ACIE",
+        "Edge Computing"
+      ],
+      "revenue_usd_millions": [
+        48710,
+        40313,
+        7198
+      ]
+    },
+    "valuationChart": {
+      "labels": [
+        "INTC",
+        "AMD",
+        "AVGO",
+        "NVDA"
+      ],
+      "next_four_quarters_price_eps_adj_plus": [
+        67.13,
+        57.67,
+        21.62,
+        19.69
+      ]
+    }
+  },
+  "protected_files": {
+    "index.html": "70409bbbe81cef0ecb496037783143759cd66d0886b4c9f0af481381ed170fc8",
+    "CNAME": "4d122df0d003e1c01afb46bd8a02b31a7f9041eb05674b482335b5bd62b8c960",
+    "disclaimer.html": "495e20268112a2367e5b46c91d584d61dbf75ccd35a58377fa0bc0c94f8c1b2c",
+    "api/gemini.js": "2cbd0959cf0ccd0cb788b6181b8635daf397867d5796d4ff1cf15f1d40ed963a",
+    "mu.html": "7f783b0b12547b23b5526be6c3e09082d24ccb6cd7b64bbf9728e80964fed57f",
+    "mu-sc.html": "8703dfd17e84332affe0215b9cffe1963f98e989b8d7412a551b73b03297d799",
+    "mu-en.html": "9b632c35822e8b15931e0e18bbbfe6b1fea211ca6e0b64f240f2e73de430d589"
+  },
+  "validation_record": "research/nvda-mu-template-validation-2026-10-08.json"
+}
