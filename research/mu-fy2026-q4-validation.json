@@ -157,9 +157,9 @@
     }
   },
   "sha256": {
-    "mu.html": "e155de93b5735042d3cf927065401e2516be4dfa4e0eead145fb2baefe0b909c",
-    "mu-sc.html": "e228bb95c354dbd415b16908d292cc5e2e29e957e616c31c077bd3fa9d784f27",
-    "mu-en.html": "c427e657a7a9549d4bbdc43b937703e25eadcf7989eee53f7820471d62745a5c",
+    "mu.html": "7f783b0b12547b23b5526be6c3e09082d24ccb6cd7b64bbf9728e80964fed57f",
+    "mu-sc.html": "8703dfd17e84332affe0215b9cffe1963f98e989b8d7412a551b73b03297d799",
+    "mu-en.html": "9b632c35822e8b15931e0e18bbbfe6b1fea211ca6e0b64f240f2e73de430d589",
     "index.html": "84cc7e4a169bcaf08c619164c0c298cb0f309ba4f5aeb2fb9ff1b516fdb238da"
   },
   "limitations": [
@@ -213,5 +213,39 @@
       "Homepage unchanged",
       "Existing three-card layout preserved"
     ]
+  },
+  "rating_color_revision": {
+    "requested_on": "2026-10-08",
+    "baseline": "2042f913a4d751f0f5381e41d6437a307778e043",
+    "scope": "MU three-language Wall Street rating badges and future maintenance color convention",
+    "rating_colors": {
+      "Overweight": {
+        "color": "dark blue",
+        "classes": "bg-blue-100 text-blue-800"
+      },
+      "Buy": {
+        "color": "green",
+        "classes": "bg-emerald-100 text-emerald-800"
+      },
+      "Neutral": {
+        "color": "gray",
+        "classes": "bg-slate-100 text-slate-600"
+      },
+      "Sell": {
+        "color": "pink",
+        "classes": "bg-pink-100 text-pink-700"
+      },
+      "Underweight": {
+        "color": "bright red",
+        "classes": "bg-red-100 text-red-600"
+      }
+    },
+    "checks": [
+      "Each language changes only the two color classes on the JP Morgan Overweight badge",
+      "Both Overweight badges use identical dark-blue classes; UBS Buy retains green classes",
+      "All text, financial data, source line, other HTML attributes, CSS and JavaScript are byte-for-byte unchanged",
+      "Homepage and other reports unchanged"
+    ],
+    "unused_categories": "Neutral, Sell and Underweight are maintenance conventions; no unsupported rating cards added"
   }
 }
