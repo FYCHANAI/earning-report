@@ -157,9 +157,9 @@
     }
   },
   "sha256": {
-    "mu.html": "71bb3b77f49db819aab324843cbcd428451bd34238da9fc478def1bcc5fbeac2",
-    "mu-sc.html": "cb1d1950208a24fb0861f9b84a42d6a56e29e2f7cf59c92b34c80afa668c41e8",
-    "mu-en.html": "43892c25ff8293a8595e9856ddcad8366ab0bfeebc3cd5d6919e20f4b792e328",
+    "mu.html": "9b1f8e1a850e4e691a091b4f43abf661bae56e261c8df979341cd99a61f472dc",
+    "mu-sc.html": "8172f3b8adfe2acd238737dd2d08b72ee034ab05cd7811b66b297f50ed7e863f",
+    "mu-en.html": "dab7e18b9a483caa1ac9c6ac7ee2c787c574a29ea3b0914cdc44044908f975d2",
     "index.html": "84cc7e4a169bcaf08c619164c0c298cb0f309ba4f5aeb2fb9ff1b516fdb238da"
   },
   "limitations": [
@@ -167,5 +167,22 @@
     "Cloud browser could not reach the local HTTP preview: ERR_CONNECTION_REFUSED.",
     "No live AI/API request or production PI declaration was performed."
   ],
-  "independent_review": "Source-led financial audit and separate publication-scope review completed. Cleared Non-GAAP guidance basis, post-Q1 outlook wording and FCF arithmetic attribution. Excluded earlier unrelated corrections."
+  "independent_review": "Source-led financial audit and separate publication-scope review completed. Cleared Non-GAAP guidance basis, post-Q1 outlook wording and FCF arithmetic attribution. Excluded earlier unrelated corrections.",
+  "wording_revision": {
+    "requested_on": "2026-10-08",
+    "baseline": "10c2b3404255c11172b80b6d0013c1fe560af6c0",
+    "scope": "MU three-language standardized broker rating labels, concise ANR source line, removed calculator attribution and synchronized AI context",
+    "ratings": [
+      "Buy",
+      "Overweight",
+      "Buy"
+    ],
+    "checks": [
+      "Raw HTML tags/attributes and CSS unchanged",
+      "Fixed JavaScript unchanged outside company prompt",
+      "Financial, valuation, risk and disclaimer sections unchanged",
+      "Broker prices, dates and implied returns unchanged",
+      "Homepage unchanged"
+    ]
+  }
 }
