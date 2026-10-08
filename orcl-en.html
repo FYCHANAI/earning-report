@@ -6,9 +6,9 @@
 <title>Oracle (ORCL) Deep Research Report | NTAM Senior Analyst</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
-    body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
     .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
     @media (min-width: 768px) { .chart-container { height: 400px; } }
     .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
@@ -60,17 +60,18 @@
     </div>
 </div>
 
+
 <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div class="flex justify-between items-start">
             <div class="flex flex-col">
                 <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
-                    <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-8 w-auto" onerror="this.style.display='none'">
+                    <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
                     <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
                 </a>
                 <div class="flex flex-col">
                     <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Oracle <span class="text-blue-600">ORCL</span></h1>
-                    <span class="text-sm text-slate-500 font-medium mt-1">Senior Analyst Operations & Strategy Report | Q4 2026 Earnings Edition</span>
+                    <span class="text-sm text-slate-500 font-medium mt-1">Senior Analyst Operations & Strategy Report | Q1 / FY2027 Earnings Special</span>
                 </div>
             </div>
             <div class="flex flex-col items-end space-y-3">
@@ -81,21 +82,21 @@
                 </select>
                 <div class="flex items-center space-x-4">
                     <div class="text-right hidden sm:block">
-                        <div class="text-xs text-slate-400 font-bold">Target Price <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
-                        <div class="text-xl font-bold text-slate-800">$255.54 USD</div>
+                        <div class="text-xs text-slate-400 font-bold">Consensus Target Price <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Bloomberg ANR · 2026/10/08)</span></div>
+                        <div class="text-xl font-bold text-slate-800">$240.01 USD</div>
                     </div>
-                    <div class="px-4 py-2 bg-blue-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">Rating: Buy</div>
+                    <div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">Consensus: Buy (4.56/5)</div>
                 </div>
             </div>
         </div>
 
         <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
-            <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">I. Our Comments</button>
-            <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">II. Financials & Operations</button>
-            <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">III. Valuation Comparison</button>
-            <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">IV. Wall Street Consensus</button>
-            <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">V. Risk Factors</button>
-            <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">VI. Disclaimer</button>
+            <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">1. Our Views</button>
+            <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">2. Financials & Operations</button>
+            <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">3. Valuation Comparison</button>
+            <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">4. Analyst Views</button>
+            <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">5. Risk Factors</button>
+            <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">6. Disclaimer</button>
         </nav>
     </div>
 </header>
@@ -104,41 +105,41 @@
 
     <section id="our-comments" class="tab-content active">
         <div class="mb-6">
-            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">I. Our Comments</h2>
-            <p class="mt-2 text-sm text-slate-500">Based on FY26 Q4 and full-year financial disclosures, the NTAM research team highlights the following core takeaways for Oracle (ORCL):</p>
+            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">I. Our Views</h2>
+            <p class="mt-2 text-sm text-slate-500">Updated: 2026/10/08. Based on FY2027 Q1 results for the period ended 2026/08/31, released on 2026/09/10, and the 10-Q. Company actuals, guidance and market consensus are identified separately.</p>
         </div>
         <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
             <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
                 <span class="text-3xl mr-3">🎯</span>
-                <h3 class="text-2xl font-black text-blue-600 tracking-tight">Core Executive Takeaways</h3>
+                <h3 class="text-2xl font-black text-blue-600 tracking-tight">Core Operational Conclusions</h3>
             </div>
             <ul class="space-y-6">
                 <li class="flex items-start">
                     <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
                     <div>
-                        <strong class="text-slate-900 block mb-1 text-lg">Explosive Exponential Growth in Cloud Infrastructure (IaaS)</strong>
-                        <p class="text-slate-600 text-sm leading-relaxed">Fueled by staggering workloads for large-scale AI model training and inferencing, quarterly IaaS revenue surged by 93% to $5.8 billion, solidifying its place as the primary catalyst replacing legacy on-premise segments.</p>
+                        <strong class="text-slate-900 block mb-1 text-lg">Cloud Reaches 60% of Revenue as OCI and Software Trends Diverge</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">Q1 revenue was US$19.345bn, up 30% YoY. Cloud revenue grew 62% to US$11.607bn, or 60.0% of total revenue: OCI generated US$7.388bn, up 121%, and SaaS US$4.219bn, up 10%; software revenue declined 3%. The non-GAAP operating margin was 42.1%. We believe cloud is the growth engine, but infrastructure costs, applications growth and the transition of legacy software also matter. OCI growth does not automatically translate into higher margins across the business.</p>
                     </div>
                 </li>
                 <li class="flex items-start">
                     <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
                     <div>
-                        <strong class="text-slate-900 block mb-1 text-lg">Remaining Performance Obligations (RPO) Backlog At Historic Peaks</strong>
-                        <p class="text-slate-600 text-sm leading-relaxed">Reflecting monumental booking momentum, total RPO reached an unprecedented $638 billion, expanding by 363% year-over-year, anchored by a massive $85 billion sequential expansion in Q4 alone.</p>
+                        <strong class="text-slate-900 block mb-1 text-lg">US$664bn RPO Provides Visibility, but Revenue Depends on Delivery</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">Remaining performance obligations (RPO) reached US$664bn, US$209bn above the prior year. Only 13% is expected to be recognized as revenue within the next 12 months. The company delivered 850MW of additional capacity during Q1 and disclosed deliveries of more than 300,000 GPUs since the end of Q4 FY2026. We believe the backlog improves demand visibility. RPO represents contracted revenue not yet recognized, not a measure of cash collected; some contracts may be prepaid. Data-center commissioning, customer performance and collection timing determine its conversion into earnings.</p>
                     </div>
                 </li>
                 <li class="flex items-start">
                     <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
                     <div>
-                        <strong class="text-slate-900 block mb-1 text-lg">Prepaid and Customer-Supplied Hardware Eases Capital Pooling Constraints</strong>
-                        <p class="text-slate-600 text-sm leading-relaxed">Out of the historic RPO backlog, $75 billion consists of massive AI contracts with customer prepayments or customer-allocated GPU silicon. This asset-light architecture heavily diminishes the volume of external debt or equity capital Oracle must raise to build out hyperscale compute environments.</p>
+                        <strong class="text-slate-900 block mb-1 text-lg">Customer Prepayments Support Cash Flow; Capital Needs Remain Substantial</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">Q1 operating cash flow of US$23.103bn included US$11.363bn of customer prepayments with a significant financing component. Capital expenditure was US$28.499bn, leaving free cash flow negative at US$5.396bn. The company also raised US$20bn gross through an ATM common-stock offering, issuing 141 million shares. We believe prepayments improve construction funding, but all operating cash flow cannot be treated as recurring cash earnings, nor do they eliminate financing and dilution pressures.</p>
                     </div>
                 </li>
                 <li class="flex items-start">
                     <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
                     <div>
-                        <strong class="text-slate-900 block mb-1 text-lg">Healthcare Vertical Faces Generative AI Strategic Transformation Pivot</strong>
-                        <p class="text-slate-600 text-sm leading-relaxed">The Oracle Health applications suite is primed to deploy its completely overhauled, generative AI-integrated Cerner clinical workflow and hospital management architecture, which NTAM projects will propel the aggregate healthcare vertical to strong double-digit growth in FY27.</p>
+                        <strong class="text-slate-900 block mb-1 text-lg">Q2 Guidance Signals Growth; Valuation Requires Comparable Earnings and Cash Conversion</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">Q2 guidance calls for USD revenue growth of 30–34%, cloud growth of 65–71% and non-GAAP EPS of US$1.85–1.93. The 21–25% EPS growth comparison excludes the prior-year one-time Ampere gain; retaining that gain produces a decline of 14–18%. FY2027 guidance is at least US$90bn in revenue and US$8.10 non-GAAP EPS. Bloomberg shows 16.75x next-four-quarter P/E. The ANR consensus target of US$240.01 implies 67.2% upside from its displayed reference price of US$143.56, excluding dividends. We believe delivery, cash collection and per-share earnings must improve together to support the valuation.</p>
                     </div>
                 </li>
             </ul>
@@ -149,95 +150,83 @@
         <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">II. Financials & Operations</h2></div>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
             <div class="metric-card border-t-4 border-t-emerald-500">
-                <h4 class="text-xs font-bold text-slate-500 uppercase">Q4 Total Revenue</h4>
-                <p class="text-2xl font-bold text-slate-800 mt-1">$19.18 B</p>
-                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +21%</p>
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Q1 Total Revenue</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">$19,345 M</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +30% / QoQ +0.8%</p>
             </div>
             <div class="metric-card border-t-4 border-t-blue-500">
-                <h4 class="text-xs font-bold text-slate-500 uppercase">Q4 Cloud Infrastructure (IaaS)</h4>
-                <p class="text-2xl font-bold text-slate-800 mt-1">$5.79 B</p>
-                <p class="text-sm text-blue-600 font-semibold mt-1">▲ YoY +93%</p>
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Q1 Cloud Revenue (IaaS + SaaS)</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">$11,607 M</p>
+                <p class="text-sm text-blue-600 font-semibold mt-1">▲ YoY +62% / 60.0% of Revenue</p>
             </div>
             <div class="metric-card border-t-4 border-t-indigo-500">
                 <h4 class="text-xs font-bold text-slate-500 uppercase">Non-GAAP Operating Margin</h4>
-                <p class="text-2xl font-bold text-slate-800 mt-1">45.0%</p>
-                <p class="text-sm text-emerald-600 font-semibold mt-1">● GAAP Margin 32%</p>
+                <p class="text-2xl font-bold text-slate-800 mt-1">42.1%</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">● GAAP Operating Margin 34.8%</p>
             </div>
             <div class="metric-card border-t-4 border-t-purple-500">
-                <h4 class="text-xs font-bold text-slate-500 uppercase">Total RPO Backlog</h4>
-                <p class="text-xl font-bold text-slate-800 mt-1">$638.0 B</p>
-                <p class="text-sm text-purple-600 font-semibold mt-1">▲ YoY +363%</p>
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Quarterly Free Cash Flow</h4>
+                <p class="text-xl font-bold text-slate-800 mt-1">-$5,396 M</p>
+                <p class="text-sm text-rose-600 font-semibold mt-1">● OCF $23,103 M / Capex $28,499 M</p>
             </div>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
             <div class="metric-card">
-                <h3 class="text-lg font-bold text-slate-800 mb-2">Q4 Revenue Offering Mix (Billion USD)</h3>
-                <p class="text-xs text-slate-500 mb-4">Aggregate cloud segments (IaaS + SaaS) crossed the 50% milestone threshold of total revenue as on-premise pools migrate.</p>
+                <h3 class="text-lg font-bold text-slate-800 mb-2">Q1 Revenue Mix (Million USD)</h3>
+                <p class="text-xs text-slate-500 mb-4">Cloud US$11,607m (OCI US$7,388m; SaaS US$4,219m), software US$5,550m, hardware US$774m and services US$1,414m sum to US$19,345m without double counting. Sources: <a href="https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-600">company Q1 results</a> and <a href="https://www.sec.gov/Archives/edgar/data/1341439/000119312526389274/orcl-20260831.htm" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-600">10-Q</a>.</p>
                 <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
             </div>
 
             <div class="metric-card">
-                <h3 class="text-lg font-bold text-slate-800 mb-2">Q4 Earnings Structure Profiles (GAAP vs Non-GAAP)</h3>
-                <p class="text-xs text-slate-500 mb-4">Stellar operational scalability boosted quarterly Non-GAAP diluted EPS by 24% YoY to $2.111.</p>
+                <h3 class="text-lg font-bold text-slate-800 mb-2">Q1 Operating Income and Income Available to Common (Million USD)</h3>
+                <p class="text-xs text-slate-500 mb-4">Income available to common deducts US$81m of preferred dividends: GAAP US$4,679m and non-GAAP US$5,758m, versus total net income of US$4,760m and US$5,839m. Free cash flow equals operating cash flow less capex and is a company non-GAAP liquidity measure.</p>
                 <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
             </div>
         </div>
 
         <div class="metric-card mt-6">
-            <h3 class="text-lg font-bold text-slate-800 mb-4">Quarterly Segment Metrics Summary (FY26 Q4)</h3>
+            <h3 class="text-lg font-bold text-slate-800 mb-4">Q1 Core Financial Data (US$ Millions, Except EPS)</h3>
             <div class="overflow-x-auto">
                 <table class="w-full text-sm text-left border-collapse">
                     <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
                         <tr>
-                            <th class="px-6 py-3 font-bold">Offerings</th>
-                            <th class="px-6 py-3 font-bold text-right">Revenue (Billion USD)</th>
-                            <th class="px-6 py-3 font-bold text-right text-emerald-600">Growth Rate (As Reported USD)</th>
-                            <th class="px-6 py-3 font-bold text-right text-indigo-600">Constant Currency Growth</th>
+                            <th class="px-6 py-3 font-bold">Financial Metric</th>
+                            <th class="px-6 py-3 font-bold text-right">Q1 FY2027 GAAP</th>
+                            <th class="px-6 py-3 font-bold text-right text-blue-600">Q1 FY2027 Non-GAAP</th>
+                            <th class="px-6 py-3 font-bold text-right text-emerald-600">YoY / Supplement</th>
                         </tr>
                     </thead>
                     <tbody class="text-slate-700">
                         <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium">Cloud Offerings (IaaS + SaaS)</td>
-                            <td class="px-6 py-4 text-right font-bold text-slate-900">$9.91</td>
-                            <td class="px-6 py-4 text-right font-bold text-emerald-500">+47%</td>
-                            <td class="px-6 py-4 text-right text-indigo-500">+46%</td>
-                        </tr>
-                        <tr class="border-b border-slate-100 bg-slate-50/50">
-                            <td class="px-6 py-4 pl-10 text-xs text-slate-500">— Cloud Infrastructure (IaaS) sub-segment</td>
-                            <td class="px-6 py-4 text-right text-xs text-slate-600">$5.79</td>
-                            <td class="px-6 py-4 text-right text-xs font-bold text-emerald-500">+93%</td>
-                            <td class="px-6 py-4 text-right text-xs text-indigo-500">+92%</td>
-                        </tr>
-                        <tr class="border-b border-slate-100 bg-slate-50/50">
-                            <td class="px-6 py-4 pl-10 text-xs text-slate-500">— Cloud Applications (SaaS) sub-segment</td>
-                            <td class="px-6 py-4 text-right text-xs text-slate-600">$4.13</td>
-                            <td class="px-6 py-4 text-right text-xs font-bold text-emerald-500">+10%</td>
-                            <td class="px-6 py-4 text-right text-xs text-indigo-500">+9%</td>
+                            <td class="px-6 py-4 font-medium">Quarterly Revenue</td>
+                            <td class="px-6 py-4 text-right">$19,345 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$19,345 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-emerald-500">Revenue +30%</td>
                         </tr>
                         <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium">On-Premise Licenses & Support (Software)</td>
-                            <td class="px-6 py-4 text-right">$6.82</td>
-                            <td class="px-6 py-4 text-right text-rose-500">-2%</td>
-                            <td class="px-6 py-4 text-right text-rose-600">-3%</td>
+                            <td class="px-6 py-4 font-medium">Operating Income / Margin</td>
+                            <td class="px-6 py-4 text-right">$6,728 M (34.8%)</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$8,151 M (42.1%)</td>
+                            <td class="px-6 py-4 text-right text-emerald-500">Non-GAAP Income +31% / Margin +35 bps</td>
                         </tr>
                         <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium">Enterprise Services</td>
-                            <td class="px-6 py-4 text-right">$1.52</td>
-                            <td class="px-6 py-4 text-right text-emerald-500">+13%</td>
-                            <td class="px-6 py-4 text-right text-indigo-500">+12%</td>
+                            <td class="px-6 py-4 font-medium">Net Income Available to Common Shareholders</td>
+                            <td class="px-6 py-4 text-right">$4,679 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$5,758 M</td>
+                            <td class="px-6 py-4 text-right text-emerald-500">GAAP +60% / Non-GAAP +34%</td>
                         </tr>
                         <tr class="border-b border-slate-100">
-                            <td class="px-6 py-4 font-medium">Hardware Solutions</td>
-                            <td class="px-6 py-4 text-right">$0.92</td>
-                            <td class="px-6 py-4 text-right text-emerald-500">+9%</td>
-                            <td class="px-6 py-4 text-right text-indigo-500">+7%</td>
+                            <td class="px-6 py-4 font-medium">Diluted EPS</td>
+                            <td class="px-6 py-4 text-right">$1.56</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$1.92</td>
+                            <td class="px-6 py-4 text-right text-emerald-600">GAAP +55% / Non-GAAP +30%</td>
                         </tr>
-                        <tr class="bg-slate-100 font-bold">
-                            <td class="px-6 py-4 text-slate-800">Full Fiscal Year Revenue (FY26 Total)</td>
-                            <td class="px-6 py-4 text-right text-slate-800">$67.36</td>
-                            <td class="px-6 py-4 text-right text-emerald-600">+17%</td>
-                            <td class="px-6 py-4 text-right text-indigo-600">+16%</td>
+                        <tr class="bg-slate-50 font-bold">
+                            <td class="px-6 py-4 text-slate-800">Operating Cash Flow / Free Cash Flow</td>
+                            <td class="px-6 py-4 text-right text-slate-500">Operating Cash Flow: $23,103 M</td>
+                            <td class="px-6 py-4 text-right text-blue-600">Free Cash Flow: -$5,396 M</td>
+                            <td class="px-6 py-4 text-right text-purple-600">Capital Expenditure: $28,499 M</td>
                         </tr>
                     </tbody>
                 </table>
@@ -249,50 +238,50 @@
         <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">III. Valuation Comparison</h2></div>
         <div class="metric-card">
             <div class="flex justify-between items-center mb-4">
-                <h3 class="text-lg font-bold text-slate-800">Hyperscale Cloud & SaaS Giants Valuation Spectrum Multiple (Next 4 Qtrs Est Forward P/E)</h3>
+                <h3 class="text-lg font-bold text-slate-800">Software and Cloud Peer P/E Comparison (Next 4 Qtrs Est Forward P/E)</h3>
             </div>
             <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
-            <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
+            <p class="text-xs text-slate-400 mt-3 text-right">Source: Bloomberg EEO screenshots supplied on 2026/10/08, Current Multiples → Next 4 Qtrs Est → Price/EPS. CRM 15.27x, MSFT 26.95x and ORCL 16.75x use Adj+; AMZN 27.58x uses GAAP+, so accounting bases differ. Fiscal years and rolling-quarter windows also differ. The images do not show a separate valuation date and are not treated as same-date closing observations or fully comparable multiples.</p>
         </div>
     </section>
 
     <section id="street-comments" class="tab-content">
         <div class="mb-6">
-            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">IV. Wall Street Consensus</h2>
-            <p class="mt-2 text-sm text-slate-500">Institutional analytical framework consensus following the Q4 data print:</p>
+            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">IV. Analyst Views</h2>
+            <p class="mt-2 text-sm text-slate-500">Source: Bloomberg ANR (2026/10/08); returns calculated using its displayed reference share price of US$143.56.</p>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
             <div class="metric-card border-t-4 border-t-blue-600">
                 <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                    <h3 class="font-black text-slate-800">UBS</h3>
-                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
+                    <h3 class="font-black text-slate-800">Morgan Stanley</h3>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">Neutral</span>
                 </div>
                 <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                    <li><b>Multi-Cloud Database Monopoly Moat:</b> The Oracle Multicloud AI Database achieved an astronomical 404% sequential boost, displaying that deploying direct interconnect infrastructure to Azure and GCP creates structural demand lock-in.</li>
-                    <li><b>Gross Margin Scaling Levers:</b> Cloud infrastructure profitability scales rapidly within the client-furnished hardware deployment layout, unlocking higher core Non-GAAP target upward models.</li>
+                    <li><b>Rating and Date:</b> Sanjit K Singh; Neutral (site-standardized label); 2026/09/11.</li>
+                    <li><b>Target and Implied Return:</b> US$210.00; +46.3%.</li>
                 </ul>
             </div>
 
             <div class="metric-card border-t-4 border-t-blue-600">
                 <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                    <h3 class="font-black text-slate-800">J.P. Morgan</h3>
+                    <h3 class="font-black text-slate-800">JP Morgan</h3>
                     <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Overweight</span>
                 </div>
                 <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                    <li><b>Impeccable RPO Backlog Visibility:</b> Closing RPO metrics hitting $638 billion provides definitive forward visibility regarding enterprise pipeline conversions over the next eight quarters.</li>
-                    <li><b>Hyperscale Delivery Velocity Acceleration:</b> Incorporating close to 1.2GW datacenter volume buildouts across FY26 alongside another 1GW in the immediate forward quarter implies exceptional capacity deployment pipeline speeds.</li>
+                    <li><b>Rating and Date:</b> Samik Chatterjee; Overweight; 2026/09/11.</li>
+                    <li><b>Target and Implied Return:</b> US$200.00; +39.3%.</li>
                 </ul>
             </div>
 
             <div class="metric-card border-t-4 border-t-blue-600">
                 <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                    <h3 class="font-black text-slate-800">Morgan Stanley</h3>
-                    <span class="bg-slate-100 text-slate-800 text-xs font-bold px-2 py-1 rounded">Hold</span>
+                    <h3 class="font-black text-slate-800">Citi</h3>
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
                 </div>
                 <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                    <li><b>Aggressive CapEx Drags Short-term FCF Profile:</b> Heavy layout matrices for OCI expansion caused FY26 consolidated FCF to hit negative $23.7 billion, adding near-term structural pressure on absolute ROE returns.</li>
-                    <li><b>Unprecedented Growth Vector Fully Priced:</b> While forward FY27 top-line guidance tracking toward $90 billion remains incredibly stellar, the current premium multiple fairly encapsulates the momentum.</li>
+                    <li><b>Rating and Date:</b> Tyler Radke; Buy; 2026/09/11.</li>
+                    <li><b>Target and Implied Return:</b> US$330.00; +129.9%.</li>
                 </ul>
             </div>
         </div>
@@ -303,16 +292,16 @@
         <div class="metric-card">
             <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
                 <li class="pb-3 border-b border-slate-100">
-                    <strong class="text-rose-700 text-base">Intricate Sourcing and Advanced GPU Supply Concentration Risks:</strong> Operating complex cloud and hardware system pipelines across multiple tier-1 manufacturing boundaries leaves deployment cycles heavily vulnerable to chip and advanced component allocations.
+                    <strong class="text-rose-700 text-base">Data-Center Delivery, Power and GPU Supply Risk:</strong> RPO converts into revenue as contractual obligations are fulfilled; cloud infrastructure contracts also require capacity to come online on schedule. Constraints in GPUs, power, networking, cooling or construction can delay service delivery and raise costs. Delivered capacity does not imply that all of it immediately generates revenue.
                 </li>
                 <li class="pb-3 border-b border-slate-100">
-                    <strong class="text-base">Hyperscale Datacenter Structural Capital Planning Capacity Pressures:</strong> Crucial dependence rests on the entity's baseline capacity to accurately schedule, negotiate, build out, and cool multi-region infrastructure facilities to sustain high data scale limits.
+                    <strong class="text-base">Capital Requirements, Funding and Dilution Risk:</strong> Q1 capex of US$28.499bn exceeded operating cash flow and FCF remained negative. The timing and persistence of customer prepayments also affect cash flow. The ATM offering issued 141 million shares; further capital needs may increase financing costs or dilute per-share returns. The company expects FY2027 capex above FY2026, making the pace of investment and funding a key monitoring point.
                 </li>
                 <li class="pb-3 border-b border-slate-100">
-                    <strong class="text-base">Macro Volatility and International Tariff Frictions:</strong> Global deployments remain subject to changing cross-border administrative rulings, foreign exchange rate headwinds, trade policies, and unpredictable operational margins.
+                    <strong class="text-base">Customer Credit and Long-Term Contract Performance Risk:</strong> Most of the US$664bn RPO spans multiple years, with only 13% expected to be recognized in the next 12 months. Customer funding, actual compute demand, payment and performance arrangements can change revenue timing. The entire backlog cannot be treated as near-term revenue or available cash.
                 </li>
                 <li class="pb-1">
-                    <strong class="text-base">Cybersecurity Threat Profiles and Strict Governance Legislation:</strong> Hyperscale computational platforms remain primary vectors for advanced persistent data breaches, configuration defects, or dynamic compliance liabilities that carry litigation or investigation overheads.
+                    <strong class="text-base">Competition, Cybersecurity and Regulatory Risk:</strong> Competition in cloud services and enterprise applications may constrain pricing. OCI growth comes with higher infrastructure costs, and margins do not necessarily improve across all businesses. Cyber incidents, outages, privacy rules and healthcare regulation may raise compensation and compliance costs or lead to customer losses.
                 </li>
             </ol>
         </div>
@@ -332,20 +321,20 @@
         <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
             <div class="flex items-center">
                 <span class="text-2xl mr-2">🤖</span>
-                <div><h4 class="font-bold text-sm">Researcher AI Assistant</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
+                <div><h4 class="font-bold text-sm">Analyst AI Assistant</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
             </div>
             <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
             </button>
         </div>
         <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
             <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
-                Greetings analyst! I am your dedicated Oracle (ORCL) investment research assistant. You may query me anytime regarding the $5.8B OCI revenue sprint, the historic $638B RPO contract backlog, or structural capital deployment paths in FY27.
+                Hello Analyst! Updated on 2026/10/08, this page covers Oracle FY2027 Q1. Ask about US$19.345bn revenue, US$664bn RPO, negative US$5.396bn FCF or 16.75x forward P/E. Company actuals, guidance and Bloomberg consensus will be distinguished; this page has no live market data.
             </div>
         </div>
         <div class="p-3 bg-white border-t border-slate-200">
             <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
-                <input type="text" id="chat-input" placeholder="Inquire report mechanics..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
+                <input type="text" id="chat-input" placeholder="Enter your research command..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
                 <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
                 </button>
@@ -359,23 +348,23 @@
 
 <div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
     <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
-        <span>✨</span> AI Financial Term Explanation
+        <span>✨</span> AI Simple Explanation
     </button>
 </div>
 <div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
     <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
         <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
-            <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> Term Definition</h3>
+            <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> Term Explainer</h3>
             <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
             </button>
         </div>
         <div class="p-6">
-            <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Your Inquiry Target:</div>
+            <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Your Queried Term:</div>
             <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
             <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
                 <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                AI is generating definition layer...
+                AI is generating explanation...
             </div>
             <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
         </div>
@@ -386,7 +375,7 @@
 </div>
 
 <script>
-    // Global chart instantiation pipeline caching layer
+    // Global chart instances registry
     window.charts = {};
 
     function switchTab(e, tabId) {
@@ -399,7 +388,7 @@
         e.currentTarget.classList.remove('text-slate-500'); 
         e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
 
-        // Dynamic resizing adjustments targeting standard hidden canvas bounds
+        // Fix hidden canvas sizing bugs native to Chart.js
         if (tabId === 'financials') {
             if (window.charts.orclSegment) window.charts.orclSegment.resize();
             if (window.charts.orclProfit) window.charts.orclProfit.resize();
@@ -408,42 +397,45 @@
         }
     }
 
+    function acceptPI() { sessionStorage.setItem('pi_agreed', 'true'); document.getElementById('pi-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
+    function declinePI() { document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied / Compliance Restriction</h1><p>This institutional data environment is structurally gated to verified professional investor entities under HK regulatory frameworks.</p></div>`; }
+
     document.addEventListener('DOMContentLoaded', function() {
-        // Gatekeeper session evaluation mapping
+        // Professional Investors Gate verification
         if (!sessionStorage.getItem('pi_agreed')) { 
             const modal = document.getElementById('pi-modal'); 
             if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; } 
         }
 
-        // Chart 1: Revenue Offered Mix (Doughnut)
+        // Chart 1: Oracle Q1 FY2027 Revenue Mix (Doughnut)
         window.charts.orclSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
             type: 'doughnut',
             data: {
-                labels: ['Cloud Services', 'On-Premise Software Support', 'Consulting & Services', 'Hardware Solutions'],
+                labels: ["Cloud", "Software", "Hardware", "Services"],
                 datasets: [{
-                    data: [9913, 6824, 1523, 924],
-                    backgroundColor: ['#2563eb', '#10b981', '#f59e0b', '#8b5cf65'],
+                    data: [11607, 5550, 774, 1414],
+                    backgroundColor: ['#2563eb', '#10b981', '#f59e0b', '#8b5cf6'],
                     borderWidth: 0
                 }]
             },
             options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
         });
 
-        // Chart 2: Earnings Metric Comparison (GAAP vs Non-GAAP)
+        // Chart 2: Oracle GAAP / Non-GAAP Income (Grouped Bar)
         window.charts.orclProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
             type: 'bar',
             data: {
-                labels: ['Operating Income', 'Net Income Attributable to Common'],
+                labels: ["Operating Income", "Net Income Available to Common"],
                 datasets: [
                     {
-                        label: 'GAAP (USD Millions)',
-                        data: [6133, 4223],
+                        label: "GAAP (USD Millions)",
+                        data: [6728, 4679],
                         backgroundColor: '#94a3b8',
                         borderRadius: 4
                     },
                     {
-                        label: 'Non-GAAP (USD Millions)',
-                        data: [8590, 6153],
+                        label: "Non-GAAP (USD Millions)",
+                        data: [8151, 5758],
                         backgroundColor: '#3b82f6',
                         borderRadius: 4
                     }
@@ -452,14 +444,14 @@
             options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } } } }
         });
 
-        // Chart 3: Peer Valuation Multiples Array (Configured with AMZN / MSFT / CRM Peers via Bloomberg EEO)
+        // Chart 3: Software and Cloud Peer Forward P/E (Horizontal Bar)
         window.charts.orclValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
             type: 'bar',
             data: {
-                labels: ['CRM (Salesforce)', 'MSFT (Microsoft)', 'ORCL (Oracle)', 'AMZN (Amazon)'],
+                labels: ["CRM (Salesforce)", "MSFT (Microsoft)", "ORCL (Oracle)", "AMZN (Amazon)"],
                 datasets: [{ 
                     label: 'Next 4 Qtrs Est Forward P/E', 
-                    data: [12.01, 21.38, 24.96, 28.36], 
+                    data: [15.27, 26.95, 16.75, 27.58],
                     backgroundColor: ['rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)', 'rgba(37, 99, 235, 0.95)', 'rgba(148, 163, 184, 0.6)'], 
                     borderRadius: 4 
                 }]
@@ -467,7 +459,7 @@
             options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
         });
 
-        // Secure automated deployment fetch routing for standard layout integration
+        // Dynamic asynchronous linkage for external disclaimer.html
         fetch('disclaimer.html')
             .then(response => {
                 if (!response.ok) throw new Error('Proxy failed to fetch disclaimer.html layer parameters.');
@@ -484,10 +476,7 @@
             });
     });
 
-    function acceptPI() { sessionStorage.setItem('pi_agreed', 'true'); document.getElementById('pi-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }
-    function declinePI() { document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied / Compliance Restriction</h1><p>This institutional data environment is structurally gated to verified professional investor entities under HK regulatory frameworks.</p></div>`; }
-
-    // Core asynchronous Vercel LLM messaging engine
+    // NTAM Backend AI Gateway Engine
     async function callGeminiAPI(prompt, systemInstruction) {
         try {
             const response = await fetch('/api/gemini', {
@@ -501,8 +490,8 @@
         } catch (error) { return `Network pipeline transport error. (${error.message})`; }
     }
 
-    // AI Assistant prompt environment specifications
-    const standardPrompt = `You are a dedicated AI assistant for NTAM internal researchers. Please assist analysts in reviewing Oracle's (ORCL) FY26 Q4 and full-year financial results. Provide objective, high-density, professional English responses. Use HTML <b> tags for emphasis and strictly avoid markdown syntax.`;
+    // AI Chat Widget Logic
+    const standardPrompt = `You are a senior NTAM investment-research AI assistant. Answer Oracle (ORCL) questions in clear, professional English. This page is as of 2026/10/08 and has no live market data. FY2027 Q1 ended 2026/08/31; results published 2026/09/10. All amounts are USD million unless explicitly stated. Q1 revenue19345, reported YoY30%, calculated QoQ0.8%; cloud11607 YoY62% (OCI7388 YoY121%, SaaS4219 YoY10%); software5550 YoY-3%, hardware774 YoY15%, services1414 YoY5%. Cloud share60.0%. Offerings are not separate reportable operating segments; OCI standalone profit/margin was not supplied. GAAP/non-GAAP operating income6728/8151, calculated operating margin34.8%/42.1%; official NG operating income YoY31%, margin expansion35bps. Total GAAP/non-GAAP net income4760/5839; subtract81 preferred dividends to obtain common-shareholder net income4679/5758 (official reported YoY60%/34%). GAAP/non-GAAP diluted EPS1.56/1.92, official YoY55%/30%; do not recalculate the reported growth rate from rounded EPS. Operating cash flow23103 includes11363 customer prepayments with a significant financing component. Capex28499; company non-GAAP FCF=-5396, defined as OCF less capex. Do not equate these Oracle customer prepayments to financing-statement cash flows. ATM issuance raised20000 gross,19909 net, with141m shares issued. RPO664bn,209bn higher YoY; only13% expected recognized in next12 months,37% in months13–36,34% in months37–60. RPO represents contracted revenue not yet recognized, not a measure of cash collected; some contracts may be prepaid. Q1 delivered additional850MW capacity; more than300000 GPUs delivered since the end of Q4 FY2026. Q2 management guidance: USD revenue growth30–34%, USD cloud growth65–71% (CC64–70%), non-GAAP EPS1.85–1.93. EPS growth21–25% excludes prior-year one-time Ampere gain; including the gain means EPS declines18–14%. FY2027 revenue at least90bn and non-GAAP EPS8.10. FY27 capex expected above FY26, but no verified numeric FY27 annual capex target is supplied. ANR dated2026/10/08: consensus rating4.56,41 Buys/8 Holds/1 Sell; consensus12M target240.01; target sample shown literally39/58. ANR reference Last Price143.56 implies67.2% price-only upside. The reference price's quote date was not established; never call it the10/07 close. Selected verified brokers in available preferred order: Morgan Stanley, analyst Sanjit K Singh, displayed Neutral, target210, date2026/09/11, return46.3%; JP Morgan, Samik Chatterjee, Overweight, target200, date2026/09/11, return39.3%; Citi, Tyler Radke, Buy, target330, date2026/09/11, return129.9%. Morgan Stanley raw rating Equalwt/Attractive means stock Equal-weight and separate industry Attractive; Neutral is the owner's standardized display mapping, not the firm's original label. UBS was not visible in supplied ANR; no rating/target may be invented. Broker investment theses were not supplied. EEO next-four-quarter P/E: CRM15.27,MSFT26.95,ORCL16.75 (Price/EPS Adj+),AMZN27.58 (Price/EPS GAAP+). Fiscal years, rolling periods and accounting bases differ; images supplied2026/10/08 have no independent valuation date, so no same-date close claim. Preserve official Chinese company names when answering Chinese; use 甲骨文 for ORCL, 微軟/微软 for MSFT, 亞馬遜/亚马逊 for AMZN; CRM display 賽富時 in Traditional Chinese is a local short group label, not its US legal name; use Salesforce in Simplified Chinese. Distinguish company actuals, management guidance, Bloomberg consensus, derived ratios and our analysis. Risks: capacity/power/GPU delivery, capital intensity/dilution, RPO credit/performance, competition/security/regulation. State missing evidence and never invent figures, broker theses or live data. Use 我們認為 / 我们认为 / We believe for our views. Wall Street display labels must be Overweight, Buy, Neutral, Sell or Underweight; select verified available firms in order UBS> Morgan Stanley> JP Morgan> Citi> HSBC before other brokers. Omit calculator attribution and repeated disclaimer wording. Wall Street source line contains only Bloomberg ANR(2026/10/08) and calculation from the displayed reference share price US$143.56. Use HTML <b> tags for emphasis, never Markdown.`;
     function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
     function appendMessage(text, isUser) {
         const msgDiv = document.createElement('div');
@@ -523,7 +512,7 @@
         document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
     }
 
-    // Highlight text selection definition modal controllers
+    // Contextual Text Highlight Explainer Mechanism
     let selectedText = "";
     document.addEventListener('mouseup', function(e) {
         const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
@@ -539,7 +528,7 @@
         document.getElementById('selection-tooltip').classList.add('hidden');
         document.getElementById('explain-term-title').textContent = selectedText;
         document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
-        const res = await callGeminiAPI(`Explain this Oracle ORCL equity report financial term: ${selectedText}`, "You are an advanced software and quantitative cloud investment analyst expert. Define the term concisely in high-density professional analyst English. Max 150 words, bolding critical vectors with HTML <b> tags.");
+        const res = await callGeminiAPI(`Explain this Oracle (ORCL) financial/earnings term; this page is dated 2026/10/08: ${selectedText}`, "You are an Oracle enterprise software and cloud-computing research expert. Explain the term in accessible professional English, limited to 150 words, using <b> tags for emphasis. State information gaps; do not invent live data.");
         document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
     }
     function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
