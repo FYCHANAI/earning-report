@@ -1133,11 +1133,24 @@
           "firm": "Morgan Stanley",
           "analyst": "Joseph Moore",
           "recommendation_raw": "Overwt/Attractive",
-          "recommendation_display": "Overweight / Attractive",
+          "recommendation_display": "Overweight",
           "target_usd": 1200.0,
           "date_raw": "10/01/26",
           "date": "2026-10-01"
         },
+        {
+          "firm": "JP Morgan",
+          "analyst": "Harlan Sur",
+          "recommendation_raw": "overweight",
+          "recommendation_display": "Overweight",
+          "target_usd": 1540.0,
+          "date_raw": "10/01/26",
+          "date": "2026-10-01",
+          "source_row": 16
+        }
+      ],
+      "attribution_limit": "ANR supports the displayed ratings, targets, analyst names and dates only; it does not supply the brokers' qualitative investment theses.",
+      "additional_available_brokers": [
         {
           "firm": "Citi",
           "analyst": "Atif Malik",
@@ -1148,7 +1161,14 @@
           "date": "2026-10-01"
         }
       ],
-      "attribution_limit": "ANR supports the displayed ratings, targets, analyst names and dates only; it does not supply the brokers' qualitative investment theses."
+      "broker_priority": [
+        "UBS",
+        "Morgan Stanley",
+        "JP Morgan",
+        "Citi",
+        "HSBC"
+      ],
+      "selection_policy": "Fill the three existing cards using the highest-priority available original evidence."
     },
     "EEO_selection": "Current Multiples > Next 4 Qtrs Est > Price/EPS, using the displayed basis for each issuer.",
     "EEO": [
@@ -1395,7 +1415,8 @@
       "consensus": 49.029412,
       "UBS": 49.356618,
       "Morgan Stanley": 10.294118,
-      "Citi": 19.485294
+      "Citi": 19.485294,
+      "JP Morgan": 41.544118
     },
     "target_return_reference_price_usd": 1088,
     "technology_share_of_consolidated_revenue_pct": {
