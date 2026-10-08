@@ -25,7 +25,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- ✏️ 替換：頁面標題（公司名 + Ticker） -->
-<title>Broadcom Inc. (AVGO) 深度研究報告 | NTAM 資深分析師</title>
+<title>博通 (AVGO) 深度研究報告 | NTAM 資深分析師</title>
 <!-- 🔒 固定區：框架與字體引用（繁體版固定 Noto Sans TC） -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
@@ -93,7 +93,7 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
 </a>
 <div class="flex flex-col">
 <!-- ✏️ 替換：公司名 + Ticker、副標題（財季） -->
-<h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Broadcom Inc. <span class="text-blue-600">AVGO</span></h1>
+<h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">博通 <span class="text-blue-600">AVGO</span></h1>
 <span class="text-sm text-slate-500 font-medium mt-1">資深分析師 營運與戰略報告 | Q3 FY2026 財報特輯</span>
 </div>
 </div>
@@ -366,7 +366,7 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
 <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
 <!-- ✏️ 替換：Widget 歡迎詞（公司名 + 本期亮點數字，數字須與內文一致） -->
 <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
-分析師您好！我是您的專屬 Broadcom Inc. (AVGO) 數據輔助 AI。您可以隨時詢問我關於本季營收 295.91 億美元（+86% YoY）、AI 半導體營收 167 億美元（+221% YoY）、Non-GAAP 稀釋 EPS 3.32 美元（+96% YoY），或自由現金流 136.65 億美元（占營收 46%）等本期亮點。
+分析師您好！我是您的專屬 博通 (AVGO) 數據輔助 AI。您可以隨時詢問我關於本季營收 295.91 億美元（+86% YoY）、AI 半導體營收 167 億美元（+221% YoY）、Non-GAAP 稀釋 EPS 3.32 美元（+96% YoY），或自由現金流 136.65 億美元（占營收 46%）等本期亮點。
 </div>
 </div>
 <div class="p-3 bg-white border-t border-slate-200">
@@ -535,7 +535,7 @@ async function callGeminiAPI(prompt, systemInstruction) {
     } catch (error) { return `網路連線失敗。(${error.message})`; }
 }
 // ✏️ AI 助理 systemPrompt（公司名與財季須換成新報告；語言須與本頁一致）
-const standardPrompt = `你是一位精通 NTAM 投資研究框架的資深 AI 助理。請針對使用者對 Broadcom Inc. (AVGO) 2026 財年第三季最新財報與大會摘要的提問，提供符合專業機構投資人水準、客觀、高密度的定量與定性答覆。重點用 <b> 標籤包覆，嚴禁使用 markdown。`;
+const standardPrompt = `你是一位精通 NTAM 投資研究框架的資深 AI 助理。請針對使用者對 博通 (AVGO) 2026 財年第三季最新財報與大會摘要的提問，提供符合專業機構投資人水準、客觀、高密度的定量與定性答覆。重點用 <b> 標籤包覆，嚴禁使用 markdown。`;
 // 🔒 Widget 互動邏輯（勿改）
 function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
 function appendMessage(text, isUser) {
@@ -581,7 +581,7 @@ async function explainSelectedTerm() {
     document.getElementById('explain-term-title').textContent = selectedText;
     document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
     // ✏️ 劃詞解釋 prompt 與 systemInstruction：公司名須換成新報告，其餘格式（限 150 字、<b> 標籤、語言）保留
-    const res = await callGeminiAPI(`解釋這個 Broadcom Inc. AVGO 財報相關詞彙：${selectedText}`, "你是 Broadcom Inc. 半導體與基礎設施軟體專家，用最白話的專業繁體中文解釋詞彙。限 150 字，重點使用 <b> 標籤包覆。");
+    const res = await callGeminiAPI(`解釋這個 博通 AVGO 財報相關詞彙：${selectedText}`, "你是 博通 半導體與基礎設施軟體專家，用最白話的專業繁體中文解釋詞彙。限 150 字，重點使用 <b> 標籤包覆。");
     document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
 }
 function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }

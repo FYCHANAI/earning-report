@@ -1,0 +1,160 @@
+{
+  "change": "Use verified official locale-specific Chinese company names",
+  "checked_on": "2026-10-08",
+  "base_commit": "6823356afe95e5c17a2fa12718caa194e4579ce8",
+  "name_mapping": [
+    {
+      "ticker": "NVDA",
+      "traditional": "輝達",
+      "simplified": "英伟达",
+      "sources": [
+        {
+          "locale": "zh-TW",
+          "url": "https://www.nvidia.com/zh-tw/about-nvidia/press-releases/2014/nvidia-vca-available-08202014/",
+          "evidence": "Official NVIDIA press release identifies NVIDIA (輝達)."
+        },
+        {
+          "locale": "zh-CN",
+          "url": "https://www.nvidia.cn/contact/social/",
+          "evidence": "Official social-account directory uses NVIDIA 英伟达."
+        }
+      ]
+    },
+    {
+      "ticker": "AMD",
+      "traditional": "超微半導體",
+      "simplified": "超威半导体",
+      "sources": [
+        {
+          "locale": "zh-TW",
+          "url": "https://www.amd.com/zh-tw/newsroom/press-releases/2026-4-28-amd-announces-advancing-ai-2026-.html",
+          "evidence": "Official release contact uses 美商超微半導體; display name omits jurisdiction prefix."
+        },
+        {
+          "locale": "zh-CN",
+          "url": "https://www.amd.com/zh-cn/newsroom/press-releases/2024-2-6-amd-unveils-embedded-architecture-combines-embed.html",
+          "evidence": "Official company description identifies AMD（超威半导体）."
+        }
+      ]
+    },
+    {
+      "ticker": "AVGO",
+      "traditional": "博通",
+      "simplified": "博通",
+      "sources": [
+        {
+          "locale": "zh-TW",
+          "url": "https://blogs.vmware.com/vmware-taiwan/2026/09/01/%E5%8D%9A%E9%80%9A%E6%8E%A8%E5%87%BA-vmware-private-ai-cloud%EF%BC%8C%E8%B3%A6%E8%83%BD%E4%BC%81%E6%A5%AD%E4%BB%A5%E9%AB%98%E6%88%90%E6%9C%AC%E6%95%88%E7%9B%8A%E6%93%B4%E5%B1%95-ai-%E8%A6%8F%E6%A8%A1/",
+          "evidence": "Official VMware Taiwan blog identifies 博通（Broadcom Inc.，NASDAQ：AVGO）."
+        },
+        {
+          "locale": "zh-CN",
+          "url": "https://docs.broadcom.com/doc/supplier-environmental-and-social-responsibility-code-of-conduct-chinese-simplified",
+          "evidence": "Official supplier code identifies 博通 (Broadcom)."
+        }
+      ]
+    }
+  ],
+  "kept_english": [
+    {
+      "company": "Alphabet",
+      "reason": "Explicit owner example of an English-name exception."
+    },
+    {
+      "company": "Meta Platforms",
+      "reason": "Explicit owner example of an English-name exception."
+    },
+    {
+      "company": "Netflix",
+      "reason": "Official localized company pages retain Netflix; no official Chinese name established in this review.",
+      "sources": [
+        "https://about.netflix.com/zh_tw",
+        "https://about.netflix.com/zh_cn"
+      ]
+    },
+    {
+      "company": "Palantir Technologies",
+      "reason": "Official Chinese documentation retains Palantir; no official Chinese name established in this review. Do not substitute a media transliteration.",
+      "sources": [
+        "https://www.palantir.com/docs/zh/foundry/getting-started/overview"
+      ]
+    }
+  ],
+  "inventory_review": {
+    "company_count": 25,
+    "locales": [
+      "zh-TW",
+      "zh-CN"
+    ],
+    "scope": "Reviewed company titles/headings across all reports and searched remaining English names in Chinese report files. Existing Chinese headings preserved. Homepage already uses the three corrected Chinese names."
+  },
+  "validation": {
+    "status": "pass",
+    "files": [
+      {
+        "file": "nvda.html",
+        "status": "pass",
+        "only_verified_name_replacements": true,
+        "html_tags_attributes_numbers_unchanged": true,
+        "heading": "輝達 NVDA",
+        "sha256": "50b5594ed57097a9553e2eb2a965b1fe053465ba6f78da46b5fac48e61eb4471"
+      },
+      {
+        "file": "nvda-sc.html",
+        "status": "pass",
+        "only_verified_name_replacements": true,
+        "html_tags_attributes_numbers_unchanged": true,
+        "heading": "英伟达 NVDA",
+        "sha256": "84ed37ab5d9e31ad99e697deaadea5d810cbe66547e33abd16d34ff52dad6eb4"
+      },
+      {
+        "file": "amd.html",
+        "status": "pass",
+        "only_verified_name_replacements": true,
+        "html_tags_attributes_numbers_unchanged": true,
+        "heading": "超微半導體 AMD",
+        "sha256": "b68be29c0278457b85edfceed4f065515b4f82651c61f0ca7e2d81058a7cae02"
+      },
+      {
+        "file": "amd-sc.html",
+        "status": "pass",
+        "only_verified_name_replacements": true,
+        "html_tags_attributes_numbers_unchanged": true,
+        "heading": "超威半导体 AMD",
+        "sha256": "c2919c18d3fc9a80ff7f759dafe1ce4b162c97f92b03a6b93213a01ef5ca9fb4"
+      },
+      {
+        "file": "avgo.html",
+        "status": "pass",
+        "only_verified_name_replacements": true,
+        "html_tags_attributes_numbers_unchanged": true,
+        "heading": "博通 AVGO",
+        "sha256": "996c4d41da84470a4e8152477c6388fdfa5586e8507c0688d0c892d8ee8bbc26"
+      },
+      {
+        "file": "avgo-sc.html",
+        "status": "pass",
+        "only_verified_name_replacements": true,
+        "html_tags_attributes_numbers_unchanged": true,
+        "heading": "博通 AVGO",
+        "sha256": "7b3f31f8a0a99ce6c5d42c9e378f83e3847378ba6a172b7bd74905449741938e"
+      }
+    ],
+    "method": [
+      "Exact comparison against allowed name substitutions, preserving comments",
+      "Parsed HTML tag/attribute equality",
+      "Numeric token equality",
+      "Company title and heading checks",
+      "git diff --check"
+    ],
+    "unchanged": [
+      "English reports",
+      "Homepage and earnings-date order",
+      "MU layout masters",
+      "Financial figures and dates",
+      "PI legal controls and shared disclaimer",
+      "API and hosting configuration"
+    ],
+    "production_verification": "Pending at commit creation; final release verification recorded in the pull request."
+  }
+}
