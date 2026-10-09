@@ -11,6 +11,7 @@ The owner's latest instruction (8 October 2026) makes the latest MU three-langua
 - Preserve the target company's verified research, financial period, publication date and market-data dates. Never carry MU's company facts, targets, ratings, peers or AI context into another report. Adapt financial metrics, table rows and chart datasets to the company's business and available evidence within the MU presentation; do not invent values to fill a template.
 - Respect `🔒` fixed and `✏️` replacement comments after applying the MU layout. The owner's layout instruction authorizes the necessary MU UI/frontend conversion, not unrelated refactoring or a redesign of MU itself. Unrelated fixed-component repairs still need a defined scope.
 - Preserve PI legal wording and acceptance controls, the disclaimer and its loading behavior, API handling and shared infrastructure. Do not alter `CNAME`, `disclaimer.html`, the API route, model/secret configuration or hosting configuration as part of the layout conversion or report update.
+- Risk-section formatting must match across Traditional Chinese, Simplified Chinese and English. Per the owner's 9 October 2026 correction, the first risk heading uses the same dark text as the remaining headings; never give it a red/rose emphasis. Keep this rule in the MU language masters and every report, including older layouts.
 
 ## Research and translation
 
