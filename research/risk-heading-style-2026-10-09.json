@@ -1,0 +1,1106 @@
+{
+  "change": "Consistent neutral risk-heading colors in all report languages",
+  "requested_on": "2026-10-09",
+  "base_commit": "a8e370768ce16db107169d4c42c346d7da3557f9",
+  "scope": "75 report pages across 25 companies, including MU masters; remove the first-risk-only red/rose emphasis wherever present and replace obsolete comments directing red emphasis. No whole-report layout conversion or financial refresh.",
+  "reports_reviewed": 75,
+  "company_language_groups_verified": 25,
+  "pages_changed": 31,
+  "pages_with_color_changes": 29,
+  "pages_with_comment_changes": 7,
+  "changed_files": [
+    "bac-en.html",
+    "bac-sc.html",
+    "bac.html",
+    "c-en.html",
+    "c-sc.html",
+    "c.html",
+    "gs-en.html",
+    "gs-sc.html",
+    "gs.html",
+    "jnj-en.html",
+    "jnj-sc.html",
+    "jnj.html",
+    "jpm-en.html",
+    "jpm-sc.html",
+    "jpm.html",
+    "mcd-en.html",
+    "mcd-sc.html",
+    "ms-en.html",
+    "ms-sc.html",
+    "ms.html",
+    "mu-en.html",
+    "mu-sc.html",
+    "nio-en.html",
+    "nio-sc.html",
+    "nio.html",
+    "nvda-en.html",
+    "nvda-sc.html",
+    "orcl-en.html",
+    "orcl-sc.html",
+    "tsm.html",
+    "unh.html"
+  ],
+  "verification": {
+    "all_risk_headings_use_same_dark_inherited_color": true,
+    "risk_markup_and_style_attributes_match_within_each_three_language_group": true,
+    "each_rendered_change_is_one_risk_heading_class_token": true,
+    "all_report_text_dates_scripts_styles_and_legal_controls_unchanged": true,
+    "homepage_unchanged": true,
+    "comparison_method": "Read complete source files, parse risk sections, compare all 25 language-group DOM/style signatures, and verify exact bytes outside the approved class-token and obsolete maintenance-comment replacements.",
+    "browser_limit": "PI acceptance is not performed or bypassed; full report desktop/mobile visual interactions are not asserted."
+  },
+  "records": [
+    {
+      "file": "aapl-en.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "7863f0f44338efa78b25746b186b5661f02c64a70ea004487e9c1a969b2a88d5",
+      "after_sha256": "7863f0f44338efa78b25746b186b5661f02c64a70ea004487e9c1a969b2a88d5",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "aapl-sc.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "f6b1c54137b05823047545a34fc3b361d1dde4ce5cf322e6997625d4c07862c5",
+      "after_sha256": "f6b1c54137b05823047545a34fc3b361d1dde4ce5cf322e6997625d4c07862c5",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "aapl.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "c4a449e7e6b517260635f27dab0b67878a5c8107a2d50c2f7f917d49ffcfe1e8",
+      "after_sha256": "c4a449e7e6b517260635f27dab0b67878a5c8107a2d50c2f7f917d49ffcfe1e8",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "amd-en.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "c670a5ab4cb809954dcad0e9fd229fdef7940887322f0427b4aeb8229d8eee29",
+      "after_sha256": "c670a5ab4cb809954dcad0e9fd229fdef7940887322f0427b4aeb8229d8eee29",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "amd-sc.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "c2919c18d3fc9a80ff7f759dafe1ce4b162c97f92b03a6b93213a01ef5ca9fb4",
+      "after_sha256": "c2919c18d3fc9a80ff7f759dafe1ce4b162c97f92b03a6b93213a01ef5ca9fb4",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "amd.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "b68be29c0278457b85edfceed4f065515b4f82651c61f0ca7e2d81058a7cae02",
+      "after_sha256": "b68be29c0278457b85edfceed4f065515b4f82651c61f0ca7e2d81058a7cae02",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "amzn-en.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "69f5608c9b578092fa3cf1598cf76c4216124f5fe2ed8af7331ac2abf69eb0c8",
+      "after_sha256": "69f5608c9b578092fa3cf1598cf76c4216124f5fe2ed8af7331ac2abf69eb0c8",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "amzn-sc.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "cb37d7bcef3915db097de2d7dbe2d941292288b55b1827753d9764841e7030cd",
+      "after_sha256": "cb37d7bcef3915db097de2d7dbe2d941292288b55b1827753d9764841e7030cd",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "amzn.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "3a43dc10cf7a402814197d7276b18ecacab4c0b0e37af84dd178119c88f6720e",
+      "after_sha256": "3a43dc10cf7a402814197d7276b18ecacab4c0b0e37af84dd178119c88f6720e",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "avgo-en.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "bbe8db0a296f5ba39dc10265e2ffde68b98d563706cca009a6d08fe475827857",
+      "after_sha256": "bbe8db0a296f5ba39dc10265e2ffde68b98d563706cca009a6d08fe475827857",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "avgo-sc.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "7b3f31f8a0a99ce6c5d42c9e378f83e3847378ba6a172b7bd74905449741938e",
+      "after_sha256": "7b3f31f8a0a99ce6c5d42c9e378f83e3847378ba6a172b7bd74905449741938e",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "avgo.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "996c4d41da84470a4e8152477c6388fdfa5586e8507c0688d0c892d8ee8bbc26",
+      "after_sha256": "996c4d41da84470a4e8152477c6388fdfa5586e8507c0688d0c892d8ee8bbc26",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "bac-en.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "662ef38c3bdc8eb2d81596786048adfc12d2d31705fbf0f4ec7f888c24b29d28",
+      "after_sha256": "804cb10bc239ae659bb939bca6aef3f949da3ebd25437ce9eecba9cb8754cf52",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "bac-sc.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "35eaef9ec1eeeff877cbd355ccc9f47bf01648506b81a15c7c9d62c343b42dff",
+      "after_sha256": "e7b0f409520bb156ba407b647877f50b983ad3f61e63982590624ef38947a4b1",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "bac.html",
+      "color_changed": true,
+      "maintenance_comment_changed": true,
+      "before_sha256": "247be026791b353a30290d0ff125ef00fa5a911db8ae5ade00c68fcf253f9d13",
+      "after_sha256": "f9e08c1b564ff3359f15d266eb56f712fdc593c665ff8c312b716802a1142102",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "c-en.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "760ff9718d2bf1d1fe1ab3f3cebb0385c4faa04c1fe9f466ed2affd0bc2122a0",
+      "after_sha256": "1d8a748c6cc65d558bcc07493f48637cf47d4643c5f957545a27c941a397e21d",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "c-sc.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "c463149140c4e7739a7d56978be2631b05b6091fb0466751f7fe47612a9bae9c",
+      "after_sha256": "9fe04ca408af97bb6aa2db52462adbe14459465b55460ec57f3f1e7c7d7d63c4",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "c.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "7aebf79f33715e0514fd51ba58a9b3f9c3a7cc86e1afb291e588cc1e2d2f533f",
+      "after_sha256": "8a5ad04f3c1730dc9ad9e6e9e033b0845f65c063bd0577e96540b66603a2c9f4",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "googl-en.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "5a72da750fd7cea6cbd4397d3794f22b0a01f2f286e85fd3389c615a44101474",
+      "after_sha256": "5a72da750fd7cea6cbd4397d3794f22b0a01f2f286e85fd3389c615a44101474",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "googl-sc.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "79c17d78fdfa24b303b376120106526a695db46efb2fd540c717a4b893217f25",
+      "after_sha256": "79c17d78fdfa24b303b376120106526a695db46efb2fd540c717a4b893217f25",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "googl.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "adc36e273a03af47e6c99ed461374852b68e892cc8c5b9b01cf604a696304468",
+      "after_sha256": "adc36e273a03af47e6c99ed461374852b68e892cc8c5b9b01cf604a696304468",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "gs-en.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "0937554074e70d772dbdd34f9378dd07feaf55f2bac7f73059b90a104c68d659",
+      "after_sha256": "9bfd1694accdf8b2a12cd368a8b9a1fbbf7a7792ad2ca3372527fb0532933cf3",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "gs-sc.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "573428ca5c81e9112225591c7c0917f1d295751f7e0626b89dbb285b66844cc5",
+      "after_sha256": "7c6bdae1bd6a311ee0015f0a7b7838ca7e68bfb208c6a0f3198ebe567330a3fe",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "gs.html",
+      "color_changed": true,
+      "maintenance_comment_changed": true,
+      "before_sha256": "08fb10128caf8ec527a9819791484b28dcdf8d33e54a21fe755cc5aa630288e4",
+      "after_sha256": "a9bf4b053b25489475fdf4105260e5ea29d16a093993a3c0893599b8003a81c5",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "intc-en.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "75f63e973e390884c9811a9120176dc51c17bcd3a0f4a5d177fa126f973dee50",
+      "after_sha256": "75f63e973e390884c9811a9120176dc51c17bcd3a0f4a5d177fa126f973dee50",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "intc-sc.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "b570b8f1697cbb52dcdac1d6eea0b3b146a2f2f1745700f70b20b5413c11eac9",
+      "after_sha256": "b570b8f1697cbb52dcdac1d6eea0b3b146a2f2f1745700f70b20b5413c11eac9",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "intc.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "37a6e6c4923ac9665b6ec0a1da19785ace1e89b0df47289839be75006722a4ef",
+      "after_sha256": "37a6e6c4923ac9665b6ec0a1da19785ace1e89b0df47289839be75006722a4ef",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "jnj-en.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "e99a070e81c911af077c5118fcac2a9f4ba41885a5f85ab738391ec269ae06de",
+      "after_sha256": "5cfb42c181f5a2c477259a0a282e87297e68c1c95f3f191249e8b92d148e800c",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "jnj-sc.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "5db68d5233221075cddfc21968eaa6c2b7c1646118e6238c056083138c339f6b",
+      "after_sha256": "f50ff0b952659aab05c7d7400b9ba669065cce47f1e95d03ef0228ee481ac9c3",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "jnj.html",
+      "color_changed": true,
+      "maintenance_comment_changed": true,
+      "before_sha256": "0ac000ddfac6e81810731acf7a4430ca85b4a65748ddf6c8d26254fa0d196151",
+      "after_sha256": "6d055e8b846e746500ed31c6b8ff7d771f67804b72a437b135386932907078de",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "jpm-en.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "2567097c388598016bcb2a5a7c5829a1b990850e5ff6973f496eb8294ab0be7f",
+      "after_sha256": "e5424025b8342380b0559e4391feed1d33c0741a46d2004cbafa7be7d8ac1f1e",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "jpm-sc.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "25ef0449846859fcb13bbad444efef265c695fd7f33ba8f1ef51457e5b89a8ad",
+      "after_sha256": "aab7cb66375a424965fa0cd7ad0dee933685b1ee8d820b760d3230f17c42a779",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "jpm.html",
+      "color_changed": true,
+      "maintenance_comment_changed": true,
+      "before_sha256": "91470d95cbe8b6888aed1f060ead82f7dd0e5469c3272f52c4a1ec811e70d5ef",
+      "after_sha256": "f9c00842d7dd2e60fbf874da984daa4d6c9e771705df3a8dc4d85ff60ad96e27",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "ko-en.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "26571a2f70dc772bc43ddea040eb512ae324577688bcbca79680a17799890b2d",
+      "after_sha256": "26571a2f70dc772bc43ddea040eb512ae324577688bcbca79680a17799890b2d",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "ko-sc.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "7b0fc2ce011d0fdb2ef5d6bef8cfe29848ff85fb962cf3146454298a1d96c0ba",
+      "after_sha256": "7b0fc2ce011d0fdb2ef5d6bef8cfe29848ff85fb962cf3146454298a1d96c0ba",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "ko.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "7c64e9373ac3eb341d5a8e3325b9b6d5906b21bee4b780dddaaa7b4bd7dc5529",
+      "after_sha256": "7c64e9373ac3eb341d5a8e3325b9b6d5906b21bee4b780dddaaa7b4bd7dc5529",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "mcd-en.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "47f3db7eef09033c0aff8abeff035482a23dcf15cc0d134dae294fc235948877",
+      "after_sha256": "4e5666da5ca10f1187f45e65c10b8aae917c98f26081cc2725c57f04712713de",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "mcd-sc.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "a44050312e8f4f1a828fe7d7bb4e80bd02ee574b71bda2b66f190b9be0539d07",
+      "after_sha256": "3bb8aa9ac9a25935d7d0bbb02e242ee3c38851ab5b4af912e6ef0d6b97017444",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "mcd.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "571b65ac9376219505652d0d22fcea46466745a2520c5e1e3b8caa32af9a94d6",
+      "after_sha256": "571b65ac9376219505652d0d22fcea46466745a2520c5e1e3b8caa32af9a94d6",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "meta-en.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "75c3eb1f00a3d6f586af797783dc0a7d21f74204ad8af683bde796cd4aba950a",
+      "after_sha256": "75c3eb1f00a3d6f586af797783dc0a7d21f74204ad8af683bde796cd4aba950a",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "meta-sc.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "b5d89ec9adf9330e991abd48fc444479b35c3beeffee27c8be1abff3036b367a",
+      "after_sha256": "b5d89ec9adf9330e991abd48fc444479b35c3beeffee27c8be1abff3036b367a",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "meta.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "0e4e0500ef484e45ee13a317f7c98fe7749fc96cacddf19a5e9b0877e7c6e0d6",
+      "after_sha256": "0e4e0500ef484e45ee13a317f7c98fe7749fc96cacddf19a5e9b0877e7c6e0d6",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "ms-en.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "c098287ee1de0301632ce5305ec2465a569f6717115b5742b50e283e0a2d5904",
+      "after_sha256": "2f352bf5f031c4c89d22869438ecfc620decd91414386d78f0fdb9de2e04a773",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "ms-sc.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "08b37eee72a09ecfd4eebdd0de29967ef1b2cf1c171730a09bb6fcfc1c3d444c",
+      "after_sha256": "ca3dd0356b397206755226d7a922c5e9e80102066a7a2f8f33c5d0e339e62e0d",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "ms.html",
+      "color_changed": true,
+      "maintenance_comment_changed": true,
+      "before_sha256": "5f28be9127d785a91cd0ff9e0ec694730b6aba0f0fdfcf665a85e00f547b1188",
+      "after_sha256": "bce5551ded20e37d2ca1af797aa1fb679f44e3f949b86fefd12418bbac995420",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "msft-en.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "91418e35fedcedcb5a9ace2403c32e7b03f7dd7aac97be5424d3ee54b81fae0e",
+      "after_sha256": "91418e35fedcedcb5a9ace2403c32e7b03f7dd7aac97be5424d3ee54b81fae0e",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "msft-sc.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "92f74113554d1caef45ee9196e0327cc4216bf7fd9090c86efb3dea3a7e4ef7e",
+      "after_sha256": "92f74113554d1caef45ee9196e0327cc4216bf7fd9090c86efb3dea3a7e4ef7e",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "msft.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "590504852edb1fe64ea3c76f265ebf671ef26c7e94f27dfe2ab478a306c5b87f",
+      "after_sha256": "590504852edb1fe64ea3c76f265ebf671ef26c7e94f27dfe2ab478a306c5b87f",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "mu-en.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "9b632c35822e8b15931e0e18bbbfe6b1fea211ca6e0b64f240f2e73de430d589",
+      "after_sha256": "702e82340f70c801cde0ceff8323d99fca8bf0e6a29e87bc803df6667638a34d",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "mu-sc.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "8703dfd17e84332affe0215b9cffe1963f98e989b8d7412a551b73b03297d799",
+      "after_sha256": "fd4382fa9f1e25d7d5ff3abf634e76eb099d4fbd1ab5faeb96189fe66be169f5",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "mu.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "7f783b0b12547b23b5526be6c3e09082d24ccb6cd7b64bbf9728e80964fed57f",
+      "after_sha256": "7f783b0b12547b23b5526be6c3e09082d24ccb6cd7b64bbf9728e80964fed57f",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "nflx-en.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "e34d4790643b1002e1842dcb7879eb254788a369946b91417c310bf1aa7ca6be",
+      "after_sha256": "e34d4790643b1002e1842dcb7879eb254788a369946b91417c310bf1aa7ca6be",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "nflx-sc.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "51e46e4d7f3a1e0dee4f2cebf8e9cffe265cfc970308d382a1252b61243d908a",
+      "after_sha256": "51e46e4d7f3a1e0dee4f2cebf8e9cffe265cfc970308d382a1252b61243d908a",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "nflx.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "db2d442f1baf2a103bcb0034a12612edab160a101f3ced625179388a39313cba",
+      "after_sha256": "db2d442f1baf2a103bcb0034a12612edab160a101f3ced625179388a39313cba",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "nio-en.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "e79b1bc97916a641d1e47fe4b1eea57f89493eb84fb28f968f31ffea8cd412f1",
+      "after_sha256": "b531ba99ada64a72cf5fcd7460dcb5ad914ae6f10c5e2af4b17808b6c0b0c6ee",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "nio-sc.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "9e2b90ef94023f50bc6d92c30dfa1a300b33e3bdc0fca3b61167ee8fabce53f6",
+      "after_sha256": "22a009415e0bfacfc733749975cafb18fe134db05af1bc9b7419da00136343c8",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "nio.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "75a4487433449728fb4022ff631766762880cd5fe536087feec44fe00ebe2f96",
+      "after_sha256": "39d132a0ea06ac395174810912f9d839707bb5cfa85293538a272c8d147023f0",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "nvda-en.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "09896fb3b7904aaa3ff8e0c5480121b998b5bc60bb93516184d491ef86d2c4d1",
+      "after_sha256": "7bc98d5f1c8628cd3373042a02a6a6ab080496a1d0c064d7321310c2e4d111c9",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "nvda-sc.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "84ed37ab5d9e31ad99e697deaadea5d810cbe66547e33abd16d34ff52dad6eb4",
+      "after_sha256": "5d56fe44c9f81de13dbef405764c1bb1fc825d2de66b49f01bc2956c7133a964",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "nvda.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "50b5594ed57097a9553e2eb2a965b1fe053465ba6f78da46b5fac48e61eb4471",
+      "after_sha256": "50b5594ed57097a9553e2eb2a965b1fe053465ba6f78da46b5fac48e61eb4471",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "orcl-en.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "3487af54cf1c0a996b3ea51aa5937085f7a787abe19133d7fad8fc68920c1610",
+      "after_sha256": "0d4921781911bba2f8490f9449908f6c29f22d82e70ebac85a161a1055bfa18f",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "orcl-sc.html",
+      "color_changed": true,
+      "maintenance_comment_changed": false,
+      "before_sha256": "b0a662029148925d45c1ca44a5bb70f314157855b3342e80992b597056131bd1",
+      "after_sha256": "96f3102645286f356b26d6f7b27bcec3946279ebd030cda987c49c75201c67a2",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "orcl.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "0c5d2581a98258beb97a7d595a779e1fe20e50700e97a2a3fd6669ec9f299ce5",
+      "after_sha256": "0c5d2581a98258beb97a7d595a779e1fe20e50700e97a2a3fd6669ec9f299ce5",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "pltr-en.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "6eb91b022bc9edd0d135b88b90c50a00563768659c67ec8c62067236dbbd116b",
+      "after_sha256": "6eb91b022bc9edd0d135b88b90c50a00563768659c67ec8c62067236dbbd116b",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "pltr-sc.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "a5747ed01fdd419e85e462d763ba460734c2b711e9d083ce4b180e8f1c67706d",
+      "after_sha256": "a5747ed01fdd419e85e462d763ba460734c2b711e9d083ce4b180e8f1c67706d",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "pltr.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "77542e95cc9eb6083b166363fede8e12f9f8d7937d933f80d33878a12bc9a528",
+      "after_sha256": "77542e95cc9eb6083b166363fede8e12f9f8d7937d933f80d33878a12bc9a528",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "tsla-en.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "b278a1554a6ab504f31204f922eeee58c3bd83a01dd050e39524d43676aea137",
+      "after_sha256": "b278a1554a6ab504f31204f922eeee58c3bd83a01dd050e39524d43676aea137",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "tsla-sc.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "7d3089c592e31f09af5a4ae93948887f608d121b4e002dd08bf4e11e2ddacd5c",
+      "after_sha256": "7d3089c592e31f09af5a4ae93948887f608d121b4e002dd08bf4e11e2ddacd5c",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "tsla.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "0594d8bcb8cc8f45c06cb50a9a37117c03aecc4523ae933aaf67335ec8960432",
+      "after_sha256": "0594d8bcb8cc8f45c06cb50a9a37117c03aecc4523ae933aaf67335ec8960432",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "tsm-en.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "c7b83522abe5d55f5a70bfaf2391925d52bd1c71186533450fb834925ceae1f5",
+      "after_sha256": "c7b83522abe5d55f5a70bfaf2391925d52bd1c71186533450fb834925ceae1f5",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "tsm-sc.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "b0973610a5a01a9b611f5c90611c264803acc8d69961a0ddd423f2a3d97265c9",
+      "after_sha256": "b0973610a5a01a9b611f5c90611c264803acc8d69961a0ddd423f2a3d97265c9",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "tsm.html",
+      "color_changed": false,
+      "maintenance_comment_changed": true,
+      "before_sha256": "d6cf5b08aaa23df015c8291241d0263c6534fa289d782ef178e87594d9fd0126",
+      "after_sha256": "2253b6289933441b00e1d9f244ed716d85705a40bda140ac755d411ade3a4f49",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "unh-en.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "c9b98db2e8cf3bb68c44f5d7943158ca4986930a3db9bc48c83adde73e15cfd9",
+      "after_sha256": "c9b98db2e8cf3bb68c44f5d7943158ca4986930a3db9bc48c83adde73e15cfd9",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "unh-sc.html",
+      "color_changed": false,
+      "maintenance_comment_changed": false,
+      "before_sha256": "1af192e6469c3b59298b8c651df15725ce7701bc3a885d3ecb78084dd0a78e92",
+      "after_sha256": "1af192e6469c3b59298b8c651df15725ce7701bc3a885d3ecb78084dd0a78e92",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    },
+    {
+      "file": "unh.html",
+      "color_changed": false,
+      "maintenance_comment_changed": true,
+      "before_sha256": "d49bfdfab4bc239d14fa3f5e2c74d931a3fb8498e1235dbdc4f00536d33e6396",
+      "after_sha256": "f2a607a156670c9e830a46a1ac020aae54cdb03f2de27c0bf9cc8d8e43d13ab9",
+      "risk_heading_classes": [
+        "text-base",
+        "text-base",
+        "text-base",
+        "text-base"
+      ],
+      "research_and_outside_risk_markup_byte_identical": true
+    }
+  ],
+  "deployment": "PR records the final merged commit and production byte verification."
+}
