@@ -1,0 +1,1445 @@
+{
+  "report": "NIO Q2 2026 three-language research update and MU layout migration",
+  "updated_on": "2026-10-09",
+  "base_commit": "75bd3a4b5d38688e71fef0a08d899357eed4d126",
+  "official_company_evidence": {
+    "verified_as_of": "2026-10-09",
+    "reporting_period": {
+      "quarter": "Q2 2026",
+      "start": "2026-04-01",
+      "end": "2026-06-30",
+      "release_date": "2026-09-01",
+      "latest_financial_quarter_verified": "Q2 2026",
+      "next_quarter": "Q3 2026",
+      "q3_financials_status": "not published in retrieved current corporate results/news pages; Q3 deliveries only are actual"
+    },
+    "company": {
+      "tc": "蔚來",
+      "sc": "蔚来",
+      "en": "NIO",
+      "formal_tc": "蔚來集團",
+      "formal_sc": "蔚来集团",
+      "formal_en": "NIO Inc.",
+      "ads_to_class_a_ordinary_ratio": 1,
+      "ticker_us": "NIO",
+      "ticker_hk": "9866",
+      "fiscal_year_end": "12-31",
+      "sources": [
+        "naming_tc",
+        "naming_sc",
+        "naming_tc_group",
+        "ads_fiscal"
+      ]
+    },
+    "sources": [
+      {
+        "id": "q2_release",
+        "url": "https://ir.nio.com/news-releases/news-release-details/nio-inc-reports-unaudited-second-quarter-2026-financial-results/",
+        "refs": [
+          "turn103view0",
+          "turn104view0",
+          "turn106view0",
+          "turn107view3"
+        ],
+        "date": "2026-09-01",
+        "description": "Unaudited Q2 and H1 2026 U.S. GAAP statements plus non-GAAP reconciliation; original tables in RMB thousands, headlines in millions."
+      },
+      {
+        "id": "q2_pdf",
+        "url": "https://ir.nio.com/static-files/ae76775d-56fa-4d21-95cc-e1fb9e6943cc",
+        "refs": [
+          "turn103view1",
+          "turn119view2",
+          "turn119view3"
+        ],
+        "date": "2026-09-01",
+        "description": "Official PDF copy, 11 pages."
+      },
+      {
+        "id": "q2_corporate_summary",
+        "url": "https://www.nio.com/news/20260901002",
+        "refs": [
+          "turn104search0",
+          "turn107search2"
+        ],
+        "date": "2026-09-01",
+        "description": "Other-sales margin 17.0%; four consecutive quarters of positive OCF. H1 USD convenience translations differ from release; use RMB figures / formal IR release instead."
+      },
+      {
+        "id": "q1_release",
+        "url": "https://ir.nio.com/news-releases/news-release-details/nio-inc-reports-unaudited-first-quarter-2026-financial-results",
+        "refs": [
+          "turn115view0"
+        ],
+        "date": "2026-05-21"
+      },
+      {
+        "id": "q2_2025_release",
+        "url": "https://ir.nio.com/news-releases/news-release-details/nio-inc-reports-unaudited-second-quarter-2025-financial-results",
+        "refs": [
+          "turn115view1",
+          "turn117view2",
+          "turn117view3"
+        ],
+        "date": "2025-09-02"
+      },
+      {
+        "id": "q3_deliveries",
+        "url": "https://ir.nio.com/news-releases/news-release-details/nio-inc-provides-september-and-third-quarter-2026-delivery",
+        "refs": [
+          "turn102search1"
+        ],
+        "date": "2026-10-01",
+        "description": "Search retrieved full original release; direct open encountered internal error. Corporate copy independently retrieved."
+      },
+      {
+        "id": "q3_corporate_deliveries",
+        "url": "https://www.nio.com/news/20261001001",
+        "refs": [
+          "turn102search5",
+          "turn107view2"
+        ],
+        "date": "2026-10-01"
+      },
+      {
+        "id": "geely_agreements",
+        "url": "https://ir.nio.com/news-releases/news-release-details/nio-announces-definitive-agreements-strategic-transaction-geely",
+        "refs": [
+          "turn113view0",
+          "turn110search9"
+        ],
+        "date": "2026-09-27"
+      },
+      {
+        "id": "geely_corporate_summary",
+        "url": "https://www.nio.com/news/20260928001",
+        "refs": [
+          "turn110search2"
+        ],
+        "date": "2026-09-28"
+      },
+      {
+        "id": "naming_tc",
+        "url": "https://ir.nio.com/zh-hant",
+        "refs": [
+          "turn113view1"
+        ],
+        "description": "Official TC profile uses 蔚來; brand names 樂道 / 螢火蟲."
+      },
+      {
+        "id": "naming_sc",
+        "url": "https://ir.nio.com/zh-hans/",
+        "refs": [
+          "turn119view0"
+        ],
+        "description": "Official SC profile uses 蔚来集团 / 蔚来; brands 乐道 / 萤火虫."
+      },
+      {
+        "id": "naming_tc_group",
+        "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0521/2026052100996_c.pdf",
+        "refs": [
+          "turn104search7",
+          "turn107view1"
+        ],
+        "date": "2026-05-21",
+        "description": "HKEX TC corporate filing uses 蔚來集團."
+      },
+      {
+        "id": "ads_fiscal",
+        "url": "https://ir.nio.com/resources/investor-faqs",
+        "refs": [
+          "turn119view1",
+          "turn107view0"
+        ],
+        "description": "Each ADS represents one Class A ordinary share; fiscal year-end December31."
+      },
+      {
+        "id": "sec_hk_interim",
+        "url": "https://www.sec.gov/Archives/edgar/data/1736541/000110465926104116/tm2624535d2_6k.htm",
+        "refs": [
+          "turn104search2",
+          "turn106search2"
+        ],
+        "date": "2026-09-01",
+        "description": "Confirms Q2/H1 financial results published as HK interim report; IFRS reconciliation separate from U.S.GAAP."
+      }
+    ],
+    "quarterly": {
+      "Q2 2025": {
+        "deliveries": 72056,
+        "brands": {
+          "NIO": 47132,
+          "ONVO": 17081,
+          "FIREFLY": 7843
+        },
+        "revenue_k": 19008665,
+        "vehicle_sales_k": 16136114,
+        "other_sales_k": 2872551,
+        "cost_sales_k": 17111142,
+        "vehicle_cost_sales_k": 14473222,
+        "other_cost_sales_k": 2637920,
+        "gross_profit_k": 1897523,
+        "gross_margin_pct": 10.0,
+        "vehicle_margin_pct": 10.3,
+        "research_development_k": 3007032,
+        "selling_general_admin_k": 3964921,
+        "other_operating_income_k": 165572,
+        "operating_income_k": -4908858,
+        "adjusted_operating_income_k": -4040795,
+        "net_income_k": -4994801,
+        "adjusted_net_income_k": -4126738,
+        "net_income_ordinary_shareholders_k": -5141307,
+        "adjusted_net_income_ordinary_shareholders_k": -4124870,
+        "gaap_eps_basic_diluted_rmb": -2.31,
+        "adjusted_eps_basic_diluted_rmb": -1.85,
+        "sbc_k": 426175,
+        "organizational_optimization_k": 441888,
+        "redemption_accretion_k": 148374,
+        "cash_reserve_bn": 27.2,
+        "source": "q2_release",
+        "unit_suffix_k": "RMB thousand; divide by1000 for RMB million",
+        "other_sales_margin_pct_calculated": 8.168036007019541,
+        "operating_margin_pct_calculated": -25.824317488892568,
+        "adjusted_operating_margin_pct_calculated": -21.25764749917998,
+        "gaap_net_margin_pct_calculated": -26.276442874867854,
+        "adjusted_net_margin_pct_calculated": -21.70977288515527
+      },
+      "Q1 2026": {
+        "deliveries": 83465,
+        "brands": {
+          "NIO": 58543,
+          "ONVO": 13339,
+          "FIREFLY": 11583
+        },
+        "revenue_k": 25532655,
+        "vehicle_sales_k": 22783708,
+        "other_sales_k": 2748947,
+        "cost_sales_k": 20673518,
+        "vehicle_cost_sales_k": 18491467,
+        "other_cost_sales_k": 2182051,
+        "gross_profit_k": 4859137,
+        "gross_margin_pct": 19.0,
+        "vehicle_margin_pct": 18.8,
+        "research_development_k": 1885024,
+        "selling_general_admin_k": 3497306,
+        "other_operating_income_k": 214382,
+        "operating_income_k": -308811,
+        "adjusted_operating_income_k": 66759,
+        "net_income_k": -332082,
+        "adjusted_net_income_k": 43488,
+        "net_income_ordinary_shareholders_k": -496008,
+        "adjusted_net_income_ordinary_shareholders_k": 44549,
+        "gaap_eps_basic_diluted_rmb": -0.2,
+        "adjusted_eps_basic_diluted_rmb": 0.02,
+        "sbc_k": 375570,
+        "organizational_optimization_k": 0,
+        "redemption_accretion_k": 164987,
+        "cash_reserve_bn": 48.2,
+        "source": "q2_release",
+        "unit_suffix_k": "RMB thousand; divide by1000 for RMB million",
+        "other_sales_margin_pct_calculated": 20.622296464791788,
+        "operating_margin_pct_calculated": -1.2094746903524134,
+        "adjusted_operating_margin_pct_calculated": 0.26146517077836207,
+        "gaap_net_margin_pct_calculated": -1.3006167983705572,
+        "adjusted_net_margin_pct_calculated": 0.17032306276021825
+      },
+      "Q2 2026": {
+        "deliveries": 107658,
+        "brands": {
+          "NIO": 60945,
+          "ONVO": 29124,
+          "FIREFLY": 17589
+        },
+        "revenue_k": 32136861,
+        "vehicle_sales_k": 29058229,
+        "other_sales_k": 3078632,
+        "cost_sales_k": 26230371,
+        "vehicle_cost_sales_k": 23673959,
+        "other_cost_sales_k": 2556412,
+        "gross_profit_k": 5906490,
+        "gross_margin_pct": 18.4,
+        "vehicle_margin_pct": 18.5,
+        "research_development_k": 2144918,
+        "selling_general_admin_k": 4424516,
+        "other_operating_income_k": 315725,
+        "operating_income_k": -347219,
+        "adjusted_operating_income_k": 206854,
+        "net_income_k": -528009,
+        "adjusted_net_income_k": 26064,
+        "net_income_ordinary_shareholders_k": -721591,
+        "adjusted_net_income_ordinary_shareholders_k": 24807,
+        "gaap_eps_basic_diluted_rmb": -0.29,
+        "adjusted_eps_basic_diluted_rmb": 0.01,
+        "sbc_k": 554073,
+        "organizational_optimization_k": 0,
+        "redemption_accretion_k": 192325,
+        "cash_reserve_bn": 56.7,
+        "source": "q2_release",
+        "unit_suffix_k": "RMB thousand; divide by1000 for RMB million",
+        "other_sales_margin_pct_calculated": 16.962728900368738,
+        "operating_margin_pct_calculated": -1.0804384410786108,
+        "adjusted_operating_margin_pct_calculated": 0.6436658514968217,
+        "gaap_net_margin_pct_calculated": -1.6430011630569643,
+        "adjusted_net_margin_pct_calculated": 0.0811031295184679
+      }
+    },
+    "q2_2026_usd_convenience": {
+      "exchange_rate_rmb_per_usd": 6.7851,
+      "exchange_rate_date": "2026-06-30",
+      "revenue_m": 4736.4,
+      "vehicle_sales_m": 4282.7,
+      "other_sales_m": 453.7,
+      "gross_profit_m": 870.5,
+      "operating_loss_m": 51.2,
+      "net_loss_m": 77.8,
+      "eps_basic_and_diluted_usd": -0.04,
+      "adjusted_eps_basic_and_diluted_usd": 0.0,
+      "basis": "Convenience translation, not spot FX for valuation. Adjusted USD EPS rounds to0.00 but positive RMB0.01."
+    },
+    "q2_2026_balance_sheet": {
+      "source": "q2_release",
+      "unit": "RMB million",
+      "cash_and_cash_equivalents": 17453.564,
+      "restricted_cash_current": 13510.507,
+      "short_term_investments": 25634.741,
+      "long_term_restricted_cash": 68.625,
+      "total_current_assets": 89249.777,
+      "total_current_liabilities": 87618.558,
+      "net_current_assets_calculated": 1631.219,
+      "total_assets": 136211.34,
+      "total_liabilities": 121943.115,
+      "redeemable_noncontrolling_interests": 10222.746,
+      "nio_shareholders_equity": 4064.04,
+      "total_shareholders_equity": 4045.479,
+      "short_term_borrowings": 8164.766,
+      "current_portion_long_term_borrowings": 897.712,
+      "long_term_borrowings": 8550.926,
+      "cash_summary_rmb_bn": 56.7,
+      "cash_summary_basis": "Company headline: cash and cash equivalents, restricted cash, short-term investments and long-term time deposits. This is NOT unrestricted cash and NOT net cash."
+    },
+    "cash_flow": {
+      "q2_2026_operating_cash_flow_sign": "positive",
+      "q1_2026_operating_cash_flow_sign": "positive",
+      "q2_2025_operating_cash_flow_sign": "negative",
+      "q2_2026_consecutive_positive_quarters": 4,
+      "q2_2026_operating_cash_flow_amount": null,
+      "q2_2026_capex": null,
+      "q2_2026_free_cash_flow": null,
+      "limitation": "Quarterly release provides no cash-flow statement or exact Q2 operating cash flow / capex amount. No exact FCF can be computed from reviewed sources. Do not infer cash flow from cash-balance movement.",
+      "sources": [
+        "q2_release",
+        "q2_corporate_summary",
+        "q1_release",
+        "q2_2025_release"
+      ]
+    },
+    "q3_2026_guidance_at_q2_release": {
+      "source": "q2_release",
+      "issued": "2026-09-01",
+      "basis": "Company forward guidance, NOT actual revenue",
+      "delivery_units_low": 108000,
+      "delivery_units_high": 111000,
+      "delivery_growth_yoy_pct_low": 24.0,
+      "delivery_growth_yoy_pct_high": 27.5,
+      "revenue_rmb_m_low": 33285,
+      "revenue_rmb_m_high": 34051,
+      "revenue_growth_yoy_pct_low": 52.7,
+      "revenue_growth_yoy_pct_high": 56.2
+    },
+    "q3_2026_delivery_actual": {
+      "source": "q3_deliveries",
+      "cross_check": "q3_corporate_deliveries",
+      "announced": "2026-10-01",
+      "quarter_deliveries": 109178,
+      "quarter_growth_yoy_pct": 25.4,
+      "quarter_growth_qoq_pct_calculated": 1.4118783555332692,
+      "year_to_date_deliveries": 300301,
+      "year_to_date_growth_yoy_pct": 49.2,
+      "september_deliveries": 37408,
+      "september_growth_yoy_pct": 7.7,
+      "september_brands": {
+        "NIO": 21318,
+        "ONVO": 8763,
+        "FIREFLY": 7327
+      },
+      "july_deliveries": 35934,
+      "august_deliveries": 35836,
+      "cumulative_deliveries": 1297893,
+      "within_prior_delivery_guidance": true,
+      "versus_guidance_midpoint_units": -322,
+      "limitation": "Delivery actuals only; no revenue, margins or earnings actuals from this delivery update."
+    },
+    "september_geely_transaction": {
+      "source": "geely_agreements",
+      "announced": "2026-09-27",
+      "status": "Definitive agreements subject to regulatory clearances and customary closing conditions; do not claim completed",
+      "geely_consideration_cash_rmb_m": 640,
+      "geely_consideration_equity": "100% equity in Yiyi Internet Technology (Chongqing) Co., Ltd.",
+      "nio_power_post_money_valuation_rmb_bn": 16,
+      "post_close_ownership_pct": {
+        "Geely_subsidiary": 30,
+        "NIO_China": 63.6,
+        "existing_investor": 6.4
+      },
+      "post_close_adjustment": "Geely stake may fall to no less than20% for milestone underperformance",
+      "geely_further_option_cash_rmb_m": 640,
+      "option_post_investment_ownership_pct_without_adjustment": {
+        "Geely": 34,
+        "NIO_China": 60
+      },
+      "option_window": "Earlier of2years following closing and binding agreements for a new financing round",
+      "concurrent_haohan_energy_stake_pct": 10,
+      "concurrent_haohan_cash_amount": null,
+      "consumer_and_commercial_swap_plans": "Preliminary, subject to further discussions",
+      "not_q2_cash": "No transaction proceeds included or inferred for June30 cash."
+    },
+    "power_network_as_of_2026_09_27": {
+      "source": "geely_corporate_summary",
+      "total_stations": 9433,
+      "swap_stations": 4126,
+      "charging_stations": 5307,
+      "charging_piles": 30598,
+      "cumulative_investment_rmb_bn_over": 20,
+      "swap_stations_2030_target": 10000,
+      "target_basis": "Management target, not completed assets"
+    },
+    "notes": [
+      "Accounting basis is unaudited U.S.GAAP; separate IFRS reconciliation does not replace GAAP figures.",
+      "Profit/loss data use signed values; negative loss must not be labelled profit. Per-ADS EPS is RMB unless explicitly stated USD.",
+      "Q2 2026 SBC excluded from non-GAAP operating/net income is554.073m. Shareholder earnings also add back192.325m accretion. Q2 2025 reconciliation additionally excludes441.888m organizational optimization charges; do not oversimplify all-period non-GAAP as SBC-only.",
+      "Rounded Q2 vehicle sales29058.2 + other sales3078.6 =32136.8, while total32136.9. Exact thousand-RMB values29058229+3078632=32136861 reconcile; preserve published rounding.",
+      "Other-sales gross margin calculated from exact raw financials rounds17.0%; Q1 20.6%, yearago8.2%.",
+      "Q2 2026 actual deliveries107658 were below earlier Q1-release guidance110000–115000 and actual revenue32136.861m below earlier guidance32777–34436m. Distinguish historical guidance miss from current Q3 delivery guidance met.",
+      "Do not treat NIO Power post-money valuation16bn as whole-company equity valuation or claim full640m financing cash already received.",
+      "The corporate Q2 summary USD values for H1 do not match formal release convenience translation; prefer RMB or formal release. No need to include H1 USD figures."
+    ],
+    "calculations": {
+      "q2_revenue_yoy_pct": 69.06427147829687,
+      "q2_revenue_qoq_pct": 25.865723717333733,
+      "q2_deliveries_yoy_pct": 49.40879316087488,
+      "q2_deliveries_qoq_pct": 28.985802432157183,
+      "q2_vehicle_revenue_mix_pct": 90.42024670673344,
+      "q2_other_revenue_mix_pct": 9.57975329326657,
+      "q2_gaap_net_loss_yoy_narrowing_pct": 89.42882809545365,
+      "q2_gaap_operating_loss_yoy_narrowing_pct": 92.92668478085942,
+      "q2_delivery_below_guidance_low_pct": -2.129090909090914,
+      "q2_revenue_below_guidance_low_pct": -1.95301278335418
+    }
+  },
+  "bloomberg_nio": {
+    "schema_version": 1,
+    "ticker": "NIO US Equity",
+    "company": "NIO Inc",
+    "prepared_on": "2026-10-09",
+    "sources": [
+      {
+        "type": "user_screenshot",
+        "filename": "NIO ANR.png",
+        "method": "Direct visual inspection with view_image",
+        "as_of": "2026-10-09",
+        "as_of_raw": "10/09/26"
+      },
+      {
+        "type": "user_screenshot",
+        "filename": "NIO EEO(1).png",
+        "method": "Direct visual inspection with view_image",
+        "as_of": null,
+        "as_of_note": "EEO screen has no independent as-of date. Paired ANR is dated 2026-10-09; do not represent upload date as independently verified EEO snapshot date."
+      },
+      {
+        "type": "official_corporate_results",
+        "url": "https://ir.nio.com/news-releases/news-release-details/nio-inc-reports-unaudited-second-quarter-2026-financial-results/",
+        "publication_date": "2026-09-01",
+        "web_ref": "turn108view0",
+        "purpose": "Reconcile actual net income definitions and EPS basis"
+      },
+      {
+        "type": "official_broker_disclosures",
+        "url": "https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch",
+        "web_ref": "turn112view1",
+        "purpose": "Distinguish Overweight stock rating from In-Line industry view"
+      },
+      {
+        "type": "official_corporate",
+        "url": "https://www.nio.com/news/nio-inc-announces-pricing-initial-public-offering",
+        "web_ref": "turn112view0",
+        "purpose": "Each ADS represents one Class A ordinary share; current Q2 2026 release also presents ordinary share/ADS values identically"
+      }
+    ],
+    "anr": {
+      "as_of": "2026-10-09",
+      "as_of_raw": "10/09/26",
+      "reference_price": {
+        "value": 3.41,
+        "currency": "USD",
+        "instrument": "NYSE ADS",
+        "header_date_raw": "On 08-Oct",
+        "date": "2026-10-08",
+        "date_year_inferred_from_paired_anr": true,
+        "verified_close": false,
+        "note": "Both ANR Last Price and top quote show 3.41. Header only shows 08-Oct, without year or explicit closing-price designation."
+      },
+      "consensus_rating": 4.37,
+      "rating_scale": 5,
+      "rating_distribution": [
+        {
+          "label": "Buys",
+          "count": 22,
+          "percent": 73.3
+        },
+        {
+          "label": "Holds",
+          "count": 7,
+          "percent": 23.3
+        },
+        {
+          "label": "Sells",
+          "count": 1,
+          "percent": 3.3
+        }
+      ],
+      "target_12m": {
+        "value": 6.23,
+        "currency": "USD",
+        "count_raw": "24/32",
+        "count_interpretation": "Unresolved screen field; retain literally rather than assuming total analyst count"
+      },
+      "return_potential_percent_displayed": 82.7,
+      "return_potential_percent_calculated": 82.69794721407627,
+      "ltm_return_percent": -54.3,
+      "entitlement_raw": "Entitled to 36 of 39 sources",
+      "brokers_priority": [
+        {
+          "firm": "UBS",
+          "analyst": "Paul Gong",
+          "raw_rating": "buy",
+          "display_rating": "Buy",
+          "target": 5.6,
+          "currency": "USD",
+          "date": "2026-09-10",
+          "date_raw": "09/10/26",
+          "source_row": 9,
+          "return_percent": 64.22287390029324,
+          "return_percent_display": 64.2,
+          "selected": true
+        },
+        {
+          "firm": "Morgan Stanley",
+          "analyst": "Tim Hsiao",
+          "raw_rating": "Overwt/In-Line",
+          "display_rating": "Overweight",
+          "target": 3.8,
+          "currency": "USD",
+          "date": "2026-09-28",
+          "date_raw": "09/28/26",
+          "source_row": 5,
+          "return_percent": 11.436950146627556,
+          "return_percent_display": 11.4,
+          "selected": true,
+          "normalization": "Overwt is stock Overweight; In-Line is the analyst industry view, not a Neutral individual-stock rating. Official Morgan Stanley definitions support this distinction."
+        },
+        {
+          "firm": "JP Morgan",
+          "analyst": "Nick Lai",
+          "raw_rating": "neutral",
+          "display_rating": "Neutral",
+          "target": 4.5,
+          "currency": "USD",
+          "date": "2026-09-01",
+          "date_raw": "09/01/26",
+          "source_row": 23,
+          "return_percent": 31.964809384164216,
+          "return_percent_display": 32,
+          "selected": true,
+          "rating_change_raw": "red downward arrow before neutral; direction visible, prior rating not shown"
+        },
+        {
+          "firm": "Citi",
+          "analyst": "Jeff Chung",
+          "raw_rating": "buy",
+          "display_rating": "Buy",
+          "target": 7.1,
+          "currency": "USD",
+          "date": "2026-09-01",
+          "date_raw": "09/01/26",
+          "source_row": 24,
+          "selected": false
+        },
+        {
+          "firm": "HSBC",
+          "analyst": "Yuqian Ding",
+          "raw_rating": "buy",
+          "display_rating": "Buy",
+          "target": 6.4,
+          "currency": "USD",
+          "date": "2026-09-15",
+          "date_raw": "09/15/26",
+          "source_row": 7,
+          "selected": false
+        }
+      ],
+      "broker_thesis_available": false,
+      "broker_thesis_note": "ANR supports ratings/analyst/target/date only. No broker investment rationale was provided."
+    },
+    "eeo": {
+      "security": "NIO US Equity",
+      "company": "NIO Inc",
+      "periodicity": "Quarters",
+      "source": "Standard",
+      "currency": "CNY",
+      "broker_filter": "--------",
+      "columns": [
+        {
+          "period": "Q2 2026",
+          "type": "Act",
+          "end": "2026-06-30"
+        },
+        {
+          "period": "Q3 2026",
+          "type": "Est",
+          "end": "2026-09-30"
+        },
+        {
+          "period": "Q4 2026",
+          "type": "Est",
+          "end": "2026-12-31"
+        },
+        {
+          "period": "Q1 2027",
+          "type": "Est",
+          "end": "2027-03-31"
+        },
+        {
+          "period": "Q2 2027",
+          "type": "Est",
+          "end": "2027-06-30"
+        }
+      ],
+      "rows": [
+        {
+          "label": "EPS, Adj+",
+          "unit": "CNY per share/ADS",
+          "values": [
+            0.01,
+            0.02,
+            0.105,
+            -0.176,
+            0.293
+          ]
+        },
+        {
+          "label": "EPS, GAAP",
+          "unit": "CNY per share/ADS",
+          "values": [
+            -0.29,
+            -0.268,
+            -0.224,
+            -0.435,
+            0.17
+          ]
+        },
+        {
+          "label": "Revenue",
+          "unit": "CNY billion",
+          "values": [
+            32.137,
+            33.053,
+            35.946,
+            30.229,
+            37.816
+          ]
+        },
+        {
+          "label": "Gross Margin %",
+          "unit": "percent",
+          "values": [
+            18.379,
+            18.121,
+            17.974,
+            17.855,
+            18.132
+          ]
+        },
+        {
+          "label": "Operating Income (EBIT)",
+          "unit": "CNY million",
+          "values": [
+            -347.219,
+            -340.964,
+            -260.682,
+            -765.2,
+            262.7
+          ]
+        },
+        {
+          "label": "EBITDA",
+          "unit": "CNY billion",
+          "values": [
+            null,
+            1.517,
+            1.63,
+            1.202,
+            1.635
+          ]
+        },
+        {
+          "label": "Pre-Tax Profit",
+          "unit": "CNY million",
+          "values": [
+            -495.176,
+            -533.175,
+            -529.493,
+            -936.325,
+            -47.3
+          ]
+        },
+        {
+          "label": "Net Income Adj+",
+          "unit": "CNY million",
+          "values": [
+            24.807,
+            41.55,
+            222.488,
+            -393.75,
+            517.75
+          ],
+          "actual_basis": "Net income attributable to ordinary shareholders, adjusted/non-GAAP"
+        },
+        {
+          "label": "Net Income, GAAP",
+          "unit": "CNY million",
+          "values": [
+            -721.591,
+            -563.25,
+            -376.068,
+            -1080,
+            31
+          ],
+          "raw_q1_2027": "-1.080B",
+          "actual_basis": "Net income attributable to ordinary shareholders"
+        },
+        {
+          "label": "Net Debt",
+          "unit": "CNY million",
+          "values": [
+            -14092,
+            995.5,
+            2200,
+            -2402,
+            -3549
+          ],
+          "raw_values": [
+            "-14.092B",
+            "995.500M",
+            "2.200B",
+            "-2.402B",
+            "-3.549B"
+          ]
+        },
+        {
+          "label": "BPS",
+          "unit": "CNY",
+          "values": [
+            1.724,
+            4.095,
+            3.905,
+            3.66,
+            3.51
+          ]
+        },
+        {
+          "label": "DPS",
+          "unit": "CNY",
+          "values": [
+            0,
+            null,
+            null,
+            null,
+            null
+          ]
+        },
+        {
+          "label": "Return on Equity %",
+          "unit": "percent",
+          "values": [
+            -306.54,
+            -19.975,
+            -11.035,
+            -34.02,
+            -31.305
+          ]
+        },
+        {
+          "label": "Return on Assets %",
+          "unit": "percent",
+          "values": [
+            -3.413,
+            -1.22,
+            -0.85,
+            -1.935,
+            -1.455
+          ]
+        },
+        {
+          "label": "Net Asset Value",
+          "unit": "CNY billion",
+          "values": [
+            null,
+            13.331,
+            12.067,
+            11.363,
+            10.999
+          ]
+        }
+      ],
+      "current_multiples": {
+        "columns": [
+          "Last 4 Qtrs Act",
+          "Next 4 Qtrs Est",
+          "FY 2026",
+          "FY 2027",
+          "FY 2028"
+        ],
+        "rows": [
+          {
+            "label": "Price/EPS, Adj+",
+            "values": [
+              null,
+              94.76,
+              null,
+              33.05,
+              14.48
+            ]
+          },
+          {
+            "label": "Price/Book",
+            "values": [
+              13.25,
+              5.58,
+              7.42,
+              6.84,
+              4.62
+            ]
+          },
+          {
+            "label": "Price/Cash Flow",
+            "values": [
+              null,
+              null,
+              3.35,
+              2.8,
+              3.19
+            ]
+          },
+          {
+            "label": "EV/Revenue",
+            "values": [
+              0.47,
+              0.39,
+              0.41,
+              0.35,
+              0.31
+            ]
+          },
+          {
+            "label": "EV/EBITDA",
+            "values": [
+              null,
+              7.01,
+              6.2,
+              4.23,
+              3.35
+            ]
+          },
+          {
+            "label": "EV/EBIT",
+            "values": [
+              null,
+              null,
+              null,
+              50.19,
+              15.22
+            ]
+          },
+          {
+            "label": "EV/OPP",
+            "values": [
+              null,
+              null,
+              null,
+              47.59,
+              14.89
+            ]
+          },
+          {
+            "label": "Dividend Yield",
+            "values": [
+              0,
+              null,
+              0,
+              0,
+              0
+            ]
+          }
+        ],
+        "basis": "Directly transcribed Bloomberg current multiples; no manual division of USD price by CNY EPS.",
+        "ntm_definition": "Next 4 Qtrs Est; displayed prospective quarterly grid is Q3 2026 through Q2 2027. Quarter-specific estimates should not be relabeled FY 2027."
+      },
+      "units_and_basis": {
+        "ads_ratio": "1 ADS = 1 Class A ordinary share",
+        "estimate_eps_setting": "EEO screenshot labels EPS, Adj+ and EPS, GAAP but does not expose a basic/diluted EPS setting. Avoid adding a verified diluted designation to EEO forecasts.",
+        "actual_eps": "Official Q2 2026 GAAP basic/diluted per ordinary share/ADS both -RMB0.29; adjusted basic/diluted both +RMB0.01.",
+        "fx": "Trading quote and ANR targets are USD per ADS. EEO currency setting is CNY. Snapshot FX not supplied; do not reconstruct P/E from cross-currency values.",
+        "negative_or_blank_pe": "Blank last-four-quarter/FY2026 Price/EPS cells are missing displayed multiples, not zero."
+      }
+    },
+    "reconciliation": {
+      "q2_2026_cny_million": {
+        "gaap_net_loss_total": -528.009,
+        "gaap_net_loss_attributable_ordinary": -721.591,
+        "share_based_compensation": 554.073,
+        "accretion_on_redeemable_nci": 192.325,
+        "adjusted_net_profit_total": 26.064,
+        "adjusted_net_profit_attributable_ordinary": 24.807
+      },
+      "formula": "-721.591 + 554.073 + 192.325 = 24.807",
+      "note": "Use explicit attributable-to-ordinary-shareholder labels for EEO actual net income; do not compare them directly to total company net income."
+    },
+    "uncertainties": [
+      "EEO independent snapshot/as-of date not displayed.",
+      "Top quote date lacks year and closing-price designation; year is inferred from paired ANR.",
+      "ANR target count 24/32 retained as a literal field, not assumed total consensus analyst count.",
+      "No original broker reports; no bank thesis can be attributed.",
+      "Bloomberg EPS Adj+ forecast basic/diluted setting not visible.",
+      "Snapshot FX not shown; direct Bloomberg ratio is the supported valuation input."
+    ]
+  },
+  "bloomberg_peers": {
+    "task": "NIO Q2 2026 report peer valuation support",
+    "extracted_on": "2026-10-09",
+    "method": "Direct visual reading of user-provided Bloomberg EEO images; official corporate and HKEX sources used for names, securities, fiscal year and accounting context.",
+    "common_screen_settings": {
+      "function": "Consensus Overview / EEO",
+      "source": "Standard",
+      "periodicity": "Quarters",
+      "financial_currency": "CNY",
+      "quarters": [
+        {
+          "label": "Q2 2026 Act",
+          "three_months_ending": "2026-06-30"
+        },
+        {
+          "label": "Q3 2026 Est",
+          "three_months_ending": "2026-09-30"
+        },
+        {
+          "label": "Q4 2026 Est",
+          "three_months_ending": "2026-12-31"
+        },
+        {
+          "label": "Q1 2027 Est",
+          "three_months_ending": "2027-03-31"
+        },
+        {
+          "label": "Q2 2027 Est",
+          "three_months_ending": "2027-06-30"
+        }
+      ],
+      "multiple_columns": [
+        "Last 4 Qtrs Act",
+        "Next 4 Qtrs Est",
+        "FY 2026",
+        "FY 2027",
+        "FY 2028"
+      ],
+      "price_earnings_row_label": "Price/EPS, Adj+",
+      "eps_row_label": "EPS, Adj+",
+      "null_meaning": "Blank on the supplied screenshot, not zero and not necessarily negative.",
+      "date_limit": "No independent dated EEO as-of field is visible in any of the three supplied peer screens. Do not assign the attachment/upload date as a verified market-data date.",
+      "accounting_limit": "Bloomberg Adj+ is the common displayed consensus field. Its full vendor adjustments and basic/diluted conventions are not defined in the screenshots; it must not be relabeled as a uniformly defined U.S. GAAP or company non-GAAP measure. Company reporting frameworks differ."
+    },
+    "peers": [
+      {
+        "security": "LI US Equity",
+        "file": "LI EEO.png",
+        "names": {
+          "en": "Li Auto",
+          "tc": "理想汽車",
+          "sc": "理想汽车"
+        },
+        "screen_name": "Li Auto Inc",
+        "quote": {
+          "currency": "USD",
+          "price": 10.9,
+          "visible_date_text": "On 08-Oct",
+          "year_visible": false,
+          "label": "screen reference, not independently verified closing price"
+        },
+        "security_basis": {
+          "exchange": "Nasdaq",
+          "instrument": "ADS",
+          "ordinary_shares_per_ads": 2,
+          "underlying": "Class A ordinary shares",
+          "hk_ticker": "2015"
+        },
+        "fiscal_year_end": "12-31",
+        "financial_reporting_framework": "U.S. GAAP; company non-GAAP excludes share-based compensation",
+        "quarterly_eps_adj_plus_cny": [
+          -1.49,
+          -0.848,
+          0.438,
+          -0.073,
+          0.674
+        ],
+        "quarterly_eps_adj_plus_analyst_counts": [
+          null,
+          6,
+          6,
+          3,
+          4
+        ],
+        "eps_security_crosscheck": "EEO Q2 actual EPS Adj+ of CNY -1.49 and EPS GAAP of CNY -1.69 match the company's non-GAAP and GAAP loss per ADS, respectively. Do not divide the screen EPS by two again when working on the ADS basis.",
+        "quarterly_revenue_cny_billion": [
+          25.667,
+          28.209,
+          35.714,
+          30.162,
+          35.351
+        ],
+        "multiples_x": {
+          "price_eps_adj_plus": [
+            null,
+            384.21,
+            null,
+            37.92,
+            19.02
+          ],
+          "price_book": [
+            2.2,
+            2.23,
+            1.66,
+            1.49,
+            1.56
+          ],
+          "price_cash_flow": [
+            null,
+            14.09,
+            28.79,
+            10.04,
+            10.63
+          ],
+          "ev_revenue": [
+            0.05,
+            0.04,
+            0.05,
+            0.04,
+            0.03
+          ],
+          "ev_ebitda": [
+            null,
+            0.9,
+            null,
+            0.99,
+            0.54
+          ]
+        },
+        "price_sales": {
+          "available": false,
+          "note": "There is no Price/Sales row; EV/Revenue is a different measure."
+        },
+        "interpretation": "The four visible adjusted EPS estimates sum to only CNY0.191 per ADS, before rounding. Very high Next4 P/E reflects a small positive earnings denominator during an uneven recovery, not automatically overvaluation or cheapness. Use FY2027 P/E for the all-peer common period; retain the screen multiple rather than recreating it from rounded EPS and an unverified FX rate."
+      },
+      {
+        "security": "9863 HK Equity",
+        "file": "9863.HK EEO.png",
+        "names": {
+          "en": "Leapmotor",
+          "tc": "零跑汽車",
+          "sc": "零跑汽车"
+        },
+        "legal_name": {
+          "en": "Zhejiang Leapmotor Technology Co., Ltd.",
+          "tc": "浙江零跑科技股份有限公司",
+          "sc": "浙江零跑科技股份有限公司"
+        },
+        "screen_name": "Zhejiang Leapmotor Technology Co Ltd",
+        "quote": {
+          "currency": "HKD",
+          "price": 35.14,
+          "visible_time_text": "At 13:46",
+          "date_visible": false,
+          "label": "intraday screen reference, date not displayed"
+        },
+        "security_basis": {
+          "exchange": "HKEX",
+          "instrument": "H shares",
+          "ads": false
+        },
+        "fiscal_year_end": "12-31",
+        "financial_reporting_framework": "IFRS Accounting Standards; company adjusted profit excludes share-based payments",
+        "quarterly_eps_adj_plus_cny": [
+          0.346,
+          0.73,
+          1.51,
+          null,
+          null
+        ],
+        "quarterly_eps_adj_plus_analyst_counts": [
+          null,
+          1,
+          1,
+          null,
+          null
+        ],
+        "quarterly_revenue_cny_billion": [
+          27.287,
+          32.36,
+          34.366,
+          27.24,
+          32.926
+        ],
+        "multiples_x": {
+          "price_eps_adj_plus": [
+            59.2,
+            null,
+            15.14,
+            8.23,
+            5.94
+          ],
+          "price_book": [
+            2.97,
+            5.54,
+            2.46,
+            1.9,
+            1.44
+          ],
+          "price_cash_flow": [
+            3.57,
+            null,
+            3.0,
+            2.39,
+            1.77
+          ],
+          "ev_revenue": [
+            0.29,
+            0.18,
+            0.21,
+            0.16,
+            0.14
+          ],
+          "ev_ebitda": [
+            10.35,
+            null,
+            5.78,
+            3.43,
+            2.46
+          ]
+        },
+        "price_sales": {
+          "available": false,
+          "note": "There is no Price/Sales row; EV/Revenue is a different measure."
+        },
+        "interpretation": "Next4 adjusted P/E is blank, while Q1/Q2 2027 adjusted EPS are also blank. Do not infer a negative P/E or calculate a four-quarter EPS denominator from incomplete data. FY2027 adjusted P/E8.23x is directly displayed."
+      },
+      {
+        "security": "1211 HK Equity",
+        "file": "BYD EEO.png",
+        "names": {
+          "en": "BYD",
+          "tc": "比亞迪",
+          "sc": "比亚迪"
+        },
+        "legal_name": {
+          "en": "BYD Company Limited",
+          "tc": "比亞迪股份有限公司"
+        },
+        "screen_name": "BYD Co Ltd",
+        "quote": {
+          "currency": "HKD",
+          "price": 75.65,
+          "visible_time_text": "At 13:45",
+          "date_visible": false,
+          "label": "intraday screen reference, date not displayed"
+        },
+        "security_basis": {
+          "exchange": "HKEX",
+          "instrument": "H shares",
+          "hkd_counter": "01211",
+          "rmb_counter": "81211",
+          "a_share_ticker": "002594",
+          "ads": false
+        },
+        "fiscal_year_end": "12-31",
+        "financial_reporting_framework": "PRC Accounting Standards for Business Enterprises (ASBE), not IFRS",
+        "quarterly_eps_adj_plus_cny": [
+          0.902,
+          1.34,
+          1.497,
+          0.49,
+          0.99
+        ],
+        "quarterly_eps_adj_plus_analyst_counts": [
+          null,
+          3,
+          3,
+          1,
+          1
+        ],
+        "quarterly_revenue_cny_billion": [
+          194.59,
+          241.295,
+          291.753,
+          163.626,
+          219.216
+        ],
+        "multiples_x": {
+          "price_eps_adj_plus": [
+            20.22,
+            14.96,
+            15.11,
+            11.69,
+            9.69
+          ],
+          "price_book": [
+            2.45,
+            null,
+            2.1,
+            1.82,
+            1.58
+          ],
+          "price_cash_flow": [
+            9.09,
+            null,
+            3.95,
+            3.81,
+            3.26
+          ],
+          "ev_revenue": [
+            1.0,
+            0.85,
+            0.87,
+            0.76,
+            0.69
+          ],
+          "ev_ebitda": [
+            6.34,
+            5.31,
+            6.03,
+            5.12,
+            4.42
+          ]
+        },
+        "price_sales": {
+          "available": false,
+          "note": "There is no Price/Sales row; EV/Revenue is a different measure."
+        },
+        "corporate_action": {
+          "completed": "2025-07-29",
+          "description": "For every10 existing shares,8 bonus shares and12 capital-reserve capitalization shares were issued; aggregate share count tripled.",
+          "old_total_shares": 3039065855,
+          "new_total_shares": 9117197565,
+          "factor": 3,
+          "handling": "Use the supplied 2026 screen valuation multiples without a further split adjustment. The official2026 interim share/EPS disclosures already use the expanded share count. Do not combine older unadjusted EPS/prices with these observations."
+        },
+        "interpretation": "FY2027 adjusted P/E11.69x refers to the HKD-quoted H-share security, not an A-share or OTC ADR price. BYD's electronics, batteries and other operations limit direct comparability with more focused EV manufacturers."
+      }
+    ],
+    "recommended_comparison": {
+      "metric": "FY2027 Bloomberg consensus Price/EPS, Adj+ (x)",
+      "period_end": "2027-12-31",
+      "peer_values": {
+        "Leapmotor": 8.23,
+        "BYD": 11.69,
+        "Li Auto": 37.92
+      },
+      "nio_value_from_parent_nio_screenshot_agent": 33.05,
+      "why": "A common displayed annual estimate exists for all four companies; this avoids substituting different periods into a Next4 comparison when Leapmotor's Next4 P/E is absent.",
+      "not_ntm": true,
+      "display_suggestion_tc": "2027財年預測市盈率（Bloomberg EPS Adj+）",
+      "secondary_metric": "Next4 EV/Revenue exists for all three peers: LI0.04x, Leapmotor0.18x, BYD0.85x. If used with verified NIO data, label EV/Revenue accurately, never P/S; different cash/debt and consolidation structures materially affect it.",
+      "limitations": [
+        "FY2027 is the calendar year ending2027-12-31, not the four quarters Q3 2026 through Q2 2027 shown above the valuation panel.",
+        "Consensus earnings recovery remains uncertain; low or negative current earnings make P/E unstable or not meaningful.",
+        "Multiples are the screenshot's displayed figures. Quote currencies differ from CNY EPS fields, and LI is an ADS representing2 ordinary shares; do not perform an unadjusted price/EPS division.",
+        "Bloomberg adjustments do not remove underlying U.S.GAAP / IFRS / PRCASBE and business-mix differences.",
+        "Screen capture/as-of dates are not independently printed for the peer EEOs; LI shows08-Oct without a year and HongKong peers show intraday times only.",
+        "Quarterly EPS coverage is sparse for BYD and Leapmotor; visible FY2027 aggregate contributor counts are not shown. Do not imply a broad analyst sample for the full-year multiple.",
+        "Blank fields are missing values and must not be graphed as zero."
+      ]
+    },
+    "primary_sources": [
+      {
+        "url": "https://liauto.gcs-web.com/zh-hant/investor-faqs/",
+        "web_ref": "turn116view1",
+        "supports": "Official TC理想汽車; fiscal year ends December31; LIADS represents2ClassAordinaryshares; HKticker2015."
+      },
+      {
+        "url": "https://ir.lixiang.com/zh-hans",
+        "web_ref": "turn116view2",
+        "supports": "Official SC理想汽车."
+      },
+      {
+        "url": "https://ir.lixiang.com/news-releases/news-release-details/li-auto-inc-announces-unaudited-second-quarter-2026-financial",
+        "web_ref": "turn120view0",
+        "supports": "U.S.GAAP and company nonGAAP definitions; Q2actual perADS loss1.69/adjusted1.49 matches screenshot EPS basis."
+      },
+      {
+        "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2026/0316/2026031601215_c.pdf",
+        "web_ref": "turn116view3",
+        "supports": "Official TC零跑汽車 andlegal浙江零跑科技股份有限公司; code9863; yearendedDecember31; IFRS."
+      },
+      {
+        "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0316/2026031601214.pdf",
+        "web_ref": "turn116view4",
+        "supports": "Leapmotor Englishlegalname, Hshares, IFRS; pp1,21-22."
+      },
+      {
+        "url": "https://leapmotor.cn/compliance.html",
+        "web_ref": "turn111search7",
+        "supports": "Official SC零跑汽车 andlegal浙江零跑科技股份有限公司."
+      },
+      {
+        "url": "https://www.byd.com/cn/search",
+        "web_ref": "turn116view6",
+        "supports": "Official SC比亚迪."
+      },
+      {
+        "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0828/2026082801633.pdf",
+        "web_ref": "turn121view1",
+        "supports": "BYDofficialTCname/Hsharecounters onp0-1; PRCASBE onp73; expanded share/EPSbasis onpp86-87; July29,2025 bonus/capitalizationcompletion onp95."
+      },
+      {
+        "url": "https://www.hkexnews.hk/listedco/listconews/sehk/2025/1030/2025103001668_c.pdf",
+        "web_ref": "turn116view5",
+        "supports": "BYD8bonus+12capitalreserve sharesper10; sharestripled from3039065855to9117197565; 2025corporateaction."
+      },
+      {
+        "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0327/2026032702644.pdf",
+        "web_ref": "turn118search24",
+        "supports": "BYDannualreport2025 accountingandyearendedDecember31; fullopen exceededtoolsize, indexedofficialexcerpt available."
+      }
+    ]
+  },
+  "canonical_templates": [
+    {
+      "path": "mu.html",
+      "sha256": "7f783b0b12547b23b5526be6c3e09082d24ccb6cd7b64bbf9728e80964fed57f",
+      "base_commit": "75bd3a4b5d38688e71fef0a08d899357eed4d126"
+    },
+    {
+      "path": "mu-sc.html",
+      "sha256": "fd4382fa9f1e25d7d5ff3abf634e76eb099d4fbd1ab5faeb96189fe66be169f5",
+      "base_commit": "75bd3a4b5d38688e71fef0a08d899357eed4d126"
+    },
+    {
+      "path": "mu-en.html",
+      "sha256": "702e82340f70c801cde0ceff8323d99fca8bf0e6a29e87bc803df6667638a34d",
+      "base_commit": "75bd3a4b5d38688e71fef0a08d899357eed4d126"
+    }
+  ],
+  "protected_files": {
+    "CNAME": "4d122df0d003e1c01afb46bd8a02b31a7f9041eb05674b482335b5bd62b8c960",
+    "api/gemini.js": "2cbd0959cf0ccd0cb788b6181b8635daf397867d5796d4ff1cf15f1d40ed963a",
+    "disclaimer.html": "495e20268112a2367e5b46c91d584d61dbf75ccd35a58377fa0bc0c94f8c1b2c"
+  },
+  "user_screenshot_evidence": [
+    {
+      "filename": "NIO ANR.png",
+      "sha256": "46e7a438d8c9793836dcf073bf9abb5e163b336da6573e00bb60265f834d8354",
+      "method": "direct visual inspection; restricted original image not committed"
+    },
+    {
+      "filename": "NIO EEO(1).png",
+      "sha256": "2671a919f92cc0aaf3ddb35de8e9947cf05325c3159eea7d78769a53b43907dd",
+      "method": "direct visual inspection; restricted original image not committed"
+    },
+    {
+      "filename": "LI EEO.png",
+      "sha256": "f66e804bbd20f99fbd835f8058181f3e57cee30a18f6cc2561cb6515390f8964",
+      "method": "direct visual inspection; restricted original image not committed"
+    },
+    {
+      "filename": "9863.HK EEO.png",
+      "sha256": "7c663fcc55e43fc23538b8fe18aa6e7fca728efff4fc0c3cf92947977b7abaa7",
+      "method": "direct visual inspection; restricted original image not committed"
+    },
+    {
+      "filename": "BYD EEO.png",
+      "sha256": "d7b61fedc06e5e9a2938310f9fd842e3ed48d5b05bf504f7ddd1cfd4a328ad3c",
+      "method": "direct visual inspection; restricted original image not committed"
+    }
+  ],
+  "calculations": {
+    "consensus_price_return_pct": 82.7,
+    "brokers_price_return_pct": {
+      "UBS": 64.2,
+      "Morgan Stanley": 11.4,
+      "JP Morgan": 32.0
+    },
+    "q2_deliveries_sum": 107658,
+    "q2_adjusted_net_margin_pct": 0.0811031295184679,
+    "peer_metric": "FY2027 Bloomberg Price/EPS, Adj+",
+    "peer_chart_values": [
+      8.23,
+      11.69,
+      33.05,
+      37.92
+    ],
+    "peer_chart_order": [
+      "9863 HK",
+      "1211 HK",
+      "NIO",
+      "LI"
+    ],
+    "reconciliations": {
+      "revenue_rmb_thousand": "29058229+3078632=32136861",
+      "consolidated_net_rmb_million": "-528.009+554.073=26.064",
+      "attributable_net_rmb_million": "-721.591+554.073+192.325=24.807",
+      "q3_delivery_qoq_pct": 1.4118783555332692
+    },
+    "company_published_qoq_growth_pct": {
+      "adjusted_operating_profit": 209.7,
+      "adjusted_net_profit": -40.0,
+      "source": "Official Q2 release, Key Financial Results table, %Change QoQ column; root independently opened table lines49 and52.",
+      "exact_thousand_rmb_recalculation": {
+        "adjusted_operating_profit": 209.8518551805749,
+        "adjusted_net_profit": -40.06622516556292
+      },
+      "handling": "Public table retains company-published209.7% and-40.0%, rather than silently replacing them with raw-table-derived209.9%/-40.1%. Published rounded values imply209.7%/-40.0%."
+    }
+  },
+  "implementation": {
+    "six_tabs": [
+      "our-comments",
+      "financials",
+      "valuation",
+      "street-comments",
+      "risks",
+      "disclaimer"
+    ],
+    "financial_table": "Five rows, four columns; company U.S. GAAP vs non-GAAP/supplement. Gross row supplement is vehicle margin, not an adjusted gross-profit value. Net income is consolidated; attributable basis separately explained.",
+    "charts": "Q2 deliveries by brand; Q2 consolidated GAAP/non-GAAP operating and net profit/loss; four-peer common FY2027 Bloomberg Adj+ P/E.",
+    "missing_inputs": "Exact quarterly operating cash flow, capex and FCF not verified; do not fill with balances or estimates. Cash/investment KPI explicitly includes restricted cash.",
+    "risk_style": "All four headings use text-base inheriting dark text-slate-700 in all languages.",
+    "frontend": "Each NIO language page carries its corresponding current MU CSS/fonts/script versions and interaction functions; no unrelated MU changes.",
+    "protected_legal": "Original NIO PI modal DOM and legal words preserved. Disclaimer DOM preserved except section7 renumbered6; original disclaimer loader preserved.",
+    "necessary_frontend_repair": "All three prior NIO pages had undefined acceptPI/declinePI/callGeminiAPI functions and incomplete chat; MU canonical handlers, PI gate check, API adapter, chat and explain behavior now accompany the required template migration. Original PI buttons and notices retained; shared API handler unchanged.",
+    "line_endings": "Full NIO layout migration adopts MU LF formatting; the prior TC page had CRLF. This is not a narrow styling diff.",
+    "homepage": "NIO moves to fourth under2026-09-01 publication date. Other24 cards and relative order unchanged."
+  },
+  "independent_review": [
+    "Root opened full official Q2 release, confirmed period/release date/figures and EPS/attributable distinctions.",
+    "Root opened official September delivery and Geely agreements pages; transaction remains conditional.",
+    "Agents independently read all five original Bloomberg images and primary company/HKEX naming/security sources.",
+    "Root verified Q3 delivery announcement via officialIR search:109178 and25.4% forquarter, URL https://ir.nio.com/news-releases/news-release-details/nio-inc-provides-september-and-third-quarter-2026-delivery (turn127search0)."
+  ],
+  "limitations": [
+    "ANR date is2026-10-09; priceheader08-Oct does not itself showyearorclosingdesignation.",
+    "EEO has no independent fullasofdate; HKquotes showintradaytimesonly.",
+    "FY2027 Adj+ratios share period but accounting adjustments/reportingframeworks/businessmodels differ.",
+    "No original bank research thesis supplied; cards present rating/analyst/date/target/impliedprice return only.",
+    "No exactquarterlyOCF/capex/FCF published in sources reviewed.",
+    "No PI acceptance, storage write, gate hiding/removal or liveAIcall permitted during verification.",
+    "MockedDOM tests do not equal browser rendering; release verification recorded separately."
+  ]
+}

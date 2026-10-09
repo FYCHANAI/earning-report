@@ -1,0 +1,1723 @@
+{
+  "report": "NIO Q2 2026 evidence and MU-template validation",
+  "checked_on": "2026-10-09",
+  "base_commit": "75bd3a4b5d38688e71fef0a08d899357eed4d126",
+  "status": "pass",
+  "checks": [
+    {
+      "check": "nio.html:mu_structure_and_layout_attributes",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:mu_styles_fonts_and_script_versions",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:six_tabs",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:no_obsolete_sandbox",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:three_chart_containers",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:original_pi-modal_dom_except_section_number",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:original_disclaimer_dom_except_section_number",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:original_disclaimer_loader_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:company_heading_and_title",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:header_consensus",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:no_unrelated_company_template_remnants",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:no_citation_placeholders",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:period_publication_and_update_dates",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:our_views_four_items_and_voice",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:no_unverified_price_close_claim",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:four_kpis",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:liquidity_kpi_is_cash_pool_not_fcf",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:four_column_five_row_table",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:table_matches_gaap_adjusted_and_vehicle_bases",
+      "status": "pass",
+      "detail": {
+        "observed": [
+          [
+            [
+              32136.9
+            ],
+            [
+              32136.9
+            ],
+            [
+              25.9
+            ]
+          ],
+          [
+            [
+              5906.5,
+              18.4
+            ],
+            [
+              18.5
+            ],
+            [
+              -0.6
+            ]
+          ],
+          [
+            [
+              -347.2
+            ],
+            [
+              206.9
+            ],
+            [
+              209.7
+            ]
+          ],
+          [
+            [
+              -528.0
+            ],
+            [
+              26.1
+            ],
+            [
+              -40.0
+            ]
+          ],
+          [
+            [
+              -0.29
+            ],
+            [
+              0.01
+            ],
+            [
+              1.0,
+              1.0
+            ]
+          ]
+        ],
+        "expected_primary": [
+          [
+            [
+              32136.9
+            ],
+            [
+              32136.9
+            ]
+          ],
+          [
+            [
+              5906.5,
+              18.4
+            ],
+            [
+              18.5
+            ]
+          ],
+          [
+            [
+              -347.2
+            ],
+            [
+              206.9
+            ]
+          ],
+          [
+            [
+              -528.0
+            ],
+            [
+              26.1
+            ]
+          ],
+          [
+            [
+              -0.29
+            ],
+            [
+              0.01
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "check": "nio.html:table_eps_per_ads_label",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:table_supplement_column_not_non_gaap_vehicle_margin",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:quarterly_financial_table_rmb_not_usd",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:financial_primary_source_link",
+      "status": "pass",
+      "detail": [
+        "https://ir.nio.com/news-releases/news-release-details/nio-inc-reports-unaudited-second-quarter-2026-financial-results/"
+      ]
+    },
+    {
+      "check": "nio.html:peer_fy2027_adj_plus_basis",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:peer_eeo_date_limit",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:peer_valuation_security_and_accounting_limits",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:brokers_priority_targets_dates_returns_colors",
+      "status": "pass",
+      "detail": [
+        {
+          "firm": "UBS",
+          "ok": true,
+          "return_percent": 64.2
+        },
+        {
+          "firm": "Morgan Stanley",
+          "ok": true,
+          "return_percent": 11.4
+        },
+        {
+          "firm": "JP Morgan",
+          "ok": true,
+          "return_percent": 32.0
+        }
+      ]
+    },
+    {
+      "check": "nio.html:no_public_rating_normalization_note",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:compact_anr_reference_source",
+      "status": "pass",
+      "detail": [
+        "來源：Bloomberg ANR（2026/10/09）；以 10/08 畫面所示參考股價 US$3.41 計算。"
+      ]
+    },
+    {
+      "check": "nio.html:no_public_calculator_attribution",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:four_risk_headings_all_same_dark_style",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:inline_js_syntax_and_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:chart_cache_keys",
+      "status": "pass",
+      "detail": [
+        "nioSegment",
+        "nioProfit",
+        "nioValuation"
+      ]
+    },
+    {
+      "check": "nio.html:tabs_and_chart_resize",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:pi_active_no_acceptance_or_storage_write",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:restore_missing_pi_api_functions_from_mu",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:disclaimer_local_mock_no_api_network",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:mu_fixed_interaction_functions",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:mu_explain_interaction",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:dated_nio_ai_evidence_context",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:localized_ai_company_context",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:deliveries_chart_brand_counts_reconcile",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:profit_chart_company_total_gaap_adjusted_bases",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:peer_fy2027_pe_values_and_order",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:localized_verified_peer_names",
+      "status": "pass"
+    },
+    {
+      "check": "nio.html:chart_responsive",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:mu_structure_and_layout_attributes",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:mu_styles_fonts_and_script_versions",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:six_tabs",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:no_obsolete_sandbox",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:three_chart_containers",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:original_pi-modal_dom_except_section_number",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:original_disclaimer_dom_except_section_number",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:original_disclaimer_loader_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:company_heading_and_title",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:header_consensus",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:no_unrelated_company_template_remnants",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:no_citation_placeholders",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:period_publication_and_update_dates",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:our_views_four_items_and_voice",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:no_unverified_price_close_claim",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:four_kpis",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:liquidity_kpi_is_cash_pool_not_fcf",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:four_column_five_row_table",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:table_matches_gaap_adjusted_and_vehicle_bases",
+      "status": "pass",
+      "detail": {
+        "observed": [
+          [
+            [
+              32136.9
+            ],
+            [
+              32136.9
+            ],
+            [
+              25.9
+            ]
+          ],
+          [
+            [
+              5906.5,
+              18.4
+            ],
+            [
+              18.5
+            ],
+            [
+              -0.6
+            ]
+          ],
+          [
+            [
+              -347.2
+            ],
+            [
+              206.9
+            ],
+            [
+              209.7
+            ]
+          ],
+          [
+            [
+              -528.0
+            ],
+            [
+              26.1
+            ],
+            [
+              -40.0
+            ]
+          ],
+          [
+            [
+              -0.29
+            ],
+            [
+              0.01
+            ],
+            [
+              1.0,
+              1.0
+            ]
+          ]
+        ],
+        "expected_primary": [
+          [
+            [
+              32136.9
+            ],
+            [
+              32136.9
+            ]
+          ],
+          [
+            [
+              5906.5,
+              18.4
+            ],
+            [
+              18.5
+            ]
+          ],
+          [
+            [
+              -347.2
+            ],
+            [
+              206.9
+            ]
+          ],
+          [
+            [
+              -528.0
+            ],
+            [
+              26.1
+            ]
+          ],
+          [
+            [
+              -0.29
+            ],
+            [
+              0.01
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "check": "nio-sc.html:table_eps_per_ads_label",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:table_supplement_column_not_non_gaap_vehicle_margin",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:quarterly_financial_table_rmb_not_usd",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:financial_primary_source_link",
+      "status": "pass",
+      "detail": [
+        "https://ir.nio.com/news-releases/news-release-details/nio-inc-reports-unaudited-second-quarter-2026-financial-results/"
+      ]
+    },
+    {
+      "check": "nio-sc.html:peer_fy2027_adj_plus_basis",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:peer_eeo_date_limit",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:peer_valuation_security_and_accounting_limits",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:brokers_priority_targets_dates_returns_colors",
+      "status": "pass",
+      "detail": [
+        {
+          "firm": "UBS",
+          "ok": true,
+          "return_percent": 64.2
+        },
+        {
+          "firm": "Morgan Stanley",
+          "ok": true,
+          "return_percent": 11.4
+        },
+        {
+          "firm": "JP Morgan",
+          "ok": true,
+          "return_percent": 32.0
+        }
+      ]
+    },
+    {
+      "check": "nio-sc.html:no_public_rating_normalization_note",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:compact_anr_reference_source",
+      "status": "pass",
+      "detail": [
+        "来源：Bloomberg ANR（2026/10/09）；以 10/08 画面所示参考股价 US$3.41 计算。"
+      ]
+    },
+    {
+      "check": "nio-sc.html:no_public_calculator_attribution",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:four_risk_headings_all_same_dark_style",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:inline_js_syntax_and_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:chart_cache_keys",
+      "status": "pass",
+      "detail": [
+        "nioSegment",
+        "nioProfit",
+        "nioValuation"
+      ]
+    },
+    {
+      "check": "nio-sc.html:tabs_and_chart_resize",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:pi_active_no_acceptance_or_storage_write",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:restore_missing_pi_api_functions_from_mu",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:disclaimer_local_mock_no_api_network",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:mu_fixed_interaction_functions",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:mu_explain_interaction",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:dated_nio_ai_evidence_context",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:localized_ai_company_context",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:deliveries_chart_brand_counts_reconcile",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:profit_chart_company_total_gaap_adjusted_bases",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:peer_fy2027_pe_values_and_order",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:localized_verified_peer_names",
+      "status": "pass"
+    },
+    {
+      "check": "nio-sc.html:chart_responsive",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:mu_structure_and_layout_attributes",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:mu_styles_fonts_and_script_versions",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:six_tabs",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:no_obsolete_sandbox",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:three_chart_containers",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:original_pi-modal_dom_except_section_number",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:original_disclaimer_dom_except_section_number",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:original_disclaimer_loader_exact",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:company_heading_and_title",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:header_consensus",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:no_unrelated_company_template_remnants",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:no_citation_placeholders",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:period_publication_and_update_dates",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:our_views_four_items_and_voice",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:no_unverified_price_close_claim",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:four_kpis",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:liquidity_kpi_is_cash_pool_not_fcf",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:four_column_five_row_table",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:table_matches_gaap_adjusted_and_vehicle_bases",
+      "status": "pass",
+      "detail": {
+        "observed": [
+          [
+            [
+              32136.9
+            ],
+            [
+              32136.9
+            ],
+            [
+              25.9
+            ]
+          ],
+          [
+            [
+              5906.5,
+              18.4
+            ],
+            [
+              18.5
+            ],
+            [
+              -0.6
+            ]
+          ],
+          [
+            [
+              -347.2
+            ],
+            [
+              206.9
+            ],
+            [
+              209.7
+            ]
+          ],
+          [
+            [
+              -528.0
+            ],
+            [
+              26.1
+            ],
+            [
+              -40.0
+            ]
+          ],
+          [
+            [
+              -0.29
+            ],
+            [
+              0.01
+            ],
+            [
+              1.0,
+              1.0
+            ]
+          ]
+        ],
+        "expected_primary": [
+          [
+            [
+              32136.9
+            ],
+            [
+              32136.9
+            ]
+          ],
+          [
+            [
+              5906.5,
+              18.4
+            ],
+            [
+              18.5
+            ]
+          ],
+          [
+            [
+              -347.2
+            ],
+            [
+              206.9
+            ]
+          ],
+          [
+            [
+              -528.0
+            ],
+            [
+              26.1
+            ]
+          ],
+          [
+            [
+              -0.29
+            ],
+            [
+              0.01
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "check": "nio-en.html:table_eps_per_ads_label",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:table_supplement_column_not_non_gaap_vehicle_margin",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:quarterly_financial_table_rmb_not_usd",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:financial_primary_source_link",
+      "status": "pass",
+      "detail": [
+        "https://ir.nio.com/news-releases/news-release-details/nio-inc-reports-unaudited-second-quarter-2026-financial-results/"
+      ]
+    },
+    {
+      "check": "nio-en.html:peer_fy2027_adj_plus_basis",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:peer_eeo_date_limit",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:peer_valuation_security_and_accounting_limits",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:brokers_priority_targets_dates_returns_colors",
+      "status": "pass",
+      "detail": [
+        {
+          "firm": "UBS",
+          "ok": true,
+          "return_percent": 64.2
+        },
+        {
+          "firm": "Morgan Stanley",
+          "ok": true,
+          "return_percent": 11.4
+        },
+        {
+          "firm": "JP Morgan",
+          "ok": true,
+          "return_percent": 32.0
+        }
+      ]
+    },
+    {
+      "check": "nio-en.html:no_public_rating_normalization_note",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:compact_anr_reference_source",
+      "status": "pass",
+      "detail": [
+        "Source: Bloomberg ANR (2026/10/09); returns calculated using the displayed 10/08 reference share price of US$3.41."
+      ]
+    },
+    {
+      "check": "nio-en.html:no_public_calculator_attribution",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:four_risk_headings_all_same_dark_style",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:inline_js_syntax_and_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:chart_cache_keys",
+      "status": "pass",
+      "detail": [
+        "nioSegment",
+        "nioProfit",
+        "nioValuation"
+      ]
+    },
+    {
+      "check": "nio-en.html:tabs_and_chart_resize",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:pi_active_no_acceptance_or_storage_write",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:restore_missing_pi_api_functions_from_mu",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:disclaimer_local_mock_no_api_network",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:mu_fixed_interaction_functions",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:mu_explain_interaction",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:dated_nio_ai_evidence_context",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:localized_ai_company_context",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:deliveries_chart_brand_counts_reconcile",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:profit_chart_company_total_gaap_adjusted_bases",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:peer_fy2027_pe_values_and_order",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:localized_verified_peer_names",
+      "status": "pass"
+    },
+    {
+      "check": "nio-en.html:chart_responsive",
+      "status": "pass"
+    },
+    {
+      "check": "three_languages:chart_numeric_parity",
+      "status": "pass"
+    },
+    {
+      "check": "three_languages:chart_dataset_style_parity",
+      "status": "pass"
+    },
+    {
+      "check": "three_languages:financial_table_numeric_parity",
+      "status": "pass"
+    },
+    {
+      "check": "three_languages:risk_format_parity",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:brand_delivery_reconciliation",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:revenue_and_gross_profit_reconciliation",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:adjusted_operating_and_total_net_reconciliation",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:ordinary_shareholder_reconciliation",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:no_unavailable_quarterly_cashflow_amount_invented",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:consensus_and_broker_return_formulas",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:anr_priority_and_industry_separation",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:peer_common_fy2027_multiple_period",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:q3_deliveries_guidance_met_not_financial_actuals",
+      "status": "pass"
+    },
+    {
+      "check": "canonical_template:mu.html",
+      "status": "pass"
+    },
+    {
+      "check": "canonical_template:mu-sc.html",
+      "status": "pass"
+    },
+    {
+      "check": "canonical_template:mu-en.html",
+      "status": "pass"
+    },
+    {
+      "check": "protected_files:ledger_hashes_and_base",
+      "status": "pass"
+    },
+    {
+      "check": "protected_files:infrastructure_exact",
+      "status": "pass",
+      "detail": [
+        "CNAME",
+        "api/gemini.js",
+        "disclaimer.html"
+      ]
+    },
+    {
+      "check": "homepage:nio_fourth_25_cards_other_order_preserved",
+      "status": "pass",
+      "detail": [
+        "MU",
+        "ORCL",
+        "AVGO",
+        "NIO",
+        "NVDA",
+        "AMD",
+        "MCD",
+        "PLTR",
+        "AMZN",
+        "AAPL",
+        "META",
+        "MSFT",
+        "KO",
+        "INTC",
+        "TSLA",
+        "GOOGL",
+        "NFLX",
+        "TSM",
+        "UNH",
+        "MS",
+        "JNJ",
+        "BAC",
+        "GS",
+        "C",
+        "JPM"
+      ]
+    },
+    {
+      "check": "homepage:other_24_card_contents_exact",
+      "status": "pass"
+    },
+    {
+      "check": "homepage:other_24_blocks_byte_exact",
+      "status": "pass"
+    },
+    {
+      "check": "homepage:outside_card_region_byte_exact",
+      "status": "pass"
+    },
+    {
+      "check": "homepage:nio_updated_period_target_and_return",
+      "status": "pass"
+    },
+    {
+      "check": "homepage:ledger_actual_earnings_order",
+      "status": "pass"
+    },
+    {
+      "check": "scope:only_nio_and_homepage_html",
+      "status": "pass",
+      "detail": [
+        "index.html",
+        "nio-en.html",
+        "nio-sc.html",
+        "nio.html",
+        "research/homepage-earnings-order-2026-10-08.json"
+      ]
+    },
+    {
+      "check": "scope:no_source_screenshots_tracked",
+      "status": "pass"
+    },
+    {
+      "check": "git_diff_whitespace",
+      "status": "pass"
+    }
+  ],
+  "page_details": {
+    "nio.html": {
+      "sha256": "8a73e373f2164d1ca0da0a32776c482ae715d5e70ddccd867d6b3b66d8826e05",
+      "mock_runtime": {
+        "charts": [
+          {
+            "canvasId": "segmentRevenueChart",
+            "config": {
+              "type": "doughnut",
+              "data": {
+                "labels": [
+                  "蔚來 (NIO)",
+                  "樂道 (ONVO)",
+                  "螢火蟲 (FIREFLY)"
+                ],
+                "datasets": [
+                  {
+                    "data": [
+                      60945,
+                      29124,
+                      17589
+                    ],
+                    "backgroundColor": [
+                      "#2563eb",
+                      "#10b981",
+                      "#f59e0b"
+                    ],
+                    "borderWidth": 0
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "cutout": "65%"
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "profitabilityChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "營業利潤 /（虧損）",
+                  "合併淨利潤 /（虧損）"
+                ],
+                "datasets": [
+                  {
+                    "label": "GAAP（百萬人民幣）",
+                    "data": [
+                      -347.2,
+                      -528
+                    ],
+                    "backgroundColor": "#94a3b8",
+                    "borderRadius": 4
+                  },
+                  {
+                    "label": "調整後 Non-GAAP（百萬人民幣）",
+                    "data": [
+                      206.9,
+                      26.1
+                    ],
+                    "backgroundColor": "#3b82f6",
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "scales": {
+                  "y": {
+                    "beginAtZero": true,
+                    "grid": {
+                      "color": "#f1f5f9"
+                    }
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "valuationChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "9863 HK (零跑汽車)",
+                  "1211 HK (比亞迪)",
+                  "NIO (蔚來)",
+                  "LI (理想汽車)"
+                ],
+                "datasets": [
+                  {
+                    "label": "FY2027 Forward P/E (EPS Adj+)",
+                    "data": [
+                      8.23,
+                      11.69,
+                      33.05,
+                      37.92
+                    ],
+                    "backgroundColor": [
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(37, 99, 235, 0.95)",
+                      "rgba(148, 163, 184, 0.6)"
+                    ],
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "indexAxis": "y",
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "display": false
+                  }
+                },
+                "scales": {
+                  "x": {
+                    "beginAtZero": true
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          }
+        ],
+        "keys": [
+          "nioSegment",
+          "nioProfit",
+          "nioValuation"
+        ],
+        "tabs": [
+          {
+            "id": "our-comments",
+            "ok": true
+          },
+          {
+            "id": "financials",
+            "ok": true
+          },
+          {
+            "id": "valuation",
+            "ok": true
+          },
+          {
+            "id": "street-comments",
+            "ok": true
+          },
+          {
+            "id": "risks",
+            "ok": true
+          },
+          {
+            "id": "disclaimer",
+            "ok": true
+          }
+        ],
+        "fetches": [
+          "disclaimer.html"
+        ],
+        "storageWrites": 0,
+        "piVisible": true,
+        "bodyLocked": true,
+        "disclaimerLoaded": true,
+        "standardPrompt": "你是 NTAM 投資研究的資深 AI 助理，以專業清楚的繁體中文回答蔚來（NIO）問題。 This page is dated 2026/10/09 and has no live market data. Q2 2026 ended 2026/06/30 and results were published on 2026/09/01. Q3 financial results are not yet published in the verified sources. Q3 delivery actuals were announced on 2026/10/01. Distinguish company actuals, earlier guidance, Bloomberg estimates, calculations and our views. Financial amounts below are RMB million unless stated otherwise; prices and targets are USD per ADS.\nQ2 revenue 32136.9, up 69.1% YoY and 25.9% QoQ. Exact revenue in RMB thousand: vehicle sales 29058229 + other sales 3078632 = total 32136861. Rounded amounts 29058.2 + 3078.6 differ by 0.1 from the reported 32136.9; preserve source rounding. Deliveries 107658 = NIO 60945 + ONVO 29124 + FIREFLY 17589, up 49.4% YoY and 29.0% QoQ. Q1 deliveries 83465; year-ago 72056. Gross profit 5906.5, gross margin 18.4%, vehicle margin 18.5%; Q1 margins 19.0% and 18.8%, year-ago 10.0% and 10.3%. Original Q2 guidance was 110000–115000 deliveries and revenue 32777–34436; actuals were 2.1% and 2.0% below the respective lower bounds.\nQ2 GAAP operating loss 347.219 and consolidated net loss 528.009; adjusted non-GAAP operating profit 206.854 and consolidated net profit 26.064. Public values round to -347.2/-528.0 and +206.9/+26.1. Adjusted net margin is 0.0811%. Q1 adjusted operating profit 66.759 and net profit 43.488; company-rounded QoQ changes are +209.7%/-40.0%. Year-ago adjusted operating loss 4040.795 and net loss 4126.738. Q2 2026 adjustment excludes share-based compensation 554.073; Q2 2025 also excludes organizational optimization charges 441.888. GAAP net loss attributable to ordinary shareholders is 721.591, and adjusted attributable net profit 24.807: -721.591 + 554.073 + redemption accretion 192.325 = 24.807. Bloomberg EEO actual net income uses this ordinary-shareholder basis, not consolidated net income. GAAP basic/diluted EPS per ordinary share or ADS is -RMB0.29, adjusted +RMB0.01. One NIO ADS represents one Class A ordinary share. R&D expenses 2144.918 and SG&A 4424.516; SG&A rose 26.5% QoQ.\nAt June30, the RMB56.7bn cash/investment balance includes cash, cash equivalents, restricted cash, short-term investments and long-term time deposits. It is neither unrestricted cash nor net cash. Cash and cash equivalents alone were 17453.564. The company confirms positive Q2 operating cash flow; exact quarterly OCF, capex and FCF are not verified. Do not infer FCF or OCF from changes in cash balances.\nQ3 guidance issued September1: deliveries 108000–111000 and revenue 33285–34051. Q3 delivery actuals 109178 were within guidance, up 25.4% YoY and 1.4% QoQ. September deliveries 37408; nine-month deliveries 300301. Bloomberg Q3 consensus revenue 33053, EPS Adj+ RMB0.020 and GAAP EPS -RMB0.268 are estimates, not company actuals or guidance. The EEO forecast basic/diluted EPS setting is not visible.\nSeptember27 definitive Geely agreements: RMB640m cash plus 100% equity in Yiyi Internet for 30% of NIO Power. Post-money NIO Power valuation is RMB16bn, not the whole listed NIO group's equity value. NIO China would hold 63.6%, existing investor 6.4%. Regulatory and other closing conditions apply; do not claim completion or count proceeds in Q2 cash. Milestone adjustments may reduce Geely's stake to no less than20%. A separate option for another RMB640m may raise Geely to34% and leave NIO China60%; the option is not committed current proceeds.\nBloomberg ANR dated 2026/10/09: consensus rating4.37/5, 22 Buys,7 Holds,1 Sell. Target US$6.23; Last Price US$3.41 with header On08-Oct. The year2026 is inferred from the paired ANR; it is a reference price, not a verified closing price. Price-only upside82.7%, excluding dividends. Broker priority: UBS, Paul Gong, Buy, target5.60,2026/09/10,+64.2%; Morgan Stanley, Tim Hsiao, Overweight,target3.80,2026/09/28,+11.4%; JP Morgan, Nick Lai, Neutral,target4.50,2026/09/01,+32.0%. Morgan Stanley's raw Overwt/In-Line means stock Overweight plus a separate industry In-Line view. Original broker theses were not supplied; never invent them. Public rating labels have no parenthetical site-classification explanations.\nFY2027 Bloomberg Price/EPS, Adj+: Leapmotor9863HK8.23x, BYD1211HK11.69x, NIO33.05x, Li Auto LI37.92x. All fiscal years end December31; this is not the next-four-quarter period. NIO Next4 Adj+ P/E94.76x, LI384.21x, Leapmotor blank (not zero); NIO FY2026 is also blank. Same Adj+ label does not make adjustments uniform: NIO/LI use U.S. GAAP, Leapmotor IFRS and BYD PRC ASBE. EEO currency CNY; NIO/LI quotes are USD ADSs and HK peers are HKD H shares. Use the displayed Bloomberg multiples, not a cross-currency price/EPS division. One LI ADS represents two ordinary shares, but screenshot EPS is already per ADS: do not divide by2 again. BYD's 2025 bonus and capitalization issue tripled shares; do not readjust the 2026 screenshot. NIO/LI headers show08-Oct; HK headers show intraday times only. Independent EEO observation dates are not shown; do not call these verified same-date closing observations.\nOfficial localized names: Traditional 蔚來/樂道/螢火蟲/零跑汽車/比亞迪/理想汽車; Simplified 蔚来/乐道/萤火虫/零跑汽车/比亚迪/理想汽车; English NIO/ONVO/FIREFLY/Leapmotor/BYD/Li Auto. Follow the page language. Use 我們認為 / 我们认为 / We believe for house analysis. State missing inputs, and never invent figures or broker theses. Wall Street sourcing is only Bloomberg ANR (2026/10/09) and the displayed10/08 reference price US$3.41. Omit calculator attribution and repeated disclaimers. Use HTML <b> for emphasis, not Markdown.\n",
+        "functions": {
+          "switchTab": "function switchTab(e, tabId) {\n        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));\n        document.querySelectorAll('.tab-btn').forEach(el => {\n            el.classList.remove('active', 'border-blue-600', 'text-blue-600');\n            el.classList.add('text-slate-500');\n        });\n        document.getElementById(tabId).classList.add('active');\n        e.currentTarget.classList.remove('text-slate-500');\n        e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');\n\n        // 徹底修復 hidden 畫布無寬高像素之 Chart.js 原生缺陷\n        if (tabId === 'financials') {\n            if (window.charts.nioSegment) window.charts.nioSegment.resize();\n            if (window.charts.nioProfit) window.charts.nioProfit.resize();\n        } else if (tabId === 'valuation') {\n            if (window.charts.nioValuation) window.charts.nioValuation.resize();\n        }\n    }",
+          "acceptPI": "function acceptPI() {\n        sessionStorage.setItem('pi_agreed', 'true');\n        document.getElementById('pi-modal').style.display = 'none';\n        document.body.style.overflow = 'auto';\n    }",
+          "declinePI": "function declinePI() {\n        document.body.innerHTML = `<div style=\"height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;\"><h1 style=\"color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;\">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;\n    }",
+          "callGeminiAPI": "async function callGeminiAPI(prompt, systemInstruction) {\n        try {\n            const response = await fetch('/api/gemini', {\n                method: 'POST', headers: { 'Content-Type': 'application/json' },\n                body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })\n            });\n            const data = await response.json();\n            if (!response.ok) return `連線錯誤：${data.error || '未知錯誤'}`;\n            let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || \"抱歉，無法產生有效回覆。\";\n            return rawText.replace(/\\n/g, '<br>').replace(/\\*\\*(.*?)\\*\\*/g, '<b>$1</b>');\n        } catch (error) { return `網路連線失敗。(${error.message})`; }\n    }",
+          "toggleChat": "function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }",
+          "appendMessage": "function appendMessage(text, isUser) {\n        const msgDiv = document.createElement('div');\n        msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';\n        msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);\n        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;\n    }",
+          "showTypingIndicator": "function showTypingIndicator() {\n        const ind = document.createElement('div'); ind.id = `typing-indicator-${Date.now()}`;\n        ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';\n        ind.innerHTML = '<div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div>';\n        document.getElementById('chat-messages').appendChild(ind);\n        return ind.id;\n    }",
+          "handleChatSubmit": "async function handleChatSubmit(e) {\n        e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;\n        const sendBtn = e.target.querySelector('button[type=\"submit\"]'); if (sendBtn && sendBtn.disabled) return;\n        if (sendBtn) { sendBtn.disabled = true; sendBtn.classList.add('opacity-50', 'cursor-not-allowed'); }\n        input.value = ''; appendMessage(text, true); const typingId = showTypingIndicator();\n        try {\n            const res = await callGeminiAPI(text, standardPrompt);\n            document.getElementById(typingId)?.remove(); appendMessage(res, false);\n        } finally {\n            document.getElementById(typingId)?.remove();\n            if (sendBtn) { sendBtn.disabled = false; sendBtn.classList.remove('opacity-50', 'cursor-not-allowed'); }\n        }\n    }",
+          "explainSelectedTerm": "async function explainSelectedTerm() {\n        document.getElementById('selection-tooltip').classList.add('hidden');\n        document.getElementById('explain-term-title').textContent = selectedText;\n        document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');\n        const res = await callGeminiAPI(`解釋這個蔚來（NIO）財報相關詞彙；本頁資料截至 2026/10/09：${selectedText}`, \"你是蔚來及新能源汽車研究專家。用專業淺白的繁體中文解釋詞彙，限 150 字，重點用 <b> 標籤；沒有資料請說明，不編造即時資訊。\");\n        document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');\n    }",
+          "closeExplainModal": "function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }"
+        }
+      }
+    },
+    "nio-sc.html": {
+      "sha256": "052734f52cd2d533dbb3bfd534ad58dcf7cce5b5cf004f9e397c36295690bc61",
+      "mock_runtime": {
+        "charts": [
+          {
+            "canvasId": "segmentRevenueChart",
+            "config": {
+              "type": "doughnut",
+              "data": {
+                "labels": [
+                  "蔚来 (NIO)",
+                  "乐道 (ONVO)",
+                  "萤火虫 (FIREFLY)"
+                ],
+                "datasets": [
+                  {
+                    "data": [
+                      60945,
+                      29124,
+                      17589
+                    ],
+                    "backgroundColor": [
+                      "#2563eb",
+                      "#10b981",
+                      "#f59e0b"
+                    ],
+                    "borderWidth": 0
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "cutout": "65%"
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "profitabilityChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "营业利润 /（亏损）",
+                  "合并净利润 /（亏损）"
+                ],
+                "datasets": [
+                  {
+                    "label": "GAAP（百万人民币）",
+                    "data": [
+                      -347.2,
+                      -528
+                    ],
+                    "backgroundColor": "#94a3b8",
+                    "borderRadius": 4
+                  },
+                  {
+                    "label": "调整后 Non-GAAP（百万人民币）",
+                    "data": [
+                      206.9,
+                      26.1
+                    ],
+                    "backgroundColor": "#3b82f6",
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "scales": {
+                  "y": {
+                    "beginAtZero": true,
+                    "grid": {
+                      "color": "#f1f5f9"
+                    }
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "valuationChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "9863 HK (零跑汽车)",
+                  "1211 HK (比亚迪)",
+                  "NIO (蔚来)",
+                  "LI (理想汽车)"
+                ],
+                "datasets": [
+                  {
+                    "label": "FY2027 Forward P/E (EPS Adj+)",
+                    "data": [
+                      8.23,
+                      11.69,
+                      33.05,
+                      37.92
+                    ],
+                    "backgroundColor": [
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(37, 99, 235, 0.95)",
+                      "rgba(148, 163, 184, 0.6)"
+                    ],
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "indexAxis": "y",
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "display": false
+                  }
+                },
+                "scales": {
+                  "x": {
+                    "beginAtZero": true
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          }
+        ],
+        "keys": [
+          "nioSegment",
+          "nioProfit",
+          "nioValuation"
+        ],
+        "tabs": [
+          {
+            "id": "our-comments",
+            "ok": true
+          },
+          {
+            "id": "financials",
+            "ok": true
+          },
+          {
+            "id": "valuation",
+            "ok": true
+          },
+          {
+            "id": "street-comments",
+            "ok": true
+          },
+          {
+            "id": "risks",
+            "ok": true
+          },
+          {
+            "id": "disclaimer",
+            "ok": true
+          }
+        ],
+        "fetches": [
+          "disclaimer.html"
+        ],
+        "storageWrites": 0,
+        "piVisible": true,
+        "bodyLocked": true,
+        "disclaimerLoaded": true,
+        "standardPrompt": "你是 NTAM 投资研究的资深 AI 助理，以专业清晰的简体中文回答蔚来（NIO）问题。 This page is dated 2026/10/09 and has no live market data. Q2 2026 ended 2026/06/30 and results were published on 2026/09/01. Q3 financial results are not yet published in the verified sources. Q3 delivery actuals were announced on 2026/10/01. Distinguish company actuals, earlier guidance, Bloomberg estimates, calculations and our views. Financial amounts below are RMB million unless stated otherwise; prices and targets are USD per ADS.\nQ2 revenue 32136.9, up 69.1% YoY and 25.9% QoQ. Exact revenue in RMB thousand: vehicle sales 29058229 + other sales 3078632 = total 32136861. Rounded amounts 29058.2 + 3078.6 differ by 0.1 from the reported 32136.9; preserve source rounding. Deliveries 107658 = NIO 60945 + ONVO 29124 + FIREFLY 17589, up 49.4% YoY and 29.0% QoQ. Q1 deliveries 83465; year-ago 72056. Gross profit 5906.5, gross margin 18.4%, vehicle margin 18.5%; Q1 margins 19.0% and 18.8%, year-ago 10.0% and 10.3%. Original Q2 guidance was 110000–115000 deliveries and revenue 32777–34436; actuals were 2.1% and 2.0% below the respective lower bounds.\nQ2 GAAP operating loss 347.219 and consolidated net loss 528.009; adjusted non-GAAP operating profit 206.854 and consolidated net profit 26.064. Public values round to -347.2/-528.0 and +206.9/+26.1. Adjusted net margin is 0.0811%. Q1 adjusted operating profit 66.759 and net profit 43.488; company-rounded QoQ changes are +209.7%/-40.0%. Year-ago adjusted operating loss 4040.795 and net loss 4126.738. Q2 2026 adjustment excludes share-based compensation 554.073; Q2 2025 also excludes organizational optimization charges 441.888. GAAP net loss attributable to ordinary shareholders is 721.591, and adjusted attributable net profit 24.807: -721.591 + 554.073 + redemption accretion 192.325 = 24.807. Bloomberg EEO actual net income uses this ordinary-shareholder basis, not consolidated net income. GAAP basic/diluted EPS per ordinary share or ADS is -RMB0.29, adjusted +RMB0.01. One NIO ADS represents one Class A ordinary share. R&D expenses 2144.918 and SG&A 4424.516; SG&A rose 26.5% QoQ.\nAt June30, the RMB56.7bn cash/investment balance includes cash, cash equivalents, restricted cash, short-term investments and long-term time deposits. It is neither unrestricted cash nor net cash. Cash and cash equivalents alone were 17453.564. The company confirms positive Q2 operating cash flow; exact quarterly OCF, capex and FCF are not verified. Do not infer FCF or OCF from changes in cash balances.\nQ3 guidance issued September1: deliveries 108000–111000 and revenue 33285–34051. Q3 delivery actuals 109178 were within guidance, up 25.4% YoY and 1.4% QoQ. September deliveries 37408; nine-month deliveries 300301. Bloomberg Q3 consensus revenue 33053, EPS Adj+ RMB0.020 and GAAP EPS -RMB0.268 are estimates, not company actuals or guidance. The EEO forecast basic/diluted EPS setting is not visible.\nSeptember27 definitive Geely agreements: RMB640m cash plus 100% equity in Yiyi Internet for 30% of NIO Power. Post-money NIO Power valuation is RMB16bn, not the whole listed NIO group's equity value. NIO China would hold 63.6%, existing investor 6.4%. Regulatory and other closing conditions apply; do not claim completion or count proceeds in Q2 cash. Milestone adjustments may reduce Geely's stake to no less than20%. A separate option for another RMB640m may raise Geely to34% and leave NIO China60%; the option is not committed current proceeds.\nBloomberg ANR dated 2026/10/09: consensus rating4.37/5, 22 Buys,7 Holds,1 Sell. Target US$6.23; Last Price US$3.41 with header On08-Oct. The year2026 is inferred from the paired ANR; it is a reference price, not a verified closing price. Price-only upside82.7%, excluding dividends. Broker priority: UBS, Paul Gong, Buy, target5.60,2026/09/10,+64.2%; Morgan Stanley, Tim Hsiao, Overweight,target3.80,2026/09/28,+11.4%; JP Morgan, Nick Lai, Neutral,target4.50,2026/09/01,+32.0%. Morgan Stanley's raw Overwt/In-Line means stock Overweight plus a separate industry In-Line view. Original broker theses were not supplied; never invent them. Public rating labels have no parenthetical site-classification explanations.\nFY2027 Bloomberg Price/EPS, Adj+: Leapmotor9863HK8.23x, BYD1211HK11.69x, NIO33.05x, Li Auto LI37.92x. All fiscal years end December31; this is not the next-four-quarter period. NIO Next4 Adj+ P/E94.76x, LI384.21x, Leapmotor blank (not zero); NIO FY2026 is also blank. Same Adj+ label does not make adjustments uniform: NIO/LI use U.S. GAAP, Leapmotor IFRS and BYD PRC ASBE. EEO currency CNY; NIO/LI quotes are USD ADSs and HK peers are HKD H shares. Use the displayed Bloomberg multiples, not a cross-currency price/EPS division. One LI ADS represents two ordinary shares, but screenshot EPS is already per ADS: do not divide by2 again. BYD's 2025 bonus and capitalization issue tripled shares; do not readjust the 2026 screenshot. NIO/LI headers show08-Oct; HK headers show intraday times only. Independent EEO observation dates are not shown; do not call these verified same-date closing observations.\nOfficial localized names: Traditional 蔚來/樂道/螢火蟲/零跑汽車/比亞迪/理想汽車; Simplified 蔚来/乐道/萤火虫/零跑汽车/比亚迪/理想汽车; English NIO/ONVO/FIREFLY/Leapmotor/BYD/Li Auto. Follow the page language. Use 我們認為 / 我们认为 / We believe for house analysis. State missing inputs, and never invent figures or broker theses. Wall Street sourcing is only Bloomberg ANR (2026/10/09) and the displayed10/08 reference price US$3.41. Omit calculator attribution and repeated disclaimers. Use HTML <b> for emphasis, not Markdown.\n",
+        "functions": {
+          "switchTab": "function switchTab(e, tabId) {\n        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));\n        document.querySelectorAll('.tab-btn').forEach(el => {\n            el.classList.remove('active', 'border-blue-600', 'text-blue-600');\n            el.classList.add('text-slate-500');\n        });\n        document.getElementById(tabId).classList.add('active');\n        e.currentTarget.classList.remove('text-slate-500');\n        e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');\n\n        // 彻底修复 hidden 画布无宽高像素之 Chart.js 原生缺陷\n        if (tabId === 'financials') {\n            if (window.charts.nioSegment) window.charts.nioSegment.resize();\n            if (window.charts.nioProfit) window.charts.nioProfit.resize();\n        } else if (tabId === 'valuation') {\n            if (window.charts.nioValuation) window.charts.nioValuation.resize();\n        }\n    }",
+          "acceptPI": "function acceptPI() {\n        sessionStorage.setItem('pi_agreed', 'true');\n        document.getElementById('pi-modal').style.display = 'none';\n        document.body.style.overflow = 'auto';\n    }",
+          "declinePI": "function declinePI() {\n        document.body.innerHTML = `<div style=\"height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;\"><h1 style=\"color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;\">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;\n    }",
+          "callGeminiAPI": "async function callGeminiAPI(prompt, systemInstruction) {\n        try {\n            const response = await fetch('/api/gemini', {\n                method: 'POST', headers: { 'Content-Type': 'application/json' },\n                body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })\n            });\n            const data = await response.json();\n            if (!response.ok) return `连线错误：${data.error || '未知错误'}`;\n            let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || \"抱歉，无法产生有效回复。\";\n            return rawText.replace(/\\n/g, '<br>').replace(/\\*\\*(.*?)\\*\\*/g, '<b>$1</b>');\n        } catch (error) { return `网络连线失败。(${error.message})`; }\n    }",
+          "toggleChat": "function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }",
+          "appendMessage": "function appendMessage(text, isUser) {\n        const msgDiv = document.createElement('div');\n        msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';\n        msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);\n        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;\n    }",
+          "showTypingIndicator": "function showTypingIndicator() {\n        const ind = document.createElement('div'); ind.id = 'typing-indicator';\n        ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';\n        ind.innerHTML = '<div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div>';\n        document.getElementById('chat-messages').appendChild(ind);\n    }",
+          "handleChatSubmit": "async function handleChatSubmit(e) {\n        e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;\n        input.value = ''; appendMessage(text, true); showTypingIndicator();\n        const res = await callGeminiAPI(text, standardPrompt);\n        document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);\n    }",
+          "explainSelectedTerm": "async function explainSelectedTerm() {\n        document.getElementById('selection-tooltip').classList.add('hidden');\n        document.getElementById('explain-term-title').textContent = selectedText;\n        document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');\n        const res = await callGeminiAPI(`解释这个蔚来（NIO）财报相关词汇；本页资料截至 2026/10/09：${selectedText}`, \"你是蔚来及新能源汽车研究专家。用专业易懂的简体中文解释词汇，限 150 字，重点用 <b> 标签；没有资料请说明，不编造实时信息。\");\n        document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');\n    }",
+          "closeExplainModal": "function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }"
+        }
+      }
+    },
+    "nio-en.html": {
+      "sha256": "947fb34f63cb30207168b27140c4de522eda1c0d19eeb73df54300825a0bf1c1",
+      "mock_runtime": {
+        "charts": [
+          {
+            "canvasId": "segmentRevenueChart",
+            "config": {
+              "type": "doughnut",
+              "data": {
+                "labels": [
+                  "NIO",
+                  "ONVO",
+                  "FIREFLY"
+                ],
+                "datasets": [
+                  {
+                    "data": [
+                      60945,
+                      29124,
+                      17589
+                    ],
+                    "backgroundColor": [
+                      "#2563eb",
+                      "#10b981",
+                      "#f59e0b"
+                    ],
+                    "borderWidth": 0
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "cutout": "65%"
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "profitabilityChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "Operating Profit / (Loss)",
+                  "Consolidated Net Profit / (Loss)"
+                ],
+                "datasets": [
+                  {
+                    "label": "GAAP (RMB Millions)",
+                    "data": [
+                      -347.2,
+                      -528
+                    ],
+                    "backgroundColor": "#94a3b8",
+                    "borderRadius": 4
+                  },
+                  {
+                    "label": "Adjusted Non-GAAP (RMB Millions)",
+                    "data": [
+                      206.9,
+                      26.1
+                    ],
+                    "backgroundColor": "#3b82f6",
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "scales": {
+                  "y": {
+                    "beginAtZero": true,
+                    "grid": {
+                      "color": "#f1f5f9"
+                    }
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "valuationChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "9863 HK (Leapmotor)",
+                  "1211 HK (BYD)",
+                  "NIO",
+                  "LI (Li Auto)"
+                ],
+                "datasets": [
+                  {
+                    "label": "FY2027 Forward P/E (EPS Adj+)",
+                    "data": [
+                      8.23,
+                      11.69,
+                      33.05,
+                      37.92
+                    ],
+                    "backgroundColor": [
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(37, 99, 235, 0.95)",
+                      "rgba(148, 163, 184, 0.6)"
+                    ],
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "indexAxis": "y",
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "display": false
+                  }
+                },
+                "scales": {
+                  "x": {
+                    "beginAtZero": true
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          }
+        ],
+        "keys": [
+          "nioSegment",
+          "nioProfit",
+          "nioValuation"
+        ],
+        "tabs": [
+          {
+            "id": "our-comments",
+            "ok": true
+          },
+          {
+            "id": "financials",
+            "ok": true
+          },
+          {
+            "id": "valuation",
+            "ok": true
+          },
+          {
+            "id": "street-comments",
+            "ok": true
+          },
+          {
+            "id": "risks",
+            "ok": true
+          },
+          {
+            "id": "disclaimer",
+            "ok": true
+          }
+        ],
+        "fetches": [
+          "disclaimer.html"
+        ],
+        "storageWrites": 0,
+        "piVisible": true,
+        "bodyLocked": true,
+        "disclaimerLoaded": true,
+        "standardPrompt": "You are a senior NTAM investment-research AI assistant. Answer NIO Inc. questions in clear, professional English. This page is dated 2026/10/09 and has no live market data. Q2 2026 ended 2026/06/30 and results were published on 2026/09/01. Q3 financial results are not yet published in the verified sources. Q3 delivery actuals were announced on 2026/10/01. Distinguish company actuals, earlier guidance, Bloomberg estimates, calculations and our views. Financial amounts below are RMB million unless stated otherwise; prices and targets are USD per ADS.\nQ2 revenue 32136.9, up 69.1% YoY and 25.9% QoQ. Exact revenue in RMB thousand: vehicle sales 29058229 + other sales 3078632 = total 32136861. Rounded amounts 29058.2 + 3078.6 differ by 0.1 from the reported 32136.9; preserve source rounding. Deliveries 107658 = NIO 60945 + ONVO 29124 + FIREFLY 17589, up 49.4% YoY and 29.0% QoQ. Q1 deliveries 83465; year-ago 72056. Gross profit 5906.5, gross margin 18.4%, vehicle margin 18.5%; Q1 margins 19.0% and 18.8%, year-ago 10.0% and 10.3%. Original Q2 guidance was 110000–115000 deliveries and revenue 32777–34436; actuals were 2.1% and 2.0% below the respective lower bounds.\nQ2 GAAP operating loss 347.219 and consolidated net loss 528.009; adjusted non-GAAP operating profit 206.854 and consolidated net profit 26.064. Public values round to -347.2/-528.0 and +206.9/+26.1. Adjusted net margin is 0.0811%. Q1 adjusted operating profit 66.759 and net profit 43.488; company-rounded QoQ changes are +209.7%/-40.0%. Year-ago adjusted operating loss 4040.795 and net loss 4126.738. Q2 2026 adjustment excludes share-based compensation 554.073; Q2 2025 also excludes organizational optimization charges 441.888. GAAP net loss attributable to ordinary shareholders is 721.591, and adjusted attributable net profit 24.807: -721.591 + 554.073 + redemption accretion 192.325 = 24.807. Bloomberg EEO actual net income uses this ordinary-shareholder basis, not consolidated net income. GAAP basic/diluted EPS per ordinary share or ADS is -RMB0.29, adjusted +RMB0.01. One NIO ADS represents one Class A ordinary share. R&D expenses 2144.918 and SG&A 4424.516; SG&A rose 26.5% QoQ.\nAt June30, the RMB56.7bn cash/investment balance includes cash, cash equivalents, restricted cash, short-term investments and long-term time deposits. It is neither unrestricted cash nor net cash. Cash and cash equivalents alone were 17453.564. The company confirms positive Q2 operating cash flow; exact quarterly OCF, capex and FCF are not verified. Do not infer FCF or OCF from changes in cash balances.\nQ3 guidance issued September1: deliveries 108000–111000 and revenue 33285–34051. Q3 delivery actuals 109178 were within guidance, up 25.4% YoY and 1.4% QoQ. September deliveries 37408; nine-month deliveries 300301. Bloomberg Q3 consensus revenue 33053, EPS Adj+ RMB0.020 and GAAP EPS -RMB0.268 are estimates, not company actuals or guidance. The EEO forecast basic/diluted EPS setting is not visible.\nSeptember27 definitive Geely agreements: RMB640m cash plus 100% equity in Yiyi Internet for 30% of NIO Power. Post-money NIO Power valuation is RMB16bn, not the whole listed NIO group's equity value. NIO China would hold 63.6%, existing investor 6.4%. Regulatory and other closing conditions apply; do not claim completion or count proceeds in Q2 cash. Milestone adjustments may reduce Geely's stake to no less than20%. A separate option for another RMB640m may raise Geely to34% and leave NIO China60%; the option is not committed current proceeds.\nBloomberg ANR dated 2026/10/09: consensus rating4.37/5, 22 Buys,7 Holds,1 Sell. Target US$6.23; Last Price US$3.41 with header On08-Oct. The year2026 is inferred from the paired ANR; it is a reference price, not a verified closing price. Price-only upside82.7%, excluding dividends. Broker priority: UBS, Paul Gong, Buy, target5.60,2026/09/10,+64.2%; Morgan Stanley, Tim Hsiao, Overweight,target3.80,2026/09/28,+11.4%; JP Morgan, Nick Lai, Neutral,target4.50,2026/09/01,+32.0%. Morgan Stanley's raw Overwt/In-Line means stock Overweight plus a separate industry In-Line view. Original broker theses were not supplied; never invent them. Public rating labels have no parenthetical site-classification explanations.\nFY2027 Bloomberg Price/EPS, Adj+: Leapmotor9863HK8.23x, BYD1211HK11.69x, NIO33.05x, Li Auto LI37.92x. All fiscal years end December31; this is not the next-four-quarter period. NIO Next4 Adj+ P/E94.76x, LI384.21x, Leapmotor blank (not zero); NIO FY2026 is also blank. Same Adj+ label does not make adjustments uniform: NIO/LI use U.S. GAAP, Leapmotor IFRS and BYD PRC ASBE. EEO currency CNY; NIO/LI quotes are USD ADSs and HK peers are HKD H shares. Use the displayed Bloomberg multiples, not a cross-currency price/EPS division. One LI ADS represents two ordinary shares, but screenshot EPS is already per ADS: do not divide by2 again. BYD's 2025 bonus and capitalization issue tripled shares; do not readjust the 2026 screenshot. NIO/LI headers show08-Oct; HK headers show intraday times only. Independent EEO observation dates are not shown; do not call these verified same-date closing observations.\nOfficial localized names: Traditional 蔚來/樂道/螢火蟲/零跑汽車/比亞迪/理想汽車; Simplified 蔚来/乐道/萤火虫/零跑汽车/比亚迪/理想汽车; English NIO/ONVO/FIREFLY/Leapmotor/BYD/Li Auto. Follow the page language. Use 我們認為 / 我们认为 / We believe for house analysis. State missing inputs, and never invent figures or broker theses. Wall Street sourcing is only Bloomberg ANR (2026/10/09) and the displayed10/08 reference price US$3.41. Omit calculator attribution and repeated disclaimers. Use HTML <b> for emphasis, not Markdown.\n",
+        "functions": {
+          "switchTab": "function switchTab(e, tabId) {\n        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));\n        document.querySelectorAll('.tab-btn').forEach(el => {\n            el.classList.remove('active', 'border-blue-600', 'text-blue-600');\n            el.classList.add('text-slate-500');\n        });\n        document.getElementById(tabId).classList.add('active');\n        e.currentTarget.classList.remove('text-slate-500');\n        e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');\n\n        // Fix hidden canvas sizing bugs native to Chart.js\n        if (tabId === 'financials') {\n            if (window.charts.nioSegment) window.charts.nioSegment.resize();\n            if (window.charts.nioProfit) window.charts.nioProfit.resize();\n        } else if (tabId === 'valuation') {\n            if (window.charts.nioValuation) window.charts.nioValuation.resize();\n        }\n    }",
+          "acceptPI": "function acceptPI() {\n        sessionStorage.setItem('pi_agreed', 'true');\n        document.getElementById('pi-modal').style.display = 'none';\n        document.body.style.overflow = 'auto';\n    }",
+          "declinePI": "function declinePI() {\n        document.body.innerHTML = `<div style=\"height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;\"><h1 style=\"color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;\">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;\n    }",
+          "callGeminiAPI": "async function callGeminiAPI(prompt, systemInstruction) {\n        try {\n            const response = await fetch('/api/gemini', {\n                method: 'POST', headers: { 'Content-Type': 'application/json' },\n                body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })\n            });\n            const data = await response.json();\n            if (!response.ok) return `Connection Error: ${data.error || 'Unknown Error'}`;\n            let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || \"Apologies, unable to generate a valid response.\";\n            return rawText.replace(/\\n/g, '<br>').replace(/\\*\\*(.*?)\\*\\*/g, '<b>$1</b>');\n        } catch (error) { return `Network connection failed. (${error.message})`; }\n    }",
+          "toggleChat": "function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }",
+          "appendMessage": "function appendMessage(text, isUser) {\n        const msgDiv = document.createElement('div');\n        msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';\n        msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);\n        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;\n    }",
+          "showTypingIndicator": "function showTypingIndicator() {\n        const ind = document.createElement('div'); ind.id = 'typing-indicator';\n        ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';\n        ind.innerHTML = '<div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div>';\n        document.getElementById('chat-messages').appendChild(ind);\n    }",
+          "handleChatSubmit": "async function handleChatSubmit(e) {\n        e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;\n        input.value = ''; appendMessage(text, true); showTypingIndicator();\n        const res = await callGeminiAPI(text, standardPrompt);\n        document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);\n    }",
+          "explainSelectedTerm": "async function explainSelectedTerm() {\n        document.getElementById('selection-tooltip').classList.add('hidden');\n        document.getElementById('explain-term-title').textContent = selectedText;\n        document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');\n        const res = await callGeminiAPI(`Explain this NIO financial/earnings term; this page is dated 2026/10/09: ${selectedText}`, \"You are a NIO and electric-vehicle research expert. Explain the term in accessible professional English, limited to 150 words, using <b> tags for emphasis. State information gaps; do not invent live data.\");\n        document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');\n    }",
+          "closeExplainModal": "function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }"
+        }
+      }
+    }
+  },
+  "limitations": [
+    "Mock VM checks are not real-browser rendering or live Chart.js rasterization.",
+    "No live AI call, PI acceptance, PI storage write, modal removal/hiding or access-control bypass was performed.",
+    "Original NIO PI modal and disclaimer legal/loading content are preserved. Missing PI/API/chat functions are restored from corresponding MU masters; these are not claimed to be unchanged from broken old NIO implementations.",
+    "Authoritative-source and screenshot review is recorded in the evidence ledger; this script reconciles the implementation to that evidence.",
+    "ANR is dated2026/10/09; reference quote says On08-Oct without a year or verified close. EEO independent dates are absent.",
+    "FY2027 Adj+ P/E is a common displayed period, not a common accounting framework or the Next4 quarter window.",
+    "Real browser and deployed HTTP content checks, if performed, are separately documented in the release workflow."
+  ]
+}

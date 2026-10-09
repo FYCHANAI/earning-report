@@ -1,5 +1,19 @@
 # NTAM investment research website
 
+## NIO Q2 2026 update — 9 October 2026
+
+All three NIO reports now follow their corresponding MU language masters, with six tabs and dark risk headings throughout. They cover the quarter ended 30 June 2026, announced on 1 September, plus the subsequent Q3 delivery update and conditional September Geely energy agreements. The homepage NIO card moves to fourth by earnings publication date; the other 24 cards retain their content and relative order.
+
+The report separates consolidated losses/profits from earnings attributable to ordinary shareholders: Q2 GAAP consolidated net loss is RMB528.0m, adjusted consolidated net profit RMB26.1m, and the corresponding ordinary-shareholder amounts are negative RMB721.6m and positive RMB24.8m. Q3 deliveries of 109,178 are actuals; Q3 revenue remains guidance or consensus. The RMB56.7bn cash and investment balance includes restricted cash and is not free cash flow. No unverified quarterly OCF, capex or FCF amount is filled in. Company-published QoQ growth percentages are retained with their rounding differences documented in the ledger.
+
+Peer valuation uses the common FY2027 Bloomberg Price/EPS, Adj+ field: Leapmotor 8.23x, BYD 11.69x, NIO 33.05x and Li Auto 37.92x. These are annual estimates, not next-four-quarter multiples. USD ADS quotes and HKD H-share quotes are not divided directly by CNY EPS, and neither LI's ADS ratio nor BYD's prior share issue is applied twice. The ANR snapshot is dated 9 October; its US$3.41 reference quote says 8 October but is not verified as a closing price. The US$6.23 consensus target implies 82.7% price upside. Broker cards follow UBS, Morgan Stanley and JP Morgan, without invented bank theses or public rating-classification parentheticals.
+
+Original NIO PI notices and button DOM are preserved, as are disclaimer content and loading behavior, apart from renumbering the seventh section to the sixth. The old NIO pages lacked the functions referenced by their PI buttons and had incomplete chat handlers; the required MU migration carries over the existing MU gate, handlers, API adapter, chat and term-explanation behavior. Shared API and hosting files remain unchanged. Tests never accept or bypass the PI gate. Mocked checks and actual browser/deployment observations are recorded separately.
+
+- [NIO source and calculation ledger](research/nio-2026-q2-2026-10-09.json)
+- [NIO validation record](research/nio-2026-q2-validation.json)
+- [Homepage earnings-date order](research/homepage-earnings-order-2026-10-08.json)
+
 ## McDonald's Q2 2026 update — 9 October 2026
 
 The three MCD reports follow their respective MU language masters and cover the quarter ended 30 June 2026, announced on 4 August. Official results, the SEC 10-Q and the 23 September NEXT investor update are reconciled with owner-provided Bloomberg ANR/EEO screenshots. Traditional/Simplified Chinese names use 麥當勞 / 麦当劳. MCD moves to sixth on the homepage, after AMD under the stable same-day ordering rule; the other 24 cards retain their content.
