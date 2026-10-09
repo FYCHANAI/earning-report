@@ -1,0 +1,1439 @@
+{
+  "schema_version": 1,
+  "report": "McDonald's Q2 2026 — MU template update",
+  "report_updated_on": "2026-10-09",
+  "base_commit": "8493f9da505c8d65789d6896e17d11c7509b7f25",
+  "official_company_evidence": {
+    "ticker": "MCD",
+    "research_as_of": "2026-10-09",
+    "latest_verified_report": {
+      "period": "Q2 2026",
+      "period_start": "2026-04-01",
+      "period_end": "2026-06-30",
+      "earnings_publication_date": "2026-08-04",
+      "sec_10q_filing_date": "2026-08-07",
+      "currency": "USD",
+      "financial_units": "millions, except per-share data and percentages",
+      "primary_basis": "US GAAP; adjusted/non-GAAP figures separately identified",
+      "latest_report_evidence": "Official investor financial-information and news pages list Q2 2026 as most recent earnings; September 23 NEXT release is an investor update, not Q3 earnings.",
+      "source_ids": [
+        "earnings_corporate",
+        "earnings_8k",
+        "filing_index",
+        "latest_ir"
+      ]
+    },
+    "official_names": {
+      "traditional_chinese": {
+        "value": "麥當勞",
+        "source_id": "name_tc"
+      },
+      "simplified_chinese": {
+        "value": "麦当劳",
+        "source_id": "name_sc"
+      },
+      "english": "McDonald's"
+    },
+    "quarterly": {
+      "periods": [
+        "Q2 2026",
+        "Q2 2025"
+      ],
+      "revenue": [
+        7099,
+        6843
+      ],
+      "revenue_reported_yoy_pct_company_rounded": 4,
+      "revenue_constant_currency_yoy_pct": 2,
+      "gaap_operating_income": [
+        3338,
+        3232
+      ],
+      "adjusted_operating_income": [
+        3391,
+        3275
+      ],
+      "gaap_net_income": [
+        2362,
+        2253
+      ],
+      "adjusted_net_income": [
+        2402,
+        2286
+      ],
+      "gaap_diluted_eps": [
+        3.32,
+        3.14
+      ],
+      "adjusted_diluted_eps": [
+        3.38,
+        3.19
+      ],
+      "diluted_weighted_average_shares_millions": [
+        711.1,
+        717.6
+      ],
+      "excluded_pretax_charges": [
+        52,
+        43
+      ],
+      "excluded_aftertax_charges": [
+        40,
+        34
+      ],
+      "excluded_eps": [
+        0.06,
+        0.05
+      ],
+      "excluded_charge_description": "Primarily restructuring associated with Accelerating the Organization",
+      "cash_from_operations": [
+        2807,
+        1998
+      ],
+      "capital_expenditures_outflow_absolute": [
+        831,
+        744
+      ],
+      "free_cash_flow_derived": [
+        1976,
+        1254
+      ],
+      "effective_tax_rate_pct": [
+        19.5,
+        21.3
+      ],
+      "sources": {
+        "income_eps": [
+          "earnings_8k",
+          "supplement"
+        ],
+        "cash_flow": [
+          "10q"
+        ],
+        "tax_rate": [
+          "supplement"
+        ]
+      }
+    },
+    "first_half": {
+      "periods": [
+        "H1 2026",
+        "H1 2025"
+      ],
+      "period_end": "2026-06-30",
+      "revenue": [
+        13616,
+        12799
+      ],
+      "gaap_operating_income": [
+        6292,
+        5880
+      ],
+      "adjusted_operating_income": [
+        6391,
+        5989
+      ],
+      "gaap_net_income": [
+        4345,
+        4121
+      ],
+      "adjusted_net_income": [
+        4421,
+        4206
+      ],
+      "gaap_diluted_eps": [
+        6.1,
+        5.74
+      ],
+      "adjusted_diluted_eps": [
+        6.21,
+        5.86
+      ],
+      "cash_from_operations": [
+        5222,
+        4426
+      ],
+      "capital_expenditures_outflow_absolute": [
+        1516,
+        1295
+      ],
+      "free_cash_flow_derived": [
+        3706,
+        3131
+      ],
+      "reported_gaap_operating_margin_pct": [
+        46.2,
+        45.9
+      ],
+      "reported_adjusted_operating_margin_pct": [
+        46.9,
+        46.8
+      ],
+      "source_ids": [
+        "earnings_8k",
+        "supplement",
+        "10q"
+      ]
+    },
+    "segment_revenue_total_including_other_revenues": {
+      "periods": [
+        "Q2 2026",
+        "Q2 2025"
+      ],
+      "US": [
+        2827,
+        2781
+      ],
+      "International_Operated_Markets": [
+        3603,
+        3462
+      ],
+      "International_Developmental_Licensed_Markets_and_Corporate": [
+        669,
+        600
+      ],
+      "total": [
+        7099,
+        6843
+      ],
+      "basis": "10-Q Note Segment Information, total revenue after intercompany eliminations; includes allocated other revenues",
+      "source_id": "10q"
+    },
+    "revenue_components": {
+      "periods": [
+        "Q2 2026",
+        "Q2 2025"
+      ],
+      "franchised_revenue": [
+        4393,
+        4213
+      ],
+      "company_owned_and_operated_sales": [
+        2525,
+        2458
+      ],
+      "other_revenue": [
+        182,
+        172
+      ],
+      "reported_total": [
+        7099,
+        6843
+      ],
+      "rounding_note": "2026 displayed components sum to 7100 rather than 7099 due to source rounding; do not alter source values to force reconciliation.",
+      "source_id": "earnings_8k"
+    },
+    "segment_operating_income": {
+      "periods": [
+        "Q2 2026",
+        "Q2 2025"
+      ],
+      "US": [
+        1573,
+        1527
+      ],
+      "International_Operated_Markets": [
+        1723,
+        1635
+      ],
+      "International_Developmental_Licensed_Markets_and_Corporate": [
+        42,
+        70
+      ],
+      "total": [
+        3338,
+        3232
+      ],
+      "source_id": "supplement"
+    },
+    "comparable_sales_yoy_pct": {
+      "periods": [
+        "Q2 2026",
+        "Q2 2025"
+      ],
+      "global": [
+        1.3,
+        3.8
+      ],
+      "US": [
+        0.8,
+        2.5
+      ],
+      "International_Operated_Markets": [
+        1.5,
+        4.0
+      ],
+      "International_Developmental_Licensed_Markets": [
+        1.9,
+        5.6
+      ],
+      "US_2026_drivers": "Positive average check including product mix; negative comparable guest counts partly offset growth.",
+      "IOM_2026_drivers": "Germany, Australia and UK positive; France offset.",
+      "IDL_2026_drivers": "Japan led; China negative comparable sales partly offset growth.",
+      "definition": "Same-period prior-year growth at restaurants open at least 13 months; excludes FX translation and hyperinflationary-market sales.",
+      "source_id": "earnings_8k"
+    },
+    "operating_indicators": {
+      "Q2_2026_systemwide_sales_bn_rounded": 37,
+      "Q2_2026_systemwide_sales_yoy_pct": 5,
+      "Q2_2026_systemwide_sales_constant_currency_yoy_pct": 4,
+      "loyalty_ttm_sales_bn": 40,
+      "loyalty_ttm_sales_yoy_pct": "over 20",
+      "loyalty_90day_active_users_millions": "nearly 220",
+      "loyalty_90day_active_users_yoy_pct": 13,
+      "loyalty_markets": 70,
+      "system_restaurants_at_2026_06_30": 46028,
+      "franchised_restaurant_share_pct_approx": 95,
+      "source_ids": [
+        "earnings_corporate",
+        "supplement"
+      ]
+    },
+    "fy2026_guidance_as_of_2026_08_04": {
+      "unit_expansion_systemwide_sales_growth_contribution_pct_cc": "approximately 2.5",
+      "sga_share_systemwide_sales_pct": "about 2.2",
+      "operating_margin_pct": "mid-to-high 40% range",
+      "interest_expense_growth_pct": [
+        4,
+        6
+      ],
+      "effective_tax_rate_pct": [
+        21,
+        23
+      ],
+      "capex_bn": [
+        3.7,
+        3.9
+      ],
+      "gross_restaurant_openings": "approximately 2600",
+      "net_restaurant_additions": "approximately 2100",
+      "global_units_target_by_2028": 50000,
+      "free_cash_flow_conversion_pct": "low-to-mid 80% range",
+      "source_id": "supplement"
+    },
+    "next_strategy_update_2026_09_23": {
+      "source_id": "next_strategy",
+      "operating_margin_target_by_2030": "low-to-mid 50% range",
+      "restaurant_efficiency_target_gross_bps": 250,
+      "restaurant_efficiency_scope": "US and International Operated Markets; timing tied to full NEXT deployment",
+      "chicken_market_share_target_gain_by_2030_pp": 1.5,
+      "beverage_market_share_target_gain_by_2030_pp": 1.5,
+      "sga_systemwide_sales_share_by_2030_pct": "about 1.9",
+      "annual_baseline_capex_2027_to_2030_bn": "about 3",
+      "additional_cumulative_capital_partnering_support_2027_to_2030_bn": [
+        1.5,
+        2.0
+      ],
+      "total_partnering_support_including_rent_relief_and_capital_through_2030_bn": "approximately 5",
+      "total_partnering_support_including_rent_relief_and_capital_through_2036_bn": "approximately 8.5",
+      "fcf_conversion_target_by_2030_pct": "mid-to-high 80% range",
+      "unit_expansion_systemwide_sales_contribution_2027_pct": "nearly 2.5",
+      "unit_expansion_systemwide_sales_contribution_2030_pct": "about 2",
+      "technology": "GenAI-enabled ArchIQ",
+      "make_it_golden_program_start": "2026-10-05",
+      "basis_note": "Forward-looking strategic targets, not realized results or quarterly guidance. 250 bps is gross restaurant-level efficiency, not 250 bps guaranteed corporate operating-margin improvement. Capital partnering support is cumulative, not annual."
+    },
+    "calculations_from_rounded_source_values": {
+      "Q2_revenue_yoy_pct": 3.741049247406103,
+      "Q2_gaap_operating_income_yoy_pct": 3.279702970297027,
+      "Q2_adjusted_operating_income_yoy_pct": 3.5419847328244325,
+      "Q2_gaap_net_income_yoy_pct": 4.837993786063022,
+      "Q2_adjusted_net_income_yoy_pct": 5.074365704286965,
+      "Q2_gaap_eps_yoy_pct": 5.73248407643312,
+      "Q2_adjusted_eps_yoy_pct": 5.956112852664575,
+      "Q2_gaap_operating_margin_pct": [
+        47.02070714185096,
+        47.23074674850211
+      ],
+      "Q2_adjusted_operating_margin_pct": [
+        47.76729116777011,
+        47.85912611427736
+      ],
+      "Q2_free_cash_flow_yoy_pct": 57.57575757575757,
+      "H1_free_cash_flow_yoy_pct": 18.364739699776433,
+      "Q2_free_cash_flow_conversion_pct": 83.65791701947502,
+      "H1_free_cash_flow_conversion_pct": 85.29344073647871,
+      "formula_growth": "(current / previous - 1) * 100",
+      "formula_operating_margin": "operating_income / revenue * 100",
+      "formula_free_cash_flow": "cash_from_operations - capital_expenditures_outflow_absolute",
+      "formula_free_cash_flow_conversion": "free_cash_flow / GAAP_net_income * 100"
+    },
+    "basis_pitfalls": [
+      "2026-08-04 is earnings publication date for homepage order; 2026-08-07 is 10-Q filing and 2026-09-23 is strategy update, neither replaces earnings date.",
+      "Do not compare GAAP EPS $3.32 with Bloomberg adjusted EPS estimates without matching basis. Company adjusted diluted EPS is $3.38.",
+      "US comparable sales +0.8% does not establish positive traffic; guest counts were negative.",
+      "Systemwide sales $37bn is not company revenue $7.099bn. Franchised sales are not consolidated revenue.",
+      "Use 10-Q full segment revenues 2827/3603/669. Supplement's 2726/3543/648 excludes $182m of Other revenues.",
+      "H1 GAAP margin 46.2% and adjusted margin 46.9% are not Q2 margins; calculated Q2 figures are 47.0% and 47.8%.",
+      "Source rounded adjustments can differ by $1m: 3338 + 52 = 3390 while company reports adjusted operating income 3391. Use official 3391 without forced correction.",
+      "Q2 and H1 cashflow figures are both explicitly disclosed; preserve period labels. FCF is the disclosed-definition calculation, not an additional GAAP statement line.",
+      "No current price, Bloomberg consensus, broker rating or target inferred from official earnings materials. Screenshot agents supply those separately."
+    ],
+    "research_view_inputs": {
+      "strengths": [
+        "Approximately 95% franchised model",
+        "All segments positive comparable sales",
+        "Growing loyalty activity",
+        "Cash generation and NEXT efficiency potential"
+      ],
+      "risks": [
+        "Negative US guest counts despite positive check",
+        "China and France comparable-sales weakness",
+        "Inflationary restaurant costs and elevated SG&A",
+        "NEXT execution, franchisee investment capacity and capital/rent support outlays",
+        "Foreign currency and global macroeconomic sensitivity"
+      ],
+      "status": "Inputs for independent house views, not attributed analyst opinions"
+    },
+    "sources": [
+      {
+        "id": "earnings_corporate",
+        "url": "https://corporate.mcdonalds.com/corpmcd/our-stories/article/Q2-2026-results.html",
+        "title": "McDonald's Reports Second Quarter 2026 Results",
+        "publication_date": "2026-08-04",
+        "ref": "turn77view0",
+        "evidence": "Official release date, period, headline results and loyalty indicators."
+      },
+      {
+        "id": "earnings_8k",
+        "url": "https://www.sec.gov/Archives/edgar/data/63908/000006390826000067/exhibit991-6302026.htm",
+        "title": "McDonald's Q2 2026 earnings release, Exhibit 99.1",
+        "publication_date": "2026-08-04",
+        "ref": "turn77view1",
+        "evidence": "GAAP/non-GAAP reconciliation, quarterly/H1 results, comparable sales, definitions."
+      },
+      {
+        "id": "supplement",
+        "url": "https://www.sec.gov/Archives/edgar/data/63908/000006390826000067/exhibit992-6302026.htm",
+        "title": "McDonald's Q2 2026 Supplemental Information, Exhibit 99.2",
+        "publication_date": "2026-08-04",
+        "ref": "turn80view1",
+        "evidence": "Segment detail, operating income reconciliation, 2026 outlook and restaurant count."
+      },
+      {
+        "id": "10q",
+        "url": "https://www.sec.gov/Archives/edgar/data/63908/000006390826000073/mcd-20260630.htm",
+        "title": "McDonald's Form 10-Q, quarter ended June 30, 2026",
+        "publication_date": "2026-08-07",
+        "ref": "turn80view2",
+        "evidence": "Cashflow statement page 6 and total segment revenues page 15; totals can differ from components due to rounding."
+      },
+      {
+        "id": "filing_index",
+        "url": "https://www.sec.gov/Archives/edgar/data/63908/000006390826000073/0000063908-26-000073-index.htm",
+        "title": "SEC filing index, accession 0000063908-26-000073",
+        "publication_date": "2026-08-07",
+        "ref": "turn78search1",
+        "evidence": "10-Q filed August 7, period June 30."
+      },
+      {
+        "id": "next_strategy",
+        "url": "https://corporate.mcdonalds.com/corpmcd/our-stories/article/NEXT-growth-strategy-advances.html",
+        "title": "McDonald's Advances NEXT Strategy",
+        "publication_date": "2026-09-23",
+        "ref": "turn86view0",
+        "evidence": "Long-term margin, efficiency, capex, FCF-conversion and category-share targets."
+      },
+      {
+        "id": "latest_ir",
+        "url": "https://corporate.mcdonalds.com/corpmcd/investors.html",
+        "title": "McDonald's Investors",
+        "ref": "turn76search1",
+        "evidence": "Recent quarterly results lists Q2 2026."
+      },
+      {
+        "id": "name_tc",
+        "url": "https://www.mcdonalds.com.hk/about-us/",
+        "title": "關於麥當勞",
+        "ref": "turn86search0",
+        "evidence": "Official HK site uses 麥當勞."
+      },
+      {
+        "id": "name_sc",
+        "url": "https://www.mcdonalds.com.cn/index/McD/about/company",
+        "title": "麦当劳全球",
+        "ref": "turn86search4",
+        "evidence": "Official China site uses 麦当劳 for the global company/brand, not 金拱门."
+      }
+    ]
+  },
+  "bloomberg_mcd": {
+    "ticker": "MCD",
+    "company_source_label": "McDonald's Corp",
+    "currency": "USD",
+    "extracted_on": "2026-10-09",
+    "evidence": [
+      {
+        "file": "MCD ANR.png",
+        "sha256": "c1752c6d7addc970b7789ebe2aec7ad5c398d267899e5b52425e9fec372cf6b9",
+        "method": "Visual inspection of original screenshot; enlarged crop used to verify EEO table. Restricted source screenshots are not to be committed."
+      },
+      {
+        "file": "MCD EEO.png",
+        "sha256": "2d4118b3a306002b9f369f615a2ba56bb866010ce07f247621833b55f82ee298",
+        "method": "Visual inspection of original screenshot; enlarged crop used to verify EEO table. Restricted source screenshots are not to be committed."
+      }
+    ],
+    "anr": {
+      "as_of_raw": "10/09/26",
+      "as_of": "2026-10-09",
+      "date_format": "MM/DD/YY; dates such as 09/29/26 disambiguate format",
+      "top_bar_date_raw": "On 08-Oct",
+      "reference_share_price_usd": 236.9,
+      "reference_price_date": "2026-10-08",
+      "reference_price_date_basis": "08-Oct is explicit in the quote header; year is inferred from the paired explicit ANR as-of 10/09/26. Price is labelled Last Price, not Close. Do not call this a verified closing price.",
+      "public_price_description_tc": "10/08 畫面所示參考股價 US$236.90",
+      "consensus_rating": 4.12,
+      "buys": {
+        "percent": 58.5,
+        "count": 24
+      },
+      "holds": {
+        "percent": 39.0,
+        "count": 16
+      },
+      "sells": {
+        "percent": 2.4,
+        "count": 1
+      },
+      "12M_Tgt_Px_count_raw": "33/46",
+      "12M_target_usd": 295.91,
+      "last_price_usd": 236.9,
+      "displayed_return_potential_percent": 24.9,
+      "calculated_price_only_return_potential_percent": 24.90924440692277,
+      "LTM_return_percent": -17.3,
+      "entitled_sources_raw": "47 of 50 sources",
+      "selected_brokers_in_user_priority_order": [
+        {
+          "row": 21,
+          "firm": "UBS",
+          "analyst": "Dennis Geiger",
+          "raw_rating": "buy",
+          "display_rating": "Buy",
+          "target_usd": 320.0,
+          "rating_date": "2026-09-24",
+          "mapping": {
+            "basis": "Case normalization only; original stock rating preserved."
+          },
+          "price_only_upside_percent": 35.078092021950184
+        },
+        {
+          "row": 15,
+          "firm": "Morgan Stanley",
+          "analyst": "Brian Harbour",
+          "raw_rating": "Equalwt/In-Line",
+          "display_rating": "Neutral",
+          "target_usd": 297.0,
+          "rating_date": "2026-09-28",
+          "mapping": {
+            "stock_component": "Equal-weight",
+            "industry_component": "In-Line",
+            "display_basis": "Editorial normalization under the owner’s five-label website convention; Morgan Stanley did NOT originally assign the word Neutral. Distinguish this displayed category from its original rating.",
+            "authoritative_definition_summary": "Equal-weight represents expected risk-adjusted total return in line with its benchmark or coverage universe. In-Line is a distinct industry outlook.",
+            "source_urls": [
+              "https://www.morganstanley.com/eqr/disclosures/webapp/generalresearch"
+            ],
+            "web_source_refs": [
+              "turn79search0",
+              "turn82search0"
+            ]
+          },
+          "price_only_upside_percent": 25.369354157872515
+        },
+        {
+          "row": 14,
+          "firm": "JP Morgan",
+          "analyst": "John W Ivankoe",
+          "raw_rating": "overweight",
+          "display_rating": "Overweight",
+          "target_usd": 250.0,
+          "rating_date": "2026-09-29",
+          "mapping": {
+            "basis": "Case normalization only; original stock rating preserved."
+          },
+          "price_only_upside_percent": 5.529759392148592
+        }
+      ],
+      "other_visible_preferred_broker": {
+        "row": 23,
+        "firm": "Citi",
+        "analyst": "Jon Tower",
+        "raw_rating": "buy",
+        "display_rating": "Buy",
+        "target_usd": 305.0,
+        "rating_date": "2026-09-24",
+        "selected": false,
+        "reason": "Three higher-priority brokers have evidence.",
+        "price_only_upside_percent": 28.746306458421266
+      },
+      "HSBC": "Not visible in supplied screenshot; no assertion of absence from full ANR universe.",
+      "scope_limits": [
+        "ANR supports analyst, rating, target and rating date, but no institution investment thesis.",
+        "The displayed 1 Yr Rtn field is not the implied target-price return; compute price-only upside from target/reference price.",
+        "The percentages round to 99.9%; do not force them to sum to 100.",
+        "The target-count raw string 33/46 and entitled-source count have different denominators; do not reinterpret them as total analyst recommendations."
+      ]
+    },
+    "eeo": {
+      "source": "Standard",
+      "periodicity": "Quarters",
+      "currency": "USD",
+      "guidance_checkbox_checked": false,
+      "explicit_as_of_date": null,
+      "quote_header_date_raw": "On 08-Oct",
+      "quote_header_price_usd": 236.9,
+      "date_limitation": "No explicit EEO As of date is visible. Quote header 08-Oct is visible; the year 2026 is inferred from the explicitly dated paired ANR. Do not present the upload/extraction date as a separately verified EEO snapshot timestamp.",
+      "columns": [
+        {
+          "label": "Q2 2026 Act",
+          "period_end": "2026-06-30",
+          "status": "Actual"
+        },
+        {
+          "label": "Q3 2026 Est",
+          "period_end": "2026-09-30",
+          "status": "Estimate"
+        },
+        {
+          "label": "Q4 2026 Est",
+          "period_end": "2026-12-31",
+          "status": "Estimate"
+        },
+        {
+          "label": "Q1 2027 Est",
+          "period_end": "2027-03-31",
+          "status": "Estimate"
+        },
+        {
+          "label": "Q2 2027 Est",
+          "period_end": "2027-06-30",
+          "status": "Estimate"
+        }
+      ],
+      "quarterly_rows": [
+        {
+          "label_raw": "EPS, Adj+",
+          "unit": "USD/share",
+          "values": [
+            3.38,
+            3.403,
+            3.303,
+            3.014,
+            3.52
+          ],
+          "estimate_counts": [
+            null,
+            30,
+            30,
+            27,
+            26
+          ]
+        },
+        {
+          "label_raw": "EPS, GAAP",
+          "unit": "USD/share",
+          "values": [
+            3.32,
+            3.402,
+            3.292,
+            2.978,
+            3.485
+          ],
+          "estimate_counts": [
+            null,
+            22,
+            22,
+            19,
+            19
+          ]
+        },
+        {
+          "label_raw": "Revenue",
+          "unit": "USD billion",
+          "values": [
+            7.099,
+            7.291,
+            7.252,
+            6.712,
+            7.316
+          ],
+          "estimate_counts": [
+            null,
+            31,
+            31,
+            27,
+            26
+          ]
+        },
+        {
+          "label_raw": "Gross Margin %",
+          "unit": "percent",
+          "values": [
+            62.6,
+            60.97,
+            60.83,
+            59.241,
+            60.85
+          ],
+          "estimate_counts": [
+            null,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "label_raw": "Operating Income (EBIT)",
+          "unit": "USD billion",
+          "values": [
+            3.391,
+            3.541,
+            3.421,
+            3.123,
+            3.561
+          ],
+          "estimate_counts": [
+            null,
+            25,
+            25,
+            22,
+            21
+          ]
+        },
+        {
+          "label_raw": "EBITDA",
+          "unit": "USD billion",
+          "values": [
+            3.502,
+            4.105,
+            4.006,
+            3.715,
+            4.163
+          ],
+          "estimate_counts": [
+            null,
+            26,
+            26,
+            23,
+            22
+          ]
+        },
+        {
+          "label_raw": "Pre-Tax Profit",
+          "unit": "USD billion",
+          "values": [
+            3.794,
+            3.105,
+            2.992,
+            2.701,
+            3.138
+          ],
+          "estimate_counts": [
+            null,
+            26,
+            26,
+            22,
+            22
+          ]
+        },
+        {
+          "label_raw": "Net Income Adj+",
+          "unit": "USD billion",
+          "values": [
+            2.402,
+            2.416,
+            2.337,
+            2.126,
+            2.475
+          ],
+          "estimate_counts": [
+            null,
+            28,
+            28,
+            25,
+            25
+          ]
+        },
+        {
+          "label_raw": "Net Income, GAAP",
+          "unit": "USD billion",
+          "values": [
+            2.362,
+            2.407,
+            2.324,
+            2.104,
+            2.455
+          ],
+          "estimate_counts": [
+            null,
+            24,
+            24,
+            20,
+            19
+          ]
+        },
+        {
+          "label_raw": "Net Debt",
+          "unit": "USD billion",
+          "values": [
+            53.77,
+            38.647,
+            38.575,
+            38.569,
+            38.311
+          ],
+          "estimate_counts": [
+            null,
+            11,
+            11,
+            11,
+            11
+          ]
+        },
+        {
+          "label_raw": "BPS",
+          "unit": "USD/share",
+          "values": [
+            -1.446,
+            -0.018,
+            0.918,
+            1.118,
+            2.076
+          ],
+          "estimate_counts": [
+            null,
+            5,
+            5,
+            5,
+            5
+          ]
+        },
+        {
+          "label_raw": "CPS",
+          "unit": "USD/share",
+          "values": [
+            3.947,
+            5.02,
+            3.627,
+            3.84,
+            4.523
+          ],
+          "estimate_counts": [
+            null,
+            3,
+            3,
+            3,
+            3
+          ]
+        },
+        {
+          "label_raw": "DPS",
+          "unit": "USD/share",
+          "values": [
+            1.86,
+            1.857,
+            1.948,
+            1.938,
+            1.937
+          ],
+          "estimate_counts": [
+            null,
+            21,
+            21,
+            18,
+            17
+          ]
+        },
+        {
+          "label_raw": "Return on Equity %",
+          "unit": "percent",
+          "raw_values": [
+            null,
+            "-963.360",
+            "2.971k",
+            "-865.658",
+            "3.303k"
+          ],
+          "estimate_counts": [
+            null,
+            2,
+            4,
+            4,
+            4
+          ]
+        },
+        {
+          "label_raw": "Return on Assets %",
+          "unit": "percent",
+          "values": [
+            14.71,
+            4.0,
+            3.79,
+            3.42,
+            3.99
+          ],
+          "estimate_counts": [
+            null,
+            1,
+            1,
+            1,
+            1
+          ]
+        },
+        {
+          "label_raw": "Depreciation",
+          "unit": "USD million",
+          "values": [
+            null,
+            584.355,
+            596.548,
+            577.976,
+            599.691
+          ],
+          "estimate_counts": [
+            null,
+            21,
+            21,
+            19,
+            19
+          ]
+        },
+        {
+          "label_raw": "Free Cash Flow",
+          "unit": "USD billion",
+          "values": [
+            1.976,
+            2.081,
+            1.765,
+            1.787,
+            2.219
+          ],
+          "estimate_counts": [
+            null,
+            14,
+            14,
+            13,
+            13
+          ]
+        },
+        {
+          "label_raw": "CAPEX",
+          "unit": "USD million",
+          "values": [
+            -831.0,
+            -1058,
+            -1131,
+            -826.222,
+            -916.056
+          ],
+          "raw_values": [
+            "-831.000M",
+            "-1.058B",
+            "-1.131B",
+            "-826.222M",
+            "-916.056M"
+          ],
+          "estimate_counts": [
+            null,
+            20,
+            20,
+            18,
+            18
+          ]
+        },
+        {
+          "label_raw": "Net Asset Value",
+          "unit": "USD million",
+          "values": [
+            null,
+            -524.632,
+            -34.289,
+            161.389,
+            837.222
+          ],
+          "estimate_counts": [
+            null,
+            19,
+            19,
+            18,
+            18
+          ]
+        }
+      ],
+      "current_multiples_columns": [
+        "Last 4 Qtrs Act",
+        "Next 4 Qtrs Est",
+        "FY 2026",
+        "FY 2027",
+        "FY 2028"
+      ],
+      "current_multiples": [
+        {
+          "label_raw": "Price/EPS, Adj+",
+          "unit": "times",
+          "values": [
+            18.88,
+            17.89,
+            18.37,
+            17.19,
+            16.24
+          ]
+        },
+        {
+          "label_raw": "Price/Book",
+          "unit": "times",
+          "values": [
+            null,
+            null,
+            3353.82,
+            70.38,
+            39.25
+          ]
+        },
+        {
+          "label_raw": "Price/Cash Flow",
+          "unit": "times",
+          "values": [
+            14.88,
+            13.93,
+            14.2,
+            13.28,
+            12.35
+          ]
+        },
+        {
+          "label_raw": "EV/Revenue",
+          "unit": "times",
+          "values": [
+            7.99,
+            7.75,
+            7.86,
+            7.64,
+            7.74
+          ]
+        },
+        {
+          "label_raw": "EV/EBITDA",
+          "unit": "times",
+          "values": [
+            14.69,
+            12.93,
+            13.29,
+            12.65,
+            12.13
+          ]
+        },
+        {
+          "label_raw": "EV/EBIT",
+          "unit": "times",
+          "values": [
+            17.29,
+            16.24,
+            16.64,
+            15.77,
+            15.07
+          ]
+        },
+        {
+          "label_raw": "EV/OPP",
+          "unit": "times",
+          "values": [
+            17.29,
+            16.23,
+            16.65,
+            15.76,
+            15.05
+          ]
+        },
+        {
+          "label_raw": "Dividend Yield",
+          "unit": "percent",
+          "values": [
+            3.11,
+            3.24,
+            3.18,
+            3.29,
+            3.4
+          ]
+        }
+      ],
+      "next_4_quarters_adjusted_pe": 17.89,
+      "next_4_quarters_period": "Q3 2026 through Q2 2027",
+      "basis_limits": [
+        "Adj+ is the Bloomberg screen label; do not automatically rename it issuer-defined non-GAAP without reconciling company definitions.",
+        "The next-four-quarter estimates extend through 2027-06-30; FY2026/FY2027 multiples are separate fiscal-year periods.",
+        "Do not reconstruct annual consensus by adding a mix of independently sampled quarterly estimate rows.",
+        "Quarterly actuals shown are Q2 2026; verify primary company evidence before using for GAAP financial reporting.",
+        "Reported pre-tax profit3.794B, EBIT3.391B and EBITDA3.502B appear exactly as displayed; the basis difference is not explained by the screenshot.",
+        "The net-debt actual53.770B and next-quarter38.647B may have different definitions; do not infer debt repayment trend.",
+        "Only 1 estimate is shown for each forecast gross margin and ROA.",
+        "Blank values are absent, not zeros."
+      ]
+    }
+  },
+  "bloomberg_peers": {
+    "task": "MCD peer valuation and locale-name verification",
+    "inspected_on": "2026-10-09",
+    "basis": {
+      "source": "User-provided original Bloomberg EEO screenshots, visually inspected with view_image",
+      "currency": "USD",
+      "periodicity": "Quarters",
+      "estimate_source_screen_label": "Standard",
+      "valuation_row_screen_label": "Price/EPS, Adj+",
+      "valuation_column_screen_label": "Next 4 Qtrs Est",
+      "accounting_basis": "Bloomberg adjusted EPS (Adj+), not GAAP EPS",
+      "unit": "times",
+      "date_caution": "QSR and SBUX top quote lines show On 08-Oct but no year or time; YUM has no quote/date header visible. Do not state a separately verified 2026-10-08 closing-price timestamp for all peer observations. Identify the data as the user-provided EEO screen snapshots, with exact screen dates only where visible.",
+      "comparability": "All three screens display estimated three-month period ends 2026-09-30, 2026-12-31, 2027-03-31 and 2027-06-30. QSR/YUM quarter labels are Q3 2026 through Q2 2027; SBUX labels are fiscal Q4 2026 through Q3 2027. These are Bloomberg displayed period endpoints, not independent verification of each company's exact fiscal calendar. Use the direct Next 4 Qtrs Est multiple; do not replace it with a FY 2026 or FY 2027 multiple or derive fiscal annual EPS by summing mixed-year quarters.",
+      "reported_and_estimated_footer": true
+    },
+    "peers": [
+      {
+        "ticker": "QSR",
+        "screen_company_name": "Restaurant Brands International Inc",
+        "file": "QSR EEO.png",
+        "next_four_quarters_adjusted_pe": 16.47,
+        "last_four_quarters_actual_adjusted_pe": 18.03,
+        "fiscal_annual_adjusted_pe": {
+          "FY 2026": 17.37,
+          "FY 2027": 16.01,
+          "FY 2028": 14.56
+        },
+        "visible_quote": {
+          "reference_price": 70.66,
+          "currency": "USD",
+          "date_text": "08-Oct",
+          "year_visible": false,
+          "time_visible": false,
+          "proven_prior_close": false
+        },
+        "actual_column": {
+          "label": "Q2 2026 Act",
+          "period_end": "2026-06-30",
+          "adjusted_eps": 1.07,
+          "gaap_eps": 1.45,
+          "revenue_usd_billion": 2.52
+        },
+        "estimate_columns": [
+          {
+            "label": "Q3 2026 Est",
+            "period_end": "2026-09-30",
+            "adjusted_eps": 1.076,
+            "gaap_eps": 1.044,
+            "revenue_usd_billion": 2.546
+          },
+          {
+            "label": "Q4 2026 Est",
+            "period_end": "2026-12-31",
+            "adjusted_eps": 1.045,
+            "gaap_eps": 1.015,
+            "revenue_usd_billion": 2.541
+          },
+          {
+            "label": "Q1 2027 Est",
+            "period_end": "2027-03-31",
+            "adjusted_eps": 0.975,
+            "gaap_eps": 0.952,
+            "revenue_usd_billion": 2.3
+          },
+          {
+            "label": "Q2 2027 Est",
+            "period_end": "2027-06-30",
+            "adjusted_eps": 1.192,
+            "gaap_eps": 1.162,
+            "revenue_usd_billion": 2.546
+          }
+        ],
+        "names": {
+          "en": "Restaurant Brands International",
+          "tc": "Restaurant Brands International",
+          "sc": "餐饮品牌国际集团"
+        },
+        "naming_evidence": [
+          {
+            "locale": "sc",
+            "url": "https://www.bkchina.cn/news/detail/id/240.html",
+            "title": "汉堡王中国二十周年战略重塑 擘画增长新蓝图",
+            "published": "2025-06-12",
+            "publisher": "Burger King China official website / corporate release including RBI contacts",
+            "source_ref": "turn92view0",
+            "locator": "Lines 22 and 54-56",
+            "evidence": "Restaurant Brands International Inc. explicitly paired with 餐饮品牌国际集团; identifies it as the corporate parent, not just the Burger King brand."
+          },
+          {
+            "locale": "tc",
+            "status": "Official Traditional Chinese locale name not verified after searches of RBI, official regional brand sites and regulatory releases; preserve English rather than mechanically converting Simplified Chinese."
+          }
+        ],
+        "identity_caution": "QSR is Restaurant Brands International, not Burger King as a standalone listed company, and not separately listed TH International/Tims China.",
+        "sha256": "a79fc72e645287d2b36992ea7ca3a8c02c5f4187ba35a4b12faea6c35eb050f6"
+      },
+      {
+        "ticker": "SBUX",
+        "screen_company_name": "Starbucks Corp",
+        "file": "SBUX EEO.png",
+        "next_four_quarters_adjusted_pe": 31.3,
+        "last_four_quarters_actual_adjusted_pe": 38.36,
+        "fiscal_annual_adjusted_pe": {
+          "FY 2026": 35.92,
+          "FY 2027": 29.85,
+          "FY 2028": 24.96
+        },
+        "visible_quote": {
+          "reference_price": 93.21,
+          "currency": "USD",
+          "date_text": "08-Oct",
+          "year_visible": false,
+          "time_visible": false,
+          "proven_prior_close": false
+        },
+        "actual_column": {
+          "label": "Q3 2026 Act",
+          "period_end": "2026-06-30",
+          "adjusted_eps": 0.85,
+          "gaap_eps": 0.91,
+          "revenue_usd_billion": 9.323
+        },
+        "estimate_columns": [
+          {
+            "label": "Q4 2026 Est",
+            "period_end": "2026-09-30",
+            "adjusted_eps": 0.724,
+            "gaap_eps": 0.709,
+            "revenue_usd_billion": 9.208
+          },
+          {
+            "label": "Q1 2027 Est",
+            "period_end": "2026-12-31",
+            "adjusted_eps": 0.754,
+            "gaap_eps": 0.741,
+            "revenue_usd_billion": 9.564
+          },
+          {
+            "label": "Q2 2027 Est",
+            "period_end": "2027-03-31",
+            "adjusted_eps": 0.63,
+            "gaap_eps": 0.616,
+            "revenue_usd_billion": 9.137
+          },
+          {
+            "label": "Q3 2027 Est",
+            "period_end": "2027-06-30",
+            "adjusted_eps": 0.87,
+            "gaap_eps": 0.875,
+            "revenue_usd_billion": 9.734
+          }
+        ],
+        "names": {
+          "en": "Starbucks",
+          "tc": "星巴克",
+          "sc": "星巴克"
+        },
+        "naming_evidence": [
+          {
+            "locale": "tc",
+            "url": "https://www.starbucks.com.tw/about/aboutpsc.jspx",
+            "title": "關於星巴克",
+            "publisher": "Starbucks Taiwan official website",
+            "source_ref": "turn83search1",
+            "evidence": "Uses 星巴克 for the global company founded in Seattle in 1971 and points to the US Starbucks corporate website."
+          },
+          {
+            "locale": "sc",
+            "url": "https://www.starbucks.com.cn/about/news/establish-a-joint-venture-company/",
+            "title": "星巴克与博裕成立合资企业携手开启在华发展全新篇章",
+            "published": "2025-11-04",
+            "publisher": "Starbucks China official website",
+            "source_ref": "turn92view4",
+            "evidence": "Explicitly identifies 星巴克咖啡公司 as the global brand/IP owner and identifies Brian Niccol as chairman and CEO; use short display name 星巴克."
+          }
+        ],
+        "identity_caution": "Do not label SBUX as the Taiwan regional franchisee 悠旅生活事業股份有限公司 or the China retail joint venture.",
+        "sha256": "590fca1d8a10e6a33967011a31e68a8805fdbcb39457e7b03c1abc0110f23be2"
+      },
+      {
+        "ticker": "YUM",
+        "screen_company_name": "Yum! Brands Inc",
+        "file": "YUM EEO.png",
+        "next_four_quarters_adjusted_pe": 21.48,
+        "last_four_quarters_actual_adjusted_pe": 22.24,
+        "fiscal_annual_adjusted_pe": {
+          "FY 2026": 21.76,
+          "FY 2027": 19.94,
+          "FY 2028": 17.88
+        },
+        "visible_quote": {
+          "reference_price": null,
+          "currency": "USD",
+          "date_text": null,
+          "year_visible": false,
+          "time_visible": false,
+          "proven_prior_close": false,
+          "note": "Quote/date header not included in screenshot."
+        },
+        "actual_column": {
+          "label": "Q2 2026 Act",
+          "period_end": "2026-06-30",
+          "adjusted_eps": 1.62,
+          "gaap_eps": 3.08,
+          "revenue_usd_billion": 2.169
+        },
+        "estimate_columns": [
+          {
+            "label": "Q3 2026 Est",
+            "period_end": "2026-09-30",
+            "adjusted_eps": 1.536,
+            "gaap_eps": 1.524,
+            "revenue_usd_billion": 2.12
+          },
+          {
+            "label": "Q4 2026 Est",
+            "period_end": "2026-12-31",
+            "adjusted_eps": 1.87,
+            "gaap_eps": 1.843,
+            "revenue_usd_billion": 2.577
+          },
+          {
+            "label": "Q1 2027 Est",
+            "period_end": "2027-03-31",
+            "adjusted_eps": 1.535,
+            "gaap_eps": 1.505,
+            "revenue_usd_billion": 2.059
+          },
+          {
+            "label": "Q2 2027 Est",
+            "period_end": "2027-06-30",
+            "adjusted_eps": 1.716,
+            "gaap_eps": 1.701,
+            "revenue_usd_billion": 2.184
+          }
+        ],
+        "names": {
+          "en": "Yum! Brands",
+          "tc": "百勝餐飲集團",
+          "sc": "百胜餐饮集团"
+        },
+        "naming_evidence": [
+          {
+            "locale": "tc",
+            "url": "https://www.hkexnews.hk/listedco/listconews/sehk/20100323/LTN20100323207_C.pdf",
+            "title": "Little Sheep Group Limited annual results announcement for 2009",
+            "published": "2010-03-23",
+            "publisher": "Corporate regulatory disclosure on HKEXnews",
+            "source_ref": "turn93view0",
+            "locator": "PDF pages 3 and 4; lines 61-62 and 94",
+            "evidence": "Names its shareholder 百勝餐飲集團 (Yum! Brands, Inc.)."
+          },
+          {
+            "locale": "tc",
+            "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2026/0427/2026042703470.pdf",
+            "title": "Anjoy Foods Group 2025 annual report",
+            "published": "2026-04-27",
+            "publisher": "Corporate regulatory disclosure on HKEXnews",
+            "source_ref": "turn94view1",
+            "locator": "PDF page 20 / printed page 19; lines 710-711",
+            "evidence": "Pairs Yum! Brands, Inc. with 百勝餐飲集團. Note: search snippet incorrectly displayed Simplified Chinese; opened original is Traditional Chinese and is NOT used as SC evidence."
+          },
+          {
+            "locale": "sc",
+            "url": "https://www.prnasia.com/story/409764-1.shtml",
+            "title": "The Habit Burger Grill与HMSHost携手在中国开设新餐厅",
+            "published": "2023-06-29",
+            "publisher": "The Habit Burger Grill corporate press release distributed through PR Newswire",
+            "source_ref": "turn96view0",
+            "locator": "Lines 119, 132 and 145",
+            "evidence": "Issuer is The Habit Burger Grill, a Yum! subsidiary. Release explicitly pairs 百胜餐饮集团 with Yum! Brands. This is a company-authored original release, not a media article."
+          }
+        ],
+        "identity_caution": "YUM is Yum! Brands; do not replace it with 百勝中國/百胜中国 (Yum China, ticker YUMC), which became separately listed in 2016.",
+        "sha256": "44db9846a8a6a66354492e1de816ae6a3b23bceb1554e0347ec2712c3e4bc0f0"
+      }
+    ],
+    "public_note_suggestion": {
+      "tc": "同業比較採用用戶提供的 Bloomberg EEO 畫面中未來四季調整後本益比（Price/EPS, Adj+）。各公司財年季度標籤不同；三家同業畫面所示估計期末涵蓋 2026 年 9 月至 2027 年 6 月。",
+      "sc": "同业比较采用用户提供的 Bloomberg EEO 画面中未来四季调整后市盈率（Price/EPS, Adj+）。各公司财年季度标签不同；三家同业画面所示估计期末涵盖 2026 年 9 月至 2027 年 6 月。",
+      "en": "Peer multiples use Bloomberg EEO Next 4 Qtrs Est Price/EPS, Adj+ from the supplied screens. Fiscal quarter labels differ; the three peer screens show estimated period ends from September 2026 to June 2027."
+    }
+  },
+  "implementation_decisions": {
+    "template": "Use each corresponding latest mu.html, mu-sc.html and mu-en.html at base commit, including existing locale frontend differences.",
+    "names": {
+      "traditional": "麥當勞",
+      "simplified": "麦当劳",
+      "english": "McDonald's"
+    },
+    "peer_names": "Use evidenced locale names; QSR Traditional remains Restaurant Brands International, Simplified is 餐饮品牌国际集团; SBUX 星巴克 in both; YUM 百勝餐飲集團 / 百胜餐饮集团, never Yum China.",
+    "pi_api_and_disclaimer": "Preserve each original MCD legal notice, PI controls/script, disclaimer content/loading, and API handler. Renumber disclaimer heading from seven to six for MU tab order.",
+    "financial_table": "Separate reported GAAP and company adjusted results. Quarterly OCF/capex/FCF use explicit Q2 cash-flow statement; any H1 values must retain H1 labels.",
+    "segment_chart": "Use 10-Q total segment revenue including allocated other revenue: US 2827, IOM 3603, IDL and Corporate 669, USD million, total 7099.",
+    "rounding": "Retain company reported adjusted operating income3391 and excluded pretax charges52 although displayed GAAP3338 plus52 is3390; do not force source-rounded figures to reconcile.",
+    "strategy": "September23 NEXT strategy targets are forward-looking; 250bp is gross restaurant-level efficiency, not corporate-margin uplift; capital partnering support1.5–2bn is cumulative2027–30.",
+    "broker_priority": "All first three preferred institutions visible: UBS, Morgan Stanley, JP Morgan. No unsupported institution investment theses.",
+    "broker_display_normalization": "Morgan Stanley Equalwt/In-Line maps to owner display Neutral. Preserve raw Equal-weight stock rating and separate In-Line industry view; public card clarifies site classification.",
+    "reference_price": "Oct9 ANR with top quote date08-Oct and236.90 Last Price supports an Oct8 screen reference quote, not an independently verified exchange close. Year2026 inferred from paired explicit ANR date.",
+    "peer_valuation": "Use direct Next4Qtrs Est Price/EPS, Adj+ values17.89/16.47/31.30/21.48 for MCD/QSR/SBUX/YUM. Quarter labels differ; displayed period endpointsSep2026–Jun2027. YUM quote-date header absent and no EEO explicit as-of timestamps.",
+    "homepage": "MCD covered-quarter releaseAug4 positions it sixth, after AMD with the same date; maintain stable ties and other24 card content.",
+    "source_images": "Restricted original Bloomberg screenshots are not committed; filenames and SHA256 hashes only."
+  },
+  "calculations": {
+    "implied_price_return_definition": "(target / reference_price - 1) * 100; excludes dividends",
+    "consensus_price_return_pct": 24.9,
+    "brokers_price_return_pct": {
+      "UBS": 35.1,
+      "Morgan Stanley": 25.4,
+      "JP Morgan": 5.5
+    },
+    "segment_revenue_sum_usd_m": 7099,
+    "q2_free_cashflow_usd_m": 1976,
+    "h1_free_cashflow_usd_m": 3706,
+    "q2_gaap_operating_margin_pct": 47.0,
+    "q2_adjusted_operating_margin_pct": 47.8,
+    "other_official_calculations": {
+      "Q2_revenue_yoy_pct": 3.741049247406103,
+      "Q2_gaap_operating_income_yoy_pct": 3.279702970297027,
+      "Q2_adjusted_operating_income_yoy_pct": 3.5419847328244325,
+      "Q2_gaap_net_income_yoy_pct": 4.837993786063022,
+      "Q2_adjusted_net_income_yoy_pct": 5.074365704286965,
+      "Q2_gaap_eps_yoy_pct": 5.73248407643312,
+      "Q2_adjusted_eps_yoy_pct": 5.956112852664575,
+      "Q2_gaap_operating_margin_pct": [
+        47.02070714185096,
+        47.23074674850211
+      ],
+      "Q2_adjusted_operating_margin_pct": [
+        47.76729116777011,
+        47.85912611427736
+      ],
+      "Q2_free_cash_flow_yoy_pct": 57.57575757575757,
+      "H1_free_cash_flow_yoy_pct": 18.364739699776433,
+      "Q2_free_cash_flow_conversion_pct": 83.65791701947502,
+      "H1_free_cash_flow_conversion_pct": 85.29344073647871,
+      "formula_growth": "(current / previous - 1) * 100",
+      "formula_operating_margin": "operating_income / revenue * 100",
+      "formula_free_cash_flow": "cash_from_operations - capital_expenditures_outflow_absolute",
+      "formula_free_cash_flow_conversion": "free_cash_flow / GAAP_net_income * 100"
+    }
+  },
+  "canonical_templates": [
+    {
+      "path": "mu.html",
+      "sha256": "7f783b0b12547b23b5526be6c3e09082d24ccb6cd7b64bbf9728e80964fed57f"
+    },
+    {
+      "path": "mu-sc.html",
+      "sha256": "8703dfd17e84332affe0215b9cffe1963f98e989b8d7412a551b73b03297d799"
+    },
+    {
+      "path": "mu-en.html",
+      "sha256": "9b632c35822e8b15931e0e18bbbfe6b1fea211ca6e0b64f240f2e73de430d589"
+    }
+  ],
+  "protected_files": {
+    "CNAME": "4d122df0d003e1c01afb46bd8a02b31a7f9041eb05674b482335b5bd62b8c960",
+    "disclaimer.html": "495e20268112a2367e5b46c91d584d61dbf75ccd35a58377fa0bc0c94f8c1b2c",
+    "api/gemini.js": "2cbd0959cf0ccd0cb788b6181b8635daf397867d5796d4ff1cf15f1d40ed963a"
+  },
+  "validation_record": "mcd-2026-q2-validation.json",
+  "publication_status": "Implementation and validation tracked separately; pull request records final deployment verification."
+}

@@ -1,5 +1,19 @@
 # NTAM investment research website
 
+## McDonald's Q2 2026 update — 9 October 2026
+
+The three MCD reports follow their respective MU language masters and cover the quarter ended 30 June 2026, announced on 4 August. Official results, the SEC 10-Q and the 23 September NEXT investor update are reconciled with owner-provided Bloomberg ANR/EEO screenshots. Traditional/Simplified Chinese names use 麥當勞 / 麦当劳. MCD moves to sixth on the homepage, after AMD under the stable same-day ordering rule; the other 24 cards retain their content.
+
+The report distinguishes company revenue from Systemwide sales, positive U.S. comparable sales from negative guest counts, quarterly cash flow from first-half cash flow, and company adjusted earnings from Bloomberg Adj+ estimates. Q2 operating cash flow of US$2.807bn less capital expenditure of US$0.831bn gives free cash flow of US$1.976bn. Full segment revenue includes allocated other revenue. NEXT's 2030 margin and restaurant-efficiency targets remain forward-looking; cumulative capital support is not an annual commitment.
+
+The 9 October ANR shows a US$295.91 consensus target against the 8 October screen reference price of US$236.90, implying 24.9% price upside. The quote is not independently labelled a closing price. Broker cards use UBS, Morgan Stanley and JP Morgan in the required priority. Morgan Stanley's raw Equalwt/In-Line becomes Neutral under the site's five-label convention, with its separate industry view retained in the evidence. Peer comparison uses the four screenshots' Next 4 Qtrs Price/EPS, Adj+ fields and states their date and fiscal-period limitations.
+
+Original MCD PI legal wording and controls, disclaimer content/loading, and API handling are preserved; the disclaimer section number changes from seven to six. Each MCD version retains its corresponding MU master's frontend behavior. No original Bloomberg screenshot is committed. Validation records distinguish mocked checks from real browser review; the pull request records deployment verification.
+
+- [McDonald's source and calculation ledger](research/mcd-2026-q2-2026-10-09.json)
+- [McDonald's validation record](research/mcd-2026-q2-validation.json)
+- [Homepage earnings-date order](research/homepage-earnings-order-2026-10-08.json)
+
 ## Oracle FY2027 Q1 update — 8 October 2026
 
 The three ORCL reports use the corresponding latest MU layout and cover the quarter ended 31 August 2026, announced on 10 September. Official Oracle results and the SEC 10-Q are reconciled with owner-supplied Bloomberg ANR/EEO evidence. The homepage ORCL card moves to second, behind MU, by earnings publication date; the other 24 cards are unchanged.
