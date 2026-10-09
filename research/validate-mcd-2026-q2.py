@@ -245,7 +245,9 @@ for file in FILES:
         ok = ok and all(v in body for v in [broker['analyst'], f"{broker['target_usd']:.2f}", broker['rating_date'].replace('-', '/'), f'{ret:.1f}%'])
         broker_checks.append({'firm': broker['firm'], 'ok': ok, 'return_percent': round(ret, 1)})
     check(file+':brokers_priority_targets_dates_returns_colors', len(cards) == 3 and len(broker_checks) == 3 and all(b['ok'] for b in broker_checks), broker_checks)
-    check(file+':morgan_stanley_normalization_disclosed', len(cards) == 3 and bool(re.search(r'統一分類|统一分类|standardized|standardised|site category|display category', text(cards[1]), re.I)))
+    check(file+':neutral_rating_without_public_normalization_note', len(cards) == 3 and
+          text(cards[1].xpath('.//span')[0]) == 'Neutral' and
+          not re.search(r'統一分類|统一分类|standardized|standardised|site category|display category', text(street), re.I))
     sourcelines = [text(p) for p in street.xpath('.//p') if 'Bloomberg ANR' in text(p)]
     check(file+':compact_anr_reference_source', len(sourcelines) == 1 and all(v in sourcelines[0] for v in ['2026/10/09', '10/08', '236.90']) and len(sourcelines[0]) < 240, sourcelines)
     check(file+':no_public_calculator_attribution', not re.search(r'NTAM\s*(?:計算|计算|calculation|calculated)', public_text, re.I))

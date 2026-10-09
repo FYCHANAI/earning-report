@@ -1370,7 +1370,7 @@
     "rounding": "Retain company reported adjusted operating income3391 and excluded pretax charges52 although displayed GAAP3338 plus52 is3390; do not force source-rounded figures to reconcile.",
     "strategy": "September23 NEXT strategy targets are forward-looking; 250bp is gross restaurant-level efficiency, not corporate-margin uplift; capital partnering support1.5–2bn is cumulative2027–30.",
     "broker_priority": "All first three preferred institutions visible: UBS, Morgan Stanley, JP Morgan. No unsupported institution investment theses.",
-    "broker_display_normalization": "Morgan Stanley Equalwt/In-Line maps to owner display Neutral. Preserve raw Equal-weight stock rating and separate In-Line industry view; public card clarifies site classification.",
+    "broker_display_normalization": "Morgan Stanley Equalwt/In-Line maps to owner display Neutral. Preserve raw Equal-weight stock rating and separate In-Line industry view in research notes. Under the owner’s 2026-10-09 wording correction, public cards and AI responses show Neutral without a site-classification parenthetical.",
     "reference_price": "Oct9 ANR with top quote date08-Oct and236.90 Last Price supports an Oct8 screen reference quote, not an independently verified exchange close. Year2026 inferred from paired explicit ANR date.",
     "peer_valuation": "Use direct Next4Qtrs Est Price/EPS, Adj+ values17.89/16.47/31.30/21.48 for MCD/QSR/SBUX/YUM. Quarter labels differ; displayed period endpointsSep2026–Jun2027. YUM quote-date header absent and no EEO explicit as-of timestamps.",
     "homepage": "MCD covered-quarter releaseAug4 positions it sixth, after AMD with the same date; maintain stable ties and other24 card content.",
@@ -1435,5 +1435,10 @@
     "api/gemini.js": "2cbd0959cf0ccd0cb788b6181b8635daf397867d5796d4ff1cf15f1d40ed963a"
   },
   "validation_record": "mcd-2026-q2-validation.json",
-  "publication_status": "Implementation and validation tracked separately; pull request records final deployment verification."
+  "publication_status": "Implementation and validation tracked separately; pull request records final deployment verification.",
+  "public_wording_revision": {
+    "requested_on": "2026-10-09",
+    "base_commit": "7f43fa1b7c3174b89496475b76886441e68793ec",
+    "scope": "Remove site-classification parenthetical wording from the MCD report in all three languages and prevent it in AI responses. Rating badges, raw source evidence, figures, dates, layout and homepage are unchanged."
+  }
 }
