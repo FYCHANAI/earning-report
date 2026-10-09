@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>麦当劳 (MCD) 深度研究报告 | NTAM 资深分析师</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Noto Sans SC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
-        .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
-        @media (min-width: 768px) { .chart-container { height: 400px; } }
-        .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
-        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
-        .tab-content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-        .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* AI Animations */
-        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
-        .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
-        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
-        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
-        @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
-        #selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>麦当劳 (MCD) 深度研究报告 | NTAM 资深分析师</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<style>
+    body { font-family: 'Noto Sans SC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+    .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+    @media (min-width: 768px) { .chart-container { height: 400px; } }
+    .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+    .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+    .tab-content.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* AI Animations */
+    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+    .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
+    .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+    .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+    @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+    #selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
+</style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
 
-    <div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
+<div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
         <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
             <div class="text-center mb-6">
                 <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
@@ -65,379 +65,398 @@
         function declinePI() { document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`; }
     </script>
 
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex justify-between items-start">
+
+<header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex justify-between items-start">
+            <div class="flex flex-col">
+                <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
+                    <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+                    <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+                </a>
                 <div class="flex flex-col">
-                    <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
-                        <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-8 w-auto" onerror="this.style.display='none'">
-                        <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
-                    </a>
-                    <div class="flex flex-col">
-                        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">麦当劳 <span class="text-blue-600">MCD</span></h1>
-                        <span class="text-sm text-slate-500 font-medium mt-1">资深分析师 运营与战略报告 | Q1 2026</span>
-                    </div>
-                </div>
-                <div class="flex flex-col items-end space-y-3">
-                    <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
-                        <option value="mcd.html">繁體中文</option>
-                        <option value="mcd-sc.html" selected>简体中文</option>
-                        <option value="mcd-en.html">English</option>
-                    </select>
-                    <div class="flex items-center space-x-4">
-                        <div class="text-right hidden sm:block">
-                            <div class="text-xs text-slate-400 font-bold">目标价 <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
-                            <div class="text-xl font-bold text-slate-800">$331.91 USD</div>
-                        </div>
-                        <div class="px-4 py-2 bg-blue-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">评级：买入 (Buy)</div>
-                    </div>
+                    <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">麦当劳 <span class="text-blue-600">MCD</span></h1>
+                    <span class="text-sm text-slate-500 font-medium mt-1">资深分析师 运营与战略报告 | Q2 / 2026 财报特辑</span>
                 </div>
             </div>
-            
-            <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
-                <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我们的观点</button>
-                <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 运营与财务数据</button>
-                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比较</button>
-                <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 华尔街观点</button>
-                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 风险因素</button>
-                <button onclick="switchTab(event, 'sandbox')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-indigo-500 hover:text-indigo-700">六. AI 互动沙盒 ✨</button>
-                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">七. 免责声明</button>
-            </nav>
+            <div class="flex flex-col items-end space-y-3">
+                <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
+                    <option value="mcd.html">繁體中文</option>
+                    <option value="mcd-sc.html" selected>简体中文</option>
+                    <option value="mcd-en.html">English</option>
+                </select>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right hidden sm:block">
+                        <div class="text-xs text-slate-400 font-bold">共识目标价 <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Bloomberg ANR · 2026/10/09)</span></div>
+                        <div class="text-xl font-bold text-slate-800">$295.91 USD</div>
+                    </div>
+                    <div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">共识：买入 (4.12/5)</div>
+                </div>
+            </div>
         </div>
-    </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+        <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+            <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我们的观点</button>
+            <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 运营与财务数据</button>
+            <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比较</button>
+            <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 华尔街观点</button>
+            <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 风险因素</button>
+            <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免责声明</button>
+        </nav>
+    </div>
+</header>
 
-        <section id="our-comments" class="tab-content active">
-            <div class="mb-6">
-                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我们的观点</h2>
-                <p class="mt-2 text-sm text-slate-500">基于 FY26 Q1 财报与法说会简报，以下为 NTAM 研究团队提炼之 MCD 核心结论：</p>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+
+    <section id="our-comments" class="tab-content active">
+        <div class="mb-6">
+            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我们的观点</h2>
+            <p class="mt-2 text-sm text-slate-500">更新：2026/10/09。依据 2026/08/04 公布、截至 2026/06/30 的 Q2 2026 财报及 10-Q，并纳入 09/23 NEXT 战略更新；公司实绩、未来目标与市场共识分别标示。</p>
+        </div>
+        <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
+            <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
+                <span class="text-3xl mr-3">🎯</span>
+                <h3 class="text-2xl font-black text-blue-600 tracking-tight">核心经营结论</h3>
             </div>
-            <div class="metric-card bg-slate-900 text-white border-none p-6 md:p-8">
-                <div class="flex items-center mb-6 border-b border-slate-700 pb-4">
-                    <span class="text-3xl mr-3">🎯</span>
-                    <h3 class="text-2xl font-black text-blue-400 tracking-tight">核心结论</h3>
+            <ul class="space-y-6">
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">同店销售仍增长，美国客流却未恢复</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">Q2 营收 US$7.099bn，同比增长 4%，固定汇率增长 2%；全球同店销售增长 1.3%，低于去年同期的 3.8%。美国增长 0.8%，由客单价及产品组合支持，但同店客流下降；国际运营市场与国际发展授权市场分别增长 1.5% 与 1.9%。调整后营业利润 US$3.391bn，利润率 47.8%。我们认为，价格与组合改善可维持销售，但持续增长仍需客流回升，不能把同店销售正增长解读为客流已复苏。</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">加盟与会员基础支持现金流，销售口径需分清</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">约 95% 餐厅由加盟商运营。Q2 系统销售额约 US$37bn，涵盖直营及加盟餐厅，并非公司营收。70 个会员市场过去 12 个月会员系统销售额达 US$40bn，90 天活跃用户接近 2.2 亿。Q2 运营现金流 US$2.807bn，扣除 US$0.831bn 资本支出后，自由现金流 US$1.976bn，较去年增长 57.6%；上半年则为 US$3.706bn。我们认为，加盟与会员规模有助现金产生，但会员销售不可再加到公司营收，季度现金流亦不等同全年趋势。</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">NEXT 瞄准长期效率，投资与加盟商支持先行</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">公司 09/23 公布 NEXT 战略：目标 2030 年公司营业利润率达 50% 区间的低至中段；美国及国际运营市场餐厅全面部署后，预期取得 250 个基点的餐厅效率改善（未扣除相关投入）。这是餐厅层面的目标，并非公司营业利润率保证上升 250 个基点。2027–2030 年基础资本支出预计每年约 US$3bn，另有累计 US$1.5–2.0bn 资本合作支持。我们认为，效率与数字化提供长期改善空间，但须跟踪加盟商投资、实际节省与租金支持的成本。<a href="https://corporate.mcdonalds.com/corpmcd/our-stories/article/NEXT-growth-strategy-advances.html" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-600">来源：NEXT 更新</a>。</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">17.89x 远期市盈率，盈利改善仍是估值关键</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">Bloomberg EEO 显示 Q3 2026 营收共识 US$7.291bn、Adj+ EPS US$3.403，属市场预测而非公司指引。MCD 未来四季 Adj+ P/E 为 17.89x，高于 QSR 的 16.47x，低于 YUM 的 21.48x 及 SBUX 的 31.30x。10/09 ANR 共识目标价 US$295.91，相对 10/08 画面所示参考股价 US$236.90，隐含上行 24.9%（不含股息）。我们认为，估值能否提升取决于客流、加盟商回报与 NEXT 执行；同业差异及预测风险不能单靠倍数高低判断。</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="financials" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、运营与财务数据</h2></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div class="metric-card border-t-4 border-t-emerald-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Q2 总营收 (Total Revenue)</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">$7,099 M</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +4% / 固定汇率 +2%</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-blue-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Q2 全球同店销售增长</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">+1.3%</p>
+                <p class="text-sm text-blue-600 font-semibold mt-1">● 美国 +0.8% / 同店客流下降</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-indigo-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">调整后营业利润率 (Non-GAAP)</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">47.8%</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">● GAAP 营业利润率 47.0%</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-purple-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Q2 自由现金流</h4>
+                <p class="text-xl font-bold text-slate-800 mt-1">$1,976 M</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +57.6% / OCF 减 Capex</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-2">Q2 地区部门总营收 (Million USD)</h3>
+                <p class="text-xs text-slate-500 mb-4">美国 US$2,827m、国际运营市场 US$3,603m、国际发展授权市场及公司总部 US$669m，合计 US$7,099m；采用含已分配其他营收的部门总额。来源：<a href="https://www.sec.gov/Archives/edgar/data/63908/000006390826000073/mcd-20260630.htm" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-600">10-Q</a>、<a href="https://www.sec.gov/Archives/edgar/data/63908/000006390826000067/exhibit991-6302026.htm" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-600">Q2 财报</a>。</p>
+                <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+            </div>
+
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-2">Q2 GAAP 与调整后盈利 (Million USD)</h3>
+                <p class="text-xs text-slate-500 mb-4">调整后数据属 Non-GAAP，主要剔除组织重组费用。公司公布税前调整 US$52m、调整后营业利润 US$3,391m；四舍五入可能令加总差 US$1m。自由现金流为运营现金流减资本支出的计算值。</p>
+                <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
+            </div>
+        </div>
+
+        <div class="metric-card mt-6">
+            <h3 class="text-lg font-bold text-slate-800 mb-4">Q2 核心财务数据（百万美元；EPS 除外）</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left border-collapse">
+                    <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
+                        <tr>
+                            <th class="px-6 py-3 font-bold">财务指标</th>
+                            <th class="px-6 py-3 font-bold text-right">Q2 2026 GAAP</th>
+                            <th class="px-6 py-3 font-bold text-right text-blue-600">Q2 调整后 / 补充</th>
+                            <th class="px-6 py-3 font-bold text-right text-emerald-600">YoY / 补充</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-700">
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">季度总营收 (Revenue)</td>
+                            <td class="px-6 py-4 text-right">$7,099 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$7,099 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-emerald-500">营收 +4% / 固定汇率 +2%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">营业利润及利润率 (Operating Income / Margin)</td>
+                            <td class="px-6 py-4 text-right">$3,338 M (47.0%)</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$3,391 M (47.8%)</td>
+                            <td class="px-6 py-4 text-right text-emerald-500">调整后利润 +3.5%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">季度净利润 (Net Income)</td>
+                            <td class="px-6 py-4 text-right">$2,362 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$2,402 M</td>
+                            <td class="px-6 py-4 text-right text-emerald-500">GAAP +4.8% / 调整后 +5.1%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">摊薄每股盈利 (Diluted EPS)</td>
+                            <td class="px-6 py-4 text-right">$3.32</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$3.38</td>
+                            <td class="px-6 py-4 text-right text-emerald-600">GAAP +6% / 调整后 +6%</td>
+                        </tr>
+                        <tr class="bg-slate-50 font-bold">
+                            <td class="px-6 py-4 text-slate-800">运营现金流 / 自由现金流（计算值）</td>
+                            <td class="px-6 py-4 text-right text-slate-500">运营现金流: $2,807 M</td>
+                            <td class="px-6 py-4 text-right text-blue-600">自由现金流: $1,976 M</td>
+                            <td class="px-6 py-4 text-right text-purple-600">资本支出: $831 M</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="valuation" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比较</h2></div>
+        <div class="metric-card">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-slate-800">全球餐饮同业未来四季预测市盈率 (Next 4 Qtrs Est Forward P/E)</h3>
+            </div>
+            <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
+            <p class="text-xs text-slate-400 mt-3 text-right">来源：本次提供的 Bloomberg EEO 截图，Current Multiples → Next 4 Qtrs Est → Price/EPS, Adj+。QSR 16.47x、MCD 17.89x、YUM 21.48x、SBUX 31.30x 均采用画面 Adj+ 口径。画面未来四季期末为 2026/09/30 至 2027/06/30，但 SBUX 财季名称不同。MCD、QSR、SBUX 报价栏显示 08-Oct，YUM 日期被裁切；没有独立估值日期，不视作已核实同日收盘。各公司调整项目与商业模式亦有差异。</p>
+        </div>
+    </section>
+
+    <section id="street-comments" class="tab-content">
+        <div class="mb-6">
+            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、华尔街观点</h2>
+            <p class="mt-2 text-sm text-slate-500">来源：Bloomberg ANR（2026/10/09）；以 10/08 画面所示参考股价 US$236.90 计算。</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">瑞银 (UBS)</h3>
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
                 </div>
-                <ul class="space-y-6">
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">1.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">全球同店销售稳定增长</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">第一季全球同店销售额（Comparable sales）成长 3.8%，所有业务部门皆维持稳固的成长动能。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">2.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">系统性销售额表现强劲</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">全球系统性销售额（Systemwide sales）单季突破 340 亿美元，年增达 11%（若以固定汇率计算则为 6%）。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">3.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">常客忠诚计划贡献显著</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">在全球 70 个设有忠诚度计划的市场中，会员单季贡献的系统性销售额超过 90 亿美元，过去十二个月累计贡献更突破 380 亿美元。</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">4.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">内部组织现代化转型</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">公司持续推动名为“加速组织发展（Accelerating the Organization）”的现代化转型计划，本季为此认列了约 4,700 万美元的重组相关税前费用。</p>
-                        </div>
-                    </li>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>评级与日期：</b> Dennis Geiger; Buy; 2026/09/24.</li>
+                    <li><b>目标价与隐含回报：</b> US$320.00; +35.1%.</li>
                 </ul>
             </div>
-        </section>
 
-        <section id="financials" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、运营与财务数据</h2></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                <div class="metric-card border-t-4 border-t-emerald-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">总营收 (Total Revenues)</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$6.52 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +9%</p>
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">Neutral</span>
                 </div>
-                <div class="metric-card border-t-4 border-t-blue-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">全球同店销售 (Comparable Sales)</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">+3.8%</p>
-                    <p class="text-sm text-blue-600 font-semibold mt-1">▲ U.S. +3.9%</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-indigo-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">GAAP 营业利润</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$2.95 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +12%</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-purple-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">Non-GAAP 净利润</h4>
-                    <p class="text-xl font-bold text-slate-800 mt-1">$2.02 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ EPS $2.83 (+6%)</p>
-                </div>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>评级与日期：</b> Brian Harbour; Neutral（本站统一分类）; 2026/09/28.</li>
+                    <li><b>目标价与隐含回报：</b> US$297.00; +25.4%.</li>
+                </ul>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="metric-card">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">Q1 营收部门结构 (Billion USD)</h3>
-                    <p class="text-xs text-slate-500 mb-4">加盟餐厅营收为最大板块，占总营收比例最高。</p>
-                    <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">摩根大通 (JP Morgan)</h3>
+                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Overweight</span>
                 </div>
-
-                <div class="metric-card">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">获利能力指标 (Billion USD)</h3>
-                    <p class="text-xs text-slate-500 mb-4">营业利润增长稳健，显示整体获利能力良好。</p>
-                    <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
-                </div>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>评级与日期：</b> John W Ivankoe; Overweight; 2026/09/29.</li>
+                    <li><b>目标价与隐含回报：</b> US$250.00; +5.5%.</li>
+                </ul>
             </div>
+        </div>
+    </section>
 
-            <div class="metric-card mt-6">
-                <h3 class="text-lg font-bold text-slate-800 mb-4">各事业群运营明细 (FY26 Q1)</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-left border-collapse">
-                        <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
-                            <tr>
-                                <th class="px-6 py-3 font-bold">事业群 (Segment)</th>
-                                <th class="px-6 py-3 font-bold text-right">营收 (Million)</th>
-                                <th class="px-6 py-3 font-bold text-right text-emerald-600">营收增长 (YoY)</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-slate-700">
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">加盟餐厅 (Franchised restaurants)</td>
-                                <td class="px-6 py-4 text-right">$4,007</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">+9%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">直营餐厅 (Company-owned and operated restaurants)</td>
-                                <td class="px-6 py-4 text-right">$2,317</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">+9%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">其他 (Other revenues)</td>
-                                <td class="px-6 py-4 text-right">$193</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">+19%</td>
-                            </tr>
-                            <tr class="bg-slate-50 font-bold">
-                                <td class="px-6 py-4 text-slate-800">总计 (Total)</td>
-                                <td class="px-6 py-4 text-right text-slate-800">$6,517</td>
-                                <td class="px-6 py-4 text-right text-emerald-600">+9%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+    <section id="risks" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、风险因素</h2></div>
+        <div class="metric-card">
+            <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-rose-700 text-base">客流、消费能力与促销竞争：</strong> 美国 Q2 同店销售增长 0.8%，但客流下降。若消费者进一步控制外食支出，价格及产品组合难以持续抵销客流流失；更大力度的优惠亦可能压低餐厅利润。会员活跃增长不保证每次消费或整体客流同步改善。
+                </li>
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-base">NEXT 执行与加盟商投资回报：</strong> 2030 年利润率目标依赖技术部署、门店流程与加盟商合作。250 个基点是餐厅效率改善目标，未扣除所有投资及支持成本；2027–2030 年额外资本合作支持 US$1.5–2.0bn 为累计金额。若执行延误、成本超支或加盟商回报不足，效益可能延后。
+                </li>
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-base">通胀、人工与门店成本压力：</strong> 食品、人工与占用成本上升可能侵蚀门店回报，并削弱加盟商投资能力。Q2 调整后营业利润率约 47.8%，略低于去年同期约 47.9%；即使销售增长，管理费用、组织转型及促销开支仍可能限制运营杠杆。
+                </li>
+                <li class="pb-1">
+                    <strong class="text-base">汇率与国际市场分化：</strong> Q2 营收按报告汇率增长 4%、固定汇率增长 2%，显示汇率对表面增幅有影响。国际运营市场的法国，以及国际发展授权市场的中国，同店销售下降，抵销其他市场增长；区域需求、汇率及运营中断可能令全球表现分化。
+                </li>
+            </ol>
+        </div>
+    </section>
 
-        <section id="valuation" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比较</h2></div>
-            <div class="metric-card">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-lg font-bold text-slate-800">全球餐饮巨头 FY 2026 Forward P/E 倍数比较</h3>
-                </div>
-                <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
-                <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
-            </div>
-        </section>
-
-        <section id="street-comments" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、华尔街观点</h2></div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">JP Morgan</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>防御性与数字化优势：</b> 分析师给予增持评级，目标价设定为 305.00 美元。虽然宏观经济环境面临挑战，但麦当劳凭借强大的品牌力与高达 380 亿美元的忠诚计划年营收贡献，展现出极强的防御性与市占率扩张潜力。</li>
-                    </ul>
-                </div>
-
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">UBS</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">买入 (Buy)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>组织重组效益显现：</b> 分析师给予买入评级，目标价为 365.00 美元。指出全球同店销售 3.8% 的增长优于预期，且“加速组织发展”计划带来的短期重组费用将转化为长期的运营杠杆与利润率扩张。</li>
-                    </ul>
-                </div>
-
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">Goldman Sachs</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">买入 (Buy)</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>定价能力与加盟模式护城河：</b> 分析师给予买入评级，目标价高达 370.00 美元。强调在恶性通胀与成本压力下，麦当劳的加盟模式提供了稳定的现金流（加盟营收年增9%），展现出卓越的定价能力与抗风险能力。</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="risks" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、风险因素</h2></div>
-            <div class="metric-card">
-                <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-rose-700 text-base">总体经济逆风与消费行为改变：</strong> 执行长 Chris Kempczinski 特别指出目前运营处于“充满挑战的环境”。在持续的通胀压力下，中低收入客群可能会缩减外食预算或转向更低价的选择，这对客流量（Guest Counts）的稳定增长构成直接威胁，可能导致系统性销售额的成长主要依赖于客单价（Average Check）提升而非客流增长。
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">全球地缘政治与不可抗力运营中断：</strong> 麦当劳的全球版图使其高度暴露于区域性风险。部分地区的餐厅面临因自然灾害、疫情、战争、恐怖主义或其他敌对行动而导致必须暂时关闭或缩减营业时间的风险，这将直接冲击国际授权发展市场（IDL）与直营市场的同店销售表现。
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">汇率波动与恶性通胀冲击：</strong> 由于麦当劳海外营收占比极高，强势美元对其财务报表产生显著的折算逆风。此外，部分运营市场面临三年累计通胀率超过 100% 的恶性通胀压力，不仅增加当地供应链与劳动力成本，也增加了定价策略的难度与消费者流失的风险。
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">内部组织重组的执行阵痛期：</strong> 公司目前正持续推进名为“加速组织发展（Accelerating the Organization）”的内部现代化转型计划。本季为此认列了高达 4,700 万美元的重组相关税前费用（去年同期为 6,600 万美元）。若转型进度不如预期，短期内不仅会持续拖累 GAAP 获利表现，也可能影响总部与加盟商之间的协作效率。
-                    </li>
-                    <li class="pb-1">
-                        <strong class="text-base">税率上升与加盟商健康度：</strong> 本季较高的有效税率（Effective Tax Rate）部分抵销了由销售额带动的加盟利润成长。同时，全球超过 95% 的餐厅由特许经营商运营，若总体经济与成本压力导致加盟商获利能力下降，将直接影响麦当劳收取特许权使用费与租金的稳定性，并阻碍新店扩张计划。
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <section id="sandbox" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-indigo-500 pl-3">六、AI 定制化情境推演 (Sandbox)</h2></div>
-            
-            <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 md:p-8 shadow-sm">
-                <div class="flex items-center mb-3">
-                    <span class="text-2xl mr-3">✨</span>
-                    <h3 class="text-xl font-black text-indigo-900 tracking-tight">AI 即时沙盘推演</h3>
-                </div>
-                <p class="text-sm text-indigo-700 mb-6 leading-relaxed">请在下方输入您假设的产业变量（例如：通胀持续恶化导致消费者缩减外食支出、忠诚计划参与度下滑），AI 将基于 MCD 当前的营收结构与市场表现，为您即时推演潜在影响。</p>
-                <div class="flex flex-col md:flex-row gap-3">
-                    <input type="text" id="custom-scenario-input" placeholder="试试输入：如果通胀持续恶化导致美国市场消费者缩减外食支出，对麦当劳营收的影响..." class="flex-1 border border-indigo-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-inner">
-                    <button onclick="generateCustomScenario()" id="btn-generate-scenario" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg text-sm font-bold shadow-md transition-all whitespace-nowrap">
-                        开始推演
-                    </button>
-                </div>
-                <div id="scenario-loading" class="hidden mt-6 text-sm text-indigo-600 font-bold flex items-center bg-indigo-100/50 p-4 rounded-lg">
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                    AI 正在通过 Vercel 后端计算数据...
-                </div>
-                <div id="scenario-result" class="mt-6 hidden bg-white p-6 rounded-xl border border-indigo-200 text-sm text-slate-800 leading-relaxed shadow-sm"></div>
-            </div>
-        </section>
-
-        <section id="disclaimer" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">七、免责声明</h2></div>
+    <section id="disclaimer" class="tab-content">
+            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免责声明</h2></div>
             <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
                 <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在从 disclaimer.html 载入免责声明，请稍候...</p></div>
             </div>
         </section>
 
-    </main>
+</main>
 
-    <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
-            <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
-                <div class="flex items-center">
-                    <span class="text-2xl mr-2">🤖</span>
-                    <div><h4 class="font-bold text-sm">研究员专属 AI 助理</h4><p class="text-xs text-blue-200">Powered by Vercel & Gemini ✨</p></div>
-                </div>
-                <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
+<div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
+            <div class="flex items-center">
+                <span class="text-2xl mr-2">🤖</span>
+                <div><h4 class="font-bold text-sm">研究员专属 AI 助理</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
             </div>
-            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
-                <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
-                    分析师您好！我是您的专属 麦当劳 (MCD) 报告辅助 AI。您可以随时询问我关于本次同店销售成长 3.8%、忠诚计划贡献的营收，或是组织重组费用的潜在影响。
-                </div>
-            </div>
-            <div class="p-3 bg-white border-t border-slate-200">
-                <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
-                    <input type="text" id="chat-input" placeholder="输入您的指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
-                    </button>
-                </form>
+            <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
+            <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
+                分析师您好！本页更新于 2026/10/09，涵盖麦当劳 Q2 2026 及 09/23 NEXT 更新。您可询问 1.3% 全球同店销售增长、US$1.976bn 季度自由现金流、2030 年目标及 17.89x 远期 P/E；实绩、公司目标与市场共识会分开说明，本页不提供即时行情。
             </div>
         </div>
-        <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
-            <span class="text-2xl">✨</span>
-        </button>
-    </div>
-
-    <div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
-        <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
-            <span>✨</span> AI 白话文解释
-        </button>
-    </div>
-    <div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
-            <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
-                <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 术语解释</h3>
-                <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        <div class="p-3 bg-white border-t border-slate-200">
+            <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
+                <input type="text" id="chat-input" placeholder="输入您的研究指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
                 </button>
-            </div>
-            <div class="p-6">
-                <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查询的词汇：</div>
-                <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
-                <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
-                    <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                    AI 正在生成解释...
-                </div>
-                <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
-            </div>
-            <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
-                <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">关闭</button>
-            </div>
+            </form>
         </div>
     </div>
+    <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
+        <span class="text-2xl">✨</span>
+    </button>
+</div>
 
-    <script>
-        function switchTab(e, tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(el => { el.classList.remove('active', 'border-blue-600', 'text-blue-600'); el.classList.add('text-slate-500'); });
-            document.getElementById(tabId).classList.add('active');
-            e.currentTarget.classList.remove('text-slate-500'); e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+<div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
+    <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
+        <span>✨</span> AI 白话文解释
+    </button>
+</div>
+<div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+            <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 术语解释</h3>
+            <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查询的词汇：</div>
+            <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
+            <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
+                <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                AI 正在生成解释...
+            </div>
+            <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
+        </div>
+        <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+            <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">关闭</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // 注册全局图表实例缓存
+    window.charts = {};
+
+    function switchTab(e, tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(el => {
+            el.classList.remove('active', 'border-blue-600', 'text-blue-600');
+            el.classList.add('text-slate-500');
+        });
+        document.getElementById(tabId).classList.add('active');
+        e.currentTarget.classList.remove('text-slate-500');
+        e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+
+        // 彻底修复 hidden 画布无宽高像素之 Chart.js 原生缺陷
+        if (tabId === 'financials') {
+            if (window.charts.mcdSegment) window.charts.mcdSegment.resize();
+            if (window.charts.mcdProfit) window.charts.mcdProfit.resize();
+        } else if (tabId === 'valuation') {
+            if (window.charts.mcdValuation) window.charts.mcdValuation.resize();
         }
+    }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // Chart 1: Segment Revenue
-            new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
-                type: 'doughnut',
-                data: {
-                    labels: ['加盟餐厅 (Franchised)', '直营餐厅 (Company-operated)', '其他 (Other)'],
-                    datasets: [{
-                        data: [4.007, 2.317, 0.193],
-                        backgroundColor: ['rgba(245, 158, 11, 0.8)', 'rgba(59, 130, 246, 0.8)', 'rgba(148, 163, 184, 0.8)'],
-                        borderWidth: 0
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '60%' }
-            });
+    document.addEventListener('DOMContentLoaded', function() {
+        // Chart 1: MCD Q2 2026 Geographic Segment Revenue (Doughnut)
+        window.charts.mcdSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ["美国", "国际运营市场", "国际发展授权市场及公司总部"],
+                datasets: [{
+                    data: [2827, 3603, 669],
+                    backgroundColor: ['#2563eb', '#10b981', '#8b5cf6'],
+                    borderWidth: 0
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
+        });
 
-            // Chart 2: Profitability
-            new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['总营收 (Total Rev)', 'GAAP 营业利润', 'Non-GAAP 净利润'],
-                    datasets: [{
-                        label: '十亿美元 (Billion USD)',
-                        data: [6.52, 2.95, 2.02],
-                        backgroundColor: ['#94a3b8', '#3b82f6', '#10b981'],
+        // Chart 2: MCD GAAP / Adjusted Non-GAAP Income (Grouped Bar)
+        window.charts.mcdProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ["营业利润", "净利润"],
+                datasets: [
+                    {
+                        label: "GAAP (百万美元)",
+                        data: [3338, 2362],
+                        backgroundColor: '#94a3b8',
                         borderRadius: 4
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } }, x: { grid: { display: false } } } }
-            });
+                    },
+                    {
+                        label: "调整后 Non-GAAP (百万美元)",
+                        data: [3391, 2402],
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } } } }
+        });
 
-            // Chart 3: Valuation (Peers)
-            new Chart(document.getElementById('valuationChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['MCD (麦当劳)', 'SBUX (星巴克)', 'YUM (百胜餐饮)', 'QSR (餐饮品牌国际)'],
-                    datasets: [{ label: 'FY 2026 Forward P/E 倍数', data: [21.09, 44.99, 22.65, 19.34], backgroundColor: ['rgba(37, 99, 235, 0.9)', 'rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)'], borderRadius: 4 }]
-                },
-                options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
-            });
+        // Chart 3: Global Restaurant Peer Forward P/E (Horizontal Bar)
+        window.charts.mcdValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ["QSR (餐饮品牌国际集团)", "MCD (麦当劳)", "YUM (百胜餐饮集团)", "SBUX (星巴克)"],
+                datasets: [{
+                    label: 'Next 4 Qtrs Est Forward P/E',
+                    data: [16.47, 17.89, 21.48, 31.30],
+                    backgroundColor: ['rgba(148, 163, 184, 0.6)', 'rgba(37, 99, 235, 0.95)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)'],
+                    borderRadius: 4
+                }]
+            },
+            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
+        });
 
-            // 读取外部 disclaimer.html 文件
-            fetch('disclaimer.html')
+        // 安全调阅外部 disclaimer.html 连动模组
+        fetch('disclaimer.html')
                 .then(response => {
                     if (!response.ok) throw new Error('无法读取 disclaimer.html');
                     return response.text();
@@ -451,10 +470,10 @@
                     const container = document.getElementById('disclaimer-container');
                     if(container) container.innerHTML = '<div class="p-6 text-center text-red-500 font-bold">无法载入 disclaimer.html，请确认文件存在。</div>';
                 });
-        });
+    });
 
-        // AI Core
-        async function callGeminiAPI(prompt, systemInstruction) {
+    // NTAM 后端 AI 调度核心
+    async function callGeminiAPI(prompt, systemInstruction) {
             try {
                 const response = await fetch('/api/gemini', { 
                     method: 'POST', headers: { 'Content-Type': 'application/json' }, 
@@ -467,65 +486,48 @@
             } catch (error) { return `网络连线失败。(${error.message})`; }
         }
 
-        // AI Chat
-        const standardPrompt = `你是 NTAM 内部研究员的专属 AI 助理。请协助分析师总结 麦当劳 (MCD) Q1 2026 财报数据。请用客观、精炼的简体中文回答，使用 HTML <b> 加粗重点，严禁使用 markdown 语法。`;
-        function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
-        function appendMessage(text, isUser) {
-            const msgDiv = document.createElement('div');
-            msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
-            msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv); 
-            document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
-        }
-        function showTypingIndicator() {
-            const ind = document.createElement('div'); ind.id = 'typing-indicator'; 
-            ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
-            ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
-            document.getElementById('chat-messages').appendChild(ind);
-        }
-        async function handleChatSubmit(e) {
-            e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
-            input.value = ''; appendMessage(text, true); showTypingIndicator();
-            const res = await callGeminiAPI(text, standardPrompt);
-            document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
-        }
+    // AI 助理 Widget 逻辑
+    const standardPrompt = `你是 NTAM 投资研究的资深 AI 助理，以专业、清楚的简体中文回答麦当劳（MCD）问题。 This page is as of 2026/10/09 and has no live market data. Q2 2026 ran from2026/04/01 to2026/06/30; earnings published2026/08/04,10-Q filed2026/08/07. September23 NEXT is a strategy update, not Q3 results. Amounts are USD million unless stated. Q2 revenue7099 versus6843, company-reported growth4%, constant currency2%; global comparable sales1.3% versus3.8% prior-year quarter. US comparable sales0.8% with negative guest counts and higher average check/product mix; IOM1.5%, IDL1.9%, with negative comps in France and China respectively. Q2 GAAP/adjusted non-GAAP operating income3338/3391, calculated margins47.0%/47.8%; previous-year3232/3275, margins47.2%/47.9%. GAAP/adjusted net income2362/2402 versus2253/2286; diluted EPS3.32/3.38 versus3.14/3.19. Company reports EPS growth6% on both bases. Rounded pre-tax adjustments52 and after-tax40 primarily concern Accelerating the Organization;3338+52 differs by1 from reported adjusted operating income3391 due to source rounding; do not force reconciliation. Table derived income growth: adjusted operating3.5%, GAAP net4.8%, adjusted net5.1%. Q2 operating cash flow2807, capex831, derived FCF1976=2807-831; prior-yearOCF1998, capex744, FCF1254; FCF growth57.6%. H1 OCF5222, capex1516, FCF3706; do not label H1 cash flow as quarterly. Full10-Q segment revenue including allocated Other: US2827,IOM3603,IDL&Corporate669=sum7099. Supplement segment amounts2726/3543/648 exclude182 other and must not replace these totals. Revenue categories franchised4393,company-operated2525,other182 sum7100 versus official7099 because of rounding. Roughly95% of restaurants franchised,46028 restaurants atJun30. Q2 systemwide sales about37bn,reported growth5%/CC4%, not consolidated revenue.70 loyalty markets,TTM loyalty systemwide sales40bn,nearly220m90-day active users; neither loyalty nor total systemwide sales should be added to consolidated company revenue. August4 FY2026 company outlook: capex3.7–3.9bn,operating margin mid-to-high40% range,about2600 gross openings/2100 net additions,FCF conversion low-to-mid80% range. September23 NEXT targets by2030: corporate operating margin low-to-mid50% range,SG&A/systemwide sales about1.9%,FCF conversion mid-to-high80% range. Gross restaurant-level efficiency250bps in US and IOM upon full deployment, not a guaranteed corporate margin uplift.2027–2030 baseline capex about3bn annually PLUS cumulative1.5–2.0bn additional capital partnering support, not annual additional support. Targets are forward-looking, not realized results. Bloomberg ANR asof2026/10/09: rating4.12/5,24Buy16Hold1Sell; consensus12Mtarget295.91; target count raw33/46; displayed Last Price236.90 with quote header On08-Oct(year2026 inferred from paired ANR). This is a displayed10/08 reference price, not a verified closing price. Consensus price-only upside24.9%, excludes dividends. Verified preferred broker order: UBS,Dennis Geiger,Buy320,date2026/09/24,price-only return35.1%; Morgan Stanley,Brian Harbour,Neutral(site-standardized),target297,date2026/09/28,return25.4%; JP Morgan,John W Ivankoe,Overweight250,date2026/09/29,return5.5%. Morgan Stanley originalEqualwt/In-Line means stockEqual-weight plus separate industryIn-Line. Neutral is the owner display category, not original native rating. No original broker investment theses supplied; never invent them. Q3 2026 EEO market estimates: revenue7.291bn,EPS Adj+3.403,EPS GAAP3.402; not company guidance. EEO next4 Price/EPS Adj+:QSR16.47,MCD17.89,YUM21.48,SBUX31.30. Displayed next4 quarter ends2026/09/30,2026/12/31,2027/03/31,2027/06/30, but Starbucks fiscal labels differ. MCD,QSR,SBUX quotes show08-Oct, YUMdate cropped; no independent EEO asof date established, do not claim verified same-date closing prices. Definitions and business models differ despite common Adj+ label. Do not sum independently sampled quarterly rows into an annual consensus. Official locale company names: MCD Traditional麥當勞/Simplified麦当劳; SBUX星巴克 in both; QSR TraditionalRestaurant Brands International/Simplified餐饮品牌国际集团; YUM Traditional百勝餐飲集團/Simplified百胜餐饮集团. YUM is Yum! Brands, not separately listed Yum China/YUMC. Use names matching the requested locale and page chart. Distinguish company actuals, targets, Bloomberg estimates, calculations and our views. Use 我們認為 / 我们认为 / We believe for house analysis. State missing evidence and never invent figures, broker theses or live data. Wall Street display labels must be Overweight, Buy, Neutral, Sell or Underweight; select verified available firms in order UBS>Morgan Stanley>JP Morgan>Citi>HSBC before other brokers. Omit calculator attribution and repeated disclaimer wording. Wall Street source line contains only Bloomberg ANR(2026/10/09) and calculation from the displayed10/08 reference price US$236.90. Use HTML <b> tags for emphasis, never Markdown.`;
+    function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
+    function appendMessage(text, isUser) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
+        msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
+        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+    }
+    function showTypingIndicator() {
+        const ind = document.createElement('div'); ind.id = 'typing-indicator';
+        ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
+        ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
+        document.getElementById('chat-messages').appendChild(ind);
+    }
+    async function handleChatSubmit(e) {
+        e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
+        input.value = ''; appendMessage(text, true); showTypingIndicator();
+        const res = await callGeminiAPI(text, standardPrompt);
+        document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
+    }
 
-        // Highlight AI
-        let selectedText = "";
-        document.addEventListener('mouseup', function(e) {
-            const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
-            if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
-            if (text.length > 1 && text.length < 50) {
-                selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
-                tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${rect.top - 40}px`;
-                tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
-            } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
-        });
-        document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
-        async function explainSelectedTerm() {
-            document.getElementById('selection-tooltip').classList.add('hidden');
-            document.getElementById('explain-term-title').textContent = selectedText; 
-            document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
-            const res = await callGeminiAPI(`解释这个 MCD 相关词汇：${selectedText}`, "你是金融专家，用最白话简体中文解释词汇。限 150 字，重点用 <b> 包覆。");
-            document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
-        }
-        function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
-        
-        // 🔮 沙盒生成脚本
-        async function generateCustomScenario() {
-            const inputEl = document.getElementById('custom-scenario-input'); const btnEl = document.getElementById('btn-generate-scenario'); 
-            const loadingEl = document.getElementById('scenario-loading'); const resultEl = document.getElementById('scenario-result');
-            const scenarioText = inputEl.value.trim(); if (!scenarioText) { alert('请先输入假设情境！'); return; }
-            btnEl.disabled = true; btnEl.classList.add('opacity-50'); loadingEl.classList.remove('hidden'); resultEl.classList.add('hidden');
-            
-            const sysPrompt = `你是华尔街资深分析师。基于 MCD 本季同店销售成长 3.8%、忠诚计划贡献强劲、面临总体经济挑战等事实，评估用户的“假设情境”。
-请简明扼要地回复：1. 初步评估 2. 对营收/利润潜在影响 3. 股价可能反应。
-使用简体中文，并用 HTML <b> 标签加粗重点，严禁使用 markdown 语法。总字数约 200 字。`;
-
-            const aiAnalysis = await callGeminiAPI(`推演这个情境：${scenarioText}`, sysPrompt);
-            loadingEl.classList.add('hidden'); btnEl.disabled = false; btnEl.classList.remove('opacity-50');
-            resultEl.innerHTML = `<h4 class="font-bold text-indigo-900 mb-3 border-b border-indigo-100 pb-2">🎯 AI 情境推演结果</h4>` + aiAnalysis; 
-            resultEl.classList.remove('hidden');
-        }
-    </script>
+    // 划词解说机制
+    let selectedText = "";
+    document.addEventListener('mouseup', function(e) {
+        const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
+        if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
+        if (text.length > 1 && text.length < 50) {
+            selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
+            tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${window.scrollY + rect.top - 40}px`;
+            tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
+        } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+    });
+    document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
+    async function explainSelectedTerm() {
+        document.getElementById('selection-tooltip').classList.add('hidden');
+        document.getElementById('explain-term-title').textContent = selectedText;
+        document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
+        const res = await callGeminiAPI(`解释这个麦当劳（MCD）财报相关词汇；本页资料截至 2026/10/09：${selectedText}`, "你是麦当劳餐饮与加盟业务研究专家。用专业而浅白的简体中文解释词汇，限 150 字，重点以 <b> 标签包覆；没有资料请明确说明，不编造即时信息。");
+        document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
+    }
+    function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
+</script>
 </body>
 </html>

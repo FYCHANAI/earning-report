@@ -1,37 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>McDonald's (MCD) In-Depth Research Report | NTAM Senior Analyst</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    <style>
-        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
-        .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
-        @media (min-width: 768px) { .chart-container { height: 400px; } }
-        .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
-        .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
-        .tab-content.active { display: block; }
-        @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-        .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
-        .hide-scrollbar::-webkit-scrollbar { display: none; }
-        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-        
-        /* AI Animations */
-        @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-        .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
-        .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
-        .typing-dot:nth-child(1) { animation-delay: -0.32s; }
-        .typing-dot:nth-child(2) { animation-delay: -0.16s; }
-        @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
-        #selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>McDonald's (MCD) In-Depth Research Report | NTAM Senior Analyst</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<style>
+    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+    .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+    @media (min-width: 768px) { .chart-container { height: 400px; } }
+    .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+    .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+    .tab-content.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* AI Animations */
+    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+    .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
+    .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+    .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+    @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+    #selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
+</style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
 
-    <div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
+<div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
         <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
             <div class="text-center mb-6">
                 <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
@@ -57,379 +57,398 @@
         function declinePI() { document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`; }
     </script>
 
-    <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-            <div class="flex justify-between items-start">
+
+<header class="bg-white border-b border-slate-200 sticky top-0 z-40">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex justify-between items-start">
+            <div class="flex flex-col">
+                <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
+                    <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+                    <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+                </a>
                 <div class="flex flex-col">
-                    <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
-                        <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-8 w-auto" onerror="this.style.display='none'">
-                        <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
-                    </a>
-                    <div class="flex flex-col">
-                        <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">McDonald's <span class="text-blue-600">MCD</span></h1>
-                        <span class="text-sm text-slate-500 font-medium mt-1">Senior Analyst Operational & Strategic Report | Q1 2026</span>
-                    </div>
-                </div>
-                <div class="flex flex-col items-end space-y-3">
-                    <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
-                        <option value="mcd.html">繁體中文</option>
-                        <option value="mcd-sc.html">简体中文</option>
-                        <option value="mcd-en.html" selected>English</option>
-                    </select>
-                    <div class="flex items-center space-x-4">
-                        <div class="text-right hidden sm:block">
-                            <div class="text-xs text-slate-400 font-bold">Target Price <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
-                            <div class="text-xl font-bold text-slate-800">$331.91 USD</div>
-                        </div>
-                        <div class="px-4 py-2 bg-blue-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">Rating: Buy</div>
-                    </div>
+                    <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">McDonald's <span class="text-blue-600">MCD</span></h1>
+                    <span class="text-sm text-slate-500 font-medium mt-1">Senior Analyst Operations & Strategy Report | Q2 / 2026 Earnings Special</span>
                 </div>
             </div>
-            
-            <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
-                <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">I. Our Views</button>
-                <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">II. Operational & Financial Data</button>
-                <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">III. Valuation Comparison</button>
-                <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">IV. Wall Street Views</button>
-                <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">V. Risk Factors</button>
-                <button onclick="switchTab(event, 'sandbox')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-indigo-500 hover:text-indigo-700">VI. AI Interactive Sandbox ✨</button>
-                <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">VII. Disclaimer</button>
-            </nav>
+            <div class="flex flex-col items-end space-y-3">
+                <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
+                    <option value="mcd.html">繁體中文</option>
+                    <option value="mcd-sc.html">简体中文</option>
+                    <option value="mcd-en.html" selected>English</option>
+                </select>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right hidden sm:block">
+                        <div class="text-xs text-slate-400 font-bold">Consensus Target Price <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Bloomberg ANR · 2026/10/09)</span></div>
+                        <div class="text-xl font-bold text-slate-800">$295.91 USD</div>
+                    </div>
+                    <div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">Consensus: Buy (4.12/5)</div>
+                </div>
+            </div>
         </div>
-    </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+        <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+            <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">1. Our Views</button>
+            <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">2. Financials & Operations</button>
+            <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">3. Valuation Comparison</button>
+            <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">4. Analyst Views</button>
+            <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">5. Risk Factors</button>
+            <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">6. Disclaimer</button>
+        </nav>
+    </div>
+</header>
 
-        <section id="our-comments" class="tab-content active">
-            <div class="mb-6">
-                <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">I. Our Views</h2>
-                <p class="mt-2 text-sm text-slate-500">Based on the FY26 Q1 earnings report and management commentary, below are the core conclusions distilled by the NTAM research team:</p>
+<main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
+
+    <section id="our-comments" class="tab-content active">
+        <div class="mb-6">
+            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">I. Our Views</h2>
+            <p class="mt-2 text-sm text-slate-500">Updated: 2026/10/09. Based on Q2 2026 results for the period ended 2026/06/30, released on 2026/08/04, and the 10-Q, including the 09/23 NEXT strategy update. Company actuals, future targets and market consensus are identified separately.</p>
+        </div>
+        <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
+            <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
+                <span class="text-3xl mr-3">🎯</span>
+                <h3 class="text-2xl font-black text-blue-600 tracking-tight">Core Operational Conclusions</h3>
             </div>
-            <div class="metric-card bg-slate-900 text-white border-none p-6 md:p-8">
-                <div class="flex items-center mb-6 border-b border-slate-700 pb-4">
-                    <span class="text-3xl mr-3">🎯</span>
-                    <h3 class="text-2xl font-black text-blue-400 tracking-tight">Core Conclusions</h3>
+            <ul class="space-y-6">
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">Comparable Sales Grow, but US Traffic Has Yet to Recover</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">Q2 revenue was US$7.099bn, up 4% reported and 2% in constant currencies. Global comparable sales grew 1.3%, versus 3.8% in the prior-year quarter. US growth of 0.8% reflected a higher average check and product mix, partly offset by negative comparable guest counts; International Operated Markets and International Developmental Licensed Markets grew 1.5% and 1.9%. Adjusted operating income was US$3.391bn, with a 47.8% margin. We believe pricing and mix can sustain sales, but durable growth requires a traffic recovery; positive comparable sales do not establish that guest counts have recovered.</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">Franchising and Loyalty Support Cash Generation; Sales Definitions Matter</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">Approximately 95% of restaurants are franchised. Q2 systemwide sales of about US$37bn cover franchised and company-operated restaurants and are not company revenue. Across 70 loyalty markets, trailing-twelve-month loyalty systemwide sales reached US$40bn, with nearly 220 million 90-day active users. Q2 operating cash flow was US$2.807bn; after US$0.831bn capex, free cash flow was US$1.976bn, up 57.6% YoY, versus US$3.706bn for the first half. We believe franchise and loyalty scale support cash generation, but loyalty sales must not be added to company revenue, nor does one quarter establish a full-year cash-flow trend.</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">NEXT Targets Long-Term Efficiency with Investment and Franchisee Support</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">The 09/23 NEXT update targets a corporate operating margin in the low-to-mid 50% range by 2030 and 250 basis points of gross restaurant-level efficiencies in the US and International Operated Markets upon full deployment. That is a restaurant-level gross target, not a guaranteed 250-basis-point increase in corporate operating margin. Baseline capex for 2027–2030 is expected to be about US$3bn annually, plus US$1.5–2.0bn of cumulative capital partnering support. We believe efficiency and digital initiatives create long-term potential, while franchisee investment, realized savings and rent-support costs require monitoring. <a href="https://corporate.mcdonalds.com/corpmcd/our-stories/article/NEXT-growth-strategy-advances.html" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-600">Source: NEXT update</a>.</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">At 17.89x Forward P/E, Earnings Improvement Remains Essential</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">Bloomberg EEO shows Q3 2026 consensus revenue of US$7.291bn and Adj+ EPS of US$3.403; these are market estimates, not company guidance. MCD trades at a displayed 17.89x next-four-quarter Adj+ P/E, above QSR at 16.47x and below YUM at 21.48x and SBUX at 31.30x. The 10/09 ANR consensus target of US$295.91 implies 24.9% upside from the displayed 10/08 reference price of US$236.90, excluding dividends. We believe traffic, franchisee returns and NEXT execution will determine valuation support; differences between peers and forecast risks cannot be assessed from the multiples alone.</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="financials" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">II. Financials & Operations</h2></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div class="metric-card border-t-4 border-t-emerald-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Q2 Total Revenue</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">$7,099 M</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +4% / Constant Currency +2%</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-blue-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Q2 Global Comparable Sales Growth</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">+1.3%</p>
+                <p class="text-sm text-blue-600 font-semibold mt-1">● US +0.8% / Negative Guest Counts</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-indigo-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Adjusted Operating Margin (Non-GAAP)</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">47.8%</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">● GAAP Operating Margin 47.0%</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-purple-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Q2 Free Cash Flow</h4>
+                <p class="text-xl font-bold text-slate-800 mt-1">$1,976 M</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +57.6% / OCF Less Capex</p>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-2">Q2 Total Revenue by Geographic Segment (Million USD)</h3>
+                <p class="text-xs text-slate-500 mb-4">US US$2,827m, International Operated Markets US$3,603m and International Developmental Licensed Markets & Corporate US$669m sum to US$7,099m. Segment totals include allocated other revenues. Sources: <a href="https://www.sec.gov/Archives/edgar/data/63908/000006390826000073/mcd-20260630.htm" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-600">10-Q</a> and <a href="https://www.sec.gov/Archives/edgar/data/63908/000006390826000067/exhibit991-6302026.htm" target="_blank" rel="noopener noreferrer" class="underline hover:text-blue-600">Q2 results</a>.</p>
+                <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+            </div>
+
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-2">Q2 GAAP and Adjusted Earnings (Million USD)</h3>
+                <p class="text-xs text-slate-500 mb-4">Adjusted figures are non-GAAP and primarily exclude organizational restructuring charges. The company reports US$52m of pre-tax adjustments and US$3,391m adjusted operating income; rounded amounts can produce a US$1m reconciliation difference. Free cash flow is calculated as operating cash flow less capital expenditures.</p>
+                <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
+            </div>
+        </div>
+
+        <div class="metric-card mt-6">
+            <h3 class="text-lg font-bold text-slate-800 mb-4">Q2 Core Financial Data (US$ Millions, Except EPS)</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left border-collapse">
+                    <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
+                        <tr>
+                            <th class="px-6 py-3 font-bold">Financial Metric</th>
+                            <th class="px-6 py-3 font-bold text-right">Q2 2026 GAAP</th>
+                            <th class="px-6 py-3 font-bold text-right text-blue-600">Q2 Adjusted / Supplement</th>
+                            <th class="px-6 py-3 font-bold text-right text-emerald-600">YoY / Supplement</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-700">
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">Quarterly Revenue</td>
+                            <td class="px-6 py-4 text-right">$7,099 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$7,099 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-emerald-500">Revenue +4% / Constant Currency +2%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">Operating Income / Margin</td>
+                            <td class="px-6 py-4 text-right">$3,338 M (47.0%)</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$3,391 M (47.8%)</td>
+                            <td class="px-6 py-4 text-right text-emerald-500">Adjusted Income +3.5%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">Quarterly Net Income</td>
+                            <td class="px-6 py-4 text-right">$2,362 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$2,402 M</td>
+                            <td class="px-6 py-4 text-right text-emerald-500">GAAP +4.8% / Adjusted +5.1%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">Diluted EPS</td>
+                            <td class="px-6 py-4 text-right">$3.32</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$3.38</td>
+                            <td class="px-6 py-4 text-right text-emerald-600">GAAP +6% / Adjusted +6%</td>
+                        </tr>
+                        <tr class="bg-slate-50 font-bold">
+                            <td class="px-6 py-4 text-slate-800">Operating Cash Flow / Free Cash Flow (Derived)</td>
+                            <td class="px-6 py-4 text-right text-slate-500">Operating Cash Flow: $2,807 M</td>
+                            <td class="px-6 py-4 text-right text-blue-600">Free Cash Flow: $1,976 M</td>
+                            <td class="px-6 py-4 text-right text-purple-600">Capital Expenditure: $831 M</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section id="valuation" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">III. Valuation Comparison</h2></div>
+        <div class="metric-card">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-slate-800">Global Restaurant Peer P/E Comparison (Next 4 Qtrs Est Forward P/E)</h3>
+            </div>
+            <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
+            <p class="text-xs text-slate-400 mt-3 text-right">Source: supplied Bloomberg EEO screenshots, Current Multiples → Next 4 Qtrs Est → Price/EPS, Adj+. QSR 16.47x, MCD 17.89x, YUM 21.48x and SBUX 31.30x all use the displayed Adj+ basis. The displayed next-four-quarter ends run from 2026/09/30 to 2027/06/30, but SBUX fiscal-quarter labels differ. MCD, QSR and SBUX quote headers show 08-Oct; the YUM date is cropped. No independent valuation date is provided, so these are not verified same-date closing observations. Adjustment definitions and business models also differ.</p>
+        </div>
+    </section>
+
+    <section id="street-comments" class="tab-content">
+        <div class="mb-6">
+            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">IV. Analyst Views</h2>
+            <p class="mt-2 text-sm text-slate-500">Source: Bloomberg ANR (2026/10/09); returns calculated using the displayed 10/08 reference share price of US$236.90.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">UBS</h3>
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
                 </div>
-                <ul class="space-y-6">
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">1.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">Steady Global Comparable Sales Growth</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">Global comparable sales increased by 3.8% in the first quarter, maintaining solid growth momentum across all business segments.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">2.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">Strong Systemwide Sales Performance</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">Global systemwide sales surpassed $34 billion for the quarter, an 11% year-over-year increase (or 6% in constant currencies).</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">3.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">Significant Contribution from Loyalty Program</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">Across 70 loyalty markets, loyalty members contributed over $9 billion in systemwide sales in Q1, and over $38 billion in the trailing twelve months.</p>
-                        </div>
-                    </li>
-                    <li class="flex items-start">
-                        <span class="text-emerald-400 mr-4 text-xl font-black">4.</span>
-                        <div>
-                            <strong class="text-emerald-400 block mb-1 text-lg">Internal Organizational Modernization</strong>
-                            <p class="text-slate-300 text-sm leading-relaxed">The company continues to advance its "Accelerating the Organization" modernization initiative, recognizing approximately $47 million in pre-tax restructuring charges this quarter.</p>
-                        </div>
-                    </li>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>Rating and Date:</b> Dennis Geiger; Buy; 2026/09/24.</li>
+                    <li><b>Target and Implied Return:</b> US$320.00; +35.1%.</li>
                 </ul>
             </div>
-        </section>
 
-        <section id="financials" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">II. Operational & Financial Data</h2></div>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-                <div class="metric-card border-t-4 border-t-emerald-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">Total Revenues</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$6.52 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +9%</p>
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">Morgan Stanley</h3>
+                    <span class="bg-slate-100 text-slate-600 text-xs font-bold px-2 py-1 rounded">Neutral</span>
                 </div>
-                <div class="metric-card border-t-4 border-t-blue-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">Global Comp Sales</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">+3.8%</p>
-                    <p class="text-sm text-blue-600 font-semibold mt-1">▲ U.S. +3.9%</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-indigo-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">GAAP Operating Income</h4>
-                    <p class="text-2xl font-bold text-slate-800 mt-1">$2.95 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +12%</p>
-                </div>
-                <div class="metric-card border-t-4 border-t-purple-500">
-                    <h4 class="text-xs font-bold text-slate-500 uppercase">Non-GAAP Net Income</h4>
-                    <p class="text-xl font-bold text-slate-800 mt-1">$2.02 B</p>
-                    <p class="text-sm text-emerald-600 font-semibold mt-1">▲ EPS $2.83 (+6%)</p>
-                </div>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>Rating and Date:</b> Brian Harbour; Neutral (site-standardized label); 2026/09/28.</li>
+                    <li><b>Target and Implied Return:</b> US$297.00; +25.4%.</li>
+                </ul>
             </div>
 
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                <div class="metric-card">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">Q1 Revenue by Segment (Billion USD)</h3>
-                    <p class="text-xs text-slate-500 mb-4">Franchised restaurants remain the largest segment, accounting for the highest proportion of total revenue.</p>
-                    <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">JP Morgan</h3>
+                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Overweight</span>
                 </div>
-
-                <div class="metric-card">
-                    <h3 class="text-lg font-bold text-slate-800 mb-2">Profitability Metrics (Billion USD)</h3>
-                    <p class="text-xs text-slate-500 mb-4">Operating income grew steadily, showcasing overall robust profitability.</p>
-                    <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
-                </div>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>Rating and Date:</b> John W Ivankoe; Overweight; 2026/09/29.</li>
+                    <li><b>Target and Implied Return:</b> US$250.00; +5.5%.</li>
+                </ul>
             </div>
+        </div>
+    </section>
 
-            <div class="metric-card mt-6">
-                <h3 class="text-lg font-bold text-slate-800 mb-4">Segment Operating Details (FY26 Q1)</h3>
-                <div class="overflow-x-auto">
-                    <table class="w-full text-sm text-left border-collapse">
-                        <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
-                            <tr>
-                                <th class="px-6 py-3 font-bold">Segment</th>
-                                <th class="px-6 py-3 font-bold text-right">Revenue (Million)</th>
-                                <th class="px-6 py-3 font-bold text-right text-emerald-600">Revenue Growth (YoY)</th>
-                            </tr>
-                        </thead>
-                        <tbody class="text-slate-700">
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">Franchised restaurants</td>
-                                <td class="px-6 py-4 text-right">$4,007</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">+9%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">Company-operated restaurants</td>
-                                <td class="px-6 py-4 text-right">$2,317</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">+9%</td>
-                            </tr>
-                            <tr class="border-b border-slate-100">
-                                <td class="px-6 py-4 font-medium">Other revenues</td>
-                                <td class="px-6 py-4 text-right">$193</td>
-                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">+19%</td>
-                            </tr>
-                            <tr class="bg-slate-50 font-bold">
-                                <td class="px-6 py-4 text-slate-800">Total</td>
-                                <td class="px-6 py-4 text-right text-slate-800">$6,517</td>
-                                <td class="px-6 py-4 text-right text-emerald-600">+9%</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </section>
+    <section id="risks" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">V. Risk Factors</h2></div>
+        <div class="metric-card">
+            <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-rose-700 text-base">Traffic, Consumer Affordability and Promotional Competition:</strong> US Q2 comparable sales grew 0.8%, but guest counts declined. Further pressure on dining budgets could prevent pricing and product mix from offsetting traffic losses, while deeper promotions could reduce restaurant margins. Growth in active loyalty users does not guarantee higher spending per visit or improved traffic across the system.
+                </li>
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-base">NEXT Execution and Franchisee Investment Returns:</strong> The 2030 margin target depends on technology deployment, restaurant processes and franchisee cooperation. The 250-basis-point target represents gross restaurant-level efficiencies before all investment and support costs; additional capital partnering support of US$1.5–2.0bn over 2027–2030 is cumulative. Delays, cost overruns or inadequate franchisee returns may defer the benefits.
+                </li>
+                <li class="pb-3 border-b border-slate-100">
+                    <strong class="text-base">Inflation, Labor and Restaurant Cost Pressures:</strong> Higher food, labor and occupancy costs may erode restaurant returns and weaken franchisees’ capacity to invest. Q2 adjusted operating margin was about 47.8%, slightly below approximately 47.9% a year earlier. Even with sales growth, overhead, organizational transformation and promotional spending may constrain operating leverage.
+                </li>
+                <li class="pb-1">
+                    <strong class="text-base">Currency and Divergent International Markets:</strong> Q2 revenue rose 4% in reported currencies and 2% in constant currencies, highlighting the effect of currency translation on reported growth. Negative comparable sales in France within International Operated Markets and China within International Developmental Licensed Markets partly offset growth elsewhere. Regional demand, currencies and operating disruptions may widen performance differences.
+                </li>
+            </ol>
+        </div>
+    </section>
 
-        <section id="valuation" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">III. Valuation Comparison</h2></div>
-            <div class="metric-card">
-                <div class="flex justify-between items-center mb-4">
-                    <h3 class="text-lg font-bold text-slate-800">Global Restaurant Peers FY 2026 Forward P/E Multiple Comparison</h3>
-                </div>
-                <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
-                <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
-            </div>
-        </section>
-
-        <section id="street-comments" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">IV. Wall Street Views</h2></div>
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">JP Morgan</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Overweight</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>Defensive & Digital Advantages:</b> The analyst assigns an Overweight rating with a $305.00 target price. Despite macroeconomic challenges, McDonald's demonstrates exceptional defensiveness and market share expansion potential, bolstered by its strong brand and a massive $38 billion annual contribution from its loyalty program.</li>
-                    </ul>
-                </div>
-
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">UBS</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>Restructuring Benefits Emerging:</b> The analyst assigns a Buy rating with a $365.00 target price, noting that global comp sales growth of 3.8% exceeded expectations. Short-term restructuring costs from the "Accelerating the Organization" initiative are expected to translate into long-term operating leverage and margin expansion.</li>
-                    </ul>
-                </div>
-
-                <div class="metric-card border-t-4 border-t-blue-600">
-                    <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                        <h3 class="font-black text-slate-800">Goldman Sachs</h3>
-                        <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
-                    </div>
-                    <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                        <li><b>Pricing Power & Franchise Moat:</b> The analyst gives a Buy rating with a high target price of $370.00. Emphasizes that despite hyperinflation and cost pressures, McDonald's franchise model delivers stable cash flows (franchise revenue up 9% YoY), proving outstanding pricing power and risk resilience.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section id="risks" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">V. Risk Factors</h2></div>
-            <div class="metric-card">
-                <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-rose-700 text-base">Macroeconomic Headwinds & Consumer Behavior Shifts:</strong> CEO Chris Kempczinski specifically noted the "challenging environment." Persistent inflation may cause low-to-middle-income consumers to cut dining budgets or trade down, threatening guest count growth and making systemwide sales overly reliant on average check increases.
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">Geopolitical & Force Majeure Disruptions:</strong> The company's global footprint exposes it to regional risks. Restaurants face risks of temporary closures or reduced hours due to natural disasters, pandemics, wars, terrorism, or other hostilities, directly impacting comparable sales in IDL and company-operated markets.
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">Currency Fluctuations & Hyperinflation:</strong> High overseas revenue exposure creates significant translation headwinds from a strong USD. Additionally, some markets face 3-year cumulative inflation over 100%, increasing local supply chain and labor costs while complicating pricing strategies and risking customer attrition.
-                    </li>
-                    <li class="pb-3 border-b border-slate-100">
-                        <strong class="text-base">Internal Restructuring Pains:</strong> The ongoing "Accelerating the Organization" modernization initiative led to $47 million in pre-tax restructuring charges this quarter. Slower-than-expected progress could continue to drag near-term GAAP profitability and negatively impact collaboration efficiency between headquarters and franchisees.
-                    </li>
-                    <li class="pb-1">
-                        <strong class="text-base">Rising Tax Rates & Franchisee Health:</strong> A higher effective tax rate partially offset sales-driven franchise margin growth this quarter. Concurrently, with >95% of restaurants being franchised, macro and cost pressures lowering franchisee profitability could impact the stability of royalty and rent collections, hindering new store expansion plans.
-                    </li>
-                </ol>
-            </div>
-        </section>
-
-        <section id="sandbox" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-indigo-500 pl-3">VI. AI Interactive Sandbox ✨</h2></div>
-            
-            <div class="bg-indigo-50 border border-indigo-200 rounded-xl p-6 md:p-8 shadow-sm">
-                <div class="flex items-center mb-3">
-                    <span class="text-2xl mr-3">✨</span>
-                    <h3 class="text-xl font-black text-indigo-900 tracking-tight">Real-time AI Scenario Simulation</h3>
-                </div>
-                <p class="text-sm text-indigo-700 mb-6 leading-relaxed">Please enter your hypothetical industry variables below (e.g., persistent inflation causing consumers to cut dining out spending, loyalty program engagement dropping). The AI will dynamically simulate potential impacts based on MCD's current revenue structure and market performance.</p>
-                <div class="flex flex-col md:flex-row gap-3">
-                    <input type="text" id="custom-scenario-input" placeholder="Try entering: What if persistent inflation causes US consumers to significantly cut dining out spending..." class="flex-1 border border-indigo-200 rounded-lg px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-inner">
-                    <button onclick="generateCustomScenario()" id="btn-generate-scenario" class="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-lg text-sm font-bold shadow-md transition-all whitespace-nowrap">
-                        Start Simulation
-                    </button>
-                </div>
-                <div id="scenario-loading" class="hidden mt-6 text-sm text-indigo-600 font-bold flex items-center bg-indigo-100/50 p-4 rounded-lg">
-                    <svg class="animate-spin -ml-1 mr-3 h-5 w-5 text-indigo-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                    AI is processing data via Vercel backend...
-                </div>
-                <div id="scenario-result" class="mt-6 hidden bg-white p-6 rounded-xl border border-indigo-200 text-sm text-slate-800 leading-relaxed shadow-sm"></div>
-            </div>
-        </section>
-
-        <section id="disclaimer" class="tab-content">
-            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">VII. Disclaimer</h2></div>
+    <section id="disclaimer" class="tab-content">
+            <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">VI. Disclaimer</h2></div>
             <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
                 <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">Loading disclaimer from disclaimer.html, please wait...</p></div>
             </div>
         </section>
 
-    </main>
+</main>
 
-    <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-        <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
-            <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
-                <div class="flex items-center">
-                    <span class="text-2xl mr-2">🤖</span>
-                    <div><h4 class="font-bold text-sm">Researcher's Exclusive AI Assistant</h4><p class="text-xs text-blue-200">Powered by Vercel & Gemini ✨</p></div>
-                </div>
-                <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
-                </button>
+<div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
+    <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
+            <div class="flex items-center">
+                <span class="text-2xl mr-2">🤖</span>
+                <div><h4 class="font-bold text-sm">Analyst AI Assistant</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
             </div>
-            <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
-                <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
-                    Hello Analyst! I am your exclusive McDonald's (MCD) report AI assistant. You can ask me anytime about the 3.8% comp sales growth, loyalty program revenue contribution, or the potential impact of restructuring costs.
-                </div>
-            </div>
-            <div class="p-3 bg-white border-t border-slate-200">
-                <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
-                    <input type="text" id="chat-input" placeholder="Enter your command..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
-                    <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
-                    </button>
-                </form>
+            <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
+            <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
+                Hello Analyst! Updated on 2026/10/09, this page covers McDonald's Q2 2026 and the 09/23 NEXT update. Ask about 1.3% global comparable-sales growth, US$1.976bn quarterly FCF, 2030 targets or 17.89x forward P/E. Actuals, company targets and market consensus will be distinguished; this page has no live market data.
             </div>
         </div>
-        <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
-            <span class="text-2xl">✨</span>
-        </button>
-    </div>
-
-    <div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
-        <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
-            <span>✨</span> Plain English AI Explanation
-        </button>
-    </div>
-    <div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
-            <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
-                <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> Terminology Explanation</h3>
-                <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+        <div class="p-3 bg-white border-t border-slate-200">
+            <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
+                <input type="text" id="chat-input" placeholder="Enter your research command..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
                 </button>
-            </div>
-            <div class="p-6">
-                <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Term queried:</div>
-                <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
-                <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
-                    <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-                    AI is generating explanation...
-                </div>
-                <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
-            </div>
-            <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
-                <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">Close</button>
-            </div>
+            </form>
         </div>
     </div>
+    <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
+        <span class="text-2xl">✨</span>
+    </button>
+</div>
 
-    <script>
-        function switchTab(e, tabId) {
-            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-            document.querySelectorAll('.tab-btn').forEach(el => { el.classList.remove('active', 'border-blue-600', 'text-blue-600'); el.classList.add('text-slate-500'); });
-            document.getElementById(tabId).classList.add('active');
-            e.currentTarget.classList.remove('text-slate-500'); e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+<div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
+    <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
+        <span>✨</span> AI Simple Explanation
+    </button>
+</div>
+<div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+            <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> Term Explainer</h3>
+            <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Your Queried Term:</div>
+            <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
+            <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
+                <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                AI is generating explanation...
+            </div>
+            <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
+        </div>
+        <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+            <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">Close</button>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Global chart instances registry
+    window.charts = {};
+
+    function switchTab(e, tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(el => {
+            el.classList.remove('active', 'border-blue-600', 'text-blue-600');
+            el.classList.add('text-slate-500');
+        });
+        document.getElementById(tabId).classList.add('active');
+        e.currentTarget.classList.remove('text-slate-500');
+        e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+
+        // Fix hidden canvas sizing bugs native to Chart.js
+        if (tabId === 'financials') {
+            if (window.charts.mcdSegment) window.charts.mcdSegment.resize();
+            if (window.charts.mcdProfit) window.charts.mcdProfit.resize();
+        } else if (tabId === 'valuation') {
+            if (window.charts.mcdValuation) window.charts.mcdValuation.resize();
         }
+    }
 
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // Chart 1: Segment Revenue
-            new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
-                type: 'doughnut',
-                data: {
-                    labels: ['Franchised', 'Company-operated', 'Other'],
-                    datasets: [{
-                        data: [4.007, 2.317, 0.193],
-                        backgroundColor: ['rgba(245, 158, 11, 0.8)', 'rgba(59, 130, 246, 0.8)', 'rgba(148, 163, 184, 0.8)'],
-                        borderWidth: 0
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '60%' }
-            });
+    document.addEventListener('DOMContentLoaded', function() {
+        // Chart 1: MCD Q2 2026 Geographic Segment Revenue (Doughnut)
+        window.charts.mcdSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ["US", "International Operated Markets", "International Developmental Licensed Markets & Corporate"],
+                datasets: [{
+                    data: [2827, 3603, 669],
+                    backgroundColor: ['#2563eb', '#10b981', '#8b5cf6'],
+                    borderWidth: 0
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
+        });
 
-            // Chart 2: Profitability
-            new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['Total Rev', 'GAAP OpInc', 'Non-GAAP Net'],
-                    datasets: [{
-                        label: 'Billion USD',
-                        data: [6.52, 2.95, 2.02],
-                        backgroundColor: ['#94a3b8', '#3b82f6', '#10b981'],
+        // Chart 2: MCD GAAP / Adjusted Non-GAAP Income (Grouped Bar)
+        window.charts.mcdProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ["Operating Income", "Net Income"],
+                datasets: [
+                    {
+                        label: "GAAP (USD Millions)",
+                        data: [3338, 2362],
+                        backgroundColor: '#94a3b8',
                         borderRadius: 4
-                    }]
-                },
-                options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } }, x: { grid: { display: false } } } }
-            });
+                    },
+                    {
+                        label: "Adjusted Non-GAAP (USD Millions)",
+                        data: [3391, 2402],
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, scales: { y: { beginAtZero: true, grid: { color: '#f1f5f9' } } } }
+        });
 
-            // Chart 3: Valuation (Peers)
-            new Chart(document.getElementById('valuationChart').getContext('2d'), {
-                type: 'bar',
-                data: {
-                    labels: ['MCD (McDonald\'s)', 'SBUX (Starbucks)', 'YUM (Yum! Brands)', 'QSR (Restaurant Brands Intl)'],
-                    datasets: [{ label: 'FY 2026 Forward P/E Multiple', data: [21.09, 44.99, 22.65, 19.34], backgroundColor: ['rgba(37, 99, 235, 0.9)', 'rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)', 'rgba(148, 163, 184, 0.5)'], borderRadius: 4 }]
-                },
-                options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } } }
-            });
+        // Chart 3: Global Restaurant Peer Forward P/E (Horizontal Bar)
+        window.charts.mcdValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ["QSR (Restaurant Brands International)", "MCD (McDonald's)", "YUM (Yum! Brands)", "SBUX (Starbucks)"],
+                datasets: [{
+                    label: 'Next 4 Qtrs Est Forward P/E',
+                    data: [16.47, 17.89, 21.48, 31.30],
+                    backgroundColor: ['rgba(148, 163, 184, 0.6)', 'rgba(37, 99, 235, 0.95)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)'],
+                    borderRadius: 4
+                }]
+            },
+            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
+        });
 
-            // Load external disclaimer.html
-            fetch('disclaimer.html')
+        // Dynamic asynchronous linkage for external disclaimer.html
+        fetch('disclaimer.html')
                 .then(response => {
                     if (!response.ok) throw new Error('Cannot load disclaimer.html');
                     return response.text();
@@ -443,10 +462,10 @@
                     const container = document.getElementById('disclaimer-container');
                     if(container) container.innerHTML = '<div class="p-6 text-center text-red-500 font-bold">Failed to load disclaimer.html. Please ensure the file exists.</div>';
                 });
-        });
+    });
 
-        // AI Core
-        async function callGeminiAPI(prompt, systemInstruction) {
+    // NTAM Backend AI Gateway Engine
+    async function callGeminiAPI(prompt, systemInstruction) {
             try {
                 const response = await fetch('/api/gemini', { 
                     method: 'POST', headers: { 'Content-Type': 'application/json' }, 
@@ -459,65 +478,48 @@
             } catch (error) { return `Network connection failed. (${error.message})`; }
         }
 
-        // AI Chat
-        const standardPrompt = `You are the exclusive AI assistant for NTAM internal researchers. Please help the analyst summarize McDonald's (MCD) Q1 2026 earnings data. Please answer objectively and concisely in English, using HTML <b> tags for emphasis, strictly no markdown syntax.`;
-        function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
-        function appendMessage(text, isUser) {
-            const msgDiv = document.createElement('div');
-            msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
-            msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv); 
-            document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
-        }
-        function showTypingIndicator() {
-            const ind = document.createElement('div'); ind.id = 'typing-indicator'; 
-            ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
-            ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
-            document.getElementById('chat-messages').appendChild(ind);
-        }
-        async function handleChatSubmit(e) {
-            e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
-            input.value = ''; appendMessage(text, true); showTypingIndicator();
-            const res = await callGeminiAPI(text, standardPrompt);
-            document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
-        }
+    // AI Chat Widget Logic
+    const standardPrompt = `You are a senior NTAM investment-research AI assistant. Answer McDonald's (MCD) questions in clear, professional English. This page is as of 2026/10/09 and has no live market data. Q2 2026 ran from2026/04/01 to2026/06/30; earnings published2026/08/04,10-Q filed2026/08/07. September23 NEXT is a strategy update, not Q3 results. Amounts are USD million unless stated. Q2 revenue7099 versus6843, company-reported growth4%, constant currency2%; global comparable sales1.3% versus3.8% prior-year quarter. US comparable sales0.8% with negative guest counts and higher average check/product mix; IOM1.5%, IDL1.9%, with negative comps in France and China respectively. Q2 GAAP/adjusted non-GAAP operating income3338/3391, calculated margins47.0%/47.8%; previous-year3232/3275, margins47.2%/47.9%. GAAP/adjusted net income2362/2402 versus2253/2286; diluted EPS3.32/3.38 versus3.14/3.19. Company reports EPS growth6% on both bases. Rounded pre-tax adjustments52 and after-tax40 primarily concern Accelerating the Organization;3338+52 differs by1 from reported adjusted operating income3391 due to source rounding; do not force reconciliation. Table derived income growth: adjusted operating3.5%, GAAP net4.8%, adjusted net5.1%. Q2 operating cash flow2807, capex831, derived FCF1976=2807-831; prior-yearOCF1998, capex744, FCF1254; FCF growth57.6%. H1 OCF5222, capex1516, FCF3706; do not label H1 cash flow as quarterly. Full10-Q segment revenue including allocated Other: US2827,IOM3603,IDL&Corporate669=sum7099. Supplement segment amounts2726/3543/648 exclude182 other and must not replace these totals. Revenue categories franchised4393,company-operated2525,other182 sum7100 versus official7099 because of rounding. Roughly95% of restaurants franchised,46028 restaurants atJun30. Q2 systemwide sales about37bn,reported growth5%/CC4%, not consolidated revenue.70 loyalty markets,TTM loyalty systemwide sales40bn,nearly220m90-day active users; neither loyalty nor total systemwide sales should be added to consolidated company revenue. August4 FY2026 company outlook: capex3.7–3.9bn,operating margin mid-to-high40% range,about2600 gross openings/2100 net additions,FCF conversion low-to-mid80% range. September23 NEXT targets by2030: corporate operating margin low-to-mid50% range,SG&A/systemwide sales about1.9%,FCF conversion mid-to-high80% range. Gross restaurant-level efficiency250bps in US and IOM upon full deployment, not a guaranteed corporate margin uplift.2027–2030 baseline capex about3bn annually PLUS cumulative1.5–2.0bn additional capital partnering support, not annual additional support. Targets are forward-looking, not realized results. Bloomberg ANR asof2026/10/09: rating4.12/5,24Buy16Hold1Sell; consensus12Mtarget295.91; target count raw33/46; displayed Last Price236.90 with quote header On08-Oct(year2026 inferred from paired ANR). This is a displayed10/08 reference price, not a verified closing price. Consensus price-only upside24.9%, excludes dividends. Verified preferred broker order: UBS,Dennis Geiger,Buy320,date2026/09/24,price-only return35.1%; Morgan Stanley,Brian Harbour,Neutral(site-standardized),target297,date2026/09/28,return25.4%; JP Morgan,John W Ivankoe,Overweight250,date2026/09/29,return5.5%. Morgan Stanley originalEqualwt/In-Line means stockEqual-weight plus separate industryIn-Line. Neutral is the owner display category, not original native rating. No original broker investment theses supplied; never invent them. Q3 2026 EEO market estimates: revenue7.291bn,EPS Adj+3.403,EPS GAAP3.402; not company guidance. EEO next4 Price/EPS Adj+:QSR16.47,MCD17.89,YUM21.48,SBUX31.30. Displayed next4 quarter ends2026/09/30,2026/12/31,2027/03/31,2027/06/30, but Starbucks fiscal labels differ. MCD,QSR,SBUX quotes show08-Oct, YUMdate cropped; no independent EEO asof date established, do not claim verified same-date closing prices. Definitions and business models differ despite common Adj+ label. Do not sum independently sampled quarterly rows into an annual consensus. Official locale company names: MCD Traditional麥當勞/Simplified麦当劳; SBUX星巴克 in both; QSR TraditionalRestaurant Brands International/Simplified餐饮品牌国际集团; YUM Traditional百勝餐飲集團/Simplified百胜餐饮集团. YUM is Yum! Brands, not separately listed Yum China/YUMC. Use names matching the requested locale and page chart. Distinguish company actuals, targets, Bloomberg estimates, calculations and our views. Use 我們認為 / 我们认为 / We believe for house analysis. State missing evidence and never invent figures, broker theses or live data. Wall Street display labels must be Overweight, Buy, Neutral, Sell or Underweight; select verified available firms in order UBS>Morgan Stanley>JP Morgan>Citi>HSBC before other brokers. Omit calculator attribution and repeated disclaimer wording. Wall Street source line contains only Bloomberg ANR(2026/10/09) and calculation from the displayed10/08 reference price US$236.90. Use HTML <b> tags for emphasis, never Markdown.`;
+    function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
+    function appendMessage(text, isUser) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
+        msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
+        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+    }
+    function showTypingIndicator() {
+        const ind = document.createElement('div'); ind.id = 'typing-indicator';
+        ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
+        ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
+        document.getElementById('chat-messages').appendChild(ind);
+    }
+    async function handleChatSubmit(e) {
+        e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
+        input.value = ''; appendMessage(text, true); showTypingIndicator();
+        const res = await callGeminiAPI(text, standardPrompt);
+        document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
+    }
 
-        // Highlight AI
-        let selectedText = "";
-        document.addEventListener('mouseup', function(e) {
-            const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
-            if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
-            if (text.length > 1 && text.length < 50) {
-                selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
-                tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${rect.top - 40}px`;
-                tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
-            } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
-        });
-        document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
-        async function explainSelectedTerm() {
-            document.getElementById('selection-tooltip').classList.add('hidden');
-            document.getElementById('explain-term-title').textContent = selectedText; 
-            document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
-            const res = await callGeminiAPI(`Explain this MCD related term: ${selectedText}`, "You are a financial expert. Explain the term in simple, plain English. Limit to 150 words, wrap key points in <b> tags.");
-            document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
-        }
-        function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
-        
-        // 🔮 Sandbox AI simulation
-        async function generateCustomScenario() {
-            const inputEl = document.getElementById('custom-scenario-input'); const btnEl = document.getElementById('btn-generate-scenario'); 
-            const loadingEl = document.getElementById('scenario-loading'); const resultEl = document.getElementById('scenario-result');
-            const scenarioText = inputEl.value.trim(); if (!scenarioText) { alert('Please enter a hypothetical scenario first!'); return; }
-            btnEl.disabled = true; btnEl.classList.add('opacity-50'); loadingEl.classList.remove('hidden'); resultEl.classList.add('hidden');
-            
-            const sysPrompt = `You are a senior Wall Street analyst. Based on facts like MCD's 3.8% comp sales growth this quarter, strong loyalty program contribution, and macroeconomic challenges, evaluate the user's 'hypothetical scenario'.
-Reply concisely: 1. Initial Assessment 2. Potential Impact on Revenue/Profit 3. Likely Stock Price Reaction.
-Use English, wrap key points in HTML <b> tags, strictly no markdown syntax. Total around 200 words.`;
-
-            const aiAnalysis = await callGeminiAPI(`Simulate this scenario: ${scenarioText}`, sysPrompt);
-            loadingEl.classList.add('hidden'); btnEl.disabled = false; btnEl.classList.remove('opacity-50');
-            resultEl.innerHTML = `<h4 class="font-bold text-indigo-900 mb-3 border-b border-indigo-100 pb-2">🎯 AI Scenario Simulation Results</h4>` + aiAnalysis; 
-            resultEl.classList.remove('hidden');
-        }
-    </script>
+    // Contextual Text Highlight Explainer Mechanism
+    let selectedText = "";
+    document.addEventListener('mouseup', function(e) {
+        const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
+        if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
+        if (text.length > 1 && text.length < 50) {
+            selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
+            tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${window.scrollY + rect.top - 40}px`;
+            tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
+        } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+    });
+    document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
+    async function explainSelectedTerm() {
+        document.getElementById('selection-tooltip').classList.add('hidden');
+        document.getElementById('explain-term-title').textContent = selectedText;
+        document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
+        const res = await callGeminiAPI(`Explain this McDonald's (MCD) financial/earnings term; this page is dated 2026/10/09: ${selectedText}`, "You are a McDonald's restaurant and franchising research expert. Explain the term in accessible professional English, limited to 150 words, using <b> tags for emphasis. State information gaps; do not invent live data.");
+        document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
+    }
+    function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
+</script>
 </body>
 </html>

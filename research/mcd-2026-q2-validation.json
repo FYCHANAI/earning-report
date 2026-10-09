@@ -1,0 +1,1723 @@
+{
+  "report": "MCD Q2 2026 evidence and MU-template validation",
+  "checked_on": "2026-10-09",
+  "base_commit": "8493f9da505c8d65789d6896e17d11c7509b7f25",
+  "status": "pass",
+  "checks": [
+    {
+      "check": "mcd.html:mu_structure_and_layout_attributes",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:mu_styles_fonts_and_script_versions",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:six_tabs",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:no_obsolete_sandbox",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:three_chart_containers",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:original_pi-modal_dom_except_section_number",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:original_disclaimer_dom_except_section_number",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:original_pi_gate_script_exact",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:original_disclaimer_loader_exact",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:company_heading_and_title",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:header_consensus",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:no_micron_or_prior_target_remnants",
+      "status": "pass",
+      "detail": []
+    },
+    {
+      "check": "mcd.html:no_citation_placeholders",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:period_publication_and_update_dates",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:our_views_voice",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:strategy_primary_source_anchor",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:no_unverified_price_close_claim",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:four_column_five_row_table",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:financial_table_matches_official_bases",
+      "status": "pass",
+      "detail": {
+        "observed": [
+          [
+            [
+              7099.0
+            ],
+            [
+              7099.0
+            ],
+            [
+              4.0,
+              2.0
+            ]
+          ],
+          [
+            [
+              3338.0,
+              47.0
+            ],
+            [
+              3391.0,
+              47.8
+            ],
+            [
+              3.5
+            ]
+          ],
+          [
+            [
+              2362.0
+            ],
+            [
+              2402.0
+            ],
+            [
+              4.8,
+              5.1
+            ]
+          ],
+          [
+            [
+              3.32
+            ],
+            [
+              3.38
+            ],
+            [
+              6.0,
+              6.0
+            ]
+          ],
+          [
+            [
+              2807.0
+            ],
+            [
+              1976.0
+            ],
+            [
+              831.0
+            ]
+          ]
+        ],
+        "expected_primary": [
+          [
+            [
+              7099
+            ],
+            [
+              7099
+            ]
+          ],
+          [
+            [
+              3338,
+              47.0
+            ],
+            [
+              3391,
+              47.8
+            ]
+          ],
+          [
+            [
+              2362
+            ],
+            [
+              2402
+            ]
+          ],
+          [
+            [
+              3.32
+            ],
+            [
+              3.38
+            ]
+          ],
+          [
+            [
+              2807
+            ],
+            [
+              1976
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "check": "mcd.html:financial_table_supplement_growth_and_capex",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:financial_table_diluted_eps_label",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:cashflow_row_separates_ocf_fcf_and_capex",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:cashflow_quarter_not_half_year",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:financial_primary_source_links",
+      "status": "pass",
+      "detail": [
+        "https://www.sec.gov/Archives/edgar/data/63908/000006390826000073/mcd-20260630.htm",
+        "https://www.sec.gov/Archives/edgar/data/63908/000006390826000067/exhibit991-6302026.htm"
+      ]
+    },
+    {
+      "check": "mcd.html:peer_basis_and_period_limitations",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:peer_missing_date_disclosed",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:brokers_priority_targets_dates_returns_colors",
+      "status": "pass",
+      "detail": [
+        {
+          "firm": "UBS",
+          "ok": true,
+          "return_percent": 35.1
+        },
+        {
+          "firm": "Morgan Stanley",
+          "ok": true,
+          "return_percent": 25.4
+        },
+        {
+          "firm": "JP Morgan",
+          "ok": true,
+          "return_percent": 5.5
+        }
+      ]
+    },
+    {
+      "check": "mcd.html:morgan_stanley_normalization_disclosed",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:compact_anr_reference_source",
+      "status": "pass",
+      "detail": [
+        "來源：Bloomberg ANR（2026/10/09）；以 10/08 畫面所示參考股價 US$236.90 計算。"
+      ]
+    },
+    {
+      "check": "mcd.html:no_public_calculator_attribution",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:inline_js_syntax_and_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:chart_cache_keys",
+      "status": "pass",
+      "detail": [
+        "mcdSegment",
+        "mcdProfit",
+        "mcdValuation"
+      ]
+    },
+    {
+      "check": "mcd.html:tabs_and_chart_resize",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:pi_active_no_acceptance_or_storage_write",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:original_pi_and_api_functions",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:disclaimer_local_mock_no_api_network",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:mu_fixed_interaction_functions",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:mu_explain_interaction",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:dated_mcd_ai_evidence_context",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:localized_ai_company_context",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:revenue_segments_include_other_and_reconcile",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:profit_chart_gaap_adjusted_bases",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:peer_pe_values_and_order",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:localized_verified_peer_names",
+      "status": "pass"
+    },
+    {
+      "check": "mcd.html:chart_responsive_and_no_hidden_unit_conflict",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:mu_structure_and_layout_attributes",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:mu_styles_fonts_and_script_versions",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:six_tabs",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:no_obsolete_sandbox",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:three_chart_containers",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:original_pi-modal_dom_except_section_number",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:original_disclaimer_dom_except_section_number",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:original_pi_gate_script_exact",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:original_disclaimer_loader_exact",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:company_heading_and_title",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:header_consensus",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:no_micron_or_prior_target_remnants",
+      "status": "pass",
+      "detail": []
+    },
+    {
+      "check": "mcd-sc.html:no_citation_placeholders",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:period_publication_and_update_dates",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:our_views_voice",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:strategy_primary_source_anchor",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:no_unverified_price_close_claim",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:four_column_five_row_table",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:financial_table_matches_official_bases",
+      "status": "pass",
+      "detail": {
+        "observed": [
+          [
+            [
+              7099.0
+            ],
+            [
+              7099.0
+            ],
+            [
+              4.0,
+              2.0
+            ]
+          ],
+          [
+            [
+              3338.0,
+              47.0
+            ],
+            [
+              3391.0,
+              47.8
+            ],
+            [
+              3.5
+            ]
+          ],
+          [
+            [
+              2362.0
+            ],
+            [
+              2402.0
+            ],
+            [
+              4.8,
+              5.1
+            ]
+          ],
+          [
+            [
+              3.32
+            ],
+            [
+              3.38
+            ],
+            [
+              6.0,
+              6.0
+            ]
+          ],
+          [
+            [
+              2807.0
+            ],
+            [
+              1976.0
+            ],
+            [
+              831.0
+            ]
+          ]
+        ],
+        "expected_primary": [
+          [
+            [
+              7099
+            ],
+            [
+              7099
+            ]
+          ],
+          [
+            [
+              3338,
+              47.0
+            ],
+            [
+              3391,
+              47.8
+            ]
+          ],
+          [
+            [
+              2362
+            ],
+            [
+              2402
+            ]
+          ],
+          [
+            [
+              3.32
+            ],
+            [
+              3.38
+            ]
+          ],
+          [
+            [
+              2807
+            ],
+            [
+              1976
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "check": "mcd-sc.html:financial_table_supplement_growth_and_capex",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:financial_table_diluted_eps_label",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:cashflow_row_separates_ocf_fcf_and_capex",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:cashflow_quarter_not_half_year",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:financial_primary_source_links",
+      "status": "pass",
+      "detail": [
+        "https://www.sec.gov/Archives/edgar/data/63908/000006390826000073/mcd-20260630.htm",
+        "https://www.sec.gov/Archives/edgar/data/63908/000006390826000067/exhibit991-6302026.htm"
+      ]
+    },
+    {
+      "check": "mcd-sc.html:peer_basis_and_period_limitations",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:peer_missing_date_disclosed",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:brokers_priority_targets_dates_returns_colors",
+      "status": "pass",
+      "detail": [
+        {
+          "firm": "UBS",
+          "ok": true,
+          "return_percent": 35.1
+        },
+        {
+          "firm": "Morgan Stanley",
+          "ok": true,
+          "return_percent": 25.4
+        },
+        {
+          "firm": "JP Morgan",
+          "ok": true,
+          "return_percent": 5.5
+        }
+      ]
+    },
+    {
+      "check": "mcd-sc.html:morgan_stanley_normalization_disclosed",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:compact_anr_reference_source",
+      "status": "pass",
+      "detail": [
+        "来源：Bloomberg ANR（2026/10/09）；以 10/08 画面所示参考股价 US$236.90 计算。"
+      ]
+    },
+    {
+      "check": "mcd-sc.html:no_public_calculator_attribution",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:inline_js_syntax_and_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:chart_cache_keys",
+      "status": "pass",
+      "detail": [
+        "mcdSegment",
+        "mcdProfit",
+        "mcdValuation"
+      ]
+    },
+    {
+      "check": "mcd-sc.html:tabs_and_chart_resize",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:pi_active_no_acceptance_or_storage_write",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:original_pi_and_api_functions",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:disclaimer_local_mock_no_api_network",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:mu_fixed_interaction_functions",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:mu_explain_interaction",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:dated_mcd_ai_evidence_context",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:localized_ai_company_context",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:revenue_segments_include_other_and_reconcile",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:profit_chart_gaap_adjusted_bases",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:peer_pe_values_and_order",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:localized_verified_peer_names",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-sc.html:chart_responsive_and_no_hidden_unit_conflict",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:mu_structure_and_layout_attributes",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:mu_styles_fonts_and_script_versions",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:six_tabs",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:no_obsolete_sandbox",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:three_chart_containers",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:original_pi-modal_dom_except_section_number",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:original_disclaimer_dom_except_section_number",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:original_pi_gate_script_exact",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:original_disclaimer_loader_exact",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:company_heading_and_title",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:header_consensus",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:no_micron_or_prior_target_remnants",
+      "status": "pass",
+      "detail": []
+    },
+    {
+      "check": "mcd-en.html:no_citation_placeholders",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:period_publication_and_update_dates",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:our_views_voice",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:strategy_primary_source_anchor",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:no_unverified_price_close_claim",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:four_column_five_row_table",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:financial_table_matches_official_bases",
+      "status": "pass",
+      "detail": {
+        "observed": [
+          [
+            [
+              7099.0
+            ],
+            [
+              7099.0
+            ],
+            [
+              4.0,
+              2.0
+            ]
+          ],
+          [
+            [
+              3338.0,
+              47.0
+            ],
+            [
+              3391.0,
+              47.8
+            ],
+            [
+              3.5
+            ]
+          ],
+          [
+            [
+              2362.0
+            ],
+            [
+              2402.0
+            ],
+            [
+              4.8,
+              5.1
+            ]
+          ],
+          [
+            [
+              3.32
+            ],
+            [
+              3.38
+            ],
+            [
+              6.0,
+              6.0
+            ]
+          ],
+          [
+            [
+              2807.0
+            ],
+            [
+              1976.0
+            ],
+            [
+              831.0
+            ]
+          ]
+        ],
+        "expected_primary": [
+          [
+            [
+              7099
+            ],
+            [
+              7099
+            ]
+          ],
+          [
+            [
+              3338,
+              47.0
+            ],
+            [
+              3391,
+              47.8
+            ]
+          ],
+          [
+            [
+              2362
+            ],
+            [
+              2402
+            ]
+          ],
+          [
+            [
+              3.32
+            ],
+            [
+              3.38
+            ]
+          ],
+          [
+            [
+              2807
+            ],
+            [
+              1976
+            ]
+          ]
+        ]
+      }
+    },
+    {
+      "check": "mcd-en.html:financial_table_supplement_growth_and_capex",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:financial_table_diluted_eps_label",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:cashflow_row_separates_ocf_fcf_and_capex",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:cashflow_quarter_not_half_year",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:financial_primary_source_links",
+      "status": "pass",
+      "detail": [
+        "https://www.sec.gov/Archives/edgar/data/63908/000006390826000073/mcd-20260630.htm",
+        "https://www.sec.gov/Archives/edgar/data/63908/000006390826000067/exhibit991-6302026.htm"
+      ]
+    },
+    {
+      "check": "mcd-en.html:peer_basis_and_period_limitations",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:peer_missing_date_disclosed",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:brokers_priority_targets_dates_returns_colors",
+      "status": "pass",
+      "detail": [
+        {
+          "firm": "UBS",
+          "ok": true,
+          "return_percent": 35.1
+        },
+        {
+          "firm": "Morgan Stanley",
+          "ok": true,
+          "return_percent": 25.4
+        },
+        {
+          "firm": "JP Morgan",
+          "ok": true,
+          "return_percent": 5.5
+        }
+      ]
+    },
+    {
+      "check": "mcd-en.html:morgan_stanley_normalization_disclosed",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:compact_anr_reference_source",
+      "status": "pass",
+      "detail": [
+        "Source: Bloomberg ANR (2026/10/09); returns calculated using the displayed 10/08 reference share price of US$236.90."
+      ]
+    },
+    {
+      "check": "mcd-en.html:no_public_calculator_attribution",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:inline_js_syntax_and_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:chart_cache_keys",
+      "status": "pass",
+      "detail": [
+        "mcdSegment",
+        "mcdProfit",
+        "mcdValuation"
+      ]
+    },
+    {
+      "check": "mcd-en.html:tabs_and_chart_resize",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:pi_active_no_acceptance_or_storage_write",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:original_pi_and_api_functions",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:disclaimer_local_mock_no_api_network",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:mu_fixed_interaction_functions",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:mu_explain_interaction",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:dated_mcd_ai_evidence_context",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:localized_ai_company_context",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:revenue_segments_include_other_and_reconcile",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:profit_chart_gaap_adjusted_bases",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:peer_pe_values_and_order",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:localized_verified_peer_names",
+      "status": "pass"
+    },
+    {
+      "check": "mcd-en.html:chart_responsive_and_no_hidden_unit_conflict",
+      "status": "pass"
+    },
+    {
+      "check": "three_languages:chart_numeric_parity",
+      "status": "pass"
+    },
+    {
+      "check": "three_languages:chart_dataset_style_parity",
+      "status": "pass"
+    },
+    {
+      "check": "three_languages:financial_table_numeric_parity",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:quarter_cashflow_reconciliation",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:half_year_cashflow_reconciliation",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:segment_revenue_reconciliation",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:rounded_revenue_component_difference_preserved",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:consensus_return",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:ledger_calculations_reconcile",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:anr_priority_raw_ratings_and_industry_separation",
+      "status": "pass"
+    },
+    {
+      "check": "canonical_template:mu.html",
+      "status": "pass"
+    },
+    {
+      "check": "canonical_template:mu-sc.html",
+      "status": "pass"
+    },
+    {
+      "check": "canonical_template:mu-en.html",
+      "status": "pass"
+    },
+    {
+      "check": "protected_files:ledger_hashes_and_base",
+      "status": "pass"
+    },
+    {
+      "check": "protected_files:infrastructure_exact",
+      "status": "pass",
+      "detail": [
+        "CNAME",
+        "api/gemini.js",
+        "disclaimer.html"
+      ]
+    },
+    {
+      "check": "homepage:mcd_sixth_25_cards_others_same_order",
+      "status": "pass",
+      "detail": [
+        "MU",
+        "ORCL",
+        "AVGO",
+        "NVDA",
+        "AMD",
+        "MCD",
+        "PLTR",
+        "AMZN",
+        "AAPL",
+        "META",
+        "MSFT",
+        "KO",
+        "INTC",
+        "TSLA",
+        "GOOGL",
+        "NFLX",
+        "TSM",
+        "UNH",
+        "MS",
+        "JNJ",
+        "BAC",
+        "GS",
+        "C",
+        "JPM",
+        "NIO"
+      ]
+    },
+    {
+      "check": "homepage:other_24_card_contents_exact",
+      "status": "pass"
+    },
+    {
+      "check": "homepage:other_24_blocks_byte_exact",
+      "status": "pass"
+    },
+    {
+      "check": "homepage:outside_card_region_byte_exact",
+      "status": "pass"
+    },
+    {
+      "check": "homepage:mcd_updated_facts",
+      "status": "pass"
+    },
+    {
+      "check": "homepage:ledger_matches_actual_earnings_order",
+      "status": "pass"
+    },
+    {
+      "check": "scope:only_mcd_and_homepage_html",
+      "status": "pass",
+      "detail": [
+        "AGENTS.md",
+        "PROJECT_INSTRUCTIONS.md",
+        "README.md",
+        "index.html",
+        "mcd-en.html",
+        "mcd-sc.html",
+        "mcd.html",
+        "research/homepage-earnings-order-2026-10-08.json"
+      ]
+    },
+    {
+      "check": "scope:no_restricted_source_screenshots_tracked",
+      "status": "pass"
+    },
+    {
+      "check": "git_diff_whitespace",
+      "status": "pass",
+      "detail": ""
+    }
+  ],
+  "page_details": {
+    "mcd.html": {
+      "sha256": "a64882fa005bcbeb62664f82bf5de67adf0aef5f7a7d13a5ad874ca7b3b5a025",
+      "mock_runtime": {
+        "charts": [
+          {
+            "canvasId": "segmentRevenueChart",
+            "config": {
+              "type": "doughnut",
+              "data": {
+                "labels": [
+                  "美國",
+                  "國際營運市場",
+                  "國際發展授權市場及公司總部"
+                ],
+                "datasets": [
+                  {
+                    "data": [
+                      2827,
+                      3603,
+                      669
+                    ],
+                    "backgroundColor": [
+                      "#2563eb",
+                      "#10b981",
+                      "#8b5cf6"
+                    ],
+                    "borderWidth": 0
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "cutout": "65%"
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "profitabilityChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "營業利潤",
+                  "淨利潤"
+                ],
+                "datasets": [
+                  {
+                    "label": "GAAP (百萬美元)",
+                    "data": [
+                      3338,
+                      2362
+                    ],
+                    "backgroundColor": "#94a3b8",
+                    "borderRadius": 4
+                  },
+                  {
+                    "label": "調整後 Non-GAAP (百萬美元)",
+                    "data": [
+                      3391,
+                      2402
+                    ],
+                    "backgroundColor": "#3b82f6",
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "scales": {
+                  "y": {
+                    "beginAtZero": true,
+                    "grid": {
+                      "color": "#f1f5f9"
+                    }
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "valuationChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "QSR (Restaurant Brands International)",
+                  "MCD (麥當勞)",
+                  "YUM (百勝餐飲集團)",
+                  "SBUX (星巴克)"
+                ],
+                "datasets": [
+                  {
+                    "label": "Next 4 Qtrs Est Forward P/E",
+                    "data": [
+                      16.47,
+                      17.89,
+                      21.48,
+                      31.3
+                    ],
+                    "backgroundColor": [
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(37, 99, 235, 0.95)",
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(148, 163, 184, 0.6)"
+                    ],
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "indexAxis": "y",
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "display": false
+                  }
+                },
+                "scales": {
+                  "x": {
+                    "beginAtZero": true
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          }
+        ],
+        "keys": [
+          "mcdSegment",
+          "mcdProfit",
+          "mcdValuation"
+        ],
+        "tabs": [
+          {
+            "id": "our-comments",
+            "ok": true
+          },
+          {
+            "id": "financials",
+            "ok": true
+          },
+          {
+            "id": "valuation",
+            "ok": true
+          },
+          {
+            "id": "street-comments",
+            "ok": true
+          },
+          {
+            "id": "risks",
+            "ok": true
+          },
+          {
+            "id": "disclaimer",
+            "ok": true
+          }
+        ],
+        "fetches": [
+          "disclaimer.html"
+        ],
+        "storageWrites": 0,
+        "piVisible": true,
+        "bodyLocked": true,
+        "disclaimerLoaded": true,
+        "standardPrompt": "你是 NTAM 投資研究的資深 AI 助理，以專業、清楚的繁體中文回答麥當勞（MCD）問題。 This page is as of 2026/10/09 and has no live market data. Q2 2026 ran from2026/04/01 to2026/06/30; earnings published2026/08/04,10-Q filed2026/08/07. September23 NEXT is a strategy update, not Q3 results. Amounts are USD million unless stated. Q2 revenue7099 versus6843, company-reported growth4%, constant currency2%; global comparable sales1.3% versus3.8% prior-year quarter. US comparable sales0.8% with negative guest counts and higher average check/product mix; IOM1.5%, IDL1.9%, with negative comps in France and China respectively. Q2 GAAP/adjusted non-GAAP operating income3338/3391, calculated margins47.0%/47.8%; previous-year3232/3275, margins47.2%/47.9%. GAAP/adjusted net income2362/2402 versus2253/2286; diluted EPS3.32/3.38 versus3.14/3.19. Company reports EPS growth6% on both bases. Rounded pre-tax adjustments52 and after-tax40 primarily concern Accelerating the Organization;3338+52 differs by1 from reported adjusted operating income3391 due to source rounding; do not force reconciliation. Table derived income growth: adjusted operating3.5%, GAAP net4.8%, adjusted net5.1%. Q2 operating cash flow2807, capex831, derived FCF1976=2807-831; prior-yearOCF1998, capex744, FCF1254; FCF growth57.6%. H1 OCF5222, capex1516, FCF3706; do not label H1 cash flow as quarterly. Full10-Q segment revenue including allocated Other: US2827,IOM3603,IDL&Corporate669=sum7099. Supplement segment amounts2726/3543/648 exclude182 other and must not replace these totals. Revenue categories franchised4393,company-operated2525,other182 sum7100 versus official7099 because of rounding. Roughly95% of restaurants franchised,46028 restaurants atJun30. Q2 systemwide sales about37bn,reported growth5%/CC4%, not consolidated revenue.70 loyalty markets,TTM loyalty systemwide sales40bn,nearly220m90-day active users; neither loyalty nor total systemwide sales should be added to consolidated company revenue. August4 FY2026 company outlook: capex3.7–3.9bn,operating margin mid-to-high40% range,about2600 gross openings/2100 net additions,FCF conversion low-to-mid80% range. September23 NEXT targets by2030: corporate operating margin low-to-mid50% range,SG&A/systemwide sales about1.9%,FCF conversion mid-to-high80% range. Gross restaurant-level efficiency250bps in US and IOM upon full deployment, not a guaranteed corporate margin uplift.2027–2030 baseline capex about3bn annually PLUS cumulative1.5–2.0bn additional capital partnering support, not annual additional support. Targets are forward-looking, not realized results. Bloomberg ANR asof2026/10/09: rating4.12/5,24Buy16Hold1Sell; consensus12Mtarget295.91; target count raw33/46; displayed Last Price236.90 with quote header On08-Oct(year2026 inferred from paired ANR). This is a displayed10/08 reference price, not a verified closing price. Consensus price-only upside24.9%, excludes dividends. Verified preferred broker order: UBS,Dennis Geiger,Buy320,date2026/09/24,price-only return35.1%; Morgan Stanley,Brian Harbour,Neutral(site-standardized),target297,date2026/09/28,return25.4%; JP Morgan,John W Ivankoe,Overweight250,date2026/09/29,return5.5%. Morgan Stanley originalEqualwt/In-Line means stockEqual-weight plus separate industryIn-Line. Neutral is the owner display category, not original native rating. No original broker investment theses supplied; never invent them. Q3 2026 EEO market estimates: revenue7.291bn,EPS Adj+3.403,EPS GAAP3.402; not company guidance. EEO next4 Price/EPS Adj+:QSR16.47,MCD17.89,YUM21.48,SBUX31.30. Displayed next4 quarter ends2026/09/30,2026/12/31,2027/03/31,2027/06/30, but Starbucks fiscal labels differ. MCD,QSR,SBUX quotes show08-Oct, YUMdate cropped; no independent EEO asof date established, do not claim verified same-date closing prices. Definitions and business models differ despite common Adj+ label. Do not sum independently sampled quarterly rows into an annual consensus. Official locale company names: MCD Traditional麥當勞/Simplified麦当劳; SBUX星巴克 in both; QSR TraditionalRestaurant Brands International/Simplified餐饮品牌国际集团; YUM Traditional百勝餐飲集團/Simplified百胜餐饮集团. YUM is Yum! Brands, not separately listed Yum China/YUMC. Use names matching the requested locale and page chart. Distinguish company actuals, targets, Bloomberg estimates, calculations and our views. Use 我們認為 / 我们认为 / We believe for house analysis. State missing evidence and never invent figures, broker theses or live data. Wall Street display labels must be Overweight, Buy, Neutral, Sell or Underweight; select verified available firms in order UBS>Morgan Stanley>JP Morgan>Citi>HSBC before other brokers. Omit calculator attribution and repeated disclaimer wording. Wall Street source line contains only Bloomberg ANR(2026/10/09) and calculation from the displayed10/08 reference price US$236.90. Use HTML <b> tags for emphasis, never Markdown.",
+        "functions": {
+          "switchTab": "function switchTab(e, tabId) {\n        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));\n        document.querySelectorAll('.tab-btn').forEach(el => {\n            el.classList.remove('active', 'border-blue-600', 'text-blue-600');\n            el.classList.add('text-slate-500');\n        });\n        document.getElementById(tabId).classList.add('active');\n        e.currentTarget.classList.remove('text-slate-500');\n        e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');\n\n        // 徹底修復 hidden 畫布無寬高像素之 Chart.js 原生缺陷\n        if (tabId === 'financials') {\n            if (window.charts.mcdSegment) window.charts.mcdSegment.resize();\n            if (window.charts.mcdProfit) window.charts.mcdProfit.resize();\n        } else if (tabId === 'valuation') {\n            if (window.charts.mcdValuation) window.charts.mcdValuation.resize();\n        }\n    }",
+          "acceptPI": "function acceptPI() { sessionStorage.setItem('pi_agreed', 'true'); document.getElementById('pi-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }",
+          "declinePI": "function declinePI() { document.body.innerHTML = `<div style=\"height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;\"><h1 style=\"color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;\">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`; }",
+          "callGeminiAPI": "async function callGeminiAPI(prompt, systemInstruction) {\n            try {\n                const response = await fetch('/api/gemini', { \n                    method: 'POST', headers: { 'Content-Type': 'application/json' }, \n                    body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction }) \n                });\n                const data = await response.json();\n                if (!response.ok) return `連線錯誤：${data.error || '未知錯誤'}`;\n                let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || \"抱歉，無法產生有效回覆。\";\n                return rawText.replace(/\\n/g, '<br>').replace(/\\*\\*(.*?)\\*\\*/g, '<b>$1</b>');\n            } catch (error) { return `網路連線失敗。(${error.message})`; }\n        }",
+          "toggleChat": "function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }",
+          "appendMessage": "function appendMessage(text, isUser) {\n        const msgDiv = document.createElement('div');\n        msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';\n        msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);\n        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;\n    }",
+          "showTypingIndicator": "function showTypingIndicator() {\n        const ind = document.createElement('div'); ind.id = `typing-indicator-${Date.now()}`;\n        ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';\n        ind.innerHTML = '<div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div>';\n        document.getElementById('chat-messages').appendChild(ind);\n        return ind.id;\n    }",
+          "handleChatSubmit": "async function handleChatSubmit(e) {\n        e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;\n        const sendBtn = e.target.querySelector('button[type=\"submit\"]'); if (sendBtn && sendBtn.disabled) return;\n        if (sendBtn) { sendBtn.disabled = true; sendBtn.classList.add('opacity-50', 'cursor-not-allowed'); }\n        input.value = ''; appendMessage(text, true); const typingId = showTypingIndicator();\n        try {\n            const res = await callGeminiAPI(text, standardPrompt);\n            document.getElementById(typingId)?.remove(); appendMessage(res, false);\n        } finally {\n            document.getElementById(typingId)?.remove();\n            if (sendBtn) { sendBtn.disabled = false; sendBtn.classList.remove('opacity-50', 'cursor-not-allowed'); }\n        }\n    }",
+          "explainSelectedTerm": "async function explainSelectedTerm() {\n        document.getElementById('selection-tooltip').classList.add('hidden');\n        document.getElementById('explain-term-title').textContent = selectedText;\n        document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');\n        const res = await callGeminiAPI(`解釋這個麥當勞（MCD）財報相關詞彙；本頁資料截至 2026/10/09：${selectedText}`, \"你是麥當勞餐飲與加盟業務研究專家。用專業而淺白的繁體中文解釋詞彙，限 150 字，重點以 <b> 標籤包覆；沒有資料請明確說明，不編造即時資訊。\");\n        document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');\n    }",
+          "closeExplainModal": "function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }"
+        }
+      }
+    },
+    "mcd-sc.html": {
+      "sha256": "5be86232211c888a78dca6e41da5c7b7f69d5df40f99f92a2c625e23621cde5c",
+      "mock_runtime": {
+        "charts": [
+          {
+            "canvasId": "segmentRevenueChart",
+            "config": {
+              "type": "doughnut",
+              "data": {
+                "labels": [
+                  "美国",
+                  "国际运营市场",
+                  "国际发展授权市场及公司总部"
+                ],
+                "datasets": [
+                  {
+                    "data": [
+                      2827,
+                      3603,
+                      669
+                    ],
+                    "backgroundColor": [
+                      "#2563eb",
+                      "#10b981",
+                      "#8b5cf6"
+                    ],
+                    "borderWidth": 0
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "cutout": "65%"
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "profitabilityChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "营业利润",
+                  "净利润"
+                ],
+                "datasets": [
+                  {
+                    "label": "GAAP (百万美元)",
+                    "data": [
+                      3338,
+                      2362
+                    ],
+                    "backgroundColor": "#94a3b8",
+                    "borderRadius": 4
+                  },
+                  {
+                    "label": "调整后 Non-GAAP (百万美元)",
+                    "data": [
+                      3391,
+                      2402
+                    ],
+                    "backgroundColor": "#3b82f6",
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "scales": {
+                  "y": {
+                    "beginAtZero": true,
+                    "grid": {
+                      "color": "#f1f5f9"
+                    }
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "valuationChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "QSR (餐饮品牌国际集团)",
+                  "MCD (麦当劳)",
+                  "YUM (百胜餐饮集团)",
+                  "SBUX (星巴克)"
+                ],
+                "datasets": [
+                  {
+                    "label": "Next 4 Qtrs Est Forward P/E",
+                    "data": [
+                      16.47,
+                      17.89,
+                      21.48,
+                      31.3
+                    ],
+                    "backgroundColor": [
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(37, 99, 235, 0.95)",
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(148, 163, 184, 0.6)"
+                    ],
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "indexAxis": "y",
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "display": false
+                  }
+                },
+                "scales": {
+                  "x": {
+                    "beginAtZero": true
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          }
+        ],
+        "keys": [
+          "mcdSegment",
+          "mcdProfit",
+          "mcdValuation"
+        ],
+        "tabs": [
+          {
+            "id": "our-comments",
+            "ok": true
+          },
+          {
+            "id": "financials",
+            "ok": true
+          },
+          {
+            "id": "valuation",
+            "ok": true
+          },
+          {
+            "id": "street-comments",
+            "ok": true
+          },
+          {
+            "id": "risks",
+            "ok": true
+          },
+          {
+            "id": "disclaimer",
+            "ok": true
+          }
+        ],
+        "fetches": [
+          "disclaimer.html"
+        ],
+        "storageWrites": 0,
+        "piVisible": true,
+        "bodyLocked": true,
+        "disclaimerLoaded": true,
+        "standardPrompt": "你是 NTAM 投资研究的资深 AI 助理，以专业、清楚的简体中文回答麦当劳（MCD）问题。 This page is as of 2026/10/09 and has no live market data. Q2 2026 ran from2026/04/01 to2026/06/30; earnings published2026/08/04,10-Q filed2026/08/07. September23 NEXT is a strategy update, not Q3 results. Amounts are USD million unless stated. Q2 revenue7099 versus6843, company-reported growth4%, constant currency2%; global comparable sales1.3% versus3.8% prior-year quarter. US comparable sales0.8% with negative guest counts and higher average check/product mix; IOM1.5%, IDL1.9%, with negative comps in France and China respectively. Q2 GAAP/adjusted non-GAAP operating income3338/3391, calculated margins47.0%/47.8%; previous-year3232/3275, margins47.2%/47.9%. GAAP/adjusted net income2362/2402 versus2253/2286; diluted EPS3.32/3.38 versus3.14/3.19. Company reports EPS growth6% on both bases. Rounded pre-tax adjustments52 and after-tax40 primarily concern Accelerating the Organization;3338+52 differs by1 from reported adjusted operating income3391 due to source rounding; do not force reconciliation. Table derived income growth: adjusted operating3.5%, GAAP net4.8%, adjusted net5.1%. Q2 operating cash flow2807, capex831, derived FCF1976=2807-831; prior-yearOCF1998, capex744, FCF1254; FCF growth57.6%. H1 OCF5222, capex1516, FCF3706; do not label H1 cash flow as quarterly. Full10-Q segment revenue including allocated Other: US2827,IOM3603,IDL&Corporate669=sum7099. Supplement segment amounts2726/3543/648 exclude182 other and must not replace these totals. Revenue categories franchised4393,company-operated2525,other182 sum7100 versus official7099 because of rounding. Roughly95% of restaurants franchised,46028 restaurants atJun30. Q2 systemwide sales about37bn,reported growth5%/CC4%, not consolidated revenue.70 loyalty markets,TTM loyalty systemwide sales40bn,nearly220m90-day active users; neither loyalty nor total systemwide sales should be added to consolidated company revenue. August4 FY2026 company outlook: capex3.7–3.9bn,operating margin mid-to-high40% range,about2600 gross openings/2100 net additions,FCF conversion low-to-mid80% range. September23 NEXT targets by2030: corporate operating margin low-to-mid50% range,SG&A/systemwide sales about1.9%,FCF conversion mid-to-high80% range. Gross restaurant-level efficiency250bps in US and IOM upon full deployment, not a guaranteed corporate margin uplift.2027–2030 baseline capex about3bn annually PLUS cumulative1.5–2.0bn additional capital partnering support, not annual additional support. Targets are forward-looking, not realized results. Bloomberg ANR asof2026/10/09: rating4.12/5,24Buy16Hold1Sell; consensus12Mtarget295.91; target count raw33/46; displayed Last Price236.90 with quote header On08-Oct(year2026 inferred from paired ANR). This is a displayed10/08 reference price, not a verified closing price. Consensus price-only upside24.9%, excludes dividends. Verified preferred broker order: UBS,Dennis Geiger,Buy320,date2026/09/24,price-only return35.1%; Morgan Stanley,Brian Harbour,Neutral(site-standardized),target297,date2026/09/28,return25.4%; JP Morgan,John W Ivankoe,Overweight250,date2026/09/29,return5.5%. Morgan Stanley originalEqualwt/In-Line means stockEqual-weight plus separate industryIn-Line. Neutral is the owner display category, not original native rating. No original broker investment theses supplied; never invent them. Q3 2026 EEO market estimates: revenue7.291bn,EPS Adj+3.403,EPS GAAP3.402; not company guidance. EEO next4 Price/EPS Adj+:QSR16.47,MCD17.89,YUM21.48,SBUX31.30. Displayed next4 quarter ends2026/09/30,2026/12/31,2027/03/31,2027/06/30, but Starbucks fiscal labels differ. MCD,QSR,SBUX quotes show08-Oct, YUMdate cropped; no independent EEO asof date established, do not claim verified same-date closing prices. Definitions and business models differ despite common Adj+ label. Do not sum independently sampled quarterly rows into an annual consensus. Official locale company names: MCD Traditional麥當勞/Simplified麦当劳; SBUX星巴克 in both; QSR TraditionalRestaurant Brands International/Simplified餐饮品牌国际集团; YUM Traditional百勝餐飲集團/Simplified百胜餐饮集团. YUM is Yum! Brands, not separately listed Yum China/YUMC. Use names matching the requested locale and page chart. Distinguish company actuals, targets, Bloomberg estimates, calculations and our views. Use 我們認為 / 我们认为 / We believe for house analysis. State missing evidence and never invent figures, broker theses or live data. Wall Street display labels must be Overweight, Buy, Neutral, Sell or Underweight; select verified available firms in order UBS>Morgan Stanley>JP Morgan>Citi>HSBC before other brokers. Omit calculator attribution and repeated disclaimer wording. Wall Street source line contains only Bloomberg ANR(2026/10/09) and calculation from the displayed10/08 reference price US$236.90. Use HTML <b> tags for emphasis, never Markdown.",
+        "functions": {
+          "switchTab": "function switchTab(e, tabId) {\n        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));\n        document.querySelectorAll('.tab-btn').forEach(el => {\n            el.classList.remove('active', 'border-blue-600', 'text-blue-600');\n            el.classList.add('text-slate-500');\n        });\n        document.getElementById(tabId).classList.add('active');\n        e.currentTarget.classList.remove('text-slate-500');\n        e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');\n\n        // 彻底修复 hidden 画布无宽高像素之 Chart.js 原生缺陷\n        if (tabId === 'financials') {\n            if (window.charts.mcdSegment) window.charts.mcdSegment.resize();\n            if (window.charts.mcdProfit) window.charts.mcdProfit.resize();\n        } else if (tabId === 'valuation') {\n            if (window.charts.mcdValuation) window.charts.mcdValuation.resize();\n        }\n    }",
+          "acceptPI": "function acceptPI() { sessionStorage.setItem('pi_agreed', 'true'); document.getElementById('pi-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }",
+          "declinePI": "function declinePI() { document.body.innerHTML = `<div style=\"height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;\"><h1 style=\"color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;\">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`; }",
+          "callGeminiAPI": "async function callGeminiAPI(prompt, systemInstruction) {\n            try {\n                const response = await fetch('/api/gemini', { \n                    method: 'POST', headers: { 'Content-Type': 'application/json' }, \n                    body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction }) \n                });\n                const data = await response.json();\n                if (!response.ok) return `连线错误：${data.error || '未知错误'}`;\n                let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || \"抱歉，无法产生有效回复。\";\n                return rawText.replace(/\\n/g, '<br>').replace(/\\*\\*(.*?)\\*\\*/g, '<b>$1</b>');\n            } catch (error) { return `网络连线失败。(${error.message})`; }\n        }",
+          "toggleChat": "function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }",
+          "appendMessage": "function appendMessage(text, isUser) {\n        const msgDiv = document.createElement('div');\n        msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';\n        msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);\n        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;\n    }",
+          "showTypingIndicator": "function showTypingIndicator() {\n        const ind = document.createElement('div'); ind.id = 'typing-indicator';\n        ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';\n        ind.innerHTML = '<div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div>';\n        document.getElementById('chat-messages').appendChild(ind);\n    }",
+          "handleChatSubmit": "async function handleChatSubmit(e) {\n        e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;\n        input.value = ''; appendMessage(text, true); showTypingIndicator();\n        const res = await callGeminiAPI(text, standardPrompt);\n        document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);\n    }",
+          "explainSelectedTerm": "async function explainSelectedTerm() {\n        document.getElementById('selection-tooltip').classList.add('hidden');\n        document.getElementById('explain-term-title').textContent = selectedText;\n        document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');\n        const res = await callGeminiAPI(`解释这个麦当劳（MCD）财报相关词汇；本页资料截至 2026/10/09：${selectedText}`, \"你是麦当劳餐饮与加盟业务研究专家。用专业而浅白的简体中文解释词汇，限 150 字，重点以 <b> 标签包覆；没有资料请明确说明，不编造即时信息。\");\n        document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');\n    }",
+          "closeExplainModal": "function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }"
+        }
+      }
+    },
+    "mcd-en.html": {
+      "sha256": "db86740e048f1db5cac68109033449a1ee7be818b1a4a7d6e4f79a6f02748a18",
+      "mock_runtime": {
+        "charts": [
+          {
+            "canvasId": "segmentRevenueChart",
+            "config": {
+              "type": "doughnut",
+              "data": {
+                "labels": [
+                  "US",
+                  "International Operated Markets",
+                  "International Developmental Licensed Markets & Corporate"
+                ],
+                "datasets": [
+                  {
+                    "data": [
+                      2827,
+                      3603,
+                      669
+                    ],
+                    "backgroundColor": [
+                      "#2563eb",
+                      "#10b981",
+                      "#8b5cf6"
+                    ],
+                    "borderWidth": 0
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "cutout": "65%"
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "profitabilityChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "Operating Income",
+                  "Net Income"
+                ],
+                "datasets": [
+                  {
+                    "label": "GAAP (USD Millions)",
+                    "data": [
+                      3338,
+                      2362
+                    ],
+                    "backgroundColor": "#94a3b8",
+                    "borderRadius": 4
+                  },
+                  {
+                    "label": "Adjusted Non-GAAP (USD Millions)",
+                    "data": [
+                      3391,
+                      2402
+                    ],
+                    "backgroundColor": "#3b82f6",
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "position": "bottom"
+                  }
+                },
+                "scales": {
+                  "y": {
+                    "beginAtZero": true,
+                    "grid": {
+                      "color": "#f1f5f9"
+                    }
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          },
+          {
+            "canvasId": "valuationChart",
+            "config": {
+              "type": "bar",
+              "data": {
+                "labels": [
+                  "QSR (Restaurant Brands International)",
+                  "MCD (McDonald's)",
+                  "YUM (Yum! Brands)",
+                  "SBUX (Starbucks)"
+                ],
+                "datasets": [
+                  {
+                    "label": "Next 4 Qtrs Est Forward P/E",
+                    "data": [
+                      16.47,
+                      17.89,
+                      21.48,
+                      31.3
+                    ],
+                    "backgroundColor": [
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(37, 99, 235, 0.95)",
+                      "rgba(148, 163, 184, 0.6)",
+                      "rgba(148, 163, 184, 0.6)"
+                    ],
+                    "borderRadius": 4
+                  }
+                ]
+              },
+              "options": {
+                "indexAxis": "y",
+                "responsive": true,
+                "maintainAspectRatio": false,
+                "plugins": {
+                  "legend": {
+                    "display": false
+                  }
+                },
+                "scales": {
+                  "x": {
+                    "beginAtZero": true
+                  }
+                }
+              }
+            },
+            "resizeCalls": 1
+          }
+        ],
+        "keys": [
+          "mcdSegment",
+          "mcdProfit",
+          "mcdValuation"
+        ],
+        "tabs": [
+          {
+            "id": "our-comments",
+            "ok": true
+          },
+          {
+            "id": "financials",
+            "ok": true
+          },
+          {
+            "id": "valuation",
+            "ok": true
+          },
+          {
+            "id": "street-comments",
+            "ok": true
+          },
+          {
+            "id": "risks",
+            "ok": true
+          },
+          {
+            "id": "disclaimer",
+            "ok": true
+          }
+        ],
+        "fetches": [
+          "disclaimer.html"
+        ],
+        "storageWrites": 0,
+        "piVisible": true,
+        "bodyLocked": true,
+        "disclaimerLoaded": true,
+        "standardPrompt": "You are a senior NTAM investment-research AI assistant. Answer McDonald's (MCD) questions in clear, professional English. This page is as of 2026/10/09 and has no live market data. Q2 2026 ran from2026/04/01 to2026/06/30; earnings published2026/08/04,10-Q filed2026/08/07. September23 NEXT is a strategy update, not Q3 results. Amounts are USD million unless stated. Q2 revenue7099 versus6843, company-reported growth4%, constant currency2%; global comparable sales1.3% versus3.8% prior-year quarter. US comparable sales0.8% with negative guest counts and higher average check/product mix; IOM1.5%, IDL1.9%, with negative comps in France and China respectively. Q2 GAAP/adjusted non-GAAP operating income3338/3391, calculated margins47.0%/47.8%; previous-year3232/3275, margins47.2%/47.9%. GAAP/adjusted net income2362/2402 versus2253/2286; diluted EPS3.32/3.38 versus3.14/3.19. Company reports EPS growth6% on both bases. Rounded pre-tax adjustments52 and after-tax40 primarily concern Accelerating the Organization;3338+52 differs by1 from reported adjusted operating income3391 due to source rounding; do not force reconciliation. Table derived income growth: adjusted operating3.5%, GAAP net4.8%, adjusted net5.1%. Q2 operating cash flow2807, capex831, derived FCF1976=2807-831; prior-yearOCF1998, capex744, FCF1254; FCF growth57.6%. H1 OCF5222, capex1516, FCF3706; do not label H1 cash flow as quarterly. Full10-Q segment revenue including allocated Other: US2827,IOM3603,IDL&Corporate669=sum7099. Supplement segment amounts2726/3543/648 exclude182 other and must not replace these totals. Revenue categories franchised4393,company-operated2525,other182 sum7100 versus official7099 because of rounding. Roughly95% of restaurants franchised,46028 restaurants atJun30. Q2 systemwide sales about37bn,reported growth5%/CC4%, not consolidated revenue.70 loyalty markets,TTM loyalty systemwide sales40bn,nearly220m90-day active users; neither loyalty nor total systemwide sales should be added to consolidated company revenue. August4 FY2026 company outlook: capex3.7–3.9bn,operating margin mid-to-high40% range,about2600 gross openings/2100 net additions,FCF conversion low-to-mid80% range. September23 NEXT targets by2030: corporate operating margin low-to-mid50% range,SG&A/systemwide sales about1.9%,FCF conversion mid-to-high80% range. Gross restaurant-level efficiency250bps in US and IOM upon full deployment, not a guaranteed corporate margin uplift.2027–2030 baseline capex about3bn annually PLUS cumulative1.5–2.0bn additional capital partnering support, not annual additional support. Targets are forward-looking, not realized results. Bloomberg ANR asof2026/10/09: rating4.12/5,24Buy16Hold1Sell; consensus12Mtarget295.91; target count raw33/46; displayed Last Price236.90 with quote header On08-Oct(year2026 inferred from paired ANR). This is a displayed10/08 reference price, not a verified closing price. Consensus price-only upside24.9%, excludes dividends. Verified preferred broker order: UBS,Dennis Geiger,Buy320,date2026/09/24,price-only return35.1%; Morgan Stanley,Brian Harbour,Neutral(site-standardized),target297,date2026/09/28,return25.4%; JP Morgan,John W Ivankoe,Overweight250,date2026/09/29,return5.5%. Morgan Stanley originalEqualwt/In-Line means stockEqual-weight plus separate industryIn-Line. Neutral is the owner display category, not original native rating. No original broker investment theses supplied; never invent them. Q3 2026 EEO market estimates: revenue7.291bn,EPS Adj+3.403,EPS GAAP3.402; not company guidance. EEO next4 Price/EPS Adj+:QSR16.47,MCD17.89,YUM21.48,SBUX31.30. Displayed next4 quarter ends2026/09/30,2026/12/31,2027/03/31,2027/06/30, but Starbucks fiscal labels differ. MCD,QSR,SBUX quotes show08-Oct, YUMdate cropped; no independent EEO asof date established, do not claim verified same-date closing prices. Definitions and business models differ despite common Adj+ label. Do not sum independently sampled quarterly rows into an annual consensus. Official locale company names: MCD Traditional麥當勞/Simplified麦当劳; SBUX星巴克 in both; QSR TraditionalRestaurant Brands International/Simplified餐饮品牌国际集团; YUM Traditional百勝餐飲集團/Simplified百胜餐饮集团. YUM is Yum! Brands, not separately listed Yum China/YUMC. Use names matching the requested locale and page chart. Distinguish company actuals, targets, Bloomberg estimates, calculations and our views. Use 我們認為 / 我们认为 / We believe for house analysis. State missing evidence and never invent figures, broker theses or live data. Wall Street display labels must be Overweight, Buy, Neutral, Sell or Underweight; select verified available firms in order UBS>Morgan Stanley>JP Morgan>Citi>HSBC before other brokers. Omit calculator attribution and repeated disclaimer wording. Wall Street source line contains only Bloomberg ANR(2026/10/09) and calculation from the displayed10/08 reference price US$236.90. Use HTML <b> tags for emphasis, never Markdown.",
+        "functions": {
+          "switchTab": "function switchTab(e, tabId) {\n        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));\n        document.querySelectorAll('.tab-btn').forEach(el => {\n            el.classList.remove('active', 'border-blue-600', 'text-blue-600');\n            el.classList.add('text-slate-500');\n        });\n        document.getElementById(tabId).classList.add('active');\n        e.currentTarget.classList.remove('text-slate-500');\n        e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');\n\n        // Fix hidden canvas sizing bugs native to Chart.js\n        if (tabId === 'financials') {\n            if (window.charts.mcdSegment) window.charts.mcdSegment.resize();\n            if (window.charts.mcdProfit) window.charts.mcdProfit.resize();\n        } else if (tabId === 'valuation') {\n            if (window.charts.mcdValuation) window.charts.mcdValuation.resize();\n        }\n    }",
+          "acceptPI": "function acceptPI() { sessionStorage.setItem('pi_agreed', 'true'); document.getElementById('pi-modal').style.display = 'none'; document.body.style.overflow = 'auto'; }",
+          "declinePI": "function declinePI() { document.body.innerHTML = `<div style=\"height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;\"><h1 style=\"color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;\">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`; }",
+          "callGeminiAPI": "async function callGeminiAPI(prompt, systemInstruction) {\n            try {\n                const response = await fetch('/api/gemini', { \n                    method: 'POST', headers: { 'Content-Type': 'application/json' }, \n                    body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction }) \n                });\n                const data = await response.json();\n                if (!response.ok) return `Connection Error: ${data.error || 'Unknown Error'}`;\n                let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || \"Sorry, unable to generate a valid response.\";\n                return rawText.replace(/\\n/g, '<br>').replace(/\\*\\*(.*?)\\*\\*/g, '<b>$1</b>');\n            } catch (error) { return `Network connection failed. (${error.message})`; }\n        }",
+          "toggleChat": "function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }",
+          "appendMessage": "function appendMessage(text, isUser) {\n        const msgDiv = document.createElement('div');\n        msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';\n        msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);\n        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;\n    }",
+          "showTypingIndicator": "function showTypingIndicator() {\n        const ind = document.createElement('div'); ind.id = 'typing-indicator';\n        ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';\n        ind.innerHTML = '<div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div><div class=\"w-2 h-2 bg-slate-400 rounded-full typing-dot\"></div>';\n        document.getElementById('chat-messages').appendChild(ind);\n    }",
+          "handleChatSubmit": "async function handleChatSubmit(e) {\n        e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;\n        input.value = ''; appendMessage(text, true); showTypingIndicator();\n        const res = await callGeminiAPI(text, standardPrompt);\n        document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);\n    }",
+          "explainSelectedTerm": "async function explainSelectedTerm() {\n        document.getElementById('selection-tooltip').classList.add('hidden');\n        document.getElementById('explain-term-title').textContent = selectedText;\n        document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');\n        const res = await callGeminiAPI(`Explain this McDonald's (MCD) financial/earnings term; this page is dated 2026/10/09: ${selectedText}`, \"You are a McDonald's restaurant and franchising research expert. Explain the term in accessible professional English, limited to 150 words, using <b> tags for emphasis. State information gaps; do not invent live data.\");\n        document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');\n    }",
+          "closeExplainModal": "function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }"
+        }
+      }
+    }
+  },
+  "independent_source_review": [
+    "SEC Q2 2026 10-Q cashflow statement was independently opened: Q2 OCF 2807 and capex 831 are explicitly quarterly, distinct from H1 5222 and 1516.",
+    "SEC 10-Q full segment revenues 2827/3603/669 independently reconciled to consolidated 7099."
+  ],
+  "limitations": [
+    "Mock VM checks are not real-browser rendering or live Chart.js rasterization.",
+    "No live AI call, PI acceptance, PI storage write, modal removal/hiding or access-control bypass was performed.",
+    "Authoritative-source and screenshot review is recorded in the evidence ledger; this script reconciles the implementation to that evidence.",
+    "ANR is dated 2026/10/09; its reference price is labelled On 08-Oct and Last Price, not a verified closing price.",
+    "Desktop/mobile visual review and deployed HTTP content verification are separately performed by the release workflow."
+  ]
+}
