@@ -1,0 +1,1408 @@
+{
+  "report": "UnitedHealth Group Q3 2026 three-language research update using latest MU layout",
+  "updated_on": "2026-10-14",
+  "base_commit": "6fb25cf6d9228a2f1dcc8139f4984346b5c04228",
+  "official_company_evidence": {
+    "company": "UnitedHealth Group (UNH)",
+    "period": "Q3 2026",
+    "period_end": "2026-09-30",
+    "release_date": "2026-10-13",
+    "verified_as_of": "2026-10-14",
+    "units": "USD million except EPS, ratios, percentages, and stated membership units",
+    "sources": {
+      "q3_release": {
+        "url": "https://www.sec.gov/Archives/edgar/data/731766/000073176626000255/earningsrelease3q26unh.htm",
+        "refs": [
+          "turn8search1",
+          "turn9view0",
+          "turn10view0"
+        ],
+        "official_ir_url": "https://www.unitedhealthgroup.com/newsroom/2026/2026-10-13-uhg-reports-third-quarter-2026-results.html",
+        "pdf_url": "https://www.unitedhealthgroup.com/content/dam/UHG/PDF/investors/2026/unh-reports-third-quarter-2026-results.pdf",
+        "access": "SEC full HTML successfully read; IR headline read; PDF direct open failed",
+        "pages": {
+          "group_overview": 3,
+          "uhc": [
+            4,
+            5
+          ],
+          "optum": 6,
+          "income": 9,
+          "balance_sheet": 10,
+          "cash_flow": 11,
+          "segment_revenue": 12,
+          "segment_earnings": 13,
+          "membership": 14,
+          "non_gaap_definitions": 15,
+          "eps_reconciliation": 16
+        }
+      },
+      "q2_release": {
+        "url": "https://www.sec.gov/Archives/edgar/data/731766/000073176626000191/earningsrelease2q26_7152.htm",
+        "refs": [
+          "turn10search1",
+          "turn11view0",
+          "turn12view0"
+        ],
+        "official_ir_url": "https://www.unitedhealthgroup.com/newsroom/2026/2026-07-16-uhg-reports-second-quarter-2026-results.html",
+        "release_date": "2026-07-16",
+        "pages": {
+          "group_overview": 4,
+          "outlook": 7,
+          "income": 10,
+          "cash_flow": 12,
+          "segment_revenue": 13,
+          "segment_earnings": 14,
+          "eps_reconciliation": 17
+        }
+      },
+      "q3_prepared_remarks": {
+        "url": "https://www.unitedhealthgroup.com/content/dam/UHG/PDF/investors/2026/unh-q3-2026-remarks.pdf",
+        "refs": [
+          "turn12view1",
+          "turn13view0",
+          "turn13view1"
+        ],
+        "access": "Full 12-page PDF text read via IR financial-reports link 70",
+        "pages": {
+          "ceo_growth": 1,
+          "medical_cost_and_commercial_trends": [
+            5,
+            6
+          ],
+          "optum_strategy": [
+            7,
+            8,
+            9
+          ],
+          "cfo_outlook": [
+            9,
+            10,
+            11
+          ],
+          "december_2027_update": 12
+        }
+      }
+    },
+    "consolidated": {
+      "q3_2026": {
+        "revenue_gaap": 112694,
+        "revenue_adjusted": 112715,
+        "premium_revenue": 87078,
+        "product_revenue": 14293,
+        "service_revenue": 10246,
+        "investment_and_other_income": 1077,
+        "medical_costs": 76982,
+        "operating_costs": 14369,
+        "cost_of_products_sold": 13707,
+        "depreciation_and_amortization": 1073,
+        "operating_income_gaap": 6563,
+        "operating_income_adjusted": 6265,
+        "operating_margin_gaap_pct": 5.8,
+        "operating_margin_adjusted_pct": 5.6,
+        "interest_expense": 963,
+        "net_earnings_total": 4300,
+        "net_earnings_to_common_gaap": 4110,
+        "net_earnings_to_common_adjusted": 4228,
+        "diluted_eps_gaap": 4.56,
+        "diluted_eps_adjusted": 4.69,
+        "diluted_weighted_average_shares_million": 902,
+        "net_margin_reported_pct": 3.6,
+        "mcr_pct": 88.4,
+        "ocr_pct": 12.8,
+        "favorable_prior_period_medical_reserve_development": 610,
+        "reserve_service_dates": "2026",
+        "days_claims_payable": 47.0,
+        "days_sales_outstanding": 16.9,
+        "cfo_rounded": 5100,
+        "cfo_to_total_net_earnings_reported_x": 1.2,
+        "debt_to_capital_pct": 41.7
+      },
+      "q3_2025": {
+        "revenue_gaap": 113161,
+        "operating_income_gaap": 4315,
+        "operating_margin_gaap_pct": 3.8,
+        "net_earnings_total": 2543,
+        "net_earnings_to_common_gaap": 2348,
+        "net_earnings_to_common_adjusted": 2650,
+        "diluted_eps_gaap": 2.59,
+        "diluted_eps_adjusted": 2.92,
+        "diluted_weighted_average_shares_million": 908,
+        "net_margin_reported_pct": 2.1,
+        "mcr_pct": 89.9,
+        "ocr_pct": 13.5,
+        "days_claims_payable": 46.2,
+        "days_sales_outstanding": 18.6
+      },
+      "q2_2026": {
+        "revenue_gaap": 112032,
+        "revenue_adjusted": 112031,
+        "operating_income_gaap": 7991,
+        "operating_income_adjusted": 7979,
+        "operating_margin_gaap_pct": 7.1,
+        "operating_margin_adjusted_pct": 7.1,
+        "net_earnings_total": 5670,
+        "net_earnings_to_common_gaap": 5484,
+        "net_earnings_to_common_adjusted": 5792,
+        "diluted_eps_gaap": 6.04,
+        "diluted_eps_adjusted": 6.38,
+        "diluted_weighted_average_shares_million": 906,
+        "net_margin_reported_pct": 4.9,
+        "mcr_pct": 86.7,
+        "favorable_prior_period_medical_reserve_development": 860,
+        "days_claims_payable": 47,
+        "days_sales_outstanding": 17.7,
+        "cfo_rounded": 11100,
+        "debt_to_capital_pct": 41.2
+      },
+      "nine_months_2026": {
+        "revenue_gaap": 336447,
+        "revenue_adjusted": 336393,
+        "operating_income_gaap": 23544,
+        "operating_income_adjusted": 23208,
+        "net_earnings_total": 16451,
+        "net_earnings_to_common_gaap": 15874,
+        "net_earnings_to_common_adjusted": 16598,
+        "diluted_eps_gaap": 17.5,
+        "diluted_eps_adjusted": 18.3,
+        "cfo": 25087,
+        "capex_property_equipment_capitalized_software": 2421,
+        "share_repurchases": 5031,
+        "dividends": 6170
+      },
+      "nine_months_2025": {
+        "revenue_gaap": 334352,
+        "operating_income_gaap": 18584,
+        "net_earnings_to_common_gaap": 12046,
+        "diluted_eps_gaap": 13.21,
+        "diluted_eps_adjusted": 14.22,
+        "cfo": 18589,
+        "capex_property_equipment_capitalized_software": 2674
+      },
+      "six_months_2026": {
+        "cfo": 19964,
+        "capex_property_equipment_capitalized_software": 1562
+      },
+      "six_months_2025": {
+        "cfo": 12644,
+        "capex_property_equipment_capitalized_software": 1784
+      },
+      "balance_sheet_2026_09_30": {
+        "cash_and_short_term_investments": 28549,
+        "cash_and_equivalents": 25845,
+        "long_term_investments": 58064,
+        "short_term_borrowings_and_current_long_term_debt": 5617,
+        "long_term_debt_ex_current": 68714,
+        "equity": 104129,
+        "medical_costs_payable": 39352
+      }
+    },
+    "segments": {
+      "q3_2026": {
+        "UnitedHealthcare": {
+          "revenue_gaap": 86330,
+          "operating_income_gaap": 2831,
+          "operating_income_adjusted": 2690,
+          "operating_margin_gaap_pct": 3.3,
+          "operating_margin_adjusted_pct": 3.1
+        },
+        "Optum_Health": {
+          "revenue_gaap": 22910,
+          "revenue_adjusted": 22945,
+          "operating_income_gaap": 735,
+          "operating_income_adjusted": 588,
+          "operating_margin_gaap_pct": 3.2,
+          "operating_margin_adjusted_pct": 2.6
+        },
+        "Optum_Insight": {
+          "revenue_gaap": 5474,
+          "revenue_adjusted": 5460,
+          "operating_income_gaap": 1279,
+          "operating_income_adjusted": 1269,
+          "operating_margin_gaap_pct": 23.4,
+          "operating_margin_adjusted_pct": 23.2
+        },
+        "Optum_Rx": {
+          "revenue_gaap": 39927,
+          "operating_income_gaap": 1718,
+          "operating_income_adjusted": 1718,
+          "operating_margin_gaap_pct": 4.3,
+          "operating_margin_adjusted_pct": 4.3
+        },
+        "Optum_Total": {
+          "revenue_gaap": 66883,
+          "revenue_adjusted": 66904,
+          "operating_income_gaap": 3732,
+          "operating_income_adjusted": 3575,
+          "operating_margin_gaap_pct": 5.6,
+          "operating_margin_adjusted_pct": 5.3
+        },
+        "optum_revenue_eliminations": 1428,
+        "corporate_revenue_eliminations": 40519,
+        "UHC_Employer_and_Individual": {
+          "revenue": 20208
+        },
+        "UHC_Medicare_and_Retirement": {
+          "revenue": 42420
+        },
+        "UHC_Community_and_State": {
+          "revenue": 23702
+        }
+      },
+      "q3_2025": {
+        "UnitedHealthcare": {
+          "revenue_gaap": 87070,
+          "operating_income_gaap": 1805,
+          "operating_margin_gaap_pct": 2.1
+        },
+        "Optum_Health": {
+          "revenue_gaap": 25422,
+          "operating_income_gaap": 41,
+          "operating_margin_gaap_pct": 0.2
+        },
+        "Optum_Insight": {
+          "revenue_gaap": 5320,
+          "operating_income_gaap": 920,
+          "operating_margin_gaap_pct": 17.3
+        },
+        "Optum_Rx": {
+          "revenue_gaap": 39679,
+          "operating_income_gaap": 1549,
+          "operating_margin_gaap_pct": 3.9
+        },
+        "Optum_Total": {
+          "revenue_gaap": 69177,
+          "operating_income_gaap": 2510,
+          "operating_margin_gaap_pct": 3.6
+        },
+        "UHC_Employer_and_Individual": {
+          "revenue": 19875
+        },
+        "UHC_Medicare_and_Retirement": {
+          "revenue": 43356
+        },
+        "UHC_Community_and_State": {
+          "revenue": 23839
+        }
+      },
+      "q2_2026": {
+        "UnitedHealthcare": {
+          "revenue_gaap": 86017,
+          "operating_income_gaap": 3942,
+          "operating_income_adjusted": 3942
+        },
+        "Optum_Health": {
+          "revenue_gaap": 23472,
+          "operating_income_gaap": 1190,
+          "operating_income_adjusted": 1174
+        },
+        "Optum_Insight": {
+          "revenue_gaap": 5402,
+          "operating_income_gaap": 1369,
+          "operating_income_adjusted": 1373
+        },
+        "Optum_Rx": {
+          "revenue_gaap": 38292,
+          "operating_income_gaap": 1490,
+          "operating_income_adjusted": 1490
+        },
+        "Optum_Total": {
+          "revenue_gaap": 65663,
+          "operating_income_gaap": 4049,
+          "operating_income_adjusted": 4037
+        }
+      }
+    },
+    "membership_and_metrics": {
+      "units": "thousand members except as identified",
+      "q3_2026": {
+        "uhc_medical": 48300,
+        "commercial": 29755,
+        "commercial_risk": 7575,
+        "commercial_fee": 22180,
+        "medicare_advantage": 7605,
+        "medicaid": 6695,
+        "medicare_supplement": 4245,
+        "optum_health_consumers_million": 92,
+        "optum_rx_adjusted_scripts_million": 393
+      },
+      "q2_2026": {
+        "uhc_medical": 48525,
+        "commercial": 29920,
+        "medicare_advantage": 7565,
+        "medicaid": 6780,
+        "medicare_supplement": 4260,
+        "optum_health_consumers_million": 93,
+        "optum_rx_adjusted_scripts_million": 387
+      },
+      "q3_2025": {
+        "uhc_medical": 50125,
+        "commercial": 29930,
+        "medicare_advantage": 8435,
+        "medicaid": 7460,
+        "medicare_supplement": 4300,
+        "optum_health_consumers_million": 93,
+        "optum_rx_adjusted_scripts_million": 414
+      },
+      "medicare_advantage_including_complex_medicaid_ytd_change_thousand": -935,
+      "medicare_advantage_only_ytd_change_thousand": -840,
+      "note": "The 935k YTD decline includes complex populations within Medicaid; the standalone MA membership row drops from 8445k to 7605k and must not be described as 935k."
+    },
+    "guidance": {
+      "as_of_2026_10_13": {
+        "FY2026_eps_gaap_min": 19.5,
+        "FY2026_eps_adjusted_min": 20.5,
+        "FY2026_common_net_income_gaap_greater_than": 17650,
+        "FY2026_common_net_income_adjusted_greater_than": 18585,
+        "year_end_debt_to_capital_target_pct": 40,
+        "FY2026_dividends_expectation_greater_than": 8000
+      },
+      "as_of_2026_07_16": {
+        "FY2026_eps_gaap_range": [
+          18.45,
+          18.95
+        ],
+        "FY2026_eps_adjusted_range": [
+          19.5,
+          20.0
+        ],
+        "mcr_pct": 88.1,
+        "mcr_plus_minus_bps": 25,
+        "cfo_approx": 24000,
+        "share_repurchases_at_least": 5000
+      },
+      "2027_preliminary": "Management sees 2026 adjusted EPS >=20.50 as base; lower end of long-term 13%-16% growth band is a reasonable starting point; current analyst consensus may understate opportunity. This is preliminary commentary, not formal FY2027 EPS guidance. Full update expected in December 2026.",
+      "medicaid_FY2026_core_margin_expectation": "moderately better than negative 1%",
+      "commercial_medical_cost_trend": "exceeding initial 11% expectation",
+      "FY2026_other_guidance_caveat": "Q3 release does not reissue the Q2 detailed annual MCR/CFO table; do not label Q2 values as newly confirmed Q3 guidance."
+    },
+    "accounting_caveats": [
+      "Q3 adjusted operating income is below GAAP operating income because the adjustment removes net divestiture and other gains. Adjusted operating income does NOT exclude intangible amortization; adjusted EPS additionally excludes intangible amortization.",
+      "Q3 net medical prior-period reserve development of 610m relates to service dates in 2026. Do not describe it as entirely prior-year reserves.",
+      "The 95m net decrease in loss-contract reserves excluded from adjusted measures is a separate adjustment from the 610m favorable medical reserve development; do not conflate them.",
+      "Prior-period Optum Health/Insight segment amounts are recast for Optum Financial realignment; use comparable figures in the 2026 releases.",
+      "Segment revenues include intercompany activity: 86.330bn UHC + 66.883bn Optum - 40.519bn corporate eliminations = 112.694bn consolidated. The three Optum businesses also need 1.428bn internal eliminations. Do not make a segment revenue pie that adds unadjusted gross revenues to consolidated revenue.",
+      "Company net margin 3.6% corresponds to common shareholder income, while CFO/net income 1.2x uses consolidated total net earnings 4.300bn; use labels carefully.",
+      "Q3 2026 common net income 4.110bn differs from group total net earnings 4.300bn due to noncontrolling interests.",
+      "Quarterly FCF derived as cash from operations minus purchases of property/equipment/capitalized software is an analytical measure, not a quoted company headline."
+    ],
+    "risk_and_catalyst_facts": {
+      "medical_cost": "Management says care intensity and specialty pharmacy costs remain elevated; utilization typically rises in second half. Commercial medical cost trends exceed initial 11% expectation.",
+      "membership": "UHC medical members 48.3m, down 225k QoQ and 1.825m YoY; Optum Health revenue down ~10% as value-based care coverage contracts in insufficiently scaled markets.",
+      "regulatory": "Company filing identifies Medicare reimbursement, CMS Stars, risk-adjustment audits, DOJ Medicare legal actions, PBM regulation, cybersecurity, and government-program funding as risks. Do not invent new legal outcomes or charges.",
+      "2027_catalysts": "December 2026 outlook update, 2027 MA enrollment/pricing, sustained Optum operational improvement, and AI cost productivity.",
+      "AI_operating_evidence_company_claims": "Prepared remarks: AI chart summarization reaches >40% of employed clinicians, chart-review time down33%; appeal-cycle time down26%. These are company statements, not independently audited metrics.",
+      "Stars_caveat": "Release says 2027 Stars at least69% of members in4+ plans; remarks discuss initial payment-year2028 ratings and approaching75% as moving through2027/2028. Do not mix reference years or treat75% as current achieved result."
+    },
+    "derived_calculations": {
+      "growth_formula": "(current/comparator-1)*100; use exact USD million values before rounding",
+      "q3_2026": {
+        "revenue_gaap": {
+          "YoY_pct": -0.41268634953738337,
+          "QoQ_pct": 0.5909025992573591
+        },
+        "operating_income_gaap": {
+          "YoY_pct": 52.097334878331395,
+          "QoQ_pct": -17.870103866850208
+        },
+        "net_earnings_to_common_gaap": {
+          "YoY_pct": 75.04258943781943,
+          "QoQ_pct": -25.054704595185996
+        },
+        "net_earnings_to_common_adjusted": {
+          "YoY_pct": 59.54716981132076,
+          "QoQ_pct": -27.00276243093923
+        },
+        "diluted_eps_gaap": {
+          "YoY_pct": 76.06177606177607,
+          "QoQ_pct": -24.50331125827815
+        },
+        "diluted_eps_adjusted": {
+          "YoY_pct": 60.616438356164394,
+          "QoQ_pct": -26.489028213166133
+        },
+        "revenue_adjusted": {
+          "QoQ_pct": 0.6105452954985768
+        },
+        "operating_income_adjusted": {
+          "QoQ_pct": -21.481388645193633
+        }
+      },
+      "quarterly_cash_flows": {
+        "q3_2026": {
+          "cfo": 5123,
+          "capex": 859,
+          "fcf": 4264
+        },
+        "q3_2025": {
+          "cfo": 5945,
+          "capex": 890,
+          "fcf": 5055
+        },
+        "method": "Q3 quarterly CFO/capex = nine-month minus six-month; analytical FCF = CFO minus capex. Official cash-flow line items in Q3 and Q2 SEC releases.",
+        "fcf_YoY_pct": -15.647873392680511,
+        "cfo_YoY_pct": -13.826745164003363
+      },
+      "medical_cost_ratio": {
+        "reported_YoY_change_bp": -150.0,
+        "reported_QoQ_change_bp": 170.00000000000028,
+        "reserve_development_revenue_denominator": "premium revenue 87078",
+        "reserve_effect_estimated_bp": 70.05213716438136,
+        "mcr_without_favorable_development_estimate_pct": 89.1063184730931,
+        "caveat": "Analytical add-back estimate based on unrounded medical costs and premium revenue. Not a management-adjusted MCR, and no comparator adjusted for prior reserve development. Do not claim entire150bp YoY improvement structural. QoQ worsening accords with management comment that elevated utilization typically steps up in second half."
+      },
+      "membership": {
+        "uhc_yoy_change_million": -1.825,
+        "uhc_qoq_change_million": -0.225,
+        "uhc_yoy_pct": -3.6408977556109723
+      },
+      "segments": {
+        "UnitedHealthcare": {
+          "revenue_gaap": {
+            "YoY_pct": -0.8498908923854409,
+            "QoQ_pct": 0.3638815582966082
+          },
+          "operating_income_gaap": {
+            "YoY_pct": 56.84210526315789,
+            "QoQ_pct": -28.183663115169967
+          }
+        },
+        "Optum_Health": {
+          "revenue_gaap": {
+            "YoY_pct": -9.881205255290693,
+            "QoQ_pct": -2.39434219495569
+          },
+          "operating_income_gaap": {
+            "YoY_pct": 1692.6829268292681,
+            "QoQ_pct": -38.23529411764706
+          }
+        },
+        "Optum_Insight": {
+          "revenue_gaap": {
+            "YoY_pct": 2.894736842105261,
+            "QoQ_pct": 1.3328396890040617
+          },
+          "operating_income_gaap": {
+            "YoY_pct": 39.02173913043478,
+            "QoQ_pct": -6.574141709276848
+          }
+        },
+        "Optum_Rx": {
+          "revenue_gaap": {
+            "YoY_pct": 0.6250157514050336,
+            "QoQ_pct": 4.269821372610472
+          },
+          "operating_income_gaap": {
+            "YoY_pct": 10.910264686894777,
+            "QoQ_pct": 15.302013422818783
+          }
+        },
+        "Optum_Total": {
+          "revenue_gaap": {
+            "YoY_pct": -3.3161310840308156,
+            "QoQ_pct": 1.857971764920885
+          },
+          "operating_income_gaap": {
+            "YoY_pct": 48.685258964143415,
+            "QoQ_pct": -7.829093603358849
+          }
+        }
+      },
+      "earnings_reconciliation_q3_2026": {
+        "eps": "4.56+0.41-0.16-0.08-0.04=4.69",
+        "net_income_million": "4110+373-148-74-33=4228",
+        "operating_income_million": "6563-224-74=6265",
+        "revenue_million": "112694+21=112715"
+      },
+      "guidance_comparison": {
+        "FY2026_adjusted_eps_floor_vs_old_upper_end_usd": 0.5,
+        "FY2026_adjusted_eps_floor_vs_old_midpoint_pct": 3.797468354430378,
+        "FY2026_adjusted_eps_floor_vs_old_upper_end_pct": 2.499999999999991,
+        "FY2027_eps_derived": "DO NOT PUBLISH a derived 2027 EPS as management guidance; only preliminary growth comments are verified."
+      }
+    }
+  },
+  "bloomberg_evidence": {
+    "provenance": {
+      "source": "User-supplied Bloomberg terminal screenshots",
+      "uploaded_files": [
+        "UNH ANR.png",
+        "UNH EEO.png",
+        "ELV EEO.png",
+        "HUM EEO.png",
+        "CNC EEO.png"
+      ],
+      "anr_as_of": "2026-10-14",
+      "quote_strip_date_literal": "On 13-Oct",
+      "quote_date_interpretation": "13 October 2026 inferred from ANR As of 10/14/26; EEO screens do not separately show a calendar capture date/year",
+      "exact_capture_time": null,
+      "reference_price_basis": "Displayed Last Price; do not assert official closing price without independent corroboration.",
+      "eeo_consensus_timing": "Screenshot already contains Q3 2026 actuals for UNH and is therefore post-release. Its Q3 Est column cannot automatically be treated as archived pre-release consensus.",
+      "currency": "USD",
+      "amounts": "USD billions unless otherwise specified",
+      "price_reference_displayed": 377.76
+    },
+    "UNH_ANR": {
+      "as_of": "2026-10-14",
+      "last_price": 377.76,
+      "quote_change": -0.76,
+      "previous_price_if_difference_is_daily": 378.52,
+      "implied_quote_change_percent": -0.20078199302546762,
+      "consensus_rating": 4.67,
+      "buys": {
+        "count": 25,
+        "percent": 83.3
+      },
+      "holds": {
+        "count": 5,
+        "percent": 16.7
+      },
+      "sells": {
+        "count": 0,
+        "percent": 0
+      },
+      "targets_field_literal": "27/33",
+      "consensus_target_12m": 476.93,
+      "return_potential_displayed_pct": 26.3,
+      "return_potential_calculated_pct": 26.252117746717495,
+      "ltm_return_displayed_pct": 7.7,
+      "entitled_sources_literal": "Entitled to 32 of 35 sources",
+      "selected_banks": [
+        {
+          "rank": 1,
+          "firm": "UBS",
+          "analyst": "A J Rice",
+          "rating_raw": "buy",
+          "rating_standardized": "Buy",
+          "target": 490,
+          "date": "2026-10-13",
+          "upside_pct": 29.71198644642101
+        },
+        {
+          "rank": 2,
+          "firm": "Morgan Stanley",
+          "analyst": "Erin Wright",
+          "rating_raw": "Overwt/In-Line",
+          "rating_standardized": "Overweight",
+          "rating_note": "Overwt is stock rating; In-Line is industry view.",
+          "target": 529,
+          "date": "2026-10-13",
+          "upside_pct": 40.03600169419739
+        },
+        {
+          "rank": 3,
+          "firm": "Goldman Sachs",
+          "analyst": "Scott J Fidel",
+          "rating_raw": "buy",
+          "rating_standardized": "Buy",
+          "target": 490,
+          "date": "2026-10-13",
+          "upside_pct": 29.71198644642101
+        }
+      ],
+      "bank_selection_limitation": "J.P. Morgan, Citi and HSBC are not visible in the supplied screenshot; this does not prove they are absent from complete ANR coverage. Goldman Sachs is selected as the next prominent bank with fully visible verifiable details.",
+      "analyst_theses_available": false,
+      "other_visible_targets": [
+        {
+          "firm": "Deutsche Bank",
+          "analyst": "George Hill",
+          "rating_raw": "hold",
+          "target": 438,
+          "date": "2026-10-13"
+        },
+        {
+          "firm": "RBC Capital Markets",
+          "analyst": "Ben Hendrix",
+          "rating_raw": "outperform",
+          "target": 478,
+          "date": "2026-10-13"
+        },
+        {
+          "firm": "Jefferies",
+          "analyst": "David Windley",
+          "rating_raw": "buy",
+          "target": 490,
+          "date": "2026-10-13"
+        },
+        {
+          "firm": "Baird",
+          "analyst": "Michael Ha",
+          "rating_raw": "neutral",
+          "target": 427,
+          "date": "2026-10-12"
+        },
+        {
+          "firm": "Bernstein",
+          "analyst": "Lance Arthur Wilkes",
+          "rating_raw": "outperform",
+          "target": 512,
+          "date": "2026-10-13"
+        },
+        {
+          "firm": "Raymond James",
+          "analyst": "Parker Snure",
+          "rating_raw": "outperform",
+          "target": 475,
+          "date": "2026-10-13"
+        },
+        {
+          "firm": "Cantor Fitzgerald",
+          "analyst": "Sarah James",
+          "rating_raw": "overweight",
+          "target": 495,
+          "date": "2026-10-13"
+        },
+        {
+          "firm": "Leerink Partners",
+          "analyst": "Whit Mayo",
+          "rating_raw": "outperform",
+          "target": 472,
+          "date": "2026-10-13"
+        },
+        {
+          "firm": "Mizuho Securities",
+          "analyst": "Ann Hynes",
+          "rating_raw": "outperform",
+          "target": 493,
+          "date": "2026-10-13"
+        },
+        {
+          "firm": "Evercore ISI",
+          "analyst": "Elizabeth Anderson",
+          "rating_raw": "outperform",
+          "target": 480,
+          "date": "2026-10-13"
+        },
+        {
+          "firm": "Oppenheimer",
+          "analyst": "Michael Wiederhorn",
+          "rating_raw": "outperform",
+          "target": 500,
+          "date": "2026-10-13"
+        },
+        {
+          "firm": "Wells Fargo",
+          "analyst": "Stephen Baxter",
+          "rating_raw": "outperform",
+          "target": 526,
+          "date": "2026-10-13"
+        },
+        {
+          "firm": "TD Cowen",
+          "analyst": "Ryan Langston",
+          "rating_raw": "hold",
+          "target": 402,
+          "date": "2026-10-13"
+        },
+        {
+          "firm": "Morningstar",
+          "analyst": "Julie Utterback",
+          "rating_raw": "buy",
+          "target": 475,
+          "date": "2026-10-12"
+        },
+        {
+          "firm": "Piper Sandler & Co",
+          "analyst": "Jessica Tassan",
+          "rating_raw": "overweight",
+          "target": 502,
+          "date": "2026-10-13"
+        },
+        {
+          "firm": "Barclays",
+          "analyst": "Andrew Mok",
+          "rating_raw": "overweight",
+          "target": 440,
+          "date": "2026-10-13"
+        },
+        {
+          "firm": "Nephron Research",
+          "analyst": "Eric Percher",
+          "rating_raw": "buy",
+          "target": 470,
+          "date": "2026-10-13"
+        },
+        {
+          "firm": "Truist Securities",
+          "analyst": "David S MacDonald",
+          "rating_raw": "buy",
+          "target": 500,
+          "date": "2026-10-12"
+        },
+        {
+          "firm": "Baptista Research",
+          "analyst": "Ishan Majumdar",
+          "rating_raw": "buy",
+          "target": 485.1,
+          "date": "2026-09-25"
+        },
+        {
+          "firm": "Zacks",
+          "analyst": "Team Coverage",
+          "rating_raw": "neutral",
+          "target": 403,
+          "date": "2026-09-15"
+        }
+      ]
+    },
+    "EEO": {
+      "common_settings": {
+        "periodicity": "Quarters",
+        "source": "Standard",
+        "currency": "USD",
+        "eps_label": "EPS, Adj+",
+        "multiples_columns": [
+          "Last 4 Qtrs Act",
+          "Next 4 Qtrs Est",
+          "FY 2026",
+          "FY 2027",
+          "FY 2028"
+        ]
+      },
+      "UNH": {
+        "company": "UnitedHealth Group Inc",
+        "displayed_price": 377.76,
+        "displayed_quote_change": -0.76,
+        "quarters": [
+          {
+            "period": "Q3 2026",
+            "type": "Act",
+            "ending": "2026-09-30",
+            "eps_adj_plus": 4.69,
+            "eps_gaap": 4.56,
+            "revenue": 112.694,
+            "gross_margin_pct": 19.526,
+            "ebit": 6.563,
+            "ebitda": 7.338,
+            "pretax_profit": 5.524,
+            "net_income_adj_plus": 4.228,
+            "net_income_gaap": 4.11,
+            "net_debt": 45.782,
+            "bps": 116.009,
+            "cps": 5.68,
+            "dps": 2.32,
+            "roe_pct": 15.891,
+            "roa_pct": 5.058,
+            "depreciation": 0.7,
+            "free_cash_flow": 4.264,
+            "capex": -0.859
+          },
+          {
+            "period": "Q3 2026",
+            "type": "Est",
+            "ending": "2026-09-30",
+            "eps_adj_plus": 4.124,
+            "eps_gaap": 3.83,
+            "revenue": 111.029,
+            "gross_margin_pct": 18.507,
+            "ebit": 5.383,
+            "ebitda": 6.385,
+            "pretax_profit": 4.525,
+            "net_income_adj_plus": 3.67,
+            "net_income_gaap": 3.471,
+            "net_debt": 47.579,
+            "bps": 115.304,
+            "cps": 6.523,
+            "dps": 2.285,
+            "roe_pct": 7.143,
+            "roa_pct": 1.175,
+            "depreciation": 0.689,
+            "amortization": 0.35,
+            "free_cash_flow": 3.573,
+            "capex": -0.944067,
+            "net_asset_value": 104.724,
+            "eps_adj_plus_contributor_count": 24,
+            "revenue_contributor_count": 21
+          },
+          {
+            "period": "Q4 2026",
+            "type": "Est",
+            "ending": "2026-12-31",
+            "eps_adj_plus": 2.163,
+            "eps_gaap": 1.876,
+            "revenue": 110.966,
+            "gross_margin_pct": 17.413,
+            "ebit": 3.219,
+            "ebitda": 4.301,
+            "pretax_profit": 2.364,
+            "net_income_adj_plus": 1.946,
+            "net_income_gaap": 1.684,
+            "net_debt": 49.926,
+            "bps": 114.036,
+            "cps": 3.483,
+            "dps": 2.197,
+            "roe_pct": 3.507,
+            "roa_pct": 0.555,
+            "depreciation": 0.6915,
+            "amortization": 0.351,
+            "free_cash_flow": 1.28,
+            "capex": -0.975667,
+            "net_asset_value": 103.304
+          },
+          {
+            "period": "Q1 2027",
+            "type": "Est",
+            "ending": "2027-03-31",
+            "eps_adj_plus": 8.027,
+            "eps_gaap": 7.717,
+            "revenue": 113.571,
+            "gross_margin_pct": 22.671,
+            "ebit": 9.988,
+            "ebitda": 11.031,
+            "pretax_profit": 9.04,
+            "net_income_adj_plus": 7.212,
+            "net_income_gaap": 7.024,
+            "net_debt": 47.797,
+            "bps": 118.591,
+            "cps": 8.05,
+            "dps": 2.335,
+            "roe_pct": 13.41,
+            "roa_pct": 2.245,
+            "depreciation": 0.6915,
+            "amortization": 0.353,
+            "free_cash_flow": 5.093,
+            "capex": -0.9095,
+            "net_asset_value": 106.764
+          },
+          {
+            "period": "Q2 2027",
+            "type": "Est",
+            "ending": "2027-06-30",
+            "eps_adj_plus": 6.883,
+            "eps_gaap": 6.516,
+            "revenue": 115.197,
+            "gross_margin_pct": 19.886,
+            "ebit": 8.539,
+            "ebitda": 9.628,
+            "pretax_profit": 7.475,
+            "net_income_adj_plus": 6.107,
+            "net_income_gaap": 5.929,
+            "net_debt": 43.729,
+            "bps": 122.072,
+            "cps": 8.563,
+            "dps": 2.404,
+            "roe_pct": 11.33,
+            "roa_pct": 1.88,
+            "depreciation": 0.6965,
+            "amortization": 0.356,
+            "free_cash_flow": 8.638,
+            "capex": -0.923714,
+            "net_asset_value": 109.186
+          }
+        ],
+        "multiples": {
+          "pe_adj_plus": [
+            18.51,
+            17.17,
+            18.84,
+            16.62,
+            14.17
+          ],
+          "price_book": [
+            3.26,
+            3.31,
+            3.34,
+            3.11,
+            2.83
+          ],
+          "price_cash_flow": [
+            13.04,
+            13.94,
+            14.24,
+            12.53,
+            12.07
+          ],
+          "ev_revenue": [
+            0.86,
+            0.85,
+            0.87,
+            0.84,
+            0.82
+          ],
+          "ev_ebitda": [
+            13.71,
+            11.93,
+            13.13,
+            11.61,
+            10.36
+          ],
+          "ev_ebit": [
+            16.15,
+            13.72,
+            14.82,
+            13.22,
+            11.56
+          ],
+          "ev_opp": [
+            16.15,
+            13.74,
+            14.84,
+            13.24,
+            11.59
+          ],
+          "dividend_yield_pct": [
+            2.4,
+            2.46,
+            2.39,
+            2.49,
+            2.67
+          ]
+        }
+      },
+      "ELV": {
+        "company": "Elevance Health Inc",
+        "displayed_price": 425.27,
+        "displayed_quote_change": 3.18,
+        "quarters": [
+          {
+            "period": "Q2 2026",
+            "type": "Act",
+            "ending": "2026-06-30",
+            "eps_adj_plus": 7.45,
+            "eps_gaap": 6.71,
+            "revenue": 49.826
+          },
+          {
+            "period": "Q3 2026",
+            "type": "Est",
+            "ending": "2026-09-30",
+            "eps_adj_plus": 4.681,
+            "eps_gaap": 4.164,
+            "revenue": 49.098
+          },
+          {
+            "period": "Q4 2026",
+            "type": "Est",
+            "ending": "2026-12-31",
+            "eps_adj_plus": 2.521,
+            "eps_gaap": 1.923,
+            "revenue": 48.035
+          },
+          {
+            "period": "Q1 2027",
+            "type": "Est",
+            "ending": "2027-03-31",
+            "eps_adj_plus": 12.119,
+            "eps_gaap": 11.239,
+            "revenue": 50.045
+          },
+          {
+            "period": "Q2 2027",
+            "type": "Est",
+            "ending": "2027-06-30",
+            "eps_adj_plus": 7.926,
+            "eps_gaap": 7.458,
+            "revenue": 50.593
+          }
+        ],
+        "multiples": {
+          "pe_adj_plus": [
+            14.47,
+            15.61,
+            15.64,
+            14.38,
+            12.53
+          ],
+          "price_book": [
+            2.05,
+            2.03,
+            2.04,
+            1.86,
+            1.67
+          ],
+          "price_cash_flow": [
+            12.53,
+            13.67,
+            11.76,
+            12.58,
+            10.31
+          ],
+          "ev_revenue": [
+            0.43,
+            0.43,
+            0.44,
+            0.43,
+            0.4
+          ],
+          "ev_ebitda": [
+            9.75,
+            9.18,
+            9.46,
+            8.51,
+            7.85
+          ],
+          "ev_ebit": [
+            11.77,
+            11.48,
+            12.2,
+            10.2,
+            9.19
+          ],
+          "ev_opp": [
+            11.77,
+            11.52,
+            12.21,
+            10.18,
+            9.16
+          ],
+          "dividend_yield_pct": [
+            1.61,
+            1.68,
+            1.64,
+            1.73,
+            1.84
+          ]
+        }
+      },
+      "HUM": {
+        "company": "Humana Inc",
+        "displayed_price": 420.38,
+        "displayed_quote_change": -13.12,
+        "quarters": [
+          {
+            "period": "Q2 2026",
+            "type": "Act",
+            "ending": "2026-06-30",
+            "eps_adj_plus": 7.61,
+            "eps_gaap": 5.73,
+            "revenue": 40.867
+          },
+          {
+            "period": "Q3 2026",
+            "type": "Est",
+            "ending": "2026-09-30",
+            "eps_adj_plus": -1.008,
+            "eps_gaap": -1.096,
+            "revenue": 40.828
+          },
+          {
+            "period": "Q4 2026",
+            "type": "Est",
+            "ending": "2026-12-31",
+            "eps_adj_plus": -7.834,
+            "eps_gaap": -8.017,
+            "revenue": 41.148
+          },
+          {
+            "period": "Q1 2027",
+            "type": "Est",
+            "ending": "2027-03-31",
+            "eps_adj_plus": 12.193,
+            "eps_gaap": 11.812,
+            "revenue": 41.079
+          },
+          {
+            "period": "Q2 2027",
+            "type": "Est",
+            "ending": "2027-06-30",
+            "eps_adj_plus": 8.88,
+            "eps_gaap": 8.542,
+            "revenue": 41.803
+          }
+        ],
+        "multiples": {
+          "pe_adj_plus": [
+            24.44,
+            34.37,
+            46.03,
+            24.8,
+            13.65
+          ],
+          "price_book": [
+            2.63,
+            2.67,
+            2.83,
+            2.54,
+            2.17
+          ],
+          "price_cash_flow": [
+            19.88,
+            15.51,
+            16.74,
+            20.43,
+            10.95
+          ],
+          "ev_revenue": [
+            0.28,
+            0.25,
+            0.25,
+            0.24,
+            0.23
+          ],
+          "ev_ebitda": [
+            11.66,
+            13.13,
+            14.87,
+            9.93,
+            6.51
+          ],
+          "ev_ebit": [
+            15.02,
+            15.46,
+            18.36,
+            11.64,
+            7.32
+          ],
+          "ev_opp": [
+            15.02,
+            15.46,
+            18.67,
+            11.53,
+            7.25
+          ],
+          "dividend_yield_pct": [
+            0.84,
+            0.87,
+            0.84,
+            0.88,
+            0.92
+          ]
+        }
+      },
+      "CNC": {
+        "company": "Centene Corp",
+        "displayed_price": 68.86,
+        "displayed_quote_change": 1.84,
+        "quarters": [
+          {
+            "period": "Q2 2026",
+            "type": "Act",
+            "ending": "2026-06-30",
+            "eps_adj_plus": 2.51,
+            "eps_gaap": 2.19,
+            "revenue": 53.579
+          },
+          {
+            "period": "Q3 2026",
+            "type": "Est",
+            "ending": "2026-09-30",
+            "eps_adj_plus": 0.1,
+            "eps_gaap": -0.118,
+            "revenue": 46.936
+          },
+          {
+            "period": "Q4 2026",
+            "type": "Est",
+            "ending": "2026-12-31",
+            "eps_adj_plus": -1.096,
+            "eps_gaap": -1.278,
+            "revenue": 45.59
+          },
+          {
+            "period": "Q1 2027",
+            "type": "Est",
+            "ending": "2027-03-31",
+            "eps_adj_plus": 3.359,
+            "eps_gaap": 3.047,
+            "revenue": 48.514
+          },
+          {
+            "period": "Q2 2027",
+            "type": "Est",
+            "ending": "2027-06-30",
+            "eps_adj_plus": 2.189,
+            "eps_gaap": 1.954,
+            "revenue": 49.557
+          }
+        ],
+        "multiples": {
+          "pe_adj_plus": [
+            13.27,
+            15.12,
+            14.1,
+            12.88,
+            10.32
+          ],
+          "price_book": [
+            1.51,
+            1.52,
+            1.51,
+            1.37,
+            1.3
+          ],
+          "price_cash_flow": [
+            3.48,
+            8.15,
+            5.86,
+            9.15,
+            6.78
+          ],
+          "ev_revenue": [
+            0.11,
+            0.12,
+            0.12,
+            0.12,
+            0.12
+          ],
+          "ev_ebitda": [
+            null,
+            7.87,
+            7.36,
+            6.54,
+            5.13
+          ],
+          "ev_ebit": [
+            null,
+            10.23,
+            9.91,
+            8.75,
+            6.57
+          ],
+          "ev_opp": [
+            null,
+            10.88,
+            10.89,
+            9.06,
+            6.69
+          ],
+          "dividend_yield_pct": [
+            0,
+            null,
+            null,
+            null,
+            null
+          ]
+        }
+      }
+    },
+    "recommended_peer_basis": {
+      "metric": "FY2027 Price/EPS, Adj+ (Bloomberg EEO)",
+      "reason": "All four screenshots expose FY2027 adjusted EPS P/E, aligning a common full calendar year. Next 4 Qtrs Est has differing possible starting quarter because UNH latest actual is Q3 while peers latest actual is Q2.",
+      "values": {
+        "UNH": 16.62,
+        "ELV": 14.38,
+        "HUM": 24.8,
+        "CNC": 12.88
+      },
+      "caveat": "Bloomberg Adj+ definitions and each company's adjustments can differ; business mix also differs. Consensus remains estimates and is not management guidance.",
+      "unh_vs_elv_premium_pct": 15.577190542420038,
+      "unh_vs_hum_discount_pct": -32.983870967741936,
+      "unh_vs_cnc_premium_pct": 29.037267080745345
+    },
+    "arithmetic": {
+      "q3_eps_vs_displayed_est_pct": 13.724539282250259,
+      "q3_revenue_vs_displayed_est_pct": 1.4996082104675512,
+      "restriction": "These arithmetic differences compare actual to screenshot's Est column. Do not claim earnings surprise versus pre-release consensus without independent evidence of the pre-release snapshot."
+    },
+    "source_line_suggestion_tc": "來源：Bloomberg ANR（2026/10/14）；以 10/13 股價 US$377.76 計算。",
+    "source_line_note": "The quote strip says On 13-Oct and the ANR As of field establishes 2026. Price here is displayed price, not labelled closing price."
+  },
+  "company_naming": {
+    "tc": "聯合健康集團",
+    "sc": "联合健康集团",
+    "en": "UnitedHealth Group",
+    "sources": [
+      {
+        "url": "https://www.uhcasian.com/zh/employers/why-unitedhealthcare",
+        "evidence": "Corporate UnitedHealthcare Chinese page uses 聯合健康集團(UnitedHealth Group).",
+        "ref": "turn15view2"
+      },
+      {
+        "url": "https://static.cninfo.com.cn/finalpage/2025-05-30/1223721568.PDF",
+        "evidence": "E Fund healthcare index fund prospectus on official CNINFO disclosure platform labels UnitedHealth Group Inc as 联合健康集团.",
+        "refs": [
+          "turn14search9",
+          "turn15view3"
+        ]
+      }
+    ],
+    "peers": "Use screenshot corporate English names Elevance Health, Humana and Centene; no unverified Chinese names assigned."
+  },
+  "methodology": {
+    "reporting_period": "Quarter 2026-07-01 through2026-09-30; not year-to-date unless labelled.",
+    "actual_guidance_consensus": "Actuals from official SEC/IR; FY2026 guidance at least20.50 adjustedEPS and at least19.50 GAAPEPS;2027 lower-end13%-16%long-term growth commentary remains preliminary. EEO forecasts separately identified.",
+    "market_estimate_timing": "Q3 EEO Act/Est screenshot is postrelease. The displayed 4.124EPS/111029revenue estimate column is not a verified archived pre-release consensus. Comparisons explicitly limited to displayed column.",
+    "quarterly_cash_flow": "CFO and capex are Q3 nine-month totals minus Q2 six-month totals; FCF=CFO-capex including capitalized software, analytical not GAAP standalone line. Screenshot FCF4.264bn reconciles.",
+    "consolidation": "Donut uses four gross business-line reported revenues before eliminations, explicitly NOT shares of group revenue; note supplies both eliminations and consolidated total.",
+    "adjustments": "Company adjusted revenue112715 vs GAAP112694; adjustedOI6265 vs GAAP6563 removes net gains. AdjustedOI and EPS use different adjustments. Common-shareholder net income4110 differs from total consolidated4300.",
+    "reserve_benefit": "610 favorable prior-period medical reserves relates to2026 dates; separate from loss-contract reserve adjustment. No claim entire150bp YoY MCR improvement recurring; seasonality noted.",
+    "peer_basis": "FixedFY2027BloombergPrice/EPSAdj+ for all four December year ends. Use direct displayed multiples; current actuals differ UNHQ3 and peerQ2, so Next4Q windows not treated identical.",
+    "reference_quote": "ANRdate2026-10-14; headerOn13-Oct and377.76. Price reference, not independently confirmed exchange closing price.",
+    "bank_selection": "UBS thenMorganStanley. JPM/Citi/HSBC not visible in supplied screenshot; select GoldmanSachs as third verified major bank. No fabricated bank investment theses.",
+    "rating_mapping": "UBS/GS rawbuy=>Buy; MorganStanley rawOverwt/In-Line=>Overweight; In-Line is separate industry view. Public labels no classification parentheticals.",
+    "confidentiality": "OriginalBloomberg screenshots not committed; only transcribed facts and derived calculations."
+  },
+  "calculations": {
+    "price_return_formula": "(target/reference_price-1)*100; excludes dividends",
+    "consensus_price_return_pct": 26.252117746717495,
+    "bank_price_returns_pct": {
+      "UBS": 29.71198644642101,
+      "Morgan Stanley": 40.03600169419739,
+      "Goldman Sachs": 29.71198644642101
+    },
+    "displayed_eeo_comparison": {
+      "eps_pct": 13.724539282250259,
+      "revenue_pct": 1.499608210467529,
+      "label": "versus postrelease displayed estimate; not established pre-release surprise"
+    },
+    "revenue_sum": {
+      "business_lines": [
+        86330,
+        22910,
+        5474,
+        39927
+      ],
+      "gross_total": 154641,
+      "optum_eliminations": 1428,
+      "corporate_eliminations": 40519,
+      "consolidated_total": 112694
+    },
+    "forecast_peers": {
+      "period": "FY2027",
+      "values": {
+        "CNC": 12.88,
+        "ELV": 14.38,
+        "UNH": 16.62,
+        "HUM": 24.8
+      }
+    },
+    "cash_flow": {
+      "q3_2026": {
+        "cfo": 5123,
+        "capex": 859,
+        "fcf": 4264
+      },
+      "q3_2025": {
+        "cfo": 5945,
+        "capex": 890,
+        "fcf": 5055
+      },
+      "method": "Q3 quarterly CFO/capex = nine-month minus six-month; analytical FCF = CFO minus capex. Official cash-flow line items in Q3 and Q2 SEC releases.",
+      "fcf_YoY_pct": -15.647873392680511,
+      "cfo_YoY_pct": -13.826745164003363
+    }
+  },
+  "template": {
+    "masters": [
+      "mu.html",
+      "mu-sc.html",
+      "mu-en.html"
+    ],
+    "files": [
+      "unh.html",
+      "unh-sc.html",
+      "unh-en.html"
+    ],
+    "six_tabs": [
+      "our-comments",
+      "financials",
+      "valuation",
+      "street-comments",
+      "risks",
+      "disclaimer"
+    ],
+    "chart_ids": [
+      "segmentRevenueChart",
+      "profitabilityChart",
+      "valuationChart"
+    ],
+    "chart_keys": [
+      "unhSegment",
+      "unhProfit",
+      "unhValuation"
+    ],
+    "protected": "UNH original PI legal DOM, acceptance functions/gate, disclaimer HTML and loader, API adapter retained. Shared API/hosting/config/MU masters unchanged.",
+    "scope": "UNH reports and homepage card only, other24card content and relative ordering retained; source and validation notes added."
+  },
+  "validation_record": "research/unh-2026-q3-validation.json"
+}

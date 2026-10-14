@@ -1,5 +1,19 @@
 # NTAM investment research website
 
+## UnitedHealth Group Q3 2026 update — 14 October 2026
+
+The three UNH reports use the corresponding current MU language masters and cover the quarter ended 30 September, announced on 13 October. UNH moves to first on the homepage by that earnings publication date. Other company pages and the other 24 cards retain their content and relative order.
+
+Official SEC earnings schedules and management remarks distinguish GAAP operating income of US$6.563bn from adjusted US$6.265bn; adjustments remove net gains, while the EPS reconciliation also treats intangible amortization separately. Common-shareholder net income is US$4.110bn versus total consolidated net earnings of US$4.300bn. The 88.4% medical care ratio includes US$610m of favorable reserve development for 2026 service dates. Quarterly OCF of US$5.123bn less US$0.859bn of capex produces analytical FCF of US$4.264bn. Four gross business-line revenues are explicitly shown before both consolidation eliminations.
+
+FY2026 adjusted EPS guidance is at least US$20.50, versus the previous US$19.50–20.00. The 2027 growth discussion remains preliminary, with a full December update expected; no derived 2027 EPS is represented as formal guidance. Bloomberg EEO Q3 estimates are from a postrelease screen, not an established pre-announcement snapshot. The common peer measure is FY2027 Price/EPS, Adj+: CNC 12.88x, ELV 14.38x, UNH 16.62x and HUM 24.80x.
+
+The 14 October ANR target of US$476.93 implies 26.3% price upside from the displayed 13 October reference quote of US$377.76. The quote is not independently labelled an exchange close. Broker cards select UBS, Morgan Stanley and Goldman Sachs from available evidence; no bank theses are invented. Original PI controls, legal wording, disclaimer loader and API adapter remain protected; original screenshots are not committed.
+
+- [UNH sources and calculations](research/unh-2026-q3-2026-10-14.json)
+- [UNH validation record](research/unh-2026-q3-validation.json)
+- [Homepage earnings-date order](research/homepage-earnings-order-2026-10-08.json)
+
 ## NIO Q2 2026 update — 9 October 2026
 
 All three NIO reports now follow their corresponding MU language masters, with six tabs and dark risk headings throughout. They cover the quarter ended 30 June 2026, announced on 1 September, plus the subsequent Q3 delivery update and conditional September Geely energy agreements. The homepage NIO card moves to fourth by earnings publication date; the other 24 cards retain their content and relative order.
