@@ -1,5 +1,21 @@
 # NTAM investment research website
 
+## Johnson & Johnson Q3 2026 update — 14 October 2026
+
+The three JNJ reports use their corresponding MU language masters and cover the quarter ended 27 September, announced on 13 October. Official Chinese branding is 強生 / 强生. JNJ moves to second on the homepage after UNH under the stable same-day earnings-publication rule; the other 24 cards retain their content and relative order.
+
+The financial comparison separates GAAP pretax income of US$34m and net earnings of US$210m from adjusted US$7,672m and US$6,339m. Adjusted pretax margin is not operating margin; Firefly/Sail costs still affect adjusted EPS. The proposed US$5.5bn talc resolution remains conditional. Estimated FCF of about US$15.1bn is nine-month YTD, while management only states standalone Q3 FCF exceeded US$6bn. No exact quarterly operating cash flow or capex is invented.
+
+FY2026 adjusted EPS guidance of US$11.05–11.15 is compared with the July 29 post-deal guidance, not the superseded July 15 range. The US$1.36 estimated 2027 transaction dilution is conditional and is not complete company earnings guidance. Bloomberg EEO Q3 estimates are a postrelease snapshot. Peer valuation consistently uses FY2027 Price/EPS, Adj+: PFE 9.81x, MRK 15.24x, JNJ 20.47x and LLY 24.69x.
+
+The 14 October ANR target of US$283.16 implies 13.9% upside from the displayed 13 October quote of US$248.61. The displayed US$15.12 decline implies approximately 5.7%; this snapshot is not independently verified as an exchange close or a causal account of the price reaction. Broker cards follow UBS, Morgan Stanley and JP Morgan; the truncated JP Morgan analyst name is omitted, and no bank thesis is invented.
+
+Original JNJ PI/legal/API components and existing DOMPurify safe rendering are retained with the MU layout. The source screenshots are not committed. Static/mocked validation and production observations are distinguished in the validation record and pull request.
+
+- [JNJ sources and calculations](research/jnj-2026-q3-2026-10-14.json)
+- [JNJ validation record](research/jnj-2026-q3-validation.json)
+- [Homepage earnings-date order](research/homepage-earnings-order-2026-10-08.json)
+
 ## UnitedHealth Group Q3 2026 update — 14 October 2026
 
 The three UNH reports use the corresponding current MU language masters and cover the quarter ended 30 September, announced on 13 October. UNH moves to first on the homepage by that earnings publication date. Other company pages and the other 24 cards retain their content and relative order.

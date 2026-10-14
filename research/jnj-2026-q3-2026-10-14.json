@@ -1,0 +1,1176 @@
+{
+  "report": "Johnson & Johnson Q3 2026 three-language research update using latest MU layout",
+  "updated_on": "2026-10-14",
+  "base_commit": "5f1992a83a2801c2b13227bb42ea6c1c51254b68",
+  "official_company_evidence": {
+    "company": "Johnson & Johnson",
+    "ticker": "JNJ",
+    "as_of_hkt": "2026-10-14",
+    "reporting_period": "2026 Q3",
+    "quarter_end": "2026-09-27",
+    "released_on": "2026-10-13",
+    "units": "USD millions, except EPS, percentages and explicitly labelled billions",
+    "sources": {
+      "q3_release": {
+        "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-reports-q3-2026-results-raises-2026-guidance",
+        "web_refs": [
+          "turn19search0",
+          "turn20view0"
+        ],
+        "type": "company release",
+        "retrieved": "2026-10-14"
+      },
+      "q3_8k": {
+        "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000189/jnj-20261013.htm",
+        "web_refs": [
+          "turn19search2",
+          "turn20view2",
+          "turn21view1"
+        ],
+        "type": "SEC 8-K",
+        "supports": "release date and quarter end"
+      },
+      "q3_financial_schedules": {
+        "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000189/a2026q3exhibit992.htm",
+        "web_refs": [
+          "turn22view2",
+          "turn23view0",
+          "turn23view1",
+          "turn25view1",
+          "turn25view2",
+          "turn25view3",
+          "turn30view3",
+          "turn30view4"
+        ],
+        "type": "SEC Exhibit 99.2, unaudited schedules",
+        "supports": "consolidated financial statements, GAAP to adjusted bridge, product and segment sales"
+      },
+      "q3_management_prepared_remarks": {
+        "url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-q3-2026-earnings-ceo-and-cfo-prepared-remarks",
+        "web_refs": [
+          "turn19search8",
+          "turn20view1",
+          "turn21view0",
+          "turn22view0"
+        ],
+        "type": "company original CEO/CFO prepared remarks",
+        "supports": "business catalysts, cash/debt, >6bn Q3 FCF, 2026/2027 outlook, talc condition, separation timing"
+      },
+      "q2_release_with_schedules": {
+        "url": "https://www.investor.jnj.com/investor-news/news-details/2026/Johnson--Johnson-reports-Q2-2026-results-raises-2026-outlook/default.aspx",
+        "web_refs": [
+          "turn29view0",
+          "turn30view2"
+        ],
+        "type": "company release and financial schedules",
+        "released_on": "2026-07-15",
+        "supports": "Q2 2026 comparators"
+      },
+      "july29_guidance_revision": {
+        "url": "https://www.sec.gov/Archives/edgar/data/200406/000020040626000163/jnj-20260729.htm",
+        "web_refs": [
+          "turn23search5",
+          "turn24view1"
+        ],
+        "type": "SEC 8-K",
+        "supports": "most recent prior guidance; 2026/2027 Firefly/Sail dilution and conditionality"
+      },
+      "firefly_acquisition": {
+        "url": "https://www.investor.jnj.com/investor-news/news-details/2026/Johnson--Johnson-Completes-Acquisition-of-Firefly-Bio-Inc--to-Advance-Next-Generation-Oncology-Innovation/default.aspx",
+        "web_refs": [
+          "turn23search3"
+        ],
+        "type": "company release",
+        "released_on": "2026-07-29"
+      },
+      "traditional_name": {
+        "url": "https://www.jnj.com/innovativemedicine/apac/hongkong/zh-hant/contact-us",
+        "web_refs": [
+          "turn29search3",
+          "turn30view0"
+        ],
+        "type": "JNJ official Hong Kong corporate page",
+        "supports": "local brand 強生; contact entity 強生（香港）有限公司; do not present Hong Kong subsidiary legal name as NYSE parent legal name"
+      },
+      "simplified_name": {
+        "url": "https://www.jnj.com.cn/brand-announcement",
+        "web_refs": [
+          "turn25search2",
+          "turn29view1"
+        ],
+        "type": "JNJ official China brand announcement",
+        "supports": "强生 (Johnson & Johnson)"
+      },
+      "hong_kong_parent_trademark": {
+        "url": "https://www.ipd.gov.hk/hkipjournal/15072022/PUBLICATION_TYPE_ACCEPTANCE_FOR_REGISTRATION_SUMMARY.pdf",
+        "web_refs": [
+          "turn29search7"
+        ],
+        "type": "Hong Kong Intellectual Property Department",
+        "supports": "mark 強生 registered by JOHNSON & JOHNSON, New Brunswick NJ",
+        "limitation": "Search retrieval displays exact relevant entry; full PDF open returned an internal error. Corporate HK page independently supports brand."
+      }
+    },
+    "names": {
+      "en": "Johnson & Johnson",
+      "tc": "強生",
+      "sc": "强生",
+      "note": "Use Hong Kong corporate brand for TC. Do not use Taiwan-localized 嬌生 for this Hong Kong report."
+    },
+    "q3_2026": {
+      "revenue_reported": 25399,
+      "revenue_yoy_reported_pct": 5.9,
+      "revenue_yoy_operational_pct": 6.0,
+      "revenue_yoy_adjusted_operational_pct": 6.1,
+      "cost_of_products_sold": 8097,
+      "gross_profit_gaap": 17302,
+      "gross_margin_gaap_pct": 68.1,
+      "sma_expense": 6285,
+      "research_and_development_expense": 4652,
+      "iprd_impairments": 339,
+      "net_interest_expense": 31,
+      "other_expense_net": 5780,
+      "restructuring_statement_line": 181,
+      "pretax_income_gaap": 34,
+      "pretax_margin_gaap_pct": 0.1,
+      "income_tax_expense_gaap": -176,
+      "net_income_gaap": 210,
+      "net_margin_gaap_pct": 0.8,
+      "eps_diluted_gaap": 0.09,
+      "diluted_shares": 2448.6,
+      "pretax_income_adjusted": 7672,
+      "pretax_margin_adjusted_pct": 30.2,
+      "net_income_adjusted": 6339,
+      "net_margin_adjusted_pct": 25.0,
+      "eps_diluted_adjusted": 2.59,
+      "effective_tax_rate_adjusted_pct": 17.4,
+      "measurement_note": "7672 is adjusted income BEFORE TAX, not GAAP pretax profit and not adjusted operating income. Adjusted EPS still includes the Firefly/Sail transaction impact; never describe it as excluding all M&A effects."
+    },
+    "q3_2025": {
+      "revenue_reported": 23993,
+      "gross_profit_gaap": 16690,
+      "gross_margin_gaap_pct": 69.6,
+      "pretax_income_gaap": 7493,
+      "pretax_margin_gaap_pct": 31.2,
+      "net_income_gaap": 5152,
+      "net_margin_gaap_pct": 21.5,
+      "eps_diluted_gaap": 2.12,
+      "pretax_income_adjusted": 8436,
+      "pretax_margin_adjusted_pct": 35.2,
+      "net_income_adjusted": 6801,
+      "net_margin_adjusted_pct": 28.3,
+      "eps_diluted_adjusted": 2.8,
+      "effective_tax_rate_adjusted_pct": 19.4
+    },
+    "q2_2026": {
+      "quarter_end": "2026-06-28",
+      "released_on": "2026-07-15",
+      "revenue_reported": 25310,
+      "gross_profit_gaap": 17259,
+      "gross_margin_gaap_pct": 68.2,
+      "pretax_income_gaap": 6747,
+      "pretax_margin_gaap_pct": 26.7,
+      "net_income_gaap": 5534,
+      "net_margin_gaap_pct": 21.9,
+      "eps_diluted_gaap": 2.27,
+      "pretax_income_adjusted": 8660,
+      "pretax_margin_adjusted_pct": 34.2,
+      "net_income_adjusted": 7081,
+      "net_margin_adjusted_pct": 28.0,
+      "eps_diluted_adjusted": 2.9,
+      "effective_tax_rate_adjusted_pct": 18.2
+    },
+    "derived_comparisons_pct": {
+      "method": "(Q3 2026 / comparable period - 1) x 100; calculations use published rounded USD million or EPS inputs",
+      "revenue_qoq": 0.35164,
+      "gross_profit_qoq": 0.249145,
+      "pretax_gaap_qoq": -99.496072,
+      "net_gaap_qoq": -96.205276,
+      "eps_gaap_qoq": -96.035242,
+      "pretax_adjusted_qoq": -11.408776,
+      "net_adjusted_qoq": -10.478746,
+      "eps_adjusted_qoq": -10.689655,
+      "pretax_adjusted_yoy": -9.056425,
+      "net_adjusted_yoy": -6.793119,
+      "eps_adjusted_yoy": -7.5
+    },
+    "adjusted_reconciliation": {
+      "basis": "USD millions; Q3 2026",
+      "gaap_pretax_income": 34,
+      "pretax_adjustments": {
+        "litigation_related": 5519,
+        "intangible_amortization": 1240,
+        "restructuring_related": 195,
+        "orthopaedics_separation": 369,
+        "acquisition_integration_divestiture": -34,
+        "securities_losses": 10,
+        "iprd_impairment": 339,
+        "other": 0
+      },
+      "pretax_adjustments_total": 7638,
+      "adjusted_pretax_income": 7672,
+      "gaap_net_income": 210,
+      "tax_impact_special_item_adjustments": -1677,
+      "tax_legislation_and_other_tax": 168,
+      "adjusted_net_income": 6339,
+      "identity": "210 + 7638 - 1677 + 168 = 6339",
+      "caveats": [
+        "Litigation-related adjustment $5519m is not exactly the $5500m proposed ovarian talc agreement alone.",
+        "No standalone after-tax talc charge was isolated in retrieved sources; do not attribute all tax adjustments to talc.",
+        "The $339m IPR&D impairment adjustment is different from Firefly asset-acquisition IPR&D expense; latter still affects adjusted EPS.",
+        "Restructuring statement expense181 differs from total restructuring adjustment195 due to expense classification."
+      ]
+    },
+    "segments": [
+      {
+        "name": "Innovative Medicine",
+        "tc": "創新製藥",
+        "sc": "创新制药",
+        "q3_2026_revenue": 16757,
+        "q3_2025_revenue": 15563,
+        "q2_2026_revenue": 16384,
+        "yoy_reported_pct": 7.7,
+        "yoy_operational_pct": 7.9,
+        "yoy_adjusted_operational_pct": 8.0,
+        "qoq_derived_pct": 2.276611
+      },
+      {
+        "name": "MedTech",
+        "tc": "醫療科技",
+        "sc": "医疗科技",
+        "q3_2026_revenue": 8642,
+        "q3_2025_revenue": 8430,
+        "q2_2026_revenue": 8926,
+        "yoy_reported_pct": 2.5,
+        "yoy_operational_pct": 2.5,
+        "yoy_adjusted_operational_pct": 2.5,
+        "qoq_derived_pct": -3.181716
+      }
+    ],
+    "segment_reconciliation": {
+      "identity": "16757 + 8642 = 25399",
+      "eliminations": 0,
+      "note": "Use two consolidated reported segment sales in revenue mix chart; product figures are subsets and must not be added as additional segments."
+    },
+    "regional_sales": {
+      "us": 14959,
+      "international": 10440,
+      "us_reported_yoy_pct": 9.1,
+      "international_reported_yoy_pct": 1.5
+    },
+    "product_drivers": [
+      {
+        "product": "DARZALEX",
+        "q3_sales": 4239,
+        "reported_yoy_pct": 15.4,
+        "operational_yoy_pct": 15.6
+      },
+      {
+        "product": "TREMFYA",
+        "q3_sales": 2396,
+        "reported_yoy_pct": 68.3,
+        "operational_yoy_pct": 68.2
+      },
+      {
+        "product": "CARVYKTI",
+        "q3_sales": 710,
+        "reported_yoy_pct": 35.5,
+        "operational_yoy_pct": 35.2
+      },
+      {
+        "product": "STELARA",
+        "q3_sales": 716,
+        "reported_yoy_pct": -54.4,
+        "operational_yoy_pct": -54.0,
+        "note": "Loss of exclusivity remains major headwind; company says ~690 basis-point negative impact on Innovative Medicine growth."
+      },
+      {
+        "product": "SPRAVATO",
+        "q3_sales": 624,
+        "reported_yoy_pct": 36.1,
+        "operational_yoy_pct": 36.0
+      },
+      {
+        "product": "CAPLYTA",
+        "q3_sales": 398,
+        "reported_yoy_pct": 66.1,
+        "operational_yoy_pct": 66.1
+      }
+    ],
+    "cash_flow_and_balance_sheet": {
+      "q3_ytd_fcf_estimate": 15100,
+      "q3_ytd_fcf_estimate_date": "2026-10-13",
+      "q3_ytd_fcf_2025": 14226,
+      "q2_ytd_fcf_estimate_at_july15": 8700,
+      "q3_standalone_fcf_management_description": "more than USD 6 billion",
+      "fy2026_fcf_guidance_approx": 21000,
+      "cash_and_marketable_securities_approx": 17000,
+      "debt_approx": 45000,
+      "net_debt_approx": 28000,
+      "fcf_definition": "Operating cash flow less additions to property, plant and equipment",
+      "unavailable": [
+        "Exact Q3 2026 standalone operating cash flow",
+        "Exact Q3 2026 standalone capital expenditure",
+        "Exact Q3 2026 standalone free cash flow"
+      ],
+      "note": "Release footnote identifies15100 as nine-month YTD estimate; subsequent SEC cash flow filing not yet verified. Do not subtract July estimated8700 to imply exact quarter6400; CFO's >6000 is the permitted quarter statement."
+    },
+    "guidance": {
+      "fy2026_current_date": "2026-10-13",
+      "fy2026_previous_date": "2026-07-29",
+      "current": {
+        "reported_sales_bn_low": 101.0,
+        "reported_sales_bn_high": 101.4,
+        "reported_sales_bn_mid": 101.2,
+        "reported_sales_growth_pct_low": 7.2,
+        "reported_sales_growth_pct_high": 7.6,
+        "reported_sales_growth_pct_mid": 7.4,
+        "operational_sales_bn_low": 100.5,
+        "operational_sales_bn_high": 100.9,
+        "operational_sales_bn_mid": 100.7,
+        "operational_sales_growth_pct_low": 6.7,
+        "operational_sales_growth_pct_high": 7.1,
+        "operational_sales_growth_pct_mid": 6.9,
+        "adjusted_operational_sales_growth_pct_low": 6.4,
+        "adjusted_operational_sales_growth_pct_high": 6.8,
+        "adjusted_eps_low": 11.05,
+        "adjusted_eps_high": 11.15,
+        "adjusted_eps_mid": 11.1,
+        "adjusted_operational_eps_low": 10.95,
+        "adjusted_operational_eps_high": 11.05,
+        "adjusted_operational_eps_mid": 11.0,
+        "adjusted_pretax_operating_margin_yoy_bp": -60,
+        "net_interest_expense_low": 150,
+        "net_interest_expense_high": 200,
+        "effective_tax_rate_pct_low": 17.0,
+        "effective_tax_rate_pct_high": 17.5,
+        "euro_avg_rate_usd_assumption": 1.15
+      },
+      "previous_july29": {
+        "reported_sales_bn_low": 100.8,
+        "reported_sales_bn_high": 101.4,
+        "reported_sales_bn_mid": 101.1,
+        "adjusted_eps_low": 10.96,
+        "adjusted_eps_high": 11.11,
+        "adjusted_eps_mid": 11.04,
+        "adjusted_operational_eps_low": 10.86,
+        "adjusted_operational_eps_high": 11.01,
+        "adjusted_operational_eps_mid": 10.94,
+        "adjusted_pretax_operating_margin_yoy_bp": -75
+      },
+      "july15_before_deals": {
+        "adjusted_eps_low": 11.6,
+        "adjusted_eps_high": 11.75,
+        "adjusted_eps_mid": 11.68
+      },
+      "fy2026_deal_dilution": {
+        "firefly_eps": 0.46,
+        "sail_eps": 0.18,
+        "total_eps": 0.64,
+        "operating_margin_bp": -150
+      },
+      "fy2027_deal_dilution": {
+        "firefly_eps": 0.08,
+        "sail_eps": 1.28,
+        "total_eps": 1.36,
+        "conditionality": "Sail impact assumes achievement of specified development milestones and exercise of company option under agreements."
+      },
+      "fy2027_overall_guidance": "No numerical company-wide sales/EPS guidance identified. Management qualitative optimism and deal dilution are not formal total2027 EPS guidance.",
+      "enterprise_business_review_date": "2026-12-08",
+      "long_term_management_ambition": "Double-digit growth by end of decade; Oncology revenue >$50bn by2030. These are management ambitions/projections, not guaranteed outcomes.",
+      "measurement_notes": [
+        "Current adjusted EPS midpoint raised $0.06 from July29, but still below pretransaction July15 midpoint. Explain relevant baseline.",
+        "Adjusted pre-tax operating margin guidance is NOT the actual adjusted pretax margin from financial table; company defines operating margin using sales less COGS, SM&A, R&D.",
+        "Company does not supply forward GAAP earnings guidance due to inability to reasonably predict special items.",
+        "Operational sales exclude currency; adjusted operational also excludes net acquisition/divestiture effects. Neither is a separate booked revenue total."
+      ]
+    },
+    "management_business_points": [
+      "Innovative Medicine operational growth7.9% offsets weaker MedTech; STELARA pressure persists.",
+      "MedTech operational growth2.5% was below management expectations; CFO identified cardiovascular and non-US surgery needing improvement.",
+      "Physician selectivity continues to affect ABIOMED; management expects ProtectIV clinical trial results in2027.",
+      "OTTAVA received FDA De Novo authorization in July, first commercial customer signed; revenue contribution expected to build gradually.",
+      "Upcoming catalysts include anticipated RYBREVANT FASPRO advanced-head-and-neck-cancer approval and US VARIPULSE Pro approval inQ4; these remain forward-looking.",
+      "DePuy Synthes separation targeted mid2027; management leaning toward spin-off but evaluating all options.",
+      "Current euro spot1.12 versus FYaverage assumption1.15 would produce an FX headwind in2027 if maintained."
+    ],
+    "talc": {
+      "proposed_ovarian_resolution_bn": 5.5,
+      "announcement_month": "2026-07",
+      "gaap_recognition": "Q3 2026",
+      "remaining_ovarian_claims_participation_condition_pct": 95,
+      "management_status": "Trending toward reaching95% threshold",
+      "risk_wording": "Proposed resolution remains conditional; do not call all talc litigation settled or legally finalized."
+    },
+    "limitations": [
+      "No original bank research read; no bank-specific investment rationale may be inferred from target prices or ratings.",
+      "No independent numeric prerelease consensus established by official corporate disclosure. Management said sales and earnings exceeded expectations, but Bloomberg postrelease screen may not prove prerelease estimate cut-off.",
+      "No official intraday equity-reaction price/time series verified in this task; supplied Bloomberg price/change should be labeled screenshot snapshot without attribution of causality.",
+      "No Q3 consolidated operating-income figure should be invented by labelling adjusted pretax income as operating profit.",
+      "Official Chinese corporate-local brand verified; listed parent's English legal name remains Johnson & Johnson."
+    ]
+  },
+  "bloomberg_evidence": {
+    "provenance": {
+      "source": "User-supplied Bloomberg terminal screenshots, visually inspected with view_image",
+      "uploaded_files": [
+        "JNJ ANR.png",
+        "JNJ EEO.png",
+        "MRK EEO.png",
+        "PFE EEO.png",
+        "LLY EEO.png"
+      ],
+      "anr_as_of": "2026-10-14",
+      "quote_strip_date_literal": "On 13-Oct",
+      "quote_date_interpretation": "13 October 2026 inferred from ANR As of 10/14/26; EEO screens do not separately show their capture date/year",
+      "exact_capture_time": null,
+      "reference_price_basis": "Displayed Last Price; not independently verified official closing price.",
+      "eeo_consensus_timing": "JNJ screenshot already contains Q3 2026 actuals and is post-release. Its Q3 Est column is a displayed estimate, not verified archived prerelease consensus.",
+      "currency": "USD",
+      "amounts": "USD billions unless otherwise specified",
+      "price_reference_displayed": 248.61
+    },
+    "JNJ_ANR": {
+      "as_of": "2026-10-14",
+      "last_price": 248.61,
+      "quote_change": -15.12,
+      "previous_price_if_difference_is_daily": 263.73,
+      "implied_quote_change_percent": -5.733136161983846,
+      "consensus_rating": 4.44,
+      "buys": {
+        "count": 20,
+        "percent": 74.1
+      },
+      "holds": {
+        "count": 7,
+        "percent": 25.9
+      },
+      "sells": {
+        "count": 0,
+        "percent": 0.0
+      },
+      "targets_field_literal": "25/30",
+      "consensus_target_12m": 283.16,
+      "return_potential_displayed_pct": 13.9,
+      "return_potential_calculated_pct": 13.89726881460922,
+      "ltm_return_displayed_pct": 33.2,
+      "entitled_sources_literal": "Entitled to 29 of 32 sources",
+      "selected_banks": [
+        {
+          "rank": 1,
+          "firm": "UBS",
+          "analyst": "Michael Yee",
+          "rating_raw": "buy",
+          "rating_standardized": "Buy",
+          "target": 320,
+          "date": "2026-10-13",
+          "upside_pct": 28.715659064398036
+        },
+        {
+          "rank": 2,
+          "firm": "Morgan Stanley",
+          "analyst": "Dr Terence Flynn",
+          "rating_raw": "Overwt/In-Line",
+          "rating_standardized": "Overweight",
+          "target": 294,
+          "date": "2026-10-13",
+          "rating_note": "Overwt is the stock rating; In-Line is the industry view.",
+          "upside_pct": 18.2575117654157
+        },
+        {
+          "rank": 3,
+          "firm": "JP Morgan",
+          "analyst_displayed": "Christopher T Scho...",
+          "analyst_truncated": true,
+          "rating_raw": "neutral",
+          "rating_standardized": "Neutral",
+          "target": 285,
+          "date": "2026-10-13",
+          "upside_pct": 14.637383854229501
+        },
+        {
+          "rank": 4,
+          "firm": "Citi",
+          "analyst_displayed": "Joanne Karen Wuen...",
+          "analyst_truncated": true,
+          "rating_raw": "buy",
+          "rating_standardized": "Buy",
+          "target": 303,
+          "date": "2026-10-13",
+          "upside_pct": 21.877639676601902
+        },
+        {
+          "rank": 5,
+          "firm": "HSBC",
+          "analyst": "Morten Herholdt",
+          "rating_raw": "buy",
+          "rating_standardized": "Buy",
+          "target": 320,
+          "date": "2026-10-09",
+          "upside_pct": 28.715659064398036
+        }
+      ],
+      "bank_selection_limitation": "All five preferred firms are visible; the JP Morgan and Citi analyst names are truncated. No full name should be invented from this screen. HSBC date is 9 October rather than the release date.",
+      "analyst_theses_available": false,
+      "table_1_yr_rtn_warning": "The broker-table 1 Yr Rtn column is not stock target upside. Target upside must use target / reference price - 1."
+    },
+    "EEO": {
+      "common_settings": {
+        "periodicity": "Quarters",
+        "source": "Standard",
+        "currency": "USD",
+        "eps_label": "EPS, Adj+",
+        "multiples_columns": [
+          "Last 4 Qtrs Act",
+          "Next 4 Qtrs Est",
+          "FY 2026",
+          "FY 2027",
+          "FY 2028"
+        ]
+      },
+      "JNJ": {
+        "company": "Johnson & Johnson",
+        "displayed_price": 248.61,
+        "displayed_quote_change": -15.12,
+        "quarters": [
+          {
+            "period": "Q3 2026",
+            "type": "Act",
+            "ending": "2026-09-30",
+            "eps_adj_plus": 2.59,
+            "eps_gaap": 0.09,
+            "revenue": 25.399,
+            "gross_margin_pct": 73.015,
+            "ebit": 6.365,
+            "ebitda": 7.605,
+            "pretax_profit": 7.672,
+            "net_income_adj_plus": 6.339,
+            "net_income_gaap": 0.21,
+            "bps": 35.284,
+            "dps_displayed": 4.02,
+            "roe_pct": 25.742,
+            "roa_pct": 10.666
+          },
+          {
+            "period": "Q3 2026",
+            "type": "Est",
+            "ending": "2026-09-30",
+            "eps_adj_plus": 2.521,
+            "eps_gaap": 2.41,
+            "revenue": 25.398,
+            "gross_margin_pct": 73.975,
+            "ebit": 7.43,
+            "ebitda": 8.709,
+            "pretax_profit": 7.622,
+            "net_income_adj_plus": 6.134,
+            "net_income_gaap": 4.974,
+            "net_debt": 23.075,
+            "bps": 36.08,
+            "cps": 3.48,
+            "dps": 1.333,
+            "roe_pct": 30.182,
+            "roa_pct": 13.06,
+            "depreciation": 0.699381,
+            "amortization": 1.144,
+            "free_cash_flow": 8.607,
+            "capex": -1.185,
+            "net_asset_value": 85.501,
+            "eps_adj_plus_contributor_count": 16,
+            "revenue_contributor_count": 18
+          },
+          {
+            "period": "Q4 2026",
+            "type": "Est",
+            "ending": "2026-12-31",
+            "eps_adj_plus": 2.938,
+            "eps_gaap": 2.728,
+            "revenue": 26.403,
+            "gross_margin_pct": 73.197,
+            "ebit": 8.37,
+            "ebitda": 9.415,
+            "pretax_profit": 8.702,
+            "net_income_adj_plus": 7.169,
+            "net_income_gaap": 5.968,
+            "net_debt": 20.934,
+            "bps": 37.155,
+            "cps": 3.39,
+            "dps": 1.333,
+            "roe_pct": 31.464,
+            "roa_pct": 13.36,
+            "depreciation": 0.708931,
+            "amortization": 1.16,
+            "free_cash_flow": 6.146,
+            "capex": -1.408,
+            "net_asset_value": 89.466,
+            "eps_adj_plus_contributor_count": 19,
+            "revenue_contributor_count": 18
+          },
+          {
+            "period": "Q1 2027",
+            "type": "Est",
+            "ending": "2027-03-31",
+            "eps_adj_plus": 2.784,
+            "eps_gaap": 2.572,
+            "revenue": 25.51,
+            "gross_margin_pct": 72.294,
+            "ebit": 7.941,
+            "ebitda": 8.723,
+            "pretax_profit": 8.172,
+            "net_income_adj_plus": 6.767,
+            "net_income_gaap": 5.824,
+            "net_debt": 19.852,
+            "bps": 38.13,
+            "cps": 3.39,
+            "dps": 1.33,
+            "roe_pct": 31.749,
+            "depreciation": 0.762142,
+            "amortization": 1.203,
+            "free_cash_flow": 6.606,
+            "capex": -1.029,
+            "net_asset_value": 91.043,
+            "eps_adj_plus_contributor_count": 10,
+            "revenue_contributor_count": 11
+          },
+          {
+            "period": "Q2 2027",
+            "type": "Est",
+            "ending": "2027-06-30",
+            "eps_adj_plus": 2.921,
+            "eps_gaap": 2.826,
+            "revenue": 26.925,
+            "gross_margin_pct": 73.244,
+            "ebit": 8.697,
+            "ebitda": 9.85,
+            "pretax_profit": 8.691,
+            "net_income_adj_plus": 7.078,
+            "net_income_gaap": 6.396,
+            "net_debt": 16.586,
+            "bps": 39.275,
+            "cps": 3.58,
+            "dps": 1.353,
+            "roe_pct": 32.286,
+            "depreciation": 0.781365,
+            "amortization": 1.189,
+            "free_cash_flow": 7.447,
+            "capex": -1.177,
+            "net_asset_value": 90.422,
+            "eps_adj_plus_contributor_count": 10,
+            "revenue_contributor_count": 11
+          }
+        ],
+        "multiples": {
+          "pe_adj_plus": [
+            23.34,
+            21.12,
+            22.4,
+            20.47,
+            17.63
+          ],
+          "price_book": [
+            7.05,
+            6.69,
+            6.79,
+            6.08,
+            5.33
+          ],
+          "price_cash_flow": [
+            21.76,
+            17.66,
+            21.23,
+            19.15,
+            15.89
+          ],
+          "ev_revenue": [
+            6.32,
+            5.92,
+            6.2,
+            5.79,
+            5.36
+          ],
+          "ev_ebitda": [
+            18.51,
+            16.42,
+            17.11,
+            15.73,
+            13.87
+          ],
+          "ev_ebit": [
+            25.03,
+            18.47,
+            19.66,
+            17.96,
+            15.57
+          ],
+          "ev_opp": [
+            25.03,
+            18.47,
+            19.66,
+            17.96,
+            15.57
+          ],
+          "dividend_yield_pct": [
+            3.2,
+            2.16,
+            2.15,
+            2.25,
+            2.33
+          ]
+        },
+        "field_cautions": [
+          "Quarterly actual DPS displays 4.020, whereas the quarterly estimate is 1.333; this may reflect a cumulative field. Do not present 4.020 as the ordinary quarterly dividend without corporate verification.",
+          "No actual Q3 cash flow or capex values are filled on this screen. Do not confuse the adjacent Q3 estimates 8.607bn FCF and -1.185bn capex with actuals.",
+          "Annual EPS and revenue are not shown; only annual valuation multiples are shown.",
+          "Vendor standardized dates need not equal issuer fiscal closing dates. Use official quarter-end in report."
+        ]
+      },
+      "MRK": {
+        "company": "Merck & Co Inc",
+        "displayed_price": 141.98,
+        "displayed_quote_change": -3.47,
+        "quarters": [
+          {
+            "period": "Q2 2026",
+            "type": "Act",
+            "ending": "2026-06-30",
+            "eps_adj_plus": -0.13,
+            "eps_gaap": -0.54,
+            "revenue": 16.607
+          },
+          {
+            "period": "Q3 2026",
+            "type": "Est",
+            "ending": "2026-09-30",
+            "eps_adj_plus": 2.064,
+            "eps_gaap": 1.891,
+            "revenue": 17.321
+          },
+          {
+            "period": "Q4 2026",
+            "type": "Est",
+            "ending": "2026-12-31",
+            "eps_adj_plus": 1.955,
+            "eps_gaap": 1.627,
+            "revenue": 16.87
+          },
+          {
+            "period": "Q1 2027",
+            "type": "Est",
+            "ending": "2027-03-31",
+            "eps_adj_plus": 2.15,
+            "eps_gaap": 1.834,
+            "revenue": 16.595
+          },
+          {
+            "period": "Q2 2027",
+            "type": "Est",
+            "ending": "2027-06-30",
+            "eps_adj_plus": 2.121,
+            "eps_gaap": 1.848,
+            "revenue": 16.936
+          }
+        ],
+        "multiples": {
+          "pe_adj_plus": [
+            44.23,
+            17.13,
+            54.07,
+            15.24,
+            13.89
+          ],
+          "price_book": [
+            8.36,
+            7.94,
+            7.21,
+            5.94,
+            4.84
+          ],
+          "price_cash_flow": [
+            17.65,
+            null,
+            18.46,
+            13.97,
+            12.28
+          ],
+          "ev_revenue": [
+            5.97,
+            5.86,
+            5.92,
+            5.67,
+            5.34
+          ],
+          "ev_ebitda": [
+            29.38,
+            11.8,
+            27.92,
+            12.57,
+            11.51
+          ],
+          "ev_ebit": [
+            62.25,
+            15.44,
+            34.91,
+            14.26,
+            13.01
+          ],
+          "ev_opp": [
+            62.25,
+            15.44,
+            34.91,
+            14.23,
+            13.0
+          ],
+          "dividend_yield_pct": [
+            2.37,
+            2.41,
+            2.38,
+            2.5,
+            2.62
+          ]
+        }
+      },
+      "PFE": {
+        "company": "Pfizer Inc",
+        "displayed_price": 28.37,
+        "displayed_quote_change": -0.03,
+        "quarters": [
+          {
+            "period": "Q2 2026",
+            "type": "Act",
+            "ending": "2026-06-30",
+            "eps_adj_plus": 0.77,
+            "eps_gaap": -0.04,
+            "revenue": 15.034
+          },
+          {
+            "period": "Q3 2026",
+            "type": "Est",
+            "ending": "2026-09-30",
+            "eps_adj_plus": 0.733,
+            "eps_gaap": 0.552,
+            "revenue": 15.905
+          },
+          {
+            "period": "Q4 2026",
+            "type": "Est",
+            "ending": "2026-12-31",
+            "eps_adj_plus": 0.709,
+            "eps_gaap": 0.592,
+            "revenue": 16.896
+          },
+          {
+            "period": "Q1 2027",
+            "type": "Est",
+            "ending": "2027-03-31",
+            "eps_adj_plus": 0.695,
+            "eps_gaap": 0.505,
+            "revenue": 13.915
+          },
+          {
+            "period": "Q2 2027",
+            "type": "Est",
+            "ending": "2027-06-30",
+            "eps_adj_plus": 0.653,
+            "eps_gaap": 0.472,
+            "revenue": 14.321
+          }
+        ],
+        "multiples": {
+          "pe_adj_plus": [
+            9.3,
+            10.17,
+            9.58,
+            9.81,
+            11.52
+          ],
+          "price_book": [
+            1.9,
+            1.86,
+            1.82,
+            1.78,
+            1.79
+          ],
+          "price_cash_flow": [
+            12.04,
+            null,
+            9.89,
+            9.3,
+            9.98
+          ],
+          "ev_revenue": [
+            3.35,
+            3.5,
+            3.43,
+            3.56,
+            3.88
+          ],
+          "ev_ebitda": [
+            10.46,
+            8.93,
+            9.48,
+            8.91,
+            10.13
+          ],
+          "ev_ebit": [
+            15.45,
+            10.24,
+            10.06,
+            10.19,
+            12.01
+          ],
+          "ev_opp": [
+            15.45,
+            10.36,
+            10.07,
+            10.22,
+            12.05
+          ],
+          "dividend_yield_pct": [
+            6.06,
+            6.11,
+            6.07,
+            6.14,
+            6.13
+          ]
+        }
+      },
+      "LLY": {
+        "company": "Eli Lilly & Co",
+        "displayed_price": 1166.51,
+        "displayed_quote_change": -16.11,
+        "quarters": [
+          {
+            "period": "Q2 2026",
+            "type": "Act",
+            "ending": "2026-06-30",
+            "eps_adj_plus": 8.38,
+            "eps_gaap": 7.94,
+            "revenue": 22.974
+          },
+          {
+            "period": "Q3 2026",
+            "type": "Est",
+            "ending": "2026-09-30",
+            "eps_adj_plus": 8.016,
+            "eps_gaap": 8.103,
+            "revenue": 22.425
+          },
+          {
+            "period": "Q4 2026",
+            "type": "Est",
+            "ending": "2026-12-31",
+            "eps_adj_plus": 10.164,
+            "eps_gaap": 9.867,
+            "revenue": 23.583
+          },
+          {
+            "period": "Q1 2027",
+            "type": "Est",
+            "ending": "2027-03-31",
+            "eps_adj_plus": 10.224,
+            "eps_gaap": 10.65,
+            "revenue": 23.181
+          },
+          {
+            "period": "Q2 2027",
+            "type": "Est",
+            "ending": "2027-06-30",
+            "eps_adj_plus": 11.731,
+            "eps_gaap": 11.96,
+            "revenue": 25.734
+          }
+        ],
+        "multiples": {
+          "pe_adj_plus": [
+            37.04,
+            29.06,
+            33.19,
+            24.69,
+            21.28
+          ],
+          "price_book": [
+            32.43,
+            25.17,
+            21.57,
+            13.43,
+            9.15
+          ],
+          "price_cash_flow": [
+            37.17,
+            null,
+            32.2,
+            25.19,
+            21.65
+          ],
+          "ev_revenue": [
+            14.36,
+            12.05,
+            12.92,
+            11.19,
+            9.96
+          ],
+          "ev_ebitda": [
+            32.02,
+            24.15,
+            26.6,
+            20.9,
+            18.08
+          ],
+          "ev_ebit": [
+            34.02,
+            25.24,
+            29.44,
+            22.3,
+            19.48
+          ],
+          "ev_opp": [
+            34.02,
+            25.46,
+            28.71,
+            22.17,
+            19.38
+          ],
+          "dividend_yield_pct": [
+            0.55,
+            0.64,
+            0.59,
+            0.68,
+            0.77
+          ]
+        }
+      }
+    },
+    "calculations": {
+      "jnj_q3_eps_vs_displayed_est_pct": 2.737009123363743,
+      "jnj_q3_revenue_vs_displayed_est_pct": 0.00393731789904983,
+      "jnj_q3_revenue_vs_displayed_est_difference_usdm": 1.0,
+      "jnj_price_vs_previous_displayed_pct": -5.733136161983846,
+      "jnj_premium_to_mrk_fy2027_pct": 34.31758530183726,
+      "jnj_premium_to_pfe_fy2027_pct": 108.66462793068297,
+      "jnj_discount_to_lly_fy2027_pct": 17.091940056703127
+    },
+    "peer_comparison_recommendation": {
+      "field": "Price/EPS, Adj+",
+      "horizon": "FY 2027",
+      "values": {
+        "PFE": 9.81,
+        "MRK": 15.24,
+        "JNJ": 20.47,
+        "LLY": 24.69
+      },
+      "rationale": "A fixed FY 2027 horizon is common to all four screens. Their rolling Next 4 Qtrs Est horizons may differ because JNJ latest actual is Q3 while peers latest actual is Q2. JNJ is above MRK and PFE but below LLY. Business mix and growth differences limit conclusions; do not equate multiple gaps with mispricing.",
+      "yearly_eps_revenue": "Not visible in supplied quarterly screenshots; do not invent annual consensus levels or treat market multiples as management guidance."
+    }
+  },
+  "company_naming": {
+    "tc": "強生",
+    "sc": "强生",
+    "en": "Johnson & Johnson",
+    "sources": [
+      {
+        "url": "https://www.jnj.com/innovativemedicine/apac/hongkong/zh-hant/contact-us",
+        "web_refs": [
+          "turn29search3",
+          "turn30view0"
+        ],
+        "type": "JNJ official Hong Kong corporate page",
+        "supports": "local brand 強生; contact entity 強生（香港）有限公司; do not present Hong Kong subsidiary legal name as NYSE parent legal name"
+      },
+      {
+        "url": "https://www.jnj.com.cn/brand-announcement",
+        "web_refs": [
+          "turn25search2",
+          "turn29view1"
+        ],
+        "type": "JNJ official China brand announcement",
+        "supports": "强生 (Johnson & Johnson)"
+      }
+    ],
+    "peers": "Retain corporate English labels Pfizer, Merck and Eli Lilly rather than infer unverified locale names."
+  },
+  "methodology": {
+    "reporting_period": "Official quarter ended 2026-09-27, released 2026-10-13. Vendor standardized 09/30 date does not replace fiscal period. All quarterly except explicitly labelled YTD FCF.",
+    "earnings_basis": "GAAP pretax34 and net210 differ from adjusted7672 and6339. Adjusted pretax margin30.2% is not operating margin. Income tax benefit176 explains why GAAP net exceeds pretax. Some Firefly/Sail costs remain in adjusted EPS.",
+    "adjustments": "Use official 34+7638=7672 pretax and210+7638-1677+168=6339 net bridges. Litigation-related5519 is not identical to5500 proposed talc agreement, and339 IPR&D impairment is not Firefly acquisition expense.",
+    "cash_flow": "15100m is approximate nine-month YTD company estimate, not standalone Q3. CFO says Q3 FCF exceeds6000m and full-year guidance about21000m. No exact quarterly OCF/capex or subtraction of preliminary YTD estimates is represented as fact.",
+    "guidance_baseline": "Current adjusted EPS11.05–11.15 midpoint11.10 versus most recent July29 10.96–11.11 midpoint11.04. July15 pre-deal midpoint11.68 was reduced on July29. All EPS diluted.",
+    "2027_outlook": "1.36 EPS dilution is a transaction-specific conditional projection involving Sail milestones/options, not formal overall2027EPS guidance. December8 enterprise review and mid2027 planned separation remain future events.",
+    "market_estimate_timing": "JNJ EEO already contains Q3 actuals; EPS2.521 and revenue25.398bn are displayed estimates, not a verified archived prerelease consensus. Revenue difference of1m is effectively in line; no inflated beat claim.",
+    "market_reaction": "On13-Oct displayed price248.61 and change−15.12 imply−5.733% using previous=248.61+15.12. Snapshot only, not independently verified official close or a causal decomposition of market reaction.",
+    "peer_basis": "Common FY2027 Bloomberg Price/EPS Adj+; JNJ actualQ3 and peersQ2 make rolling windows potentially different. No annual EPS/revenue consensus invented from multiples. Vendor adjustments and business mixes differ.",
+    "bank_selection": "UBS then Morgan Stanley then JP Morgan fill3 MU cards; Citi/HSBC visible but lower priority. JPM analyst name truncated and omitted rather than guessed. No bank research theses inferred.",
+    "ratings": "UBS buy=>Buy; MS Overwt/In-Line=>Overweight with separate industry view; JPM neutral=>Neutral. Colors and five-label convention per owner; no public mapping explanations.",
+    "security": "Original JNJ DOMPurify script, user textContent, AI safe-tag sanitization and viewport-clamped tooltip behavior retained with protected legal/API components; no security regression to less restrictive MU rendering.",
+    "confidentiality": "Original Bloomberg screenshots are not committed; only transcribed facts and calculations."
+  },
+  "calculations": {
+    "price_return_formula": "(target/reference_price-1)*100; excludes dividends",
+    "consensus_price_return_pct": 13.89726881460922,
+    "bank_price_returns_pct": {
+      "UBS": 28.715659064398036,
+      "Morgan Stanley": 18.2575117654157,
+      "JP Morgan": 14.637383854229501
+    },
+    "displayed_quote_change_pct": -5.733136161983846,
+    "displayed_eeo_comparison": {
+      "eps_pct": 2.737009123363743,
+      "revenue_pct": 0.00393731789904983,
+      "revenue_difference_usdm": 1,
+      "label": "versus postrelease displayed estimates, not established prerelease surprise"
+    },
+    "revenue_sum": {
+      "segments": [
+        16757,
+        8642
+      ],
+      "consolidated_total": 25399,
+      "eliminations": 0
+    },
+    "revenue_qoq_pct": 0.3516396681153777,
+    "adjusted_eps_qoq_pct": -10.689655172413792,
+    "adjusted_net_yoy_pct": -6.793118659020736,
+    "net_margin_adjusted_pct": 24.957675499035396,
+    "pretax_margin_adjusted_pct": 30.205913618646402,
+    "forecast_peers": {
+      "period": "FY2027",
+      "values": {
+        "PFE": 9.81,
+        "MRK": 15.24,
+        "JNJ": 20.47,
+        "LLY": 24.69
+      }
+    }
+  },
+  "template": {
+    "masters": [
+      "mu.html",
+      "mu-sc.html",
+      "mu-en.html"
+    ],
+    "files": [
+      "jnj.html",
+      "jnj-sc.html",
+      "jnj-en.html"
+    ],
+    "six_tabs": [
+      "our-comments",
+      "financials",
+      "valuation",
+      "street-comments",
+      "risks",
+      "disclaimer"
+    ],
+    "chart_ids": [
+      "segmentRevenueChart",
+      "profitabilityChart",
+      "valuationChart"
+    ],
+    "chart_keys": [
+      "jnjSegment",
+      "jnjProfit",
+      "jnjValuation"
+    ],
+    "protected": "Original JNJ PI legal DOM/functions/gate, disclaimer/loader, API adapter, DOMPurify sanitization and tooltip viewport bounds. Shared API, hosting, configuration and MU masters unchanged.",
+    "scope": "JNJ3 reports, matching homepage card and research notes. Other24card text and relative order retained; JNJ followsUNH as same-day stable tie."
+  },
+  "validation_record": "research/jnj-2026-q3-validation.json"
+}
