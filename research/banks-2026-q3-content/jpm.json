@@ -1,0 +1,872 @@
+{
+  "ticker": "jpm",
+  "metadata": {
+    "period": "3Q2026",
+    "period_end": "2026-09-30",
+    "publication_date": "2026-10-13",
+    "report_date": "2026-10-15",
+    "market_date": "2026-10-14",
+    "currency": "USD",
+    "basis": "Reported US GAAP unless identified as managed, adjusted or non-GAAP; Bloomberg forecasts and multiples retain Adj+ vendor basis."
+  },
+  "languages": {
+    "en": {
+      "company": "JPMorgan Chase & Co.",
+      "subtitle": "Operations & Strategy Report | 3Q2026 Earnings Review",
+      "source_line": "Updated 2026/10/15 · Quarter ended 2026/09/30 · Results released 2026/10/13 · Reference share price: 2026/10/14. USD; reported figures unless otherwise indicated.",
+      "header": {
+        "target_label": "12M consensus target snapshot",
+        "target_asof": "Bloomberg ANR · 2026/10/15 · Includes earlier estimates",
+        "target_value": "US$371.72",
+        "rating": "Bloomberg ANR score 3.91/5"
+      },
+      "views": [
+        {
+          "title": "Recurring income is the stronger foundation",
+          "text": "We believe deposit and loan growth provide a firmer earnings base than the headline sequential decline suggests. Managed revenue rose 8% to US$50.907B and NII excluding Markets rose 6% to US$24.7B. Q4 guidance is about US$25.5B for NII excluding Markets, while the preliminary 2027 central case is about US$107B. Reported EPS of US$5.57 and company ex-item EPS of US$5.75 should be kept distinct; Q2 investment gains distort sequential comparisons."
+        },
+        {
+          "title": "Fee franchises broaden growth, but trading is uneven",
+          "text": "We believe the 14% revenue growth in both CIB and AWM demonstrates the value of the diversified franchise. AWM generated US$51B of long-term and US$42B of liquidity net inflows. CIB equity-markets revenue rose 49%, yet fixed-income revenue fell 4%. Payments revenue grew 14%, offering a more recurring counterweight to trading volatility; an equally strong trading quarter should not be assumed."
+        },
+        {
+          "title": "Credit is resilient; cost discipline is the next test",
+          "text": "We believe credit performance supports earnings, but revenue growth alone does not guarantee better efficiency. Card net charge-offs improved to 2.91% from 3.15% a year earlier and group provisions fell to US$2.743B from US$3.403B. Nevertheless, expenses rose 12% against 8% managed revenue growth, and reserves increased US$539M. Technology, marketing and compensation investment must translate into future revenue or productivity gains."
+        },
+        {
+          "title": "Quality commands a premium and creates a capital trade-off",
+          "text": "We believe 20% reported ROTCE helps explain JPM’s valuation premium, but leaves less room for execution slips. The shares trade at 13.20x FY2027 Bloomberg Adj+ EPS and about 2.98x latest tangible book. Standardized CET1 fell to 13.9% from 14.2%; net repurchases were US$664M as management prioritized franchise investment. The broad ANR target implies 10.9% price upside, but includes estimates made before and after earnings."
+        }
+      ],
+      "kpis": [
+        {
+          "label": "Managed net revenue (non-GAAP)",
+          "value": "US$50,907M",
+          "note": "YoY +8%; reported revenue US$50,172M"
+        },
+        {
+          "label": "Net income",
+          "value": "US$15,305M",
+          "note": "YoY +6%; QoQ −28%, affected by investment items"
+        },
+        {
+          "label": "Diluted EPS (US$)",
+          "value": "US$5.57",
+          "note": "Reported; US$5.75 excluding securities losses"
+        },
+        {
+          "label": "ROTCE / RoTCE (non-GAAP)",
+          "value": "20%",
+          "note": "Reported; 21% excluding securities losses"
+        }
+      ],
+      "financial_charts": [
+        {
+          "title": "3Q2026 managed revenue by business",
+          "note": "Managed, non-GAAP revenue totals US$50,907M; reported GAAP revenue is US$50,172M. Corporate is included.",
+          "type": "bar",
+          "labels": [
+            "Consumer & Community Banking",
+            "Commercial & Investment Bank",
+            "Asset & Wealth Management",
+            "Corporate"
+          ],
+          "datasets": [
+            {
+              "label": "Revenue (US$ millions)",
+              "data": [
+                21171,
+                22734,
+                6909,
+                93
+              ],
+              "axis": "value"
+            }
+          ]
+        },
+        {
+          "title": "Core-business earnings and capital returns",
+          "note": "Net income uses the left axis; annualized segment ROE uses the right axis. Corporate loss of US$455M is excluded from this core-business comparison.",
+          "type": "bar",
+          "labels": [
+            "Consumer & Community Banking",
+            "Commercial & Investment Bank",
+            "Asset & Wealth Management"
+          ],
+          "datasets": [
+            {
+              "label": "Net income (US$ millions)",
+              "data": [
+                5670,
+                8247,
+                1843
+              ],
+              "axis": "value"
+            },
+            {
+              "label": "ROE (%)",
+              "data": [
+                36,
+                18,
+                45
+              ],
+              "axis": "percentage"
+            }
+          ],
+          "percentage_max": 50
+        }
+      ],
+      "table": {
+        "title": "Quarterly comparison (US$ millions, except per-share data and ratios)",
+        "headers": [
+          "Metric",
+          "3Q2026",
+          "2Q2026",
+          "3Q2025"
+        ],
+        "rows": [
+          [
+            "Managed net revenue (non-GAAP)",
+            "50,907",
+            "58,022",
+            "47,120"
+          ],
+          [
+            "Reported net revenue",
+            "50,172",
+            "57,347",
+            "46,427"
+          ],
+          [
+            "Noninterest / operating expense",
+            "27,295",
+            "27,316",
+            "24,281"
+          ],
+          [
+            "Provision for credit losses",
+            "2,743",
+            "2,515",
+            "3,403"
+          ],
+          [
+            "Net income",
+            "15,305",
+            "21,155",
+            "14,393"
+          ],
+          [
+            "Diluted EPS (US$)",
+            "US$5.57",
+            "US$7.70",
+            "US$5.07"
+          ],
+          [
+            "ROE",
+            "17%",
+            "24%",
+            "17%"
+          ],
+          [
+            "ROTCE / RoTCE (non-GAAP)",
+            "20%",
+            "29%",
+            "20%"
+          ],
+          [
+            "CET1 ratio, standardized",
+            "13.9%",
+            "14.2%",
+            "14.8%"
+          ],
+          [
+            "Tangible book value per share (US$)",
+            "US$112.64",
+            "US$113.35",
+            "US$105.70"
+          ],
+          [
+            "Card Services net charge-off rate",
+            "2.91%",
+            "3.34%",
+            "3.15%"
+          ]
+        ],
+        "note": "Managed revenue is non-GAAP; reported revenue is shown separately. 3Q2026 EPS excluding US$498M after-tax securities losses is US$5.75 versus reported US$5.57. Q2 included US$4.6B of Visa-related gains and US$1.0B of other equity gains. CET1 is preliminary."
+      },
+      "valuation": {
+        "title": "Major U.S. banks: FY2027E P/E",
+        "note": "Bloomberg EEO screenshots supplied 2026/10/15; common FY2027 Price/EPS, Adj+ field. JPM, C, GS and BAC show 10/14 reference prices; MS shows Prev US$181.51 without a visible quote date. Vendor adjusted EPS definitions and business mixes differ. JPM: FY2026/FY2027/FY2028 P/E 13.70x/13.20x/12.24x; FY2027 P/B 2.26x and dividend yield 2.05%. US$335.28 divided by latest TBVPS US$112.64 is 2.98x. ANR consensus US$371.72 implies +10.9% price return, excluding dividends. Q4 Bloomberg consensus: Adj+ EPS US$5.928 and revenue US$51.262B; these are estimates, not company guidance.",
+        "metric_label": "FY2027E Price/EPS, Adj+ (x)",
+        "labels": [
+          "Citigroup (C)",
+          "Bank of America (BAC)",
+          "Goldman Sachs (GS)",
+          "JPMorgan Chase (JPM)",
+          "Morgan Stanley (MS)"
+        ],
+        "values": [
+          9.46,
+          9.89,
+          11.98,
+          13.2,
+          13.3
+        ],
+        "highlight_index": 3
+      },
+      "street": {
+        "source_line": "Source: Bloomberg ANR (2026/10/15); calculated using the 10/14 share price of US$335.28.",
+        "cards": [
+          {
+            "broker": "Morgan Stanley",
+            "rating": "Neutral",
+            "items": [
+              {
+                "label": "Target / implied price return",
+                "text": "US$377.00 / +12.4%"
+              },
+              {
+                "label": "Dated analyst record",
+                "text": "2026/10/14"
+              },
+              {
+                "label": "Analyst",
+                "text": "Manan Gosalia"
+              }
+            ]
+          },
+          {
+            "broker": "Citi",
+            "rating": "Neutral",
+            "items": [
+              {
+                "label": "Target / implied price return",
+                "text": "US$360.00 / +7.4%"
+              },
+              {
+                "label": "Dated analyst record",
+                "text": "2026/10/13"
+              },
+              {
+                "label": "Analyst",
+                "text": "Benjamin Gerlinger"
+              }
+            ]
+          },
+          {
+            "broker": "Goldman Sachs",
+            "rating": "Buy",
+            "items": [
+              {
+                "label": "Target / implied price return",
+                "text": "US$392.00 / +16.9%"
+              },
+              {
+                "label": "Dated analyst record",
+                "text": "2026/10/13"
+              },
+              {
+                "label": "Analyst",
+                "text": "Richard N Ramsden"
+              }
+            ]
+          }
+        ]
+      },
+      "risks": [
+        {
+          "title": "Rates and balance-sheet sensitivity",
+          "text": "Higher rates support some reinvestment yields but can depress securities values and increase funding costs. The 2027 US$107B NII ex-Markets central case is preliminary and depends on balance-sheet growth and rates; it should not be treated as secured earnings."
+        },
+        {
+          "title": "Cost growth and revenue cyclicality",
+          "text": "Expenses rose 12%, while fixed-income revenue declined 4%. Weaker capital-markets activity or falling asset values could slow fee growth before technology, compensation and marketing costs adjust."
+        },
+        {
+          "title": "Credit deterioration beyond the current cycle",
+          "text": "A 2.91% card charge-off rate is reassuring, but US$539M of additional reserves and wholesale credit costs show that risk has not disappeared. Employment weakness, concentrated corporate exposures or geopolitical shocks could raise losses."
+        },
+        {
+          "title": "Capital use and valuation compression",
+          "text": "CET1 fell 30bp sequentially and buybacks were reduced. Loan growth, risk-weighted assets, securities valuations and regulation can compete for capital; a roughly 2.98x tangible-book valuation magnifies sensitivity to a lower sustainable ROTCE."
+        }
+      ],
+      "ai": {
+        "welcome": "This JPMorgan Chase 3Q2026 report is dated 2026/10/15, with a 10/14 reference share price. Ask about reported versus adjusted EPS, net interest income, capital allocation or the dated ANR/EEO snapshot.",
+        "context": "Answer in English. Use only the dated report context; do not imply live prices. Distinguish actuals, company guidance and Bloomberg consensus. No pre-results consensus or full broker research is supplied, so do not claim earnings beats/misses or invent broker theses. Use rating labels Overweight, Buy, Neutral, Sell or Underweight only, without parenthetical classification explanations. {\"ticker\": \"JPM\", \"report_date\": \"2026-10-15\", \"earnings_date\": \"2026-10-13\", \"reference_price_date\": \"2026-10-14\", \"reference_price_USD\": 335.28, \"actuals\": {\"periods\": [\"Q3 2026\", \"Q2 2026\", \"Q3 2025\"], \"managed_revenue_USDmn\": [50907, 58022, 47120], \"reported_revenue_USDmn\": [50172, 57347, 46427], \"net_income_USDmn\": [15305, 21155, 14393], \"diluted_EPS_USD\": [5.57, 7.7, 5.07], \"expense_USDmn\": [27295, 27316, 24281], \"credit_provision_USDmn\": [2743, 2515, 3403], \"CET1_standardized_pct\": [13.9, 14.2, 14.8], \"ROE_pct\": [17, 24, 17], \"ROTCE_pct\": [20, 29, 20], \"BVPS_USD\": [132.3, 133.01, 124.96], \"TBVPS_USD\": [112.64, 113.35, 105.7], \"Card_NCO_rate_pct\": [2.91, 3.34, 3.15], \"net_reserve_build_USDmn\": 539, \"NII_ex_Markets_USDbn\": 24.7, \"NII_managed_USDbn\": 27.1, \"adjusted_ex_item_EPS_USD\": 5.75, \"adjusted_ex_item_net_income_USDmn\": 15803, \"significant_investment_securities_losses_pretax_USDmn\": 658, \"significant_investment_securities_losses_aftertax_USDmn\": 498, \"adjusted_ex_item_ROTCE_pct\": 21, \"common_dividend_USD\": 1.65, \"gross_common_repurchases_USDmn\": 1057, \"net_common_repurchases_USDmn\": 664, \"capital_common_dividend_USDbn\": 4.4, \"common_stockholder_net_income_USDmn\": 14936, \"common_equity_net_income_USDmn\": 15000, \"net_chargeoffs_current_rounded_USDbn\": 2.2}, \"guidance\": {\"source\": \"jpm_presentation, slide8\", \"Q4_2026_NII_ex_Markets_USDbn\": 25.5, \"Q4_2026_NII_USDbn\": 28, \"Q4_2026_adjusted_expense_USDbn\": 27.5, \"FY2026_implied_NII_ex_Markets_USDbn\": 97.2, \"FY2026_implied_NII_USDbn\": 106.2, \"FY2026_implied_adjusted_expense_USDbn\": 108.6, \"FY2026_Card_Services_NCO_rate_pct\": 3.2, \"FY2027_preliminary_central_case_NII_ex_Markets_USDbn\": 107, \"qualifiers\": \"Approximate, market dependent; FY2027 is preliminary central case, not a firm commitment. Adjusted expense excludes firmwide legal expense.\"}, \"Bloomberg_EEO\": {\"FY2027_PE_Adj\": 13.2, \"FY2027_PB\": 2.26, \"Q4_EPS_Adj\": 5.928, \"Q4_revenue_USDbn\": 51.262}, \"ANR_snapshot\": {\"date\": \"2026-10-15\", \"target\": 371.72, \"score\": 3.91, \"buy_hold_sell_counts\": [17, 16, 1], \"scope\": \"Broad aggregate includes older estimates, not post-earnings-only\"}, \"basis_notes\": [\"EEO net income14.936B = official net income15.305B minus preferred dividends0.305B minus participating-securities earnings0.064B (supplement p11).\", \"EEO actual EPS Adj+5.57 is not the company ex-item5.75; EEO actual ROE18.662% and ROA1.367% are not company annualized ROE17% and ROA1.21%.\", \"Q2 reported revenue includes4.6B Visa exchange gain plus1.0B other equity gains, so sequential comparisons require caution.\", \"Gross buybacks1.057B and net buybacks0.664B are different definitions.\"], \"eligible_announcement_day_or_later_brokers\": [{\"broker\": \"Morgan Stanley\", \"rating\": \"Neutral\", \"analyst\": \"Manan Gosalia\", \"target_USD\": 377, \"date\": \"2026-10-14\", \"same_day_chronology_unknown\": false}, {\"broker\": \"Citi\", \"rating\": \"Neutral\", \"analyst\": \"Benjamin Gerlinger\", \"target_USD\": 360, \"date\": \"2026-10-13\", \"same_day_chronology_unknown\": true}, {\"broker\": \"Goldman Sachs\", \"rating\": \"Buy\", \"analyst\": \"Richard N Ramsden\", \"target_USD\": 392, \"date\": \"2026-10-13\", \"same_day_chronology_unknown\": true}], \"broker_scope\": \"Announcement-day records are allowed; do not imply same-day rows were proven published after earnings or contain newly verified research theses.\"}"
+      }
+    },
+    "tc": {
+      "company": "摩根大通集團",
+      "subtitle": "營運與策略研究報告｜2026年第三季業績專題",
+      "source_line": "更新：2026/10/15｜季末：2026/09/30｜業績公布：2026/10/13｜參考股價：2026/10/14。幣別為美元；另有註明者除外，採公司呈報數據。",
+      "header": {
+        "target_label": "12個月共識目標價快照",
+        "target_asof": "Bloomberg ANR · 2026/10/15 · 包含較早預測",
+        "target_value": "US$371.72",
+        "rating": "Bloomberg ANR 評分 3.91/5"
+      },
+      "views": [
+        {
+          "title": "經常性收入比單季比較更具參考價值",
+          "text": "我們認為存貸款增長提供較穩固的盈利基礎。管理口徑收入按年增長8%至US$50.907B，剔除市場業務的淨利息收入增長6%至US$24.7B。公司第四季相關指引約US$25.5B，2027年初步基準情境約US$107B。呈報EPS US$5.57須與公司剔除特殊項目後的US$5.75分開；第二季投資收益亦使按季比較失真。"
+        },
+        {
+          "title": "收費業務擴闊增長來源，交易表現仍有分歧",
+          "text": "我們認為商業及投資銀行與資產及財富管理收入均增長14%，反映多元化業務的價值。資產管理長期及流動性產品淨流入分別為US$51B及US$42B。股票市場收入增長49%，但固定收益收入下跌4%；支付收入增長14%，為波動較大的交易業務提供較經常性的支持，不宜假設交易強勢每季重現。"
+        },
+        {
+          "title": "信貸保持韌性，費用控制成下一考驗",
+          "text": "我們認為信貸表現有利盈利，但收入增長不必然改善效率。信用卡淨撇帳率由去年同期3.15%降至2.91%，集團撥備由US$3.403B降至US$2.743B。不過費用增長12%，快於管理口徑收入的8%，另新增US$539M準備。科技、營銷與薪酬投入，仍須轉化為未來收入或生產力提升。"
+        },
+        {
+          "title": "優質業務享有溢價，資本配置仍有取捨",
+          "text": "我們認為20%的呈報ROTCE支持估值溢價，但亦降低執行失誤的容忍度。股價相當於13.20倍2027年Bloomberg Adj+預測EPS及約2.98倍最新有形帳面值。標準法CET1由14.2%降至13.9%；管理層優先投資業務，淨回購降至US$664M。整體ANR目標對應10.9%潛在股價回報，但涵蓋業績前後不同時點的預測。"
+        }
+      ],
+      "kpis": [
+        {
+          "label": "管理口徑淨收入（非GAAP）",
+          "value": "US$50,907M",
+          "note": "按年+8%；呈報收入US$50,172M"
+        },
+        {
+          "label": "純利",
+          "value": "US$15,305M",
+          "note": "按年+6%；按季−28%，受投資項目影響"
+        },
+        {
+          "label": "攤薄每股盈利（美元）",
+          "value": "US$5.57",
+          "note": "呈報口徑；剔除證券虧損為US$5.75"
+        },
+        {
+          "label": "有形普通股權益回報率（非GAAP）",
+          "value": "20%",
+          "note": "呈報口徑；剔除證券虧損為21%"
+        }
+      ],
+      "financial_charts": [
+        {
+          "title": "2026年第三季分部管理口徑收入",
+          "note": "管理口徑屬非GAAP，合計US$50,907M；呈報GAAP收入為US$50,172M。圖表包括企業項目。",
+          "type": "bar",
+          "labels": [
+            "消費者及社區銀行",
+            "商業及投資銀行",
+            "資產及財富管理",
+            "企業項目"
+          ],
+          "datasets": [
+            {
+              "label": "收入（百萬美元）",
+              "data": [
+                21171,
+                22734,
+                6909,
+                93
+              ],
+              "axis": "value"
+            }
+          ]
+        },
+        {
+          "title": "核心分部純利與資本回報",
+          "note": "左軸為純利，右軸為年化分部ROE。核心分部比較不包括企業項目US$455M虧損。",
+          "type": "bar",
+          "labels": [
+            "消費者及社區銀行",
+            "商業及投資銀行",
+            "資產及財富管理"
+          ],
+          "datasets": [
+            {
+              "label": "純利（百萬美元）",
+              "data": [
+                5670,
+                8247,
+                1843
+              ],
+              "axis": "value"
+            },
+            {
+              "label": "ROE（%）",
+              "data": [
+                36,
+                18,
+                45
+              ],
+              "axis": "percentage"
+            }
+          ],
+          "percentage_max": 50
+        }
+      ],
+      "table": {
+        "title": "季度財務比較（百萬美元；每股數據及比率除外）",
+        "headers": [
+          "指標",
+          "2026年第三季",
+          "2026年第二季",
+          "2025年第三季"
+        ],
+        "rows": [
+          [
+            "管理口徑淨收入（非GAAP）",
+            "50,907",
+            "58,022",
+            "47,120"
+          ],
+          [
+            "呈報淨收入",
+            "50,172",
+            "57,347",
+            "46,427"
+          ],
+          [
+            "非利息／營運費用",
+            "27,295",
+            "27,316",
+            "24,281"
+          ],
+          [
+            "信貸損失撥備",
+            "2,743",
+            "2,515",
+            "3,403"
+          ],
+          [
+            "純利",
+            "15,305",
+            "21,155",
+            "14,393"
+          ],
+          [
+            "攤薄每股盈利（美元）",
+            "US$5.57",
+            "US$7.70",
+            "US$5.07"
+          ],
+          [
+            "普通股權益回報率 ROE",
+            "17%",
+            "24%",
+            "17%"
+          ],
+          [
+            "有形普通股權益回報率（非GAAP）",
+            "20%",
+            "29%",
+            "20%"
+          ],
+          [
+            "標準法CET1資本比率",
+            "13.9%",
+            "14.2%",
+            "14.8%"
+          ],
+          [
+            "每股有形帳面值（美元）",
+            "US$112.64",
+            "US$113.35",
+            "US$105.70"
+          ],
+          [
+            "信用卡淨撇帳率",
+            "2.91%",
+            "3.34%",
+            "3.15%"
+          ]
+        ],
+        "note": "管理口徑收入屬非GAAP，另列GAAP呈報收入。第三季剔除US$498M稅後證券虧損的EPS為US$5.75，呈報EPS為US$5.57。第二季包含US$4.6B Visa相關收益及US$1.0B其他股權收益。CET1為初步數字。"
+      },
+      "valuation": {
+        "title": "美國大型銀行：2027年預測市盈率",
+        "note": "Bloomberg EEO 截圖於2026/10/15提供，統一採FY2027 Price/EPS, Adj+。JPM、C、GS及BAC顯示10/14參考價；MS僅顯示Prev US$181.51，未見明確股價日期。各行調整後EPS口徑及業務組合並不完全相同。 JPM的2026／2027／2028年預測市盈率為13.70／13.20／12.24倍；2027年預測市帳率2.26倍、股息率2.05%。US$335.28相當於最新TBVPS US$112.64的2.98倍。ANR共識目標US$371.72對應+10.9%潛在股價回報，不含股息。 第四季Bloomberg共識：Adj+ EPS US$5.928、收入US$51.262B；屬市場預測而非公司指引。",
+        "metric_label": "2027年預測 Price/EPS, Adj+（倍）",
+        "labels": [
+          "花旗集團 (C)",
+          "美國銀行 (BAC)",
+          "高盛集團 (GS)",
+          "摩根大通集團 (JPM)",
+          "摩根士丹利 (MS)"
+        ],
+        "values": [
+          9.46,
+          9.89,
+          11.98,
+          13.2,
+          13.3
+        ],
+        "highlight_index": 3
+      },
+      "street": {
+        "source_line": "來源：Bloomberg ANR（2026/10/15）；以10/14股價US$335.28計算。",
+        "cards": [
+          {
+            "broker": "Morgan Stanley",
+            "rating": "Neutral",
+            "items": [
+              {
+                "label": "目標價／潛在股價回報",
+                "text": "US$377.00 / +12.4%"
+              },
+              {
+                "label": "投行紀錄日期",
+                "text": "2026/10/14"
+              },
+              {
+                "label": "分析師",
+                "text": "Manan Gosalia"
+              }
+            ]
+          },
+          {
+            "broker": "Citi",
+            "rating": "Neutral",
+            "items": [
+              {
+                "label": "目標價／潛在股價回報",
+                "text": "US$360.00 / +7.4%"
+              },
+              {
+                "label": "投行紀錄日期",
+                "text": "2026/10/13"
+              },
+              {
+                "label": "分析師",
+                "text": "Benjamin Gerlinger"
+              }
+            ]
+          },
+          {
+            "broker": "Goldman Sachs",
+            "rating": "Buy",
+            "items": [
+              {
+                "label": "目標價／潛在股價回報",
+                "text": "US$392.00 / +16.9%"
+              },
+              {
+                "label": "投行紀錄日期",
+                "text": "2026/10/13"
+              },
+              {
+                "label": "分析師",
+                "text": "Richard N Ramsden"
+              }
+            ]
+          }
+        ]
+      },
+      "risks": [
+        {
+          "title": "利率與資產負債表敏感度",
+          "text": "較高利率有利部分再投資收益，但亦可能壓低證券價值、推高融資成本。2027年剔除市場業務淨利息收入US$107B僅屬初步基準情境，依賴資產負債表增長與利率走勢，不能當作已鎖定盈利。"
+        },
+        {
+          "title": "費用增長與收入週期",
+          "text": "費用增長12%，固定收益收入卻下跌4%。若資本市場活動或資產價格轉弱，收費增長可能先放緩，而科技、薪酬及營銷成本未必即時調整。"
+        },
+        {
+          "title": "信貸風險仍可再度上升",
+          "text": "信用卡淨撇帳率2.91%令人安心，但新增US$539M準備及批發信貸成本顯示風險未消失。就業轉弱、企業集中風險或地緣政治衝擊，都可能推高損失。"
+        },
+        {
+          "title": "資本消耗與估值壓縮",
+          "text": "CET1按季下降30基點，回購亦減少。貸款增長、風險加權資產、證券估值及監管要求可能爭奪資本；約2.98倍有形帳面值的估值，令股價對長期ROTCE下調更敏感。"
+        }
+      ],
+      "ai": {
+        "welcome": "這份摩根大通集團2026年第三季報告更新於2026/10/15，參考股價日期為10/14。你可查詢呈報與調整後EPS、淨利息收入、資本配置，以及有日期標示的ANR／EEO資料。",
+        "context": "以繁體中文回答，使用已核實名稱摩根大通集團及花旗集團。只使用報告日期所列資料，不暗示即時行情。區分實績、公司指引及Bloomberg共識。沒有業績前共識或投行原文，不聲稱超預期／遜預期，不編造投行論點。評級只使用Overweight、Buy、Neutral、Sell、Underweight，不加分類說明。 {\"ticker\": \"JPM\", \"report_date\": \"2026-10-15\", \"earnings_date\": \"2026-10-13\", \"reference_price_date\": \"2026-10-14\", \"reference_price_USD\": 335.28, \"actuals\": {\"periods\": [\"Q3 2026\", \"Q2 2026\", \"Q3 2025\"], \"managed_revenue_USDmn\": [50907, 58022, 47120], \"reported_revenue_USDmn\": [50172, 57347, 46427], \"net_income_USDmn\": [15305, 21155, 14393], \"diluted_EPS_USD\": [5.57, 7.7, 5.07], \"expense_USDmn\": [27295, 27316, 24281], \"credit_provision_USDmn\": [2743, 2515, 3403], \"CET1_standardized_pct\": [13.9, 14.2, 14.8], \"ROE_pct\": [17, 24, 17], \"ROTCE_pct\": [20, 29, 20], \"BVPS_USD\": [132.3, 133.01, 124.96], \"TBVPS_USD\": [112.64, 113.35, 105.7], \"Card_NCO_rate_pct\": [2.91, 3.34, 3.15], \"net_reserve_build_USDmn\": 539, \"NII_ex_Markets_USDbn\": 24.7, \"NII_managed_USDbn\": 27.1, \"adjusted_ex_item_EPS_USD\": 5.75, \"adjusted_ex_item_net_income_USDmn\": 15803, \"significant_investment_securities_losses_pretax_USDmn\": 658, \"significant_investment_securities_losses_aftertax_USDmn\": 498, \"adjusted_ex_item_ROTCE_pct\": 21, \"common_dividend_USD\": 1.65, \"gross_common_repurchases_USDmn\": 1057, \"net_common_repurchases_USDmn\": 664, \"capital_common_dividend_USDbn\": 4.4, \"common_stockholder_net_income_USDmn\": 14936, \"common_equity_net_income_USDmn\": 15000, \"net_chargeoffs_current_rounded_USDbn\": 2.2}, \"guidance\": {\"source\": \"jpm_presentation, slide8\", \"Q4_2026_NII_ex_Markets_USDbn\": 25.5, \"Q4_2026_NII_USDbn\": 28, \"Q4_2026_adjusted_expense_USDbn\": 27.5, \"FY2026_implied_NII_ex_Markets_USDbn\": 97.2, \"FY2026_implied_NII_USDbn\": 106.2, \"FY2026_implied_adjusted_expense_USDbn\": 108.6, \"FY2026_Card_Services_NCO_rate_pct\": 3.2, \"FY2027_preliminary_central_case_NII_ex_Markets_USDbn\": 107, \"qualifiers\": \"Approximate, market dependent; FY2027 is preliminary central case, not a firm commitment. Adjusted expense excludes firmwide legal expense.\"}, \"Bloomberg_EEO\": {\"FY2027_PE_Adj\": 13.2, \"FY2027_PB\": 2.26, \"Q4_EPS_Adj\": 5.928, \"Q4_revenue_USDbn\": 51.262}, \"ANR_snapshot\": {\"date\": \"2026-10-15\", \"target\": 371.72, \"score\": 3.91, \"buy_hold_sell_counts\": [17, 16, 1], \"scope\": \"Broad aggregate includes older estimates, not post-earnings-only\"}, \"basis_notes\": [\"EEO net income14.936B = official net income15.305B minus preferred dividends0.305B minus participating-securities earnings0.064B (supplement p11).\", \"EEO actual EPS Adj+5.57 is not the company ex-item5.75; EEO actual ROE18.662% and ROA1.367% are not company annualized ROE17% and ROA1.21%.\", \"Q2 reported revenue includes4.6B Visa exchange gain plus1.0B other equity gains, so sequential comparisons require caution.\", \"Gross buybacks1.057B and net buybacks0.664B are different definitions.\"], \"eligible_announcement_day_or_later_brokers\": [{\"broker\": \"Morgan Stanley\", \"rating\": \"Neutral\", \"analyst\": \"Manan Gosalia\", \"target_USD\": 377, \"date\": \"2026-10-14\", \"same_day_chronology_unknown\": false}, {\"broker\": \"Citi\", \"rating\": \"Neutral\", \"analyst\": \"Benjamin Gerlinger\", \"target_USD\": 360, \"date\": \"2026-10-13\", \"same_day_chronology_unknown\": true}, {\"broker\": \"Goldman Sachs\", \"rating\": \"Buy\", \"analyst\": \"Richard N Ramsden\", \"target_USD\": 392, \"date\": \"2026-10-13\", \"same_day_chronology_unknown\": true}], \"broker_scope\": \"Announcement-day records are allowed; do not imply same-day rows were proven published after earnings or contain newly verified research theses.\"}"
+      }
+    },
+    "sc": {
+      "company": "摩根大通集团",
+      "subtitle": "营运与策略研究报告｜2026年第三季业绩专题",
+      "source_line": "更新：2026/10/15｜季末：2026/09/30｜业绩公布：2026/10/13｜参考股价：2026/10/14。币别为美元；另有注明者除外，采用公司报告数据。",
+      "header": {
+        "target_label": "12个月共识目标价快照",
+        "target_asof": "Bloomberg ANR · 2026/10/15 · 包含较早预测",
+        "target_value": "US$371.72",
+        "rating": "Bloomberg ANR 评分 3.91/5"
+      },
+      "views": [
+        {
+          "title": "经常性收入比单季比较更具参考价值",
+          "text": "我们认为存贷款增长提供较稳固的盈利基础。管理口径收入按年增长8%至US$50.907B，剔除市场业务的净利息收入增长6%至US$24.7B。公司第四季相关指引约US$25.5B，2027年初步基准情境约US$107B。报告EPS US$5.57须与公司剔除特殊项目后的US$5.75分开；第二季投资收益亦使按季比较失真。"
+        },
+        {
+          "title": "收费业务拓宽增长来源，交易表现仍有分歧",
+          "text": "我们认为商业及投资银行与资产及财富管理收入均增长14%，反映多元化业务的价值。资产管理长期及流动性产品净流入分别为US$51B及US$42B。股票市场收入增长49%，但固定收益收入下跌4%；支付收入增长14%，为波动较大的交易业务提供较经常性的支持，不宜假设交易强势每季重现。"
+        },
+        {
+          "title": "信贷保持韧性，费用控制成下一考验",
+          "text": "我们认为信贷表现有利盈利，但收入增长不必然改善效率。信用卡净核销率由去年同期3.15%降至2.91%，集团拨备由US$3.403B降至US$2.743B。不过费用增长12%，快于管理口径收入的8%，另新增US$539M准备。科技、营销与薪酬投入，仍须转化为未来收入或生产力提升。"
+        },
+        {
+          "title": "优质业务享有溢价，资本配置仍有取舍",
+          "text": "我们认为20%的报告ROTCE支持估值溢价，但亦降低执行失误的容忍度。股价相当于13.20倍2027年Bloomberg Adj+预测EPS及约2.98倍最新有形账面值。标准法CET1由14.2%降至13.9%；管理层优先投资业务，净回购降至US$664M。整体ANR目标对应10.9%潜在股价回报，但涵盖业绩前后不同时点的预测。"
+        }
+      ],
+      "kpis": [
+        {
+          "label": "管理口径净收入（非GAAP）",
+          "value": "US$50,907M",
+          "note": "按年+8%；报告收入US$50,172M"
+        },
+        {
+          "label": "净利润",
+          "value": "US$15,305M",
+          "note": "按年+6%；按季−28%，受投资项目影响"
+        },
+        {
+          "label": "摊薄每股盈利（美元）",
+          "value": "US$5.57",
+          "note": "报告口径；剔除证券亏损为US$5.75"
+        },
+        {
+          "label": "有形普通股权益回报率（非GAAP）",
+          "value": "20%",
+          "note": "报告口径；剔除证券亏损为21%"
+        }
+      ],
+      "financial_charts": [
+        {
+          "title": "2026年第三季分部管理口径收入",
+          "note": "管理口径属非GAAP，合计US$50,907M；报告GAAP收入为US$50,172M。图表包括企业项目。",
+          "type": "bar",
+          "labels": [
+            "消费者及社区银行",
+            "商业及投资银行",
+            "资产及财富管理",
+            "企业项目"
+          ],
+          "datasets": [
+            {
+              "label": "收入（百万美元）",
+              "data": [
+                21171,
+                22734,
+                6909,
+                93
+              ],
+              "axis": "value"
+            }
+          ]
+        },
+        {
+          "title": "核心分部净利润与资本回报",
+          "note": "左轴为净利润，右轴为年化分部ROE。核心分部比较不包括企业项目US$455M亏损。",
+          "type": "bar",
+          "labels": [
+            "消费者及社区银行",
+            "商业及投资银行",
+            "资产及财富管理"
+          ],
+          "datasets": [
+            {
+              "label": "净利润（百万美元）",
+              "data": [
+                5670,
+                8247,
+                1843
+              ],
+              "axis": "value"
+            },
+            {
+              "label": "ROE（%）",
+              "data": [
+                36,
+                18,
+                45
+              ],
+              "axis": "percentage"
+            }
+          ],
+          "percentage_max": 50
+        }
+      ],
+      "table": {
+        "title": "季度财务比较（百万美元；每股数据及比率除外）",
+        "headers": [
+          "指标",
+          "2026年第三季",
+          "2026年第二季",
+          "2025年第三季"
+        ],
+        "rows": [
+          [
+            "管理口径净收入（非GAAP）",
+            "50,907",
+            "58,022",
+            "47,120"
+          ],
+          [
+            "报告净收入",
+            "50,172",
+            "57,347",
+            "46,427"
+          ],
+          [
+            "非利息／营运费用",
+            "27,295",
+            "27,316",
+            "24,281"
+          ],
+          [
+            "信贷损失拨备",
+            "2,743",
+            "2,515",
+            "3,403"
+          ],
+          [
+            "净利润",
+            "15,305",
+            "21,155",
+            "14,393"
+          ],
+          [
+            "摊薄每股盈利（美元）",
+            "US$5.57",
+            "US$7.70",
+            "US$5.07"
+          ],
+          [
+            "普通股权益回报率 ROE",
+            "17%",
+            "24%",
+            "17%"
+          ],
+          [
+            "有形普通股权益回报率（非GAAP）",
+            "20%",
+            "29%",
+            "20%"
+          ],
+          [
+            "标准法CET1资本比率",
+            "13.9%",
+            "14.2%",
+            "14.8%"
+          ],
+          [
+            "每股有形账面值（美元）",
+            "US$112.64",
+            "US$113.35",
+            "US$105.70"
+          ],
+          [
+            "信用卡净核销率",
+            "2.91%",
+            "3.34%",
+            "3.15%"
+          ]
+        ],
+        "note": "管理口径收入属非GAAP，另列GAAP报告收入。第三季剔除US$498M税后证券亏损的EPS为US$5.75，报告EPS为US$5.57。第二季包含US$4.6B Visa相关收益及US$1.0B其他股权收益。CET1为初步数字。"
+      },
+      "valuation": {
+        "title": "美国大型银行：2027年预测市盈率",
+        "note": "Bloomberg EEO 截图于2026/10/15提供，统一采用FY2027 Price/EPS, Adj+。JPM、C、GS及BAC显示10/14参考价；MS仅显示Prev US$181.51，未见明确股价日期。各行调整后EPS口径及业务组合并不完全相同。 JPM的2026／2027／2028年预测市盈率为13.70／13.20／12.24倍；2027年预测市净率2.26倍、股息率2.05%。US$335.28相当于最新TBVPS US$112.64的2.98倍。ANR共识目标US$371.72对应+10.9%潜在股价回报，不含股息。 第四季Bloomberg共识：Adj+ EPS US$5.928、收入US$51.262B；属市场预测而非公司指引。",
+        "metric_label": "2027年预测 Price/EPS, Adj+（倍）",
+        "labels": [
+          "花旗集团 (C)",
+          "美国银行 (BAC)",
+          "高盛集团 (GS)",
+          "摩根大通集团 (JPM)",
+          "摩根士丹利 (MS)"
+        ],
+        "values": [
+          9.46,
+          9.89,
+          11.98,
+          13.2,
+          13.3
+        ],
+        "highlight_index": 3
+      },
+      "street": {
+        "source_line": "来源：Bloomberg ANR（2026/10/15）；以10/14股价US$335.28计算。",
+        "cards": [
+          {
+            "broker": "Morgan Stanley",
+            "rating": "Neutral",
+            "items": [
+              {
+                "label": "目标价／潜在股价回报",
+                "text": "US$377.00 / +12.4%"
+              },
+              {
+                "label": "投行记录日期",
+                "text": "2026/10/14"
+              },
+              {
+                "label": "分析师",
+                "text": "Manan Gosalia"
+              }
+            ]
+          },
+          {
+            "broker": "Citi",
+            "rating": "Neutral",
+            "items": [
+              {
+                "label": "目标价／潜在股价回报",
+                "text": "US$360.00 / +7.4%"
+              },
+              {
+                "label": "投行记录日期",
+                "text": "2026/10/13"
+              },
+              {
+                "label": "分析师",
+                "text": "Benjamin Gerlinger"
+              }
+            ]
+          },
+          {
+            "broker": "Goldman Sachs",
+            "rating": "Buy",
+            "items": [
+              {
+                "label": "目标价／潜在股价回报",
+                "text": "US$392.00 / +16.9%"
+              },
+              {
+                "label": "投行记录日期",
+                "text": "2026/10/13"
+              },
+              {
+                "label": "分析师",
+                "text": "Richard N Ramsden"
+              }
+            ]
+          }
+        ]
+      },
+      "risks": [
+        {
+          "title": "利率与资产负债表敏感度",
+          "text": "较高利率有利部分再投资收益，但亦可能压低证券价值、推高融资成本。2027年剔除市场业务净利息收入US$107B仅属初步基准情境，依赖资产负债表增长与利率走势，不能当作已锁定盈利。"
+        },
+        {
+          "title": "费用增长与收入周期",
+          "text": "费用增长12%，固定收益收入却下跌4%。若资本市场活动或资产价格转弱，收费增长可能先放缓，而科技、薪酬及营销成本未必即时调整。"
+        },
+        {
+          "title": "信贷风险仍可再度上升",
+          "text": "信用卡净核销率2.91%令人安心，但新增US$539M准备及批发信贷成本显示风险未消失。就业转弱、企业集中风险或地缘政治冲击，都可能推高损失。"
+        },
+        {
+          "title": "资本消耗与估值压缩",
+          "text": "CET1按季下降30基点，回购亦减少。贷款增长、风险加权资产、证券估值及监管要求可能争夺资本；约2.98倍有形账面值的估值，令股价对长期ROTCE下调更敏感。"
+        }
+      ],
+      "ai": {
+        "welcome": "这份摩根大通集团2026年第三季报告更新于2026/10/15，参考股价日期为10/14。你可查询报告与调整后EPS、净利息收入、资本配置，以及有日期标示的ANR／EEO数据。",
+        "context": "以简体中文回答，使用已核实名称摩根大通集团及花旗集团。只使用报告日期所列数据，不暗示实时行情。区分实绩、公司指引及Bloomberg共识。没有业绩前共识或投行原文，不声称超预期／逊预期，不编造投行观点。评级只使用Overweight、Buy、Neutral、Sell、Underweight，不加分类说明。 {\"ticker\": \"JPM\", \"report_date\": \"2026-10-15\", \"earnings_date\": \"2026-10-13\", \"reference_price_date\": \"2026-10-14\", \"reference_price_USD\": 335.28, \"actuals\": {\"periods\": [\"Q3 2026\", \"Q2 2026\", \"Q3 2025\"], \"managed_revenue_USDmn\": [50907, 58022, 47120], \"reported_revenue_USDmn\": [50172, 57347, 46427], \"net_income_USDmn\": [15305, 21155, 14393], \"diluted_EPS_USD\": [5.57, 7.7, 5.07], \"expense_USDmn\": [27295, 27316, 24281], \"credit_provision_USDmn\": [2743, 2515, 3403], \"CET1_standardized_pct\": [13.9, 14.2, 14.8], \"ROE_pct\": [17, 24, 17], \"ROTCE_pct\": [20, 29, 20], \"BVPS_USD\": [132.3, 133.01, 124.96], \"TBVPS_USD\": [112.64, 113.35, 105.7], \"Card_NCO_rate_pct\": [2.91, 3.34, 3.15], \"net_reserve_build_USDmn\": 539, \"NII_ex_Markets_USDbn\": 24.7, \"NII_managed_USDbn\": 27.1, \"adjusted_ex_item_EPS_USD\": 5.75, \"adjusted_ex_item_net_income_USDmn\": 15803, \"significant_investment_securities_losses_pretax_USDmn\": 658, \"significant_investment_securities_losses_aftertax_USDmn\": 498, \"adjusted_ex_item_ROTCE_pct\": 21, \"common_dividend_USD\": 1.65, \"gross_common_repurchases_USDmn\": 1057, \"net_common_repurchases_USDmn\": 664, \"capital_common_dividend_USDbn\": 4.4, \"common_stockholder_net_income_USDmn\": 14936, \"common_equity_net_income_USDmn\": 15000, \"net_chargeoffs_current_rounded_USDbn\": 2.2}, \"guidance\": {\"source\": \"jpm_presentation, slide8\", \"Q4_2026_NII_ex_Markets_USDbn\": 25.5, \"Q4_2026_NII_USDbn\": 28, \"Q4_2026_adjusted_expense_USDbn\": 27.5, \"FY2026_implied_NII_ex_Markets_USDbn\": 97.2, \"FY2026_implied_NII_USDbn\": 106.2, \"FY2026_implied_adjusted_expense_USDbn\": 108.6, \"FY2026_Card_Services_NCO_rate_pct\": 3.2, \"FY2027_preliminary_central_case_NII_ex_Markets_USDbn\": 107, \"qualifiers\": \"Approximate, market dependent; FY2027 is preliminary central case, not a firm commitment. Adjusted expense excludes firmwide legal expense.\"}, \"Bloomberg_EEO\": {\"FY2027_PE_Adj\": 13.2, \"FY2027_PB\": 2.26, \"Q4_EPS_Adj\": 5.928, \"Q4_revenue_USDbn\": 51.262}, \"ANR_snapshot\": {\"date\": \"2026-10-15\", \"target\": 371.72, \"score\": 3.91, \"buy_hold_sell_counts\": [17, 16, 1], \"scope\": \"Broad aggregate includes older estimates, not post-earnings-only\"}, \"basis_notes\": [\"EEO net income14.936B = official net income15.305B minus preferred dividends0.305B minus participating-securities earnings0.064B (supplement p11).\", \"EEO actual EPS Adj+5.57 is not the company ex-item5.75; EEO actual ROE18.662% and ROA1.367% are not company annualized ROE17% and ROA1.21%.\", \"Q2 reported revenue includes4.6B Visa exchange gain plus1.0B other equity gains, so sequential comparisons require caution.\", \"Gross buybacks1.057B and net buybacks0.664B are different definitions.\"], \"eligible_announcement_day_or_later_brokers\": [{\"broker\": \"Morgan Stanley\", \"rating\": \"Neutral\", \"analyst\": \"Manan Gosalia\", \"target_USD\": 377, \"date\": \"2026-10-14\", \"same_day_chronology_unknown\": false}, {\"broker\": \"Citi\", \"rating\": \"Neutral\", \"analyst\": \"Benjamin Gerlinger\", \"target_USD\": 360, \"date\": \"2026-10-13\", \"same_day_chronology_unknown\": true}, {\"broker\": \"Goldman Sachs\", \"rating\": \"Buy\", \"analyst\": \"Richard N Ramsden\", \"target_USD\": 392, \"date\": \"2026-10-13\", \"same_day_chronology_unknown\": true}], \"broker_scope\": \"Announcement-day records are allowed; do not imply same-day rows were proven published after earnings or contain newly verified research theses.\"}"
+      }
+    }
+  }
+}
