@@ -1,0 +1,839 @@
+{
+  "ticker": "bac",
+  "metadata": {
+    "period": "3Q2026",
+    "period_end": "2026-09-30",
+    "publication_date": "2026-10-14",
+    "report_date": "2026-10-15",
+    "market_date": "2026-10-14",
+    "currency": "USD",
+    "basis": "Issuer-reported GAAP unless explicitly marked adjusted or FTE; Bloomberg EEO consensus is not management guidance."
+  },
+  "languages": {
+    "tc": {
+      "company": "美國銀行",
+      "subtitle": "深度營運與策略研究｜2026 年第三季業績專題",
+      "source_line": "更新：2026/10/15｜季度截至 2026/09/30｜業績公布：2026/10/14。實績取自公司披露；預測及估值為 Bloomberg EEO 截圖快照。",
+      "header": {
+        "target_label": "市場共識目標價",
+        "target_asof": "Bloomberg ANR · 2026/10/15",
+        "target_value": "US$65.35",
+        "rating": "Bloomberg ANR 4.57/5"
+      },
+      "views": [
+        {
+          "title": "監管和解費用之外，核心盈利仍需改善",
+          "text": "我們認為，US$1.2bn 不可扣稅監管和解費用是 GAAP EPS 降至 US$0.91 的重要原因，但不能因此忽略經營壓力。剔除該項後 EPS 為 US$1.08、淨利潤約 US$8.1bn，後者仍低於去年同期 US$8.332bn。調整後效率比率為 62%，高於去年 60%。監管費用消失可改善報表，持續盈利提升仍須依靠收入增長與成本紀律。"
+        },
+        {
+          "title": "淨利息收入與財富費用提供底盤",
+          "text": "我們認為，GAAP 淨利息收入年增 8% 至 US$16.449bn，與貸款、存款及固定利率資產重定價有關，是本季最穩定的增長來源。平均貸款年增 6%，各分部均增長；財富管理收入年增 13%，AUM 流入 US$20bn。惟市場交易及投行收入下降，令總收入只增 3%。要恢復較佳營運槓桿，需這些穩定來源與資本市場業務同時改善。"
+        },
+        {
+          "title": "信貸改善不等於可以忽略資本消耗",
+          "text": "我們認為，淨核銷率由去年 0.47% 降至 0.44%，信用卡核銷率降至 3.22%，支持當前資產品質仍可控。然而標準法 CET1 由上季 11.2% 降至 10.9%，同期向股東回饋約 US$8.3bn。資本分派應與貸款擴張、風險加權資產及潛在監管整改成本一併評估，不能僅憑本季信貸改善便提高長期回購假設。"
+        },
+        {
+          "title": "低本益比需要回報率修復配合",
+          "text": "我們認為，FY2027E 調整後本益比 9.89 倍、P/B 1.19 倍提供估值討論空間，但本季 公布 ROTCE 12.6%、調整後 14.9%，仍須與資本成本及風險一起看。ANR 共識目標價 US$65.35 相對 US$51.39 有 27.2% 價差，只是整體快照。個別投行欄列示 10/14 業績公布當日記錄；日期並不能確定其更新在公布前或後。"
+        }
+      ],
+      "kpis": [
+        {
+          "label": "GAAP 淨利息收入",
+          "value": "US$16.449bn",
+          "note": "年增 8%；FTE 約 US$16.6bn"
+        },
+        {
+          "label": "攤薄 EPS",
+          "value": "US$0.91",
+          "note": "GAAP；調整後 US$1.08"
+        },
+        {
+          "label": "有形普通股權回報率",
+          "value": "12.6%",
+          "note": "公布值；剔除和解費用後 14.9%"
+        },
+        {
+          "label": "標準法 CET1",
+          "value": "10.9%",
+          "note": "較上季下降 30bp"
+        }
+      ],
+      "financial_charts": [
+        {
+          "title": "3Q2026 分部收入（FTE）",
+          "note": "百萬美元。分部合計 US$30,119m，包含其他收入 -US$643m；扣除 FTE 調整 US$161m，對應 GAAP 收入 US$29,958m。",
+          "type": "bar",
+          "labels": [
+            "消費銀行",
+            "全球財富與投資管理",
+            "全球銀行",
+            "全球市場",
+            "其他"
+          ],
+          "datasets": [
+            {
+              "label": "收入（百萬美元）",
+              "data": [
+                11572,
+                7118,
+                6205,
+                5867,
+                -643
+              ],
+              "axis": "value"
+            }
+          ]
+        },
+        {
+          "title": "信貸成本與淨核銷",
+          "note": "百萬美元；撥備包含儲備變動，與淨核銷並非相同指標。",
+          "type": "bar",
+          "labels": [
+            "3Q2025",
+            "2Q2026",
+            "3Q2026"
+          ],
+          "datasets": [
+            {
+              "label": "信貸撥備",
+              "data": [
+                1295,
+                1366,
+                1269
+              ],
+              "axis": "value"
+            },
+            {
+              "label": "淨核銷",
+              "data": [
+                1367,
+                1412,
+                1349
+              ],
+              "axis": "value"
+            }
+          ]
+        }
+      ],
+      "table": {
+        "title": "財務比較（百萬美元，另註除外）",
+        "headers": [
+          "指標",
+          "3Q2026",
+          "2Q2026",
+          "3Q2025"
+        ],
+        "rows": [
+          [
+            "收入（GAAP）",
+            "29,958",
+            "31,558",
+            "29,040"
+          ],
+          [
+            "淨利潤（GAAP）",
+            "6,933",
+            "9,074",
+            "8,332"
+          ],
+          [
+            "攤薄 EPS（美元，GAAP）",
+            "0.91",
+            "1.21",
+            "1.04"
+          ],
+          [
+            "淨利息收入（GAAP）",
+            "16,449",
+            "15,997",
+            "15,233"
+          ],
+          [
+            "非利息支出（GAAP）",
+            "19,722",
+            "18,627",
+            "17,337"
+          ],
+          [
+            "普通股權回報率",
+            "9.4%",
+            "12.7%",
+            "11.4%"
+          ],
+          [
+            "有形普通股權回報率",
+            "12.6%",
+            "17.0%",
+            "15.3%"
+          ],
+          [
+            "標準法 CET1",
+            "10.9%",
+            "11.2%",
+            "11.6%"
+          ],
+          [
+            "淨核銷率",
+            "0.44%",
+            "0.47%",
+            "0.47%"
+          ]
+        ],
+        "note": "本季 GAAP 包含 US$1,200m 監管和解費用；剔除後 EPS US$1.08、ROTCE 14.9%、效率比率 62%，均為調整後非 GAAP 指標。分部採 FTE；本表收入及 NII 採 GAAP。未從審閱的官方文件確認新的量化指引。 ROTCE 本身屬非 GAAP 指標；公布值使用已呈報淨利潤計算。"
+      },
+      "valuation": {
+        "title": "五大銀行 FY2027E 調整後本益比",
+        "metric_label": "FY2027E P/E (Adj+)",
+        "labels": [
+          "C",
+          "BAC",
+          "GS",
+          "JPM",
+          "MS"
+        ],
+        "values": [
+          9.46,
+          9.89,
+          11.98,
+          13.2,
+          13.3
+        ],
+        "highlight_index": 1,
+        "note": "Bloomberg EEO 截圖；五家統一採 FY2027 Price/EPS, Adj+。美國銀行為 9.89 倍，FY2026 為 11.32 倍；FY2027 P/B 1.19 倍。參考價為 10/14 US$51.39。不同業務組合、會計調整與資本要求限制直接比較；低本益比不代表盈利預測沒有下修風險。 五份截圖中，MS 未列明股價交易日期，其餘四家顯示 10/14；此處按所提供快照比較。"
+      },
+      "street": {
+        "source_line": "來源：Bloomberg ANR（2026/10/15）；以 10/14 股價 US$51.39 計算。",
+        "cards": [
+          {
+            "broker": "UBS",
+            "rating": "Buy",
+            "items": [
+              {
+                "label": "分析師／日期",
+                "text": "Erika P Najarian · 2026/10/14"
+              },
+              {
+                "label": "目標價",
+                "text": "US$67.00"
+              },
+              {
+                "label": "潛在股價回報",
+                "text": "30.4%"
+              }
+            ]
+          },
+          {
+            "broker": "Citi",
+            "rating": "Buy",
+            "items": [
+              {
+                "label": "分析師／日期",
+                "text": "Benjamin Gerlinger · 2026/10/14"
+              },
+              {
+                "label": "目標價",
+                "text": "US$66.00"
+              },
+              {
+                "label": "潛在股價回報",
+                "text": "28.4%"
+              }
+            ]
+          },
+          {
+            "broker": "Goldman Sachs",
+            "rating": "Buy",
+            "items": [
+              {
+                "label": "分析師／日期",
+                "text": "Richard N Ramsden · 2026/10/14"
+              },
+              {
+                "label": "目標價",
+                "text": "US$63.00"
+              },
+              {
+                "label": "潛在股價回報",
+                "text": "22.6%"
+              }
+            ]
+          }
+        ]
+      },
+      "risks": [
+        {
+          "title": "監管整改與法律成本",
+          "text": "本季 US$1.2bn 和解費用涉及 BSA／反洗錢及經濟制裁合規。持續整改可能增加成本或限制業務，不能假設所有相關影響已完全結束。"
+        },
+        {
+          "title": "利率、存款與淨利息收入",
+          "text": "資產重定價有利 NII，但存款定價、資金組合及利率曲線改變可能抵銷效益；平均存款本季較上季大致持平。"
+        },
+        {
+          "title": "市場收入與成本剛性",
+          "text": "FICC 收入年減 17%、投行費用減 11%；若客戶活動持續偏弱而科技、人員及合規投入增加，效率比率可能較難改善。"
+        },
+        {
+          "title": "信貸轉弱與分派空間",
+          "text": "目前核銷率改善仍可能受就業、消費或商業信用惡化逆轉；CET1 降至 10.9%，進一步資本壓力可能限制回購。"
+        }
+      ],
+      "ai": {
+        "welcome": "這是 美國銀行 2026 年第三季報告，更新於 2026/10/15。我可以解釋盈利、資本、估值與主要風險；市場數據為已註明日期的快照。",
+        "context": "資料截至2026/10/15，沒有即時行情。以我們認為表達分析。實績、非GAAP調整、共識和指引不可混用。 {\"company\":\"美國銀行\",\"period\":\"3Q2026\",\"release_date\":\"2026-10-14\",\"actuals\":{\"units\":\"USD billion unless specified\",\"revenue\":29.958,\"revenue_yoy_pct\":3,\"revenue_q2\":31.558,\"revenue_q3_2025\":29.04,\"net_income\":6.933,\"net_income_common\":6.541,\"net_income_q3_2025\":8.332,\"eps_gaap_usd\":0.91,\"eps_prior_year_usd\":1.04,\"eps_adjusted_usd\":1.08,\"adjusted_net_income_rounded\":8.1,\"regulatory_settlement_charge\":1.2,\"settlement_charge_per_share_usd\":0.17,\"settlement_tax_deductible\":false,\"nii_gaap\":16.449,\"nii_fte_rounded\":16.6,\"nii_yoy_pct\":8,\"net_interest_yield_fte_pct\":2.16,\"noninterest_expenses\":19.722,\"adjusted_noninterest_expenses_rounded\":18.5,\"efficiency_pct\":66,\"adjusted_efficiency_pct\":62,\"roe_pct\":9.4,\"adjusted_roe_pct\":11.1,\"rotce_pct\":12.6,\"adjusted_rotce_pct\":14.9,\"roa_pct\":0.79,\"adjusted_roa_pct\":0.93,\"bvps_usd\":39.26,\"tbvps_usd\":29.14,\"pretax_income\":8.967,\"credit_provision\":1.269,\"net_chargeoffs\":1.349,\"nco_ratio_pct\":0.44,\"card_chargeoff_rate_pct\":3.22,\"credit_allowance\":14.184,\"loan_loss_allowance_ratio_pct\":1.04,\"nonperforming_loans\":5.544,\"criticized_commercial_exposure\":19.9,\"net_income_q2\":9.074,\"eps_q2_usd\":1.21,\"nii_q2\":15.997,\"nii_q3_2025\":15.233,\"expenses_q2\":18.627,\"expenses_q3_2025\":17.337,\"roe_q2_pct\":12.7,\"roe_q3_2025_pct\":11.4,\"rotce_q2_pct\":17.0,\"rotce_q3_2025_pct\":15.3},\"segments\":{\"consumer_banking\":{\"revenue\":11.572,\"revenue_yoy_pct\":4,\"net_income\":3.521,\"average_deposits\":948.6,\"average_loans\":321.0,\"card_spend\":265.7,\"card_spend_yoy_pct\":8,\"consumer_investment_assets\":664.4,\"net_checking_accounts_added_min\":200000},\"wealth_investment_management\":{\"revenue\":7.118,\"revenue_yoy_pct\":13,\"net_income\":1.54,\"pretax_margin_pct\":29,\"aum_flows\":20.0,\"client_balances\":5056.8,\"aum_rounded\":2400,\"asset_management_fees_rounded\":4.5,\"fees_yoy_pct\":16,\"average_loans\":278.6},\"global_banking\":{\"revenue\":6.205,\"net_income\":1.99,\"corporation_investment_banking_fees_rounded\":1.8,\"ib_fees_yoy_pct\":-11,\"average_deposits\":668.6,\"average_loans\":418.9},\"global_markets\":{\"revenue\":5.867,\"revenue_yoy_pct\":-6,\"net_income\":1.235,\"sales_trading_rounded\":5.1,\"sales_trading_yoy_pct\":-5,\"ficc_rounded\":2.6,\"ficc_yoy_pct\":-17,\"equities_rounded\":2.5,\"equities_yoy_pct\":11},\"all_other\":{\"net_loss\":-1.353,\"contains_regulatory_charge\":1.2}},\"capital\":{\"cet1_standardized_pct\":10.9,\"cet1_capital_rounded\":198,\"cet1_capital_qoq_change\":-3.2,\"average_global_liquidity_sources\":914,\"average_deposits\":2022.083,\"average_loans\":1226.018,\"ending_deposits\":2038.758,\"ending_loans\":1251.26,\"capital_return_rounded\":8.3,\"buybacks_rounded\":6.0,\"dividends_paid_rounded\":2.2,\"dividend_per_share_usd\":0.32,\"cet1_q2_pct\":11.2,\"cet1_q3_2025_pct\":11.6,\"cet1_capital\":198.407},\"eeo_multiples\":{\"columns\":[\"LTM\",\"NTM\",\"FY2026\",\"FY2027\",\"FY2028\"],\"pe_adj\":[11.73,10.23,11.32,9.89,8.77],\"pb\":[1.31,1.28,1.28,1.19,1.1],\"dividend_yield_pct\":[2.26,2.54,2.31,2.58,2.88],\"price_cashflow\":[3.96,null,null,null,null]},\"anr\":{\"as_of\":\"2026-10-15\",\"last_price_usd\":51.39,\"consensus_score\":4.57,\"buys_count\":24,\"holds_count\":6,\"sells_count\":0,\"target_price_usd\":65.35,\"return_potential_pct\":27.2},\"brokers\":[{\"broker\":\"UBS\",\"rating\":\"Buy\",\"items\":[{\"label\":\"分析師／日期\",\"text\":\"Erika P Najarian · 2026/10/14\"},{\"label\":\"目標價\",\"text\":\"US$67.00\"},{\"label\":\"潛在股價回報\",\"text\":\"30.4%\"}]},{\"broker\":\"Citi\",\"rating\":\"Buy\",\"items\":[{\"label\":\"分析師／日期\",\"text\":\"Benjamin Gerlinger · 2026/10/14\"},{\"label\":\"目標價\",\"text\":\"US$66.00\"},{\"label\":\"潛在股價回報\",\"text\":\"28.4%\"}]},{\"broker\":\"Goldman Sachs\",\"rating\":\"Buy\",\"items\":[{\"label\":\"分析師／日期\",\"text\":\"Richard N Ramsden · 2026/10/14\"},{\"label\":\"目標價\",\"text\":\"US$63.00\"},{\"label\":\"潛在股價回報\",\"text\":\"22.6%\"}]}],\"broker_timing\":\"Cards use announcement-day or later dates displayed on ANR. Intraday chronology for announcement-day entries is unknown.\",\"guidance_status\":\"No new numerical company guidance was verified in reviewed official materials.\",\"sources\":[\"https://investor.bankofamerica.com/regulatory-and-other-filings/select-sec-filings/content/0000070858-26-000481/bac09302026ex991.htm\",\"https://investor.bankofamerica.com/regulatory-and-other-filings/select-sec-filings/content/0000070858-26-000481/bac09302026ex992.htm\"]} ANR is broad consensus. No original broker thesis is supplied; do not invent one. Price upside excludes dividends. MS peer quote date is not shown."
+      }
+    },
+    "sc": {
+      "company": "美国银行",
+      "subtitle": "深度运营与策略研究｜2026 年第三季业绩专题",
+      "source_line": "更新：2026/10/15｜季度截至 2026/09/30｜业绩公布：2026/10/14。实绩取自公司披露；预测及估值为 Bloomberg EEO 截图快照。",
+      "header": {
+        "target_label": "市场共识目标价",
+        "target_asof": "Bloomberg ANR · 2026/10/15",
+        "target_value": "US$65.35",
+        "rating": "Bloomberg ANR 4.57/5"
+      },
+      "views": [
+        {
+          "title": "监管和解费用之外，核心盈利仍需改善",
+          "text": "我们认为，US$1.2bn 不可抵税监管和解费用是 GAAP EPS 降至 US$0.91 的重要原因，但不能因此忽略经营压力。剔除该项后 EPS 为 US$1.08、净利润约 US$8.1bn，后者仍低于去年同期 US$8.332bn。调整后效率比率为 62%，高于去年 60%。监管费用消失可改善报表，持续盈利提升仍须依靠收入增长与成本纪律。"
+        },
+        {
+          "title": "净利息收入与财富费用提供基础",
+          "text": "我们认为，GAAP 净利息收入同比增长 8% 至 US$16.449bn，与贷款、存款及固定利率资产重定价有关，是本季最稳定的增长来源。平均贷款同比增长 6%，各分部均增长；财富管理收入同比增长 13%，AUM 流入 US$20bn。但市场交易及投行收入下降，令总收入仅增长 3%。要恢复更好的经营杠杆，需这些稳定来源与资本市场业务同时改善。"
+        },
+        {
+          "title": "信贷改善不等于可以忽略资本消耗",
+          "text": "我们认为，净核销率由去年 0.47% 降至 0.44%，信用卡核销率降至 3.22%，支持当前资产质量仍可控。然而标准法 CET1 由上季 11.2% 降至 10.9%，同期向股东回馈约 US$8.3bn。资本分配应与贷款扩张、风险加权资产及潜在监管整改成本一并评估，不能仅凭本季信贷改善便提高长期回购假设。"
+        },
+        {
+          "title": "低市盈率需要回报率修复配合",
+          "text": "我们认为，FY2027E 调整后市盈率 9.89 倍、P/B 1.19 倍提供估值讨论空间，但本季 公布 ROTCE 12.6%、调整后 14.9%，仍须与资本成本及风险一起看。ANR 共识目标价 US$65.35 相对 US$51.39 有 27.2% 价差，只是整体快照。个别投行栏列示 10/14 业绩公布当日记录；日期并不能确定其更新在公布前或后。"
+        }
+      ],
+      "kpis": [
+        {
+          "label": "GAAP 净利息收入",
+          "value": "US$16.449bn",
+          "note": "同比增长 8%；FTE 约 US$16.6bn"
+        },
+        {
+          "label": "摊薄 EPS",
+          "value": "US$0.91",
+          "note": "GAAP；调整后 US$1.08"
+        },
+        {
+          "label": "有形普通股权益回报率",
+          "value": "12.6%",
+          "note": "公布值；剔除和解费用后 14.9%"
+        },
+        {
+          "label": "标准法 CET1",
+          "value": "10.9%",
+          "note": "较上季下降 30bp"
+        }
+      ],
+      "financial_charts": [
+        {
+          "title": "3Q2026 分部收入（FTE）",
+          "note": "百万美元。分部合计 US$30,119m，包含其他收入 -US$643m；扣除 FTE 调整 US$161m，对应 GAAP 收入 US$29,958m。",
+          "type": "bar",
+          "labels": [
+            "消费银行",
+            "全球财富与投资管理",
+            "全球银行",
+            "全球市场",
+            "其他"
+          ],
+          "datasets": [
+            {
+              "label": "收入（百万美元）",
+              "data": [
+                11572,
+                7118,
+                6205,
+                5867,
+                -643
+              ],
+              "axis": "value"
+            }
+          ]
+        },
+        {
+          "title": "信贷成本与净核销",
+          "note": "百万美元；拨备包含准备金变动，与净核销并非相同指标。",
+          "type": "bar",
+          "labels": [
+            "3Q2025",
+            "2Q2026",
+            "3Q2026"
+          ],
+          "datasets": [
+            {
+              "label": "信贷拨备",
+              "data": [
+                1295,
+                1366,
+                1269
+              ],
+              "axis": "value"
+            },
+            {
+              "label": "净核销",
+              "data": [
+                1367,
+                1412,
+                1349
+              ],
+              "axis": "value"
+            }
+          ]
+        }
+      ],
+      "table": {
+        "title": "财务比较（百万美元，另注除外）",
+        "headers": [
+          "指标",
+          "3Q2026",
+          "2Q2026",
+          "3Q2025"
+        ],
+        "rows": [
+          [
+            "收入（GAAP）",
+            "29,958",
+            "31,558",
+            "29,040"
+          ],
+          [
+            "净利润（GAAP）",
+            "6,933",
+            "9,074",
+            "8,332"
+          ],
+          [
+            "摊薄 EPS（美元，GAAP）",
+            "0.91",
+            "1.21",
+            "1.04"
+          ],
+          [
+            "净利息收入（GAAP）",
+            "16,449",
+            "15,997",
+            "15,233"
+          ],
+          [
+            "非利息支出（GAAP）",
+            "19,722",
+            "18,627",
+            "17,337"
+          ],
+          [
+            "普通股权益回报率",
+            "9.4%",
+            "12.7%",
+            "11.4%"
+          ],
+          [
+            "有形普通股权益回报率",
+            "12.6%",
+            "17.0%",
+            "15.3%"
+          ],
+          [
+            "标准法 CET1",
+            "10.9%",
+            "11.2%",
+            "11.6%"
+          ],
+          [
+            "净核销率",
+            "0.44%",
+            "0.47%",
+            "0.47%"
+          ]
+        ],
+        "note": "本季 GAAP 包含 US$1,200m 监管和解费用；剔除后 EPS US$1.08、ROTCE 14.9%、效率比率 62%，均为调整后非 GAAP 指标。分部采用 FTE；本表收入及 NII 采用 GAAP。未从审阅的官方文件确认新的量化指引。 ROTCE 本身属于非 GAAP 指标；公布值使用已报告净利润计算。"
+      },
+      "valuation": {
+        "title": "五大银行 FY2027E 调整后市盈率",
+        "metric_label": "FY2027E P/E (Adj+)",
+        "labels": [
+          "C",
+          "BAC",
+          "GS",
+          "JPM",
+          "MS"
+        ],
+        "values": [
+          9.46,
+          9.89,
+          11.98,
+          13.2,
+          13.3
+        ],
+        "highlight_index": 1,
+        "note": "Bloomberg EEO 截图；五家统一采用 FY2027 Price/EPS, Adj+。美国银行为 9.89 倍，FY2026 为 11.32 倍；FY2027 P/B 1.19 倍。参考价为 10/14 US$51.39。不同业务组合、会计调整与资本要求限制直接比较；低市盈率不代表盈利预测没有下修风险。 五份截图中，MS 未列明股价交易日期，其余四家显示 10/14；此处按所提供快照比较。"
+      },
+      "street": {
+        "source_line": "来源：Bloomberg ANR（2026/10/15）；以 10/14 股价 US$51.39 计算。",
+        "cards": [
+          {
+            "broker": "UBS",
+            "rating": "Buy",
+            "items": [
+              {
+                "label": "分析师／日期",
+                "text": "Erika P Najarian · 2026/10/14"
+              },
+              {
+                "label": "目标价",
+                "text": "US$67.00"
+              },
+              {
+                "label": "潜在股价回报",
+                "text": "30.4%"
+              }
+            ]
+          },
+          {
+            "broker": "Citi",
+            "rating": "Buy",
+            "items": [
+              {
+                "label": "分析师／日期",
+                "text": "Benjamin Gerlinger · 2026/10/14"
+              },
+              {
+                "label": "目标价",
+                "text": "US$66.00"
+              },
+              {
+                "label": "潜在股价回报",
+                "text": "28.4%"
+              }
+            ]
+          },
+          {
+            "broker": "Goldman Sachs",
+            "rating": "Buy",
+            "items": [
+              {
+                "label": "分析师／日期",
+                "text": "Richard N Ramsden · 2026/10/14"
+              },
+              {
+                "label": "目标价",
+                "text": "US$63.00"
+              },
+              {
+                "label": "潜在股价回报",
+                "text": "22.6%"
+              }
+            ]
+          }
+        ]
+      },
+      "risks": [
+        {
+          "title": "监管整改与法律成本",
+          "text": "本季 US$1.2bn 和解费用涉及 BSA／反洗钱及经济制裁合规。持续整改可能增加成本或限制业务，不能假设所有相关影响已完全结束。"
+        },
+        {
+          "title": "利率、存款与净利息收入",
+          "text": "资产重定价有利 NII，但存款定价、资金组合及利率曲线改变可能抵销效益；平均存款本季较上季大致持平。"
+        },
+        {
+          "title": "市场收入与成本刚性",
+          "text": "FICC 收入同比下降 17%、投行费用下降 11%；若客户活动持续偏弱而科技、人员及合规投入增加，效率比率可能较难改善。"
+        },
+        {
+          "title": "信贷转弱与分配空间",
+          "text": "目前核销率改善仍可能受就业、消费或商业信用恶化逆转；CET1 降至 10.9%，进一步资本压力可能限制回购。"
+        }
+      ],
+      "ai": {
+        "welcome": "这是 美国银行 2026 年第三季报告，更新于 2026/10/15。我可以解释盈利、资本、估值与主要风险；市场数据为已注明日期的快照。",
+        "context": "资料截至2026/10/15，没有实时行情。以我们认为表达分析。实绩、非GAAP调整、共识和指引不可混用。 {\"company\":\"美国银行\",\"period\":\"3Q2026\",\"release_date\":\"2026-10-14\",\"actuals\":{\"units\":\"USD billion unless specified\",\"revenue\":29.958,\"revenue_yoy_pct\":3,\"revenue_q2\":31.558,\"revenue_q3_2025\":29.04,\"net_income\":6.933,\"net_income_common\":6.541,\"net_income_q3_2025\":8.332,\"eps_gaap_usd\":0.91,\"eps_prior_year_usd\":1.04,\"eps_adjusted_usd\":1.08,\"adjusted_net_income_rounded\":8.1,\"regulatory_settlement_charge\":1.2,\"settlement_charge_per_share_usd\":0.17,\"settlement_tax_deductible\":false,\"nii_gaap\":16.449,\"nii_fte_rounded\":16.6,\"nii_yoy_pct\":8,\"net_interest_yield_fte_pct\":2.16,\"noninterest_expenses\":19.722,\"adjusted_noninterest_expenses_rounded\":18.5,\"efficiency_pct\":66,\"adjusted_efficiency_pct\":62,\"roe_pct\":9.4,\"adjusted_roe_pct\":11.1,\"rotce_pct\":12.6,\"adjusted_rotce_pct\":14.9,\"roa_pct\":0.79,\"adjusted_roa_pct\":0.93,\"bvps_usd\":39.26,\"tbvps_usd\":29.14,\"pretax_income\":8.967,\"credit_provision\":1.269,\"net_chargeoffs\":1.349,\"nco_ratio_pct\":0.44,\"card_chargeoff_rate_pct\":3.22,\"credit_allowance\":14.184,\"loan_loss_allowance_ratio_pct\":1.04,\"nonperforming_loans\":5.544,\"criticized_commercial_exposure\":19.9,\"net_income_q2\":9.074,\"eps_q2_usd\":1.21,\"nii_q2\":15.997,\"nii_q3_2025\":15.233,\"expenses_q2\":18.627,\"expenses_q3_2025\":17.337,\"roe_q2_pct\":12.7,\"roe_q3_2025_pct\":11.4,\"rotce_q2_pct\":17.0,\"rotce_q3_2025_pct\":15.3},\"segments\":{\"consumer_banking\":{\"revenue\":11.572,\"revenue_yoy_pct\":4,\"net_income\":3.521,\"average_deposits\":948.6,\"average_loans\":321.0,\"card_spend\":265.7,\"card_spend_yoy_pct\":8,\"consumer_investment_assets\":664.4,\"net_checking_accounts_added_min\":200000},\"wealth_investment_management\":{\"revenue\":7.118,\"revenue_yoy_pct\":13,\"net_income\":1.54,\"pretax_margin_pct\":29,\"aum_flows\":20.0,\"client_balances\":5056.8,\"aum_rounded\":2400,\"asset_management_fees_rounded\":4.5,\"fees_yoy_pct\":16,\"average_loans\":278.6},\"global_banking\":{\"revenue\":6.205,\"net_income\":1.99,\"corporation_investment_banking_fees_rounded\":1.8,\"ib_fees_yoy_pct\":-11,\"average_deposits\":668.6,\"average_loans\":418.9},\"global_markets\":{\"revenue\":5.867,\"revenue_yoy_pct\":-6,\"net_income\":1.235,\"sales_trading_rounded\":5.1,\"sales_trading_yoy_pct\":-5,\"ficc_rounded\":2.6,\"ficc_yoy_pct\":-17,\"equities_rounded\":2.5,\"equities_yoy_pct\":11},\"all_other\":{\"net_loss\":-1.353,\"contains_regulatory_charge\":1.2}},\"capital\":{\"cet1_standardized_pct\":10.9,\"cet1_capital_rounded\":198,\"cet1_capital_qoq_change\":-3.2,\"average_global_liquidity_sources\":914,\"average_deposits\":2022.083,\"average_loans\":1226.018,\"ending_deposits\":2038.758,\"ending_loans\":1251.26,\"capital_return_rounded\":8.3,\"buybacks_rounded\":6.0,\"dividends_paid_rounded\":2.2,\"dividend_per_share_usd\":0.32,\"cet1_q2_pct\":11.2,\"cet1_q3_2025_pct\":11.6,\"cet1_capital\":198.407},\"eeo_multiples\":{\"columns\":[\"LTM\",\"NTM\",\"FY2026\",\"FY2027\",\"FY2028\"],\"pe_adj\":[11.73,10.23,11.32,9.89,8.77],\"pb\":[1.31,1.28,1.28,1.19,1.1],\"dividend_yield_pct\":[2.26,2.54,2.31,2.58,2.88],\"price_cashflow\":[3.96,null,null,null,null]},\"anr\":{\"as_of\":\"2026-10-15\",\"last_price_usd\":51.39,\"consensus_score\":4.57,\"buys_count\":24,\"holds_count\":6,\"sells_count\":0,\"target_price_usd\":65.35,\"return_potential_pct\":27.2},\"brokers\":[{\"broker\":\"UBS\",\"rating\":\"Buy\",\"items\":[{\"label\":\"分析师／日期\",\"text\":\"Erika P Najarian · 2026/10/14\"},{\"label\":\"目标价\",\"text\":\"US$67.00\"},{\"label\":\"潜在股价回报\",\"text\":\"30.4%\"}]},{\"broker\":\"Citi\",\"rating\":\"Buy\",\"items\":[{\"label\":\"分析师／日期\",\"text\":\"Benjamin Gerlinger · 2026/10/14\"},{\"label\":\"目标价\",\"text\":\"US$66.00\"},{\"label\":\"潜在股价回报\",\"text\":\"28.4%\"}]},{\"broker\":\"Goldman Sachs\",\"rating\":\"Buy\",\"items\":[{\"label\":\"分析师／日期\",\"text\":\"Richard N Ramsden · 2026/10/14\"},{\"label\":\"目标价\",\"text\":\"US$63.00\"},{\"label\":\"潜在股价回报\",\"text\":\"22.6%\"}]}],\"broker_timing\":\"Cards use announcement-day or later dates displayed on ANR. Intraday chronology for announcement-day entries is unknown.\",\"guidance_status\":\"No new numerical company guidance was verified in reviewed official materials.\",\"sources\":[\"https://investor.bankofamerica.com/regulatory-and-other-filings/select-sec-filings/content/0000070858-26-000481/bac09302026ex991.htm\",\"https://investor.bankofamerica.com/regulatory-and-other-filings/select-sec-filings/content/0000070858-26-000481/bac09302026ex992.htm\"]} ANR is broad consensus. No original broker thesis is supplied; do not invent one. Price upside excludes dividends. MS peer quote date is not shown."
+      }
+    },
+    "en": {
+      "company": "Bank of America",
+      "subtitle": "Operations & Strategy Research | 3Q2026 Earnings Special",
+      "source_line": "Updated 15 October 2026 | Quarter ended 30 September 2026 | Results released 14 October 2026. Actuals are company reported; forecasts and valuation are supplied Bloomberg EEO snapshots.",
+      "header": {
+        "target_label": "Street Consensus Target",
+        "target_asof": "Bloomberg ANR · 2026/10/15",
+        "target_value": "US$65.35",
+        "rating": "Bloomberg ANR 4.57/5"
+      },
+      "views": [
+        {
+          "title": "Beyond the settlement charge, underlying earnings need improvement",
+          "text": "We believe the US$1.2bn non-deductible regulatory settlement is a major reason GAAP EPS fell to US$0.91, but it should not obscure operating pressure. Excluding it, EPS was US$1.08 and net income about US$8.1bn, still below the prior-year US$8.332bn. Adjusted efficiency was 62%, versus 60% a year earlier. Removing the charge helps reported earnings; durable improvement still requires revenue growth and cost discipline."
+        },
+        {
+          "title": "Net interest income and wealth fees support the base",
+          "text": "We believe 8% growth in GAAP net interest income to US$16.449bn provides an important earnings foundation, supported by lending, deposits and fixed-rate repricing. Average loans grew 6% across all segments; wealth revenue rose 13% with US$20bn of AUM inflows. Trading and investment-banking declines limited total revenue growth to 3%. Stronger operating leverage requires these recurring engines and capital-markets activity to improve together."
+        },
+        {
+          "title": "Better credit does not remove capital constraints",
+          "text": "We believe the decline in net charge-offs from 0.47% to 0.44% of loans and a 3.22% card charge-off rate support manageable current credit quality. Yet standardized CET1 fell from 11.2% to 10.9%, while capital returns were approximately US$8.3bn. Distributions must be weighed against loan growth, risk-weighted assets and remediation costs. One quarter of improving credit does not justify a permanently higher repurchase assumption."
+        },
+        {
+          "title": "A lower multiple needs better returns to justify rerating",
+          "text": "We believe FY2027E adjusted P/E of 9.89x and P/B of 1.19x warrant attention, but reported ROTCE of 12.6% and adjusted ROTCE of 14.9% must be assessed against capital costs and risk. The US$65.35 ANR target implies 27.2% price upside from US$51.39, but is a broad snapshot. Individual broker cards show 14 October announcement-day records; their dates do not establish whether they were updated before or after the release."
+        }
+      ],
+      "kpis": [
+        {
+          "label": "GAAP Net Interest Income",
+          "value": "US$16.449bn",
+          "note": "+8% YoY; FTE about US$16.6bn"
+        },
+        {
+          "label": "Diluted EPS",
+          "value": "US$0.91",
+          "note": "GAAP; adjusted US$1.08"
+        },
+        {
+          "label": "Return on Tangible Common Equity",
+          "value": "12.6%",
+          "note": "Reported; adjusted 14.9%"
+        },
+        {
+          "label": "Standardized CET1",
+          "value": "10.9%",
+          "note": "Down 30bp sequentially"
+        }
+      ],
+      "financial_charts": [
+        {
+          "title": "3Q2026 Segment Revenue (FTE)",
+          "note": "US$ millions. Segments total US$30,119m, including All Other of -US$643m; subtracting the US$161m FTE adjustment gives GAAP revenue of US$29,958m.",
+          "type": "bar",
+          "labels": [
+            "Consumer Banking",
+            "Wealth & Investment Management",
+            "Global Banking",
+            "Global Markets",
+            "All Other"
+          ],
+          "datasets": [
+            {
+              "label": "Revenue (US$ millions)",
+              "data": [
+                11572,
+                7118,
+                6205,
+                5867,
+                -643
+              ],
+              "axis": "value"
+            }
+          ]
+        },
+        {
+          "title": "Credit Costs and Net Charge-offs",
+          "note": "US$ millions; provisions include reserve changes and differ from net charge-offs.",
+          "type": "bar",
+          "labels": [
+            "3Q2025",
+            "2Q2026",
+            "3Q2026"
+          ],
+          "datasets": [
+            {
+              "label": "Provisions",
+              "data": [
+                1295,
+                1366,
+                1269
+              ],
+              "axis": "value"
+            },
+            {
+              "label": "Net charge-offs",
+              "data": [
+                1367,
+                1412,
+                1349
+              ],
+              "axis": "value"
+            }
+          ]
+        }
+      ],
+      "table": {
+        "title": "Financial Comparison (US$ millions, except as noted)",
+        "headers": [
+          "Metric",
+          "3Q2026",
+          "2Q2026",
+          "3Q2025"
+        ],
+        "rows": [
+          [
+            "Revenue (GAAP)",
+            "29,958",
+            "31,558",
+            "29,040"
+          ],
+          [
+            "Net income (GAAP)",
+            "6,933",
+            "9,074",
+            "8,332"
+          ],
+          [
+            "Diluted EPS (US$, GAAP)",
+            "0.91",
+            "1.21",
+            "1.04"
+          ],
+          [
+            "Net interest income (GAAP)",
+            "16,449",
+            "15,997",
+            "15,233"
+          ],
+          [
+            "Noninterest expense (GAAP)",
+            "19,722",
+            "18,627",
+            "17,337"
+          ],
+          [
+            "Return on common equity",
+            "9.4%",
+            "12.7%",
+            "11.4%"
+          ],
+          [
+            "Return on tangible common equity",
+            "12.6%",
+            "17.0%",
+            "15.3%"
+          ],
+          [
+            "Standardized CET1",
+            "10.9%",
+            "11.2%",
+            "11.6%"
+          ],
+          [
+            "Net charge-off ratio",
+            "0.44%",
+            "0.47%",
+            "0.47%"
+          ]
+        ],
+        "note": "3Q2026 includes a US$1,200m regulatory settlement. Excluding it, EPS is US$1.08, ROTCE 14.9% and efficiency 62%, all adjusted non-GAAP measures. Segments use FTE; table revenue/NII use GAAP. No new numerical guidance was verified in reviewed official materials. ROTCE itself is a non-GAAP measure; the reported version uses reported earnings."
+      },
+      "valuation": {
+        "title": "Five-bank FY2027E Adjusted P/E",
+        "metric_label": "FY2027E P/E (Adj+)",
+        "labels": [
+          "C",
+          "BAC",
+          "GS",
+          "JPM",
+          "MS"
+        ],
+        "values": [
+          9.46,
+          9.89,
+          11.98,
+          13.2,
+          13.3
+        ],
+        "highlight_index": 1,
+        "note": "Supplied Bloomberg EEO snapshots; all five use FY2027 Price/EPS, Adj+. BAC is 9.89x, versus FY2026 11.32x; FY2027 P/B is 1.19x. Reference price: 14 October, US$51.39. Business mix, adjustments and capital requirements limit direct comparison; a low multiple does not remove earnings-revision risk. MS does not display a price trade date; the other four screenshots show 14 October. The comparison uses the supplied snapshots."
+      },
+      "street": {
+        "source_line": "Source: Bloomberg ANR (15 October 2026); reference share price US$51.39 on 14 October.",
+        "cards": [
+          {
+            "broker": "UBS",
+            "rating": "Buy",
+            "items": [
+              {
+                "label": "Analyst / Date",
+                "text": "Erika P Najarian · 2026/10/14"
+              },
+              {
+                "label": "Target Price",
+                "text": "US$67.00"
+              },
+              {
+                "label": "Implied Price Upside",
+                "text": "30.4%"
+              }
+            ]
+          },
+          {
+            "broker": "Citi",
+            "rating": "Buy",
+            "items": [
+              {
+                "label": "Analyst / Date",
+                "text": "Benjamin Gerlinger · 2026/10/14"
+              },
+              {
+                "label": "Target Price",
+                "text": "US$66.00"
+              },
+              {
+                "label": "Implied Price Upside",
+                "text": "28.4%"
+              }
+            ]
+          },
+          {
+            "broker": "Goldman Sachs",
+            "rating": "Buy",
+            "items": [
+              {
+                "label": "Analyst / Date",
+                "text": "Richard N Ramsden · 2026/10/14"
+              },
+              {
+                "label": "Target Price",
+                "text": "US$63.00"
+              },
+              {
+                "label": "Implied Price Upside",
+                "text": "22.6%"
+              }
+            ]
+          }
+        ]
+      },
+      "risks": [
+        {
+          "title": "Regulatory remediation and legal costs",
+          "text": "The US$1.2bn charge relates to BSA/AML and sanctions compliance orders. Ongoing remediation may raise costs or constrain activity; it cannot be assumed that every related effect is finished."
+        },
+        {
+          "title": "Rates, deposits and net interest income",
+          "text": "Asset repricing supports NII, but deposit pricing, funding mix and the yield curve can offset the benefit. Average deposits were broadly flat sequentially."
+        },
+        {
+          "title": "Markets revenue and sticky costs",
+          "text": "FICC revenue fell 17% and investment-banking fees 11%. Weak client activity alongside technology, staffing and compliance investment could delay efficiency gains."
+        },
+        {
+          "title": "Credit deterioration and distributions",
+          "text": "Improving charge-offs can reverse if employment, consumption or commercial credit weakens. CET1 of 10.9% leaves repurchases sensitive to further capital pressure."
+        }
+      ],
+      "ai": {
+        "welcome": "This Bank of America 3Q2026 report is dated 15 October 2026. Ask about earnings, capital, valuation and risks; market data are dated snapshots.",
+        "context": "Knowledge dated 15 October 2026; no live data. Use We believe for analysis. Distinguish issuer actuals, non-GAAP adjustments, consensus and guidance. {\"company\":\"Bank of America\",\"period\":\"3Q2026\",\"release_date\":\"2026-10-14\",\"actuals\":{\"units\":\"USD billion unless specified\",\"revenue\":29.958,\"revenue_yoy_pct\":3,\"revenue_q2\":31.558,\"revenue_q3_2025\":29.04,\"net_income\":6.933,\"net_income_common\":6.541,\"net_income_q3_2025\":8.332,\"eps_gaap_usd\":0.91,\"eps_prior_year_usd\":1.04,\"eps_adjusted_usd\":1.08,\"adjusted_net_income_rounded\":8.1,\"regulatory_settlement_charge\":1.2,\"settlement_charge_per_share_usd\":0.17,\"settlement_tax_deductible\":false,\"nii_gaap\":16.449,\"nii_fte_rounded\":16.6,\"nii_yoy_pct\":8,\"net_interest_yield_fte_pct\":2.16,\"noninterest_expenses\":19.722,\"adjusted_noninterest_expenses_rounded\":18.5,\"efficiency_pct\":66,\"adjusted_efficiency_pct\":62,\"roe_pct\":9.4,\"adjusted_roe_pct\":11.1,\"rotce_pct\":12.6,\"adjusted_rotce_pct\":14.9,\"roa_pct\":0.79,\"adjusted_roa_pct\":0.93,\"bvps_usd\":39.26,\"tbvps_usd\":29.14,\"pretax_income\":8.967,\"credit_provision\":1.269,\"net_chargeoffs\":1.349,\"nco_ratio_pct\":0.44,\"card_chargeoff_rate_pct\":3.22,\"credit_allowance\":14.184,\"loan_loss_allowance_ratio_pct\":1.04,\"nonperforming_loans\":5.544,\"criticized_commercial_exposure\":19.9,\"net_income_q2\":9.074,\"eps_q2_usd\":1.21,\"nii_q2\":15.997,\"nii_q3_2025\":15.233,\"expenses_q2\":18.627,\"expenses_q3_2025\":17.337,\"roe_q2_pct\":12.7,\"roe_q3_2025_pct\":11.4,\"rotce_q2_pct\":17.0,\"rotce_q3_2025_pct\":15.3},\"segments\":{\"consumer_banking\":{\"revenue\":11.572,\"revenue_yoy_pct\":4,\"net_income\":3.521,\"average_deposits\":948.6,\"average_loans\":321.0,\"card_spend\":265.7,\"card_spend_yoy_pct\":8,\"consumer_investment_assets\":664.4,\"net_checking_accounts_added_min\":200000},\"wealth_investment_management\":{\"revenue\":7.118,\"revenue_yoy_pct\":13,\"net_income\":1.54,\"pretax_margin_pct\":29,\"aum_flows\":20.0,\"client_balances\":5056.8,\"aum_rounded\":2400,\"asset_management_fees_rounded\":4.5,\"fees_yoy_pct\":16,\"average_loans\":278.6},\"global_banking\":{\"revenue\":6.205,\"net_income\":1.99,\"corporation_investment_banking_fees_rounded\":1.8,\"ib_fees_yoy_pct\":-11,\"average_deposits\":668.6,\"average_loans\":418.9},\"global_markets\":{\"revenue\":5.867,\"revenue_yoy_pct\":-6,\"net_income\":1.235,\"sales_trading_rounded\":5.1,\"sales_trading_yoy_pct\":-5,\"ficc_rounded\":2.6,\"ficc_yoy_pct\":-17,\"equities_rounded\":2.5,\"equities_yoy_pct\":11},\"all_other\":{\"net_loss\":-1.353,\"contains_regulatory_charge\":1.2}},\"capital\":{\"cet1_standardized_pct\":10.9,\"cet1_capital_rounded\":198,\"cet1_capital_qoq_change\":-3.2,\"average_global_liquidity_sources\":914,\"average_deposits\":2022.083,\"average_loans\":1226.018,\"ending_deposits\":2038.758,\"ending_loans\":1251.26,\"capital_return_rounded\":8.3,\"buybacks_rounded\":6.0,\"dividends_paid_rounded\":2.2,\"dividend_per_share_usd\":0.32,\"cet1_q2_pct\":11.2,\"cet1_q3_2025_pct\":11.6,\"cet1_capital\":198.407},\"eeo_multiples\":{\"columns\":[\"LTM\",\"NTM\",\"FY2026\",\"FY2027\",\"FY2028\"],\"pe_adj\":[11.73,10.23,11.32,9.89,8.77],\"pb\":[1.31,1.28,1.28,1.19,1.1],\"dividend_yield_pct\":[2.26,2.54,2.31,2.58,2.88],\"price_cashflow\":[3.96,null,null,null,null]},\"anr\":{\"as_of\":\"2026-10-15\",\"last_price_usd\":51.39,\"consensus_score\":4.57,\"buys_count\":24,\"holds_count\":6,\"sells_count\":0,\"target_price_usd\":65.35,\"return_potential_pct\":27.2},\"brokers\":[{\"broker\":\"UBS\",\"rating\":\"Buy\",\"items\":[{\"label\":\"Analyst / Date\",\"text\":\"Erika P Najarian · 2026/10/14\"},{\"label\":\"Target Price\",\"text\":\"US$67.00\"},{\"label\":\"Implied Price Upside\",\"text\":\"30.4%\"}]},{\"broker\":\"Citi\",\"rating\":\"Buy\",\"items\":[{\"label\":\"Analyst / Date\",\"text\":\"Benjamin Gerlinger · 2026/10/14\"},{\"label\":\"Target Price\",\"text\":\"US$66.00\"},{\"label\":\"Implied Price Upside\",\"text\":\"28.4%\"}]},{\"broker\":\"Goldman Sachs\",\"rating\":\"Buy\",\"items\":[{\"label\":\"Analyst / Date\",\"text\":\"Richard N Ramsden · 2026/10/14\"},{\"label\":\"Target Price\",\"text\":\"US$63.00\"},{\"label\":\"Implied Price Upside\",\"text\":\"22.6%\"}]}],\"broker_timing\":\"Cards use announcement-day or later dates displayed on ANR. Intraday chronology for announcement-day entries is unknown.\",\"guidance_status\":\"No new numerical company guidance was verified in reviewed official materials.\",\"sources\":[\"https://investor.bankofamerica.com/regulatory-and-other-filings/select-sec-filings/content/0000070858-26-000481/bac09302026ex991.htm\",\"https://investor.bankofamerica.com/regulatory-and-other-filings/select-sec-filings/content/0000070858-26-000481/bac09302026ex992.htm\"]} ANR is broad consensus. No original broker thesis is supplied; do not invent one. Price upside excludes dividends. MS peer quote date is not shown."
+      }
+    }
+  }
+}
