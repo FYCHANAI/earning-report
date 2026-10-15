@@ -1,5 +1,22 @@
 # NTAM investment research website
 
+## Five US banks Q3 2026 update — 15 October 2026
+
+JPMorgan Chase, Citigroup, Goldman Sachs, Bank of America and Morgan Stanley use their corresponding MU language masters in Traditional Chinese, Simplified Chinese and English. JPM/C/GS announced on 13 October; BAC/MS on 14 October. The homepage uses those earnings dates with stable same-day ordering. Other company cards and report pages are unchanged.
+
+Official issuer and SEC actuals take precedence over Bloomberg standardized actuals. The reports distinguish total net income from income available to common shareholders, managed/FTE revenue from GAAP revenue, company adjustment items from Bloomberg Adj+ fields, and ROE from ROTCE. Bank capital, credit quality and net interest income replace industrial free-cash-flow metrics. Bloomberg EEO estimates are postrelease observations, not verified pre-announcement consensus; no earnings-beat claims are inferred from them.
+
+Peer valuation consistently uses FY2027 Price/EPS, Adj+: Citi 9.46x, Bank of America 9.89x, Goldman Sachs 11.98x, JPMorgan Chase 13.20x and Morgan Stanley 13.30x. These annual estimates are not next-four-quarter multiples. The MS screens show Prev US$181.51 without an explicit quote date; other screens show 14 October reference prices. None is independently presented as an exchange close.
+
+Individual analyst cards use the latest visible rating for each selected broker dated on or after the earnings-release date, following the owner's 15 October instruction for all five banks. Same-day rows retain their actual dates without claiming verified intraday postresults chronology; an unchanged target is not described as new research or a target revision. The 15 October ANR snapshot date alone does not establish the date of constituent views. The selection priority is UBS, Morgan Stanley, JP Morgan, Citi, HSBC, then other eligible institutions. Selections are JPM: Morgan Stanley, Citi, Goldman Sachs; C: UBS, Morgan Stanley, JP Morgan; GS: UBS, Morgan Stanley, Citi; BAC and MS: UBS, Citi, Goldman Sachs. Headers display the broad ANR consensus score without inventing an aggregate Buy/Neutral classification. Source ratings and detailed eligibility are retained in the research ledgers; no bank thesis is invented from an ANR row.
+
+Original target-company PI/legal controls, disclaimer loading and API handling are preserved; MU masters and shared hosting files remain unchanged. Original screenshots are not committed. Validation and release status must be read separately; local preparation is not evidence of publication.
+
+- [JPM/C source and calculation ledger](research/jpm-c-2026-q3-2026-10-15.json)
+- [GS/BAC/MS source and calculation ledger](research/gs-bac-ms-2026-q3-2026-10-15.json)
+- [Validation record](research/banks-2026-q3-validation.json)
+- [Homepage earnings-date order](research/homepage-earnings-order-2026-10-08.json)
+
 ## Johnson & Johnson Q3 2026 update — 14 October 2026
 
 The three JNJ reports use their corresponding MU language masters and cover the quarter ended 27 September, announced on 13 October. Official Chinese branding is 強生 / 强生. JNJ moves to second on the homepage after UNH under the stable same-day earnings-publication rule; the other 24 cards retain their content and relative order.
@@ -119,3 +136,4 @@ The ledger combines Micron disclosures and owner-supplied Bloomberg ANR/EEO scre
 Validation covers financial arithmetic, three-language parity, exact template comparison and mocked JavaScript execution. Real browser rendering was not completed because the cloud browser could not reach the local HTTP preview. No live AI request was submitted.
 
 GitHub access was confirmed on 8 October; publishing uses a reviewable branch and the existing Vercel integration. Commit checks, PR status and the live website determine actual deployment status. CNAME, disclaimer.html, API code and deployment configuration are unchanged. Earlier handover corrections to other companies are outside this MU release.
+
