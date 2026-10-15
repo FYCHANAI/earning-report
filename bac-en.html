@@ -1,34 +1,37 @@
 <!DOCTYPE html>
+<!-- Research metadata: {"period": "3Q2026", "period_end": "2026-09-30", "publication_date": "2026-10-14", "report_date": "2026-10-15", "market_date": "2026-10-14", "currency": "USD", "basis": "Issuer-reported GAAP unless explicitly marked adjusted or FTE; Bloomberg EEO consensus is not management guidance."} -->
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Bank of America (BAC) Deep Research Report | NTAM Senior Analyst</title>
+<title>Bank of America (BAC) 3Q2026 Deep Research Report | NTAM Senior Analyst</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
 <style>
-body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
-.chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
-@media (min-width: 768px) { .chart-container { height: 400px; } }
-.tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
-.tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
-.tab-content.active { display: block; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-.metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
-.hide-scrollbar::-webkit-scrollbar { display: none; }
-.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-/* AI Animations */
-@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-.animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
-.typing-dot { animation: typing 1.4s infinite ease-in-out both; }
-.typing-dot:nth-child(1) { animation-delay: -0.32s; }
-.typing-dot:nth-child(2) { animation-delay: -0.16s; }
-@keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
-#selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
+    body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+    .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+    @media (min-width: 768px) { .chart-container { height: 400px; } }
+    .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+    .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+    .tab-content.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* AI Animations */
+    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+    .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
+    .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+    .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+    @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+    #selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
 </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
+
 <div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
 <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
 <div class="text-center mb-6">
@@ -57,334 +60,180 @@ body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e29
 </div>
 </div>
 </div>
+
 <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-<div class="flex justify-between items-start">
-<div class="flex flex-col">
-<a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
-<img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
-<span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
-</a>
-<div class="flex flex-col">
-<h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Bank of America <span class="text-blue-600">BAC</span></h1>
-<span class="text-sm text-slate-500 font-medium mt-1">Senior Analyst Operations & Strategy Report | 2Q26 Earnings Special</span>
-</div>
-</div>
-<div class="flex flex-col items-end space-y-3">
-<select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
-<option value="bac.html">繁體中文</option>
-<option value="bac-sc.html">简体中文</option>
-<option value="bac-en.html" selected>English</option>
-</select>
-<div class="flex items-center space-x-4">
-<div class="text-right hidden sm:block">
-<div class="text-xs text-slate-400 font-bold">Consensus Target (as of 07/15/2026) <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
-<div class="text-xl font-bold text-slate-800">$66.37 USD</div>
-</div>
-<div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">ANR Consensus Rating: Buy </div>
-</div>
-</div>
-</div>
-<nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
-    <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">1. Our Views</button>
-    <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">2. Financials & Operations</button>
-    <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">3. Valuation Comparison</button>
-    <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">4. Analyst Views</button>
-    <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">5. Risk Factors</button>
-    <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">6. Disclaimer</button>
-</nav>
-</div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex justify-between items-start">
+            <div class="flex flex-col">
+                <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
+                    <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+                    <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+                </a>
+                <div class="flex flex-col">
+                    <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">Bank of America <span class="text-blue-600">BAC</span></h1>
+                    <span class="text-sm text-slate-500 font-medium mt-1">Operations &amp; Strategy Research | 3Q2026 Earnings Special</span>
+                </div>
+            </div>
+            <div class="flex flex-col items-end space-y-3">
+                <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
+                    <option value="bac.html">繁體中文</option>
+                    <option value="bac-sc.html">简体中文</option>
+                    <option value="bac-en.html" selected>English</option>
+                </select>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right hidden sm:block">
+                        <div class="text-xs text-slate-400 font-bold">Street Consensus Target <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">Bloomberg ANR · 2026/10/15</span></div>
+                        <div class="text-xl font-bold text-slate-800">US$65.35</div>
+                    </div>
+                    <div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">Bloomberg ANR 4.57/5</div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+            <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">1. Our Views</button>
+            <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">2. Financials & Operations</button>
+            <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">3. Valuation Comparison</button>
+            <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">4. Analyst Views</button>
+            <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">5. Risk Factors</button>
+            <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">6. Disclaimer</button>
+        </nav>
+    </div>
 </header>
+
 <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
-<section id="our-comments" class="tab-content active">
-    <div class="mb-6">
-        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">I. Our Views</h2>
-        <p class="mt-2 text-sm text-slate-500">Based on 2Q26 earnings results and related disclosure documents, the following are the core conclusions distilled by the NTAM research team on Bank of America (BAC):</p>
-    </div>
-    <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
-        <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
-            <span class="text-3xl mr-3">🎯</span>
-            <h3 class="text-2xl font-black text-blue-600 tracking-tight">Core Operational Conclusions</h3>
-        </div>
-        <ul class="space-y-6">
-            <li class="flex items-start">
-                <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
-                <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">Double-Digit Net Income Growth Across All Four Segments; Broad-Based Earnings Improvement</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">2Q26 net income of $9.1 billion (+27% YoY) and diluted EPS of $1.21 (+34% YoY), with total revenue up 15% YoY to $31.6 billion. Management noted that every business segment reported double-digit net income growth. ROTCE rose to 17.0% and ROA reached 1.03%, reflecting simultaneous gains in earnings breadth and returns.</p>
-                </div>
-            </li>
-            <li class="flex items-start">
-                <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
-                <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">NII Grinding Higher; Deposit and Loan Momentum Continues</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">Net interest income of $16.0 billion ($16.2 billion FTE) rose 9% YoY, driven by Global Markets activity-related NII, loan and deposit growth, and fixed-rate asset repricing, partially offset by the impact of lower interest rates. Average deposits of $2.02 trillion marked a 12th consecutive quarter of sequential growth, while average loans of $1.22 trillion grew 8% YoY, a 9th consecutive quarter of sequential growth.</p>
-                </div>
-            </li>
-            <li class="flex items-start">
-                <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
-                <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">Standout Markets Businesses: IB Fees +50%, Equities Trading +70%</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">Global Markets revenue rose 34% YoY to $8.0 billion. Sales and trading revenue of $7.1 billion (+33% YoY) marked a 17th consecutive quarter of YoY growth, with Equities surging 70% to $3.6 billion. Firmwide investment banking fees (excl. self-led) of $2.1 billion rose 50% YoY, and management noted the near-term deal pipeline remains strong.</p>
-                </div>
-            </li>
-            <li class="flex items-start">
-                <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
-                <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">6.6% Positive Operating Leverage and Solid Capital; $8.0 Billion Returned to Shareholders</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">Noninterest expense rose 8% YoY, well below revenue growth, driving 6.6% positive operating leverage and a 359 bps YoY improvement in the efficiency ratio to 59%. The net charge-off ratio of 0.47% declined 8 bps YoY, reflecting solid credit quality. The standardized CET1 ratio of 11.2% stands roughly 120 bps above the current 10.0% regulatory minimum, and the company returned $8.0 billion to shareholders via dividends and buybacks during the quarter, with tangible book value per share up 7% YoY to $29.37.</p>
-                </div>
-            </li>
-        </ul>
-    </div>
+
+    <section id="our-comments" class="tab-content active">
+<div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">I. Our Views</h2>
+<p class="mt-2 text-sm text-slate-500">Updated 15 October 2026 | Quarter ended 30 September 2026 | Results released 14 October 2026. Actuals are company reported; forecasts and valuation are supplied Bloomberg EEO snapshots.</p></div>
+<div class="metric-card bg-white border border-slate-200 p-6 md:p-8"><div class="flex items-center mb-6 border-b border-slate-100 pb-4"><span class="text-3xl mr-3">🎯</span><h3 class="text-2xl font-black text-blue-600 tracking-tight">Core Operational Conclusions</h3></div><ul class="space-y-6"><li class="flex items-start"><span class="text-blue-600 mr-4 text-xl font-black">1.</span><div><strong class="text-slate-900 block mb-1 text-lg">Beyond the settlement charge, underlying earnings need improvement</strong><p class="text-slate-600 text-sm leading-relaxed">We believe the US$1.2bn non-deductible regulatory settlement is a major reason GAAP EPS fell to US$0.91, but it should not obscure operating pressure. Excluding it, EPS was US$1.08 and net income about US$8.1bn, still below the prior-year US$8.332bn. Adjusted efficiency was 62%, versus 60% a year earlier. Removing the charge helps reported earnings; durable improvement still requires revenue growth and cost discipline.</p></div></li>
+<li class="flex items-start"><span class="text-blue-600 mr-4 text-xl font-black">2.</span><div><strong class="text-slate-900 block mb-1 text-lg">Net interest income and wealth fees support the base</strong><p class="text-slate-600 text-sm leading-relaxed">We believe 8% growth in GAAP net interest income to US$16.449bn provides an important earnings foundation, supported by lending, deposits and fixed-rate repricing. Average loans grew 6% across all segments; wealth revenue rose 13% with US$20bn of AUM inflows. Trading and investment-banking declines limited total revenue growth to 3%. Stronger operating leverage requires these recurring engines and capital-markets activity to improve together.</p></div></li>
+<li class="flex items-start"><span class="text-blue-600 mr-4 text-xl font-black">3.</span><div><strong class="text-slate-900 block mb-1 text-lg">Better credit does not remove capital constraints</strong><p class="text-slate-600 text-sm leading-relaxed">We believe the decline in net charge-offs from 0.47% to 0.44% of loans and a 3.22% card charge-off rate support manageable current credit quality. Yet standardized CET1 fell from 11.2% to 10.9%, while capital returns were approximately US$8.3bn. Distributions must be weighed against loan growth, risk-weighted assets and remediation costs. One quarter of improving credit does not justify a permanently higher repurchase assumption.</p></div></li>
+<li class="flex items-start"><span class="text-blue-600 mr-4 text-xl font-black">4.</span><div><strong class="text-slate-900 block mb-1 text-lg">A lower multiple needs better returns to justify rerating</strong><p class="text-slate-600 text-sm leading-relaxed">We believe FY2027E adjusted P/E of 9.89x and P/B of 1.19x warrant attention, but reported ROTCE of 12.6% and adjusted ROTCE of 14.9% must be assessed against capital costs and risk. The US$65.35 ANR target implies 27.2% price upside from US$51.39, but is a broad snapshot. Individual broker cards show 14 October announcement-day records; their dates do not establish whether they were updated before or after the release.</p></div></li></ul></div>
 </section>
-<section id="financials" class="tab-content">
-    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">II. Financials & Operations</h2></div>
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-        <div class="metric-card border-t-4 border-t-emerald-500">
-            <h4 class="text-xs font-bold text-slate-500 uppercase">2Q26 Total Revenue</h4>
-            <p class="text-2xl font-bold text-slate-800 mt-1">$31.6 B</p>
-            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +15% (FTE $31.7 B)</p>
-        </div>
-        <div class="metric-card border-t-4 border-t-blue-500">
-            <h4 class="text-xs font-bold text-slate-500 uppercase">Diluted EPS</h4>
-            <p class="text-2xl font-bold text-slate-800 mt-1">$1.21</p>
-            <p class="text-sm text-blue-600 font-semibold mt-1">▲ YoY +34% (2Q25: $0.90)</p>
-        </div>
-        <div class="metric-card border-t-4 border-t-indigo-500">
-            <h4 class="text-xs font-bold text-slate-500 uppercase">Return on Tangible Common Equity (ROTCE)</h4>
-            <p class="text-2xl font-bold text-slate-800 mt-1">17.0%</p>
-            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ 2Q25: 13.6% (Non-GAAP)</p>
-        </div>
-        <div class="metric-card border-t-4 border-t-purple-500">
-            <h4 class="text-xs font-bold text-slate-500 uppercase">CET1 Ratio (Standardized)</h4>
-            <p class="text-xl font-bold text-slate-800 mt-1">11.2%</p>
-            <p class="text-sm text-emerald-600 font-semibold mt-1">● $8.0B Returned to Shareholders</p>
-        </div>
-    </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div class="metric-card">
-            <h3 class="text-lg font-bold text-slate-800 mb-2">2Q26 Revenue Mix by Business Segment (Million USD)</h3>
-            <p class="text-xs text-slate-500 mb-4">The four business segments generated combined revenue of $32,465 million (FTE basis), with Global Markets leading at +34% YoY. All Other (-$744 million), comprising asset-liability management and other non-segment activities, is excluded from this chart.</p>
-            <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
-        </div>
-        <div class="metric-card">
-            <h3 class="text-lg font-bold text-slate-800 mb-2">Segment Revenue & Return on Average Allocated Capital (Million USD)</h3>
-            <p class="text-xs text-slate-500 mb-4">All four segments posted double-digit YoY net income growth; returns on average allocated capital range from 15% to 29%, led by Consumer Banking at 29%.</p>
-            <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
-        </div>
-    </div>
-    <div class="metric-card mt-6">
-        <h3 class="text-lg font-bold text-slate-800 mb-4">2Q26 Core GAAP & Supplemental Non-GAAP Metrics Table (vs 2Q25)</h3>
-        <div class="overflow-x-auto">
-            <table class="w-full text-sm text-left border-collapse">
-                <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
-                    <tr>
-                        <th class="px-6 py-3 font-bold">Core Metrics (GAAP / Non-GAAP)</th>
-                        <th class="px-6 py-3 font-bold text-right">2Q25 (Prior Year)</th>
-                        <th class="px-6 py-3 font-bold text-right text-blue-600">2Q26 (Current)</th>
-                        <th class="px-6 py-3 font-bold text-right text-emerald-600">YoY Change</th>
-                    </tr>
-                </thead>
-                <tbody class="text-slate-700">
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">Total Revenue, GAAP (net of interest expense)</td>
-                        <td class="px-6 py-4 text-right">$27,443 M</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$31,558 M</td>
-                        <td class="px-6 py-4 text-right font-bold text-emerald-500">+15%</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">Total Revenue, FTE Basis (Non-GAAP)</td>
-                        <td class="px-6 py-4 text-right">$27,588 M</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$31,721 M</td>
-                        <td class="px-6 py-4 text-right text-emerald-500">+15%</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">Net Interest Income, GAAP</td>
-                        <td class="px-6 py-4 text-right">$14,670 M</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$15,997 M</td>
-                        <td class="px-6 py-4 text-right text-emerald-500">+9%</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">Net Interest Income, FTE Basis (Non-GAAP)</td>
-                        <td class="px-6 py-4 text-right">$14,815 M</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$16,160 M</td>
-                        <td class="px-6 py-4 text-right text-emerald-500">+9%</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">Net Income</td>
-                        <td class="px-6 py-4 text-right">$7.2 B</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$9.1 B ($9,074 M)</td>
-                        <td class="px-6 py-4 text-right text-emerald-500">+27%</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">Diluted EPS</td>
-                        <td class="px-6 py-4 text-right">$0.90</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$1.21</td>
-                        <td class="px-6 py-4 text-right text-emerald-500">+34%</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">Return on Avg Common Equity, ROE (GAAP)</td>
-                        <td class="px-6 py-4 text-right">10.1%</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">12.7%</td>
-                        <td class="px-6 py-4 text-right text-emerald-600">+2.6 ppts</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">Return on Tangible Common Equity, ROTCE (Non-GAAP)</td>
-                        <td class="px-6 py-4 text-right">13.6%</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">17.0%</td>
-                        <td class="px-6 py-4 text-right text-emerald-600">+3.4 ppts</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">Tangible Book Value per Share, TBVPS (Non-GAAP)</td>
-                        <td class="px-6 py-4 text-right">$27.49</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$29.37</td>
-                        <td class="px-6 py-4 text-right text-emerald-600">+7%</td>
-                    </tr>
-                    <tr class="bg-slate-50 font-bold">
-                        <td class="px-6 py-4 text-slate-800">Pre-Tax Pre-Provision Income, PTPI (Non-GAAP Supplemental)</td>
-                        <td class="px-6 py-4 text-right text-slate-500">$10,260 M</td>
-                        <td class="px-6 py-4 text-right text-blue-600">$12,931 M</td>
-                        <td class="px-6 py-4 text-right text-purple-600">+26%</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
+
+    <section id="financials" class="tab-content">
+<div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">II. Financials & Operations</h2></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6"><div class="metric-card border-t-4 border-t-emerald-500"><h4 class="text-xs font-bold text-slate-500 uppercase">GAAP Net Interest Income</h4><p class="text-2xl font-bold text-slate-800 mt-1">US$16.449bn</p><p class="text-sm text-slate-600 font-semibold mt-1">+8% YoY; FTE about US$16.6bn</p></div>
+<div class="metric-card border-t-4 border-t-blue-500"><h4 class="text-xs font-bold text-slate-500 uppercase">Diluted EPS</h4><p class="text-2xl font-bold text-slate-800 mt-1">US$0.91</p><p class="text-sm text-slate-600 font-semibold mt-1">GAAP; adjusted US$1.08</p></div>
+<div class="metric-card border-t-4 border-t-indigo-500"><h4 class="text-xs font-bold text-slate-500 uppercase">Return on Tangible Common Equity</h4><p class="text-2xl font-bold text-slate-800 mt-1">12.6%</p><p class="text-sm text-slate-600 font-semibold mt-1">Reported; adjusted 14.9%</p></div>
+<div class="metric-card border-t-4 border-t-purple-500"><h4 class="text-xs font-bold text-slate-500 uppercase">Standardized CET1</h4><p class="text-xl font-bold text-slate-800 mt-1">10.9%</p><p class="text-sm text-slate-600 font-semibold mt-1">Down 30bp sequentially</p></div></div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6"><div class="metric-card"><h3 class="text-lg font-bold text-slate-800 mb-2">3Q2026 Segment Revenue (FTE)</h3><p class="text-xs text-slate-500 mb-4">US$ millions. Segments total US$30,119m, including All Other of -US$643m; subtracting the US$161m FTE adjustment gives GAAP revenue of US$29,958m.</p><div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div></div>
+<div class="metric-card"><h3 class="text-lg font-bold text-slate-800 mb-2">Credit Costs and Net Charge-offs</h3><p class="text-xs text-slate-500 mb-4">US$ millions; provisions include reserve changes and differ from net charge-offs.</p><div class="chart-container"><canvas id="profitabilityChart"></canvas></div></div>
+</div><div class="metric-card mt-6"><h3 class="text-lg font-bold text-slate-800 mb-4">Financial Comparison (US$ millions, except as noted)</h3><div class="overflow-x-auto"><table class="w-full text-sm text-left border-collapse"><thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200"><tr><th class="px-6 py-3 font-bold">Metric</th><th class="px-6 py-3 font-bold text-right">3Q2026</th><th class="px-6 py-3 font-bold text-right text-blue-600">2Q2026</th><th class="px-6 py-3 font-bold text-right text-emerald-600">3Q2025</th></tr></thead><tbody class="text-slate-700"><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">Revenue (GAAP)</td><td class="px-6 py-4 text-right">29,958</td><td class="px-6 py-4 text-right font-bold text-blue-600">31,558</td><td class="px-6 py-4 text-right font-bold text-emerald-500">29,040</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">Net income (GAAP)</td><td class="px-6 py-4 text-right">6,933</td><td class="px-6 py-4 text-right font-bold text-blue-600">9,074</td><td class="px-6 py-4 text-right text-emerald-500">8,332</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">Diluted EPS (US$, GAAP)</td><td class="px-6 py-4 text-right">0.91</td><td class="px-6 py-4 text-right font-bold text-blue-600">1.21</td><td class="px-6 py-4 text-right text-emerald-500">1.04</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">Net interest income (GAAP)</td><td class="px-6 py-4 text-right">16,449</td><td class="px-6 py-4 text-right font-bold text-blue-600">15,997</td><td class="px-6 py-4 text-right text-emerald-600">15,233</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">Noninterest expense (GAAP)</td><td class="px-6 py-4 text-right">19,722</td><td class="px-6 py-4 text-right font-bold text-blue-600">18,627</td><td class="px-6 py-4 text-right text-emerald-600">17,337</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">Return on common equity</td><td class="px-6 py-4 text-right">9.4%</td><td class="px-6 py-4 text-right font-bold text-blue-600">12.7%</td><td class="px-6 py-4 text-right text-emerald-600">11.4%</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">Return on tangible common equity</td><td class="px-6 py-4 text-right">12.6%</td><td class="px-6 py-4 text-right font-bold text-blue-600">17.0%</td><td class="px-6 py-4 text-right text-emerald-600">15.3%</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">Standardized CET1</td><td class="px-6 py-4 text-right">10.9%</td><td class="px-6 py-4 text-right font-bold text-blue-600">11.2%</td><td class="px-6 py-4 text-right text-emerald-600">11.6%</td></tr><tr class="bg-slate-50 font-bold"><td class="px-6 py-4 text-slate-800">Net charge-off ratio</td><td class="px-6 py-4 text-right text-slate-500">0.44%</td><td class="px-6 py-4 text-right text-blue-600">0.47%</td><td class="px-6 py-4 text-right text-purple-600">0.47%</td></tr></tbody></table></div><p class="text-xs text-slate-500 mt-4">3Q2026 includes a US$1,200m regulatory settlement. Excluding it, EPS is US$1.08, ROTCE 14.9% and efficiency 62%, all adjusted non-GAAP measures. Segments use FTE; table revenue/NII use GAAP. No new numerical guidance was verified in reviewed official materials. ROTCE itself is a non-GAAP measure; the reported version uses reported earnings.</p></div>
 </section>
-<section id="valuation" class="tab-content">
-    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">III. Valuation Comparison</h2></div>
-    <div class="metric-card">
-        <div class="flex justify-between items-center mb-4">
-            <h3 class="text-lg font-bold text-slate-800">Forward P/E Comparison of U.S. Large-Cap Banks (Next 4 Qtrs Est Forward P/E, as of 07/14/2026)</h3>
-        </div>
-        <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
-        <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
-    </div>
+
+    <section id="valuation" class="tab-content">
+<div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">III. Valuation Comparison</h2></div>
+<div class="metric-card"><div class="flex justify-between items-center mb-4"><h3 class="text-lg font-bold text-slate-800">Five-bank FY2027E Adjusted P/E</h3></div><div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div><p class="text-xs text-slate-400 mt-3 text-right">Supplied Bloomberg EEO snapshots; all five use FY2027 Price/EPS, Adj+. BAC is 9.89x, versus FY2026 11.32x; FY2027 P/B is 1.19x. Reference price: 14 October, US$51.39. Business mix, adjustments and capital requirements limit direct comparison; a low multiple does not remove earnings-revision risk. MS does not display a price trade date; the other four screenshots show 14 October. The comparison uses the supplied snapshots.</p></div>
 </section>
-<section id="street-comments" class="tab-content">
-    <div class="mb-6">
-        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">IV. Analyst Views</h2>
-    </div>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="metric-card border-t-4 border-t-blue-600">
-            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                <h3 class="font-black text-slate-800">Morgan Stanley</h3>
-                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Overweight</span>
-            </div>
-            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                <li><b>Broad-Based Earnings Improvement (PT $67.00):</b> 2Q26 diluted EPS of $1.21 rose 34% YoY with revenue up 15%; all four segments posted double-digit net income growth and ROTCE climbed to 17.0%, combining earnings breadth with return quality.</li>
-                <li><b>Marked Improvement in Positive Operating Leverage:</b> Revenue growth (+15%) far outpaced expense growth (+8%), delivering 6.6% operating leverage and a 359 bps YoY improvement in the efficiency ratio to 59%; cost discipline is supportive of better returns.</li>
-            </ul>
-        </div>
-        <div class="metric-card border-t-4 border-t-blue-600">
-            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                <h3 class="font-black text-slate-800">JP Morgan</h3>
-                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Overweight</span>
-            </div>
-            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                <li><b>Steady NII Trajectory (PT $62.50):</b> Net interest income of $16.0 billion ($16.2 billion FTE) rose 9% YoY on loan and deposit growth and fixed-rate asset repricing; average deposits grew for a 12th straight quarter and average loans for a 9th, sustaining balance-sheet momentum.</li>
-                <li><b>Resilient Credit Quality:</b> The net charge-off ratio of 0.47% fell 8 bps YoY, the credit card loss rate declined from 3.82% to 3.55%, and the $1.4 billion provision was below the prior year's $1.6 billion; overall asset quality remains stable.</li>
-            </ul>
-        </div>
-        <div class="metric-card border-t-4 border-t-blue-600">
-            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                <h3 class="font-black text-slate-800">UBS</h3>
-                <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
-            </div>
-            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                <li><b>Standout Markets Momentum (PT $68.00):</b> Global Markets revenue rose 34% YoY, Equities trading surged 70% to $3.6 billion, and sales and trading posted a 17th consecutive quarter of YoY growth; firmwide IB fees rose 50% YoY to $2.1 billion amid markedly improved capital markets activity.</li>
-                <li><b>Ample Capital Supports Shareholder Returns:</b> The 11.2% CET1 ratio stands roughly 120 bps above the current 10.0% regulatory minimum; the company returned $8.0 billion to shareholders in the quarter (including $6.0 billion of buybacks), with TBVPS up 7% YoY to $29.37.</li>
-            </ul>
-        </div>
-    </div>
+
+    <section id="street-comments" class="tab-content">
+<div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">IV. Analyst Views</h2>
+<p class="mt-2 text-sm text-slate-500">Source: Bloomberg ANR (15 October 2026); reference share price US$51.39 on 14 October.</p></div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="metric-card border-t-4 border-t-blue-600"><div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100"><h3 class="font-black text-slate-800">UBS</h3><span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span></div><ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4"><li><b>Analyst / Date</b> Erika P Najarian · 2026/10/14</li><li><b>Target Price</b> US$67.00</li><li><b>Implied Price Upside</b> 30.4%</li></ul></div>
+<div class="metric-card border-t-4 border-t-blue-600"><div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100"><h3 class="font-black text-slate-800">Citi</h3><span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span></div><ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4"><li><b>Analyst / Date</b> Benjamin Gerlinger · 2026/10/14</li><li><b>Target Price</b> US$66.00</li><li><b>Implied Price Upside</b> 28.4%</li></ul></div>
+<div class="metric-card border-t-4 border-t-blue-600"><div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100"><h3 class="font-black text-slate-800">Goldman Sachs</h3><span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span></div><ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4"><li><b>Analyst / Date</b> Richard N Ramsden · 2026/10/14</li><li><b>Target Price</b> US$63.00</li><li><b>Implied Price Upside</b> 22.6%</li></ul></div></div>
 </section>
-<section id="risks" class="tab-content">
-    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">V. Risk Factors</h2></div>
-    <div class="metric-card">
-        <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
-            <li class="pb-3 border-b border-slate-100">
-                <strong class="text-base">Interest Rate Path & NII Sensitivity Risk:</strong> NII growth this quarter was already partially offset by the impact of lower interest rates. Deeper- or faster-than-expected Fed rate cuts, or deviations in banking-book NII sensitivity assumptions, could compress the NII trajectory and earning-asset yields (FTE net interest yield on earning assets of 2.08% this quarter).
-            </li>
-            <li class="pb-3 border-b border-slate-100">
-                <strong class="text-base">High-Base Risk in Market-Sensitive Revenues:</strong> Equities trading (+70% YoY) and investment banking fees (+50% YoY) are highly sensitive to capital markets activity; a pullback in trading volumes or issuance would make this quarter's elevated base a significant drag on subsequent YoY momentum.
-            </li>
-            <li class="pb-3 border-b border-slate-100">
-                <strong class="text-base">Credit Cycle & Macroeconomic Assumption Shifts:</strong> The company's forward-looking statements caution that future credit losses may exceed current expectations due to changes in economic assumptions including unemployment, real estate prices, GDP, and corporate credit spreads. Commercial net charge-offs rose $22 million QoQ to $372 million, though still down $94 million YoY; overall commercial credit performance remains stable but warrants continued monitoring of corporate credit and macro conditions.
-            </li>
-            <li class="pb-1">
-                <strong class="text-base">Regulatory Capital & Legal/Compliance Uncertainty:</strong> Regulatory capital requirements, including the stress capital buffer and the G-SIB surcharge, remain subject to change. The company continues to face various legal and regulatory matters, including unemployment benefits processing and electronic payments/Zelle-related fraud; these cases are at various stages, and their ultimate financial and reputational impact remains uncertain.
-            </li>
-        </ol>
-    </div>
+
+    <section id="risks" class="tab-content">
+<div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">V. Risk Factors</h2></div>
+<div class="metric-card"><ol class="space-y-4 list-decimal list-inside text-sm text-slate-700"><li class="pb-3 border-b border-slate-100"><strong class="text-base">Regulatory remediation and legal costs</strong> The US$1.2bn charge relates to BSA/AML and sanctions compliance orders. Ongoing remediation may raise costs or constrain activity; it cannot be assumed that every related effect is finished.</li>
+<li class="pb-3 border-b border-slate-100"><strong class="text-base">Rates, deposits and net interest income</strong> Asset repricing supports NII, but deposit pricing, funding mix and the yield curve can offset the benefit. Average deposits were broadly flat sequentially.</li>
+<li class="pb-3 border-b border-slate-100"><strong class="text-base">Markets revenue and sticky costs</strong> FICC revenue fell 17% and investment-banking fees 11%. Weak client activity alongside technology, staffing and compliance investment could delay efficiency gains.</li>
+<li class="pb-1"><strong class="text-base">Credit deterioration and distributions</strong> Improving charge-offs can reverse if employment, consumption or commercial credit weakens. CET1 of 10.9% leaves repurchases sensitive to further capital pressure.</li></ol></div>
 </section>
-<section id="disclaimer" class="tab-content">
+
+    <section id="disclaimer" class="tab-content">
     <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">6. Disclaimer</h2></div>
     <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
         <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">Securing live connection to fetch the latest disclaimer components from disclaimer.html...</p></div>
     </div>
 </section>
+
 </main>
+
 <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-<div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
-<div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
-<div class="flex items-center">
-<span class="text-2xl mr-2">🤖</span>
-<div><h4 class="font-bold text-sm">Analyst AI Assistant</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
+    <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
+            <div class="flex items-center">
+                <span class="text-2xl mr-2">🤖</span>
+                <div><h4 class="font-bold text-sm">Analyst AI Assistant</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
+            </div>
+            <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
+            <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
+                This Bank of America 3Q2026 report is dated 15 October 2026. Ask about earnings, capital, valuation and risks; market data are dated snapshots.
+            </div>
+        </div>
+        <div class="p-3 bg-white border-t border-slate-200">
+            <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
+                <input type="text" id="chat-input" placeholder="Enter your research command..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+    <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
+        <span class="text-2xl">✨</span>
+    </button>
 </div>
-<button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
-<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-</button>
-</div>
-<div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
-<div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
-Hello Analyst! I am your dedicated Bank of America (BAC) data assistant AI. Feel free to ask me about the 2Q26 revenue growth of 15% YoY to $31.6 billion, diluted EPS of $1.21 (+34% YoY), the 50% surge in investment banking fees, or how 6.6% operating leverage and 17.0% ROTCE shape the long-term return profile.
-</div>
-</div>
-<div class="p-3 bg-white border-t border-slate-200">
-<form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
-<input type="text" id="chat-input" placeholder="Enter your research command..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
-<button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
-<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
-</button>
-</form>
-</div>
-</div>
-<button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
-<span class="text-2xl">✨</span>
-</button>
-</div>
+
 <div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
-<button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
-<span>✨</span> AI Simple Explanation
-</button>
+    <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
+        <span>✨</span> AI Simple Explanation
+    </button>
 </div>
 <div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
-<div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
-<div class="bg-blue-600 text-white p-4 flex justify-between items-center">
-<h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> Term Explainer</h3>
-<button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
-<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-</button>
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+            <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> Term Explainer</h3>
+            <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Your Queried Term:</div>
+            <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
+            <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
+                <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                AI is generating explanation...
+            </div>
+            <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
+        </div>
+        <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+            <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">Close</button>
+        </div>
+    </div>
 </div>
-<div class="p-6">
-<div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Your Queried Term:</div>
-<div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
-<div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
-<svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-AI is generating explanation...
-</div>
-<div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
-</div>
-<div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
-<button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">Close</button>
-</div>
-</div>
-</div>
+
 <script>
-// Global chart instances registry
-window.charts = {};
-// PI gate control functions (restored per index.html standard)
+    // Global chart instances registry
+    window.charts = {};
+
+    function switchTab(e, tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(el => {
+            el.classList.remove('active', 'border-blue-600', 'text-blue-600');
+            el.classList.add('text-slate-500');
+        });
+        document.getElementById(tabId).classList.add('active');
+        e.currentTarget.classList.remove('text-slate-500');
+        e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+
+        // Fix hidden canvas sizing bugs native to Chart.js
+        if (tabId === 'financials') {
+            if (window.charts.bacSegment) window.charts.bacSegment.resize();
+            if (window.charts.bacProfit) window.charts.bacProfit.resize();
+        } else if (tabId === 'valuation') {
+            if (window.charts.bacValuation) window.charts.bacValuation.resize();
+        }
+    }
+
 function acceptPI() {
     sessionStorage.setItem('pi_agreed', 'true');
     document.getElementById('pi-modal').style.display = 'none';
@@ -393,89 +242,20 @@ function acceptPI() {
 function declinePI() {
     document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;
 }
-function switchTab(e, tabId) {
-    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(el => {
-        el.classList.remove('active', 'border-blue-600', 'text-blue-600');
-        el.classList.add('text-slate-500');
-    });
-    document.getElementById(tabId).classList.add('active');
-    e.currentTarget.classList.remove('text-slate-500');
-    e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
-    // Fix hidden canvas sizing bugs native to Chart.js
-    if (tabId === 'financials') {
-        if (window.charts.bacSegment) window.charts.bacSegment.resize();
-        if (window.charts.bacProfit) window.charts.bacProfit.resize();
-    } else if (tabId === 'valuation') {
-        if (window.charts.bacValuation) window.charts.bacValuation.resize();
-    }
-}
-document.addEventListener('DOMContentLoaded', function() {
-    // Professional Investors Gate verification
+
+    document.addEventListener('DOMContentLoaded', function() {
     if (!sessionStorage.getItem('pi_agreed')) {
         const modal = document.getElementById('pi-modal');
         if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
     }
-    // Chart 1: BAC Revenue Mix by Business Segment (Doughnut)
-    window.charts.bacSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
-        type: 'doughnut',
-        data: {
-            labels: ['Consumer Banking', 'Global Wealth & Investment Management (GWIM)', 'Global Banking', 'Global Markets'],
-            datasets: [{
-                data: [11336, 6871, 6236, 8022],
-                backgroundColor: ['rgba(37, 99, 235, 0.85)', 'rgba(16, 185, 129, 0.85)', 'rgba(99, 102, 241, 0.85)', 'rgba(168, 85, 247, 0.85)'],
-                borderWidth: 0
-            }]
-        },
-        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
-    });
-    // Chart 2: Segment Revenue & Return on Avg Allocated Capital (Grouped Bar Chart)
-    window.charts.bacProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
-        type: 'bar',
-        data: {
-            labels: ['Consumer Banking (CB)', 'GWIM', 'Global Banking (GB)', 'Global Markets (GM)'],
-            datasets: [
-                {
-                    label: 'Segment Revenue ($M)',
-                    data: [11336, 6871, 6236, 8022],
-                    backgroundColor: '#3b82f6',
-                    borderRadius: 4
-                },
-                {
-                    label: 'Return on Avg Allocated Capital (%)',
-                    data: [29, 26, 15, 20],
-                    backgroundColor: '#10b981',
-                    borderRadius: 4,
-                    yAxisID: 'percentageAxis'
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: { legend: { position: 'bottom' } },
-            scales: {
-                y: { beginAtZero: true, position: 'left', grid: { color: '#f1f5f9' } },
-                percentageAxis: { beginAtZero: true, max: 100, position: 'right', grid: { display: false } }
-            }
-        }
-    });
-    // Chart 3: Forward P/E Comparison (Horizontal Bar)
-    window.charts.bacValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
-        type: 'bar',
-        data: {
-            labels: ['Citigroup', 'Bank of America (BAC)', 'JPMorgan', 'Goldman Sachs'],
-            datasets: [{
-                label: 'Next 4 Qtrs Est Forward P/E',
-                data: [11.46, 12.53, 14.80, 17.51],
-                backgroundColor: ['rgba(148, 163, 184, 0.6)', 'rgba(37, 99, 235, 0.95)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)'],
-                borderRadius: 4
-            }]
-        },
-        options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
-    });
-    // Dynamic asynchronous linkage for external disclaimer.html
-    fetch('disclaimer.html')
+
+        window.charts.bacSegment = new Chart(document.getElementById("segmentRevenueChart").getContext('2d'), {"type": "bar", "data": {"labels": ["Consumer Banking", "Wealth & Investment Management", "Global Banking", "Global Markets", "All Other"], "datasets": [{"label": "Revenue (US$ millions)", "data": [11572, 7118, 6205, 5867, -643], "backgroundColor": "#3b82f6", "borderRadius": 4}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"position": "bottom"}}, "scales": {"y": {"beginAtZero": true, "position": "left", "grid": {"color": "#f1f5f9"}}}}});
+
+        window.charts.bacProfit = new Chart(document.getElementById("profitabilityChart").getContext('2d'), {"type": "bar", "data": {"labels": ["3Q2025", "2Q2026", "3Q2026"], "datasets": [{"label": "Provisions", "data": [1295, 1366, 1269], "backgroundColor": "#3b82f6", "borderRadius": 4}, {"label": "Net charge-offs", "data": [1367, 1412, 1349], "backgroundColor": "#10b981", "borderRadius": 4}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"position": "bottom"}}, "scales": {"y": {"beginAtZero": true, "position": "left", "grid": {"color": "#f1f5f9"}}}}});
+
+        window.charts.bacValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {"type": "bar", "data": {"labels": ["C", "BAC", "GS", "JPM", "MS"], "datasets": [{"label": "FY2027E P/E (Adj+)", "data": [9.46, 9.89, 11.98, 13.2, 13.3], "backgroundColor": ["rgba(148, 163, 184, 0.6)", "rgba(37, 99, 235, 0.95)", "rgba(148, 163, 184, 0.6)", "rgba(148, 163, 184, 0.6)", "rgba(148, 163, 184, 0.6)"], "borderRadius": 4}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"display": false}}, "indexAxis": "y", "scales": {"x": {"beginAtZero": true}}}});
+
+        fetch('disclaimer.html')
         .then(response => {
             if (!response.ok) throw new Error('Unable to load disclaimer.html');
             return response.text();
@@ -489,8 +269,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const container = document.getElementById('disclaimer-container');
             if(container) container.innerHTML = '<div class="p-6 text-center text-rose-600 font-bold">[Security Link Error] Failed to load the external compliance disclaimer file. Please contact the DevOps team.</div>';
         });
-});
-// NTAM Backend AI Gateway Engine
+    });
+
+    // NTAM Backend AI Gateway Engine
 async function callGeminiAPI(prompt, systemInstruction) {
     try {
         const response = await fetch('/api/gemini', {
@@ -503,47 +284,50 @@ async function callGeminiAPI(prompt, systemInstruction) {
         return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
     } catch (error) { return `Network connection failed. (${error.message})`; }
 }
-// AI Chat Widget Logic
-const standardPrompt = `You are a veteran AI assistant deeply well-versed in the NTAM investment research framework. Provide institutional-grade, objective, and high-density quantitative and qualitative responses regarding Bank of America's (BAC) latest 2026 earnings reports and conference call summaries. Enclose key phrases in <b> tags, and strictly avoid markdown formatting.`;
-function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
-function appendMessage(text, isUser) {
-    const msgDiv = document.createElement('div');
-    msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
-    msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
-    document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
-}
-function showTypingIndicator() {
-    const ind = document.createElement('div'); ind.id = 'typing-indicator';
-    ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
-    ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
-    document.getElementById('chat-messages').appendChild(ind);
-}
-async function handleChatSubmit(e) {
-    e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
-    input.value = ''; appendMessage(text, true); showTypingIndicator();
-    const res = await callGeminiAPI(text, standardPrompt);
-    document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
-}
-// Contextual Text Highlight Explainer Mechanism
-let selectedText = "";
-document.addEventListener('mouseup', function(e) {
-    const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
-    if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
-    if (text.length > 1 && text.length < 50) {
-        selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
-        tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${window.scrollY + rect.top - 40}px`;
-        tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
-    } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
-});
-document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
-async function explainSelectedTerm() {
-    document.getElementById('selection-tooltip').classList.add('hidden');
-    document.getElementById('explain-term-title').textContent = selectedText;
-    document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
-    const res = await callGeminiAPI(`Explain this Bank of America (BAC) financial/earnings related term: ${selectedText}`, "You are a Bank of America (BAC) banking and financial services expert. Explain the term using accessible yet professional English. Limit your response to 150 words, and wrap key emphasis points in <b> tags.");
-    document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
-}
-function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
+
+    // AI Chat Widget Logic
+    const standardPrompt = "You are a senior AI assistant for NTAM bank research about Bank of America (BAC). Answer objectively in English. Report date: 2026-10-15; reporting period: 3Q2026; period ended: 2026-09-30; earnings publication date: 2026-10-14. This page has no live market data. Knowledge dated 15 October 2026; no live data. Use We believe for analysis. Distinguish issuer actuals, non-GAAP adjustments, consensus and guidance. {\"company\":\"Bank of America\",\"period\":\"3Q2026\",\"release_date\":\"2026-10-14\",\"actuals\":{\"units\":\"USD billion unless specified\",\"revenue\":29.958,\"revenue_yoy_pct\":3,\"revenue_q2\":31.558,\"revenue_q3_2025\":29.04,\"net_income\":6.933,\"net_income_common\":6.541,\"net_income_q3_2025\":8.332,\"eps_gaap_usd\":0.91,\"eps_prior_year_usd\":1.04,\"eps_adjusted_usd\":1.08,\"adjusted_net_income_rounded\":8.1,\"regulatory_settlement_charge\":1.2,\"settlement_charge_per_share_usd\":0.17,\"settlement_tax_deductible\":false,\"nii_gaap\":16.449,\"nii_fte_rounded\":16.6,\"nii_yoy_pct\":8,\"net_interest_yield_fte_pct\":2.16,\"noninterest_expenses\":19.722,\"adjusted_noninterest_expenses_rounded\":18.5,\"efficiency_pct\":66,\"adjusted_efficiency_pct\":62,\"roe_pct\":9.4,\"adjusted_roe_pct\":11.1,\"rotce_pct\":12.6,\"adjusted_rotce_pct\":14.9,\"roa_pct\":0.79,\"adjusted_roa_pct\":0.93,\"bvps_usd\":39.26,\"tbvps_usd\":29.14,\"pretax_income\":8.967,\"credit_provision\":1.269,\"net_chargeoffs\":1.349,\"nco_ratio_pct\":0.44,\"card_chargeoff_rate_pct\":3.22,\"credit_allowance\":14.184,\"loan_loss_allowance_ratio_pct\":1.04,\"nonperforming_loans\":5.544,\"criticized_commercial_exposure\":19.9,\"net_income_q2\":9.074,\"eps_q2_usd\":1.21,\"nii_q2\":15.997,\"nii_q3_2025\":15.233,\"expenses_q2\":18.627,\"expenses_q3_2025\":17.337,\"roe_q2_pct\":12.7,\"roe_q3_2025_pct\":11.4,\"rotce_q2_pct\":17.0,\"rotce_q3_2025_pct\":15.3},\"segments\":{\"consumer_banking\":{\"revenue\":11.572,\"revenue_yoy_pct\":4,\"net_income\":3.521,\"average_deposits\":948.6,\"average_loans\":321.0,\"card_spend\":265.7,\"card_spend_yoy_pct\":8,\"consumer_investment_assets\":664.4,\"net_checking_accounts_added_min\":200000},\"wealth_investment_management\":{\"revenue\":7.118,\"revenue_yoy_pct\":13,\"net_income\":1.54,\"pretax_margin_pct\":29,\"aum_flows\":20.0,\"client_balances\":5056.8,\"aum_rounded\":2400,\"asset_management_fees_rounded\":4.5,\"fees_yoy_pct\":16,\"average_loans\":278.6},\"global_banking\":{\"revenue\":6.205,\"net_income\":1.99,\"corporation_investment_banking_fees_rounded\":1.8,\"ib_fees_yoy_pct\":-11,\"average_deposits\":668.6,\"average_loans\":418.9},\"global_markets\":{\"revenue\":5.867,\"revenue_yoy_pct\":-6,\"net_income\":1.235,\"sales_trading_rounded\":5.1,\"sales_trading_yoy_pct\":-5,\"ficc_rounded\":2.6,\"ficc_yoy_pct\":-17,\"equities_rounded\":2.5,\"equities_yoy_pct\":11},\"all_other\":{\"net_loss\":-1.353,\"contains_regulatory_charge\":1.2}},\"capital\":{\"cet1_standardized_pct\":10.9,\"cet1_capital_rounded\":198,\"cet1_capital_qoq_change\":-3.2,\"average_global_liquidity_sources\":914,\"average_deposits\":2022.083,\"average_loans\":1226.018,\"ending_deposits\":2038.758,\"ending_loans\":1251.26,\"capital_return_rounded\":8.3,\"buybacks_rounded\":6.0,\"dividends_paid_rounded\":2.2,\"dividend_per_share_usd\":0.32,\"cet1_q2_pct\":11.2,\"cet1_q3_2025_pct\":11.6,\"cet1_capital\":198.407},\"eeo_multiples\":{\"columns\":[\"LTM\",\"NTM\",\"FY2026\",\"FY2027\",\"FY2028\"],\"pe_adj\":[11.73,10.23,11.32,9.89,8.77],\"pb\":[1.31,1.28,1.28,1.19,1.1],\"dividend_yield_pct\":[2.26,2.54,2.31,2.58,2.88],\"price_cashflow\":[3.96,null,null,null,null]},\"anr\":{\"as_of\":\"2026-10-15\",\"last_price_usd\":51.39,\"consensus_score\":4.57,\"buys_count\":24,\"holds_count\":6,\"sells_count\":0,\"target_price_usd\":65.35,\"return_potential_pct\":27.2},\"brokers\":[{\"broker\":\"UBS\",\"rating\":\"Buy\",\"items\":[{\"label\":\"Analyst / Date\",\"text\":\"Erika P Najarian · 2026/10/14\"},{\"label\":\"Target Price\",\"text\":\"US$67.00\"},{\"label\":\"Implied Price Upside\",\"text\":\"30.4%\"}]},{\"broker\":\"Citi\",\"rating\":\"Buy\",\"items\":[{\"label\":\"Analyst / Date\",\"text\":\"Benjamin Gerlinger · 2026/10/14\"},{\"label\":\"Target Price\",\"text\":\"US$66.00\"},{\"label\":\"Implied Price Upside\",\"text\":\"28.4%\"}]},{\"broker\":\"Goldman Sachs\",\"rating\":\"Buy\",\"items\":[{\"label\":\"Analyst / Date\",\"text\":\"Richard N Ramsden · 2026/10/14\"},{\"label\":\"Target Price\",\"text\":\"US$63.00\"},{\"label\":\"Implied Price Upside\",\"text\":\"22.6%\"}]}],\"broker_timing\":\"Cards use announcement-day or later dates displayed on ANR. Intraday chronology for announcement-day entries is unknown.\",\"guidance_status\":\"No new numerical company guidance was verified in reviewed official materials.\",\"sources\":[\"https://investor.bankofamerica.com/regulatory-and-other-filings/select-sec-filings/content/0000070858-26-000481/bac09302026ex991.htm\",\"https://investor.bankofamerica.com/regulatory-and-other-filings/select-sec-filings/content/0000070858-26-000481/bac09302026ex992.htm\"]} ANR is broad consensus. No original broker thesis is supplied; do not invent one. Price upside excludes dividends. MS peer quote date is not shown. Distinguish company actuals, guidance, dated consensus and analytical views. Do not invent missing figures, broker theses, ratings, prices or dates. Use only these Wall Street rating labels when verified: Overweight, Buy, Neutral, Sell, Underweight. Prefer verified broker evidence in this order: UBS, Morgan Stanley, JP Morgan, Citi, HSBC; use other institutions only when preferred evidence does not fill the available slots. Never turn the absence of supplied evidence into a rating. In Our Views use We believe. Use \u003cb> for emphasis and no markdown. Omit calculator attribution, site-classification explanations and repeated disclaimer wording.";
+    function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
+    function appendMessage(text, isUser) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
+        msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
+        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+    }
+    function showTypingIndicator() {
+        const ind = document.createElement('div'); ind.id = 'typing-indicator';
+        ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
+        ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
+        document.getElementById('chat-messages').appendChild(ind);
+    }
+    async function handleChatSubmit(e) {
+        e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
+        input.value = ''; appendMessage(text, true); showTypingIndicator();
+        const res = await callGeminiAPI(text, standardPrompt);
+        document.getElementById('typing-indicator')?.remove(); appendMessage(res, false);
+    }
+
+    // Contextual Text Highlight Explainer Mechanism
+    let selectedText = "";
+    document.addEventListener('mouseup', function(e) {
+        const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
+        if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
+        if (text.length > 1 && text.length < 50) {
+            selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
+            tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${window.scrollY + rect.top - 40}px`;
+            tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
+        } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+    });
+    document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
+    async function explainSelectedTerm() {
+        document.getElementById('selection-tooltip').classList.add('hidden');
+        document.getElementById('explain-term-title').textContent = selectedText;
+        document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
+        const res = await callGeminiAPI("Explain this Bank of America (BAC) financial/earnings related term: " + selectedText, "You are a Bank of America banking and financial-services expert. Explain the term using accessible yet professional English. Limit your response to 150 words, and wrap key emphasis points in \u003cb> tags.");
+        document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
+    }
+    function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
 </script>
 </body>
 </html>
+
