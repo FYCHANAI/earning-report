@@ -1,0 +1,36 @@
+{
+  "report": "Five-bank report real-browser QA status",
+  "checked_on": "2026-10-15",
+  "status": "blocked_not_completed",
+  "checks_completed": {
+    "real_browser_initial_pi_gate": false,
+    "real_browser_report_body": false,
+    "isolated_presentation_fixture_rendering": false
+  },
+  "attempts": [
+    {
+      "route": "Local headless Chromium via Playwright",
+      "result": "Browser did not launch; the executor sandbox blocks required local IPC sockets."
+    },
+    {
+      "route": "Reviewed execution route",
+      "result": "Execution environment wrapper failed before the browser command started."
+    },
+    {
+      "route": "Cloud browser to local HTTP server",
+      "result": "Connection refused; cloud browser could not reach the isolated workspace service."
+    },
+    {
+      "route": "Cloud browser local file URL",
+      "result": "The browser security policy blocks file URLs; no attempt was made to bypass it."
+    }
+  ],
+  "safety": {
+    "pi_acceptance_performed": false,
+    "pi_storage_written": false,
+    "live_gate_hidden_or_removed": false,
+    "live_ai_api_called": false
+  },
+  "successful_separate_checks": "research/banks-2026-q3-validation.json records static structure, source-ledger reconciliation and mocked DOM tests. Mocked PI visibility and tab behavior are not real-browser access-flow evidence.",
+  "next_step": "Run research/validate-banks-browser.cjs in an authorized environment that supports Chromium and serves this repository over local HTTP. Keep the real report PI gate active."
+}
