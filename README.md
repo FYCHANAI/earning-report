@@ -2,11 +2,13 @@
 
 ## TSMC Q3 2026 update — 16 October 2026
 
+The same-day editorial revision rewrites Our Views as client-facing investment analysis focused on TSM: HPC profitability, 2nm growth, internally funded expansion and shareholder distributions, and valuation catalysts. Data-reconciliation notes remain in the evidence rather than the investment conclusions. At the owner's request, BNP Paribas replaces Goldman Sachs: Alex Chang, original Outperform displayed as Buy, US$555 target dated 15 October and 31.4% price upside. The original recommendation and normalization evidence are preserved in the ledger. This revision does not refresh market dates or change the MU layout, financial tables, charts or homepage.
+
 All three TSM reports use the corresponding MU six-section layouts and cover the quarter ended 30 September, released 15 October. The homepage moves TSM first by the earnings publication date, retaining the other 24 card blocks and their relative order. The earnings-order ledger also catches up with the five bank reports already published on the site; their pages are unchanged.
 
 The financials separate TIFRS parent-attributable net income from consolidated net income, NT$29.43 diluted ordinary-share EPS from US$4.60 ADR EPS, platform net revenue from wafer revenue, and quarterly cash flow from YTD capex. Company-presented FCF is NT$476.56bn; the precise statements yield 476.570bn, while the Bloomberg 510.249bn figure remains unreconciled. No reconciliation cause is invented. Q4 guidance is distinct from the postrelease EEO forecast snapshot.
 
-The 16 October ANR target of US$573.07 implies 35.7% price upside from the displayed 15 October quote of US$422.25. Cards use the visible HSBC, Goldman Sachs and Barclays ratings without invented theses. Peer multiples consistently use FY2027 Price/EPS, Adj+: Samsung 3.01x, TSM 18.74x, SMIC 28.64x and Intel 45.13x; businesses and adjustment bases differ.
+The 16 October ANR target of US$573.07 implies 35.7% price upside from the displayed 15 October quote of US$422.25. Cards use the visible HSBC, BNP Paribas and Barclays ratings without invented theses. Peer multiples consistently use FY2027 Price/EPS, Adj+: Samsung 3.01x, TSM 18.74x, SMIC 28.64x and Intel 45.13x; businesses and adjustment bases differ.
 
 Original PI/legal/API components and disclaimer loading are preserved. SC/EN retain their existing typing/submission and tooltip fixes; TC gains the corresponding current MU behavior. Original screenshots are not committed. Validation distinguishes static/mocked execution from actual browser and production observations.
 

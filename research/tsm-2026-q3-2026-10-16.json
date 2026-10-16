@@ -438,7 +438,7 @@
       "priority_limitation": "Only approximately the first 24 of a longer scrollable list are visible. The screenshot cannot establish whether UBS/MS/JPM/Citi coverage exists; it only does not reveal those rows. Do not claim those firms do not cover TSM.",
       "recommended_card_order": [
         "HSBC",
-        "Goldman Sachs",
+        "BNP Paribas",
         "Barclays"
       ],
       "analysts": [
@@ -453,14 +453,14 @@
           "price_return_recalculated_pct": 69.53463587921847
         },
         {
-          "firm": "Goldman Sachs",
-          "analyst": "Evelyn Yu",
-          "rating_raw": "buy",
+          "firm": "BNP Paribas",
+          "analyst": "Alex Chang",
+          "rating_raw": "outperform",
           "rating_standard": "Buy",
-          "target_price": 660.0,
-          "date": "2026-10-05",
-          "row": 19,
-          "price_return_recalculated_pct": 56.30550621669628
+          "target_price": 555.0,
+          "date": "2026-10-15",
+          "row": 14,
+          "price_return_recalculated_pct": 31.438721136767313
         },
         {
           "firm": "Barclays",
@@ -1079,8 +1079,8 @@
     "guidance": "Q4 revenue52.3–54.3bnUSD, GM65–67%, OM56.5–58.5%, USD/NTD31.8 and approximate FY2026 USD revenue growth44% are company guidance. Q3 exceeded the prior company guidance high by2.0%; this is not a consensus beat.",
     "market_data": "ANR dated2026-10-16, with10/15 displayed reference quoteUSD422.25; not independently certified as an exchange close. EEO snapshot date/forecast cutoff is not visible; reception date10/16 is not a forecast timestamp. No prerelease surprise claim.",
     "peers": "Common FY2027 Bloomberg Price/EPS Adj+ values are transcribed directly. Samsung/Intel are not pure foundry businesses. No cross-currency quote/EPS division or extra ADR conversion. Rolling four-quarter windows differ across screenshots.",
-    "brokers": "HSBC is the only preferred bank visible in the cropped ANR. Goldman Sachs and Barclays fill remaining slots; UBS/MS/JPM/Citi coverage is unknown outside visible rows. No original broker thesis supplied, so only rating/date/target/return are presented.",
-    "ratings": "HSBC buy→Buy and Goldman Sachs buy→Buy use green badges; Barclays overweight→Overweight uses blue. Raw values retained in evidence; no public classification parentheticals.",
+    "brokers": "HSBC is the only preferred bank visible in the cropped ANR. At the owner's explicit request on 16 October, BNP Paribas replaces Goldman Sachs in the middle card; Barclays remains third. UBS/MS/JPM/Citi coverage is unknown outside visible rows. No original broker thesis supplied, so only rating/date/target/return are presented.",
+    "ratings": "HSBC buy→Buy and BNP Paribas outperform→Buy use green badges; Barclays overweight→Overweight uses blue. BNP is a display normalization under the owner's five-label convention, not a claim that its raw rating reads Buy. Original rating and historical mapping evidence are retained internally, without public classification parentheticals.",
     "frontend": "Preserve each TSM PI/legal DOM, gate/functions, disclaimer/loader and API adapter. Required MU migration supplies TC frontend fixes; SC/EN retain existing viewport clamp and typing/submission fixes absent from their older MU masters.",
     "confidentiality": "Original Bloomberg images are not committed."
   },
@@ -1089,7 +1089,7 @@
     "consensus_price_return_pct": 35.71817643576081,
     "bank_price_returns_pct": {
       "HSBC": 69.53463587921847,
-      "Goldman Sachs": 56.30550621669628,
+      "BNP Paribas": 31.438721136767313,
       "Barclays": 57.489638839550025
     },
     "gross_profit_yoy_pct": 68.61622685173386,
@@ -1101,7 +1101,8 @@
       "TSM": 18.74,
       "SMIC": 28.64,
       "Intel": 45.13
-    }
+    },
+    "q3_company_summary_ocf_to_capex_times": 2.0752464971458227
   },
   "template": {
     "masters": [
@@ -1141,5 +1142,66 @@
       "risks": 4
     }
   },
-  "validation_record": "research/tsm-2026-q3-validation.json"
+  "validation_record": "research/tsm-2026-q3-validation.json",
+  "editorial_revisions": [
+    {
+      "date_hkt": "2026-10-16",
+      "base_commit": "ddcc20d27f842113fe41165c3e844ac5ec2ae4b4",
+      "request": "Rewrite client-facing Our Views, particularly points2–4, to focus on TSM investment conclusions. Replace Goldman Sachs with BNP Paribas.",
+      "scope": "All four view headings/bodies and source intro, the middle broker card and synchronized AI company context across three languages. The financial snapshot, charts, valuation section, risks, homepage and legal/API/UI components remain unchanged.",
+      "removed_card": {
+        "firm": "Goldman Sachs",
+        "analyst": "Evelyn Yu",
+        "rating_raw": "buy",
+        "rating_standard": "Buy",
+        "target_price": 660.0,
+        "date": "2026-10-05",
+        "row": 19,
+        "price_return_recalculated_pct": 56.30550621669628
+      },
+      "new_card": {
+        "firm": "BNP Paribas",
+        "analyst": "Alex Chang",
+        "rating_raw": "outperform",
+        "rating_standard": "Buy",
+        "target_price": 555.0,
+        "date": "2026-10-15",
+        "row": 14,
+        "price_return_recalculated_pct": 31.438721136767313
+      },
+      "view_topics": [
+        "HPC demand and operating profitability",
+        "2nm contribution and high-margin growth",
+        "Internal funding of expansion and dividends",
+        "TSM-specific valuation, earnings catalysts and execution risks"
+      ],
+      "new_derived_metric": "Company-summary OCF919.77 / capex443.21 = 2.075246497 times, displayed2.1x.",
+      "inference_boundaries": "Yield/utilization improvement is conditional; potential upward earnings revisions are house analysis. Cash generation supports financing flexibility and distributions but does not establish a new dividend commitment. No historical valuation discount, proprietary price target, guaranteed return or broker thesis is invented.",
+      "rating_normalization_evidence": {
+        "url": "https://www.adlittle.com/sites/default/files/viewpoints/ADL_Exane-Super_Fast_Broadband_report_2011_Summary.pdf",
+        "document": "2011 report authored by Exane BNP Paribas with Arthur D. Little, hosted by coauthor",
+        "pdf_page": 11,
+        "printed_page": 88,
+        "meaning": "Historical disclosure associates Outperform with Buy for regulatory reporting, while explicitly retaining its sector-relative meaning.",
+        "limitation": "Historical corroboration only, not verification of the current BNP framework or rating thresholds. Current raw TSM recommendation, analyst, date and target come directly from the owner's 16 October ANR screenshot."
+      },
+      "focused_verification": {
+        "tsm.html": {
+          "html_tags_and_attributes_identical": true,
+          "styles_and_all_content_outside_views_broker_and_ai_context_identical": true,
+          "client_view_scope_checked": true
+        },
+        "tsm-sc.html": {
+          "html_tags_and_attributes_identical": true,
+          "styles_and_all_content_outside_views_broker_and_ai_context_identical": true,
+          "client_view_scope_checked": true
+        },
+        "tsm-en.html": {
+          "html_tags_and_attributes_identical": true,
+          "styles_and_all_content_outside_views_broker_and_ai_context_identical": true,
+          "client_view_scope_checked": true
+        }
+      }
+    }
+  ]
 }

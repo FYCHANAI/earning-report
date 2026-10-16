@@ -15,7 +15,7 @@ import subprocess
 from lxml import html
 
 ROOT = Path(__file__).resolve().parents[1]
-BASE = 'ad89d471022695fb16e9f3e4dac66fc280d044c5'
+BASE = 'ddcc20d27f842113fe41165c3e844ac5ec2ae4b4'
 LEDGER = json.loads((ROOT/'research/tsm-2026-q3-2026-10-16.json').read_text())
 OFFICIAL, BLOOMBERG = LEDGER['official'], LEDGER['bloomberg']
 F, ANR = OFFICIAL['quarterly'], BLOOMBERG['anr']
@@ -248,7 +248,7 @@ check('evidence:quarter_release_dates_and_adr_basis', OFFICIAL['quarter_end'] ==
 check('evidence:profit_statement_reconciles', all(F['net_revenue'][i]-F['cost_of_revenue'][i] == F['gross_profit'][i] and F['gross_profit'][i]-F['operating_expenses'][i]+F['other_operating_income_expenses'][i] == F['operating_income'][i] for i in range(3)))
 check('evidence:cashflow_arithmetic_and_presentation_difference_recorded', all(F['cash_from_operations'][i]-F['capex_cash_acquisition_ppe'][i] == F['fcf_exact_calculated'][i] for i in range(3)) and F['fcf_company_presented_ntd_bn'][0] == 476.56 and F['fcf_exact_calculated'][0] == 476570 and bool(OFFICIAL['caution_discrepancies']))
 check('evidence:mix_totals', all(sum(values[i] for values in OFFICIAL['revenue_mix'][key].values()) == 100 for key in ['wafer_revenue_technology_pct', 'net_revenue_platform_pct', 'net_revenue_geography_pct'] for i in range(3)))
-check('evidence:target_return_and_broker_selection', round((ANR['target_price_12m']/ANR['last_price']-1)*100, 1) == 35.7 and [b['firm'] for b in ANR['analysts']] == ['HSBC', 'Goldman Sachs', 'Barclays'] and ANR['priority_banks_visible'] == ['HSBC'])
+check('evidence:target_return_and_broker_selection', round((ANR['target_price_12m']/ANR['last_price']-1)*100, 1) == 35.7 and [b['firm'] for b in ANR['analysts']] == ['HSBC', 'BNP Paribas', 'Barclays'] and ANR['priority_banks_visible'] == ['HSBC'])
 tracked = subprocess.check_output(['git', 'ls-tree', '-r', '--name-only', BASE], cwd=ROOT, text=True).splitlines()
 protected = [p for p in tracked if p.startswith('api/') or p in ['CNAME', 'disclaimer.html', 'vercel.json', 'package.json', 'package-lock.json', 'mu.html', 'mu-sc.html', 'mu-en.html']]
 check('protected:infrastructure_and_mu_files_unchanged', all((ROOT/p).read_text() == oldfile(p) for p in protected), protected)
@@ -292,7 +292,7 @@ report = {'report': 'TSM Q3 2026 official/Bloomberg evidence and MU-template val
                           'Financial fact transcription and primary-source provenance are recorded separately in the source ledger.',
                           'EEO snapshot forecast cutoff is unknown; estimates are not verified prerelease consensus.',
                           'ANR 2026/10/16 shows 10/15 quote US$422.25; not independently established here as an official closing price.',
-                          'Screen-visible broker coverage is incomplete; HSBC/Goldman/Barclays use readable evidence only.',
+                          'Screen-visible broker coverage is incomplete; HSBC/BNP/Barclays use readable evidence only.',
                           'Quarterly exact financial-statement FCF differs from company summary presentation by NT$0.010bn.',
                           'Desktop/mobile browser review and production HTTP comparison, if completed, are recorded separately.']}
 destination = ROOT/'research/tsm-2026-q3-validation.json'
