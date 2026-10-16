@@ -1,7 +1,7 @@
 {
   "report": "TSM Q3 2026 official/Bloomberg evidence and MU-template validation",
   "checked_on": "2026-10-16",
-  "base_commit": "ad89d471022695fb16e9f3e4dac66fc280d044c5",
+  "base_commit": "ddcc20d27f842113fe41165c3e844ac5ec2ae4b4",
   "status": "pass",
   "checks": [
     {
@@ -167,9 +167,9 @@
           "return_pct": 69.5
         },
         {
-          "firm": "Goldman Sachs",
+          "firm": "BNP Paribas",
           "ok": true,
-          "return_pct": 56.3
+          "return_pct": 31.4
         },
         {
           "firm": "Barclays",
@@ -406,9 +406,9 @@
           "return_pct": 69.5
         },
         {
-          "firm": "Goldman Sachs",
+          "firm": "BNP Paribas",
           "ok": true,
-          "return_pct": 56.3
+          "return_pct": 31.4
         },
         {
           "firm": "Barclays",
@@ -645,9 +645,9 @@
           "return_pct": 69.5
         },
         {
-          "firm": "Goldman Sachs",
+          "firm": "BNP Paribas",
           "ok": true,
-          "return_pct": 56.3
+          "return_pct": 31.4
         },
         {
           "firm": "Barclays",
@@ -762,8 +762,8 @@
       "status": "pass",
       "detail": [
         "README.md",
-        "index.html",
-        "research/homepage-earnings-order-2026-10-08.json",
+        "research/tsm-2026-q3-2026-10-16.json",
+        "research/validate-tsm-2026-q3.py",
         "tsm-en.html",
         "tsm-sc.html",
         "tsm.html"
@@ -819,7 +819,7 @@
   ],
   "page_details": {
     "tsm.html": {
-      "sha256": "bd52d1546d6c95258ecf4e7262e39581e2d3e81b79d057340741d4035b1bf206",
+      "sha256": "f4e4e6ffacddcadf7e9306611adc422af21f79d5da71feead1f160ac80ddd0dd",
       "mock_charts": [
         {
           "canvasId": "segmentRevenueChart",
@@ -983,7 +983,7 @@
       ]
     },
     "tsm-sc.html": {
-      "sha256": "ee3789ac451093ba077f68ad98351d75ac9ff822736d971205fc70b5e9598446",
+      "sha256": "29c9924456fb363cb9f2cc5e15edff57b0add679e87359c8052236c62b508498",
       "mock_charts": [
         {
           "canvasId": "segmentRevenueChart",
@@ -1147,7 +1147,7 @@
       ]
     },
     "tsm-en.html": {
-      "sha256": "dc77fa1912e805c8a474b1e198ad163cd5f5e3cd421af082006d71ad3c39b58a",
+      "sha256": "cb3aa996026234117640ff2d747ec4520c306a9bb1e844cf5dca128b0aea7679",
       "mock_charts": [
         {
           "canvasId": "segmentRevenueChart",
@@ -1317,7 +1317,7 @@
     "Financial fact transcription and primary-source provenance are recorded separately in the source ledger.",
     "EEO snapshot forecast cutoff is unknown; estimates are not verified prerelease consensus.",
     "ANR 2026/10/16 shows 10/15 quote US$422.25; not independently established here as an official closing price.",
-    "Screen-visible broker coverage is incomplete; HSBC/Goldman/Barclays use readable evidence only.",
+    "Screen-visible broker coverage is incomplete; HSBC/BNP/Barclays use readable evidence only.",
     "Quarterly exact financial-statement FCF differs from company summary presentation by NT$0.010bn.",
     "Desktop/mobile browser review and production HTTP comparison, if completed, are recorded separately."
   ]
