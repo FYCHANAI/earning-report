@@ -1,5 +1,20 @@
 # NTAM investment research website
 
+## TSMC Q3 2026 update — 16 October 2026
+
+All three TSM reports use the corresponding MU six-section layouts and cover the quarter ended 30 September, released 15 October. The homepage moves TSM first by the earnings publication date, retaining the other 24 card blocks and their relative order. The earnings-order ledger also catches up with the five bank reports already published on the site; their pages are unchanged.
+
+The financials separate TIFRS parent-attributable net income from consolidated net income, NT$29.43 diluted ordinary-share EPS from US$4.60 ADR EPS, platform net revenue from wafer revenue, and quarterly cash flow from YTD capex. Company-presented FCF is NT$476.56bn; the precise statements yield 476.570bn, while the Bloomberg 510.249bn figure remains unreconciled. No reconciliation cause is invented. Q4 guidance is distinct from the postrelease EEO forecast snapshot.
+
+The 16 October ANR target of US$573.07 implies 35.7% price upside from the displayed 15 October quote of US$422.25. Cards use the visible HSBC, Goldman Sachs and Barclays ratings without invented theses. Peer multiples consistently use FY2027 Price/EPS, Adj+: Samsung 3.01x, TSM 18.74x, SMIC 28.64x and Intel 45.13x; businesses and adjustment bases differ.
+
+Original PI/legal/API components and disclaimer loading are preserved. SC/EN retain their existing typing/submission and tooltip fixes; TC gains the corresponding current MU behavior. Original screenshots are not committed. Validation distinguishes static/mocked execution from actual browser and production observations.
+
+- [TSM source and calculation ledger](research/tsm-2026-q3-2026-10-16.json)
+- [TSM validation](research/tsm-2026-q3-validation.json)
+- [Earnings updates and reminder calendar](research/earnings-update-calendar-2026-10-16.json)
+- [Homepage earnings-date order](research/homepage-earnings-order-2026-10-08.json)
+
 ## Johnson & Johnson Q3 2026 update — 14 October 2026
 
 The three JNJ reports use their corresponding MU language masters and cover the quarter ended 27 September, announced on 13 October. Official Chinese branding is 強生 / 强生. JNJ moves to second on the homepage after UNH under the stable same-day earnings-publication rule; the other 24 cards retain their content and relative order.

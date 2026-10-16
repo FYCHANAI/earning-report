@@ -1,0 +1,1145 @@
+{
+  "report": "TSMC Q3 2026 three-language update in the corresponding MU layouts",
+  "updated_on": "2026-10-16",
+  "base_commit": "ad89d471022695fb16e9f3e4dac66fc280d044c5",
+  "official": {
+    "company": "Taiwan Semiconductor Manufacturing Company Limited",
+    "ticker": "TSM",
+    "report": "Q3 2026",
+    "quarter_end": "2026-09-30",
+    "release_date": "2026-10-15",
+    "research_as_of": "2026-10-16 Asia/Hong_Kong",
+    "status": "Official-source facts verified; no third-party consensus or market-reaction data used",
+    "accounting_basis": "Consolidated TIFRS; unaudited condensed financial statements; EPS diluted",
+    "sources": {
+      "quarterly_page": {
+        "url": "https://investor.tsmc.com/english/quarterly-results/2026/q3",
+        "ref": "turn27view0"
+      },
+      "financial_statements": {
+        "url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/3a94d1034b9e6b22446b674f7aaf3d088a12a193/FS.pdf",
+        "ref": "turn28view0",
+        "pages": "1 balance sheet; 2 quarterly income; 3 YTD income; 4 cash flow"
+      },
+      "presentation": {
+        "url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/9f58506f6f114f91cefbf86820cc63297b39b130/3Q26%20Presentation%20(E).pdf",
+        "ref": "turn29view2",
+        "pages": "4 income; 5 technology; 6 platform; 8 cash flow; 9 Q4 guidance; 10 full-year growth"
+      },
+      "management_report": {
+        "url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/f83780000ddc0c3b48e57a87eab6814c4ab35058/3Q26%20ManagementReport.pdf",
+        "ref": "turn29view0",
+        "pages": "1 summary; 2 mix and margin; 3 profit analysis; 4 liquidity; 5 cash flow and capex"
+      },
+      "earnings_release": {
+        "url": "https://investor.tsmc.com/english/encrypt/files/encrypt_file/reports/2026-10/526b65af7305df2dde6b9ece6812b1fdf1e49f9b/3Q26%20EarningsRelease.pdf",
+        "ref": "turn30view0"
+      },
+      "sec_release": {
+        "url": "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000726/a3q26e_withguidancexfinal.htm",
+        "ref": "turn31search1"
+      },
+      "conference_calendar": {
+        "url": "https://investor.tsmc.com/english/quarterly-results/teleconference",
+        "ref": "turn31search2",
+        "conference_local_datetime": "2026-10-15 14:00 Asia/Taipei"
+      }
+    },
+    "quarterly": {
+      "period_order": [
+        "Q3 2026",
+        "Q2 2026",
+        "Q3 2025"
+      ],
+      "unit": "NTD million unless otherwise stated",
+      "net_revenue": [
+        1494243,
+        1270381,
+        989918
+      ],
+      "net_revenue_usd_bn": [
+        46.72,
+        40.2,
+        33.1
+      ],
+      "cost_of_revenue": [
+        501864,
+        410070,
+        401375
+      ],
+      "gross_profit": [
+        992379,
+        860311,
+        588543
+      ],
+      "gross_margin_pct": [
+        66.4,
+        67.7,
+        59.5
+      ],
+      "operating_expenses": [
+        116436,
+        98982,
+        87765
+      ],
+      "other_operating_income_expenses": [
+        502,
+        5274,
+        -93
+      ],
+      "operating_income": [
+        876445,
+        766603,
+        500685
+      ],
+      "operating_margin_pct": [
+        58.7,
+        60.3,
+        50.6
+      ],
+      "nonoperating_income": [
+        34594,
+        95827,
+        24684
+      ],
+      "net_income_including_noncontrolling": [
+        763341,
+        706781,
+        451755
+      ],
+      "net_income_attributable_to_parent": [
+        763064,
+        706562,
+        452302
+      ],
+      "net_margin_parent_pct": [
+        51.1,
+        55.6,
+        45.7
+      ],
+      "eps_diluted_ntd": [
+        29.43,
+        27.25,
+        17.44
+      ],
+      "eps_diluted_usd_per_adr": [
+        4.6,
+        4.31,
+        2.92
+      ],
+      "cash_from_operations": [
+        919776,
+        783365,
+        426829
+      ],
+      "capex_cash_acquisition_ppe": [
+        443206,
+        496002,
+        287452
+      ],
+      "fcf_exact_calculated": [
+        476570,
+        287363,
+        139377
+      ],
+      "fcf_company_presented_ntd_bn": [
+        476.56,
+        287.36,
+        139.38
+      ],
+      "capex_company_presented_usd_bn": [
+        13.84,
+        15.7,
+        null
+      ],
+      "cash_equivalents_end": [
+        3621894,
+        3134218,
+        2470759
+      ],
+      "cash_and_marketable_securities_end": [
+        4016979,
+        3518013,
+        2751056
+      ],
+      "inventory_days": [
+        82,
+        87,
+        74
+      ],
+      "wafer_shipments_kpcs_12inch": [
+        4476,
+        4336,
+        4085
+      ],
+      "average_fx_usd_ntd": [
+        31.983,
+        31.6,
+        29.91
+      ]
+    },
+    "reported_changes": {
+      "revenue_ntd_yoy_pct": 50.9,
+      "revenue_ntd_qoq_pct": 17.6,
+      "revenue_usd_yoy_pct": 41.2,
+      "revenue_usd_qoq_pct": 16.2,
+      "net_income_parent_yoy_pct": 68.7,
+      "net_income_parent_qoq_pct": 8,
+      "eps_ntd_yoy_pct": 68.7,
+      "eps_ntd_qoq_pct": 8,
+      "operating_income_yoy_pct": 75,
+      "operating_income_qoq_pct": 14.3,
+      "gross_margin_yoy_pp": 6.9,
+      "gross_margin_qoq_pp": -1.3,
+      "operating_margin_yoy_pp": 8.1,
+      "operating_margin_qoq_pp": -1.6
+    },
+    "ytd_9months_2026": {
+      "unit": "NTD million",
+      "net_revenue": 3898727,
+      "net_income_parent": 2042106,
+      "operating_income": 2302014,
+      "cash_from_operations": 2402117,
+      "capex_cash_acquisition_ppe": 1289971,
+      "fcf_exact_calculated": 1112146,
+      "capex_presented_usd_bn": 40.64,
+      "average_fx_usd_ntd": 31.744
+    },
+    "revenue_mix": {
+      "period_order": [
+        "Q3 2026",
+        "Q2 2026",
+        "Q3 2025"
+      ],
+      "wafer_revenue_technology_pct": {
+        "2nm": [
+          8,
+          3,
+          0
+        ],
+        "3nm": [
+          33,
+          30,
+          23
+        ],
+        "5nm": [
+          28,
+          33,
+          37
+        ],
+        "7nm": [
+          10,
+          11,
+          14
+        ],
+        "16/20nm": [
+          6,
+          6,
+          7
+        ],
+        "28nm": [
+          6,
+          6,
+          7
+        ],
+        "40/45nm": [
+          2,
+          2,
+          3
+        ],
+        "65nm": [
+          4,
+          4,
+          4
+        ],
+        "90nm-0.13um": [
+          1,
+          2,
+          2
+        ],
+        ">=0.15um": [
+          2,
+          3,
+          3
+        ]
+      },
+      "net_revenue_platform_pct": {
+        "HPC": [
+          68,
+          66,
+          57
+        ],
+        "Smartphone": [
+          21,
+          22,
+          30
+        ],
+        "IoT": [
+          4,
+          5,
+          5
+        ],
+        "Automotive": [
+          4,
+          4,
+          5
+        ],
+        "DCE": [
+          1,
+          1,
+          1
+        ],
+        "Others": [
+          2,
+          2,
+          2
+        ]
+      },
+      "platform_qoq_growth_pct": {
+        "HPC": 22,
+        "Smartphone": 10,
+        "IoT": 5,
+        "Automotive": 23,
+        "DCE": -12,
+        "Others": -10
+      },
+      "net_revenue_geography_pct": {
+        "North America": [
+          79,
+          78,
+          76
+        ],
+        "Asia Pacific": [
+          10,
+          8,
+          9
+        ],
+        "China": [
+          5,
+          6,
+          8
+        ],
+        "Japan": [
+          3,
+          4,
+          4
+        ],
+        "EMEA": [
+          3,
+          4,
+          3
+        ]
+      },
+      "advanced_7nm_and_below_pct": 79
+    },
+    "guidance": {
+      "q4_2026_revenue_usd_bn": [
+        52.3,
+        54.3
+      ],
+      "q4_2026_revenue_midpoint_usd_bn": 53.3,
+      "q4_2026_gross_margin_pct": [
+        65,
+        67
+      ],
+      "q4_2026_operating_margin_pct": [
+        56.5,
+        58.5
+      ],
+      "q4_2026_fx_assumption_usd_ntd": 31.8,
+      "fy2026_revenue_growth_usd_pct_approximately": 44,
+      "previous_q3_2026_revenue_usd_bn": [
+        44.6,
+        45.8
+      ],
+      "previous_q3_2026_gross_margin_pct": [
+        65,
+        67
+      ],
+      "previous_q3_2026_operating_margin_pct": [
+        56,
+        58
+      ],
+      "company_demand_comment": "Q4 expected to benefit from continued leading-edge demand and steep N2 ramp."
+    },
+    "verified_interpretive_points": [
+      "N2 initial ramp is official explanation for Q3 gross margin falling 1.3pp sequentially.",
+      "Q2 benefited from VIS disposal and mark-to-market gains; their absence explains lower Q3 non-operating gains.",
+      "Q2 contained earthquake insurance claims, absent in Q3; do not attribute entire operating-margin decline to weaker demand.",
+      "Q3 other investing sources were mainly attributable to US Treasury investment tax credits. These are not operating cash flow, and cash balance growth is not equivalent to free cash flow.",
+      "HPC is a platform category, not a directly disclosed AI revenue segment.",
+      "Technology shares are of wafer revenue; platform shares are of net revenue. Do not combine denominators.",
+      "North America revenue share reflects customer location, not production location.",
+      "Quarterly NT dollar EPS growth and US dollar ADR EPS growth differ because FX differs."
+    ],
+    "calculation_rules": {
+      "fcf": "Cash from operating activities minus cash acquisitions of property, plant and equipment; do not use net investing cash flow.",
+      "target_return": "(Target price/reference price - 1)*100; Bloomberg values to be provided by separate source.",
+      "adr": "1 ADR = 5 ordinary shares. Q3 USD income translation FX31.983; balance sheet FX31.880; nine-month CF USD translation FX31.744. Do not calculate quarterly USD CF using YTD translation."
+    },
+    "caution_discrepancies": [
+      "Financial statements show Q3 OCF NT919.776bn and PP&E acquisition NT443.206bn, yielding exact FCF NT476.570bn. Management report/presentation display OCF919.77, capex443.21, FCF476.56bn. Preserve official presented figure if using summary table, and log NT0.010bn discrepancy rather than silently adjusting a component.",
+      "Q3 parent-attributable profit is NT763.064bn; consolidated net income including noncontrolling interests is NT763.341bn.",
+      "Official Q3 page currently exposes four documents and webcast but no official transcript. Current annual capex budget and numerical overseas margin dilution remain excluded pending first-party evidence.",
+      "No verified prerelease market consensus or latest stock-reaction data in this research task; Bloomberg postrelease snapshots must not be relabelled prerelease consensus."
+    ],
+    "derived": {
+      "q4_revenue_midpoint_qoq_pct": 14.08390410958904,
+      "q3_revenue_vs_prior_guidance_upper_pct": 2.008733624454151,
+      "q3_revenue_vs_prior_guidance_midpoint_pct": 3.362831858407067,
+      "q3_fcf_exact_qoq_pct": 65.84250582016473,
+      "q3_fcf_exact_yoy_pct": 241.92872568644756,
+      "q3_ocf_qoq_pct": 17.413466264129738,
+      "q3_ocf_yoy_pct": 115.49051259403652,
+      "q3_usd_adr_eps_yoy_pct_from_rounded_values": 57.53424657534245,
+      "q3_usd_adr_eps_qoq_pct_from_rounded_values": 6.728538283062657
+    }
+  },
+  "bloomberg": {
+    "verification": {
+      "method": "Direct visual reading of all five supplied PNGs; TSM ANR rows additionally enlarged for reading.",
+      "received_date_hkt": "2026-10-16",
+      "received_date_is_not_source_date": true,
+      "no_website_or_historical_numbers_used": true,
+      "scope": "Read-only evidence extraction; no website files changed."
+    },
+    "anr": {
+      "file": "TSM ANR.png",
+      "security": "TSM US Equity",
+      "company": "Taiwan Semiconductor Manufacturing Co Ltd",
+      "as_of": "2026-10-16",
+      "currency": "USD",
+      "last_price": 422.25,
+      "price_header_date_raw": "On 15-Oct",
+      "reference_price_date": "2026-10-15",
+      "reference_price_date_basis": "Header explicitly says On 15-Oct; year from ANR as-of 10/16/26. Do not call live price.",
+      "consensus_rating": 4.88,
+      "buys_percent": 96.9,
+      "buys_count": 31,
+      "holds_percent": 3.1,
+      "holds_count": 1,
+      "sells_percent": 0.0,
+      "sells_count": 0,
+      "rating_count_sum": 32,
+      "target_price_12m": 573.07,
+      "target_coverage_raw": "25/35",
+      "return_potential_display_pct": 35.7,
+      "ltm_return_display_pct": 42.3,
+      "entitlement_raw": "Entitled to 37 of 40 sources",
+      "priority_banks_visible": [
+        "HSBC"
+      ],
+      "priority_banks_not_visible": [
+        "UBS",
+        "Morgan Stanley",
+        "JP Morgan",
+        "Citi"
+      ],
+      "priority_limitation": "Only approximately the first 24 of a longer scrollable list are visible. The screenshot cannot establish whether UBS/MS/JPM/Citi coverage exists; it only does not reveal those rows. Do not claim those firms do not cover TSM.",
+      "recommended_card_order": [
+        "HSBC",
+        "Goldman Sachs",
+        "Barclays"
+      ],
+      "analysts": [
+        {
+          "firm": "HSBC",
+          "analyst": "Frank Lee",
+          "rating_raw": "buy",
+          "rating_standard": "Buy",
+          "target_price": 715.86,
+          "date": "2026-10-15",
+          "row": 7,
+          "price_return_recalculated_pct": 69.53463587921847
+        },
+        {
+          "firm": "Goldman Sachs",
+          "analyst": "Evelyn Yu",
+          "rating_raw": "buy",
+          "rating_standard": "Buy",
+          "target_price": 660.0,
+          "date": "2026-10-05",
+          "row": 19,
+          "price_return_recalculated_pct": 56.30550621669628
+        },
+        {
+          "firm": "Barclays",
+          "analyst": "Simon Coles",
+          "rating_raw": "overweight",
+          "rating_standard": "Overweight",
+          "target_price": 665.0,
+          "date": "2026-10-15",
+          "row": 15,
+          "price_return_recalculated_pct": 57.489638839550025
+        }
+      ],
+      "other_readable_rows": [
+        {
+          "firm": "BOC International (truncated)",
+          "analyst": "Szeho Ng",
+          "rating_raw": "buy",
+          "target_price": 650,
+          "date": "2026-10-16"
+        },
+        {
+          "firm": "Huatai Research",
+          "analyst": "Leping Huang",
+          "rating_raw": "buy",
+          "target_price": 570,
+          "date": "2026-10-16"
+        },
+        {
+          "firm": "D.A. Davidson",
+          "analyst": "Gil B Luria",
+          "rating_raw": "buy",
+          "target_price": 500,
+          "date": "2026-10-15"
+        },
+        {
+          "firm": "Needham",
+          "analyst": "Charles Shi",
+          "rating_raw": "buy",
+          "target_price": 560,
+          "date": "2026-10-15"
+        },
+        {
+          "firm": "Bernstein",
+          "analyst": "Mark Li",
+          "rating_raw": "outperform",
+          "target_price": 554,
+          "date": "2026-10-15"
+        },
+        {
+          "firm": "Stifel",
+          "analyst": "Sahej Singh",
+          "rating_raw": "buy",
+          "target_price": 520,
+          "date": "2026-10-15"
+        },
+        {
+          "firm": "TD Cowen",
+          "analyst": "Krish Sankar",
+          "rating_raw": "hold",
+          "target_price": 440,
+          "date": "2026-10-15"
+        },
+        {
+          "firm": "BNP Paribas",
+          "analyst": "Alex Chang",
+          "rating_raw": "outperform",
+          "target_price": 555,
+          "date": "2026-10-15"
+        },
+        {
+          "firm": "DBS Bank",
+          "analyst": "Jim Au",
+          "rating_raw": "buy",
+          "target_price": 453,
+          "date": "2026-07-20"
+        }
+      ],
+      "bank_thesis_available": false,
+      "source_line_tc": "來源：Bloomberg ANR（2026/10/16）；以 10/15 股價 US$422.25 計算。",
+      "target_return_recalculated_pct": 35.71817643576081
+    },
+    "eeo": {
+      "TSM": {
+        "file": "TSM EEO(1).png",
+        "security": "TSM US Equity",
+        "currency_selector": "TWD",
+        "periodicity": "Quarters",
+        "source_selector": "Standard",
+        "consolidation": "Csld C",
+        "price_header": {
+          "currency": "USD",
+          "price": 422.25,
+          "date_raw": "On 15-Oct"
+        },
+        "columns": [
+          "Q3 2026 Act",
+          "Q3 2026 Est",
+          "Q4 2026 Est",
+          "Q1 2027 Est",
+          "Q2 2027 Est"
+        ],
+        "period_end_dates": [
+          "2026-09-30",
+          "2026-09-30",
+          "2026-12-31",
+          "2027-03-31",
+          "2027-06-30"
+        ],
+        "row_units": "Financial totals below retain Bloomberg B/T notation; currency is TWD. EPS and per-share display are subject to TSM US ADS denominator; do not directly equate to Taiwan common-share EPS.",
+        "rows": {
+          "EPS_Adj+": [
+            null,
+            141.889,
+            159.76,
+            164.186,
+            177.679
+          ],
+          "EPS_GAAP": [
+            null,
+            141.907,
+            159.278,
+            163.478,
+            176.939
+          ],
+          "Revenue": [
+            "1.494T",
+            "1.463T",
+            "1.653T",
+            "1.690T",
+            "1.836T"
+          ],
+          "Gross_Margin_pct": [
+            66.4,
+            66.477,
+            66.073,
+            66.184,
+            66.658
+          ],
+          "Operating_Income_EBIT": [
+            "876.445B",
+            "854.354B",
+            "955.485B",
+            "989.255B",
+            "1.084T"
+          ],
+          "EBITDA": [
+            "1.097T",
+            "1.075T",
+            "1.215T",
+            "1.432T",
+            "1.356T"
+          ],
+          "Pre_Tax_Profit": [
+            "911.039B",
+            "881.845B",
+            "986.121B",
+            "1.018T",
+            "1.116T"
+          ],
+          "Net_Income_Adj+": [
+            "763.064B",
+            "739.204B",
+            "826.816B",
+            "846.865B",
+            "918.214B"
+          ],
+          "Net_Income_GAAP": [
+            "763.064B",
+            "740.234B",
+            "825.650B",
+            "854.354B",
+            "923.760B"
+          ],
+          "Net_Debt": [
+            "-3.033T",
+            "-2.698T",
+            "-3.149T",
+            "-3.537T",
+            "-3.924T"
+          ],
+          "Free_Cash_Flow": [
+            "510.249B",
+            "367.353B",
+            "431.400B",
+            "508.629B",
+            "443.503B"
+          ],
+          "CAPEX": [
+            "-443.206B",
+            "-506.299B",
+            "-673.658B",
+            "-597.553B",
+            "-609.010B"
+          ]
+        },
+        "multiples_columns": [
+          "Last 4 Qtrs Act",
+          "Next 4 Qtrs Est",
+          "FY 2026",
+          "FY 2027",
+          "FY 2028"
+        ],
+        "multiples": {
+          "Price_EPS_Adj+": [
+            null,
+            19.61,
+            25.06,
+            18.74,
+            14.66
+          ],
+          "Price_Book": [
+            null,
+            9.18,
+            9.2,
+            6.69,
+            4.8
+          ],
+          "Price_Cash_Flow": [
+            null,
+            14.54,
+            20.44,
+            14.61,
+            11.07
+          ],
+          "EV_Revenue": [
+            null,
+            9.47,
+            12.32,
+            8.99,
+            7.09
+          ],
+          "EV_EBITDA": [
+            null,
+            12.45,
+            16.73,
+            12.26,
+            9.65
+          ],
+          "EV_EBIT": [
+            null,
+            16.1,
+            21.0,
+            15.24,
+            11.84
+          ],
+          "Dividend_Yield_pct": [
+            null,
+            1.06,
+            0.96,
+            1.19,
+            1.42
+          ]
+        },
+        "limits": [
+          "Actual Q3 EPS rows are blank in this screenshot. Use verified official actual EPS, not the adjacent estimate.",
+          "EEO contains Q3 actual and estimate concurrently and no explicit estimate cutoff timestamp. It is a post-release snapshot, not independently evidenced pre-release consensus.",
+          "The EEO screenshot has no explicit snapshot date field. The 15-Oct header is the security price date, not proof of a forecast cutoff date.",
+          "Currency selector TWD applies to fundamental rows even though the security price header is USD. Avoid converting without a verified basis.",
+          "TSM US ADS ratio must be independently verified from official source before any per-share conversion; expected five ordinary shares per ADS is not established by this screenshot alone."
+        ]
+      },
+      "INTC": {
+        "file": "INTC EEO(3).png",
+        "security": "INTC US Equity",
+        "currency_selector": "USD",
+        "source_selector": "Standard",
+        "price_header": {
+          "price": 95.37,
+          "date_raw": "On 15-Oct"
+        },
+        "columns": [
+          "Q2 2026 Act",
+          "Q3 2026 Est",
+          "Q4 2026 Est",
+          "Q1 2027 Est",
+          "Q2 2027 Est"
+        ],
+        "period_end_dates": [
+          "2026-06-30",
+          "2026-09-30",
+          "2026-12-31",
+          "2027-03-31",
+          "2027-06-30"
+        ],
+        "rows": {
+          "EPS_Adj+": [
+            0.42,
+            0.39,
+            0.428,
+            0.412,
+            0.485
+          ],
+          "EPS_GAAP": [
+            -2.16,
+            0.273,
+            0.285,
+            0.247,
+            0.363
+          ],
+          "Revenue": [
+            "16.128B",
+            "16.514B",
+            "17.051B",
+            "16.860B",
+            "17.816B"
+          ],
+          "Gross_Margin_pct": [
+            41.8,
+            42.011,
+            42.737,
+            42.729,
+            43.491
+          ],
+          "Operating_Income_EBIT": [
+            "2.770B",
+            "2.632B",
+            "2.853B",
+            "2.745B",
+            "3.199B"
+          ],
+          "Net_Income_Adj+": [
+            "2.197B",
+            "2.043B",
+            "2.255B",
+            "2.219B",
+            "2.584B"
+          ],
+          "Net_Income_GAAP": [
+            "-11.033B",
+            "1.361B",
+            "1.481B",
+            "1.220B",
+            "1.822B"
+          ]
+        },
+        "multiples_columns": [
+          "Last 4 Qtrs Act",
+          "Next 4 Qtrs Est",
+          "FY 2026",
+          "FY 2027",
+          "FY 2028"
+        ],
+        "multiples": {
+          "Price_EPS_Adj+": [
+            87.5,
+            55.64,
+            62.62,
+            45.13,
+            30.19
+          ],
+          "Price_Book": [
+            5.49,
+            4.75,
+            4.48,
+            4.0,
+            3.31
+          ],
+          "EV_EBITDA": [
+            43.25,
+            21.68,
+            24.69,
+            19.94,
+            15.66
+          ]
+        },
+        "snapshot_date_explicit": null
+      },
+      "SMIC": {
+        "file": "981 EEO.png",
+        "security": "981 HK Equity",
+        "currency_selector": "USD",
+        "source_selector": "Standard",
+        "price_header": null,
+        "columns": [
+          "Q2 2026 Act",
+          "Q3 2026 Est",
+          "Q4 2026 Est",
+          "Q1 2027 Est",
+          "Q2 2027 Est"
+        ],
+        "period_end_dates": [
+          "2026-06-30",
+          "2026-09-30",
+          "2026-12-31",
+          "2027-03-31",
+          "2027-06-30"
+        ],
+        "rows": {
+          "EPS_Adj+": [
+            0.06,
+            0.051,
+            0.05,
+            0.048,
+            0.054
+          ],
+          "EPS_GAAP": [
+            0.06,
+            0.052,
+            0.052,
+            0.047,
+            0.054
+          ],
+          "Revenue": [
+            "3.006B",
+            "3.109B",
+            "3.232B",
+            "3.205B",
+            "3.474B"
+          ],
+          "Gross_Margin_pct": [
+            25.3,
+            25.899,
+            25.116,
+            23.669,
+            24.643
+          ],
+          "Operating_Income_EBIT": [
+            "534.179M",
+            "541.769M",
+            "495.923M",
+            "483.000M",
+            "557.200M"
+          ],
+          "Net_Income_Adj+": [
+            "479.197M",
+            "426.909M",
+            "420.636M",
+            "372.889M",
+            "436.000M"
+          ],
+          "Net_Income_GAAP": [
+            "479.197M",
+            "422.875M",
+            "421.375M",
+            "370.286M",
+            "431.571M"
+          ]
+        },
+        "multiples_columns": [
+          "Last 4 Qtrs Act",
+          "Next 4 Qtrs Est",
+          "FY 2026",
+          "FY 2027",
+          "FY 2028"
+        ],
+        "multiples": {
+          "Price_EPS_Adj+": [
+            55.38,
+            32.74,
+            37.13,
+            28.64,
+            22.92
+          ],
+          "Price_Book": [
+            2.26,
+            2.3,
+            2.2,
+            2.03,
+            1.83
+          ],
+          "EV_EBITDA": [
+            16.93,
+            13.22,
+            15.46,
+            12.89,
+            11.28
+          ]
+        },
+        "snapshot_date_explicit": null,
+        "limitations": [
+          "Hong Kong listing is 981 HK but fundamentals selector explicitly USD, not HKD.",
+          "No quoted share price or quote date visible."
+        ]
+      },
+      "SAMSUNG": {
+        "file": "SAMSUNG EEO(1).png",
+        "security": "005930 KS Equity",
+        "company": "Samsung Electronics Co Ltd",
+        "currency_selector": "KRW",
+        "source_selector": "Standard",
+        "consolidation": "Csld C",
+        "price_header": {
+          "currency": "KRW",
+          "price": 214500,
+          "time_raw": "At 08:48",
+          "date_raw": null
+        },
+        "columns": [
+          "Q2 2026 Act",
+          "Q3 2026 Est",
+          "Q4 2026 Est",
+          "Q1 2027 Est",
+          "Q2 2027 Est"
+        ],
+        "period_end_dates": [
+          "2026-06-30",
+          "2026-09-30",
+          "2026-12-31",
+          "2027-03-31",
+          "2027-06-30"
+        ],
+        "rows": {
+          "EPS_Adj+": [
+            "10.849k",
+            "13.585k",
+            "14.960k",
+            "16.451k",
+            "17.847k"
+          ],
+          "EPS_GAAP": [
+            "10.849k",
+            "13.352k",
+            "14.720k",
+            "16.204k",
+            "17.617k"
+          ],
+          "Revenue": [
+            "171.000T",
+            "199.809T",
+            "210.401T",
+            "225.053T",
+            "235.553T"
+          ],
+          "Gross_Margin_pct": [
+            69.766,
+            71.114,
+            74.492,
+            73.402,
+            74.696
+          ],
+          "Operating_Income_EBIT": [
+            "89.400T",
+            "109.270T",
+            "120.453T",
+            "130.800T",
+            "140.413T"
+          ],
+          "Net_Income_Adj+": [
+            "71.270T",
+            "87.024T",
+            "96.045T",
+            "103.864T",
+            "111.989T"
+          ],
+          "Net_Income_GAAP": [
+            "71.270T",
+            "89.162T",
+            "98.402T",
+            "107.592T",
+            "114.091T"
+          ]
+        },
+        "multiples_columns": [
+          "Last 4 Qtrs Act",
+          "Next 4 Qtrs Est",
+          "FY 2026",
+          "FY 2027",
+          "FY 2028"
+        ],
+        "multiples": {
+          "Price_EPS_Adj+": [
+            9.1,
+            3.41,
+            4.58,
+            3.01,
+            2.75
+          ],
+          "Price_Book": [
+            2.14,
+            2.19,
+            1.99,
+            1.28,
+            0.93
+          ],
+          "EV_EBITDA": [
+            4.7,
+            2.01,
+            2.59,
+            1.75,
+            1.57
+          ]
+        },
+        "snapshot_date_explicit": null,
+        "limitations": [
+          "Quote has time 08:48 but no date shown; do not invent a same-day closing timestamp.",
+          "Company-wide Bloomberg multiple includes businesses beyond foundry; not pure-play foundry comparison.",
+          "Values are transcribed literally from screenshot; notably FY2027 P/E 3.01 and not 30.1."
+        ]
+      }
+    },
+    "comparison": {
+      "metric_raw": "Price/EPS, Adj+",
+      "period": "FY 2027",
+      "values": {
+        "TSM": 18.74,
+        "INTC": 45.13,
+        "SMIC": 28.64,
+        "Samsung Electronics": 3.01
+      },
+      "recommended_label_tc": "2027 年預測市盈率（Bloomberg EPS Adj+，倍）",
+      "limits": [
+        "Use the displayed Bloomberg multiples directly; do not divide USD price by TWD or KRW EPS.",
+        "Four companies all expose FY2027 values in the screenshots, avoiding the nonaligned next-four-quarters windows.",
+        "TSM latest actual quarter is Q3 2026 while peers are Q2 2026; next-four-quarters windows differ.",
+        "Adjustment definitions may differ by company even under Bloomberg EPS Adj+.",
+        "Business mix differs, especially Samsung Electronics and Intel versus pure foundry companies.",
+        "Screenshots do not independently prove exact forecast timestamps."
+      ]
+    }
+  },
+  "methodology": {
+    "accounting": "Consolidated unaudited TIFRS, quarterly amounts unless expressly marked nine-month YTD. Net income in the table is attributable to the parent.",
+    "eps": "NT$29.43 diluted ordinary-share EPS and US$4.60 diluted ADR EPS are separate reported measures. One ADR represents five ordinary shares. Their YoY growth differs because of FX. Do not use the blank Bloomberg Q3 Actual EPS cell or adjacent estimate141.889 as actual EPS.",
+    "cash_flow": "Report uses company-presented FCF NT$476.56bn, derived from summary OCF919.77 minus capex443.21. Exact statements give919.776−443.206=476.570bn, a0.010bn presentation difference. Bloomberg510.249bn is not reconciled; do not invent a cause or mix it with official OCF. US investment tax credits are investing cash flow.",
+    "mix": "Platform shares use net revenue; technology shares use wafer revenue. HPC68% is not independently disclosed AI revenue; North America79% is customer location, not production location.",
+    "guidance": "Q4 revenue52.3–54.3bnUSD, GM65–67%, OM56.5–58.5%, USD/NTD31.8 and approximate FY2026 USD revenue growth44% are company guidance. Q3 exceeded the prior company guidance high by2.0%; this is not a consensus beat.",
+    "market_data": "ANR dated2026-10-16, with10/15 displayed reference quoteUSD422.25; not independently certified as an exchange close. EEO snapshot date/forecast cutoff is not visible; reception date10/16 is not a forecast timestamp. No prerelease surprise claim.",
+    "peers": "Common FY2027 Bloomberg Price/EPS Adj+ values are transcribed directly. Samsung/Intel are not pure foundry businesses. No cross-currency quote/EPS division or extra ADR conversion. Rolling four-quarter windows differ across screenshots.",
+    "brokers": "HSBC is the only preferred bank visible in the cropped ANR. Goldman Sachs and Barclays fill remaining slots; UBS/MS/JPM/Citi coverage is unknown outside visible rows. No original broker thesis supplied, so only rating/date/target/return are presented.",
+    "ratings": "HSBC buy→Buy and Goldman Sachs buy→Buy use green badges; Barclays overweight→Overweight uses blue. Raw values retained in evidence; no public classification parentheticals.",
+    "frontend": "Preserve each TSM PI/legal DOM, gate/functions, disclaimer/loader and API adapter. Required MU migration supplies TC frontend fixes; SC/EN retain existing viewport clamp and typing/submission fixes absent from their older MU masters.",
+    "confidentiality": "Original Bloomberg images are not committed."
+  },
+  "calculations": {
+    "target_return_formula": "(target/reference_price−1)×100; price return excludes dividends",
+    "consensus_price_return_pct": 35.71817643576081,
+    "bank_price_returns_pct": {
+      "HSBC": 69.53463587921847,
+      "Goldman Sachs": 56.30550621669628,
+      "Barclays": 57.489638839550025
+    },
+    "gross_profit_yoy_pct": 68.61622685173386,
+    "official_fcf_summary_ntdbn": 476.56,
+    "exact_fcf_ntdbn": 476.57,
+    "q4_revenue_midpoint_qoq_pct": 14.08390410958904,
+    "peer_fy2027_pe": {
+      "Samsung": 3.01,
+      "TSM": 18.74,
+      "SMIC": 28.64,
+      "Intel": 45.13
+    }
+  },
+  "template": {
+    "masters": [
+      "mu.html",
+      "mu-sc.html",
+      "mu-en.html"
+    ],
+    "reports": [
+      "tsm.html",
+      "tsm-sc.html",
+      "tsm-en.html"
+    ],
+    "tabs": [
+      "our-comments",
+      "financials",
+      "valuation",
+      "street-comments",
+      "risks",
+      "disclaimer"
+    ],
+    "chart_ids": [
+      "segmentRevenueChart",
+      "profitabilityChart",
+      "valuationChart"
+    ],
+    "chart_keys": [
+      "tsmSegment",
+      "tsmProfit",
+      "tsmValuation"
+    ],
+    "cardinality": {
+      "views": 4,
+      "kpis": 4,
+      "financial_rows": 5,
+      "charts": 3,
+      "brokers": 3,
+      "risks": 4
+    }
+  },
+  "validation_record": "research/tsm-2026-q3-validation.json"
+}

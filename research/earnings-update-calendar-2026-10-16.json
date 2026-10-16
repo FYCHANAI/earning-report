@@ -1,0 +1,220 @@
+{
+  "recorded_on": "2026-10-16",
+  "purpose": "Official earnings dates and the existing NTAM research-update reminders recorded during the 16 October 2026 review.",
+  "schedule_timezone": "Asia/Shanghai",
+  "reminder_delivery": "flexible",
+  "reminder_timing_note": "08:00 HKT is the planned approximate morning delivery time; flexible reminders may run within an hour, not necessarily exactly at 08:00.",
+  "reminder_scope": "Five reminders already configured by the main workflow are documented here. This record does not create, change or repeat any automation and contains no private automation IDs.",
+  "source_policy": "Company investor-relations pages, company announcements, company-hosted management materials and SEC filings only. Announcement dates and times are recorded separately from reminder dates and times.",
+  "verification_note": "Future dates remain subject to company changes. Recheck the official announcement before updating a report. Earnings-call times are not treated as exact financial-release times.",
+  "scheduled_reminder_groups": [
+    {
+      "tickers": [
+        "NFLX"
+      ],
+      "reminder_hkt": "2026-10-21T08:00:00+08:00"
+    },
+    {
+      "tickers": [
+        "TSLA",
+        "META"
+      ],
+      "reminder_hkt": "2026-10-22T08:00:00+08:00"
+    },
+    {
+      "tickers": [
+        "KO"
+      ],
+      "reminder_hkt": "2026-10-28T08:00:00+08:00"
+    },
+    {
+      "tickers": [
+        "MSFT"
+      ],
+      "reminder_hkt": "2026-10-29T08:00:00+08:00"
+    },
+    {
+      "tickers": [
+        "AMZN",
+        "INTC"
+      ],
+      "reminder_hkt": "2026-10-30T08:00:00+08:00"
+    }
+  ],
+  "entries": [
+    {
+      "ticker": "TSM",
+      "reportingperiod": "2026 Q3",
+      "release_localdate": "2026-10-15",
+      "release_date_basis": "Published financial results; Taiwan date.",
+      "reminder_hkt": null,
+      "status": "updating_now",
+      "reminder_status": "not_scheduled_already_in_progress",
+      "source_url": "https://investor.tsmc.com/english/quarterly-results/2026/q3",
+      "additional_source_urls": [
+        "https://www.sec.gov/Archives/edgar/data/1046179/000104617926000726/a3q26e_withguidancexfinal.htm",
+        "https://investor.tsmc.com/english/financial-calendar"
+      ],
+      "source_limitation": "The Q3 report update is in progress, not yet represented as deployed by this calendar. No repeat reminder is scheduled for this already released quarter. The reviewed official calendar does not yet list the next quarterly earnings date."
+    },
+    {
+      "ticker": "NFLX",
+      "reportingperiod": "2026 Q3",
+      "release_localdate": "2026-10-20",
+      "release_localtime": "13:01",
+      "release_timezone": "America/Los_Angeles",
+      "release_time_precision": "approximately",
+      "reminder_hkt": "2026-10-21T08:00:00+08:00",
+      "status": "awaiting_results_reminder_scheduled",
+      "reminder_status": "scheduled",
+      "source_url": "https://ir.netflix.net/investor-news-and-events/financial-releases/press-release-details/2026/Netflix-to-Announce-Third-Quarter-2026-Financial-Results/default.aspx",
+      "source_limitation": "The company specifies approximately 1:01 p.m. Pacific Time for release; the later management interview is a separate event. Results were not yet released at this review."
+    },
+    {
+      "ticker": "TSLA",
+      "reportingperiod": "2026 Q3",
+      "release_localdate": "2026-10-21",
+      "release_timing": "after U.S. market close",
+      "reminder_hkt": "2026-10-22T08:00:00+08:00",
+      "status": "awaiting_results_reminder_scheduled",
+      "reminder_status": "scheduled_shared_with_META",
+      "source_url": "https://ir.tesla.com/press-release/tesla-third-quarter-2026-production-deliveries-and-deployments",
+      "additional_source_urls": [
+        "https://ir.tesla.com/"
+      ],
+      "source_limitation": "The 2 October production and delivery announcement is not the Q3 financial report. No exact financial-release time is given; the 5:30 p.m. Eastern Time webcast is separate."
+    },
+    {
+      "ticker": "META",
+      "reportingperiod": "2026 Q3",
+      "release_localdate": "2026-10-21",
+      "release_timing": "after U.S. market close",
+      "reminder_hkt": "2026-10-22T08:00:00+08:00",
+      "status": "awaiting_results_reminder_scheduled",
+      "reminder_status": "scheduled_shared_with_TSLA",
+      "source_url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-to-Announce-Third-Quarter-2026-Results/default.aspx",
+      "source_limitation": "No exact financial-release time is given; the 1:30 p.m. Pacific Time / 4:30 p.m. Eastern Time conference call is separate. Results were not yet released at this review."
+    },
+    {
+      "ticker": "KO",
+      "reportingperiod": "2026 Q3",
+      "release_localdate": "2026-10-27",
+      "release_timing": "before the New York Stock Exchange opens",
+      "reminder_hkt": "2026-10-28T08:00:00+08:00",
+      "status": "awaiting_results_reminder_scheduled",
+      "reminder_status": "scheduled",
+      "source_url": "https://investors.coca-colacompany.com/news-events/press-releases/detail/1173/the-coca-cola-company-announces-timing-of-third-quarter-2026-earnings-release",
+      "source_limitation": "No exact financial-release time is given. The 8:30 a.m. Eastern Time conference call is a separate event."
+    },
+    {
+      "ticker": "MSFT",
+      "reportingperiod": "FY2027 Q1",
+      "release_localdate": "2026-10-28",
+      "release_timing": "after U.S. market close",
+      "reminder_hkt": "2026-10-29T08:00:00+08:00",
+      "status": "awaiting_results_reminder_scheduled",
+      "reminder_status": "scheduled",
+      "source_url": "https://news.microsoft.com/source/2026/10/07/microsoft-announces-quarterly-earnings-release-date-69/",
+      "additional_source_urls": [
+        "https://www.microsoft.com/en-us/investor/events/fy-2027/earnings-fy-2027-q1"
+      ],
+      "source_limitation": "The quarter is fiscal 2027 Q1, not calendar 2026 Q3 as a report label. No exact financial-release time is given; the 2:30 p.m. Pacific Time webcast is separate."
+    },
+    {
+      "ticker": "AMZN",
+      "reportingperiod": "2026 Q3",
+      "release_localdate": "2026-10-29",
+      "release_date_basis": "Official Q3 financial-results conference-call date.",
+      "reminder_hkt": "2026-10-30T08:00:00+08:00",
+      "status": "awaiting_results_reminder_scheduled",
+      "reminder_status": "scheduled_shared_with_INTC",
+      "source_url": "https://press.aboutamazon.com/2026/10/amazon-com-to-webcast-third-quarter-2026-financial-results-conference-call",
+      "additional_source_urls": [
+        "https://www.aboutamazon.com/news/company-news/amazon-earnings-q3-2026-report"
+      ],
+      "source_limitation": "The official announcement confirms the results call on 29 October at 2:00 p.m. Pacific Time / 5:00 p.m. Eastern Time. It does not specify an exact separate financial-release time."
+    },
+    {
+      "ticker": "INTC",
+      "reportingperiod": "2026 Q3",
+      "release_localdate": "2026-10-29",
+      "release_timing": "promptly after U.S. market close",
+      "reminder_hkt": "2026-10-30T08:00:00+08:00",
+      "status": "awaiting_results_reminder_scheduled",
+      "reminder_status": "scheduled_shared_with_AMZN",
+      "source_url": "https://www.intc.com/news-events/press-releases/detail/1782/intel-to-report-third-quarter-2026-financial-results",
+      "source_limitation": "No exact financial-release time is given. The subsequent 2:00 p.m. Pacific Daylight Time conference call is separate."
+    },
+    {
+      "ticker": "PLTR",
+      "reportingperiod": "2026 Q3",
+      "release_localdate": "2026-11-02",
+      "release_date_basis": "Official Q3 earnings event and quarterly-results listing.",
+      "reminder_hkt": null,
+      "status": "official_date_confirmed_reminder_not_scheduled",
+      "reminder_status": "not_scheduled",
+      "source_url": "https://investors.palantir.com/financials/quarterly-results",
+      "additional_source_urls": [
+        "https://investors.palantir.com/events"
+      ],
+      "source_limitation": "The official indexed quarterly-results and event pages identify 2 November as the Q3 earnings date. Direct page extraction may expose only a dynamic shell. No exact release time is recorded from these pages."
+    },
+    {
+      "ticker": "AAPL",
+      "reportingperiod": "FY2026 Q4",
+      "release_localdate": "2026-11-02",
+      "release_date_basis": "Official FY2026 fourth-quarter results conference-call date.",
+      "reminder_hkt": null,
+      "status": "official_date_confirmed_reminder_not_scheduled",
+      "reminder_status": "not_scheduled",
+      "source_url": "https://investor.apple.com/investor-relations/default.aspx",
+      "source_limitation": "The official Investor Updates section schedules the FY2026 Q4 results call for 2 November at 2:00 p.m. Pacific Time / 5:00 p.m. Eastern Time. It does not specify an exact separate financial-release time."
+    },
+    {
+      "ticker": "AMD",
+      "reportingperiod": "2026 Q3",
+      "release_localdate": "2026-11-03",
+      "release_timing": "after U.S. market close",
+      "reminder_hkt": null,
+      "status": "official_date_confirmed_reminder_not_scheduled",
+      "reminder_status": "not_scheduled",
+      "source_url": "https://ir.amd.com/news-events/press-releases/detail/1300/amd-to-report-fiscal-third-quarter-2026-financial-results",
+      "source_limitation": "The company calls this fiscal third-quarter 2026. No exact financial-release time is given; the 5:00 p.m. Eastern Time / 2:00 p.m. Pacific Time conference call is separate."
+    },
+    {
+      "ticker": "NVDA",
+      "reportingperiod": "FY2027 Q3",
+      "release_localdate": "2026-11-17",
+      "release_date_basis": "Next earnings-call date stated by the company's investor-relations officer in the official-hosted Q2 FY2027 transcript.",
+      "reminder_hkt": null,
+      "status": "official_date_confirmed_reminder_not_scheduled",
+      "reminder_status": "not_scheduled",
+      "source_url": "https://investor.nvidia.com/files/content_files/TRANSCRIPT_-NVIDIA-Corp-NVDA-US-Q2-2027-Earnings-Call-26-August-2026-5_00-PM-ET.pdf",
+      "source_limitation": "On PDF page 15, the IR officer states that the FY2027 Q3 earnings call is scheduled for 17 November. This is company-hosted management-call evidence, not a separate future earnings-date press release, and does not specify an exact release time."
+    },
+    {
+      "ticker": "ORCL",
+      "reportingperiod": "FY2027 Q2",
+      "release_localdate": "2026-12-14",
+      "reminder_hkt": null,
+      "status": "official_date_confirmed_reminder_not_scheduled",
+      "reminder_status": "not_scheduled",
+      "source_url": "https://investor.oracle.com/faq/default.aspx",
+      "source_limitation": "The official indexed FAQ explicitly states 14 December for FY2027 Q2. Direct page extraction may expose only a dynamic shell. No release time is specified in the verified FAQ."
+    },
+    {
+      "ticker": "GOOGL",
+      "reportingperiod": "2026 Q3",
+      "release_localdate": null,
+      "reminder_hkt": null,
+      "status": "awaiting_company_original_page_date_confirmation",
+      "reminder_status": "not_scheduled",
+      "source_url": "https://abc.xyz/investor/",
+      "additional_source_urls": [
+        "https://abc.xyz/investor/news/default.aspx",
+        "https://abc.xyz/investor/events/default.aspx"
+      ],
+      "source_limitation": "The company pages did not expose a readable next-results date during this review. The 28 October date found only in external reproductions has not been adopted as an officially verified date here."
+    }
+  ]
+}
