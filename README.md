@@ -1,5 +1,19 @@
 # NTAM investment research website
 
+## Netflix Q3 2026 update — 21 October 2026
+
+All three NFLX reports use the corresponding current MU six-section layouts. The quarter ended 30 September and was released 20 October; the homepage moves NFLX first while preserving the other 24 card blocks and their relative order.
+
+The research separates reported GAAP earnings, company guidance and the supplied Bloomberg forecast snapshot. Q3 margin outperformance primarily reflects expense timing, and the prior-year Brazilian tax charge affects growth comparisons. Full-year FCF includes the first-quarter transaction termination-fee benefit. EPS and share figures reflect the ten-for-one 2025 split; the issuer's 49% EPS growth uses unrounded figures.
+
+The 21 October ANR consensus target is US$90.12 against the displayed 20 October US$68.69 reference quote, implying 31.2% price upside. Available priority banks are Morgan Stanley, JP Morgan and Citi, with only verified ratings, targets and dates. Peer FY2027 P/E distinguishes NFLX GAAP+ from peer Adj+ and Disney's fiscal period. The PSKY attachment actually shows SKYD; official disclosures confirm the October 6 ticker change and acquisition.
+
+Original PI/legal controls, API adapter and disclaimer loading remain unchanged. No original Bloomberg screenshot is committed. Static/mock checks and actual browser/production observations are recorded separately.
+
+- [NFLX source and calculation record](research/nflx-2026-q3-2026-10-21.md)
+- [Numerical recalculations](research/nflx-2026-q3-calculations.json)
+- [NFLX validation](research/nflx-2026-q3-validation.json)
+
 ## TSMC Q3 2026 update — 16 October 2026
 
 The same-day editorial revision rewrites Our Views as client-facing investment analysis focused on TSM: HPC profitability, 2nm growth, internally funded expansion and shareholder distributions, and valuation catalysts. Data-reconciliation notes remain in the evidence rather than the investment conclusions. At the owner's request, BNP Paribas replaces Goldman Sachs: Alex Chang, original Outperform displayed as Buy, US$555 target dated 15 October and 31.4% price upside. The original recommendation and normalization evidence are preserved in the ledger. This revision does not refresh market dates or change the MU layout, financial tables, charts or homepage.

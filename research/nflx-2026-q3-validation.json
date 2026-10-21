@@ -1,0 +1,1062 @@
+{
+  "report": "NFLX Q3 2026 official/Bloomberg evidence and MU-template validation",
+  "checked_on": "2026-10-21",
+  "base_commit": "9be61618d46a17ef95c8c4638982aece3c8e9003",
+  "status": "pass",
+  "checks": [
+    {
+      "check": "nflx.html:mu_layout_dom_attributes",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:mu_styles_fonts_and_dependencies",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:six_tabs_three_charts_unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:language_links_and_selected_locale",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:protected_pi_legal_dom_and_disclaimer",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:no_stale_template_facts_or_placeholders",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:dates_voice_and_four_viewpoints",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:header_quarter_consensus_rating_and_target",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:four_kpis_and_five_row_comparison",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:official_gaap_financial_values_and_changes",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:eps_growth_identified_as_company_reported",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:kpis_reconcile_official_actuals",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:fcf_reconciliation_and_non_gaap_label",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:q4_company_guidance_distinct_from_market_forecast",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:financial_table_units_and_gaap_basis",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:diluted_eps_and_split_basis",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:valuation_period_accounting_and_business_limits",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:broker_order_ratings_colors_dates_and_returns",
+      "status": "pass",
+      "detail": [
+        {
+          "firm": "Morgan Stanley",
+          "ok": true,
+          "return_pct": 16.5
+        },
+        {
+          "firm": "JP Morgan",
+          "ok": true,
+          "return_pct": 23.7
+        },
+        {
+          "firm": "Citi",
+          "ok": true,
+          "return_pct": 45.6
+        }
+      ]
+    },
+    {
+      "check": "nflx.html:compact_anr_source_no_classification_explanation",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:no_calculator_attribution",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:all_risks_same_dark_heading",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:javascript_parse_and_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:tab_switch_and_resize",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:pi_active_no_acceptance_no_live_api",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:pi_api_and_disclaimer_functions_preserved",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:mu_fixed_chat_and_chart_behavior",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:mu_tooltip_behavior",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:dated_nflx_ai_basis_and_facts",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:ai_language_format_and_snapshot_limits",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:regional_revenue_chart",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:profit_chart_dates_and_values",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:fy2027_peer_values_order_and_nflx_highlight",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:profit_chart_separate_axes",
+      "status": "pass"
+    },
+    {
+      "check": "nflx.html:responsive_chart_configuration",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:mu_layout_dom_attributes",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:mu_styles_fonts_and_dependencies",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:six_tabs_three_charts_unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:language_links_and_selected_locale",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:protected_pi_legal_dom_and_disclaimer",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:no_stale_template_facts_or_placeholders",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:dates_voice_and_four_viewpoints",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:header_quarter_consensus_rating_and_target",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:four_kpis_and_five_row_comparison",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:official_gaap_financial_values_and_changes",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:eps_growth_identified_as_company_reported",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:kpis_reconcile_official_actuals",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:fcf_reconciliation_and_non_gaap_label",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:q4_company_guidance_distinct_from_market_forecast",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:financial_table_units_and_gaap_basis",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:diluted_eps_and_split_basis",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:valuation_period_accounting_and_business_limits",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:broker_order_ratings_colors_dates_and_returns",
+      "status": "pass",
+      "detail": [
+        {
+          "firm": "Morgan Stanley",
+          "ok": true,
+          "return_pct": 16.5
+        },
+        {
+          "firm": "JP Morgan",
+          "ok": true,
+          "return_pct": 23.7
+        },
+        {
+          "firm": "Citi",
+          "ok": true,
+          "return_pct": 45.6
+        }
+      ]
+    },
+    {
+      "check": "nflx-sc.html:compact_anr_source_no_classification_explanation",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:no_calculator_attribution",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:all_risks_same_dark_heading",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:javascript_parse_and_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:tab_switch_and_resize",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:pi_active_no_acceptance_no_live_api",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:pi_api_and_disclaimer_functions_preserved",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:mu_fixed_chat_and_chart_behavior",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:mu_tooltip_behavior",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:dated_nflx_ai_basis_and_facts",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:ai_language_format_and_snapshot_limits",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:regional_revenue_chart",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:profit_chart_dates_and_values",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:fy2027_peer_values_order_and_nflx_highlight",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:profit_chart_separate_axes",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-sc.html:responsive_chart_configuration",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:mu_layout_dom_attributes",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:mu_styles_fonts_and_dependencies",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:six_tabs_three_charts_unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:language_links_and_selected_locale",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:protected_pi_legal_dom_and_disclaimer",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:no_stale_template_facts_or_placeholders",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:dates_voice_and_four_viewpoints",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:header_quarter_consensus_rating_and_target",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:four_kpis_and_five_row_comparison",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:official_gaap_financial_values_and_changes",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:eps_growth_identified_as_company_reported",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:kpis_reconcile_official_actuals",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:fcf_reconciliation_and_non_gaap_label",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:q4_company_guidance_distinct_from_market_forecast",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:financial_table_units_and_gaap_basis",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:diluted_eps_and_split_basis",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:valuation_period_accounting_and_business_limits",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:broker_order_ratings_colors_dates_and_returns",
+      "status": "pass",
+      "detail": [
+        {
+          "firm": "Morgan Stanley",
+          "ok": true,
+          "return_pct": 16.5
+        },
+        {
+          "firm": "JP Morgan",
+          "ok": true,
+          "return_pct": 23.7
+        },
+        {
+          "firm": "Citi",
+          "ok": true,
+          "return_pct": 45.6
+        }
+      ]
+    },
+    {
+      "check": "nflx-en.html:compact_anr_source_no_classification_explanation",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:no_calculator_attribution",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:all_risks_same_dark_heading",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:javascript_parse_and_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:tab_switch_and_resize",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:pi_active_no_acceptance_no_live_api",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:pi_api_and_disclaimer_functions_preserved",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:mu_fixed_chat_and_chart_behavior",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:mu_tooltip_behavior",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:dated_nflx_ai_basis_and_facts",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:ai_language_format_and_snapshot_limits",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:regional_revenue_chart",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:profit_chart_dates_and_values",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:fy2027_peer_values_order_and_nflx_highlight",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:profit_chart_separate_axes",
+      "status": "pass"
+    },
+    {
+      "check": "nflx-en.html:responsive_chart_configuration",
+      "status": "pass"
+    },
+    {
+      "check": "three_languages:financial_table_and_chart_numeric_parity",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:target_return",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:quarterly_cashflow_and_regional_revenue_reconcile",
+      "status": "pass"
+    },
+    {
+      "check": "evidence:yoy_growth_precision",
+      "status": "pass"
+    },
+    {
+      "check": "protected:infrastructure_and_mu_files_unchanged",
+      "status": "pass",
+      "detail": [
+        "CNAME",
+        "api/gemini.js",
+        "disclaimer.html",
+        "mu-en.html",
+        "mu-sc.html",
+        "mu.html"
+      ]
+    },
+    {
+      "check": "scope:only_nflx_and_homepage_html_modified",
+      "status": "pass",
+      "detail": [
+        "README.md",
+        "index.html",
+        "nflx-en.html",
+        "nflx-sc.html",
+        "nflx.html",
+        "research/homepage-earnings-order-2026-10-08.json",
+        "research/nflx-2026-q3-2026-10-21.md",
+        "research/nflx-2026-q3-calculations.json",
+        "research/nflx-2026-q3-validation.json",
+        "research/validate-nflx-2026-q3.py"
+      ]
+    },
+    {
+      "check": "homepage:nflx_first_other_order_preserved",
+      "status": "pass",
+      "detail": [
+        "NFLX",
+        "TSM",
+        "MS",
+        "BAC",
+        "UNH",
+        "JNJ",
+        "GS",
+        "C",
+        "JPM",
+        "MU",
+        "ORCL",
+        "AVGO",
+        "NIO",
+        "NVDA",
+        "AMD",
+        "MCD",
+        "PLTR",
+        "AMZN",
+        "AAPL",
+        "META",
+        "MSFT",
+        "KO",
+        "INTC",
+        "TSLA",
+        "GOOGL"
+      ]
+    },
+    {
+      "check": "homepage:nflx_date_quarter_target",
+      "status": "pass"
+    },
+    {
+      "check": "homepage:other_24_cards_and_outer_document_unchanged",
+      "status": "pass"
+    },
+    {
+      "check": "homepage:nflx_card_structure_preserved",
+      "status": "pass"
+    },
+    {
+      "check": "git_diff_whitespace",
+      "status": "pass"
+    }
+  ],
+  "page_details": {
+    "nflx.html": {
+      "sha256": "b5c88397bcfa21ec18c40a0f9cf7f65fe3ea1fe44f94a2cdea367af2417aedf3",
+      "mock_charts": [
+        {
+          "canvasId": "segmentRevenueChart",
+          "config": {
+            "type": "doughnut",
+            "data": {
+              "labels": [
+                "UCAN 美國及加拿大",
+                "EMEA 歐洲中東非洲",
+                "LATAM 拉丁美洲",
+                "APAC 亞太"
+              ],
+              "datasets": [
+                {
+                  "data": [
+                    5628.215,
+                    4106.572,
+                    1602.603,
+                    1536.786
+                  ],
+                  "backgroundColor": [
+                    "rgba(37, 99, 235, 0.85)",
+                    "rgba(16, 185, 129, 0.85)",
+                    "rgba(99, 102, 241, 0.85)",
+                    "rgba(168, 85, 247, 0.85)"
+                  ],
+                  "borderWidth": 0
+                }
+              ]
+            },
+            "options": {
+              "responsive": true,
+              "maintainAspectRatio": false,
+              "plugins": {
+                "legend": {
+                  "position": "bottom"
+                }
+              },
+              "cutout": "65%"
+            }
+          },
+          "resizeCalls": 1
+        },
+        {
+          "canvasId": "profitabilityChart",
+          "config": {
+            "type": "bar",
+            "data": {
+              "labels": [
+                "Q3 2025",
+                "Q4 2025",
+                "Q1 2026",
+                "Q2 2026",
+                "Q3 2026"
+              ],
+              "datasets": [
+                {
+                  "label": "季度營收 (百萬美元)",
+                  "data": [
+                    11510,
+                    12051,
+                    12250,
+                    12560,
+                    12874
+                  ],
+                  "backgroundColor": "#3b82f6",
+                  "borderRadius": 4
+                },
+                {
+                  "label": "營業利潤率 (Operating Margin %)",
+                  "data": [
+                    28.2,
+                    24.5,
+                    32.3,
+                    33.4,
+                    34.6
+                  ],
+                  "backgroundColor": "#10b981",
+                  "borderRadius": 4,
+                  "yAxisID": "percentageAxis"
+                }
+              ]
+            },
+            "options": {
+              "responsive": true,
+              "maintainAspectRatio": false,
+              "plugins": {
+                "legend": {
+                  "position": "bottom"
+                }
+              },
+              "scales": {
+                "y": {
+                  "beginAtZero": true,
+                  "position": "left",
+                  "grid": {
+                    "color": "#f1f5f9"
+                  }
+                },
+                "percentageAxis": {
+                  "beginAtZero": true,
+                  "max": 100,
+                  "position": "right",
+                  "grid": {
+                    "display": false
+                  }
+                }
+              }
+            }
+          },
+          "resizeCalls": 1
+        },
+        {
+          "canvasId": "valuationChart",
+          "config": {
+            "type": "bar",
+            "data": {
+              "labels": [
+                "Comcast (CMCSA, Adj+)",
+                "Skydance (SKYD, Adj+)",
+                "Disney (DIS, Adj+)",
+                "Netflix (NFLX, GAAP+)"
+              ],
+              "datasets": [
+                {
+                  "label": "FY2027 Price/EPS (x)",
+                  "data": [
+                    6.36,
+                    12.41,
+                    14.86,
+                    18.14
+                  ],
+                  "backgroundColor": [
+                    "rgba(148, 163, 184, 0.6)",
+                    "rgba(148, 163, 184, 0.6)",
+                    "rgba(148, 163, 184, 0.6)",
+                    "rgba(37, 99, 235, 0.95)"
+                  ],
+                  "borderRadius": 4
+                }
+              ]
+            },
+            "options": {
+              "indexAxis": "y",
+              "responsive": true,
+              "maintainAspectRatio": false,
+              "plugins": {
+                "legend": {
+                  "display": false
+                }
+              },
+              "scales": {
+                "x": {
+                  "beginAtZero": true
+                }
+              }
+            }
+          },
+          "resizeCalls": 1
+        }
+      ]
+    },
+    "nflx-sc.html": {
+      "sha256": "9621f51549b5ab13cd2e5772c8bbd83dcb8aca3bae129ce17a036ad2da74f27c",
+      "mock_charts": [
+        {
+          "canvasId": "segmentRevenueChart",
+          "config": {
+            "type": "doughnut",
+            "data": {
+              "labels": [
+                "UCAN 美国及加拿大",
+                "EMEA 欧洲中东非洲",
+                "LATAM 拉丁美洲",
+                "APAC 亚太"
+              ],
+              "datasets": [
+                {
+                  "data": [
+                    5628.215,
+                    4106.572,
+                    1602.603,
+                    1536.786
+                  ],
+                  "backgroundColor": [
+                    "rgba(37, 99, 235, 0.85)",
+                    "rgba(16, 185, 129, 0.85)",
+                    "rgba(99, 102, 241, 0.85)",
+                    "rgba(168, 85, 247, 0.85)"
+                  ],
+                  "borderWidth": 0
+                }
+              ]
+            },
+            "options": {
+              "responsive": true,
+              "maintainAspectRatio": false,
+              "plugins": {
+                "legend": {
+                  "position": "bottom"
+                }
+              },
+              "cutout": "65%"
+            }
+          },
+          "resizeCalls": 1
+        },
+        {
+          "canvasId": "profitabilityChart",
+          "config": {
+            "type": "bar",
+            "data": {
+              "labels": [
+                "Q3 2025",
+                "Q4 2025",
+                "Q1 2026",
+                "Q2 2026",
+                "Q3 2026"
+              ],
+              "datasets": [
+                {
+                  "label": "季度营收 (百万美元)",
+                  "data": [
+                    11510,
+                    12051,
+                    12250,
+                    12560,
+                    12874
+                  ],
+                  "backgroundColor": "#3b82f6",
+                  "borderRadius": 4
+                },
+                {
+                  "label": "营业利润率 (Operating Margin %)",
+                  "data": [
+                    28.2,
+                    24.5,
+                    32.3,
+                    33.4,
+                    34.6
+                  ],
+                  "backgroundColor": "#10b981",
+                  "borderRadius": 4,
+                  "yAxisID": "percentageAxis"
+                }
+              ]
+            },
+            "options": {
+              "responsive": true,
+              "maintainAspectRatio": false,
+              "plugins": {
+                "legend": {
+                  "position": "bottom"
+                }
+              },
+              "scales": {
+                "y": {
+                  "beginAtZero": true,
+                  "position": "left",
+                  "grid": {
+                    "color": "#f1f5f9"
+                  }
+                },
+                "percentageAxis": {
+                  "beginAtZero": true,
+                  "max": 100,
+                  "position": "right",
+                  "grid": {
+                    "display": false
+                  }
+                }
+              }
+            }
+          },
+          "resizeCalls": 1
+        },
+        {
+          "canvasId": "valuationChart",
+          "config": {
+            "type": "bar",
+            "data": {
+              "labels": [
+                "Comcast (CMCSA, Adj+)",
+                "Skydance (SKYD, Adj+)",
+                "Disney (DIS, Adj+)",
+                "Netflix (NFLX, GAAP+)"
+              ],
+              "datasets": [
+                {
+                  "label": "FY2027 Price/EPS (x)",
+                  "data": [
+                    6.36,
+                    12.41,
+                    14.86,
+                    18.14
+                  ],
+                  "backgroundColor": [
+                    "rgba(148, 163, 184, 0.6)",
+                    "rgba(148, 163, 184, 0.6)",
+                    "rgba(148, 163, 184, 0.6)",
+                    "rgba(37, 99, 235, 0.95)"
+                  ],
+                  "borderRadius": 4
+                }
+              ]
+            },
+            "options": {
+              "indexAxis": "y",
+              "responsive": true,
+              "maintainAspectRatio": false,
+              "plugins": {
+                "legend": {
+                  "display": false
+                }
+              },
+              "scales": {
+                "x": {
+                  "beginAtZero": true
+                }
+              }
+            }
+          },
+          "resizeCalls": 1
+        }
+      ]
+    },
+    "nflx-en.html": {
+      "sha256": "d7cc8a1fed283345beb659d16873905c90123a1101fa838291fd0c7ac9dd10f1",
+      "mock_charts": [
+        {
+          "canvasId": "segmentRevenueChart",
+          "config": {
+            "type": "doughnut",
+            "data": {
+              "labels": [
+                "UCAN (US & Canada)",
+                "EMEA (Europe, Middle East & Africa)",
+                "LATAM (Latin America)",
+                "APAC (Asia-Pacific)"
+              ],
+              "datasets": [
+                {
+                  "data": [
+                    5628.215,
+                    4106.572,
+                    1602.603,
+                    1536.786
+                  ],
+                  "backgroundColor": [
+                    "rgba(37, 99, 235, 0.85)",
+                    "rgba(16, 185, 129, 0.85)",
+                    "rgba(99, 102, 241, 0.85)",
+                    "rgba(168, 85, 247, 0.85)"
+                  ],
+                  "borderWidth": 0
+                }
+              ]
+            },
+            "options": {
+              "responsive": true,
+              "maintainAspectRatio": false,
+              "plugins": {
+                "legend": {
+                  "position": "bottom"
+                }
+              },
+              "cutout": "65%"
+            }
+          },
+          "resizeCalls": 1
+        },
+        {
+          "canvasId": "profitabilityChart",
+          "config": {
+            "type": "bar",
+            "data": {
+              "labels": [
+                "Q3 2025",
+                "Q4 2025",
+                "Q1 2026",
+                "Q2 2026",
+                "Q3 2026"
+              ],
+              "datasets": [
+                {
+                  "label": "Quarterly Revenue (US$ Millions)",
+                  "data": [
+                    11510,
+                    12051,
+                    12250,
+                    12560,
+                    12874
+                  ],
+                  "backgroundColor": "#3b82f6",
+                  "borderRadius": 4
+                },
+                {
+                  "label": "Operating Margin (%)",
+                  "data": [
+                    28.2,
+                    24.5,
+                    32.3,
+                    33.4,
+                    34.6
+                  ],
+                  "backgroundColor": "#10b981",
+                  "borderRadius": 4,
+                  "yAxisID": "percentageAxis"
+                }
+              ]
+            },
+            "options": {
+              "responsive": true,
+              "maintainAspectRatio": false,
+              "plugins": {
+                "legend": {
+                  "position": "bottom"
+                }
+              },
+              "scales": {
+                "y": {
+                  "beginAtZero": true,
+                  "position": "left",
+                  "grid": {
+                    "color": "#f1f5f9"
+                  }
+                },
+                "percentageAxis": {
+                  "beginAtZero": true,
+                  "max": 100,
+                  "position": "right",
+                  "grid": {
+                    "display": false
+                  }
+                }
+              }
+            }
+          },
+          "resizeCalls": 1
+        },
+        {
+          "canvasId": "valuationChart",
+          "config": {
+            "type": "bar",
+            "data": {
+              "labels": [
+                "Comcast (CMCSA, Adj+)",
+                "Skydance (SKYD, Adj+)",
+                "Disney (DIS, Adj+)",
+                "Netflix (NFLX, GAAP+)"
+              ],
+              "datasets": [
+                {
+                  "label": "FY2027 Price/EPS (x)",
+                  "data": [
+                    6.36,
+                    12.41,
+                    14.86,
+                    18.14
+                  ],
+                  "backgroundColor": [
+                    "rgba(148, 163, 184, 0.6)",
+                    "rgba(148, 163, 184, 0.6)",
+                    "rgba(148, 163, 184, 0.6)",
+                    "rgba(37, 99, 235, 0.95)"
+                  ],
+                  "borderRadius": 4
+                }
+              ]
+            },
+            "options": {
+              "indexAxis": "y",
+              "responsive": true,
+              "maintainAspectRatio": false,
+              "plugins": {
+                "legend": {
+                  "display": false
+                }
+              },
+              "scales": {
+                "x": {
+                  "beginAtZero": true
+                }
+              }
+            }
+          },
+          "resizeCalls": 1
+        }
+      ]
+    }
+  },
+  "limitations": [
+    "Fake DOM and Chart constructor only; not real-browser rendering or Chart.js rasterization.",
+    "No PI acceptance, storage write, PI modal removal/hiding, access-control bypass or live AI call.",
+    "Financial fact transcription and primary-source provenance are recorded separately in the source ledger.",
+    "EEO snapshot forecast cutoff is unknown; estimates are not verified prerelease consensus.",
+    "ANR 2026/10/21 shows 10/20 quote US$68.69; not an established post-earnings reaction.",
+    "Screen-visible broker coverage is incomplete; selected Morgan Stanley/JP Morgan/Citi cards use readable evidence only.",
+    "Peer P/E fiscal windows and accounting adjustments differ; comparison limits are disclosed.",
+    "Desktop/mobile browser review and production HTTP comparison, if completed, are recorded separately."
+  ]
+}
