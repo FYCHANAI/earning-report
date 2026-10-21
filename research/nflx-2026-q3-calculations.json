@@ -1,0 +1,28 @@
+{
+  "currency": "USD",
+  "amount_unit": "million unless EPS",
+  "target_return_formula": "(target / reference_price - 1) * 100; excludes dividends",
+  "consensus_return_pct": 31.198136555539378,
+  "broker_returns_pct": {
+    "Morgan Stanley": 16.465278788761097,
+    "JP Morgan": 23.744358713058666,
+    "Citi": 45.58159848595138
+  },
+  "revenue_yoy_pct": 11.84911054066584,
+  "revenue_qoq_pct": 2.5019072546377252,
+  "op_yoy_pct": 37.26172917268917,
+  "net_income_yoy_pct": 43.85739459016315,
+  "fcf_yoy_pct": 8.384204957422693,
+  "fcf": 2883.513,
+  "region_sum": 12874.176,
+  "eps_unrounded_yoy_pct": 48.83875616161022,
+  "eps_displayed_yoy_pct": 47.457627118644076,
+  "eps_rule": "Use issuer reported 49%; displayed EPS rounding yields a different growth rate.",
+  "attachment_sha256": {
+    "NFLX ANR.png": "eed361a7d25fdab0cff96eddc1ce959e21a7a785fac177cc4ffc00faabd338b6",
+    "NFLX EEO.png": "b1e2382ffa3c4da51afd527fae382cd77b212834dfb54700efe10b8a17f617b7",
+    "PSKY EEO.png": "775d634b239bf48521f658abcf46c50bd8bac1ece2a39f8976f624f5ae6a9692",
+    "DIS EEO.png": "05603fc0eb46307b7355d01805460477eaec0714f95ca1a35981a956c9a2cb14",
+    "CMCSA EEO.png": "fabaab826f7612716ae9af561021543f402f9054bb5e56349fdd62da788b6438"
+  }
+}
