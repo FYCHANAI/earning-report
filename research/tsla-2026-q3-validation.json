@@ -95,6 +95,10 @@
       "status": "pass"
     },
     {
+      "check": "tsla.html:peer_fiscal_end_and_basis_labels",
+      "status": "pass"
+    },
+    {
       "check": "tsla.html:AI_facts_and_no_realtime_claim",
       "status": "pass"
     },
@@ -188,6 +192,10 @@
     },
     {
       "check": "tsla-sc.html:peer_FY2027_adj_values",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:peer_fiscal_end_and_basis_labels",
       "status": "pass"
     },
     {
@@ -287,6 +295,10 @@
       "status": "pass"
     },
     {
+      "check": "tsla-en.html:peer_fiscal_end_and_basis_labels",
+      "status": "pass"
+    },
+    {
       "check": "tsla-en.html:AI_facts_and_no_realtime_claim",
       "status": "pass"
     },
@@ -315,7 +327,7 @@
       "status": "pass"
     }
   ],
-  "passed": 78,
+  "passed": 81,
   "failed": 0,
   "limitations": [
     "JavaScript behavior tested in fake DOM without accepting PI or calling live AI.",

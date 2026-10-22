@@ -182,7 +182,8 @@ for file in FILES:
   charts=[c['config'] for c in result['charts']]
   check(file+':revenue_chart_reconciles',charts[0]['data']['datasets'][0]['data']==[20560,2881,4605] and sum(charts[0]['data']['datasets'][0]['data'])==28046)
   check(file+':margin_chart', [d['data'] for d in charts[1]['data']['datasets']]==[[28095,24901,22387,28236,28046],[5.8,5.7,4.2,1.4,2.6]])
-  check(file+':peer_FY2027_adj_values',charts[2]['data']['datasets'][0]['data']==[10.99,35.73,174.01])
+  check(file+':peer_FY2027_adj_values',charts[2]['data']['datasets'][0]['data']==[10.99,35.73,174.01,32.41])
+  check(file+':peer_fiscal_end_and_basis_labels',[x[1] for x in charts[2]['data']['labels']]==['Adj+ · 12/2027']*4)
   check(file+':AI_facts_and_no_realtime_claim',all(v in result['standardPrompt'] for v in ['2026/10/22','2026/09/30','2026/10/21','No live market','386.47','407.05','174.01']))
  except Exception as e:check(file+':JS_mock_execution',False,str(e))
 check('three_language_financial_parity',all(v==TABLES[0] for v in TABLES))
