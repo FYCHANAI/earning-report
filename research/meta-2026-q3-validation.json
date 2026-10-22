@@ -1,0 +1,329 @@
+{
+  "base_commit": "481c4ce08feef7b9ac53f156e0270412ada4e23b",
+  "status": "local draft only; not committed, pushed or published",
+  "checks": [
+    {
+      "check": "meta.html:six_tabs_three_charts",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:styles_fonts_dependencies_match_mu",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:protected_pi-modal",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:protected_disclaimer",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:mu_layout_structure",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:no_stale_micron_or_old_targets",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:four_views_four_kpis_five_rows",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:official_table_values",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:broker_order_ratings_targets",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:risk_styles",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:JS_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:chart_keys_tabs_resize",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:PI_gate_never_accepted",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:disclaimer_loaded_no_live_AI",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:protected_PI_API_functions",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:protected_disclaimer_loader",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:MU_frontend_functions",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:MU_tooltip_listeners",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:revenue_chart_reconciles",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:margin_chart",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:peer_calendar_FY2027_GAAP_values",
+      "status": "pass"
+    },
+    {
+      "check": "meta.html:AI_facts_and_no_realtime_claim",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:six_tabs_three_charts",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:styles_fonts_dependencies_match_mu",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:protected_pi-modal",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:protected_disclaimer",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:mu_layout_structure",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:no_stale_micron_or_old_targets",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:four_views_four_kpis_five_rows",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:official_table_values",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:broker_order_ratings_targets",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:risk_styles",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:JS_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:chart_keys_tabs_resize",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:PI_gate_never_accepted",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:disclaimer_loaded_no_live_AI",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:protected_PI_API_functions",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:protected_disclaimer_loader",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:MU_frontend_functions",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:MU_tooltip_listeners",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:revenue_chart_reconciles",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:margin_chart",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:peer_calendar_FY2027_GAAP_values",
+      "status": "pass"
+    },
+    {
+      "check": "meta-sc.html:AI_facts_and_no_realtime_claim",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:six_tabs_three_charts",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:styles_fonts_dependencies_match_mu",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:protected_pi-modal",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:protected_disclaimer",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:mu_layout_structure",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:no_stale_micron_or_old_targets",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:four_views_four_kpis_five_rows",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:official_table_values",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:broker_order_ratings_targets",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:risk_styles",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:JS_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:chart_keys_tabs_resize",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:PI_gate_never_accepted",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:disclaimer_loaded_no_live_AI",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:protected_PI_API_functions",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:protected_disclaimer_loader",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:MU_frontend_functions",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:MU_tooltip_listeners",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:revenue_chart_reconciles",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:margin_chart",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:peer_calendar_FY2027_GAAP_values",
+      "status": "pass"
+    },
+    {
+      "check": "meta-en.html:AI_facts_and_no_realtime_claim",
+      "status": "pass"
+    },
+    {
+      "check": "three_language_financial_parity",
+      "status": "pass"
+    },
+    {
+      "check": "fcf_reconciliation",
+      "status": "pass"
+    },
+    {
+      "check": "litigation_operating_income_reconciliation",
+      "status": "pass"
+    },
+    {
+      "check": "EEO_FCF_basis_reconciliation",
+      "status": "pass"
+    },
+    {
+      "check": "growth_calculations",
+      "status": "pass"
+    },
+    {
+      "check": "homepage_META_TSLA_first_preserve_release_date_tie",
+      "status": "pass"
+    },
+    {
+      "check": "other_homepage_cards_unchanged",
+      "status": "pass"
+    }
+  ],
+  "passed": 79,
+  "failed": 0,
+  "limitations": [
+    "JavaScript behavior tested in fake DOM without accepting PI or calling live AI.",
+    "Real Chromium launch failed before page creation: socket() EPERM in process_singleton_posix. No desktop/mobile visual verification completed.",
+    "No official earnings-call transcript used; forward outlook limited to issuer release."
+  ]
+}

@@ -1,0 +1,325 @@
+{
+  "base_commit": "481c4ce08feef7b9ac53f156e0270412ada4e23b",
+  "status": "local draft only; not committed, pushed or published",
+  "checks": [
+    {
+      "check": "tsla.html:six_tabs_three_charts",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:styles_fonts_dependencies_match_mu",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:protected_pi-modal",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:protected_disclaimer",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:mu_layout_structure",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:no_stale_micron_or_old_targets",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:four_views_four_kpis_five_rows",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:official_table_values",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:broker_order_ratings_targets",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:risk_styles",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:JS_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:chart_keys_tabs_resize",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:PI_gate_never_accepted",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:disclaimer_loaded_no_live_AI",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:protected_PI_API_functions",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:protected_disclaimer_loader",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:MU_frontend_functions",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:MU_tooltip_listeners",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:revenue_chart_reconciles",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:margin_chart",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:peer_FY2027_adj_values",
+      "status": "pass"
+    },
+    {
+      "check": "tsla.html:AI_facts_and_no_realtime_claim",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:six_tabs_three_charts",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:styles_fonts_dependencies_match_mu",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:protected_pi-modal",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:protected_disclaimer",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:mu_layout_structure",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:no_stale_micron_or_old_targets",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:four_views_four_kpis_five_rows",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:official_table_values",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:broker_order_ratings_targets",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:risk_styles",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:JS_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:chart_keys_tabs_resize",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:PI_gate_never_accepted",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:disclaimer_loaded_no_live_AI",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:protected_PI_API_functions",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:protected_disclaimer_loader",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:MU_frontend_functions",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:MU_tooltip_listeners",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:revenue_chart_reconciles",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:margin_chart",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:peer_FY2027_adj_values",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-sc.html:AI_facts_and_no_realtime_claim",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:six_tabs_three_charts",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:styles_fonts_dependencies_match_mu",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:protected_pi-modal",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:protected_disclaimer",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:mu_layout_structure",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:no_stale_micron_or_old_targets",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:four_views_four_kpis_five_rows",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:official_table_values",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:broker_order_ratings_targets",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:risk_styles",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:JS_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:chart_keys_tabs_resize",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:PI_gate_never_accepted",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:disclaimer_loaded_no_live_AI",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:protected_PI_API_functions",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:protected_disclaimer_loader",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:MU_frontend_functions",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:MU_tooltip_listeners",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:revenue_chart_reconciles",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:margin_chart",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:peer_FY2027_adj_values",
+      "status": "pass"
+    },
+    {
+      "check": "tsla-en.html:AI_facts_and_no_realtime_claim",
+      "status": "pass"
+    },
+    {
+      "check": "three_language_financial_parity",
+      "status": "pass"
+    },
+    {
+      "check": "fcf_reconciliation",
+      "status": "pass"
+    },
+    {
+      "check": "non_gaap_reconciliation",
+      "status": "pass"
+    },
+    {
+      "check": "growth_calculations",
+      "status": "pass"
+    },
+    {
+      "check": "homepage_META_TSLA_first_preserve_release_date_tie",
+      "status": "pass"
+    },
+    {
+      "check": "other_homepage_cards_unchanged",
+      "status": "pass"
+    }
+  ],
+  "passed": 78,
+  "failed": 0,
+  "limitations": [
+    "JavaScript behavior tested in fake DOM without accepting PI or calling live AI.",
+    "Real Chromium launch failed before page creation: socket() EPERM in process_singleton_posix. No desktop/mobile visual verification completed.",
+    "No official earnings-call transcript used; forward outlook limited to issuer deck."
+  ]
+}
