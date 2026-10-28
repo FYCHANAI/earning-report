@@ -1,0 +1,365 @@
+{
+  "base_commit": "572a637ff64bb588b54fc733db2958cc84e878fc",
+  "status": "Local draft only; not pushed or published",
+  "checks": [
+    {
+      "check": "ko.html:six_tabs_three_charts",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:styles_fonts_dependencies_match_mu",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:protected_pi-modal",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:protected_disclaimer",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:mu_layout_structure",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:no_stale_MU_Q2_data",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:four_views_four_kpis_five_rows",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:official_table_values",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:broker_order_ratings_targets",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:risk_styles",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:internal_links_exist",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:JS_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:chart_keys_tabs_resize",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:PI_gate_never_accepted",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:disclaimer_loaded_no_live_AI",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:protected_PI_API_functions",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:protected_disclaimer_loader",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:MU_frontend_functions",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:MU_tooltip_listeners",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:regional_growth_chart",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:revenue_margin_chart",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:FY2027_peer_values",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:AI_facts_no_live_claim",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:six_tabs_three_charts",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:styles_fonts_dependencies_match_mu",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:protected_pi-modal",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:protected_disclaimer",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:mu_layout_structure",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:no_stale_MU_Q2_data",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:four_views_four_kpis_five_rows",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:official_table_values",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:broker_order_ratings_targets",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:risk_styles",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:internal_links_exist",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:JS_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:chart_keys_tabs_resize",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:PI_gate_never_accepted",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:disclaimer_loaded_no_live_AI",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:protected_PI_API_functions",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:protected_disclaimer_loader",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:MU_frontend_functions",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:MU_tooltip_listeners",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:regional_growth_chart",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:revenue_margin_chart",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:FY2027_peer_values",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:AI_facts_no_live_claim",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:six_tabs_three_charts",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:unique_ids",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:language_links",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:styles_fonts_dependencies_match_mu",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:protected_pi-modal",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:protected_disclaimer",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:mu_layout_structure",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:no_stale_MU_Q2_data",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:four_views_four_kpis_five_rows",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:official_table_values",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:broker_order_ratings_targets",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:risk_styles",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:internal_links_exist",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:JS_mock_execution",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:chart_keys_tabs_resize",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:PI_gate_never_accepted",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:disclaimer_loaded_no_live_AI",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:protected_PI_API_functions",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:protected_disclaimer_loader",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:MU_frontend_functions",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:MU_tooltip_listeners",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:regional_growth_chart",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:revenue_margin_chart",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:FY2027_peer_values",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:AI_facts_no_live_claim",
+      "status": "pass"
+    },
+    {
+      "check": "three_language_financial_parity",
+      "status": "pass"
+    },
+    {
+      "check": "YTD_FCF_math",
+      "status": "pass"
+    },
+    {
+      "check": "margins_rounding",
+      "status": "pass"
+    },
+    {
+      "check": "target_returns",
+      "status": "pass"
+    },
+    {
+      "check": "homepage_KO_first",
+      "status": "pass"
+    },
+    {
+      "check": "homepage_other24_unchanged",
+      "status": "pass"
+    },
+    {
+      "check": "homepage_KO_current",
+      "status": "pass"
+    },
+    {
+      "check": "unchanged:mu.html",
+      "status": "pass"
+    },
+    {
+      "check": "unchanged:mu-sc.html",
+      "status": "pass"
+    },
+    {
+      "check": "unchanged:mu-en.html",
+      "status": "pass"
+    },
+    {
+      "check": "unchanged:CNAME",
+      "status": "pass"
+    },
+    {
+      "check": "unchanged:disclaimer.html",
+      "status": "pass"
+    },
+    {
+      "check": "unchanged:api/gemini.js",
+      "status": "pass"
+    }
+  ],
+  "passed": 88,
+  "failed": 0,
+  "limitations": [
+    "Source PNGs were visually inspected by parent in cloud; local supported materialization failed on Windows os.setxattr. No original screenshot is committed.",
+    "Runtime checks use fake DOM and Chart instances. No PI acceptance, storage bypass or live AI call.",
+    "Actual browser observations recorded separately."
+  ]
+}

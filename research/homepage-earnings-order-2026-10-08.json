@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "verified_on": "2026-10-22",
-  "scope": "Local TSLA and META Q3 2026 updates, both released 2026-10-21. META precedes TSLA, preserving their main-branch relative order for tied release dates. Other23 cards retain content and relative order. Not published.",
+  "verified_on": "2026-10-28",
+  "scope": "KO Q3 2026 local draft. KO moves first by 2026-10-27 earnings publication date; all other homepage cards retain their source blocks and relative order. Not pushed or published.",
   "sort_policy": {
     "key": "earnings_publication_date of the quarter covered by the report",
     "direction": "descending",
@@ -12,14 +12,24 @@
   },
   "records": [
     {
+      "ticker": "KO",
+      "file": "ko.html",
+      "covered_reporting_period": "2026 Q3",
+      "earnings_publication_date": "2026-10-27",
+      "source_url": "https://investors.coca-colacompany.com/news-events/press-releases/detail/1176/coca-cola-reports-third-quarter-2026-results-and-raises-full-year-guidance",
+      "homepage_report_update_label": "2026年10月28日更新",
+      "prior_position": 23,
+      "position": 1
+    },
+    {
       "ticker": "META",
       "file": "meta.html",
       "covered_reporting_period": "2026 Q3",
       "earnings_publication_date": "2026-10-21",
       "source_url": "https://investor.atmeta.com/investor-news/press-release-details/2026/Meta-Reports-Third-Quarter-2026-Results/default.aspx",
       "homepage_report_update_label": "2026年10月22日更新",
-      "prior_position": 20,
-      "position": 1
+      "prior_position": 1,
+      "position": 2
     },
     {
       "ticker": "TSLA",
@@ -28,8 +38,8 @@
       "earnings_publication_date": "2026-10-21",
       "source_url": "https://ir.tesla.com/press-release/tesla-releases-third-quarter-2026-financial-results",
       "homepage_report_update_label": "2026年10月22日更新",
-      "prior_position": 24,
-      "position": 2
+      "prior_position": 2,
+      "position": 3
     },
     {
       "ticker": "NFLX",
@@ -38,8 +48,8 @@
       "earnings_publication_date": "2026-10-20",
       "source_url": "https://s22.q4cdn.com/959853165/files/doc_financials/2026/q3/FINAL-Q3-26-Shareholder-Letter.pdf",
       "homepage_report_update_label": "2026年10月21日更新",
-      "prior_position": 1,
-      "position": 3
+      "prior_position": 3,
+      "position": 4
     },
     {
       "ticker": "TSM",
@@ -48,8 +58,8 @@
       "earnings_publication_date": "2026-10-15",
       "source_url": "https://investor.tsmc.com/english/quarterly-results/2026/q3",
       "homepage_report_update_label": "2026年10月16日更新",
-      "prior_position": 2,
-      "position": 4
+      "prior_position": 4,
+      "position": 5
     },
     {
       "ticker": "MS",
@@ -58,8 +68,8 @@
       "earnings_publication_date": "2026-10-14",
       "source_url": "https://www.morganstanley.com/press-releases/morgan-stanley-reports-third-quarter-2026",
       "homepage_report_update_label": "2026年10月15日更新",
-      "prior_position": 3,
-      "position": 5
+      "prior_position": 5,
+      "position": 6
     },
     {
       "ticker": "BAC",
@@ -68,8 +78,8 @@
       "earnings_publication_date": "2026-10-14",
       "source_url": "https://newsroom.bankofamerica.com/content/newsroom/press-releases/2026/10/bank-of-america-reports-third-quarter-2026-financial-results.html",
       "homepage_report_update_label": "2026年10月15日更新",
-      "prior_position": 4,
-      "position": 6
+      "prior_position": 6,
+      "position": 7
     },
     {
       "ticker": "UNH",
@@ -78,8 +88,8 @@
       "earnings_publication_date": "2026-10-13",
       "source_url": "https://www.unitedhealthgroup.com/newsroom/2026/2026-10-13-uhg-reports-third-quarter-2026-results.html",
       "homepage_report_update_label": "2026年10月14日更新",
-      "prior_position": 5,
-      "position": 7
+      "prior_position": 7,
+      "position": 8
     },
     {
       "ticker": "JNJ",
@@ -88,8 +98,8 @@
       "earnings_publication_date": "2026-10-13",
       "source_url": "https://www.jnj.com/media-center/press-releases/johnson-johnson-reports-q3-2026-results-raises-2026-guidance",
       "homepage_report_update_label": "2026年10月14日更新",
-      "prior_position": 6,
-      "position": 8
+      "prior_position": 8,
+      "position": 9
     },
     {
       "ticker": "GS",
@@ -98,8 +108,8 @@
       "earnings_publication_date": "2026-10-13",
       "source_url": "https://www.goldmansachs.com/pressroom/press-releases/2026/2026-10-13-q3-results",
       "homepage_report_update_label": "2026年10月15日更新",
-      "prior_position": 7,
-      "position": 9
+      "prior_position": 9,
+      "position": 10
     },
     {
       "ticker": "C",
@@ -108,8 +118,8 @@
       "earnings_publication_date": "2026-10-13",
       "source_url": "https://www.citigroup.com/global/news/press-release/2026/third-quarter-2026-results-key-metrics",
       "homepage_report_update_label": "2026年10月15日更新",
-      "prior_position": 8,
-      "position": 10
+      "prior_position": 10,
+      "position": 11
     },
     {
       "ticker": "JPM",
@@ -118,8 +128,8 @@
       "earnings_publication_date": "2026-10-13",
       "source_url": "https://www.sec.gov/Archives/edgar/data/19617/000162828026065582/jpm-20261013.htm",
       "homepage_report_update_label": "2026年10月15日更新",
-      "prior_position": 9,
-      "position": 11
+      "prior_position": 11,
+      "position": 12
     },
     {
       "ticker": "MU",
@@ -128,8 +138,8 @@
       "earnings_publication_date": "2026-09-30",
       "source_url": "https://investors.micron.com/news/press-release/2026/Micron-Technology-Inc--Reports-Record-Fiscal-Fourth-Quarter-and-Full-Year-2026-Results/",
       "homepage_report_update_label": "2026年10月8日更新",
-      "prior_position": 10,
-      "position": 12
+      "prior_position": 12,
+      "position": 13
     },
     {
       "ticker": "ORCL",
@@ -138,8 +148,8 @@
       "earnings_publication_date": "2026-09-10",
       "source_url": "https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Q1-Results-Driven-by-Triple-Digit-Growth-in-Cloud-Infrastructure-Revenues/default.aspx",
       "homepage_report_update_label": "2026年10月8日更新",
-      "prior_position": 11,
-      "position": 13
+      "prior_position": 13,
+      "position": 14
     },
     {
       "ticker": "AVGO",
@@ -148,8 +158,8 @@
       "earnings_publication_date": "2026-09-02",
       "source_url": "https://investors.broadcom.com/news-releases/news-release-details/broadcom-inc-announces-third-quarter-fiscal-year-2026-financial",
       "homepage_report_update_label": "2026年9月8日更新",
-      "prior_position": 12,
-      "position": 14
+      "prior_position": 14,
+      "position": 15
     },
     {
       "ticker": "NIO",
@@ -158,8 +168,8 @@
       "earnings_publication_date": "2026-09-01",
       "source_url": "https://ir.nio.com/news-releases/news-release-details/nio-inc-reports-unaudited-second-quarter-2026-financial-results/",
       "homepage_report_update_label": "2026年10月9日更新",
-      "prior_position": 13,
-      "position": 15
+      "prior_position": 15,
+      "position": 16
     },
     {
       "ticker": "NVDA",
@@ -168,8 +178,8 @@
       "earnings_publication_date": "2026-08-26",
       "source_url": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Second-Quarter-Fiscal-2027/",
       "homepage_report_update_label": "2026年10月8日更新",
-      "prior_position": 14,
-      "position": 16
+      "prior_position": 16,
+      "position": 17
     },
     {
       "ticker": "AMD",
@@ -178,8 +188,8 @@
       "earnings_publication_date": "2026-08-04",
       "source_url": "https://ir.amd.com/news-events/press-releases/detail/1295/amd-reports-second-quarter-2026-financial-results",
       "homepage_report_update_label": "2026年8月14日更新",
-      "prior_position": 15,
-      "position": 17
+      "prior_position": 17,
+      "position": 18
     },
     {
       "ticker": "MCD",
@@ -188,8 +198,8 @@
       "earnings_publication_date": "2026-08-04",
       "source_url": "https://corporate.mcdonalds.com/corpmcd/our-stories/article/Q2-2026-results.html",
       "homepage_report_update_label": "2026年10月9日更新",
-      "prior_position": 16,
-      "position": 18
+      "prior_position": 18,
+      "position": 19
     },
     {
       "ticker": "PLTR",
@@ -198,8 +208,8 @@
       "earnings_publication_date": "2026-08-03",
       "source_url": "https://www.sec.gov/Archives/edgar/data/1321655/000132165526000039/a2026q2ex991pressrelease.htm",
       "homepage_report_update_label": "2026年8月14日更新",
-      "prior_position": 17,
-      "position": 19
+      "prior_position": 19,
+      "position": 20
     },
     {
       "ticker": "AMZN",
@@ -208,8 +218,8 @@
       "earnings_publication_date": "2026-07-30",
       "source_url": "https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Second-Quarter-Results/",
       "homepage_report_update_label": "2026年8月11日更新",
-      "prior_position": 18,
-      "position": 20
+      "prior_position": 20,
+      "position": 21
     },
     {
       "ticker": "AAPL",
@@ -218,8 +228,8 @@
       "earnings_publication_date": "2026-07-30",
       "source_url": "https://www.apple.com/newsroom/2026/07/apple-reports-third-quarter-results/",
       "homepage_report_update_label": "2026年7月31日更新",
-      "prior_position": 19,
-      "position": 21
+      "prior_position": 21,
+      "position": 22
     },
     {
       "ticker": "MSFT",
@@ -228,16 +238,6 @@
       "earnings_publication_date": "2026-07-29",
       "source_url": "https://www.microsoft.com/en-us/investor/earnings/fy-2026-q4/press-release-webcast",
       "homepage_report_update_label": "2026年7月30日更新",
-      "prior_position": 21,
-      "position": 22
-    },
-    {
-      "ticker": "KO",
-      "file": "ko.html",
-      "covered_reporting_period": "2026 Q2",
-      "earnings_publication_date": "2026-07-28",
-      "source_url": "https://investors.coca-colacompany.com/news-events/press-releases/detail/1168/coca-cola-reports-second-quarter-2026-results-and-raises-full-year-guidance",
-      "homepage_report_update_label": "2026年7月29日更新",
       "prior_position": 22,
       "position": 23
     },
@@ -248,7 +248,7 @@
       "earnings_publication_date": "2026-07-23",
       "source_url": "https://www.intc.com/news-events/press-releases/detail/1776/intel-reports-second-quarter-2026-financial-results",
       "homepage_report_update_label": "2026年7月24日更新",
-      "prior_position": 23,
+      "prior_position": 24,
       "position": 24
     },
     {

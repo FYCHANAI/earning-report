@@ -1,0 +1,18 @@
+{
+  "environment": "User's ANDW Windows host, Chrome browser ID 2",
+  "url": "http://127.0.0.1:8765/ko.html",
+  "scope": "Actual local browser loading and PI-gate rendering; not production verification",
+  "desktop": {"width":958,"height":847,"body_scroll_width":958,"pi_modal_visible":true,"PI_text_readable":true},
+  "mobile": {"width":390,"height":844,"body_scroll_width":390,"pi_panel_left":16,"pi_panel_width":358,"pi_panel_height":759.59,"PI_panel_scrollable":true},
+  "language_pages": [
+    {"file":"ko.html","lang":"zh-TW","heading":"可口可樂 KO","js_errors_observed":0,"disclaimer_loaded":true},
+    {"file":"ko-sc.html","lang":"zh-CN","heading":"可口可乐 KO","js_errors_observed":0,"disclaimer_loaded":true},
+    {"file":"ko-en.html","lang":"en","heading":"Coca-Cola KO","js_errors_observed":0,"disclaimer_loaded":true}
+  ],
+  "limitations": [
+    "PI was not accepted and session storage was not changed. Full tab interaction and unobstructed report screenshots remain pending user PI confirmation.",
+    "Hidden chart canvases had zero dimensions before tab activation, as expected. Their data and resize behavior passed mocked execution; actual visible chart rendering has not been checked.",
+    "No live AI request or deployment was performed. Browser screenshots were inspection-only and are not included in the deliverable."
+  ],
+  "temporary_mobile_viewport_reset": true
+}
