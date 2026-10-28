@@ -161,6 +161,11 @@ for file in FILES:
  check(file+':unique_ids',len(doc.xpath('//@id'))==len(set(doc.xpath('//@id'))))
  check(file+':language_links',doc.xpath('//select/option/@value')==FILES and doc.xpath('//select/option[@selected]/@value')==[file])
  check(file+':styles_fonts_dependencies_match_mu',doc.xpath('//style/text()')==mu.xpath('//style/text()') and doc.xpath('//head/link/@href')==mu.xpath('//head/link/@href') and doc.xpath('//script/@src')==mu.xpath('//script/@src'))
+ badge=doc.xpath('//header//div[contains(@class,"rounded-full")]');mu_badge=mu.xpath('//header//div[contains(@class,"rounded-full")]')
+ check(file+':MU_consensus_badge_format',len(badge)==len(mu_badge)==1 and text(badge[0])==text(mu_badge[0]).replace('4.84/5','4.66/5') and badge[0].attrib==mu_badge[0].attrib)
+ def header_tags(d):
+  return [(e.tag,sorted((k,v.replace('mu','ko') if e.tag=='option' and k=='value' else v) for k,v in e.attrib.items())) for e in d.xpath('//header')[0].iter() if isinstance(e.tag,str)]
+ check(file+':exact_MU_header_markup',header_tags(doc)==header_tags(mu))
  for id in ['pi-modal','disclaimer']:check(file+':protected_'+id,protected_dom(doc,id)==protected_dom(old,id))
  check(file+':mu_layout_structure',layout_sig(doc)==layout_sig(mu))
  check(file+':no_stale_MU_Q2_data',not re.search(r'\bMU\b|Micron|美光|CMBU|CDBU|1,621|92\.64|88\.27|2026/07/29|FY2026 Est Forward|26\.88|\$0\.97|NTAM 計算|NTAM calculation|本站統一分類',source))

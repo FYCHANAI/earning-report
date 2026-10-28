@@ -141,6 +141,9 @@
   "market": {
     "reference_price_USD": 91.18,
     "consensus_target_USD": 97.8,
+    "consensus_rating_score": 4.66,
+    "consensus_rating_scale": 5,
+    "consensus_rating_score_source": "Original KO ANR.png (libfile_b6097e918adc8191a141873fa6a892ba), dated 2026/10/28; score visually verified by parent. Added during the requested MU header-format correction. Rating distribution below remains evidence, not header-badge content.",
     "buy_count": 24,
     "hold_count": 5,
     "sell_count": 0,

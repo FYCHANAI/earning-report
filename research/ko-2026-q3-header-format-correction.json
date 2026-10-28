@@ -1,0 +1,68 @@
+{
+  "status": "Local correction for parent review; not pushed or published",
+  "base_commit": "44cac7502f44d56e828bcb40a90e7ac16983def0",
+  "discrepancy": "KO displayed the analyst-rating distribution in the header pill instead of the MU consensus-label and /5 score format. The longer English distribution widened the pill and affected the target-price area.",
+  "scope": "One header text replacement per language. Existing header tags, classes, attributes, typography, spacing, separators, body content, verified research facts, dates, PI/legal controls, disclaimer, scripts and API remain byte-for-byte unchanged.",
+  "verified_score": {
+    "value": 4.66,
+    "scale": 5,
+    "source_library_file_id": "libfile_b6097e918adc8191a141873fa6a892ba",
+    "source_date": "2026-10-28",
+    "inspection": "Parent visually verified the score in the original KO ANR screenshot. This is the KO score; MU score 4.84 is not reused."
+  },
+  "format_references": [
+    {
+      "library_file_id": "libfile_b16bd6798fe081919478493969bd9963",
+      "name": "image(20261028-033302).png"
+    },
+    {
+      "library_file_id": "libfile_251efa10479481918ec3c608636a846b",
+      "name": "image(20261028-033304).png"
+    }
+  ],
+  "reference_inspection": "Both screenshots visually inspected by parent and an independent reviewer. Consumer-local supported materialization of the first reference failed before installing the destination at os.setxattr, unavailable on Windows. No alternate transfer or metadata bypass used; child does not claim local pixel inspection.",
+  "code_comparison": "All three KO headers use exactly their corresponding MU tag/attribute structure after adapting language-option filenames; CSS/font/dependency parity checks pass. Small screenshot offsets do not justify padding or width edits.",
+  "target_and_date_unchanged": {
+    "target_USD": 97.8,
+    "ANR_date": "2026-10-28"
+  },
+  "rating_distribution_preserved_in_source_ledger": {
+    "buy": 24,
+    "hold": 5,
+    "sell": 0
+  },
+  "validation": {
+    "static_mocked_passed": 94,
+    "failed": 0,
+    "exact_MU_header_markup_asserted": true,
+    "exact_localized_consensus_badge_asserted": true,
+    "full_post_PI_visual_QA": "not performed",
+    "PI_accepted_or_bypassed": false
+  },
+  "files": [
+    {
+      "file": "ko.html",
+      "before": "Buy 24 / Neutral 5 / Sell 0",
+      "after": "共識：買入 (4.66/5)",
+      "only_badge_text_changed": true,
+      "before_sha256": "36874fe6fd42ae60a7fb0eeb1e2c410bbd99b0e09331b98d645fe544c2212268",
+      "after_sha256": "03811dddc88fcb4a998f2d250c01785ad088fe1ab00994b346164da915081a81"
+    },
+    {
+      "file": "ko-sc.html",
+      "before": "Buy 24 / Neutral 5 / Sell 0",
+      "after": "共识：买入 (4.66/5)",
+      "only_badge_text_changed": true,
+      "before_sha256": "952e5e065e5e71b2722e43eeb7e4385996dd940b8957860cc2fc4af6911056e7",
+      "after_sha256": "7873ce418401c98e9ba4b1c7dc379a92e78ca63b034678bdd5a55891b1de01ea"
+    },
+    {
+      "file": "ko-en.html",
+      "before": "Buy 24 / Neutral 5 / Sell 0",
+      "after": "Consensus: Buy (4.66/5)",
+      "only_badge_text_changed": true,
+      "before_sha256": "a220039e7ee9bae4c04084b9f352b41cc5d263122d1b1cac080561312e03a4db",
+      "after_sha256": "521eeea7076015df18f0e67ff13b4aee4e9c32dedc64e77a7e2bc64e41ed6397"
+    }
+  ]
+}
