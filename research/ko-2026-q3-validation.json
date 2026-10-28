@@ -19,6 +19,14 @@
       "status": "pass"
     },
     {
+      "check": "ko.html:MU_consensus_badge_format",
+      "status": "pass"
+    },
+    {
+      "check": "ko.html:exact_MU_header_markup",
+      "status": "pass"
+    },
+    {
       "check": "ko.html:protected_pi-modal",
       "status": "pass"
     },
@@ -119,6 +127,14 @@
       "status": "pass"
     },
     {
+      "check": "ko-sc.html:MU_consensus_badge_format",
+      "status": "pass"
+    },
+    {
+      "check": "ko-sc.html:exact_MU_header_markup",
+      "status": "pass"
+    },
+    {
       "check": "ko-sc.html:protected_pi-modal",
       "status": "pass"
     },
@@ -216,6 +232,14 @@
     },
     {
       "check": "ko-en.html:styles_fonts_dependencies_match_mu",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:MU_consensus_badge_format",
+      "status": "pass"
+    },
+    {
+      "check": "ko-en.html:exact_MU_header_markup",
       "status": "pass"
     },
     {
@@ -355,7 +379,7 @@
       "status": "pass"
     }
   ],
-  "passed": 88,
+  "passed": 94,
   "failed": 0,
   "limitations": [
     "Source PNGs were visually inspected by parent in cloud; local supported materialization failed on Windows os.setxattr. No original screenshot is committed.",

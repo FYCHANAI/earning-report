@@ -1,4 +1,12 @@
-KO Q3 2026 — review draft, prepared 28 October 2026
+KO Q3 2026 - MU header correction for parent review, 28 October 2026
+
+Current scope: replace only the header-badge text in each of the three KO pages. Before: Buy 24 / Neutral 5 / Sell 0. After: TC 共識：買入 (4.66/5); SC 共识：买入 (4.66/5); EN Consensus: Buy (4.66/5). The 4.66 score is verified from the original KO ANR screenshot; MU's 4.84 is not reused. The target remains USD97.80 and the ANR date remains 2026/10/28.
+
+All header markup/classes/CSS already match the corresponding MU master. No speculative spacing, divider, width or typography edits were made. Exact byte comparisons confirm every page differs from production only at that one text node; body research, dates, styles, scripts and PI/legal/API components are unchanged. All 94 static/mocked checks passed, including localized consensus badge and exact MU header-markup checks. See research/ko-2026-q3-header-format-correction.json for the before/after evidence and hashes.
+
+The original report was published via PR24 at commit 44cac7502f44d56e828bcb40a90e7ac16983def0. This correction is on local branch fix/ko-mu-header and is not yet pushed or published. Full post-PI visual QA remains unperformed; no PI confirmation or bypass occurred. Current screenshot findings were verified by parent and an independent reviewer; local supported image materialization failed on Windows os.setxattr.
+
+Historical preparation notes below describe the initial report draft and its earlier checks; current correction status above takes precedence.
 
 Latest editorial revision: Our Views points 2–4 now use direct client-facing investment interpretations across all three languages. Financial tokens, raw HTML tags, style/script bodies and content outside Our Views were verified unchanged. The existing AI context contains facts rather than the revised process-like wording and remains unchanged. All 88 checks passed again. Details: research/ko-2026-q3-tone-refinement.json.
 
