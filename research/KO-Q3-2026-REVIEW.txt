@@ -1,0 +1,31 @@
+KO Q3 2026 — review draft, prepared 28 October 2026
+
+Latest editorial revision: Our Views points 2–4 now use direct client-facing investment interpretations across all three languages. Financial tokens, raw HTML tags, style/script bodies and content outside Our Views were verified unchanged. The existing AI context contains facts rather than the revised process-like wording and remains unchanged. All 88 checks passed again. Details: research/ko-2026-q3-tone-refinement.json.
+
+Subsequent factual correction: FY2027 ~8% and ~2% headwinds refer to aggregate acquisitions/divestitures effects on comparable net revenues and comparable EPS, not the African sale alone. The three point-4 paragraphs, AI contexts and evidence ledger now state the correct scope and basis. These are preliminary considerations, with full guidance following Q4 results. The Africa closing-risk sentence is unchanged. See research/ko-2026-q3-FY2027-basis-correction.json.
+
+Scope: KO Traditional Chinese, Simplified Chinese and English reports using the current corresponding MU language masters; matching homepage card moved first by the 27 October earnings release date. No push, PR, merge or deployment.
+
+Open on ANDW while the local server is running:
+http://127.0.0.1:8765/ko.html
+http://127.0.0.1:8765/ko-sc.html
+http://127.0.0.1:8765/ko-en.html
+http://127.0.0.1:8765/index.html
+
+The ZIP contains the complete static site snapshot for working relative links, a patch containing only the KO update and its evidence, and the supporting research records. From the site folder, serve it with Python's http.server bound to 127.0.0.1. Opening HTML directly as file:// may prevent the existing disclaimer fetch. The ZIP includes no original Bloomberg images, credentials or Git metadata.
+
+Verified: 88 static and mocked-runtime checks passed. MU DOM structure/styles/fonts/dependencies, six tabs, three charts, chart resize keys, language links, financial parity, target-return math, source links, protected PI/API/disclaimer functions, and all 24 other homepage cards were checked. Actual ANDW Chrome loads all three languages and the homepage without observed JavaScript errors; disclaimer loads. Desktop958x847 and mobile390x844 PI views fit the viewport.
+
+Remaining review: the PI control has not been accepted or bypassed. Full visible chart/tab interaction and unobstructed desktop/mobile report review remain pending the user's own PI confirmation. Hidden charts initially have zero dimensions; resize behavior passed mocked tests. No live AI request was made.
+
+Data limitations: Parent visually inspected all five original PNGs in the cloud; the Windows consumer could not complete local Library materialization because the current helper requires os.setxattr. Estimates are postrelease screenshots, not verified prerelease consensus. Analyst names are omitted; cards show verified ratings, dates, targets and price returns only. Peer comparison consistently uses FY2027 Adj+ P/E. NESN NTM values remain absent, not fabricated. Precise prior comparable margin31.87% is issuer-reported; rounded million-dollar numerator/denominator yields31.88%, documented in the evidence.
+
+Key files:
+ko.html, ko-sc.html, ko-en.html, index.html
+research/ko-2026-q3-2026-10-28.json
+research/ko-2026-q3-validation.json
+research/ko-2026-q3-browser-validation.json
+research/validate-ko-2026-q3.py
+
+Base main revision: 572a637ff64bb588b54fc733db2958cc84e878fc
+Local branch: draft/ko-q3-2026

@@ -1,0 +1,35 @@
+{
+  "scope": "Narrow client-facing wording refinement in Our Views points2–4 across all three languages; no financial data changes.",
+  "checks": [
+    {
+      "file": "ko.html",
+      "status": "pass",
+      "numbers_unchanged": true,
+      "raw_tags_unchanged": true,
+      "scripts_styles_unchanged": true,
+      "outside_our_views_unchanged": true,
+      "sha256": "bb169646413911a57ad5cd1fb26b8528f0e8b024f5bede7fbb3483693e110155"
+    },
+    {
+      "file": "ko-sc.html",
+      "status": "pass",
+      "numbers_unchanged": true,
+      "raw_tags_unchanged": true,
+      "scripts_styles_unchanged": true,
+      "outside_our_views_unchanged": true,
+      "sha256": "f4ae8f195ad9ad8376dd1935beaed93bc0864000e67a24a901ef6bcf6e0158e5"
+    },
+    {
+      "file": "ko-en.html",
+      "status": "pass",
+      "numbers_unchanged": true,
+      "raw_tags_unchanged": true,
+      "scripts_styles_unchanged": true,
+      "outside_our_views_unchanged": true,
+      "sha256": "22e0edfcf3867619e1355d86ab0ae519f585062e9883b2e6f0f125b09b834c14"
+    }
+  ],
+  "AI_context": "Reviewed; factual context does not repeat edited process-oriented prose and is unchanged.",
+  "publication": "Not pushed, published or deployed.",
+  "stage": "Tone-only check before the subsequent FY2027 basis correction; hashes describe that stage."
+}

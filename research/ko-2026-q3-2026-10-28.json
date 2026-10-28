@@ -1,0 +1,267 @@
+{
+  "status": "Local draft for parent review; no remote push, PR, merge or deployment",
+  "base_commit": "572a637ff64bb588b54fc733db2958cc84e878fc",
+  "original_blobs": {
+    "ko.html": "c0a413bb0eec8c13b9ed922cf3944dd4504a5a5f",
+    "index.html": "52db71d8aede2079ccfe2c036bee20acca5f8982"
+  },
+  "dates": {
+    "report": "2026-10-28",
+    "fiscal_quarter_end": "2026-10-02",
+    "release": "2026-10-27",
+    "ANR": "2026-10-28",
+    "reference_quote": "2026-10-27",
+    "EEO_forecast_capture_date": null
+  },
+  "sources": [
+    {
+      "url": "https://investors.coca-colacompany.com/news-events/press-releases/detail/1176/coca-cola-reports-third-quarter-2026-results-and-raises-full-year-guidance",
+      "use": "Official revenue growth, earnings, volume, regional growth, guidance, risks; directly read with web tool"
+    },
+    {
+      "url": "https://investors.coca-colacompany.com/filings-reports/all-sec-filings/content/0001628280-26-067403/a2026q3earningsreleaseex-9.htm",
+      "use": "Precise financial schedules and margin reconciliation; independently read and supplied by parent. Child web fetch returned internal error."
+    },
+    {
+      "url": "https://www.coca-cola.com/hk/zh",
+      "use": "Official Traditional Chinese company branding 可口可樂 / 可口可樂公司"
+    },
+    {
+      "url": "https://www.coca-cola.com/cn/zh",
+      "use": "Official Simplified Chinese company branding 可口可乐 / 可口可乐公司"
+    },
+    {
+      "url": "https://investors.coca-colacompany.com/filings-reports/all-sec-filings/content/0001628280-25-045577/a2025q3earningsreleaseex-9.htm",
+      "use": "Official Q3 2025 release: prior-year YTD fairlife contingent consideration payment USD6.1bn and excluding-payment FCF USD8.5bn; independently reviewed by parent. Evidence-only citation addition; no new fact change."
+    }
+  ],
+  "image_evidence": [
+    {
+      "name": "KO ANR.png",
+      "library_file_id": "libfile_b6097e918adc8191a141873fa6a892ba"
+    },
+    {
+      "name": "KDP EEO.png",
+      "library_file_id": "libfile_29ec0a9445fc819184a5b2b4cb9d9d08"
+    },
+    {
+      "name": "PEP EEO.png",
+      "library_file_id": "libfile_135ae8af6ab08191a844f49535bfb02e"
+    },
+    {
+      "name": "NESN EEO.png",
+      "library_file_id": "libfile_585674d9f5f48191a379707c8c9ff995"
+    },
+    {
+      "name": "KO EEO.png",
+      "library_file_id": "libfile_097444a9c85c81919b250fd408ff8128"
+    }
+  ],
+  "visual_evidence_provenance": "All five PNGs visually inspected in cloud by parent before data-dependent construction. Child did not see pixels locally. Current supported Library helper failed at os.setxattr (unavailable on Windows); no bypass or raw download used. Original screenshots excluded from Git and deliverables.",
+  "financials_USDm": {
+    "GAAP_revenue": 13380,
+    "GAAP_revenue_prior": 12455,
+    "comparable_revenue": 13354,
+    "comparable_revenue_prior": 12412,
+    "GAAP_operating_income": 4465,
+    "GAAP_operating_income_prior": 3982,
+    "comparable_operating_income": 4397,
+    "comparable_operating_income_prior": 3957,
+    "GAAP_net_income_attributable": 4009,
+    "GAAP_net_income_attributable_prior": 3696,
+    "YTD_CFO": 12471,
+    "YTD_capex": 1063,
+    "YTD_FCF": 11408
+  },
+  "eps_USD": {
+    "GAAP": 0.93,
+    "comparable": 0.91,
+    "GAAP_growth_pct_issuer": 8,
+    "comparable_growth_pct_issuer": 11,
+    "currency_tailwind_points": 2
+  },
+  "margin_pct_issuer": {
+    "GAAP": 33.37,
+    "GAAP_prior": 31.97,
+    "comparable": 32.93,
+    "comparable_prior": 31.87,
+    "comparable_expansion_bp": 106,
+    "currency_neutral_expansion_bp": 46,
+    "underlying_expansion_bp": 21
+  },
+  "margin_precision_note": "Prior comparable operating income3957 / revenue12412 using rounded million-dollar inputs produces31.88%, while the issuer reconciliation reports31.87%. Retain issuer margin and106bp change; do not invent a cause. Rounding of underlying inputs can affect the last basis point.",
+  "growth_pct_issuer": {
+    "net_revenue": 7,
+    "comparable_revenue": 8,
+    "organic_revenue": 7,
+    "unit_case_volume": 5,
+    "concentrate": 7,
+    "price_mix": 1,
+    "shipment_timing_points": 2
+  },
+  "regional_chart": {
+    "order": [
+      "EMEA",
+      "Latin America",
+      "North America",
+      "Asia Pacific",
+      "Bottling Investments"
+    ],
+    "organic_revenue_growth": [
+      7,
+      16,
+      3,
+      6,
+      12
+    ],
+    "volume_growth": [
+      5,
+      6,
+      0,
+      6,
+      8
+    ],
+    "reason": "Uses verified regional growth in the MU chart container; no invented segment dollar values."
+  },
+  "guidance": {
+    "FY2026_organic_growth_min_pct": 5,
+    "FY2026_comparable_EPS_growth_min_pct": 11,
+    "FY2026_FCF_min_USDbn": 13,
+    "prior_comparable_EPS_growth_pct": [
+      9,
+      10
+    ],
+    "prior_FCF_USDbn": 12.4,
+    "FY2027_FX": "slight headwinds; not full-year guidance",
+    "FY2027_preliminary_acquisitions_and_divestitures_comparable_net_revenues_headwind_pct": 8,
+    "FY2027_preliminary_acquisitions_and_divestitures_comparable_EPS_headwind_pct": 2,
+    "FY2027_scope_note": "Aggregate acquisitions and divestitures effects. Africa Q4 closing is a footnote assumption; the issuer does not attribute the entire8%/2% to that transaction. These are preliminary considerations, not total-year revenue/EPS growth guidance."
+  },
+  "cashflow_caveat": "YTD figures are nine-month cumulative, not quarterly. 2025 YTD included USD6.1bn fairlife contingent consideration payment, independently verified by parent from official Q3 2025 release. Excluding that payment, issuer 2025 FCF was USD8.5bn; not all reported growth is recurring.",
+  "market": {
+    "reference_price_USD": 91.18,
+    "consensus_target_USD": 97.8,
+    "buy_count": 24,
+    "hold_count": 5,
+    "sell_count": 0,
+    "buy_pct": 82.8,
+    "hold_pct": 17.2,
+    "note": "Use headline consensus. Greyed Morningstar sell/80 row is not used to reconstruct consensus, target range or counts. Quote is described as reference price, not independently verified exchange close by child."
+  },
+  "analysts": [
+    {
+      "bank": "UBS",
+      "raw_rating": "Buy",
+      "display_rating": "Buy",
+      "target_USD": 106,
+      "date": "2026-10-27",
+      "selected": true
+    },
+    {
+      "bank": "Morgan Stanley",
+      "raw_rating": "Overwt/Attractive",
+      "display_rating": "Overweight",
+      "target_USD": 100,
+      "date": "2026-10-27",
+      "selected": true,
+      "normalization": "Overwt is stock Overweight; Attractive is separate industry view, omitted from stock label."
+    },
+    {
+      "bank": "JP Morgan",
+      "raw_rating": "Overweight",
+      "display_rating": "Overweight",
+      "target_USD": 98,
+      "date": "2026-10-27",
+      "selected": true
+    },
+    {
+      "bank": "Citi",
+      "raw_rating": "Buy",
+      "display_rating": "Buy",
+      "target_USD": 102,
+      "date": "2026-10-27",
+      "selected": false
+    },
+    {
+      "bank": "HSBC",
+      "raw_rating": "Buy",
+      "display_rating": "Buy",
+      "target_USD": 98,
+      "date": "2026-09-28",
+      "selected": false
+    }
+  ],
+  "analyst_selection": "MU has three card slots. Fill priority UBS > Morgan Stanley > JP Morgan. No invented bank investment theses or analyst names.",
+  "EEO": {
+    "Q3_comparable_revenue_actual_USDm": 13354,
+    "Q3_comparable_revenue_estimate_USDm": 12913,
+    "Q3_Adj_EPS_actual": 0.91,
+    "Q3_Adj_EPS_estimate": 0.881,
+    "standardized_period_end": "2026-09-30",
+    "note": "Official period ends October2. Postrelease screen does not establish pre-announcement consensus."
+  },
+  "peers": {
+    "metric": "Price/EPS, Adj+",
+    "comparison_year": "FY2027",
+    "KO": {
+      "currency": "USD",
+      "quote": 91.18,
+      "PE_FY26": 27.47,
+      "PE_FY27": 25.87,
+      "PE_FY28": 24.17,
+      "PE_NTM": 26.31,
+      "dividend_yield_FY27_pct": 2.5
+    },
+    "NESN": {
+      "currency": "CHF",
+      "quote": 83.25,
+      "PE_FY26": 18.75,
+      "PE_FY27": 17.76,
+      "PE_FY28": 16.78,
+      "PE_NTM": null,
+      "dividend_yield_FY27_pct": 3.86
+    },
+    "PEP": {
+      "currency": "USD",
+      "quote": 133.5,
+      "PE_FY26": 15.9,
+      "PE_FY27": 15.55,
+      "PE_FY28": 14.68,
+      "PE_NTM": 15.72,
+      "dividend_yield_FY27_pct": 4.6
+    },
+    "KDP": {
+      "currency": "USD",
+      "quote": 34.86,
+      "PE_FY26": 15.11,
+      "PE_FY27": 13.61,
+      "PE_FY28": 12.8,
+      "PE_NTM": 14.07,
+      "dividend_yield_FY27_pct": 2.77
+    },
+    "note": "KDP latest actual quarterQ2; other screensQ3. FY2027 chosen consistently, no NESN NTM fabrication or cross-currency EPS calculation."
+  },
+  "calculations": {
+    "price_return_formula": "(target /91.18 -1)*100; price only, excludes dividends",
+    "consensus_upside_pct": 7.3,
+    "UBS_upside_pct": 16.3,
+    "MS_upside_pct": 9.7,
+    "JPM_upside_pct": 7.5,
+    "YTD_FCF_formula": "12471 -1063 =11408"
+  },
+  "scope_preserved": [
+    "Unrelated company pages",
+    "24 other homepage card blocks and relative order",
+    "MU language masters",
+    "PI legal wording and acceptance controls",
+    "Disclaimer content and loading behavior",
+    "API adapter and infrastructure",
+    "Hosting configuration"
+  ],
+  "remaining_data_flags": [
+    "Original PNGs not locally accessible; facts rely on parent visual extraction.",
+    "ANR analyst names omitted because no verified names were supplied.",
+    "Independent EEO forecast-capture date is not visible.",
+    "No original bank reports supplied; no bank theses asserted."
+  ]
+}

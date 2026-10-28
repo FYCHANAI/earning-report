@@ -3,35 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- ✏️ 替換：頁面標題（公司名 + Ticker） -->
 <title>可口可樂 (KO) 深度研究報告 | NTAM 資深分析師</title>
-<!-- 🔒 固定區：框架與字體引用（繁體版固定 Noto Sans TC） -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet">
 <style>
-body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
-.chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
-@media (min-width: 768px) { .chart-container { height: 400px; } }
-.tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
-.tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
-.tab-content.active { display: block; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-.metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
-.hide-scrollbar::-webkit-scrollbar { display: none; }
-.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-/* AI Animations */
-@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-.animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
-.typing-dot { animation: typing 1.4s infinite ease-in-out both; }
-.typing-dot:nth-child(1) { animation-delay: -0.32s; }
-.typing-dot:nth-child(2) { animation-delay: -0.16s; }
-@keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
-#selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
+    body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+    .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+    @media (min-width: 768px) { .chart-container { height: 400px; } }
+    .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+    .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+    .tab-content.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* AI Animations */
+    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+    .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
+    .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+    .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+    @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+    #selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
 </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
-<!-- 🔒 固定區開始：專業投資者 (PI) 三語攔截視窗（勿改任何文字與結構） -->
+
 <div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
 <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
 <div class="text-center mb-6">
@@ -60,446 +59,354 @@ body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color
 </div>
 </div>
 </div>
-<!-- 🔒 固定區結束：PI 攔截視窗 -->
+
 <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-<div class="flex justify-between items-start">
-<div class="flex flex-col">
-<!-- 🔒 固定：Logo 連回首頁（檔名含 URL 編碼空格，勿改） -->
-<a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
-<img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
-<span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
-</a>
-<div class="flex flex-col">
-<!-- ✏️ 替換：公司名 + Ticker、副標題（財季） -->
-<h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">可口可樂 <span class="text-blue-600">KO</span></h1>
-<span class="text-sm text-slate-500 font-medium mt-1">資深分析師 營運與戰略報告 | Q2 2026 財報特輯</span>
-</div>
-</div>
-<div class="flex flex-col items-end space-y-3">
-<!-- ✏️ 替換：語言切換選單的三個檔名（換成新 ticker），selected 固定在繁體 -->
-<select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
-<option value="ko.html" selected>繁體中文</option>
-<option value="ko-sc.html">简体中文</option>
-<option value="ko-en.html">English</option>
-</select>
-<div class="flex items-center space-x-4">
-<div class="text-right hidden sm:block">
-<!-- ✏️ 替換：目標價（Source 徽章文字固定） -->
-<div class="text-xs text-slate-400 font-bold">共識目標價 (截至 2026/07/29) <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
-<div class="text-xl font-bold text-slate-800">$92.64 USD</div>
-</div>
-<!-- ✏️ 替換：評級文字（膠囊樣式固定） -->
-<div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">ANR 共識評級：買入</div>
-</div>
-</div>
-</div>
-<!-- 🔒 固定：6 個 Tabs 的名稱、順序、onclick 目標一律不變 -->
-<nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
-    <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我們的觀點</button>
-    <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 營運與財務數據</button>
-    <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比較</button>
-    <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 華爾街觀點</button>
-    <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 風險因素</button>
-    <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免責聲明</button>
-</nav>
-</div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex justify-between items-start">
+            <div class="flex flex-col">
+                <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
+                    <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+                    <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+                </a>
+                <div class="flex flex-col">
+                    <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">可口可樂 <span class="text-blue-600">KO</span></h1>
+                    <span class="text-sm text-slate-500 font-medium mt-1">資深分析師 營運與戰略報告 | Q3 2026 財報特輯</span>
+                </div>
+            </div>
+            <div class="flex flex-col items-end space-y-3">
+                <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
+                    <option value="ko.html" selected>繁體中文</option>
+                    <option value="ko-sc.html">简体中文</option>
+                    <option value="ko-en.html">English</option>
+                </select>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right hidden sm:block">
+                        <div class="text-xs text-slate-400 font-bold">共識目標價 <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Bloomberg ANR · 2026/10/28)</span></div>
+                        <div class="text-xl font-bold text-slate-800">$97.80 USD</div>
+                    </div>
+                    <div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">Buy 24 / Neutral 5 / Sell 0</div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+            <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我們的觀點</button>
+            <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 營運與財務數據</button>
+            <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比較</button>
+            <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 華爾街觀點</button>
+            <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 風險因素</button>
+            <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免責聲明</button>
+        </nav>
+    </div>
 </header>
+
 <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
-<!-- ══════════ Tab 一：我們的觀點 ══════════ -->
-<section id="our-comments" class="tab-content active">
-    <div class="mb-6">
-        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我們的觀點</h2>
-        <!-- ✏️ 替換：導言（財季 + 公司名） -->
-    </div>
-    <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
-        <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
-            <span class="text-3xl mr-3">🎯</span>
-            <h3 class="text-2xl font-black text-blue-600 tracking-tight">核心經營結論</h3>
+
+    <section id="our-comments" class="tab-content active">
+        <div class="mb-6">
+            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我們的觀點</h2>
+            <p class="mt-2 text-sm text-slate-500">更新：2026/10/28。財季截至 2026/10/02，業績於 2026/10/27 公布；市場資料日期另列。</p>
         </div>
-        <!-- ✏️ 替換區：3–4 點核心結論（每點 = 編號 + 粗標題 + 說明段，li 結構與 class 不變） -->
-        <ul class="space-y-6">
-            <li class="flex items-start">
-                <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
-                <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">量價齊驅、上調全年指引，增長動能明確</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">Q2 淨營收年增 7% 至 133.80 億美元，有機營收 (Non-GAAP) 增長 6%（濃縮液銷量 +4%、價格/組合 +2%），全球單箱銷量增長 5%，由印度、中國、美國與巴西帶動。公司同步上調全年指引：有機營收約 +5%、Comparable EPS (Non-GAAP) 增長 9% 至 10%、自由現金流 (Non-GAAP) 約 124 億美元。我們認為在管理層所稱「動態消費環境」下仍能量價齊升並上修指引，顯示系統執行力與品牌組合的韌性。</p>
-                </div>
-            </li>
-            <li class="flex items-start">
-                <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
-                <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">利潤率擴張具品質，成本與行銷投入為下半年觀察點</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">Comparable 營業利益率 (Non-GAAP) 達 35.6%，年增 86 個基點（GAAP 34.9%，+77 個基點）；剔除匯率與併購/分拆影響之 underlying 營業利益率 (Non-GAAP) 亦擴張 24 個基點，主因有機營收增長與營運費用下降，部分被投入成本上升及行銷投資增加（部分屬時點因素）抵銷。我們認為本季擴張屬營運驅動而非僅靠匯率順風，惟投入成本壓力仍需持續追蹤。</p>
-                </div>
-            </li>
-            <li class="flex items-start">
-                <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
-                <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">世界盃行銷與創新機制放大品牌動能</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">FIFA 世界盃活動覆蓋逾 180 個市場，數位與社群曝光逾 600 億次，帶動 Trademark Coca-Cola 單箱銷量 +5%、Powerade +8%；Coca-Cola Zero Sugar 銷量增長 16%。公司並於各營運單位設立創新中樞，加速創新跨市場複製（如 Coca-Cola Zero Zero 及中國版 Sprite+Tea）。我們認為此種「全球規模 × 在地執行」的行銷與創新機制，是其有機增長領先同業的結構性支撐。</p>
-                </div>
-            </li>
-            <li class="flex items-start">
-                <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
-                <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">估值溢價已高，上行空間溫和</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">以 2026/07/28 收盤價 88.27 美元計，較 Bloomberg ANR 共識目標價 92.64 美元（截至 2026/07/29）具約 5.0% 上行空間。估值面，FY2026 Forward P/E 為 26.88 倍，明顯高於雀巢 18.48 倍、百事 16.69 倍與 KDP 13.63 倍。我們認為溢價反映其增長能見度與防禦屬性，短期股價驅動將更依賴指引兌現，而非估值再擴張。</p>
-                </div>
-            </li>
-        </ul>
-    </div>
-</section>
-<!-- ══════════ Tab 二：營運與財務數據 ══════════ -->
-<section id="financials" class="tab-content">
-    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、營運與財務數據</h2></div>
-    <!-- ✏️ 替換區：4 個 KPI 卡（只換標題/數字/註記文字；border-t 顏色依序 emerald→blue→indigo→purple 固定） -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-        <div class="metric-card border-t-4 border-t-emerald-500">
-            <h4 class="text-xs font-bold text-slate-500 uppercase">Q2 淨營收 (Net Revenues)</h4>
-            <p class="text-2xl font-bold text-slate-800 mt-1">$13,380 M</p>
-            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +7%｜有機營收 (Non-GAAP) +6%</p>
+        <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
+            <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
+                <span class="text-3xl mr-3">🎯</span>
+                <h3 class="text-2xl font-black text-blue-600 tracking-tight">核心經營結論</h3>
+            </div>
+            <ul class="space-y-6">
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">銷量帶動增長，品牌韌性支持全年上調</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">我們認為，可口可樂的增長重心正由提價轉向銷量，支持中期盈利韌性。Q3 淨營收 US$13.380bn，按年增長 7%；有機營收增長 7%、全球單箱銷量增長 5%，Coca-Cola Zero Sugar 銷量增長 16%。印度、中國、墨西哥及巴西帶動需求，但北美銷量持平。濃縮液出貨增幅比單箱銷量高 2 個百分點，後續需觀察終端需求能否延續。</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">核心利潤率穩步改善，匯率提供額外支持</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">Comparable 營業利益率為 32.93%，按年提高 106 個基點；剔除匯率後提高 46 個基點，再剔除併購及出售影響後提高 21 個基點。我們認為，匯率是本季利潤率擴張的重要助力，核心營運改善幅度則較溫和。Comparable EPS US$0.91，按年增長 11%，其中約 2 個百分點來自匯率；行銷投入及營運費用上升仍是觀察重點。</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">現金創造能力增強，支持派息與品牌投資</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">首九個月營運現金流 US$12.471bn，扣除 US$1.063bn 資本支出後，自由現金流 US$11.408bn；全年自由現金流指引由約 US$12.4bn 上調至至少 US$13.0bn。我們認為，充足現金流支持派息與再投資。去年 US$6.1bn fairlife 一次性或有代價付款墊低比較基數，而全年現金流指引上調進一步支持現金創造能力改善的判斷。</p>
+                    </div>
+                </li>
+                <li class="flex items-start">
+                    <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
+                    <div>
+                        <strong class="text-slate-900 block mb-1 text-lg">估值溢價要求持續兌現，回報空間較溫和</strong>
+                        <p class="text-slate-600 text-sm leading-relaxed">FY2027 Adj+ P/E 為 25.87 倍，高於百事（PEP）、Keurig Dr Pepper（KDP）及雀巢的 13.61–17.76 倍；ANR 共識目標價 US$97.80，較 10/27 參考股價 US$91.18 高 7.3%（不含股息）。我們認為，品牌及現金流優勢支持溢價，但短期重估空間取決於全年至少 5% 有機增長及至少 11% Comparable EPS 增長能否兌現。公司初步預期，併購及業務出售將分別對 2027 年可比淨營收及可比 EPS 帶來約 8% 及 2% 的不利影響，業務組合調整將壓低報表增長表現。</p>
+                    </div>
+                </li>
+            </ul>
         </div>
-        <div class="metric-card border-t-4 border-t-blue-500">
-            <h4 class="text-xs font-bold text-slate-500 uppercase">Comparable EPS (Non-GAAP)</h4>
-            <p class="text-2xl font-bold text-slate-800 mt-1">$0.97</p>
-            <p class="text-sm text-blue-600 font-semibold mt-1">▲ YoY +11%｜GAAP EPS $1.03 (+16%)</p>
+    </section>
+
+    <section id="financials" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、營運與財務數據</h2></div>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <div class="metric-card border-t-4 border-t-emerald-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Q3 淨營收 (GAAP)</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">$13,380 M</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +7% / 有機營收 +7%</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-blue-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Comparable EPS (Non-GAAP)</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">$0.91</p>
+                <p class="text-sm text-blue-600 font-semibold mt-1">▲ YoY +11% / GAAP EPS $0.93</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-indigo-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">Comparable 營業利益率</h4>
+                <p class="text-2xl font-bold text-slate-800 mt-1">32.93%</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +106 bps / GAAP 33.37%</p>
+            </div>
+            <div class="metric-card border-t-4 border-t-purple-500">
+                <h4 class="text-xs font-bold text-slate-500 uppercase">首九個月自由現金流 (Non-GAAP)</h4>
+                <p class="text-xl font-bold text-slate-800 mt-1">$11,408 M</p>
+                <p class="text-sm text-emerald-600 font-semibold mt-1">● YTD；全年指引至少 $13,000 M</p>
+            </div>
         </div>
-        <div class="metric-card border-t-4 border-t-indigo-500">
-            <h4 class="text-xs font-bold text-slate-500 uppercase">Comparable 營業利益率 (Non-GAAP)</h4>
-            <p class="text-2xl font-bold text-slate-800 mt-1">35.6%</p>
-            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +86bps｜GAAP 34.9%</p>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-2">Q3 地區有機營收及單箱銷量增長（%）</h3>
+                <p class="text-xs text-slate-500 mb-4">各分部有機營收為 Non-GAAP；單箱銷量按平均每日銷售量計算。北美銷量持平，亞太價格／組合下降 2%。</p>
+                <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+            </div>
+
+            <div class="metric-card">
+                <h3 class="text-lg font-bold text-slate-800 mb-2">Q3 營收與營業利益率（百萬美元 / %）</h3>
+                <p class="text-xs text-slate-500 mb-4">比較 Q3 2025 與 Q3 2026。GAAP 淨營收為 US$12,455m／13,380m；Comparable 營業利益率為 31.87%／32.93%。</p>
+                <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
+            </div>
         </div>
-        <div class="metric-card border-t-4 border-t-purple-500">
-            <h4 class="text-xs font-bold text-slate-500 uppercase">全球單箱銷量 (Unit Case Volume)</h4>
-            <p class="text-xl font-bold text-slate-800 mt-1">YoY +5%</p>
-            <p class="text-sm text-emerald-600 font-semibold mt-1">● 由印度、中國、美國與巴西帶動</p>
-        </div>
-    </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+        <div class="metric-card mt-6">
+            <h3 class="text-lg font-bold text-slate-800 mb-4">Q3 核心財務比較（百萬美元；EPS 為美元，另註 YTD）</h3>
+            <div class="overflow-x-auto">
+                <table class="w-full text-sm text-left border-collapse">
+                    <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
+                        <tr>
+                            <th class="px-6 py-3 font-bold">財務指標</th>
+                            <th class="px-6 py-3 font-bold text-right">Q3 2026 GAAP</th>
+                            <th class="px-6 py-3 font-bold text-right text-blue-600">Q3 2026 Comparable (Non-GAAP)</th>
+                            <th class="px-6 py-3 font-bold text-right text-emerald-600">變動 / 補充</th>
+                        </tr>
+                    </thead>
+                    <tbody class="text-slate-700">
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">淨營收</td>
+                            <td class="px-6 py-4 text-right">$13,380 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$13,354 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-emerald-500">YoY +7% / +8%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">營業利益</td>
+                            <td class="px-6 py-4 text-right">$4,465 M</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$4,397 M</td>
+                            <td class="px-6 py-4 text-right text-emerald-500">YoY +12% / +11%</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">營業利益率</td>
+                            <td class="px-6 py-4 text-right">33.37%</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">32.93%</td>
+                            <td class="px-6 py-4 text-right text-emerald-500">Comparable +106 bps</td>
+                        </tr>
+                        <tr class="border-b border-slate-100">
+                            <td class="px-6 py-4 font-medium">攤薄每股盈利 (EPS)</td>
+                            <td class="px-6 py-4 text-right">$0.93</td>
+                            <td class="px-6 py-4 text-right font-bold text-blue-600">$0.91</td>
+                            <td class="px-6 py-4 text-right text-emerald-600">YoY +8% / +11%</td>
+                        </tr>
+                        <tr class="bg-slate-50 font-bold">
+                            <td class="px-6 py-4 text-slate-800">首九個月現金流（YTD）</td>
+                            <td class="px-6 py-4 text-right text-slate-500">營運 $12,471 M / 資本支出 $1,063 M</td>
+                            <td class="px-6 py-4 text-right text-blue-600">自由現金流 $11,408 M</td>
+                            <td class="px-6 py-4 text-right text-purple-600">全年 FCF 指引 ≥$13,000 M</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        <p class="text-xs text-slate-500 mt-4 leading-relaxed">Q3 歸屬股東淨利為 US$4,009m（去年 US$3,696m）。全年公司指引：有機營收增長至少 5%；Comparable EPS 增長至少 11%（原為 9–10%）；自由現金流至少 US$13.0bn。2027 年僅有初步匯率及業務出售影響提示，完整指引將於 Q4 業績公布。提供的 Bloomberg EEO 列 Q3 Comparable 營收實績／預測 US$13,354m／12,913m、Adj+ EPS US$0.910／0.881；這是公布後截圖，未核實為公布前共識，不能據此直接判定業績超預期。 來源：<a href="https://investors.coca-colacompany.com/news-events/press-releases/detail/1176/coca-cola-reports-third-quarter-2026-results-and-raises-full-year-guidance" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">公司 Q3 2026 業績公告</a>; <a href="https://investors.coca-colacompany.com/filings-reports/all-sec-filings/content/0001628280-26-067403/a2026q3earningsreleaseex-9.htm" target="_blank" rel="noopener noreferrer" class="text-blue-600 underline">財務表及 Non-GAAP 調節表</a>; </p></div>
+    </section>
+
+    <section id="valuation" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比較</h2></div>
         <div class="metric-card">
-            <!-- ✏️ 替換：圖 1 標題與說明（canvas id 固定） -->
-            <h3 class="text-lg font-bold text-slate-800 mb-2">Q2 2026 分部營收結構（抵銷前）(Million USD)</h3>
-            <p class="text-xs text-slate-500 mb-4">各分部為列報 (GAAP) 營收；另含 Corporate 營收 $37M 與分部間抵銷 -$252M，故上列分部合計 $13,595M 不等於合併淨營收 $13,380M。</p>
-            <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-slate-800">全球飲料與食品企業 FY2027 預測 P/E（Adj+，倍）</h3>
+            </div>
+            <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
+            <p class="text-xs text-slate-400 mt-3 text-right">來源：提供的 Bloomberg EEO，Current Multiples → FY2027 → Price/EPS, Adj+。KO 25.87x、雀巢 17.76x、百事 15.55x、Keurig Dr Pepper 13.61x。各公司業務組合及調整定義不同。報價欄標示 10/27；截圖未列獨立預測擷取日期。雀巢以瑞郎報價，其餘為美元；圖表直接採用各自倍數，不混合幣別計算。KDP 最新實績為 Q2，其餘截圖列 Q3，故統一比較 FY2027。</p>
         </div>
+    </section>
+
+    <section id="street-comments" class="tab-content">
+        <div class="mb-6">
+            <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點</h2>
+            <p class="mt-2 text-sm text-slate-500">來源：Bloomberg ANR（2026/10/28）；以 10/27 股價 US$91.18 計算。</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">瑞銀 (UBS)</h3>
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
+                </div>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>評級與日期：</b>Buy; 2026/10/27.</li>
+                    <li><b>目標價與隱含回報：</b>US$106.00; +16.3%.</li>
+                </ul>
+            </div>
+
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3>
+                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Overweight</span>
+                </div>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>評級與日期：</b>Overweight; 2026/10/27.</li>
+                    <li><b>目標價與隱含回報：</b>US$100.00; +9.7%.</li>
+                </ul>
+            </div>
+
+            <div class="metric-card border-t-4 border-t-blue-600">
+                <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+                    <h3 class="font-black text-slate-800">摩根大通 (JP Morgan)</h3>
+                    <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Overweight</span>
+                </div>
+                <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+                    <li><b>評級與日期：</b>Overweight; 2026/10/27.</li>
+                    <li><b>目標價與隱含回報：</b>US$98.00; +7.5%.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="risks" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、風險因素</h2></div>
         <div class="metric-card">
-            <!-- ✏️ 替換：圖 2 標題與說明（canvas id 固定） -->
-            <h3 class="text-lg font-bold text-slate-800 mb-2">合併營收與營業利益率：2Q25 vs 2Q26 (Million USD)</h3>
-            <p class="text-xs text-slate-500 mb-4">Comparable 營業利益率為 Non-GAAP 指標；2Q26 年增 86 個基點，主因有機增長與營運費用下降，部分被投入成本上升與行銷投資增加抵銷。</p>
-            <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
+            <ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
+                <li class="pb-3 border-b border-slate-100"><strong class="text-base">消費需求及出貨時點：</strong> 北美銷量持平，全球濃縮液出貨增幅高於終端單箱銷量；若需求放緩或出貨時點逆轉，有機增長可能回落。健康偏好及含糖飲料監管亦可影響產品組合。</li>
+                <li class="pb-3 border-b border-slate-100"><strong class="text-base">成本、行銷投入及定價組合：</strong> 較高行銷投入及營運費用已部分抵銷收入增長；亞太價格／組合下降 2%。若成本上升而定價能力轉弱，利潤率改善可能放緩。</li>
+                <li class="pb-3 border-b border-slate-100"><strong class="text-base">匯率與估值溢價：</strong> Q3 Comparable EPS 增長包含約 2 個百分點匯率順風，2027 年初步提示為輕微匯率逆風。25.87 倍 FY2027 P/E 高於所列同業，盈利預期下調可能同時壓縮估值。</li>
+                <li class="pb-1"><strong class="text-base">稅務爭議及出售業務執行：</strong> 美國 IRS 稅務訴訟仍未解決；全年 underlying 有效稅率 19.7% 未計入敗訴影響。非洲裝瓶業務出售預計於 Q4 完成，仍受監管批准及交割時點影響。</li>
+            </ol>
         </div>
-    </div>
-    <div class="metric-card mt-6">
-        <h3 class="text-lg font-bold text-slate-800 mb-4">核心財務數據綜合對比明細 Table (GAAP vs Non-GAAP)</h3>
-        <div class="overflow-x-auto">
-            <!-- ✏️ 替換區：表格內容（每列固定 4 格：科目 / GAAP / Non-GAAP / 變動率；末列灰底彙總列） -->
-            <table class="w-full text-sm text-left border-collapse">
-                <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
-                    <tr>
-                        <th class="px-6 py-3 font-bold">會計明細科目項目</th>
-                        <th class="px-6 py-3 font-bold text-right">2Q26 GAAP (列報)</th>
-                        <th class="px-6 py-3 font-bold text-right text-blue-600">2Q26 Comparable (Non-GAAP)</th>
-                        <th class="px-6 py-3 font-bold text-right text-emerald-600">Non-GAAP YoY 同比變動率</th>
-                    </tr>
-                </thead>
-                <tbody class="text-slate-700">
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">淨營收 (Net Operating Revenues)</td>
-                        <td class="px-6 py-4 text-right">$13,380 M</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$13,373 M</td>
-                        <td class="px-6 py-4 text-right font-bold text-emerald-500">+6%</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">毛利率 (Gross Margin)</td>
-                        <td class="px-6 py-4 text-right">62.9%</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">63.4%</td>
-                        <td class="px-6 py-4 text-right font-bold text-emerald-500">+117 bps</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">營業利益 (Operating Income)</td>
-                        <td class="px-6 py-4 text-right">$4,672 M</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$4,758 M</td>
-                        <td class="px-6 py-4 text-right font-bold text-emerald-500">+9%</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">營業利益率 (Operating Margin)</td>
-                        <td class="px-6 py-4 text-right">34.9%</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">35.6%</td>
-                        <td class="px-6 py-4 text-right font-bold text-emerald-500">+86 bps</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">歸屬股東淨利 (Net Income Attributable to Shareowners)</td>
-                        <td class="px-6 py-4 text-right">$4,425 M</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$4,176 M</td>
-                        <td class="px-6 py-4 text-right font-bold text-emerald-500">+11%</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">攤薄 EPS (Diluted EPS)</td>
-                        <td class="px-6 py-4 text-right">$1.03</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$0.97</td>
-                        <td class="px-6 py-4 text-right font-bold text-emerald-500">+11%</td>
-                    </tr>
-                    <tr class="bg-slate-50 font-bold">
-                        <td class="px-6 py-4 text-slate-800">其他列報營運指標 (Reported)</td>
-                        <td class="px-6 py-4 text-right text-slate-500">全球單箱銷量 YoY +5%</td>
-                        <td class="px-6 py-4 text-right text-blue-600">濃縮液銷量 +4%</td>
-                        <td class="px-6 py-4 text-right text-purple-600">價格/組合 +2%</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</section>
-<!-- ══════════ Tab 三：估值比較 ══════════ -->
-<section id="valuation" class="tab-content">
-    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比較</h2></div>
-    <div class="metric-card">
-        <div class="flex justify-between items-center mb-4">
-            <!-- ✏️ 替換：圖表標題（行業描述可換，Forward P/E 字樣保留） -->
-            <h3 class="text-lg font-bold text-slate-800">全球飲料食品龍頭遠期市盈率 (FY2026 Est Forward P/E) 倍數橫向長條圖比較（截至 2026/07/28）</h3>
-        </div>
-        <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
-        <!-- 🔒 固定：資料來源標註 -->
-        <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
-    </div>
-</section>
-<!-- ══════════ Tab 四：華爾街觀點 ══════════ -->
-<section id="street-comments" class="tab-content">
-    <div class="mb-6">
-        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點</h2>
-        <!-- ✏️ 替換：導言 -->
-        <p class="mt-2 text-sm text-slate-500">（評級與目標價：Bloomberg ANR，截至 2026/07/29）</p>
-    </div>
-    <!-- ✏️ 替換區：3 家投行卡片（投行名、評級徽章、2 點觀點）。
-         評級徽章配色規則：買入 Buy = bg-emerald-100 text-emerald-800；
-         增持 Overweight = bg-blue-100 text-blue-800；其他評級先與使用者確認。 -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="metric-card border-t-4 border-t-blue-600">
-            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                <h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3>
-                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
-            </div>
-            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                <li><b>看好定價力與市占動能（目標價 US$100）：</b> 本季價格/組合 +2%、NARTD 全品類價值份額續有斬獲，北美有機營收 (Non-GAAP) 增長 7%。我們認為品類龍頭的定價與組合升級能力，是支撐其增持立場的基本面基礎。</li>
-                <li><b>指引上調強化下半年能見度：</b> 公司將全年有機營收指引上調至約 +5%、Comparable EPS (Non-GAAP) 增速上調至 +9% 至 +10%。我們認為指引兌現進度將是後續評級與目標價走向的關鍵驗證點。</li>
-            </ul>
-        </div>
-        <div class="metric-card border-t-4 border-t-blue-600">
-            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                <h3 class="font-black text-slate-800">摩根大通 (JP Morgan)</h3>
-                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
-            </div>
-            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                <li><b>新興市場引擎重啟（目標價 US$96）：</b> 全球單箱銷量 +5% 由印度、中國、美國與巴西領軍，拉美有機營收 (Non-GAAP) +5%、裝瓶投資 +10%。我們認為新興市場量能回穩，是支撐全年指引上修的關鍵支點。</li>
-                <li><b>利潤率韌性經受成本考驗：</b> Comparable 營業利益率 (Non-GAAP) 35.6%（年增 86 個基點），在投入成本上升與行銷投資增加下仍見擴張。我們認為此反映費用槓桿與收入增長管理的執行力。</li>
-            </ul>
-        </div>
-        <div class="metric-card border-t-4 border-t-blue-600">
-            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                <h3 class="font-black text-slate-800">瑞銀 (UBS)</h3>
-                <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">買入 (Buy)</span>
-            </div>
-            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                <li><b>量增廣泛且品質高（目標價 US$104，三家最高）：</b> Coca-Cola Zero Sugar 銷量 +16%、Powerade +8%、Trademark Coca-Cola +5%，增長由多品類、多市場共同驅動。我們認為量增的廣度與品質，是其目標價居三家之首的核心邏輯。</li>
-                <li><b>現金流上修支撐股東回報：</b> 全年自由現金流 (Non-GAAP) 指引升至約 124 億美元，淨負債槓桿 (Non-GAAP) 為 1.4 倍。我們認為資產負債表為股息與再投資提供充足彈性。</li>
-            </ul>
-        </div>
-    </div>
-</section>
-<!-- ══════════ Tab 五：風險因素 ══════════ -->
-<section id="risks" class="tab-content">
-    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、風險因素</h2></div>
-    <div class="metric-card">
-        <!-- ✏️ 替換區：3–4 點風險（各點 strong 一律黑色粗體 class="text-base"，嚴禁 text-rose-700 紅字） -->
-        <ol class="space-y-4 list-decimal list-outside ml-5 text-sm text-slate-700">
-            <li class="pb-3 border-b border-slate-100">
-                <strong class="text-base">消費環境與健康偏好變化：</strong> 管理層指出消費環境仍屬動態；肥胖與其他健康相關疑慮、消費者產品與購物偏好演變，以及市場對甜味劑等成分的健康觀感，均可能壓抑品類長期需求。
-            </li>
-            <li class="pb-3 border-b border-slate-100">
-                <strong class="text-base">投入成本與供應鏈壓力：</strong> 本季 Comparable 營業利益率 (Non-GAAP) 擴張已部分被較高投入成本抵銷；公司風險披露亦列示大宗商品、原材料、包裝、能源與運輸等成本上升之供應鏈風險，若成本壓力再起將擠壓毛利。
-            </li>
-            <li class="pb-3 border-b border-slate-100">
-                <strong class="text-base">匯率波動風險：</strong> 本季 GAAP EPS 增長含約 4 個百分點匯率順風（Comparable EPS 約 2 個百分點），全年指引亦內含 Comparable 淨營收約 1%、Comparable EPS 約 3% 之匯率順風假設；匯率走勢反轉將直接侵蝕換算後增速。
-            </li>
-            <li class="pb-1">
-                <strong class="text-base">稅務訴訟與交易執行風險：</strong> 與美國國稅局 (IRS) 之稅務爭議仍在進行中，underlying 有效稅率 (Non-GAAP) 19.9% 未計入若敗訴之潛在影響；非洲裝瓶業務出售尚待監管批准，交割時點將影響指引中併購/分拆逆風之幅度。
-            </li>
-        </ol>
-    </div>
-</section>
-<!-- ══════════ Tab 六：免責聲明 ══════════ -->
-<!-- 🔒 固定區：免責聲明以 fetch 載入，嚴禁寫死內文 -->
-<section id="disclaimer" class="tab-content">
+    </section>
+
+    <section id="disclaimer" class="tab-content">
     <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免責聲明</h2></div>
     <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
         <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在從 disclaimer.html 線上安全讀取最新免責聲明組件...</p></div>
     </div>
 </section>
+
 </main>
-<!-- 🔒 固定區開始：右下角 AI 助理 Widget（結構固定；僅 ✏️ 標示處換文字） -->
+
 <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-<div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
-<div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
-<div class="flex items-center">
-<span class="text-2xl mr-2">🤖</span>
-<div><h4 class="font-bold text-sm">研究員專屬 AI 助理</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
+    <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
+            <div class="flex items-center">
+                <span class="text-2xl mr-2">🤖</span>
+                <div><h4 class="font-bold text-sm">研究員專屬 AI 助理</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
+            </div>
+            <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
+            <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">分析師您好！本頁資料截至 2026/10/28，涵蓋可口可樂 Q3 2026。您可詢問 US$13.380bn 淨營收、US$0.91 Comparable EPS、首九個月現金流及 25.87 倍 FY2027 P/E；實績、公司指引與市場預測會分開說明，本頁不提供即時行情。</div>
+        </div>
+        <div class="p-3 bg-white border-t border-slate-200">
+            <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
+                <input type="text" id="chat-input" placeholder="輸入您的研究指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewbox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+    <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
+        <span class="text-2xl">✨</span>
+    </button>
 </div>
-<button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
-<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-</button>
-</div>
-<div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
-<!-- ✏️ 替換：Widget 歡迎詞（公司名 + 本期亮點數字，數字須與內文一致） -->
-<div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
-分析師您好！我是您的專屬可口可樂 (KO) 數據輔助 AI。您可以隨時詢問我關於本季淨營收年增 7% 至 $13,380M、Comparable EPS (Non-GAAP) $0.97 (+11%)、單箱銷量 +5%，或全年有機營收指引上調至約 +5% 的細節。
-</div>
-</div>
-<div class="p-3 bg-white border-t border-slate-200">
-<form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
-<input type="text" id="chat-input" placeholder="輸入您的研究指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
-<button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
-<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
-</button>
-</form>
-</div>
-</div>
-<button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
-<span class="text-2xl">✨</span>
-</button>
-</div>
+
 <div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
-<button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
-<span>✨</span> AI 白話文解釋
-</button>
+    <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
+        <span>✨</span> AI 白話文解釋
+    </button>
 </div>
 <div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
-<div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
-<div class="bg-blue-600 text-white p-4 flex justify-between items-center">
-<h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 術語解釋</h3>
-<button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
-<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-</button>
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+            <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 術語解釋</h3>
+            <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewbox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查詢的詞彙：</div>
+            <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
+            <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
+                <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewbox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                AI 正在生成解釋...
+            </div>
+            <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
+        </div>
+        <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+            <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">關閉</button>
+        </div>
+    </div>
 </div>
-<div class="p-6">
-<div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查詢的詞彙：</div>
-<div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
-<div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
-<svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-AI 正在生成解釋...
-</div>
-<div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
-</div>
-<div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
-<button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">關閉</button>
-</div>
-</div>
-</div>
-<!-- 🔒 固定區結束：AI Widget / 劃詞解釋 -->
+
 <script>
-// 🔒 註冊全域圖表實例快取
-window.charts = {};
-// 🔒 PI 攔截視窗控制函式（依 index.html 標準寫法）
-function acceptPI() {
+    // 註冊全域圖表實例快取
+    window.charts = {};
+
+    function switchTab(e, tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(el => {
+            el.classList.remove('active', 'border-blue-600', 'text-blue-600');
+            el.classList.add('text-slate-500');
+        });
+        document.getElementById(tabId).classList.add('active');
+        e.currentTarget.classList.remove('text-slate-500');
+        e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+
+        // 徹底修復 hidden 畫布無寬高像素之 Chart.js 原生缺陷
+        if (tabId === 'financials') {
+            if (window.charts.koSegment) window.charts.koSegment.resize();
+            if (window.charts.koProfit) window.charts.koProfit.resize();
+        } else if (tabId === 'valuation') {
+            if (window.charts.koValuation) window.charts.koValuation.resize();
+        }
+    }
+
+    function acceptPI() {
     sessionStorage.setItem('pi_agreed', 'true');
     document.getElementById('pi-modal').style.display = 'none';
     document.body.style.overflow = 'auto';
 }
-function declinePI() {
+    function declinePI() {
     document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;
 }
-// 🔒 Tab 切換邏輯（✏️ 僅 resize 的圖表鍵名需隨新 ticker 更名）
-function switchTab(e, tabId) {
-    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(el => {
-        el.classList.remove('active', 'border-blue-600', 'text-blue-600');
-        el.classList.add('text-slate-500');
-    });
-    document.getElementById(tabId).classList.add('active');
-    e.currentTarget.classList.remove('text-slate-500');
-    e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
-    // 徹底修復 hidden 畫布無寬高像素之 Chart.js 原生缺陷
-    if (tabId === 'financials') {
-        if (window.charts.koSegment) window.charts.koSegment.resize();
-        if (window.charts.koProfit) window.charts.koProfit.resize();
-    } else if (tabId === 'valuation') {
-        if (window.charts.koValuation) window.charts.koValuation.resize();
-    }
-}
-document.addEventListener('DOMContentLoaded', function() {
-    // 🔒 專業投資者攔截門戶驗證
-    if (!sessionStorage.getItem('pi_agreed')) {
-        const modal = document.getElementById('pi-modal');
-        if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
-    }
-    // ✏️ 圖表 1：營收拆解 (Doughnut)。鍵名改 [ticker]Segment；labels/data 換新數據；顏色與 options 固定
-    window.charts.koSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
-        type: 'doughnut',
-        data: {
-            labels: ['北美', 'EMEA (歐洲、中東及非洲)', '拉丁美洲', '亞太', '裝瓶投資'],
-            datasets: [{
-                data: [5408, 3240, 1839, 1581, 1527],
-                backgroundColor: ['rgba(37, 99, 235, 0.85)', 'rgba(16, 185, 129, 0.85)', 'rgba(99, 102, 241, 0.85)', 'rgba(168, 85, 247, 0.85)', 'rgba(245, 158, 11, 0.85)'],
-                borderWidth: 0
-            }]
-        },
-        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
-    });
-    // ✏️ 圖表 2：業務單位表現 (Grouped Bar 雙軸)。鍵名改 [ticker]Profit；labels/data 換新數據；顏色 #3b82f6 / #10b981 與雙軸設定固定
-    window.charts.koProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
-        type: 'bar',
-        data: {
-            labels: ['2Q25', '2Q26'],
-            datasets: [
-                {
-                    label: '淨營收 (百萬美元)',
-                    data: [12535, 13380],
-                    backgroundColor: '#3b82f6',
-                    borderRadius: 4
-                },
-                {
-                    label: 'GAAP 營業利益率 (%)',
-                    data: [34.1, 34.9],
-                    backgroundColor: '#10b981',
-                    borderRadius: 4,
-                    yAxisID: 'percentageAxis'
-                },
-                {
-                    label: 'Comparable 營業利益率 (Non-GAAP, %)',
-                    data: [34.7, 35.6],
-                    backgroundColor: '#6366f1',
-                    borderRadius: 4,
-                    yAxisID: 'percentageAxis'
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: { legend: { position: 'bottom' } },
-            scales: {
-                y: { beginAtZero: true, position: 'left', grid: { color: '#f1f5f9' } },
-                percentageAxis: { beginAtZero: true, max: 100, position: 'right', grid: { display: false } }
-            }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // 專業投資者攔截門戶驗證
+        if (!sessionStorage.getItem('pi_agreed')) {
+            const modal = document.getElementById('pi-modal');
+            if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
         }
-    });
-    // ✏️ 圖表 3：Forward P/E 橫向比較。鍵名改 [ticker]Valuation；
-    //    ⚠️ backgroundColor 陣列中「藍色 rgba(37,99,235,0.95)」的位置必須對應主角公司在 labels 中的位置，其餘同業一律灰色
-    window.charts.koValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
-        type: 'bar',
-        data: {
-            labels: ['KO (可口可樂)', 'NESN (雀巢)', 'PEP (百事)', 'KDP (Keurig Dr Pepper)'],
-            datasets: [{
-                label: 'FY2026 Est Forward P/E',
-                data: [26.88, 18.48, 16.69, 13.63],
-                backgroundColor: ['rgba(37, 99, 235, 0.95)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)'],
-                borderRadius: 4
-            }]
-        },
-        options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
-    });
-    // 🔒 安全調閱外部 disclaimer.html 連動模組（嚴禁寫死免責聲明）
-    fetch('disclaimer.html')
+
+        // KO Q3 2026 chart
+        window.charts.koSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {"type": "bar", "data": {"labels": ["歐洲、中東及非洲", "拉丁美洲", "北美", "亞太", "裝瓶投資"], "datasets": [{"label": "有機營收增長 (%)", "data": [7, 16, 3, 6, 12], "backgroundColor": "#3b82f6", "borderRadius": 4}, {"label": "單箱銷量增長 (%)", "data": [5, 6, 0, 6, 8], "backgroundColor": "#10b981", "borderRadius": 4}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"position": "bottom"}}, "scales": {"y": {"beginAtZero": true, "grid": {"color": "#f1f5f9"}}}}});
+        window.charts.koProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {"type": "bar", "data": {"labels": ["Q3 2025", "Q3 2026"], "datasets": [{"label": "GAAP 淨營收 (百萬美元)", "data": [12455, 13380], "backgroundColor": "#3b82f6", "borderRadius": 4}, {"label": "GAAP 營業利益率 (%)", "data": [31.97, 33.37], "backgroundColor": "#10b981", "borderRadius": 4, "yAxisID": "percentageAxis"}, {"label": "Comparable 營業利益率 (%)", "data": [31.87, 32.93], "backgroundColor": "#6366f1", "borderRadius": 4, "yAxisID": "percentageAxis"}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"position": "bottom"}}, "scales": {"y": {"beginAtZero": true, "position": "left", "grid": {"color": "#f1f5f9"}}, "percentageAxis": {"beginAtZero": true, "max": 100, "position": "right", "grid": {"display": false}}}}});
+        window.charts.koValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {"type": "bar", "data": {"labels": ["KO（可口可樂）", "NESN（雀巢）", "PEP（百事）", "KDP（Keurig Dr Pepper）"], "datasets": [{"label": "FY2027 Price/EPS, Adj+", "data": [25.87, 17.76, 15.55, 13.61], "backgroundColor": ["rgba(37, 99, 235, 0.95)", "rgba(148, 163, 184, 0.6)", "rgba(148, 163, 184, 0.6)", "rgba(148, 163, 184, 0.6)"], "borderRadius": 4}]}, "options": {"indexAxis": "y", "responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"display": false}}, "scales": {"x": {"beginAtZero": true}}}});
+        fetch('disclaimer.html')
         .then(response => {
             if (!response.ok) throw new Error('無法載入 disclaimer.html');
             return response.text();
@@ -513,9 +420,10 @@ document.addEventListener('DOMContentLoaded', function() {
             const container = document.getElementById('disclaimer-container');
             if(container) container.innerHTML = '<div class="p-6 text-center text-rose-600 font-bold">【安全連動錯誤】外部合規免責聲明檔案加載失敗，請聯絡系統運維團隊。</div>';
         });
-});
-// 🔒 NTAM 後端 AI 調度核心（端點 /api/gemini 與後處理邏輯嚴禁更動）
-async function callGeminiAPI(prompt, systemInstruction) {
+    });
+
+    // NTAM 後端 AI 調度核心
+    async function callGeminiAPI(prompt, systemInstruction) {
     try {
         const response = await fetch('/api/gemini', {
             method: 'POST', headers: { 'Content-Type': 'application/json' },
@@ -527,49 +435,50 @@ async function callGeminiAPI(prompt, systemInstruction) {
         return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
     } catch (error) { return `網路連線失敗。(${error.message})`; }
 }
-// ✏️ AI 助理 systemPrompt（公司名與財季須換成新報告；語言須與本頁一致）
-const standardPrompt = `你是一位精通 NTAM 投資研究框架的資深 AI 助理。請針對使用者對可口可樂 (The Coca-Cola Company, KO) 2026 年第二季財報與相關披露的提問，提供符合專業機構投資人水準、客觀、高密度的定量與定性答覆。重點用 <b> 標籤包覆，嚴禁使用 markdown。`;
-// 🔒 Widget 互動邏輯（勿改）
-function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
-function appendMessage(text, isUser) {
-    const msgDiv = document.createElement('div');
-    msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
-    msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
-    document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
-}
-function showTypingIndicator() {
-    const ind = document.createElement('div'); ind.id = `typing-indicator-${Date.now()}`;
-    ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
-    ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
-    document.getElementById('chat-messages').appendChild(ind);
-    return ind.id;
-}
-async function handleChatSubmit(e) {
-    e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
-    const sendBtn = e.target.querySelector('button[type="submit"]'); if (sendBtn && sendBtn.disabled) return;
-    if (sendBtn) { sendBtn.disabled = true; sendBtn.classList.add('opacity-50', 'cursor-not-allowed'); }
-    input.value = ''; appendMessage(text, true); const typingId = showTypingIndicator();
-    try {
-        const res = await callGeminiAPI(text, standardPrompt);
-        document.getElementById(typingId)?.remove(); appendMessage(res, false);
-    } finally {
-        document.getElementById(typingId)?.remove();
-        if (sendBtn) { sendBtn.disabled = false; sendBtn.classList.remove('opacity-50', 'cursor-not-allowed'); }
+
+    // AI 助理 Widget 邏輯
+    const standardPrompt = "You are the NTAM research assistant for 可口可樂 (KO). Respond in professional Traditional Chinese. Data as of 2026/10/28. No live market prices. Quarter ended 2026/10/02, released 2026/10/27. USD millions: GAAP revenue 13380 vs 12455 (+7%); comparable 13354 vs 12412 (+8%); organic growth 7%; unit case volume +5%; concentrate +7%; price/mix +1%, rounded values do not add exactly. Shipment timing adds 2 points versus volume. GAAP/comparable operating income 4465/4397; margins 33.37%/32.93%; comparable expansion 106bp, currency-neutral 46bp, underlying 21bp. GAAP net income attributable to shareowners 4009 vs 3696. GAAP/comparable diluted EPS 0.93/0.91, growth 8%/11%, 2-point currency benefit. Nine-month CFO 12471 minus capex 1063 = FCF11408; not quarterly. Prior year included fairlife contingent consideration payment USD6.1bn. FY26 organic growth at least 5%, comparable EPS growth at least 11%, FCF at least USD13bn. FY27 preliminary considerations: aggregate acquisitions and divestitures headwinds to comparable net revenues8% and comparable EPS2%, plus slight FX headwinds; not full-year growth guidance. Do not attribute the entire8%/2% to the Africa sale. The footnote assumes the Africa bottling sale closes in Q4, subject to approval. Full FY27 guidance follows Q4 results. ANR2026/10/28 target97.80; reference quote91.18 dated10/27; price upside7.3%, excludes dividends; Buy24/Neutral5/Sell0. UBS Buy106 (+16.3%), Morgan Stanley Overweight100 (+9.7%), JP Morgan Overweight98 (+7.5%), all2026/10/27. Do not invent bank theses. Raw MS rating Overwt/Attractive includes a separate industry view; only show Overweight publicly. FY2027 Price/EPS Adj+: KO25.87,NESN17.76,PEP15.55,KDP13.61. NESN CHF; other quotes USD. EEO postrelease Q3 comparable revenue estimate12913 actual13354; EPS Adj+ estimate0.881 actual0.910; not verified prerelease consensus, do not claim a beat. Official fiscal end takes precedence over EEO standardized09/30. Distinguish actuals, company guidance, estimates and our views. Use We believe / 我們認為 / 我们认为 as appropriate. Omit calculator attribution or site-classification parentheticals. Key points use <b> tags, no markdown.";
+    function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
+    function appendMessage(text, isUser) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
+        msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
+        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
     }
-}
-// 🔒 劃詞解說機制（勿改）
-let selectedText = "";
-document.addEventListener('mouseup', function(e) {
-    const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
-    if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
-    if (text.length > 1 && text.length < 50) {
-        selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
-        tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${Math.max(8, rect.top - 40)}px`;
-        tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
-    } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
-});
-document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
-async function explainSelectedTerm() {
+    function showTypingIndicator() {
+        const ind = document.createElement('div'); ind.id = `typing-indicator-${Date.now()}`;
+        ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
+        ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
+        document.getElementById('chat-messages').appendChild(ind);
+        return ind.id;
+    }
+    async function handleChatSubmit(e) {
+        e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
+        const sendBtn = e.target.querySelector('button[type="submit"]'); if (sendBtn && sendBtn.disabled) return;
+        if (sendBtn) { sendBtn.disabled = true; sendBtn.classList.add('opacity-50', 'cursor-not-allowed'); }
+        input.value = ''; appendMessage(text, true); const typingId = showTypingIndicator();
+        try {
+            const res = await callGeminiAPI(text, standardPrompt);
+            document.getElementById(typingId)?.remove(); appendMessage(res, false);
+        } finally {
+            document.getElementById(typingId)?.remove();
+            if (sendBtn) { sendBtn.disabled = false; sendBtn.classList.remove('opacity-50', 'cursor-not-allowed'); }
+        }
+    }
+
+    // 劃詞解說機制
+    let selectedText = "";
+    document.addEventListener('mouseup', function(e) {
+        const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
+        if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
+        if (text.length > 1 && text.length < 50) {
+            selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
+            tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${Math.max(8, rect.top - 40)}px`;
+            tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
+        } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+    });
+    document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
+    async function explainSelectedTerm() {
     document.getElementById('selection-tooltip').classList.add('hidden');
     document.getElementById('explain-term-title').textContent = selectedText;
     document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
@@ -577,7 +486,7 @@ async function explainSelectedTerm() {
     const res = await callGeminiAPI(`解釋這個可口可樂 KO 財報相關詞彙：${selectedText}`, "你是可口可樂飲料消費品產業專家，用最白話的專業繁體中文解釋詞彙。限 150 字，重點使用 <b> 標籤包覆。");
     document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
 }
-function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
+    function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
 </script>
 </body>
 </html>
