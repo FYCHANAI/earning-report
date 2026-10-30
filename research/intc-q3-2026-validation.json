@@ -1,0 +1,269 @@
+{
+  "checks": [
+    {
+      "check": "intc.html six tabs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc.html unique ids",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc.html style matches MU",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc.html PI preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc.html disclaimer preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc.html no stale data",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc.html top 3 brokers",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc.html VM executes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc.html PI remains active",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc.html six tab switches",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc.html disclaimer mock loads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc.html chart keys",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc.html charts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc.html acceptPI unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc.html declinePI unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc.html callGeminiAPI unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-sc.html six tabs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-sc.html unique ids",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-sc.html style matches MU",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-sc.html PI preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-sc.html disclaimer preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-sc.html no stale data",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-sc.html top 3 brokers",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-sc.html VM executes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-sc.html PI remains active",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-sc.html six tab switches",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-sc.html disclaimer mock loads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-sc.html chart keys",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-sc.html charts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-sc.html acceptPI unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-sc.html declinePI unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-sc.html callGeminiAPI unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-sc.html numeric table parity",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-en.html six tabs",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-en.html unique ids",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-en.html style matches MU",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-en.html PI preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-en.html disclaimer preserved",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-en.html no stale data",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-en.html top 3 brokers",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-en.html VM executes",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-en.html PI remains active",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-en.html six tab switches",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-en.html disclaimer mock loads",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-en.html chart keys",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-en.html charts",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-en.html acceptPI unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-en.html declinePI unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-en.html callGeminiAPI unchanged",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "intc-en.html numeric table parity",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "index INTC first AMZN second",
+      "pass": true,
+      "detail": null
+    },
+    {
+      "check": "index other cards unchanged",
+      "pass": true,
+      "detail": null
+    }
+  ],
+  "passed": 52,
+  "failed": 0,
+  "browser_qa": "Not run: Chromium failed with socket Operation not permitted. No desktop/mobile visual rendering claim.",
+  "method": "Static plus fake DOM/Chart VM; PI remained active, no acceptance, live AI or network calls.",
+  "published": false
+}
