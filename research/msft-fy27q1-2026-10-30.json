@@ -1,0 +1,52 @@
+{
+  "as_of": "2026-10-30",
+  "period": "FY2027 Q1",
+  "period_end": "2026-09-30",
+  "release_date": "2026-10-28",
+  "status": "Local review draft, not pushed or published",
+  "sources": [
+    "https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/press-release-webcast",
+    "https://www.microsoft.com/en-us/investor/earnings/fy-2027-q1/metrics",
+    "https://www.microsoft.com/en-us/investor/events/fy-2027/earnings-fy-2027-q1"
+  ],
+  "user_evidence": [
+    "MSFT ANR.png: as of10/30/26, quote10/29 530.14; consensus634.56; UBS700 Buy Karl Keirstead, MS650 Overwt/Attractive Adam Wood, JPM625 overweight Samik Chatterjee, all10/29. MS equity Overweight separated from industry Attractive.",
+    "MSFT EEO(1).png: Next4PE Adj+25.60, Q2revenue96.325bn EPSadj4.869; Q1 net income Adj+36.629bn differs from issuer NonGAAP36.422bn, use issuer basis.",
+    "GOOGL EEO(1).png: Next4GAAP+20.22",
+    "AMZN EEO(1).png: Next4GAAP+24.14",
+    "AAPL EEO.png: Next4Adj+37.56"
+  ],
+  "price_basis": "Displayed 10/29 reference quote, not independently verified exchange close",
+  "forecast_basis": "EEO postrelease forecast snapshots; not prerelease consensus. Fiscal and adjustment bases differ.",
+  "calculations": {
+    "revenue_growth": 18.804475171552525,
+    "operating_growth": 20.95308342772846,
+    "gaap_net_growth": 32.0106678199445,
+    "adjusted_net_growth": 18.12668245062108,
+    "fcf": 18633,
+    "prior_fcf": 25663,
+    "fcf_growth": -27.39352375014612,
+    "operating_margins": [
+      49.75671604590427,
+      48.872838695557014
+    ],
+    "segment_margins": [
+      52.81333420144541,
+      34.597003358305344
+    ],
+    "target_upside": {
+      "634.56": 19.69668389482022,
+      "700": 32.04059305089222,
+      "650": 22.609122118685644,
+      "625": 17.893386652582333
+    }
+  },
+  "critical_notes": [
+    "FY27 segments changed to Agents and Infra / Devices and Consumer; prior-year recast. Do not retain FY26 three-segment charts.",
+    "Cash PPE39.367bn differs from management capex45.2bn including leases; no forced reconciliation.",
+    "EPS growth uses issuer rounded growth not division of rounded EPS.",
+    "No original broker theses supplied, only ratings/analysts/dates/targets.",
+    "Do not treat ANR upside as investment guarantee."
+  ],
+  "verification": "52 static / fake-DOM checks passed; independent factual audit passed after two minor corrections; real browser unavailable due socket permission. No deployment."
+}
