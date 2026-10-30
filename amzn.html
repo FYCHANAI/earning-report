@@ -1,582 +1,363 @@
 <!DOCTYPE html>
 <html lang="zh-TW">
-<!--
-═══════════════════════════════════════════════════════════════════
- NTAM 報告頁（繁體中文版）｜以黃金範本 NTAM_report_template_tc.html 逐字複製產生
-═══════════════════════════════════════════════════════════════════
- 使用規則：
- 1. 產生任何新報告頁時，逐字複製本檔骨架，只修改「✏️ 替換區」。
- 2. 「🔒 固定區」的結構、class、樣式、JS 邏輯一律逐位元保留。
- 3. 本頁為亞馬遜 (AMZN) Q2 2026 報告；chart 鍵名已改用本頁 ticker（小寫），
-    switchTab 內 .resize() 鍵名已同步。
- 4. 本檔 lang 固定 zh-TW（繁體）。簡/英版另以線上最新已修復骨架產生
-    （字體：簡=Noto Sans SC、英=Inter）。
- 5. 標記註解（🔒/✏️）不影響網頁顯示，輸出時可保留。
- 6. v2（2026/07/17）：修正劃詞 tooltip 座標（fixed 定位不加 scrollY）、PI 警示三角
-    SVG path 錯字、AI Widget 送出防重複（唯一 typing ID＋按鈕鎖定與復原）、
-    Chart.js 鎖定版本 @4.5.1。
- 7. 風險因素各點標題一律黑色粗體（strong class="text-base"），全站禁用
-    text-rose-700 紅字標題（含本註解所述舊規則，一併作廢）。
-═══════════════════════════════════════════════════════════════════
--->
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<!-- ✏️ 替換：頁面標題（公司名 + Ticker） -->
 <title>亞馬遜 (AMZN) 深度研究報告 | NTAM 資深分析師</title>
-<!-- 🔒 固定區：框架與字體引用（繁體版固定 Noto Sans TC） -->
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
 <style>
-body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
-.chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
-@media (min-width: 768px) { .chart-container { height: 400px; } }
-.tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
-.tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
-.tab-content.active { display: block; }
-@keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
-.metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
-.hide-scrollbar::-webkit-scrollbar { display: none; }
-.hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-/* AI Animations */
-@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-.animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
-.typing-dot { animation: typing 1.4s infinite ease-in-out both; }
-.typing-dot:nth-child(1) { animation-delay: -0.32s; }
-.typing-dot:nth-child(2) { animation-delay: -0.16s; }
-@keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
-#selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
+    body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
+    .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
+    @media (min-width: 768px) { .chart-container { height: 400px; } }
+    .tab-btn.active { border-bottom: 4px solid #2563eb; color: #2563eb; font-weight: 700; }
+    .tab-content { display: none; animation: fadeIn 0.3s ease-in-out; }
+    .tab-content.active { display: block; }
+    @keyframes fadeIn { from { opacity: 0; transform: translateY(5px); } to { opacity: 1; transform: translateY(0); } }
+    .metric-card { background: white; border-radius: 0.75rem; padding: 1.25rem; box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); border: 1px solid #e2e8f0; }
+    .hide-scrollbar::-webkit-scrollbar { display: none; }
+    .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+    /* AI Animations */
+    @keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+    .animate-slide-up { animation: slideUp 0.3s ease-out forwards; }
+    .typing-dot { animation: typing 1.4s infinite ease-in-out both; }
+    .typing-dot:nth-child(1) { animation-delay: -0.32s; }
+    .typing-dot:nth-child(2) { animation-delay: -0.16s; }
+    @keyframes typing { 0%, 80%, 100% { transform: scale(0); } 40% { transform: scale(1); } }
+    #selection-tooltip { transition: opacity 0.2s, transform 0.2s; z-index: 1000; }
 </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
-<!-- 🔒 固定區開始：專業投資者 (PI) 三語攔截視窗（勿改任何文字與結構） -->
+
 <div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
-<div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
-<div class="text-center mb-6">
-<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+    <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
+        <div class="text-center mb-6">
+            <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z" /></svg>
+            </div>
+            <h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明</h2>
+        </div>
+        <div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
+            <div class="border-l-4 border-blue-500 pl-4">
+                <p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
+                <p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
+            </div>
+            <div class="border-l-4 border-blue-500 pl-4">
+                <p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
+                <p>本页面所含信息仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者身份。</p>
+            </div>
+            <div class="border-l-4 border-blue-500 pl-4">
+                <p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
+                <p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
+            </div>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
+            <button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
+            <button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">我確認 I Confirm</button>
+        </div>
+    </div>
 </div>
-<h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明</h2>
-</div>
-<div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
-<div class="border-l-4 border-blue-500 pl-4">
-<p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
-<p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
-</div>
-<div class="border-l-4 border-blue-500 pl-4">
-<p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
-<p>本页面所含信息仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者身份。</p>
-</div>
-<div class="border-l-4 border-blue-500 pl-4">
-<p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
-<p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
-</div>
-</div>
-<div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
-<button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
-<button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">我確認 I Confirm</button>
-</div>
-</div>
-</div>
-<!-- 🔒 固定區結束：PI 攔截視窗 -->
+
 <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
-<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-<div class="flex justify-between items-start">
-<div class="flex flex-col">
-<!-- 🔒 固定：Logo 連回首頁（檔名含 URL 編碼空格，勿改） -->
-<a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
-<img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
-<span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
-</a>
-<div class="flex flex-col">
-<!-- ✏️ 替換：公司名 + Ticker、副標題（財季） -->
-<h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">亞馬遜 <span class="text-blue-600">AMZN</span></h1>
-<span class="text-sm text-slate-500 font-medium mt-1">資深分析師 營運與戰略報告 | Q2 2026 財報特輯</span>
-</div>
-</div>
-<div class="flex flex-col items-end space-y-3">
-<!-- ✏️ 替換：語言切換選單的三個檔名（換成新 ticker），selected 固定在繁體 -->
-<select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
-<option value="amzn.html" selected>繁體中文</option>
-<option value="amzn-sc.html">简体中文</option>
-<option value="amzn-en.html">English</option>
-</select>
-<div class="flex items-center space-x-4">
-<div class="text-right hidden sm:block">
-<!-- ✏️ 替換：目標價（Source 徽章文字固定） -->
-<div class="text-xs text-slate-400 font-bold">共識目標價 (截至 2026/07/31) <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Source: Bloomberg ANR)</span></div>
-<div class="text-xl font-bold text-slate-800">$316.05 USD</div>
-</div>
-<!-- ✏️ 替換：評級文字（膠囊樣式固定） -->
-<div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">ANR 共識評級：買入</div>
-</div>
-</div>
-</div>
-<!-- 🔒 固定：6 個 Tabs 的名稱、順序、onclick 目標一律不變 -->
-<nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
-    <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我們的觀點</button>
-    <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 營運與財務數據</button>
-    <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比較</button>
-    <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 華爾街觀點</button>
-    <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 風險因素</button>
-    <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免責聲明</button>
-</nav>
-</div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex justify-between items-start">
+            <div class="flex flex-col">
+                <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
+                    <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
+                    <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+                </a>
+                <div class="flex flex-col">
+                    <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">亞馬遜 <span class="text-blue-600">AMZN</span></h1>
+                    <span class="text-sm text-slate-500 font-medium mt-1">資深分析師 營運與戰略報告 | 2026 Q3 財報特輯</span>
+                </div>
+            </div>
+            <div class="flex flex-col items-end space-y-3">
+                <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
+                    <option value="amzn.html" selected>繁體中文</option>
+                    <option value="amzn-sc.html">简体中文</option>
+                    <option value="amzn-en.html">English</option>
+                </select>
+                <div class="flex items-center space-x-4">
+                    <div class="text-right hidden sm:block">
+                        <div class="text-xs text-slate-400 font-bold">共識目標價 <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Bloomberg ANR · 2026/10/30)</span></div>
+                        <div class="text-xl font-bold text-slate-800">$333.48 USD</div>
+                    </div>
+                    <div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">共識：買入 (4.85/5)</div>
+                </div>
+            </div>
+        </div>
+
+        <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+            <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我們的觀點</button>
+            <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 營運與財務數據</button>
+            <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比較</button>
+            <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 華爾街觀點</button>
+            <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 風險因素</button>
+            <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免責聲明</button>
+        </nav>
+    </div>
 </header>
+
 <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
-<!-- ══════════ Tab 一：我們的觀點 ══════════ -->
-<section id="our-comments" class="tab-content active">
-    <div class="mb-6">
-        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我們的觀點</h2>
-    </div>
-    <div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
-        <div class="flex items-center mb-6 border-b border-slate-100 pb-4">
-            <span class="text-3xl mr-3">🎯</span>
-            <h3 class="text-2xl font-black text-blue-600 tracking-tight">核心經營結論</h3>
+
+    <section id="our-comments" class="tab-content active"><div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我們的觀點</h2></div><p class="text-sm text-slate-500 mb-6">更新：2026/10/30。2026 Q3 截至 2026/09/30，業績於 2026/10/29 公布；市場資料以所附 Bloomberg 畫面日期為準。</p><div class="metric-card bg-white border border-slate-200 p-6 md:p-8"><div class="flex items-center mb-6 border-b border-slate-100 pb-4"><span class="text-3xl mr-3">🎯</span><h3 class="text-2xl font-black text-blue-600 tracking-tight">核心經營結論</h3></div><ul class="space-y-6"><li class="flex items-start"><span class="text-blue-600 mr-4 text-xl font-black">1.</span><div><strong class="text-slate-900 block mb-1 text-lg">AWS 增長加速，成為盈利提升的主要動力</strong><p class="text-slate-600 text-sm leading-relaxed">AWS 營收年增 39.3% 至 US$45.98bn，營業利潤率達 38.7%，貢獻約 63% 集團營業利潤。我們認為，雲端及 AI 需求正提升 Amazon 的盈利結構，AWS 的增長質素比集團整體銷售增速更具投資意義。後續應觀察新增算力投產後的使用率，以及較高折舊下能否維持盈利能力。</p></div></li><li class="flex items-start"><span class="text-blue-600 mr-4 text-xl font-black">2.</span><div><strong class="text-slate-900 block mb-1 text-lg">零售盈利改善，消費需求需剔除活動時點影響</strong><p class="text-slate-600 text-sm leading-relaxed">北美與國際業務營業利潤率分別為 7.7% 及 3.7%，均高於去年同期。Prime Day 主要由第三季移至第二季，令本季收入增長受到比較基數影響。我們認為，零售業務的效率改善支持盈利韌性；第四季旺季表現及廣告增長恢復，將是判斷需求是否穩健的關鍵。</p></div></li><li class="flex items-start"><span class="text-blue-600 mr-4 text-xl font-black">3.</span><div><strong class="text-slate-900 block mb-1 text-lg">營業利潤創高，現金回報仍受投資周期牽制</strong><p class="text-slate-600 text-sm leading-relaxed">集團營業利潤增長 61.2%，惟過去十二個月自由現金流為負 US$42.36bn，公司維持全年現金資本開支約 US$220bn 的預期。我們認為，AWS 的強勁增長支持擴建需要，但投資規模已提高回報門檻。評估企業價值時，需要同時考慮雲端盈利增長、現金流轉化及融資成本。</p></div></li><li class="flex items-start"><span class="text-blue-600 mr-4 text-xl font-black">4.</span><div><strong class="text-slate-900 block mb-1 text-lg">估值具相對吸引力，重估取決於增長與投資回收</strong><p class="text-slate-600 text-sm leading-relaxed">Bloomberg 顯示 Amazon 未來四季 P/E 為 24.14x，低於所列 Microsoft 及 Apple，高於 Alphabet；共識目標 US$333.48 較參考價 US$243.79 高約 36.8%。我們認為，AWS 增長與零售盈利改善提供估值支持，但自由現金流承壓限制短期重估空間，投資回報應由持續盈利及現金產生能力驗證。</p></div></li></ul></div></section>
+
+    <section id="financials" class="tab-content"><div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、營運與財務數據</h2></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6"><div class="metric-card border-t-4 border-t-emerald-500"><h4 class="text-xs font-bold text-slate-500 uppercase">2026 Q3 營收（GAAP）</h4><p class="text-2xl font-bold text-slate-800 mt-1">$201,944 M</p><p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +12.1%</p></div><div class="metric-card border-t-4 border-t-blue-500"><h4 class="text-xs font-bold text-slate-500 uppercase">營業利潤</h4><p class="text-2xl font-bold text-slate-800 mt-1">$28,076 M</p><p class="text-sm text-blue-600 font-semibold mt-1">▲ YoY +61.2%；利潤率 13.9%</p></div><div class="metric-card border-t-4 border-t-indigo-500"><h4 class="text-xs font-bold text-slate-500 uppercase">AWS 營收</h4><p class="text-2xl font-bold text-slate-800 mt-1">$45,984 M</p><p class="text-sm text-indigo-600 font-semibold mt-1">▲ YoY +39.3%</p></div><div class="metric-card border-t-4 border-t-purple-500"><h4 class="text-xs font-bold text-slate-500 uppercase">自由現金流（過去十二個月）</h4><p class="text-2xl font-bold text-slate-800 mt-1">−$42,357 M</p><p class="text-sm text-purple-600 font-semibold mt-1">營運現金流 $168,300 M</p></div></div><div class="grid grid-cols-1 lg:grid-cols-2 gap-6"><div class="metric-card"><h3 class="text-lg font-bold text-slate-800 mb-2">2026 Q3 分部營收（百萬美元）</h3><p class="text-xs text-slate-500 mb-4">北美 112,852；國際 43,108；AWS 45,984，合計 201,944。</p><div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div></div><div class="metric-card"><h3 class="text-lg font-bold text-slate-800 mb-2">分部營收與營業利潤率（百萬美元 / %）</h3><p class="text-xs text-slate-500 mb-4">北美營業利潤率 7.7%；國際 3.7%；AWS 38.7%。</p><div class="chart-container"><canvas id="profitabilityChart"></canvas></div></div></div><div class="metric-card mt-6"><h3 class="text-lg font-bold text-slate-800 mb-4">2026 Q3 核心財務數據（百萬美元；EPS 及利潤率除外）</h3><div class="overflow-x-auto"><table class="w-full text-sm text-left border-collapse"><thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200"><tr><th class="px-6 py-3 font-bold">項目</th><th class="px-6 py-3 font-bold text-right">2026 Q3</th><th class="px-6 py-3 font-bold text-right">2025 Q3</th><th class="px-6 py-3 font-bold text-right">同比變動</th></tr></thead><tbody class="text-slate-700"><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">營收（GAAP）</td><td class="px-6 py-4 text-right">201,944</td><td class="px-6 py-4 text-right">180,169</td><td class="px-6 py-4 text-right">+12.1%</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">營業利潤</td><td class="px-6 py-4 text-right">28,076</td><td class="px-6 py-4 text-right">17,422</td><td class="px-6 py-4 text-right">+61.2%</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">淨利</td><td class="px-6 py-4 text-right">20,685</td><td class="px-6 py-4 text-right">21,187</td><td class="px-6 py-4 text-right">−2.4%</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">稀釋 EPS（GAAP）</td><td class="px-6 py-4 text-right">1.89</td><td class="px-6 py-4 text-right">1.95</td><td class="px-6 py-4 text-right">−3.1%</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">AWS 營收</td><td class="px-6 py-4 text-right">45,984</td><td class="px-6 py-4 text-right">33,006</td><td class="px-6 py-4 text-right">+39.3%</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">AWS 營業利潤</td><td class="px-6 py-4 text-right">17,773</td><td class="px-6 py-4 text-right">11,434</td><td class="px-6 py-4 text-right">+55.4%</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">廣告服務營收</td><td class="px-6 py-4 text-right">19,637</td><td class="px-6 py-4 text-right">17,703</td><td class="px-6 py-4 text-right">+10.9%</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">營運現金流（單季）</td><td class="px-6 py-4 text-right">42,422</td><td class="px-6 py-4 text-right">35,525</td><td class="px-6 py-4 text-right">+19.4%</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">購置物業及設備（單季）</td><td class="px-6 py-4 text-right">77,259</td><td class="px-6 py-4 text-right">35,095</td><td class="px-6 py-4 text-right">+120.1%</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">淨資本開支（單季）</td><td class="px-6 py-4 text-right">75,878</td><td class="px-6 py-4 text-right">34,228</td><td class="px-6 py-4 text-right">+121.7%</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">自由現金流（單季）</td><td class="px-6 py-4 text-right">−33,456</td><td class="px-6 py-4 text-right">1,297</td><td class="px-6 py-4 text-right">由正轉負</td></tr><tr class="border-b border-slate-100"><td class="px-6 py-4 font-medium">營業利潤率</td><td class="px-6 py-4 text-right">13.9%</td><td class="px-6 py-4 text-right">9.7%</td><td class="px-6 py-4 text-right">+4.2 個百分點</td></tr></tbody></table></div><p class="text-xs text-slate-500 mt-4 leading-relaxed">淨資本開支為購置物業及設備減出售及補助所得；單季自由現金流為 42,422 − 75,878 = −33,456。此數字按公司定義由現金流量表計得，並非上方過去十二個月的 −42,357。去年同期淨利包含 Anthropic 投資稅前收益 US$9.5bn，影響同比比較。</p></div><div class="metric-card mt-6"><h3 class="text-lg font-bold text-slate-800 mb-3">2026 Q4 公司指引與市場共識</h3><p class="text-sm text-slate-600 leading-relaxed">公司預計第四季營收 US$240–247bn、同比增長 12–16%，營業利潤 US$28.5–33.5bn；全年現金資本開支約 US$220bn。Bloomberg EEO 畫面所示第四季營收共識 US$244.587bn、營業利潤 US$33.124bn、GAAP+ EPS 2.470，屬市場預測而非公司承諾。公司指引包含約 60 個基點匯率逆風，並預期第四季廣告收入增長回升至接近 20% 的雙位數水平（high teens）。</p></div><p class="text-xs text-slate-500 mt-4">來源: <a class="text-blue-600 underline" href="https://ir.aboutamazon.com/news-release/news-release-details/2026/Amazon-com-Announces-Third-Quarter-Results/default.aspx" target="_blank" rel="noopener">Amazon Q3 2026 results</a> · Bloomberg EEO.</p></section>
+
+    <section id="valuation" class="tab-content"><div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比較</h2></div><div class="metric-card"><h3 class="text-lg font-bold text-slate-800 mb-4">大型科技公司未來四季市盈率（Next 4 Qtrs Est Forward P/E）</h3><div class="chart-container" style="height:350px"><canvas id="valuationChart"></canvas></div><p class="text-xs text-slate-500 mt-4 leading-relaxed">來源：用戶提供的 Bloomberg EEO 畫面，顯示 10/29 報價。GOOGL 20.22x、AMZN 24.14x、MSFT 25.60x、AAPL 37.56x；GOOGL、AMZN 為 GAAP+，MSFT、AAPL 為 Adj+。各公司財年、預測窗口及調整項目不同，僅作估值參考。</p></div></section>
+
+    <section id="street-comments" class="tab-content"><div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點</h2></div><p class="mt-2 mb-6 text-sm text-slate-500">來源：Bloomberg ANR（2026/10/30）；以 10/29 股價 US$243.79 計算。</p><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="metric-card border-t-4 border-t-blue-600"><div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100"><h3 class="font-black text-slate-800">瑞銀 (UBS)</h3><span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span></div><ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4"><li><b>評級與日期:</b> Stephen Ju; Buy; 2026/10/29.</li><li><b>目標價與隱含回報:</b> US$348.00; +42.7%.</li></ul></div><div class="metric-card border-t-4 border-t-blue-600"><div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100"><h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Overweight</span></div><ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4"><li><b>評級與日期:</b> Brian Nowak; Overweight; 2026/10/29.</li><li><b>目標價與隱含回報:</b> US$350.00; +43.6%.</li></ul></div><div class="metric-card border-t-4 border-t-blue-600"><div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100"><h3 class="font-black text-slate-800">花旗 (Citi)</h3><span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span></div><ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4"><li><b>評級與日期:</b> Ron Josey; Buy; 2026/10/29.</li><li><b>目標價與隱含回報:</b> US$350.00; +43.6%.</li></ul></div></div></section>
+
+    <section id="risks" class="tab-content"><div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、風險因素</h2></div><div class="metric-card"><ol class="space-y-4 list-decimal list-outside ml-5 text-sm text-slate-700"><li class="pb-3 border-b border-slate-100"><strong class="text-base">資本開支與現金流：</strong>AI 基建投資令自由現金流受壓；若產能使用率或變現進度低於預期，回收期可能延長。</li><li class="pb-3 border-b border-slate-100"><strong class="text-base">AWS 競爭與成本：</strong>雲端定價、客戶集中、大型合約落地時間及折舊增長，均可能影響 AWS 的收入與利潤率。</li><li class="pb-3 border-b border-slate-100"><strong class="text-base">消費、廣告與履約成本：</strong>消費需求、關稅、工資及配送成本變化可能壓低零售利潤；活動時點亦會放大季度波動。</li><li class="pb-3 border-b border-slate-100"><strong class="text-base">投資損益、融資及監管：</strong>投資估值變動可令淨利偏離核心營運表現；債務增加帶來利息負擔，反壟斷、資料私隱及 AI 監管亦需持續關注。</li></ol></div></section>
+
+    <section id="disclaimer" class="tab-content">
+        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免責聲明</h2></div>
+        <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+            <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在從 disclaimer.html 線上安全讀取最新免責聲明組件...</p></div>
         </div>
-        <!-- ✏️ 替換區：3–4 點核心結論（每點 = 編號 + 粗標題 + 說明段，li 結構與 class 不變） -->
-        <ul class="space-y-6">
-            <li class="flex items-start">
-                <span class="text-blue-600 mr-4 text-xl font-black">1.</span>
-                <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">AWS 增速重加速至 +37%，為 18 個季度以來最快</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">AWS 單季淨銷售額 $42,232 M（YoY +37%），公司披露其年化營收運行率達 1,690 億美元，AI 業務與晶片業務年化運行率並各自突破 250 億美元、同比呈三位數增長；分部營業利益 $16,621 M（+64%）、營業利益率 39.4%。我們認為 AWS 重回高增長軌道係本季最關鍵之營運訊號。</p>
-                </div>
-            </li>
-            <li class="flex items-start">
-                <span class="text-blue-600 mr-4 text-xl font-black">2.</span>
-                <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">淨利 +245% 須辨識非經營性收益之推高效果</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">本季淨利 $62,647 M、稀釋後 EPS $5.75（+242%），惟其中含稅前、非經營性其他收益 534 億美元（主要來自對 Anthropic 之投資），不屬核心營運盈利；我們認為核心經營面應以營業利益 $27,461 M（+43%）與營業利益率 13.7%（上年同期 11.4%）衡量。</p>
-                </div>
-            </li>
-            <li class="flex items-start">
-                <span class="text-blue-600 mr-4 text-xl font-black">3.</span>
-                <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">零售與廣告動能扎實，惟 AI 資本開支令 TTM 自由現金流轉負</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">北美分部 +16%、國際分部 +15%，廣告服務營收 $19,809 M（+26%），公司披露上半年再創 Prime 會員配送速度紀錄。TTM 營運現金流（GAAP）1,614 億美元（+33%），但 TTM 淨資本開支達 1,690 億美元（年增 661 億美元，公司稱主要反映 AI 投資），致 TTM 自由現金流（Non-GAAP）轉為 -76 億美元。</p>
-                </div>
-            </li>
-            <li class="flex items-start">
-                <span class="text-blue-600 mr-4 text-xl font-black">4.</span>
-                <div>
-                    <strong class="text-slate-900 block mb-1 text-lg">Q3 指引穩健，現價較共識目標價留有上行空間</strong>
-                    <p class="text-slate-600 text-sm leading-relaxed">公司指引 Q3 2026 淨銷售額 1,970–2,020 億美元（+9%–12%；若剔除 2025 及 2026 兩年 Prime Day 影響，YoY 增速將高近 400 個基點；匯率約構成 80 個基點逆風），營業利益 225–265 億美元（上年同期 174 億美元）。以 2026/07/30 收盤價 $235.50 計，Bloomberg ANR 12 個月共識目標價 $316.05 隱含約 +34.2% 上行空間（Return Potential +34.2%）；我們認為後續觀察重點在 AWS 增速能否持續消化資本開支強度。</p>
-                </div>
-            </li>
-        </ul>
-    </div>
-</section>
-<!-- ══════════ Tab 二：營運與財務數據 ══════════ -->
-<section id="financials" class="tab-content">
-    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、營運與財務數據</h2></div>
-    <!-- ✏️ 替換區：4 個 KPI 卡（只換標題/數字/註記文字；border-t 顏色依序 emerald→blue→indigo→purple 固定） -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
-        <div class="metric-card border-t-4 border-t-emerald-500">
-            <h4 class="text-xs font-bold text-slate-500 uppercase">Q2 淨銷售額 (Net Sales)</h4>
-            <p class="text-2xl font-bold text-slate-800 mt-1">$200,606 M</p>
-            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +20%（剔除匯率 +20%）</p>
-        </div>
-        <div class="metric-card border-t-4 border-t-blue-500">
-            <h4 class="text-xs font-bold text-slate-500 uppercase">營業利益 (Operating Income)</h4>
-            <p class="text-2xl font-bold text-slate-800 mt-1">$27,461 M</p>
-            <p class="text-sm text-blue-600 font-semibold mt-1">▲ YoY +43%（營業利益率 13.7%）</p>
-        </div>
-        <div class="metric-card border-t-4 border-t-indigo-500">
-            <h4 class="text-xs font-bold text-slate-500 uppercase">AWS 淨銷售額 (AWS Net Sales)</h4>
-            <p class="text-2xl font-bold text-slate-800 mt-1">$42,232 M</p>
-            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +37%（18 個季度以來最快）</p>
-        </div>
-        <div class="metric-card border-t-4 border-t-purple-500">
-            <h4 class="text-xs font-bold text-slate-500 uppercase">稀釋後 EPS (Diluted EPS)</h4>
-            <p class="text-xl font-bold text-slate-800 mt-1">$5.75</p>
-            <p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +242%（含非經營性收益推高）</p>
-        </div>
-    </div>
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <div class="metric-card">
-            <!-- ✏️ 替換：圖 1 標題與說明（canvas id 固定） -->
-            <h3 class="text-lg font-bold text-slate-800 mb-2">Q2 2026 分部淨銷售額結構 (Million USD)</h3>
-            <p class="text-xs text-slate-500 mb-4">北美 $116,177 M（58%）、國際 $42,197 M（21%）、AWS $42,232 M（21%）；三分部合計即為合併淨銷售額 $200,606 M（無抵銷項）。</p>
-            <div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
-        </div>
-        <div class="metric-card">
-            <!-- ✏️ 替換：圖 2 標題與說明（canvas id 固定） -->
-            <h3 class="text-lg font-bold text-slate-800 mb-2">近五季淨銷售額與營業利益率趨勢 (Million USD)</h3>
-            <p class="text-xs text-slate-500 mb-4">合併營業利益率自 Q3 2025 之 9.7% 連續回升至本季 13.7%，上年同期為 11.4%。</p>
-            <div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
-        </div>
-    </div>
-    <div class="metric-card mt-6">
-        <h3 class="text-lg font-bold text-slate-800 mb-4">Q2 2026 報告結果同比對比明細 Table (GAAP)</h3>
-        <div class="overflow-x-auto">
-            <!-- ✏️ 替換區：表格內容（每列固定 4 格：科目 / GAAP / Non-GAAP / 變動率；末列灰底彙總列） -->
-            <table class="w-full text-sm text-left border-collapse">
-                <thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
-                    <tr>
-                        <th class="px-6 py-3 font-bold">會計明細科目項目</th>
-                        <th class="px-6 py-3 font-bold text-right">Q2-26 GAAP 報告</th>
-                        <th class="px-6 py-3 font-bold text-right text-blue-600">Q2-25 GAAP 報告</th>
-                        <th class="px-6 py-3 font-bold text-right text-emerald-600">YoY 同比變動率 (GAAP 報告基準)</th>
-                    </tr>
-                </thead>
-                <tbody class="text-slate-700">
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">淨銷售額 (Net Sales)</td>
-                        <td class="px-6 py-4 text-right">$200,606 M</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$167,702 M</td>
-                        <td class="px-6 py-4 text-right font-bold text-emerald-500">+20%</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">營業利益 (Operating Income)</td>
-                        <td class="px-6 py-4 text-right">$27,461 M (13.7%)</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$19,171 M (11.4%)</td>
-                        <td class="px-6 py-4 text-right text-emerald-500">+43%</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">淨利 (Net Income)（含 534 億美元稅前非經營性其他收益，主要來自對 Anthropic 之投資）</td>
-                        <td class="px-6 py-4 text-right">$62,647 M</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$18,164 M</td>
-                        <td class="px-6 py-4 text-right text-emerald-500">+245%</td>
-                    </tr>
-                    <tr class="border-b border-slate-100">
-                        <td class="px-6 py-4 font-medium">稀釋後 EPS (Diluted EPS)</td>
-                        <td class="px-6 py-4 text-right">$5.75</td>
-                        <td class="px-6 py-4 text-right font-bold text-blue-600">$1.68</td>
-                        <td class="px-6 py-4 text-right text-emerald-600">+242%</td>
-                    </tr>
-                    <tr class="bg-slate-50 font-bold">
-                        <td class="px-6 py-4 text-slate-800">其他公司列報指標</td>
-                        <td class="px-6 py-4 text-right text-slate-500">TTM 營運現金流 (GAAP): $161,403 M (+33%)</td>
-                        <td class="px-6 py-4 text-right text-blue-600">TTM 自由現金流 (Non-GAAP): -$7,604 M</td>
-                        <td class="px-6 py-4 text-right text-purple-600">TTM 淨資本開支: $169,007 M</td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </div>
-</section>
-<!-- ══════════ Tab 三：估值比較 ══════════ -->
-<section id="valuation" class="tab-content">
-    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比較</h2></div>
-    <div class="metric-card">
-        <div class="flex justify-between items-center mb-4">
-            <!-- ✏️ 替換：圖表標題（行業描述可換，Forward P/E 字樣保留） -->
-            <h3 class="text-lg font-bold text-slate-800">美國大型科技巨頭遠期市盈率 (Next 4 Qtrs Est Forward P/E) 倍數橫向長條圖比較（截至 2026/07/31）</h3>
-        </div>
-        <div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
-        <!-- 🔒 固定：資料來源標註 -->
-        <p class="text-xs text-slate-400 mt-3 text-right">Data Source: Bloomberg EEO / NTAM Estimates</p>
-    </div>
-</section>
-<!-- ══════════ Tab 四：華爾街觀點 ══════════ -->
-<section id="street-comments" class="tab-content">
-    <div class="mb-6">
-        <h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點</h2>
-        <!-- ✏️ 替換：導言 -->
-        <p class="mt-2 text-sm text-slate-500">（評級與目標價：Bloomberg ANR，截至 2026/07/31）Bloomberg 12 個月共識目標價 $316.05，畫面顯示 64/92 個目標價樣本；另有 83 個有效評級——79 個買入、4 個持有、0 個賣出——買入占比 95.2%，共識高度一致偏多。</p>
-    </div>
-    <!-- ✏️ 替換區：3 家投行卡片（投行名、評級徽章、2 點觀點）。
-         評級徽章配色規則：買入 Buy = bg-emerald-100 text-emerald-800；
-         增持 Overweight = bg-blue-100 text-blue-800；其他評級先與使用者確認。 -->
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="metric-card border-t-4 border-t-blue-600">
-            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                <h3 class="font-black text-slate-800">瑞銀 (UBS)</h3>
-                <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">買入 (Buy)</span>
-            </div>
-            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                <li><b>AWS 增速重回高檔支撐買入立場（目標價 $305）：</b> AWS 本季 +37% 為 18 個季度以來最快，年化營收運行率 1,690 億美元，構成評級之核心支撐。</li>
-                <li><b>目標價低於共識、資本開支為主要驗證變數：</b> $305 低於 ANR 共識 $316.05 約 3.5%，屬本頁三家中相對保守；TTM 淨資本開支 1,690 億美元（年增 661 億美元）致自由現金流轉負，回報實現節奏仍須逐季驗證。</li>
-            </ul>
-        </div>
-        <div class="metric-card border-t-4 border-t-blue-600">
-            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                <h3 class="font-black text-slate-800">花旗銀行 (Citi)</h3>
-                <span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">買入 (Buy)</span>
-            </div>
-            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                <li><b>營運槓桿與利潤率改善驅動之積極定位（目標價 $325）：</b> 目標價高於 ANR 共識 $316.05 約 2.8%；本季合併營業利益率 13.7%（上年同期 11.4%）持續走高。</li>
-                <li><b>零售與廣告構成 AWS 以外之多元動能：</b> 北美分部 +16%、國際分部 +15%，廣告服務營收 $19,809 M（+26%）延續高速增長；疊加 AWS 分部營業利益率 39.4%，整體獲利結構同步向上。</li>
-            </ul>
-        </div>
-        <div class="metric-card border-t-4 border-t-blue-600">
-            <div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
-                <h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3>
-                <span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">增持 (Overweight)</span>
-            </div>
-            <ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
-                <li><b>AI 投資週期受益者、本頁最高目標價（目標價 $330）：</b> 目標價較 ANR 共識高約 4.4%；AWS AI 業務與晶片業務年化運行率各逾 250 億美元、同比呈三位數增長。</li>
-                <li><b>指引顯示高資本開支下獲利仍具擴張性：</b> 公司指引 Q3 2026 營業利益 225–265 億美元（上年同期 174 億美元）；若剔除 2025 及 2026 兩年 Prime Day 影響，Q3 淨銷售額 YoY 增速將高近 400 個基點。</li>
-            </ul>
-        </div>
-    </div>
-</section>
-<!-- ══════════ Tab 五：風險因素 ══════════ -->
-<section id="risks" class="tab-content">
-    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、風險因素</h2></div>
-    <div class="metric-card">
-        <!-- ✏️ 替換區：3–4 點風險（各點 strong 一律黑色粗體 class="text-base"，嚴禁 text-rose-700 紅字） -->
-        <ol class="space-y-4 list-decimal list-outside ml-5 text-sm text-slate-700">
-            <li class="pb-3 border-b border-slate-100">
-                <strong class="text-base">AI 資本開支週期之執行與回收風險：</strong> TTM 淨資本開支達 1,690 億美元（年增 661 億美元，公司稱主要反映 AI 投資），帶動 TTM 自由現金流（Non-GAAP）轉為 -76 億美元；本季折舊攤銷 $19,988 M（上年同期 $15,227 M）。若 AWS 與 AI 需求增速放緩，折舊上升恐壓縮利潤率並延長自由現金流為負之期間。
-            </li>
-            <li class="pb-3 border-b border-slate-100">
-                <strong class="text-base">非經營性收益之波動性：</strong> 本季淨利含 534 億美元稅前、非經營性其他收益（主要來自對 Anthropic 之投資），該類與投資相關之項目金額具不確定性，未來期間可能反向波動並顯著影響列報淨利與 EPS，投資人應以營業利益衡量核心經營趨勢。
-            </li>
-            <li class="pb-3 border-b border-slate-100">
-                <strong class="text-base">公司自列宏觀與供應風險：</strong> 指引明列匯率與能源價格波動、全球經濟與地緣政治情勢、關稅與貿易政策、資源與供應波動（含記憶體晶片）、消費需求與支出（含衰退疑慮）等不確定因素；Q3 2026 指引並已計入約 80 個基點之匯率逆風。
-            </li>
-            <li class="pb-1">
-                <strong class="text-base">競爭、監管與法律程序：</strong> 公司於前瞻性聲明中自列競爭、政府監管與稅務、訴訟與政府調查及其他法律程序等風險因素；雲端與 AI 領域之投資競賽亦可能延長全行業高資本開支週期，影響回報實現節奏。
-            </li>
-        </ol>
-    </div>
-</section>
-<!-- ══════════ Tab 六：免責聲明 ══════════ -->
-<!-- 🔒 固定區：免責聲明以 fetch 載入，嚴禁寫死內文 -->
-<section id="disclaimer" class="tab-content">
-    <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免責聲明</h2></div>
-    <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
-        <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在從 disclaimer.html 線上安全讀取最新免責聲明組件...</p></div>
-    </div>
-</section>
+    </section>
+
 </main>
-<!-- 🔒 固定區開始：右下角 AI 助理 Widget（結構固定；僅 ✏️ 標示處換文字） -->
+
 <div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-<div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
-<div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
-<div class="flex items-center">
-<span class="text-2xl mr-2">🤖</span>
-<div><h4 class="font-bold text-sm">研究員專屬 AI 助理</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
+    <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
+            <div class="flex items-center">
+                <span class="text-2xl mr-2">🤖</span>
+                <div><h4 class="font-bold text-sm">研究員專屬 AI 助理</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
+            </div>
+            <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
+            <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">您好！我是亞馬遜 AMZN 研究助手，可就本頁 2026 Q3 財報、估值及風險作解釋。資料截至 2026/10/30，並非即時行情。</div>
+        </div>
+        <div class="p-3 bg-white border-t border-slate-200">
+            <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
+                <input type="text" id="chat-input" placeholder="輸入您的研究指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
+                </button>
+            </form>
+        </div>
+    </div>
+    <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
+        <span class="text-2xl">✨</span>
+    </button>
 </div>
-<button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
-<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-</button>
-</div>
-<div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
-<!-- ✏️ 替換：Widget 歡迎詞（公司名 + 本期亮點數字，數字須與內文一致） -->
-<div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">
-分析師您好！我是您的專屬亞馬遜 (AMZN) 數據輔助 AI。您可以隨時詢問我關於本季淨銷售額 $200,606 M（+20%）、AWS +37%（18 個季度以來最快、年化運行率 1,690 億美元）、營業利益 $27,461 M（+43%），或 534 億美元 Anthropic 相關非經營性收益對淨利 $62,647 M 之推高影響。
-</div>
-</div>
-<div class="p-3 bg-white border-t border-slate-200">
-<form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
-<input type="text" id="chat-input" placeholder="輸入您的研究指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
-<button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
-<svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
-</button>
-</form>
-</div>
-</div>
-<button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
-<span class="text-2xl">✨</span>
-</button>
-</div>
+
 <div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
-<button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
-<span>✨</span> AI 白話文解釋
-</button>
+    <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
+        <span>✨</span> AI 白話文解釋
+    </button>
 </div>
 <div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
-<div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
-<div class="bg-blue-600 text-white p-4 flex justify-between items-center">
-<h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 術語解釋</h3>
-<button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
-<svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-</button>
+    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+        <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+            <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 術語解釋</h3>
+            <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+            </button>
+        </div>
+        <div class="p-6">
+            <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查詢的詞彙：</div>
+            <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
+            <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
+                <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                AI 正在生成解釋...
+            </div>
+            <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
+        </div>
+        <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+            <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">關閉</button>
+        </div>
+    </div>
 </div>
-<div class="p-6">
-<div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查詢的詞彙：</div>
-<div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
-<div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
-<svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
-AI 正在生成解釋...
-</div>
-<div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
-</div>
-<div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
-<button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">關閉</button>
-</div>
-</div>
-</div>
-<!-- 🔒 固定區結束：AI Widget / 劃詞解釋 -->
+
 <script>
-// 🔒 註冊全域圖表實例快取
-window.charts = {};
-// 🔒 PI 攔截視窗控制函式（依 index.html 標準寫法）
-function acceptPI() {
-    sessionStorage.setItem('pi_agreed', 'true');
-    document.getElementById('pi-modal').style.display = 'none';
-    document.body.style.overflow = 'auto';
-}
-function declinePI() {
-    document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;
-}
-// 🔒 Tab 切換邏輯（✏️ 僅 resize 的圖表鍵名需隨新 ticker 更名）
-function switchTab(e, tabId) {
-    document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
-    document.querySelectorAll('.tab-btn').forEach(el => {
-        el.classList.remove('active', 'border-blue-600', 'text-blue-600');
-        el.classList.add('text-slate-500');
-    });
-    document.getElementById(tabId).classList.add('active');
-    e.currentTarget.classList.remove('text-slate-500');
-    e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
-    // 徹底修復 hidden 畫布無寬高像素之 Chart.js 原生缺陷
-    if (tabId === 'financials') {
-        if (window.charts.amznSegment) window.charts.amznSegment.resize();
-        if (window.charts.amznProfit) window.charts.amznProfit.resize();
-    } else if (tabId === 'valuation') {
-        if (window.charts.amznValuation) window.charts.amznValuation.resize();
-    }
-}
-document.addEventListener('DOMContentLoaded', function() {
-    // 🔒 專業投資者攔截門戶驗證
-    if (!sessionStorage.getItem('pi_agreed')) {
-        const modal = document.getElementById('pi-modal');
-        if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
-    }
-    // ✏️ 圖表 1：營收拆解 (Doughnut)。鍵名改 [ticker]Segment；labels/data 換新數據；顏色與 options 固定
-    window.charts.amznSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
-        type: 'doughnut',
-        data: {
-            labels: ['北美 (North America)', '國際 (International)', 'AWS'],
-            datasets: [{
-                data: [116177, 42197, 42232],
-                backgroundColor: ['rgba(37, 99, 235, 0.85)', 'rgba(16, 185, 129, 0.85)', 'rgba(99, 102, 241, 0.85)'],
-                borderWidth: 0
-            }]
-        },
-        options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
-    });
-    // ✏️ 圖表 2：業務單位表現 (Grouped Bar 雙軸)。鍵名改 [ticker]Profit；labels/data 換新數據；顏色 #3b82f6 / #10b981 與雙軸設定固定
-    window.charts.amznProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
-        type: 'bar',
-        data: {
-            labels: ['Q2 2025', 'Q3 2025', 'Q4 2025', 'Q1 2026', 'Q2 2026'],
-            datasets: [
-                {
-                    label: '淨銷售額 (百萬美元)',
-                    data: [167702, 180169, 213386, 181519, 200606],
-                    backgroundColor: '#3b82f6',
-                    borderRadius: 4
-                },
-                {
-                    label: '營業利益率 (Operating Margin %)',
-                    data: [11.4, 9.7, 11.7, 13.1, 13.7],
-                    backgroundColor: '#10b981',
-                    borderRadius: 4,
-                    yAxisID: 'percentageAxis'
-                }
-            ]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            plugins: { legend: { position: 'bottom' } },
-            scales: {
-                y: { beginAtZero: true, position: 'left', grid: { color: '#f1f5f9' } },
-                percentageAxis: { beginAtZero: true, max: 100, position: 'right', grid: { display: false } }
-            }
+    // 註冊全域圖表實例快取
+    window.charts = {};
+
+    function switchTab(e, tabId) {
+        document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+        document.querySelectorAll('.tab-btn').forEach(el => { 
+            el.classList.remove('active', 'border-blue-600', 'text-blue-600'); 
+            el.classList.add('text-slate-500'); 
+        });
+        document.getElementById(tabId).classList.add('active');
+        e.currentTarget.classList.remove('text-slate-500'); 
+        e.currentTarget.classList.add('active', 'border-blue-600', 'text-blue-600');
+
+        // 徹底修復 hidden 畫布無寬高像素之 Chart.js 原生缺陷
+        if (tabId === 'financials') {
+            if (window.charts.amznSegment) window.charts.amznSegment.resize();
+            if (window.charts.amznProfit) window.charts.amznProfit.resize();
+        } else if (tabId === 'valuation') {
+            if (window.charts.amznValuation) window.charts.amznValuation.resize();
         }
-    });
-    // ✏️ 圖表 3：Forward P/E 橫向比較。鍵名改 [ticker]Valuation；
-    //    ⚠️ backgroundColor 陣列中「藍色 rgba(37,99,235,0.95)」的位置必須對應主角公司在 labels 中的位置，其餘同業一律灰色
-    window.charts.amznValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
-        type: 'bar',
-        data: {
-            labels: ['AMZN (亞馬遜)', 'AAPL (蘋果)', 'GOOGL (Alphabet)', 'MSFT (微軟)'],
-            datasets: [{
-                label: 'Next 4 Qtrs Est Forward P/E',
-                data: [25.87, 35.34, 24.83, 22.95],
-                backgroundColor: ['rgba(37, 99, 235, 0.95)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)'],
-                borderRadius: 4
-            }]
-        },
-        options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
-    });
-    // 🔒 安全調閱外部 disclaimer.html 連動模組（嚴禁寫死免責聲明）
-    fetch('disclaimer.html')
-        .then(response => {
-            if (!response.ok) throw new Error('無法載入 disclaimer.html');
-            return response.text();
-        })
-        .then(html => {
-            const container = document.getElementById('disclaimer-container');
-            if(container) container.innerHTML = html;
-        })
-        .catch(error => {
-            console.error('安全連動調閱失敗:', error);
-            const container = document.getElementById('disclaimer-container');
-            if(container) container.innerHTML = '<div class="p-6 text-center text-rose-600 font-bold">【安全連動錯誤】外部合規免責聲明檔案加載失敗，請聯絡系統運維團隊。</div>';
-        });
-});
-// 🔒 NTAM 後端 AI 調度核心（端點 /api/gemini 與後處理邏輯嚴禁更動）
-async function callGeminiAPI(prompt, systemInstruction) {
-    try {
-        const response = await fetch('/api/gemini', {
-            method: 'POST', headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })
-        });
-        const data = await response.json();
-        if (!response.ok) return `連線錯誤：${data.error || '未知錯誤'}`;
-        let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，無法產生有效回覆。";
-        return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
-    } catch (error) { return `網路連線失敗。(${error.message})`; }
-}
-// ✏️ AI 助理 systemPrompt（公司名與財季須換成新報告；語言須與本頁一致）
-const standardPrompt = `你是一位精通 NTAM 投資研究框架的資深 AI 助理。請針對使用者對亞馬遜 (AMZN) 2026 年 Q2 最新財報與大會摘要的提問，提供符合專業機構投資人水準、客觀、高密度的定量與定性答覆。重點用 <b> 標籤包覆，嚴禁使用 markdown。`;
-// 🔒 Widget 互動邏輯（勿改）
-function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
-function appendMessage(text, isUser) {
-    const msgDiv = document.createElement('div');
-    msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
-    msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
-    document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
-}
-function showTypingIndicator() {
-    const ind = document.createElement('div'); ind.id = `typing-indicator-${Date.now()}`;
-    ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
-    ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
-    document.getElementById('chat-messages').appendChild(ind);
-    return ind.id;
-}
-async function handleChatSubmit(e) {
-    e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
-    const sendBtn = e.target.querySelector('button[type="submit"]'); if (sendBtn && sendBtn.disabled) return;
-    if (sendBtn) { sendBtn.disabled = true; sendBtn.classList.add('opacity-50', 'cursor-not-allowed'); }
-    input.value = ''; appendMessage(text, true); const typingId = showTypingIndicator();
-    try {
-        const res = await callGeminiAPI(text, standardPrompt);
-        document.getElementById(typingId)?.remove(); appendMessage(res, false);
-    } finally {
-        document.getElementById(typingId)?.remove();
-        if (sendBtn) { sendBtn.disabled = false; sendBtn.classList.remove('opacity-50', 'cursor-not-allowed'); }
     }
-}
-// 🔒 劃詞解說機制（勿改）
-let selectedText = "";
-document.addEventListener('mouseup', function(e) {
-    const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
-    if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
-    if (text.length > 1 && text.length < 50) {
-        selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
-        tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${Math.max(8, rect.top - 40)}px`;
-        tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
-    } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
-});
-document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
-async function explainSelectedTerm() {
-    document.getElementById('selection-tooltip').classList.add('hidden');
-    document.getElementById('explain-term-title').textContent = selectedText;
-    document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
-    // ✏️ 劃詞解釋 prompt 與 systemInstruction：公司名須換成新報告，其餘格式（限 150 字、<b> 標籤、語言）保留
-    const res = await callGeminiAPI(`解釋這個亞馬遜 AMZN 財報相關詞彙：${selectedText}`, "你是亞馬遜 (Amazon) 雲端運算與電商產業專家，用最白話的專業繁體中文解釋詞彙。限 150 字，重點使用 <b> 標籤包覆。");
-    document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
-}
-function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
+
+    function acceptPI() {
+        sessionStorage.setItem('pi_agreed', 'true');
+        document.getElementById('pi-modal').style.display = 'none';
+        document.body.style.overflow = 'auto';
+    }
+    function declinePI() {
+        document.body.innerHTML = `<div style="height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; background-color: #f8fafc; font-family: sans-serif; text-align: center; padding: 20px;"><h1 style="color: #e11d48; font-size: 24px; font-weight: bold; margin-bottom: 16px;">Access Denied</h1><p>This content is restricted to Professional Investors only.</p></div>`;
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        // 專業投資者攔截門戶驗證
+        if (!sessionStorage.getItem('pi_agreed')) { 
+            const modal = document.getElementById('pi-modal'); 
+            if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; } 
+        }
+
+        // AMZN report chart
+        window.charts.amznSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ["北美", "國際", "AWS"],
+                datasets: [{
+                    data: [112852, 43108, 45984],
+                    backgroundColor: ['rgba(37, 99, 235, 0.85)', 'rgba(16, 185, 129, 0.85)', 'rgba(99, 102, 241, 0.75)'],
+                    borderWidth: 0
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
+        });
+
+        // AMZN report chart
+        window.charts.amznProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ["北美", "國際", "AWS"],
+                datasets: [
+                    {
+                        label: "分部營收（百萬美元）",
+                        data: [112852, 43108, 45984],
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4
+                    },
+                    {
+                        label: "營業利潤率 (%)",
+                        data: [7.729591, 3.665213, 38.650404],
+                        backgroundColor: '#10b981',
+                        borderRadius: 4,
+                        yAxisID: 'percentageAxis'
+                    }
+                ]
+            },
+            options: { 
+                responsive: true, 
+                maintainAspectRatio: false, 
+                plugins: { legend: { position: 'bottom' } }, 
+                scales: { 
+                    y: { beginAtZero: true, position: 'left', grid: { color: '#f1f5f9' } },
+                    percentageAxis: { beginAtZero: true, max: 100, position: 'right', grid: { display: false } }
+                } 
+            }
+        });
+
+        // AMZN report chart
+        window.charts.amznValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ["GOOGL (Alphabet)", "AMZN (Amazon)", "MSFT (Microsoft)", "AAPL (Apple)"],
+                datasets: [{ 
+                    label: 'Next 4 Qtrs Est Forward P/E', 
+                    data: [20.22, 24.14, 25.60, 37.56],
+                    backgroundColor: ['rgba(148, 163, 184, 0.6)', 'rgba(37, 99, 235, 0.95)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)'], 
+                    borderRadius: 4 
+                }]
+            },
+            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
+        });
+
+        // 安全調閱外部 disclaimer.html 連動模組
+        fetch('disclaimer.html')
+            .then(response => {
+                if (!response.ok) throw new Error('無法載入 disclaimer.html');
+                return response.text();
+            })
+            .then(html => {
+                const container = document.getElementById('disclaimer-container');
+                if(container) container.innerHTML = html;
+            })
+            .catch(error => {
+                console.error('安全連動調閱失敗:', error);
+                const container = document.getElementById('disclaimer-container');
+                if(container) container.innerHTML = '<div class="p-6 text-center text-rose-600 font-bold">【安全連動錯誤】外部合規免責聲明檔案加載失敗，請聯絡系統運維團隊。</div>';
+            });
+    });
+
+    // NTAM 後端 AI 調度核心
+    async function callGeminiAPI(prompt, systemInstruction) {
+        try {
+            const response = await fetch('/api/gemini', {
+                method: 'POST', headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ prompt: prompt, systemInstruction: systemInstruction })
+            });
+            const data = await response.json();
+            if (!response.ok) return `連線錯誤：${data.error || '未知錯誤'}`;
+            let rawText = data.candidates?.[0]?.content?.parts?.[0]?.text || "抱歉，無法產生有效回覆。";
+            return rawText.replace(/\n/g, '<br>').replace(/\*\*(.*?)\*\*/g, '<b>$1</b>');
+        } catch (error) { return `網路連線失敗。(${error.message})`; }
+    }
+
+    // AI 助理 Widget 邏輯
+    const standardPrompt = "用繁體中文回答。You are the Amazon AMZN research assistant. Information as of 2026-10-30; not live quotes. Q3 2026 ended September30, released October29. GAAP revenue201944m YoY12.1%, EBIT28076m +61.2% margin13.9%, net20685m -2.4%, diluted EPS1.89 -3.1%. Prior-year net income included 9500m in pretax Anthropic gains; prior diluted EPS was 1.95. Segments NA revenue112852m EBIT8723m, International43108m/1580m, AWS45984m/17773m growth39.3% margin38.7% (Q2 margin39.4%). Ads19637m growth10.9% reported12%FX-neutral. PrimeDay shift Q3 toQ2 affects comparison. Quarterly CFO42422m gross capex77259m proceeds1381m net capex75878m calculated FCF-33456m. TTM CFO168300m netcapex210657m companyFCF-42357m, do not mix periods. Q4 company guidance sales240-247bn EBIT28.5-33.5bn; FY26 cashcapex approx220bn. EEO Q4 consensus sales244.587bn EBIT33.124bn GAAP+EPS2.470, not companyguidance. ANR10/30 target333.48 price10/29 243.79 impliedupside36.8%, consensus4.85,77buy4hold0sell,targets66/91. UBS StephenJu Buy348 (+42.7%), MorganStanley BrianNowak Overweight350 (+43.6%), Citi RonJosey Buy350 (+43.6%), ratings10/29. JPM not visible; do not invent original bank opinions. Next4PE GOOGLGAAP+20.22 AMZNGAAP+24.14 MSFTAdj+25.60 AAPLAdj+37.56; bases/windows differ. Use We believe / 我們認為 / 我们认为 for views. No calculator attribution. Ratings exactly Buy/Overweight/Neutral/Sell/Underweight. Distinguish actuals, consensus, guidance and analysis. Use <b> not markdown. Never invent missing facts.";
+    function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
+    function appendMessage(text, isUser) {
+        const msgDiv = document.createElement('div');
+        msgDiv.className = isUser ? 'bg-blue-100 text-blue-900 rounded-tr-none rounded-2xl ml-auto max-w-[85%] p-3 text-sm shadow-sm' : 'bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed';
+        msgDiv.innerHTML = text; document.getElementById('chat-messages').appendChild(msgDiv);
+        document.getElementById('chat-messages').scrollTop = document.getElementById('chat-messages').scrollHeight;
+    }
+    function showTypingIndicator() {
+        const ind = document.createElement('div'); ind.id = `typing-indicator-${Date.now()}`;
+        ind.className = 'bg-slate-200 text-slate-500 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm flex gap-1 items-center h-10';
+        ind.innerHTML = '<div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div><div class="w-2 h-2 bg-slate-400 rounded-full typing-dot"></div>';
+        document.getElementById('chat-messages').appendChild(ind);
+        return ind.id;
+    }
+    async function handleChatSubmit(e) {
+        e.preventDefault(); const input = document.getElementById('chat-input'); const text = input.value.trim(); if (!text) return;
+        const sendBtn = e.target.querySelector('button[type="submit"]'); if (sendBtn && sendBtn.disabled) return;
+        if (sendBtn) { sendBtn.disabled = true; sendBtn.classList.add('opacity-50', 'cursor-not-allowed'); }
+        input.value = ''; appendMessage(text, true); const typingId = showTypingIndicator();
+        try {
+            const res = await callGeminiAPI(text, standardPrompt);
+            document.getElementById(typingId)?.remove(); appendMessage(res, false);
+        } finally {
+            document.getElementById(typingId)?.remove();
+            if (sendBtn) { sendBtn.disabled = false; sendBtn.classList.remove('opacity-50', 'cursor-not-allowed'); }
+        }
+    }
+
+    // 劃詞解說機制
+    let selectedText = "";
+    document.addEventListener('mouseup', function(e) {
+        const text = window.getSelection().toString().trim(); const tooltip = document.getElementById('selection-tooltip');
+        if (e.target.closest('#selection-tooltip') || e.target.closest('#explain-modal') || e.target.closest('#ai-chat-widget')) return;
+        if (text.length > 1 && text.length < 50) {
+            selectedText = text; const rect = window.getSelection().getRangeAt(0).getBoundingClientRect();
+            tooltip.style.left = `${rect.left + (rect.width / 2) - 60}px`; tooltip.style.top = `${Math.max(8, rect.top - 40)}px`;
+            tooltip.classList.remove('hidden', 'opacity-0', 'scale-95'); tooltip.classList.add('opacity-100', 'scale-100');
+        } else { tooltip.classList.add('hidden', 'opacity-0', 'scale-95'); }
+    });
+    document.addEventListener('mousedown', function(e) { if (!e.target.closest('#selection-tooltip')) document.getElementById('selection-tooltip').classList.add('hidden', 'opacity-0', 'scale-95'); });
+    async function explainSelectedTerm() {
+        document.getElementById('selection-tooltip').classList.add('hidden');
+        document.getElementById('explain-term-title').textContent = selectedText;
+        document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
+        const res = await callGeminiAPI(`解釋這個亞馬遜 AMZN 財報相關詞彙：${selectedText}`, "你是亞馬遜儲存專家，用最白話的專業繁體中文解釋詞彙。限 150 字，重點使用 <b> 標籤包覆。");
+        document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
+    }
+    function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
 </script>
 </body>
 </html>
