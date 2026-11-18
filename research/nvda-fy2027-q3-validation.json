@@ -1,0 +1,204 @@
+{
+  "checks": [
+    {
+      "check": "nvda.html tabs",
+      "pass": true
+    },
+    {
+      "check": "nvda.html ids",
+      "pass": true
+    },
+    {
+      "check": "nvda.html MU style",
+      "pass": true
+    },
+    {
+      "check": "nvda.html preserved pi-modal",
+      "pass": true
+    },
+    {
+      "check": "nvda.html preserved disclaimer",
+      "pass": true
+    },
+    {
+      "check": "nvda.html no stale data",
+      "pass": true
+    },
+    {
+      "check": "nvda.html VM executes",
+      "pass": true
+    },
+    {
+      "check": "nvda.html gate active no acceptance",
+      "pass": true
+    },
+    {
+      "check": "nvda.html tabs switch",
+      "pass": true
+    },
+    {
+      "check": "nvda.html disclaimer mock",
+      "pass": true
+    },
+    {
+      "check": "nvda.html chart keys",
+      "pass": true
+    },
+    {
+      "check": "nvda.html chart numbers",
+      "pass": true
+    },
+    {
+      "check": "nvda.html unchanged acceptPI",
+      "pass": true
+    },
+    {
+      "check": "nvda.html unchanged declinePI",
+      "pass": true
+    },
+    {
+      "check": "nvda.html unchanged callGeminiAPI",
+      "pass": true
+    },
+    {
+      "check": "nvda-sc.html tabs",
+      "pass": true
+    },
+    {
+      "check": "nvda-sc.html ids",
+      "pass": true
+    },
+    {
+      "check": "nvda-sc.html MU style",
+      "pass": true
+    },
+    {
+      "check": "nvda-sc.html preserved pi-modal",
+      "pass": true
+    },
+    {
+      "check": "nvda-sc.html preserved disclaimer",
+      "pass": true
+    },
+    {
+      "check": "nvda-sc.html no stale data",
+      "pass": true
+    },
+    {
+      "check": "nvda-sc.html VM executes",
+      "pass": true
+    },
+    {
+      "check": "nvda-sc.html gate active no acceptance",
+      "pass": true
+    },
+    {
+      "check": "nvda-sc.html tabs switch",
+      "pass": true
+    },
+    {
+      "check": "nvda-sc.html disclaimer mock",
+      "pass": true
+    },
+    {
+      "check": "nvda-sc.html chart keys",
+      "pass": true
+    },
+    {
+      "check": "nvda-sc.html chart numbers",
+      "pass": true
+    },
+    {
+      "check": "nvda-sc.html unchanged acceptPI",
+      "pass": true
+    },
+    {
+      "check": "nvda-sc.html unchanged declinePI",
+      "pass": true
+    },
+    {
+      "check": "nvda-sc.html unchanged callGeminiAPI",
+      "pass": true
+    },
+    {
+      "check": "nvda-sc.html numeric parity",
+      "pass": true
+    },
+    {
+      "check": "nvda-en.html tabs",
+      "pass": true
+    },
+    {
+      "check": "nvda-en.html ids",
+      "pass": true
+    },
+    {
+      "check": "nvda-en.html MU style",
+      "pass": true
+    },
+    {
+      "check": "nvda-en.html preserved pi-modal",
+      "pass": true
+    },
+    {
+      "check": "nvda-en.html preserved disclaimer",
+      "pass": true
+    },
+    {
+      "check": "nvda-en.html no stale data",
+      "pass": true
+    },
+    {
+      "check": "nvda-en.html VM executes",
+      "pass": true
+    },
+    {
+      "check": "nvda-en.html gate active no acceptance",
+      "pass": true
+    },
+    {
+      "check": "nvda-en.html tabs switch",
+      "pass": true
+    },
+    {
+      "check": "nvda-en.html disclaimer mock",
+      "pass": true
+    },
+    {
+      "check": "nvda-en.html chart keys",
+      "pass": true
+    },
+    {
+      "check": "nvda-en.html chart numbers",
+      "pass": true
+    },
+    {
+      "check": "nvda-en.html unchanged acceptPI",
+      "pass": true
+    },
+    {
+      "check": "nvda-en.html unchanged declinePI",
+      "pass": true
+    },
+    {
+      "check": "nvda-en.html unchanged callGeminiAPI",
+      "pass": true
+    },
+    {
+      "check": "nvda-en.html numeric parity",
+      "pass": true
+    },
+    {
+      "check": "NVDA first",
+      "pass": true
+    },
+    {
+      "check": "other cards unchanged",
+      "pass": true
+    }
+  ],
+  "passed": 49,
+  "failed": 0,
+  "method": "Static and mocked DOM/Chart VM; no PI acceptance or live AI calls. Browser visual QA separate.",
+  "browser_visual_qa": "Not completed: local Chromium launch failed (socket Operation not permitted). No live PI acceptance or bypass. Static and mocked execution passed; desktop/mobile rendering not claimed."
+}
