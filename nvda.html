@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="zh-TW">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>輝達 (NVDA) FY2027 Q3 深度研究報告 | NTAM 資深分析師</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>輝達 (NVDA) 深度研究報告 | NTAM</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1"></script>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&amp;display=swap" rel="stylesheet"/>
 <style>
     body { font-family: 'Noto Sans TC', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
     .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
@@ -30,153 +31,319 @@
 </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
-
-    <div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
-        <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
-            <div class="text-center mb-6">
-                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77-1.333.192 3 1.732 3z" /></svg>
-                </div>
-                <h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明</h2>
-            </div>
-            <div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
-                    <p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
-                </div>
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
-                    <p>本网站及报告之内容仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者资格。</p>
-                </div>
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
-                    <p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
-                </div>
-            </div>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
-                <button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">拒絕 / Decline</button>
-                <button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">我確認 I Confirm</button>
-            </div>
-        </div>
-    </div>
-
+<div class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" id="pi-modal" style="display: none;">
+<div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
+<div class="text-center mb-6">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77-1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明</h2>
+</div>
+<div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
+<p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
+</div>
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
+<p>本网站及报告之内容仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者资格。</p>
+</div>
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
+<p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
+<button class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto" onclick="declinePI()">拒絕 / Decline</button>
+<button class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto" onclick="acceptPI()">我確認 I Confirm</button>
+</div>
+</div>
+</div>
 <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div class="flex justify-between items-start">
-            <div class="flex flex-col">
-                <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
-                    <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
-                    <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
-                </a>
-                <div class="flex flex-col">
-                    <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">輝達 <span class="text-blue-600">NVDA</span></h1>
-                    <span class="text-sm text-slate-500 font-medium mt-1">資深分析師 營運與戰略報告 | FY2027 Q3 財報特輯</span>
-                </div>
-            </div>
-            <div class="flex flex-col items-end space-y-3">
-                <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
-                    <option value="nvda.html" selected>繁體中文</option>
-                    <option value="nvda-sc.html">简体中文</option>
-                    <option value="nvda-en.html">English</option>
-                </select>
-                <div class="flex items-center space-x-4">
-                    <div class="text-right hidden sm:block">
-                        <div class="text-xs text-slate-400 font-bold">共識目標價 <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Bloomberg ANR · 2026/11/18)</span></div>
-                        <div class="text-xl font-bold text-slate-800">$260.07 USD</div>
-                    </div>
-                    <div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">共識：買入 (4.51/5)</div>
-                </div>
-            </div>
-        </div>
-
-        <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
-            <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">一. 我們的觀點</button>
-            <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">二. 營運與財務數據</button>
-            <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">三. 估值比較</button>
-            <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">四. 華爾街觀點</button>
-            <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">五. 風險因素</button>
-            <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">六. 免責聲明</button>
-        </nav>
-    </div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<a class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer" href="index.html">
+<img alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'" src="NTAM%20Logo.png"/>
+<span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+</a>
+<div class="flex flex-col">
+<h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">輝達 <span class="text-blue-600">NVDA</span></h1>
+<span class="text-sm text-slate-500 font-medium mt-1">資深分析師 營運與戰略報告 | FY2027 Q3 財報特輯</span>
+</div>
+</div>
+<div class="flex flex-col items-end space-y-3">
+<select class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold" onchange="window.location.href=this.value">
+<option selected="" value="nvda.html">繁體中文</option>
+<option value="nvda-sc.html">简体中文</option>
+<option value="nvda-en.html">English</option>
+</select>
+<div class="flex items-center space-x-4">
+<div class="text-right hidden sm:block">
+<div class="text-xs text-slate-400 font-bold">共識目標價 <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Bloomberg ANR · 2026/11/18)</span></div>
+<div class="text-xl font-bold text-slate-800">$260.07 USD</div>
+</div>
+<div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">共識：買入 (4.51/5)</div>
+</div>
+</div>
+</div>
+<nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+<button class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600" onclick="switchTab(event, 'our-comments')">一. 我們的觀點</button>
+<button class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700" onclick="switchTab(event, 'financials')">二. 營運與財務數據</button>
+<button class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700" onclick="switchTab(event, 'valuation')">三. 估值比較</button>
+<button class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700" onclick="switchTab(event, 'street-comments')">四. 華爾街觀點</button>
+<button class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700" onclick="switchTab(event, 'risks')">五. 風險因素</button>
+<button class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700" onclick="switchTab(event, 'disclaimer')">六. 免責聲明</button>
+</nav>
+</div>
 </header>
-
 <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
-
-    <section id="our-comments" class="tab-content active"><div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我們的觀點</h2></div><p class="text-sm text-slate-500 mb-6">FY2027 Q3 截至 2026/10/25；業績公布：2026/11/17；報告更新及市場資料：2026/11/18。</p><div class="metric-card p-6 md:p-8"><h3 class="text-xl font-black text-blue-600 mb-6">收入與盈利勝預期，重點轉向毛利率及現金轉化</h3><ol class="space-y-6"><li><h4 class="text-lg font-bold mb-2">1. AI 基建需求支持增長</h4><p class="text-sm leading-relaxed text-slate-600">我們認為，輝達今季再次展現 AI 基建需求的強度。收入及經調整每股盈利分別高於 Bloomberg 截圖共識約 6.0% 及 8.5%，下一季收入指引中點亦高於截圖共識，支持業務增長延續的判斷。</p></li><li><h4 class="text-lg font-bold mb-2">2. 毛利率及現金轉化是下一個觀察重點</h4><p class="text-sm leading-relaxed text-slate-600">下一季毛利率指引低於今季水平，而今季自由現金流較截圖共識低 25.6%。我們更關注新增收入能否持續轉化為現金，以及新一代產品放量期間的盈利能力，而非單以收入增速判斷業績質素。</p></li><li><h4 class="text-lg font-bold mb-2">3. 估值吸引力取決於盈利兌現</h4><p class="text-sm leading-relaxed text-slate-600">以截圖的未來四季預測市盈率計，輝達為 11.16 倍，低於 AVGO、AMD 及 INTC。我們認為，這提供估值吸引力，但預測盈利能否實現仍是關鍵；領導層過渡及監管不確定性亦可能令估值折讓持續。</p></li></ol></div></section>
-
-    <section id="financials" class="tab-content"><div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、營運與財務數據</h2></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6"><div class="metric-card border-t-4 border-t-blue-500"><h4 class="text-xs font-bold text-slate-500">季度收入</h4><p class="text-2xl font-bold mt-2">US$115.844bn</p><p class="text-sm text-blue-600 mt-2">較截圖共識 +5.96%</p></div><div class="metric-card border-t-4 border-t-blue-500"><h4 class="text-xs font-bold text-slate-500">經調整 EPS</h4><p class="text-2xl font-bold mt-2">US$2.680</p><p class="text-sm text-blue-600 mt-2">較截圖共識 +8.50%</p></div><div class="metric-card border-t-4 border-t-blue-500"><h4 class="text-xs font-bold text-slate-500">Non-GAAP 毛利率</h4><p class="text-2xl font-bold mt-2">74.9%</p><p class="text-sm text-blue-600 mt-2">較截圖共識 +0.874 個百分點</p></div><div class="metric-card border-t-4 border-t-blue-500"><h4 class="text-xs font-bold text-slate-500">季度自由現金流</h4><p class="text-2xl font-bold mt-2">US$43.831bn</p><p class="text-sm text-blue-600 mt-2">較截圖共識 −25.64%</p></div></div><div class="grid grid-cols-1 lg:grid-cols-2 gap-6"><div class="metric-card"><h3 class="font-bold mb-4">收入：實際與截圖共識（十億美元）</h3><div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div></div><div class="metric-card"><h3 class="font-bold mb-4">每股盈利：實際與截圖共識（美元）</h3><div class="chart-container"><canvas id="profitabilityChart"></canvas></div></div></div><div class="metric-card mt-6"><h3 class="font-bold mb-4">FY2027 Q3 實際與 Bloomberg 截圖共識</h3><div class="overflow-x-auto"><table class="w-full text-sm text-left border-collapse"><thead class="bg-slate-100 text-slate-600"><tr><th class="px-4 py-3">指標</th><th class="px-4 py-3">實際</th><th class="px-4 py-3">截圖共識</th><th class="px-4 py-3">差異</th></tr></thead><tbody><tr class="border-b border-slate-100"><td class="px-4 py-3">收入（十億美元）</td><td class="px-4 py-3">115.844</td><td class="px-4 py-3">109.330</td><td class="px-4 py-3">+5.96%</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">經調整攤薄 EPS（美元）</td><td class="px-4 py-3">2.680</td><td class="px-4 py-3">2.470</td><td class="px-4 py-3">+8.50%</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">GAAP 攤薄 EPS（美元）</td><td class="px-4 py-3">2.700</td><td class="px-4 py-3">2.514</td><td class="px-4 py-3">+7.40%</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">Non-GAAP 毛利率</td><td class="px-4 py-3">74.900%</td><td class="px-4 py-3">74.026%</td><td class="px-4 py-3">+0.874 pp</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">營業盈利（EEO 調整口徑；十億美元）</td><td class="px-4 py-3">77.883</td><td class="px-4 py-3">71.951</td><td class="px-4 py-3">+8.24%</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">自由現金流（十億美元）</td><td class="px-4 py-3">43.831</td><td class="px-4 py-3">58.943</td><td class="px-4 py-3">−25.64%</td></tr></tbody></table></div><p class="text-xs text-slate-500 mt-4">來源：Bloomberg EEO（2026/11/18 提供）。截圖共識並非已獨立核實的公告前凍結預測。官方 GAAP 毛利率為 74.8%、營業盈利為 US$77.520bn，不與表中調整口徑混用。</p></div><div class="metric-card mt-6"><h3 class="font-bold mb-3">官方業績與下一季指引</h3><p class="text-sm leading-relaxed text-slate-600">官方確認收入按年增 103%、按季增 20%；資料中心收入 US$107.6bn，按年增 110%。第四季收入指引為 US$130bn ±3%，中點較 EEO 共識 US$125.598bn 高 3.50%；毛利率指引為 71%–72%。第四季包括額外一週，指引不計中國資料中心運算收入。</p><a class="text-blue-600 text-xs underline" href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/" target="_blank" rel="noopener">NVIDIA FY2027 Q3 results · 2026/11/17</a></div></section>
-
-    <section id="valuation" class="tab-content"><div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比較</h2></div><div class="metric-card"><h3 class="font-bold mb-4">半導體同業未來四季調整後市盈率</h3><div class="chart-container"><canvas id="valuationChart"></canvas></div><div class="overflow-x-auto"><table class="w-full text-sm text-left border-collapse"><thead class="bg-slate-100 text-slate-600"><tr><th class="px-4 py-3">公司</th><th class="px-4 py-3">參考價（美元）</th><th class="px-4 py-3">預測 P/E</th><th class="px-4 py-3">預測 EV/收入</th><th class="px-4 py-3">預測 EV/EBITDA</th></tr></thead><tbody><tr class="border-b border-slate-100"><td class="px-4 py-3">NVDA</td><td class="px-4 py-3">155.46</td><td class="px-4 py-3">11.16x</td><td class="px-4 py-3">5.93x</td><td class="px-4 py-3">8.94x</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">AVGO</td><td class="px-4 py-3">341.60</td><td class="px-4 py-3">19.57x</td><td class="px-4 py-3">10.52x</td><td class="px-4 py-3">15.69x</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">AMD</td><td class="px-4 py-3">503.41</td><td class="px-4 py-3">33.44x</td><td class="px-4 py-3">9.72x</td><td class="px-4 py-3">27.52x</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">INTC</td><td class="px-4 py-3">55.17</td><td class="px-4 py-3">39.02x</td><td class="px-4 py-3">4.55x</td><td class="px-4 py-3">13.75x</td></tr></tbody></table></div><p class="text-xs text-slate-500 mt-4">來源：2026/11/18 提供的 Bloomberg EEO，報價列均顯示 17-Nov；估值統一採 Next 4 Qtrs Est。財年及滾動季度窗口、調整項目仍可能不同。倍數差距應與業務組合及盈利可見度一併評估。</p></div></section>
-
-    <section id="street-comments" class="tab-content"><div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點</h2></div><p class="text-sm text-slate-500 mb-4">來源：Bloomberg ANR（2026/11/18）；參考股價：2026/11/17 US$155.46。</p><div class="metric-card mb-6 text-sm">共識評分 4.51/5；12 個月共識目標價 US$260.07，隱含上升 67.3%。Buy／Hold／Sell：78.3%／20.5%／1.2%（65／17／1 家）。</div><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="metric-card border-t-4 border-t-blue-600"><div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100"><h3 class="font-black">UBS</h3><span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span></div><ul class="text-sm text-slate-600 space-y-3"><li><b>評級與日期:</b> Timothy M Arcuri; Buy; 2026/11/16.</li><li><b>目標價與隱含回報:</b> US$240.00; +54.4%.</li></ul></div><div class="metric-card border-t-4 border-t-blue-600"><div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100"><h3 class="font-black">Morgan Stanley</h3><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Overweight</span></div><ul class="text-sm text-slate-600 space-y-3"><li><b>評級與日期:</b> Joseph Moore; Overweight; 2026/11/16.</li><li><b>目標價與隱含回報:</b> US$267.00; +71.7%.</li></ul></div><div class="metric-card border-t-4 border-t-blue-600"><div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100"><h3 class="font-black">Citi</h3><span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span></div><ul class="text-sm text-slate-600 space-y-3"><li><b>評級與日期:</b> Atif Malik; Buy; 2026/11/17.</li><li><b>目標價與隱含回報:</b> US$225.00; +44.7%.</li></ul></div></div></section>
-
-    <section id="risks" class="tab-content"><div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、風險因素</h2></div><div class="metric-card"><ol class="space-y-4 list-decimal ml-5"><li class="pb-3 border-b border-slate-100"><strong class="text-base text-slate-800">毛利率壓力: </strong><span class="text-sm text-slate-600">第四季毛利率指引較第三季下降，需觀察產品轉換及交付節奏。</span></li><li class="pb-3 border-b border-slate-100"><strong class="text-base text-slate-800">現金轉化: </strong><span class="text-sm text-slate-600">自由現金流低於截圖共識，盈利與現金表現的差距值得持續跟進。</span></li><li class="pb-3 border-b border-slate-100"><strong class="text-base text-slate-800">盈利預測下修: </strong><span class="text-sm text-slate-600">較低預測市盈率依賴預測盈利兌現，不能視為回報保證。</span></li><li class="pb-3 border-b border-slate-100"><strong class="text-base text-slate-800">領導層及監管: </strong><span class="text-sm text-slate-600">官方公告列 Colette Kress 為臨時行政總裁，並披露領導層過渡及獨立調查等風險；不應預斷調查結論。</span></li></ol></div></section>
-
-    <section id="disclaimer" class="tab-content">
-        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免責聲明</h2></div>
-        <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
-            <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在從 disclaimer.html 線上安全讀取最新免責聲明組件...</p></div>
-        </div>
-    </section>
-
+<section class="tab-content active" id="our-comments">
+<div class="mb-6">
+<h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">一、我們的觀點</h2>
+<p class="mt-2 text-sm text-slate-500">FY2027 Q3 截至 2026/10/25；業績公布：2026/11/17；報告更新及市場資料：2026/11/18。</p>
+</div>
+<div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
+<div class="flex items-center mb-6 border-b border-slate-100 pb-4">
+<span class="text-3xl mr-3">🎯</span>
+<h3 class="text-2xl font-black text-blue-600 tracking-tight">核心經營結論</h3>
+</div>
+<ul class="space-y-6">
+<li class="flex items-start">
+<span class="text-blue-600 mr-4 text-xl font-black">1.</span>
+<div>
+<strong class="text-slate-900 block mb-1 text-lg">資料中心增長延續，產品交付仍是核心催化劑</strong>
+<p class="text-slate-600 text-sm leading-relaxed">我們認為，輝達的需求基礎仍然強勁。第三季營收 US$115.844bn，按年增 103%、按季增 20%；資料中心收入 US$107.610bn，按年增 110%，約佔整體收入 92.9%。其中 Hyperscale 達 US$60.136bn，ACIE 達 US$47.474bn，顯示需求不只來自單一客戶類型。Vera Rubin 已開始出貨，下一階段重點是新架構能否按計劃放量，以及客戶電力、機房和部署能力能否承接交付。</p>
+</div>
+</li>
+<li class="flex items-start">
+<span class="text-blue-600 mr-4 text-xl font-black">2.</span>
+<div>
+<strong class="text-slate-900 block mb-1 text-lg">收入指引續增，但毛利率決定增長的盈利質素</strong>
+<p class="text-slate-600 text-sm leading-relaxed">第四季收入指引 US$130bn ±3%，中點較本季高約 12.2%，亦較 Bloomberg 截圖共識高 3.5%。但 Non-GAAP 毛利率指引 71%–72%，低於第三季 74.9%，而 Non-GAAP 營運開支指引約 US$10.7bn。我們認為，投資焦點應由單一收入超預期，延伸至產品組合、成本及定價能力如何共同影響盈利。第四季多一週且不計中國資料中心運算收入，不能把全部環比增長視為相同週數下的需求改善。</p>
+</div>
+</li>
+<li class="flex items-start">
+<span class="text-blue-600 mr-4 text-xl font-black">3.</span>
+<div>
+<strong class="text-slate-900 block mb-1 text-lg">現金流回升，但現金轉化仍需持續驗證</strong>
+<p class="text-slate-600 text-sm leading-relaxed">第三季營運現金流 US$48.253bn，扣除 US$4.422bn 資本開支及 US$0.054bn 相關本金付款後，公司自由現金流為 US$43.777bn，約佔收入 37.8%；較第二季 US$21.341bn 明顯回升。惟 Bloomberg 截圖的 FCF US$43.831bn 仍低於其共識 US$58.943bn。應收帳款周轉天數由60升至64天，期末應收帳款US$81.033bn。我們認為，現金流環比改善仍需配合收款效率驗證；兩個 FCF 口徑的 US$54m 差額另列核對。</p>
+</div>
+</li>
+<li class="flex items-start">
+<span class="text-blue-600 mr-4 text-xl font-black">4.</span>
+<div>
+<strong class="text-slate-900 block mb-1 text-lg">估值折讓提供條件性吸引力，非即時重估保證</strong>
+<p class="text-slate-600 text-sm leading-relaxed">Bloomberg 未來四季調整後 P/E 為 11.16 倍，低於 AVGO 19.57 倍、AMD 33.44 倍及 INTC 39.02 倍；ANR 共識目標價 US$260.07，相對11月17日參考價 US$155.46 隱含上升 67.3%。我們認為，估值吸引力取決於盈利預測落實、毛利率穩定及管理層過渡獲得信任。較低倍數亦可能反映治理與監管風險，而非市場已低估全部基本因素；應以後續交付、現金轉化及風險進展驗證重估條件。</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section class="tab-content" id="financials">
+<div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">二、營運與財務數據</h2></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+<div class="metric-card border-t-4 border-t-emerald-500">
+<h4 class="text-xs font-bold text-slate-500 uppercase">Q3 總營收 (Total Revenue)</h4>
+<p class="text-2xl font-bold text-slate-800 mt-1">$115,844 M</p>
+<p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +103% / QoQ +20%</p>
+</div>
+<div class="metric-card border-t-4 border-t-blue-500">
+<h4 class="text-xs font-bold text-slate-500 uppercase">資料中心單季營收</h4>
+<p class="text-2xl font-bold text-slate-800 mt-1">$107,610 M</p>
+<p class="text-sm text-blue-600 font-semibold mt-1">● 佔營收 92.9% / YoY +110%</p>
+</div>
+<div class="metric-card border-t-4 border-t-indigo-500">
+<h4 class="text-xs font-bold text-slate-500 uppercase">Non-GAAP 營業利潤率</h4>
+<p class="text-2xl font-bold text-slate-800 mt-1">67.2%</p>
+<p class="text-sm text-emerald-600 font-semibold mt-1">● GAAP 營業利潤率 66.9%</p>
+</div>
+<div class="metric-card border-t-4 border-t-purple-500">
+<h4 class="text-xs font-bold text-slate-500 uppercase">季度自由現金流（公司口徑）</h4>
+<p class="text-xl font-bold text-slate-800 mt-1">$43,777 M</p>
+<p class="text-sm text-emerald-600 font-semibold mt-1">● FCF / 營收 37.8%</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="metric-card">
+<h3 class="text-lg font-bold text-slate-800 mb-2">Q3 市場平台營收結構 (Million USD)</h3>
+<p class="text-xs text-slate-500 mb-4">Hyperscale US$60,136m、ACIE US$47,474m、邊緣運算 US$8,234m，合計 US$115,844m；前兩者組成資料中心，佔92.9%。市場平台有別於法定報告分部，歷史分類按公司重列。</p>
+<div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+</div>
+<div class="metric-card">
+<h3 class="text-lg font-bold text-slate-800 mb-2">比較期間營收與 Non-GAAP 毛利率</h3>
+<p class="text-xs text-slate-500 mb-4">Q3 FY2026、Q2 FY2027、Q3 FY2027 為比較期間，並非連續三季。左軸：營收（百萬美元）；右軸：Non-GAAP 毛利率（%）。</p>
+<div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
+</div>
+</div>
+<div class="metric-card mt-6">
+<h3 class="text-lg font-bold text-slate-800 mb-4">Q3 核心財務數據（百萬美元；EPS 除外）</h3>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left border-collapse">
+<thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
+<tr>
+<th class="px-6 py-3 font-bold">會計明細科目項目</th>
+<th class="px-6 py-3 font-bold text-right">Q3 FY2027 GAAP</th>
+<th class="px-6 py-3 font-bold text-right text-blue-600">Q3 FY2027 Non-GAAP</th>
+<th class="px-6 py-3 font-bold text-right text-emerald-600">Non-GAAP QoQ / 補充</th>
+</tr>
+</thead>
+<tbody class="text-slate-700">
+<tr class="border-b border-slate-100">
+<td class="px-6 py-4 font-medium">季度總營收</td>
+<td class="px-6 py-4 text-right">$115,844 M</td>
+<td class="px-6 py-4 text-right font-bold text-blue-600">$115,844 M</td>
+<td class="px-6 py-4 text-right font-bold text-emerald-500">+20.4% QoQ</td>
+</tr>
+<tr class="border-b border-slate-100">
+<td class="px-6 py-4 font-medium">毛利額及毛利率</td>
+<td class="px-6 py-4 text-right">$86,676 M (74.8%)</td>
+<td class="px-6 py-4 text-right font-bold text-blue-600">$86,724 M (74.9%)</td>
+<td class="px-6 py-4 text-right text-emerald-500">毛利率 −0.1 個百分點</td>
+</tr>
+<tr class="border-b border-slate-100">
+<td class="px-6 py-4 font-medium">營業利潤</td>
+<td class="px-6 py-4 text-right">$77,520 M</td>
+<td class="px-6 py-4 text-right font-bold text-blue-600">$77,883 M</td>
+<td class="px-6 py-4 text-right text-emerald-500">+21.8% QoQ</td>
+</tr>
+<tr class="border-b border-slate-100">
+<td class="px-6 py-4 font-medium">季度淨利潤</td>
+<td class="px-6 py-4 text-right">$65,287 M</td>
+<td class="px-6 py-4 text-right font-bold text-blue-600">$64,870 M</td>
+<td class="px-6 py-4 text-right text-emerald-600">+20.2% QoQ</td>
+</tr>
+<tr class="bg-slate-50 font-bold">
+<td class="px-6 py-4 text-slate-800">營運現金流與攤薄 EPS</td>
+<td class="px-6 py-4 text-right text-slate-500">GAAP Diluted EPS: $2.70</td>
+<td class="px-6 py-4 text-right text-blue-600">Non-GAAP EPS: $2.68</td>
+<td class="px-6 py-4 text-right text-purple-600">營運現金流：$48,253 M</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="text-xs text-slate-500 mt-4 leading-relaxed">Non-GAAP 已包含股份薪酬；比較期按公司重列口徑。GAAP 與 Non-GAAP 不混用。公司財季於 2026/10/25 結束，Bloomberg 標準化季度欄的10/31並非實際財季截止。</p></div>
+<div class="metric-card mt-6"><h3 class="text-lg font-bold text-slate-800 mb-3">資料中心需求拆分</h3><p class="text-sm text-slate-600 leading-relaxed">Hyperscale 收入 US$60,136m（YoY +71%、QoQ +23%）；AI Clouds, Industrial &amp; Enterprise（ACIE）US$47,474m（YoY +195%、QoQ +18%），合計資料中心 US$107,610m。Edge Computing US$8,234m（YoY +42%、QoQ +14%）。按公司最新 Revenue Trend 的分類及重列比較期；不自行推算未披露的分部利潤率。</p></div><div class="metric-card mt-6"><h3 class="text-lg font-bold text-slate-800 mb-3">自由現金流橋接與資本回報</h3><p class="text-sm text-slate-600 leading-relaxed">營運現金流 US$48,253m − 資本開支 US$4,422m − 相關本金付款 US$54m = 公司自由現金流 US$43,777m。Bloomberg EEO 的 US$43,831m 等於前兩項相減，與公司口徑相差 US$54m；下方市場比較保留 Bloomberg 原值。季度向股東返還 US$28.1bn，期末回購授權剩餘約 US$227.3bn；授權額不等於已執行回購。</p></div><div class="metric-card mt-6"><h3 class="font-bold mb-4">FY2027 Q3 實際與 Bloomberg 截圖共識</h3><div class="overflow-x-auto"><table class="w-full text-sm text-left border-collapse"><thead class="bg-slate-100 text-slate-600"><tr><th class="px-4 py-3">指標</th><th class="px-4 py-3">實際</th><th class="px-4 py-3">截圖共識</th><th class="px-4 py-3">差異</th></tr></thead><tbody><tr class="border-b border-slate-100"><td class="px-4 py-3">收入（十億美元）</td><td class="px-4 py-3">115.844</td><td class="px-4 py-3">109.330</td><td class="px-4 py-3">+5.96%</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">經調整攤薄 EPS（美元）</td><td class="px-4 py-3">2.680</td><td class="px-4 py-3">2.470</td><td class="px-4 py-3">+8.50%</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">GAAP 攤薄 EPS（美元）</td><td class="px-4 py-3">2.700</td><td class="px-4 py-3">2.514</td><td class="px-4 py-3">+7.40%</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">Non-GAAP 毛利率</td><td class="px-4 py-3">74.900%</td><td class="px-4 py-3">74.026%</td><td class="px-4 py-3">+0.874 pp</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">營業盈利（EEO 調整口徑；十億美元）</td><td class="px-4 py-3">77.883</td><td class="px-4 py-3">71.951</td><td class="px-4 py-3">+8.24%</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">自由現金流（十億美元）</td><td class="px-4 py-3">43.831</td><td class="px-4 py-3">58.943</td><td class="px-4 py-3">−25.64%</td></tr></tbody></table></div><p class="text-xs text-slate-500 mt-4">來源：Bloomberg EEO（2026/11/18 提供）。截圖共識並非已獨立核實的公告前凍結預測。官方 GAAP 毛利率為 74.8%、營業盈利為 US$77.520bn，不與表中調整口徑混用。</p></div><div class="metric-card mt-6"><h3 class="text-lg font-bold text-slate-800 mb-3">官方業績與下一季指引</h3><p class="text-sm text-slate-600 leading-relaxed">第四季收入指引 US$130bn ±3%（US$126.1–133.9bn），中點較本季高約12.2%，較 Bloomberg 截圖共識 US$125.598bn 高3.50%。GAAP及Non-GAAP毛利率指引均為71%–72%；營運開支分別約US$11.0bn及US$10.7bn。FY2027全年稅率預期16%–18%，不計離散項目及重大稅務環境變化。第四季額外多一週，不計中國資料中心運算收入。</p></div><p class="text-xs text-slate-500 mt-4">Sources: <a class="text-blue-600 underline" href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/" rel="noopener" target="_blank">NVIDIA FY2027 Q3 results</a> · <a class="text-blue-600 underline" href="https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q327/Q3FY27-CFO-Commentary.pdf" rel="noopener" target="_blank">CFO commentary</a> · <a class="text-blue-600 underline" href="https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q327/Rev-by-Mkt-Qtrly-Trend-Q327.pdf" rel="noopener" target="_blank">Revenue Trend</a></p></section>
+<section class="tab-content" id="valuation">
+<div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">三、估值比較</h2></div>
+<div class="metric-card">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-bold text-slate-800">半導體同業未來四季調整後市盈率</h3>
+</div>
+<div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
+<p class="text-xs text-slate-400 mt-3 text-right">來源：2026/11/18 提供的 Bloomberg EEO，報價列均顯示 17-Nov；估值統一採 Next 4 Qtrs Est。財年及滾動季度窗口、調整項目仍可能不同。倍數差距應與業務組合及盈利可見度一併評估。</p>
+<div class="overflow-x-auto"><table class="w-full text-sm text-left border-collapse"><thead class="bg-slate-100 text-slate-600"><tr><th class="px-4 py-3">公司</th><th class="px-4 py-3">參考價（美元）</th><th class="px-4 py-3">預測 P/E</th><th class="px-4 py-3">預測 EV/收入</th><th class="px-4 py-3">預測 EV/EBITDA</th></tr></thead><tbody><tr class="border-b border-slate-100"><td class="px-4 py-3">NVDA</td><td class="px-4 py-3">155.46</td><td class="px-4 py-3">11.16x</td><td class="px-4 py-3">5.93x</td><td class="px-4 py-3">8.94x</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">AVGO</td><td class="px-4 py-3">341.60</td><td class="px-4 py-3">19.57x</td><td class="px-4 py-3">10.52x</td><td class="px-4 py-3">15.69x</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">AMD</td><td class="px-4 py-3">503.41</td><td class="px-4 py-3">33.44x</td><td class="px-4 py-3">9.72x</td><td class="px-4 py-3">27.52x</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">INTC</td><td class="px-4 py-3">55.17</td><td class="px-4 py-3">39.02x</td><td class="px-4 py-3">4.55x</td><td class="px-4 py-3">13.75x</td></tr></tbody></table></div></div>
+<div class="metric-card mt-6"><h3 class="text-lg font-bold text-slate-800 mb-3">估值解讀：折讓與重估條件</h3><p class="text-sm text-slate-600 leading-relaxed">我們認為，輝達較同業低的盈利倍數，須與其資料中心集中度、預測盈利增長、管理層過渡及監管風險一起理解。Broadcom的軟件組合、AMD的產品放量階段和Intel的轉型成本均不同，不能把同業倍數平均值直接當作輝達合理價。股價回升需要盈利和現金預期得到驗證，而非只靠倍數差距。</p></div></section>
+<section class="tab-content" id="street-comments">
+<div class="mb-6">
+<h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">四、華爾街觀點</h2>
+<p class="mt-2 text-sm text-slate-500">來源：Bloomberg ANR（2026/11/18）；參考股價：2026/11/17 US$155.46。</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="metric-card border-t-4 border-t-blue-600">
+<div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+<h3 class="font-black text-slate-800">瑞銀 (UBS)</h3>
+<span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
+</div>
+<ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+<li><b>評級與日期: </b>Timothy M Arcuri; Buy; 2026/11/16.</li>
+<li><b>目標價與隱含回報: </b>US$240.00; +54.4%.</li>
+</ul>
+</div>
+<div class="metric-card border-t-4 border-t-blue-600">
+<div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+<h3 class="font-black text-slate-800">摩根士丹利 (Morgan Stanley)</h3>
+<span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Overweight</span>
+</div>
+<ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+<li><b>評級與日期: </b>Joseph Moore; Overweight; 2026/11/16.</li>
+<li><b>目標價與隱含回報: </b>US$267.00; +71.7%.</li>
+</ul>
+</div>
+<div class="metric-card border-t-4 border-t-blue-600">
+<div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+<h3 class="font-black text-slate-800">花旗 (Citi)</h3>
+<span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
+</div>
+<ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+<li><b>評級與日期: </b>Atif Malik; Buy; 2026/11/17.</li>
+<li><b>目標價與隱含回報: </b>US$225.00; +44.7%.</li>
+</ul>
+</div>
+</div>
+<div class="metric-card mt-6"><h3 class="text-lg font-bold text-slate-800 mb-3">市場共識概況</h3><p class="text-sm text-slate-600 leading-relaxed">共識評分 4.51/5；12 個月共識目標價 US$260.07，隱含上升 67.3%。Buy／Hold／Sell：78.3%／20.5%／1.2%（65／17／1 家）。</p></div></section>
+<section class="tab-content" id="risks">
+<div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">五、風險因素</h2></div>
+<div class="metric-card">
+<ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
+<li class="pb-3 border-b border-slate-100"><strong class="text-base">毛利率及產品轉換風險: </strong>第四季 71%–72% 毛利率指引低於第三季 74.9%。若新架構放量時的產品組合、供應成本或定價能力不及預期，收入增長可能被較低利潤率部分抵銷；高盈利預測將面臨下修壓力。應同時追蹤出貨量、交付節奏及毛利率，而非單看訂單或收入。</li>
+<li class="pb-3 border-b border-slate-100"><strong class="text-base">現金轉化、客戶資本開支與執行風險: </strong>公司 FCF 已較第二季改善，但 Bloomberg 口徑仍低於截圖共識。若大型客戶的機房、電力、融資或實際部署進度落後，可能延長交付及收款週期，增加營運資金壓力。期末供應與產能承諾增至US$390bn，主要涉及多年記憶體採購；這些承諾不是當季費用，但需求或部署落差可能增加庫存及採購風險。</li>
+<li class="pb-3 border-b border-slate-100"><strong class="text-base">領導層過渡、治理及監管風險: </strong>官方公告列 Colette Kress 為臨時行政總裁，並披露領導層過渡、獨立調查及相關監管與訴訟風險。在結果未明之前，不預斷調查結論；若不確定性影響客戶信任、人才留任或決策效率，可能使估值折讓持續，即使短期收入仍然強勁。</li>
+<li class="pb-1"><strong class="text-base">出口限制、競爭與盈利預測風險: </strong>第四季指引不計中國資料中心運算收入，但出口規則與許可變化仍可能影響可服務市場及產品規劃。雲端自研晶片和其他運算平台亦可能改變長期需求結構。11.16 倍預測 P/E 依賴預測盈利實現；若客戶削減資本開支或盈利下修，低倍數並不保證股價有下行保護。</li>
+</ol>
+</div>
+</section>
+<section class="tab-content" id="disclaimer">
+<div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">六、免責聲明</h2></div>
+<div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+<div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">正在從 disclaimer.html 線上安全讀取最新免責聲明組件...</p></div>
+</div>
+</section>
 </main>
-
-<div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-    <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
-        <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
-            <div class="flex items-center">
-                <span class="text-2xl mr-2">🤖</span>
-                <div><h4 class="font-bold text-sm">研究員專屬 AI 助理</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
-            </div>
-            <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-            </button>
-        </div>
-        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
-            <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">您好！我是輝達（NVDA）研究助理，可解讀 FY2027 Q3 業績、估值及風險。資料截至 2026/11/18，並非即時行情。</div>
-        </div>
-        <div class="p-3 bg-white border-t border-slate-200">
-            <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
-                <input type="text" id="chat-input" placeholder="輸入您的研究指令..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
-                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
-                </button>
-            </form>
-        </div>
-    </div>
-    <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
-        <span class="text-2xl">✨</span>
+<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end" id="ai-chat-widget">
+<div class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden" id="chat-window">
+<div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
+<div class="flex items-center">
+<span class="text-2xl mr-2">🤖</span>
+<div><h4 class="font-bold text-sm">研究員專屬 AI 助理</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
+</div>
+<button class="text-blue-200 hover:text-white transition-colors" onclick="toggleChat()">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+</div>
+<div class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4" id="chat-messages">
+<div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">您好！我是輝達（NVDA）研究助理，可解讀 FY2027 Q3 業績、估值及風險。資料截至 2026/11/18，並非即時行情。</div>
+</div>
+<div class="p-3 bg-white border-t border-slate-200">
+<form class="flex gap-2" id="chat-form" onsubmit="handleChatSubmit(event)">
+<input class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50" id="chat-input" placeholder="輸入您的研究指令..." type="text"/>
+<button class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md" type="submit">
+<svg class="h-5 w-5 transform rotate-90" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
+</button>
+</form>
+</div>
+</div>
+<button class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center" id="chat-toggle-btn" onclick="toggleChat()">
+<span class="text-2xl">✨</span>
+</button>
+</div>
+<div class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all" id="selection-tooltip">
+<button class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600" onclick="explainSelectedTerm()">
+<span>✨</span> AI 白話文解釋
     </button>
 </div>
-
-<div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
-    <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
-        <span>✨</span> AI 白話文解釋
-    </button>
+<div class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity" id="explain-modal">
+<div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+<div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+<h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 術語解釋</h3>
+<button class="text-blue-200 hover:text-white transition-colors" onclick="closeExplainModal()">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
 </div>
-<div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
-    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
-        <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
-            <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> 術語解釋</h3>
-            <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-            </button>
-        </div>
-        <div class="p-6">
-            <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查詢的詞彙：</div>
-            <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
-            <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
-                <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+<div class="p-6">
+<div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">您查詢的詞彙：</div>
+<div class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100" id="explain-term-title"></div>
+<div class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg" id="explain-loading">
+<svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path></svg>
                 AI 正在生成解釋...
             </div>
-            <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
-        </div>
-        <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
-            <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">關閉</button>
-        </div>
-    </div>
+<div class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100" id="explain-result"></div>
 </div>
-
+<div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+<button class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors" onclick="closeExplainModal()">關閉</button>
+</div>
+</div>
+</div>
 <script>
     // 註冊全域圖表實例快取
     window.charts = {};
@@ -216,9 +383,68 @@
             if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
         }
 
-        window.charts.nvdaSegment = new Chart(document.getElementById("segmentRevenueChart").getContext("2d"), {"type": "bar", "data": {"labels": ["實際", "截圖共識"], "datasets": [{"label": "US$bn", "data": [115.844, 109.33], "backgroundColor": ["#2563eb", "#94a3b8", "#94a3b8", "#94a3b8"], "borderRadius": 4}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"display": false}}, "scales": {"x": {"beginAtZero": true}, "y": {"beginAtZero": true}}}});
-        window.charts.nvdaProfit = new Chart(document.getElementById("profitabilityChart").getContext("2d"), {"type": "bar", "data": {"labels": ["實際", "截圖共識"], "datasets": [{"label": "US$", "data": [2.68, 2.47], "backgroundColor": ["#2563eb", "#94a3b8", "#94a3b8", "#94a3b8"], "borderRadius": 4}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"display": false}}, "scales": {"x": {"beginAtZero": true}, "y": {"beginAtZero": true}}}});
-        window.charts.nvdaValuation = new Chart(document.getElementById("valuationChart").getContext("2d"), {"type": "bar", "data": {"labels": ["NVDA", "AVGO", "AMD", "INTC"], "datasets": [{"label": "Next 4 Qtrs Est P/E (Adj+)", "data": [11.16, 19.57, 33.44, 39.02], "backgroundColor": ["#2563eb", "#94a3b8", "#94a3b8", "#94a3b8"], "borderRadius": 4}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"display": false}}, "scales": {"x": {"beginAtZero": true}, "y": {"beginAtZero": true}}, "indexAxis": "y"}});
+        // NVIDIA chart: canonical MU presentation with verified NVIDIA data
+        window.charts.nvdaSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ["Hyperscale", "ACIE", "邊緣運算 (Edge Computing)"],
+                datasets: [{
+                    data: [60136, 47474, 8234],
+                    backgroundColor: ['rgba(37, 99, 235, 0.85)', 'rgba(16, 185, 129, 0.85)', 'rgba(99, 102, 241, 0.85)'],
+                    borderWidth: 0
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
+        });
+
+        // NVIDIA chart: canonical MU presentation with verified NVIDIA data
+        window.charts.nvdaProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ["Q3 FY2026", "Q2 FY2027", "Q3 FY2027"],
+                datasets: [
+                    {
+                        label: "營收（百萬美元）",
+                        data: [57006, 96221, 115844],
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4
+                    },
+                    {
+                        label: "Non-GAAP 毛利率（%）",
+                        data: [73.5, 75.0, 74.9],
+                        backgroundColor: '#10b981',
+                        borderRadius: 4,
+                        yAxisID: 'percentageAxis'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'bottom' } },
+                scales: {
+                    y: { beginAtZero: true, position: 'left', grid: { color: '#f1f5f9' } },
+                    percentageAxis: { beginAtZero: true, max: 100, position: 'right', grid: { display: false } }
+                }
+            }
+        });
+
+        // NVIDIA chart: canonical MU presentation with verified NVIDIA data
+        window.charts.nvdaValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ["NVDA", "AVGO", "AMD", "INTC"],
+                datasets: [{
+                    label: 'Next 4 Qtrs Est Forward P/E',
+                    data: [11.16, 19.57, 33.44, 39.02],
+                    backgroundColor: ['rgba(37, 99, 235, 0.95)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)'],
+                    borderRadius: 4
+                }]
+            },
+            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
+        });
+
+        // 安全調閱外部 disclaimer.html 連動模組
         fetch('disclaimer.html')
             .then(response => {
                 if (!response.ok) throw new Error('無法載入 disclaimer.html');
@@ -250,7 +476,7 @@
     }
 
     // AI 助理 Widget 邏輯
-    const standardPrompt = "You are the NVIDIA NVDA research assistant. Answer in Traditional Chinese. As of 2026-11-18; not live prices. Quarter ended 2026-10-25 released 2026-11-17. {\"company\": \"輝達\", \"subtitle\": \"資深分析師 營運與戰略報告 | FY2027 Q3 財報特輯\", \"intro\": \"FY2027 Q3 截至 2026/10/25；業績公布：2026/11/17；報告更新及市場資料：2026/11/18。\", \"headline\": \"收入與盈利勝預期，重點轉向毛利率及現金轉化\", \"views\": [[\"AI 基建需求支持增長\", \"我們認為，輝達今季再次展現 AI 基建需求的強度。收入及經調整每股盈利分別高於 Bloomberg 截圖共識約 6.0% 及 8.5%，下一季收入指引中點亦高於截圖共識，支持業務增長延續的判斷。\"], [\"毛利率及現金轉化是下一個觀察重點\", \"下一季毛利率指引低於今季水平，而今季自由現金流較截圖共識低 25.6%。我們更關注新增收入能否持續轉化為現金，以及新一代產品放量期間的盈利能力，而非單以收入增速判斷業績質素。\"], [\"估值吸引力取決於盈利兌現\", \"以截圖的未來四季預測市盈率計，輝達為 11.16 倍，低於 AVGO、AMD 及 INTC。我們認為，這提供估值吸引力，但預測盈利能否實現仍是關鍵；領導層過渡及監管不確定性亦可能令估值折讓持續。\"]], \"kpis\": [[\"季度收入\", \"US$115.844bn\", \"較截圖共識 +5.96%\"], [\"經調整 EPS\", \"US$2.680\", \"較截圖共識 +8.50%\"], [\"Non-GAAP 毛利率\", \"74.9%\", \"較截圖共識 +0.874 個百分點\"], [\"季度自由現金流\", \"US$43.831bn\", \"較截圖共識 −25.64%\"]], \"charttitles\": [\"收入：實際與截圖共識（十億美元）\", \"每股盈利：實際與截圖共識（美元）\"], \"labels\": [\"實際\", \"截圖共識\"], \"tabletitle\": \"FY2027 Q3 實際與 Bloomberg 截圖共識\", \"heads\": [\"指標\", \"實際\", \"截圖共識\", \"差異\"], \"metrics\": [\"收入（十億美元）\", \"經調整攤薄 EPS（美元）\", \"GAAP 攤薄 EPS（美元）\", \"Non-GAAP 毛利率\", \"營業盈利（EEO 調整口徑；十億美元）\", \"自由現金流（十億美元）\"], \"note\": \"來源：Bloomberg EEO（2026/11/18 提供）。截圖共識並非已獨立核實的公告前凍結預測。官方 GAAP 毛利率為 74.8%、營業盈利為 US$77.520bn，不與表中調整口徑混用。\", \"outtitle\": \"官方業績與下一季指引\", \"out\": \"官方確認收入按年增 103%、按季增 20%；資料中心收入 US$107.6bn，按年增 110%。第四季收入指引為 US$130bn ±3%，中點較 EEO 共識 US$125.598bn 高 3.50%；毛利率指引為 71%–72%。第四季包括額外一週，指引不計中國資料中心運算收入。\", \"valtitle\": \"半導體同業未來四季調整後市盈率\", \"valheads\": [\"公司\", \"參考價（美元）\", \"預測 P/E\", \"預測 EV/收入\", \"預測 EV/EBITDA\"], \"valnote\": \"來源：2026/11/18 提供的 Bloomberg EEO，報價列均顯示 17-Nov；估值統一採 Next 4 Qtrs Est。財年及滾動季度窗口、調整項目仍可能不同。倍數差距應與業務組合及盈利可見度一併評估。\", \"street\": \"來源：Bloomberg ANR（2026/11/18）；參考股價：2026/11/17 US$155.46。\", \"consensus\": \"共識評分 4.51/5；12 個月共識目標價 US$260.07，隱含上升 67.3%。Buy／Hold／Sell：78.3%／20.5%／1.2%（65／17／1 家）。\", \"ratingdate\": \"評級與日期\", \"target\": \"目標價與隱含回報\", \"risks\": [[\"毛利率壓力\", \"第四季毛利率指引較第三季下降，需觀察產品轉換及交付節奏。\"], [\"現金轉化\", \"自由現金流低於截圖共識，盈利與現金表現的差距值得持續跟進。\"], [\"盈利預測下修\", \"較低預測市盈率依賴預測盈利兌現，不能視為回報保證。\"], [\"領導層及監管\", \"官方公告列 Colette Kress 為臨時行政總裁，並披露領導層過渡及獨立調查等風險；不應預斷調查結論。\"]], \"welcome\": \"您好！我是輝達（NVDA）研究助理，可解讀 FY2027 Q3 業績、估值及風險。資料截至 2026/11/18，並非即時行情。\"} Tables: [[\"115.844\", \"109.330\", \"+5.96%\"], [\"2.680\", \"2.470\", \"+8.50%\"], [\"2.700\", \"2.514\", \"+7.40%\"], [\"74.900%\", \"74.026%\", \"+0.874 pp\"], [\"77.883\", \"71.951\", \"+8.24%\"], [\"43.831\", \"58.943\", \"\\u221225.64%\"]] Peer table: [[\"NVDA\", \"155.46\", \"11.16x\", \"5.93x\", \"8.94x\"], [\"AVGO\", \"341.60\", \"19.57x\", \"10.52x\", \"15.69x\"], [\"AMD\", \"503.41\", \"33.44x\", \"9.72x\", \"27.52x\"], [\"INTC\", \"55.17\", \"39.02x\", \"4.55x\", \"13.75x\"]] Do not invent missing data or bank theses. Use We believe/我們認為/我们认为. Standard ratings only Overweight/Buy/Neutral/Sell/Underweight. Distinguish company actuals, guidance, Bloomberg snapshot and our analysis. Use HTML b, not Markdown.";
+    const standardPrompt = "Answer in Traditional Chinese. NVIDIA NVDA research. As of 2026-11-18, not live prices. Current report content: 一、我們的觀點 FY2027 Q3 截至 2026/10/25；業績公布：2026/11/17；報告更新及市場資料：2026/11/18。 🎯 核心經營結論 1. 資料中心增長延續，產品交付仍是核心催化劑 我們認為，輝達的需求基礎仍然強勁。第三季營收 US$115.844bn，按年增 103%、按季增 20%；資料中心收入 US$107.610bn，按年增 110%，約佔整體收入 92.9%。其中 Hyperscale 達 US$60.136bn，ACIE 達 US$47.474bn，顯示需求不只來自單一客戶類型。Vera Rubin 已開始出貨，下一階段重點是新架構能否按計劃放量，以及客戶電力、機房和部署能力能否承接交付。 2. 收入指引續增，但毛利率決定增長的盈利質素 第四季收入指引 US$130bn ±3%，中點較本季高約 12.2%，亦較 Bloomberg 截圖共識高 3.5%。但 Non-GAAP 毛利率指引 71%–72%，低於第三季 74.9%，而 Non-GAAP 營運開支指引約 US$10.7bn。我們認為，投資焦點應由單一收入超預期，延伸至產品組合、成本及定價能力如何共同影響盈利。第四季多一週且不計中國資料中心運算收入，不能把全部環比增長視為相同週數下的需求改善。 3. 現金流回升，但現金轉化仍需持續驗證 第三季營運現金流 US$48.253bn，扣除 US$4.422bn 資本開支及 US$0.054bn 相關本金付款後，公司自由現金流為 US$43.777bn，約佔收入 37.8%；較第二季 US$21.341bn 明顯回升。惟 Bloomberg 截圖的 FCF US$43.831bn 仍低於其共識 US$58.943bn。應收帳款周轉天數由60升至64天，期末應收帳款US$81.033bn。我們認為，現金流環比改善仍需配合收款效率驗證；兩個 FCF 口徑的 US$54m 差額另列核對。 4. 估值折讓提供條件性吸引力，非即時重估保證 Bloomberg 未來四季調整後 P/E 為 11.16 倍，低於 AVGO 19.57 倍、AMD 33.44 倍及 INTC 39.02 倍；ANR 共識目標價 US$260.07，相對11月17日參考價 US$155.46 隱含上升 67.3%。我們認為，估值吸引力取決於盈利預測落實、毛利率穩定及管理層過渡獲得信任。較低倍數亦可能反映治理與監管風險，而非市場已低估全部基本因素；應以後續交付、現金轉化及風險進展驗證重估條件。 二、營運與財務數據 Q3 總營收 (Total Revenue) $115,844 M ▲ YoY +103% / QoQ +20% 資料中心單季營收 $107,610 M ● 佔營收 92.9% / YoY +110% Non-GAAP 營業利潤率 67.2% ● GAAP 營業利潤率 66.9% 季度自由現金流（公司口徑） $43,777 M ● FCF / 營收 37.8% Q3 市場平台營收結構 (Million USD) Hyperscale US$60,136m、ACIE US$47,474m、邊緣運算 US$8,234m，合計 US$115,844m；前兩者組成資料中心，佔92.9%。市場平台有別於法定報告分部，歷史分類按公司重列。 比較期間營收與 Non-GAAP 毛利率 Q3 FY2026、Q2 FY2027、Q3 FY2027 為比較期間，並非連續三季。左軸：營收（百萬美元）；右軸：Non-GAAP 毛利率（%）。 Q3 核心財務數據（百萬美元；EPS 除外） 會計明細科目項目 Q3 FY2027 GAAP Q3 FY2027 Non-GAAP Non-GAAP QoQ / 補充 季度總營收 $115,844 M $115,844 M +20.4% QoQ 毛利額及毛利率 $86,676 M (74.8%) $86,724 M (74.9%) 毛利率 −0.1 個百分點 營業利潤 $77,520 M $77,883 M +21.8% QoQ 季度淨利潤 $65,287 M $64,870 M +20.2% QoQ 營運現金流與攤薄 EPS GAAP Diluted EPS: $2.70 Non-GAAP EPS: $2.68 營運現金流：$48,253 M Non-GAAP 已包含股份薪酬；比較期按公司重列口徑。GAAP 與 Non-GAAP 不混用。公司財季於 2026/10/25 結束，Bloomberg 標準化季度欄的10/31並非實際財季截止。 資料中心需求拆分 Hyperscale 收入 US$60,136m（YoY +71%、QoQ +23%）；AI Clouds, Industrial & Enterprise（ACIE）US$47,474m（YoY +195%、QoQ +18%），合計資料中心 US$107,610m。Edge Computing US$8,234m（YoY +42%、QoQ +14%）。按公司最新 Revenue Trend 的分類及重列比較期；不自行推算未披露的分部利潤率。 自由現金流橋接與資本回報 營運現金流 US$48,253m − 資本開支 US$4,422m − 相關本金付款 US$54m = 公司自由現金流 US$43,777m。Bloomberg EEO 的 US$43,831m 等於前兩項相減，與公司口徑相差 US$54m；下方市場比較保留 Bloomberg 原值。季度向股東返還 US$28.1bn，期末回購授權剩餘約 US$227.3bn；授權額不等於已執行回購。 FY2027 Q3 實際與 Bloomberg 截圖共識 指標 實際 截圖共識 差異 收入（十億美元） 115.844 109.330 +5.96% 經調整攤薄 EPS（美元） 2.680 2.470 +8.50% GAAP 攤薄 EPS（美元） 2.700 2.514 +7.40% Non-GAAP 毛利率 74.900% 74.026% +0.874 pp 營業盈利（EEO 調整口徑；十億美元） 77.883 71.951 +8.24% 自由現金流（十億美元） 43.831 58.943 −25.64% 來源：Bloomberg EEO（2026/11/18 提供）。截圖共識並非已獨立核實的公告前凍結預測。官方 GAAP 毛利率為 74.8%、營業盈利為 US$77.520bn，不與表中調整口徑混用。 官方業績與下一季指引 第四季收入指引 US$130bn ±3%（US$126.1–133.9bn），中點較本季高約12.2%，較 Bloomberg 截圖共識 US$125.598bn 高3.50%。GAAP及Non-GAAP毛利率指引均為71%–72%；營運開支分別約US$11.0bn及US$10.7bn。FY2027全年稅率預期16%–18%，不計離散項目及重大稅務環境變化。第四季額外多一週，不計中國資料中心運算收入。 Sources: NVIDIA FY2027 Q3 results · CFO commentary · Revenue Trend 三、估值比較 半導體同業未來四季調整後市盈率 來源：2026/11/18 提供的 Bloomberg EEO，報價列均顯示 17-Nov；估值統一採 Next 4 Qtrs Est。財年及滾動季度窗口、調整項目仍可能不同。倍數差距應與業務組合及盈利可見度一併評估。 公司 參考價（美元） 預測 P/E 預測 EV/收入 預測 EV/EBITDA NVDA 155.46 11.16x 5.93x 8.94x AVGO 341.60 19.57x 10.52x 15.69x AMD 503.41 33.44x 9.72x 27.52x INTC 55.17 39.02x 4.55x 13.75x 估值解讀：折讓與重估條件 我們認為，輝達較同業低的盈利倍數，須與其資料中心集中度、預測盈利增長、管理層過渡及監管風險一起理解。Broadcom的軟件組合、AMD的產品放量階段和Intel的轉型成本均不同，不能把同業倍數平均值直接當作輝達合理價。股價回升需要盈利和現金預期得到驗證，而非只靠倍數差距。 四、華爾街觀點 來源：Bloomberg ANR（2026/11/18）；參考股價：2026/11/17 US$155.46。 瑞銀 (UBS) Buy 評級與日期: Timothy M Arcuri; Buy; 2026/11/16. 目標價與隱含回報: US$240.00; +54.4%. 摩根士丹利 (Morgan Stanley) Overweight 評級與日期: Joseph Moore; Overweight; 2026/11/16. 目標價與隱含回報: US$267.00; +71.7%. 花旗 (Citi) Buy 評級與日期: Atif Malik; Buy; 2026/11/17. 目標價與隱含回報: US$225.00; +44.7%. 市場共識概況 共識評分 4.51/5；12 個月共識目標價 US$260.07，隱含上升 67.3%。Buy／Hold／Sell：78.3%／20.5%／1.2%（65／17／1 家）。 五、風險因素 毛利率及產品轉換風險: 第四季 71%–72% 毛利率指引低於第三季 74.9%。若新架構放量時的產品組合、供應成本或定價能力不及預期，收入增長可能被較低利潤率部分抵銷；高盈利預測將面臨下修壓力。應同時追蹤出貨量、交付節奏及毛利率，而非單看訂單或收入。 現金轉化、客戶資本開支與執行風險: 公司 FCF 已較第二季改善，但 Bloomberg 口徑仍低於截圖共識。若大型客戶的機房、電力、融資或實際部署進度落後，可能延長交付及收款週期，增加營運資金壓力。期末供應與產能承諾增至US$390bn，主要涉及多年記憶體採購；這些承諾不是當季費用，但需求或部署落差可能增加庫存及採購風險。 領導層過渡、治理及監管風險: 官方公告列 Colette Kress 為臨時行政總裁，並披露領導層過渡、獨立調查及相關監管與訴訟風險。在結果未明之前，不預斷調查結論；若不確定性影響客戶信任、人才留任或決策效率，可能使估值折讓持續，即使短期收入仍然強勁。 出口限制、競爭與盈利預測風險: 第四季指引不計中國資料中心運算收入，但出口規則與許可變化仍可能影響可服務市場及產品規劃。雲端自研晶片和其他運算平台亦可能改變長期需求結構。11.16 倍預測 P/E 依賴預測盈利實現；若客戶削減資本開支或盈利下修，低倍數並不保證股價有下行保護。 六、免責聲明 正在從 disclaimer.html 線上安全讀取最新免責聲明組件... Additional exact chart data: Revenue USDm57006,96221,115844 and Non-GAAP gross margin73.5,75,74.9 across Q3FY26,Q2FY27,Q3FY27 (not consecutive). FCF company43777m=48253-4422-54; Bloomberg43831m=48253-4422, consensus58943m. Peer next4 adjusted PE NVDA11.16 AVGO19.57 AMD33.44 INTC39.02. Do not invent bank theses. Retain standardized rating words only. Distinguish actual/guidance/snapshot consensus/our view. Use HTML b not Markdown.";
     function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
     function appendMessage(text, isUser) {
         const msgDiv = document.createElement('div');
@@ -295,7 +521,7 @@
         document.getElementById('selection-tooltip').classList.add('hidden');
         document.getElementById('explain-term-title').textContent = selectedText;
         document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
-        const res = await callGeminiAPI(`解釋這個 輝達 (NVDA) 財報相關詞彙；本頁資料截至 2026/11/18：${selectedText}`, "你是 輝達 半導體與 AI 運算專家，用最白話的專業繁體中文解釋詞彙。限 150 字，重點使用 <b> 標籤包覆。");
+        const res = await callGeminiAPI(`解釋這個輝達 NVDA 財報相關詞彙：${selectedText}`, "你是輝達儲存專家，用最白話的專業繁體中文解釋詞彙。限 150 字，重點使用 <b> 標籤包覆。");
         document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
     }
     function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }

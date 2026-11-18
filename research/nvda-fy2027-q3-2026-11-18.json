@@ -82,5 +82,42 @@
     "Actual vs snapshot differences not confirmed pre-announcement surprises.",
     "No full earnings-call transcript review.",
     "PI legal/API components retained."
-  ]
+  ],
+  "restoration": {
+    "request": "Restore detailed MU layout page by page, including doughnut and dual-axis charts.",
+    "sources": [
+      "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q327/Q3FY27-CFO-Commentary.pdf",
+      "https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q327/Rev-by-Mkt-Qtrly-Trend-Q327.pdf"
+    ],
+    "platform_revenue_usdm": {
+      "Hyperscale": 60136,
+      "ACIE": 47474,
+      "Edge": 8234,
+      "DataCenter": 107610,
+      "total": 115844
+    },
+    "FCF_bridge_usdm": {
+      "OCF": 48253,
+      "capex": 4422,
+      "principal_payments": 54,
+      "issuer_FCF": 43777,
+      "Bloomberg_FCF": 43831
+    },
+    "comparison_periods": [
+      "Q3 FY2026",
+      "Q2 FY2027",
+      "Q3 FY2027"
+    ],
+    "periods_not_consecutive": true,
+    "NonGAAP_includes_SBC": true,
+    "DSO_current_prior": [
+      64,
+      60
+    ],
+    "AR_usdm": 81033,
+    "supply_capacity_commitments_usdbn": 390,
+    "target_sample": "62/93",
+    "rating_sample": 83,
+    "status": "Prepared; pending independent visual QA before merge"
+  }
 }

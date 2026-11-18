@@ -1,12 +1,13 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>NVIDIA (NVDA) FY2027 Q3 In-Depth Research Report | NTAM Senior Analyst</title>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>NVIDIA (NVDA) Deep Research Report | NTAM</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
 <style>
     body { font-family: 'Inter', sans-serif; background-color: #f8fafc; color: #1e293b; overflow-x: hidden; }
     .chart-container { position: relative; width: 100%; max-width: 800px; margin-left: auto; margin-right: auto; height: 350px; max-height: 400px; }
@@ -30,153 +31,319 @@
 </style>
 </head>
 <body class="antialiased flex flex-col min-h-screen">
-
-    <div id="pi-modal" class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" style="display: none;">
-        <div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
-            <div class="text-center mb-6">
-                <div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-8 h-8"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77-1.333.192 3 1.732 3z" /></svg>
-                </div>
-                <h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明</h2>
-            </div>
-            <div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
-                    <p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
-                </div>
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
-                    <p>本网站及报告之内容仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者资格。</p>
-                </div>
-                <div class="border-l-4 border-blue-500 pl-4">
-                    <p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
-                    <p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
-                </div>
-            </div>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
-                <button onclick="declinePI()" class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto">Decline</button>
-                <button onclick="acceptPI()" class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto">I Confirm</button>
-            </div>
-        </div>
-    </div>
-
+<div class="fixed inset-0 z-[9999] bg-slate-900/85 backdrop-blur-sm flex flex-col items-center justify-center px-4" id="pi-modal" style="display: none;">
+<div class="bg-white rounded-xl shadow-2xl max-w-3xl w-full p-6 md:p-8 relative overflow-y-auto max-h-[90vh]">
+<div class="text-center mb-6">
+<div class="inline-flex items-center justify-center w-16 h-16 rounded-full bg-rose-100 text-rose-600 mb-4">
+<svg class="w-8 h-8" fill="none" stroke="currentColor" stroke-width="2" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77-1.333.192 3 1.732 3z" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</div>
+<h2 class="text-2xl font-black text-slate-900 mb-2">Important Notice / 重要聲明</h2>
+</div>
+<div class="space-y-6 text-sm text-slate-600 leading-relaxed text-justify mb-8">
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">僅供專業投資者使用 (Professional Investors Only)</p>
+<p>本網站及報告之內容僅供香港法例第571章《證券及期貨條例》及其附屬法例所定義之「專業投資者」查閱。點擊「我確認」即表示您聲明並保證您具備專業投資者資格。</p>
+</div>
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">仅供专业投资者使用 (Professional Investors Only)</p>
+<p>本网站及报告之内容仅供香港法例第571章《证券及期货条例》及其附属法例所定义之“专业投资者”查阅。点击“我确认”即表示您声明并保证您具备专业投资者资格。</p>
+</div>
+<div class="border-l-4 border-blue-500 pl-4">
+<p class="font-bold text-slate-800 mb-1">For Professional Investors Only</p>
+<p>The content of this website and report is strictly distributed to and intended for "Professional Investors" only, as defined in the Securities and Futures Ordinance (Cap. 571 of the Laws of Hong Kong) and its subsidiary legislation.</p>
+</div>
+</div>
+<div class="flex flex-col sm:flex-row gap-4 justify-center mt-6 pt-6 border-t border-slate-200">
+<button class="px-6 py-3 rounded-lg font-bold text-slate-600 bg-slate-100 hover:bg-slate-200 transition-colors w-full sm:w-auto" onclick="declinePI()">Decline</button>
+<button class="px-8 py-3 rounded-lg font-bold text-white bg-blue-600 hover:bg-blue-700 shadow-lg transition-all w-full sm:w-auto" onclick="acceptPI()">I Confirm</button>
+</div>
+</div>
+</div>
 <header class="bg-white border-b border-slate-200 sticky top-0 z-40">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
-        <div class="flex justify-between items-start">
-            <div class="flex flex-col">
-                <a href="index.html" class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer">
-                    <img src="NTAM%20Logo.png" alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'">
-                    <span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
-                </a>
-                <div class="flex flex-col">
-                    <h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">NVIDIA <span class="text-blue-600">NVDA</span></h1>
-                    <span class="text-sm text-slate-500 font-medium mt-1">Senior Analyst Operations & Strategy Report | FY2027 Q3 Earnings</span>
-                </div>
-            </div>
-            <div class="flex flex-col items-end space-y-3">
-                <select onchange="window.location.href=this.value" class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold">
-                    <option value="nvda.html">繁體中文</option>
-                    <option value="nvda-sc.html">简体中文</option>
-                    <option value="nvda-en.html" selected>English</option>
-                </select>
-                <div class="flex items-center space-x-4">
-                    <div class="text-right hidden sm:block">
-                        <div class="text-xs text-slate-400 font-bold">Consensus Target Price <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Bloomberg ANR · 2026/11/18)</span></div>
-                        <div class="text-xl font-bold text-slate-800">$260.07 USD</div>
-                    </div>
-                    <div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">Consensus: Buy (4.51/5)</div>
-                </div>
-            </div>
-        </div>
-
-        <nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
-            <button onclick="switchTab(event, 'our-comments')" class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600">1. Our Views</button>
-            <button onclick="switchTab(event, 'financials')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">2. Financials & Operations</button>
-            <button onclick="switchTab(event, 'valuation')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">3. Valuation Comparison</button>
-            <button onclick="switchTab(event, 'street-comments')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">4. Analyst Views</button>
-            <button onclick="switchTab(event, 'risks')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">5. Risk Factors</button>
-            <button onclick="switchTab(event, 'disclaimer')" class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700">6. Disclaimer</button>
-        </nav>
-    </div>
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+<div class="flex justify-between items-start">
+<div class="flex flex-col">
+<a class="flex items-center space-x-2 pb-2 mb-2 border-b border-slate-100 hover:opacity-75 transition-opacity cursor-pointer" href="index.html">
+<img alt="NTAM Logo" class="h-10 w-auto" onerror="this.style.display='none'" src="NTAM%20Logo.png"/>
+<span class="text-sm font-bold text-slate-700 tracking-wider">NICE TALENT ASSET MANAGEMENT</span>
+</a>
+<div class="flex flex-col">
+<h1 class="text-2xl sm:text-3xl font-black text-slate-900 tracking-tight">NVIDIA <span class="text-blue-600">NVDA</span></h1>
+<span class="text-sm text-slate-500 font-medium mt-1">Senior Analyst Operations &amp; Strategy Report | FY2027 Q3 Earnings</span>
+</div>
+</div>
+<div class="flex flex-col items-end space-y-3">
+<select class="bg-slate-100 border border-slate-300 text-slate-700 text-sm rounded-md px-2 py-1 outline-none cursor-pointer font-bold" onchange="window.location.href=this.value">
+<option value="nvda.html">繁體中文</option>
+<option value="nvda-sc.html">简体中文</option>
+<option selected="" value="nvda-en.html">English</option>
+</select>
+<div class="flex items-center space-x-4">
+<div class="text-right hidden sm:block">
+<div class="text-xs text-slate-400 font-bold">Consensus Target Price <span class="text-[10px] ml-1 text-blue-500 bg-blue-50 px-1 rounded">(Bloomberg ANR · 2026/11/18)</span></div>
+<div class="text-xl font-bold text-slate-800">$260.07 USD</div>
+</div>
+<div class="px-4 py-2 bg-gradient-to-r from-blue-50 to-indigo-50 text-blue-700 font-bold rounded-full border border-blue-200 text-sm whitespace-nowrap">Consensus: Buy (4.51/5)</div>
+</div>
+</div>
+</div>
+<nav class="flex space-x-8 overflow-x-auto hide-scrollbar border-t border-slate-100 mt-4 pt-1" id="nav-tabs">
+<button class="tab-btn active whitespace-nowrap py-3 px-1 text-sm font-medium text-blue-600" onclick="switchTab(event, 'our-comments')">1. Our Views</button>
+<button class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700" onclick="switchTab(event, 'financials')">2. Financials &amp; Operations</button>
+<button class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700" onclick="switchTab(event, 'valuation')">3. Valuation Comparison</button>
+<button class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700" onclick="switchTab(event, 'street-comments')">4. Analyst Views</button>
+<button class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700" onclick="switchTab(event, 'risks')">5. Risk Factors</button>
+<button class="tab-btn whitespace-nowrap py-3 px-1 text-sm font-medium text-slate-500 hover:text-slate-700" onclick="switchTab(event, 'disclaimer')">6. Disclaimer</button>
+</nav>
+</div>
 </header>
-
 <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 flex-grow w-full">
-
-    <section id="our-comments" class="tab-content active"><div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">I. Our Views</h2></div><p class="text-sm text-slate-500 mb-6">FY2027 Q3 ended 2026/10/25; earnings released 2026/11/17; report and market-data snapshot: 2026/11/18.</p><div class="metric-card p-6 md:p-8"><h3 class="text-xl font-black text-blue-600 mb-6">Revenue and EPS Beat Expectations; Focus Shifts to Margins and Cash Conversion</h3><ol class="space-y-6"><li><h4 class="text-lg font-bold mb-2">1. AI infrastructure demand supports growth</h4><p class="text-sm leading-relaxed text-slate-600">We believe NVIDIA again demonstrated strong AI infrastructure demand. Revenue and adjusted EPS exceeded the supplied Bloomberg consensus snapshot by about 6.0% and 8.5%, respectively. Next-quarter revenue guidance also exceeds the snapshot consensus at the midpoint, supporting continued business growth.</p></li><li><h4 class="text-lg font-bold mb-2">2. Margins and cash conversion are the next tests</h4><p class="text-sm leading-relaxed text-slate-600">Next-quarter gross-margin guidance is below the current quarter, while free cash flow was 25.6% below the snapshot consensus. We focus on converting incremental revenue into cash and sustaining profitability through the next-generation product ramp, rather than judging earnings quality solely by revenue growth.</p></li><li><h4 class="text-lg font-bold mb-2">3. Valuation appeal depends on earnings delivery</h4><p class="text-sm leading-relaxed text-slate-600">At 11.16x next-four-quarter estimated earnings in the supplied screenshot, NVIDIA trades below AVGO, AMD and INTC. We believe this offers valuation appeal, but delivering forecast earnings remains essential; leadership transition and regulatory uncertainty may also sustain a valuation discount.</p></li></ol></div></section>
-
-    <section id="financials" class="tab-content"><div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">II. Financials & Operations</h2></div><div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6"><div class="metric-card border-t-4 border-t-blue-500"><h4 class="text-xs font-bold text-slate-500">Quarterly revenue</h4><p class="text-2xl font-bold mt-2">US$115.844bn</p><p class="text-sm text-blue-600 mt-2">+5.96% vs snapshot consensus</p></div><div class="metric-card border-t-4 border-t-blue-500"><h4 class="text-xs font-bold text-slate-500">Adjusted EPS</h4><p class="text-2xl font-bold mt-2">US$2.680</p><p class="text-sm text-blue-600 mt-2">+8.50% vs snapshot consensus</p></div><div class="metric-card border-t-4 border-t-blue-500"><h4 class="text-xs font-bold text-slate-500">Non-GAAP gross margin</h4><p class="text-2xl font-bold mt-2">74.9%</p><p class="text-sm text-blue-600 mt-2">+0.874 percentage points vs consensus</p></div><div class="metric-card border-t-4 border-t-blue-500"><h4 class="text-xs font-bold text-slate-500">Quarterly free cash flow</h4><p class="text-2xl font-bold mt-2">US$43.831bn</p><p class="text-sm text-blue-600 mt-2">−25.64% vs snapshot consensus</p></div></div><div class="grid grid-cols-1 lg:grid-cols-2 gap-6"><div class="metric-card"><h3 class="font-bold mb-4">Revenue: Actual vs Snapshot Consensus (US$bn)</h3><div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div></div><div class="metric-card"><h3 class="font-bold mb-4">EPS: Actual vs Snapshot Consensus (US$)</h3><div class="chart-container"><canvas id="profitabilityChart"></canvas></div></div></div><div class="metric-card mt-6"><h3 class="font-bold mb-4">FY2027 Q3 Actuals vs Bloomberg Snapshot Consensus</h3><div class="overflow-x-auto"><table class="w-full text-sm text-left border-collapse"><thead class="bg-slate-100 text-slate-600"><tr><th class="px-4 py-3">Metric</th><th class="px-4 py-3">Actual</th><th class="px-4 py-3">Snapshot consensus</th><th class="px-4 py-3">Difference</th></tr></thead><tbody><tr class="border-b border-slate-100"><td class="px-4 py-3">Revenue (US$bn)</td><td class="px-4 py-3">115.844</td><td class="px-4 py-3">109.330</td><td class="px-4 py-3">+5.96%</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">Adjusted diluted EPS (US$)</td><td class="px-4 py-3">2.680</td><td class="px-4 py-3">2.470</td><td class="px-4 py-3">+8.50%</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">GAAP diluted EPS (US$)</td><td class="px-4 py-3">2.700</td><td class="px-4 py-3">2.514</td><td class="px-4 py-3">+7.40%</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">Non-GAAP gross margin</td><td class="px-4 py-3">74.900%</td><td class="px-4 py-3">74.026%</td><td class="px-4 py-3">+0.874 pp</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">Operating income (EEO adjusted basis; US$bn)</td><td class="px-4 py-3">77.883</td><td class="px-4 py-3">71.951</td><td class="px-4 py-3">+8.24%</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">Free cash flow (US$bn)</td><td class="px-4 py-3">43.831</td><td class="px-4 py-3">58.943</td><td class="px-4 py-3">−25.64%</td></tr></tbody></table></div><p class="text-xs text-slate-500 mt-4">Source: Bloomberg EEO supplied 2026/11/18. The snapshot has not been independently established as frozen pre-announcement consensus. Official GAAP gross margin is 74.8% and operating income US$77.520bn; these differ from the adjusted measures above.</p></div><div class="metric-card mt-6"><h3 class="font-bold mb-3">Official Results and Next-Quarter Guidance</h3><p class="text-sm leading-relaxed text-slate-600">Official revenue grew 103% YoY and 20% QoQ; Data Center revenue reached US$107.6bn, up 110% YoY. Q4 revenue guidance is US$130bn ±3%, with the midpoint 3.50% above EEO consensus of US$125.598bn; guided gross margin is 71%–72%. Q4 includes an additional week and guidance assumes no China Data Center compute revenue.</p><a class="text-blue-600 text-xs underline" href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/" target="_blank" rel="noopener">NVIDIA FY2027 Q3 results · 2026/11/17</a></div></section>
-
-    <section id="valuation" class="tab-content"><div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">III. Valuation Comparison</h2></div><div class="metric-card"><h3 class="font-bold mb-4">Semiconductor Peers: Next-Four-Quarter Adjusted P/E</h3><div class="chart-container"><canvas id="valuationChart"></canvas></div><div class="overflow-x-auto"><table class="w-full text-sm text-left border-collapse"><thead class="bg-slate-100 text-slate-600"><tr><th class="px-4 py-3">Company</th><th class="px-4 py-3">Reference price (US$)</th><th class="px-4 py-3">Forward P/E</th><th class="px-4 py-3">Forward EV/Revenue</th><th class="px-4 py-3">Forward EV/EBITDA</th></tr></thead><tbody><tr class="border-b border-slate-100"><td class="px-4 py-3">NVDA</td><td class="px-4 py-3">155.46</td><td class="px-4 py-3">11.16x</td><td class="px-4 py-3">5.93x</td><td class="px-4 py-3">8.94x</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">AVGO</td><td class="px-4 py-3">341.60</td><td class="px-4 py-3">19.57x</td><td class="px-4 py-3">10.52x</td><td class="px-4 py-3">15.69x</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">AMD</td><td class="px-4 py-3">503.41</td><td class="px-4 py-3">33.44x</td><td class="px-4 py-3">9.72x</td><td class="px-4 py-3">27.52x</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">INTC</td><td class="px-4 py-3">55.17</td><td class="px-4 py-3">39.02x</td><td class="px-4 py-3">4.55x</td><td class="px-4 py-3">13.75x</td></tr></tbody></table></div><p class="text-xs text-slate-500 mt-4">Source: Bloomberg EEO screenshots supplied 2026/11/18, each showing a 17-Nov quote. All multiples use Next 4 Qtrs Est. Fiscal calendars, rolling-quarter windows and adjustments may still differ. Assess multiples alongside business mix and earnings visibility.</p></div></section>
-
-    <section id="street-comments" class="tab-content"><div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">IV. Analyst Views</h2></div><p class="text-sm text-slate-500 mb-4">Source: Bloomberg ANR (2026/11/18); reference share price: 2026/11/17 US$155.46.</p><div class="metric-card mb-6 text-sm">Consensus score: 4.51/5. Twelve-month consensus target: US$260.07, implying 67.3% upside. Buy/Hold/Sell: 78.3%/20.5%/1.2% (65/17/1 firms).</div><div class="grid grid-cols-1 md:grid-cols-3 gap-6"><div class="metric-card border-t-4 border-t-blue-600"><div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100"><h3 class="font-black">UBS</h3><span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span></div><ul class="text-sm text-slate-600 space-y-3"><li><b>Rating and date:</b> Timothy M Arcuri; Buy; 2026/11/16.</li><li><b>Target and implied return:</b> US$240.00; +54.4%.</li></ul></div><div class="metric-card border-t-4 border-t-blue-600"><div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100"><h3 class="font-black">Morgan Stanley</h3><span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Overweight</span></div><ul class="text-sm text-slate-600 space-y-3"><li><b>Rating and date:</b> Joseph Moore; Overweight; 2026/11/16.</li><li><b>Target and implied return:</b> US$267.00; +71.7%.</li></ul></div><div class="metric-card border-t-4 border-t-blue-600"><div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100"><h3 class="font-black">Citi</h3><span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span></div><ul class="text-sm text-slate-600 space-y-3"><li><b>Rating and date:</b> Atif Malik; Buy; 2026/11/17.</li><li><b>Target and implied return:</b> US$225.00; +44.7%.</li></ul></div></div></section>
-
-    <section id="risks" class="tab-content"><div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">V. Risk Factors</h2></div><div class="metric-card"><ol class="space-y-4 list-decimal ml-5"><li class="pb-3 border-b border-slate-100"><strong class="text-base text-slate-800">Gross-margin pressure: </strong><span class="text-sm text-slate-600">Q4 gross-margin guidance is below Q3; product transitions and delivery execution require monitoring.</span></li><li class="pb-3 border-b border-slate-100"><strong class="text-base text-slate-800">Cash conversion: </strong><span class="text-sm text-slate-600">Free cash flow is below snapshot consensus; the gap between earnings and cash performance warrants continued attention.</span></li><li class="pb-3 border-b border-slate-100"><strong class="text-base text-slate-800">Earnings estimate revisions: </strong><span class="text-sm text-slate-600">A lower forward P/E depends on forecast earnings being delivered and does not guarantee returns.</span></li><li class="pb-3 border-b border-slate-100"><strong class="text-base text-slate-800">Leadership and regulation: </strong><span class="text-sm text-slate-600">The official release names Colette Kress as interim CEO and identifies leadership transition and independent-investigation risks. No investigation outcome should be presumed.</span></li></ol></div></section>
-
-    <section id="disclaimer" class="tab-content">
-        <div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">6. Disclaimer</h2></div>
-        <div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
-            <div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">Securing live connection to fetch the latest disclaimer components from disclaimer.html...</p></div>
-        </div>
-    </section>
-
+<section class="tab-content active" id="our-comments">
+<div class="mb-6">
+<h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">I. Our Views</h2>
+<p class="mt-2 text-sm text-slate-500">FY2027 Q3 ended 2026/10/25; earnings released 2026/11/17; report and market-data snapshot: 2026/11/18.</p>
+</div>
+<div class="metric-card bg-white border border-slate-200 p-6 md:p-8">
+<div class="flex items-center mb-6 border-b border-slate-100 pb-4">
+<span class="text-3xl mr-3">🎯</span>
+<h3 class="text-2xl font-black text-blue-600 tracking-tight">Core Operational Conclusions</h3>
+</div>
+<ul class="space-y-6">
+<li class="flex items-start">
+<span class="text-blue-600 mr-4 text-xl font-black">1.</span>
+<div>
+<strong class="text-slate-900 block mb-1 text-lg">Data Center growth continues; product execution remains the key catalyst</strong>
+<p class="text-slate-600 text-sm leading-relaxed">We believe NVIDIA’s demand base remains strong. Q3 revenue was US$115.844bn, up 103% YoY and 20% QoQ. Data Center revenue reached US$107.610bn, up 110% YoY and 92.9% of total revenue. Hyperscale contributed US$60.136bn and ACIE US$47.474bn, indicating demand across customer categories. Vera Rubin has begun shipping. The next tests are scaling the new architecture on schedule and ensuring customers have the power, data-center and deployment capacity to absorb deliveries.</p>
+</div>
+</li>
+<li class="flex items-start">
+<span class="text-blue-600 mr-4 text-xl font-black">2.</span>
+<div>
+<strong class="text-slate-900 block mb-1 text-lg">Revenue guidance rises, but margins determine earnings quality</strong>
+<p class="text-slate-600 text-sm leading-relaxed">Q4 revenue guidance is US$130bn ±3%, implying approximately 12.2% sequential growth at the midpoint and 3.5% upside to the Bloomberg snapshot consensus. However, non-GAAP gross-margin guidance of 71%–72% is below Q3’s 74.9%, while guided non-GAAP operating expenses are approximately US$10.7bn. We believe the investment focus should extend beyond revenue beats to how mix, costs and pricing power affect earnings. Q4 has an additional week and excludes China Data Center compute revenue; not all sequential growth represents stronger demand on a like-for-like week basis.</p>
+</div>
+</li>
+<li class="flex items-start">
+<span class="text-blue-600 mr-4 text-xl font-black">3.</span>
+<div>
+<strong class="text-slate-900 block mb-1 text-lg">Cash flow recovers, but conversion still needs to be demonstrated</strong>
+<p class="text-slate-600 text-sm leading-relaxed">Q3 operating cash flow of US$48.253bn less US$4.422bn of capital expenditure and US$0.054bn of related principal payments produces company-defined FCF of US$43.777bn, or 37.8% of revenue, well above Q2’s US$21.341bn. Nevertheless, Bloomberg’s US$43.831bn FCF remains below its US$58.943bn consensus snapshot. Days sales outstanding rose from 60 to 64 and receivables reached US$81.033bn. We believe sequential cash improvement must be validated against collection efficiency; the US$54m difference between the two FCF definitions is reconciled separately.</p>
+</div>
+</li>
+<li class="flex items-start">
+<span class="text-blue-600 mr-4 text-xl font-black">4.</span>
+<div>
+<strong class="text-slate-900 block mb-1 text-lg">The valuation discount offers conditional appeal, not an immediate rerating guarantee</strong>
+<p class="text-slate-600 text-sm leading-relaxed">Bloomberg next-four-quarter adjusted P/E is 11.16x, below AVGO at 19.57x, AMD at 33.44x and INTC at 39.02x. The ANR consensus target of US$260.07 implies 67.3% upside to the 17 November reference price of US$155.46. We believe valuation appeal depends on delivering forecast earnings, stabilizing margins and rebuilding confidence through the leadership transition. A lower multiple may reflect governance and regulatory risks rather than simple mispricing. Deliveries, cash conversion and progress on these risks will determine whether rerating conditions are met.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section class="tab-content" id="financials">
+<div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">II. Financials &amp; Operations</h2></div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+<div class="metric-card border-t-4 border-t-emerald-500">
+<h4 class="text-xs font-bold text-slate-500 uppercase">Q3 Total Revenue</h4>
+<p class="text-2xl font-bold text-slate-800 mt-1">$115,844 M</p>
+<p class="text-sm text-emerald-600 font-semibold mt-1">▲ YoY +103% / QoQ +20%</p>
+</div>
+<div class="metric-card border-t-4 border-t-blue-500">
+<h4 class="text-xs font-bold text-slate-500 uppercase">Data Center Quarterly Revenue</h4>
+<p class="text-2xl font-bold text-slate-800 mt-1">$107,610 M</p>
+<p class="text-sm text-blue-600 font-semibold mt-1">● 92.9% of revenue / YoY +110%</p>
+</div>
+<div class="metric-card border-t-4 border-t-indigo-500">
+<h4 class="text-xs font-bold text-slate-500 uppercase">Non-GAAP Operating Margin</h4>
+<p class="text-2xl font-bold text-slate-800 mt-1">67.2%</p>
+<p class="text-sm text-emerald-600 font-semibold mt-1">● GAAP operating margin 66.9%</p>
+</div>
+<div class="metric-card border-t-4 border-t-purple-500">
+<h4 class="text-xs font-bold text-slate-500 uppercase">Quarterly FCF (Company Definition)</h4>
+<p class="text-xl font-bold text-slate-800 mt-1">$43,777 M</p>
+<p class="text-sm text-emerald-600 font-semibold mt-1">● FCF / revenue 37.8%</p>
+</div>
+</div>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<div class="metric-card">
+<h3 class="text-lg font-bold text-slate-800 mb-2">Q3 Revenue by Market Platform (Million USD)</h3>
+<p class="text-xs text-slate-500 mb-4">Hyperscale US$60,136m, ACIE US$47,474m and Edge Computing US$8,234m total US$115,844m. The first two comprise Data Center, representing 92.9%. Market platforms differ from reportable segments; historical classifications are recast by the company.</p>
+<div class="chart-container"><canvas id="segmentRevenueChart"></canvas></div>
+</div>
+<div class="metric-card">
+<h3 class="text-lg font-bold text-slate-800 mb-2">Revenue and Non-GAAP Gross Margin Across Comparison Periods</h3>
+<p class="text-xs text-slate-500 mb-4">Q3 FY2026, Q2 FY2027 and Q3 FY2027 are comparison periods, not three consecutive quarters. Left axis: revenue (US$m); right axis: non-GAAP gross margin (%).</p>
+<div class="chart-container"><canvas id="profitabilityChart"></canvas></div>
+</div>
+</div>
+<div class="metric-card mt-6">
+<h3 class="text-lg font-bold text-slate-800 mb-4">Q3 Core Financial Data (US$ Millions, Except EPS)</h3>
+<div class="overflow-x-auto">
+<table class="w-full text-sm text-left border-collapse">
+<thead class="text-xs uppercase bg-slate-100 text-slate-600 border-b border-slate-200">
+<tr>
+<th class="px-6 py-3 font-bold">Financial Metric</th>
+<th class="px-6 py-3 font-bold text-right">Q3 FY2027 GAAP</th>
+<th class="px-6 py-3 font-bold text-right text-blue-600">Q3 FY2027 Non-GAAP</th>
+<th class="px-6 py-3 font-bold text-right text-emerald-600">Non-GAAP QoQ / Supplement</th>
+</tr>
+</thead>
+<tbody class="text-slate-700">
+<tr class="border-b border-slate-100">
+<td class="px-6 py-4 font-medium">Quarterly Revenue</td>
+<td class="px-6 py-4 text-right">$115,844 M</td>
+<td class="px-6 py-4 text-right font-bold text-blue-600">$115,844 M</td>
+<td class="px-6 py-4 text-right font-bold text-emerald-500">+20.4% QoQ</td>
+</tr>
+<tr class="border-b border-slate-100">
+<td class="px-6 py-4 font-medium">Gross Profit / Margin</td>
+<td class="px-6 py-4 text-right">$86,676 M (74.8%)</td>
+<td class="px-6 py-4 text-right font-bold text-blue-600">$86,724 M (74.9%)</td>
+<td class="px-6 py-4 text-right text-emerald-500">Gross margin −0.1 pp</td>
+</tr>
+<tr class="border-b border-slate-100">
+<td class="px-6 py-4 font-medium">Operating Income</td>
+<td class="px-6 py-4 text-right">$77,520 M</td>
+<td class="px-6 py-4 text-right font-bold text-blue-600">$77,883 M</td>
+<td class="px-6 py-4 text-right text-emerald-500">+21.8% QoQ</td>
+</tr>
+<tr class="border-b border-slate-100">
+<td class="px-6 py-4 font-medium">Quarterly Net Income</td>
+<td class="px-6 py-4 text-right">$65,287 M</td>
+<td class="px-6 py-4 text-right font-bold text-blue-600">$64,870 M</td>
+<td class="px-6 py-4 text-right text-emerald-600">+20.2% QoQ</td>
+</tr>
+<tr class="bg-slate-50 font-bold">
+<td class="px-6 py-4 text-slate-800">Operating Cash Flow &amp; Diluted EPS</td>
+<td class="px-6 py-4 text-right text-slate-500">GAAP Diluted EPS: $2.70</td>
+<td class="px-6 py-4 text-right text-blue-600">Non-GAAP EPS: $2.68</td>
+<td class="px-6 py-4 text-right text-purple-600">Operating cash flow: $48,253 M</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p class="text-xs text-slate-500 mt-4 leading-relaxed">Non-GAAP includes stock-based compensation; comparative periods use the company’s recast basis. GAAP and non-GAAP are kept separate. The fiscal quarter ended 2026/10/25; Bloomberg’s standardized 10/31 quarter label is not the actual fiscal period end.</p></div>
+<div class="metric-card mt-6"><h3 class="text-lg font-bold text-slate-800 mb-3">Data Center Demand Breakdown</h3><p class="text-sm text-slate-600 leading-relaxed">Hyperscale revenue was US$60,136m (+71% YoY, +23% QoQ); AI Clouds, Industrial &amp; Enterprise (ACIE) was US$47,474m (+195% YoY, +18% QoQ), totaling US$107,610m for Data Center. Edge Computing generated US$8,234m (+42% YoY, +14% QoQ). Classifications and comparisons follow the latest company Revenue Trend; undisclosed segment margins are not inferred.</p></div><div class="metric-card mt-6"><h3 class="text-lg font-bold text-slate-800 mb-3">Free Cash Flow Bridge and Capital Returns</h3><p class="text-sm text-slate-600 leading-relaxed">Operating cash flow US$48,253m − capital expenditure US$4,422m − related principal payments US$54m = company-defined FCF US$43,777m. Bloomberg EEO’s US$43,831m equals the first two items netted, a US$54m difference from the company definition; the market comparison below retains Bloomberg’s original value. Quarterly shareholder returns were US$28.1bn, with approximately US$227.3bn of buyback authorization remaining. Authorization is not executed repurchasing.</p></div><div class="metric-card mt-6"><h3 class="font-bold mb-4">FY2027 Q3 Actuals vs Bloomberg Snapshot Consensus</h3><div class="overflow-x-auto"><table class="w-full text-sm text-left border-collapse"><thead class="bg-slate-100 text-slate-600"><tr><th class="px-4 py-3">Metric</th><th class="px-4 py-3">Actual</th><th class="px-4 py-3">Snapshot consensus</th><th class="px-4 py-3">Difference</th></tr></thead><tbody><tr class="border-b border-slate-100"><td class="px-4 py-3">Revenue (US$bn)</td><td class="px-4 py-3">115.844</td><td class="px-4 py-3">109.330</td><td class="px-4 py-3">+5.96%</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">Adjusted diluted EPS (US$)</td><td class="px-4 py-3">2.680</td><td class="px-4 py-3">2.470</td><td class="px-4 py-3">+8.50%</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">GAAP diluted EPS (US$)</td><td class="px-4 py-3">2.700</td><td class="px-4 py-3">2.514</td><td class="px-4 py-3">+7.40%</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">Non-GAAP gross margin</td><td class="px-4 py-3">74.900%</td><td class="px-4 py-3">74.026%</td><td class="px-4 py-3">+0.874 pp</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">Operating income (EEO adjusted basis; US$bn)</td><td class="px-4 py-3">77.883</td><td class="px-4 py-3">71.951</td><td class="px-4 py-3">+8.24%</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">Free cash flow (US$bn)</td><td class="px-4 py-3">43.831</td><td class="px-4 py-3">58.943</td><td class="px-4 py-3">−25.64%</td></tr></tbody></table></div><p class="text-xs text-slate-500 mt-4">Source: Bloomberg EEO supplied 2026/11/18. The snapshot has not been independently established as frozen pre-announcement consensus. Official GAAP gross margin is 74.8% and operating income US$77.520bn; these differ from the adjusted measures above.</p></div><div class="metric-card mt-6"><h3 class="text-lg font-bold text-slate-800 mb-3">Official Results and Next-Quarter Guidance</h3><p class="text-sm text-slate-600 leading-relaxed">Q4 revenue guidance is US$130bn ±3% (US$126.1–133.9bn), with midpoint growth of approximately 12.2% QoQ and 3.50% upside to the Bloomberg snapshot consensus of US$125.598bn. Both GAAP and non-GAAP gross margins are guided to 71%–72%; operating expenses are approximately US$11.0bn and US$10.7bn, respectively. Full-year FY2027 tax rates are expected at 16%–18%, excluding discrete items and material tax-environment changes. Q4 has an additional week and excludes China Data Center compute revenue.</p></div><p class="text-xs text-slate-500 mt-4">Sources: <a class="text-blue-600 underline" href="https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/" rel="noopener" target="_blank">NVIDIA FY2027 Q3 results</a> · <a class="text-blue-600 underline" href="https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q327/Q3FY27-CFO-Commentary.pdf" rel="noopener" target="_blank">CFO commentary</a> · <a class="text-blue-600 underline" href="https://s201.q4cdn.com/141608511/files/doc_financials/2027/Q327/Rev-by-Mkt-Qtrly-Trend-Q327.pdf" rel="noopener" target="_blank">Revenue Trend</a></p></section>
+<section class="tab-content" id="valuation">
+<div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">III. Valuation Comparison</h2></div>
+<div class="metric-card">
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-lg font-bold text-slate-800">Semiconductor Peers: Next-Four-Quarter Adjusted P/E</h3>
+</div>
+<div class="chart-container" style="height: 350px;"><canvas id="valuationChart"></canvas></div>
+<p class="text-xs text-slate-400 mt-3 text-right">Source: Bloomberg EEO screenshots supplied 2026/11/18, each showing a 17-Nov quote. All multiples use Next 4 Qtrs Est. Fiscal calendars, rolling-quarter windows and adjustments may still differ. Assess multiples alongside business mix and earnings visibility.</p>
+<div class="overflow-x-auto"><table class="w-full text-sm text-left border-collapse"><thead class="bg-slate-100 text-slate-600"><tr><th class="px-4 py-3">Company</th><th class="px-4 py-3">Reference price (US$)</th><th class="px-4 py-3">Forward P/E</th><th class="px-4 py-3">Forward EV/Revenue</th><th class="px-4 py-3">Forward EV/EBITDA</th></tr></thead><tbody><tr class="border-b border-slate-100"><td class="px-4 py-3">NVDA</td><td class="px-4 py-3">155.46</td><td class="px-4 py-3">11.16x</td><td class="px-4 py-3">5.93x</td><td class="px-4 py-3">8.94x</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">AVGO</td><td class="px-4 py-3">341.60</td><td class="px-4 py-3">19.57x</td><td class="px-4 py-3">10.52x</td><td class="px-4 py-3">15.69x</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">AMD</td><td class="px-4 py-3">503.41</td><td class="px-4 py-3">33.44x</td><td class="px-4 py-3">9.72x</td><td class="px-4 py-3">27.52x</td></tr><tr class="border-b border-slate-100"><td class="px-4 py-3">INTC</td><td class="px-4 py-3">55.17</td><td class="px-4 py-3">39.02x</td><td class="px-4 py-3">4.55x</td><td class="px-4 py-3">13.75x</td></tr></tbody></table></div></div>
+<div class="metric-card mt-6"><h3 class="text-lg font-bold text-slate-800 mb-3">Interpreting the Discount and Rerating Conditions</h3><p class="text-sm text-slate-600 leading-relaxed">We believe NVIDIA’s lower earnings multiple should be considered alongside its Data Center concentration, forecast earnings growth, leadership transition and regulatory risks. Broadcom’s software mix, AMD’s product-ramp stage and Intel’s restructuring costs differ. A peer-average multiple is therefore not a direct fair-value benchmark for NVIDIA. A recovery requires earnings and cash expectations to be validated, not merely a gap between multiples.</p></div></section>
+<section class="tab-content" id="street-comments">
+<div class="mb-6">
+<h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">IV. Analyst Views</h2>
+<p class="mt-2 text-sm text-slate-500">Source: Bloomberg ANR (2026/11/18); reference share price: 2026/11/17 US$155.46.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="metric-card border-t-4 border-t-blue-600">
+<div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+<h3 class="font-black text-slate-800">UBS</h3>
+<span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
+</div>
+<ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+<li><b>Rating and date: </b>Timothy M Arcuri; Buy; 2026/11/16.</li>
+<li><b>Target and implied return: </b>US$240.00; +54.4%.</li>
+</ul>
+</div>
+<div class="metric-card border-t-4 border-t-blue-600">
+<div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+<h3 class="font-black text-slate-800">Morgan Stanley</h3>
+<span class="bg-blue-100 text-blue-800 text-xs font-bold px-2 py-1 rounded">Overweight</span>
+</div>
+<ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+<li><b>Rating and date: </b>Joseph Moore; Overweight; 2026/11/16.</li>
+<li><b>Target and implied return: </b>US$267.00; +71.7%.</li>
+</ul>
+</div>
+<div class="metric-card border-t-4 border-t-blue-600">
+<div class="flex justify-between items-center mb-4 pb-2 border-b border-slate-100">
+<h3 class="font-black text-slate-800">Citi</h3>
+<span class="bg-emerald-100 text-emerald-800 text-xs font-bold px-2 py-1 rounded">Buy</span>
+</div>
+<ul class="space-y-3 text-sm text-slate-600 list-disc list-outside ml-4">
+<li><b>Rating and date: </b>Atif Malik; Buy; 2026/11/17.</li>
+<li><b>Target and implied return: </b>US$225.00; +44.7%.</li>
+</ul>
+</div>
+</div>
+<div class="metric-card mt-6"><h3 class="text-lg font-bold text-slate-800 mb-3">Consensus</h3><p class="text-sm text-slate-600 leading-relaxed">Consensus score: 4.51/5. Twelve-month consensus target: US$260.07, implying 67.3% upside. Buy/Hold/Sell: 78.3%/20.5%/1.2% (65/17/1 firms).</p></div></section>
+<section class="tab-content" id="risks">
+<div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-blue-500 pl-3">V. Risk Factors</h2></div>
+<div class="metric-card">
+<ol class="space-y-4 list-decimal list-inside text-sm text-slate-700">
+<li class="pb-3 border-b border-slate-100"><strong class="text-base">Gross margins and product transitions: </strong>Q4 gross-margin guidance of 71%–72% is below Q3’s 74.9%. Unfavorable mix, supply costs or pricing during the new-architecture ramp could offset part of revenue growth and pressure elevated earnings expectations. Shipment volumes, delivery execution and margins should be tracked together rather than relying solely on orders or revenue.</li>
+<li class="pb-3 border-b border-slate-100"><strong class="text-base">Cash conversion, customer capex and execution: </strong>Company-defined FCF improved sequentially, but the Bloomberg measure remained below snapshot consensus. Delays in customers’ data-center construction, power availability, financing or deployment could extend delivery and collection cycles and increase working-capital needs. Supply and capacity commitments rose to US$390bn, primarily involving multi-year memory purchases. These are not quarterly expenses, but demand or deployment shortfalls could increase inventory and procurement risks.</li>
+<li class="pb-3 border-b border-slate-100"><strong class="text-base">Leadership transition, governance and regulation: </strong>The official release names Colette Kress as interim CEO and identifies leadership-transition, independent-investigation, regulatory and litigation risks. No outcome is presumed. If uncertainty affects customer confidence, employee retention or decision-making, the valuation discount could persist even while near-term revenue remains strong.</li>
+<li class="pb-1"><strong class="text-base">Export restrictions, competition and earnings forecasts: </strong>Q4 guidance excludes China Data Center compute revenue, but changes in export rules and licences can still affect addressable markets and product planning. Cloud customers’ custom chips and alternative computing platforms may also reshape long-term demand. The 11.16x forward P/E depends on forecast earnings; capex reductions or earnings downgrades mean a low multiple does not guarantee downside protection.</li>
+</ol>
+</div>
+</section>
+<section class="tab-content" id="disclaimer">
+<div class="mb-6"><h2 class="text-xl font-bold text-slate-800 border-l-4 border-slate-500 pl-3">6. Disclaimer</h2></div>
+<div class="metric-card bg-slate-50 border-slate-200" id="disclaimer-container">
+<div class="text-center py-10"><p class="text-sm text-slate-500 font-bold animate-pulse">Securing live connection to fetch the latest disclaimer components from disclaimer.html...</p></div>
+</div>
+</section>
 </main>
-
-<div id="ai-chat-widget" class="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-    <div id="chat-window" class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden">
-        <div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
-            <div class="flex items-center">
-                <span class="text-2xl mr-2">🤖</span>
-                <div><h4 class="font-bold text-sm">Analyst AI Assistant</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
-            </div>
-            <button onclick="toggleChat()" class="text-blue-200 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-            </button>
-        </div>
-        <div id="chat-messages" class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4">
-            <div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">Hello! I am the NVIDIA (NVDA) research assistant for FY2027 Q3 earnings, valuation and risks. Information is as of 2026/11/18, not live market data.</div>
-        </div>
-        <div class="p-3 bg-white border-t border-slate-200">
-            <form id="chat-form" onsubmit="handleChatSubmit(event)" class="flex gap-2">
-                <input type="text" id="chat-input" placeholder="Enter your research command..." class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50">
-                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transform rotate-90" viewBox="0 0 20 20" fill="currentColor"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z" /></svg>
-                </button>
-            </form>
-        </div>
-    </div>
-    <button onclick="toggleChat()" id="chat-toggle-btn" class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center">
-        <span class="text-2xl">✨</span>
+<div class="fixed bottom-6 right-6 z-50 flex flex-col items-end" id="ai-chat-widget">
+<div class="hidden animate-slide-up mb-4 w-[340px] sm:w-[400px] h-[500px] bg-white rounded-2xl shadow-2xl border border-slate-200 flex flex-col overflow-hidden" id="chat-window">
+<div class="bg-blue-600 text-white p-4 flex justify-between items-center shadow-md z-10">
+<div class="flex items-center">
+<span class="text-2xl mr-2">🤖</span>
+<div><h4 class="font-bold text-sm">Analyst AI Assistant</h4><p class="text-xs text-blue-200">By Vercel Cloud Server ✨</p></div>
+</div>
+<button class="text-blue-200 hover:text-white transition-colors" onclick="toggleChat()">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
+</div>
+<div class="flex-1 p-4 overflow-y-auto bg-slate-50 space-y-4" id="chat-messages">
+<div class="bg-white border border-slate-200 text-slate-700 rounded-tl-none rounded-2xl mr-auto max-w-[85%] p-3 text-sm shadow-sm leading-relaxed">Hello! I am the NVIDIA (NVDA) research assistant for FY2027 Q3 earnings, valuation and risks. Information is as of 2026/11/18, not live market data.</div>
+</div>
+<div class="p-3 bg-white border-t border-slate-200">
+<form class="flex gap-2" id="chat-form" onsubmit="handleChatSubmit(event)">
+<input class="flex-1 border border-slate-300 rounded-full px-4 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 bg-slate-50" id="chat-input" placeholder="Enter your research command..." type="text"/>
+<button class="bg-blue-600 hover:bg-blue-700 text-white rounded-full w-10 h-10 flex items-center justify-center transition-colors shrink-0 shadow-md" type="submit">
+<svg class="h-5 w-5 transform rotate-90" fill="currentColor" viewbox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.894 2.553a1 1 0 00-1.788 0l-7 14a1 1 0 001.169 1.409l5-1.429A1 1 0 009 15.571V11a1 1 0 112 0v4.571a1 1 0 00.725.962l5 1.428a1 1 0 001.17-1.408l-7-14z"></path></svg>
+</button>
+</form>
+</div>
+</div>
+<button class="bg-blue-600 hover:bg-blue-700 text-white rounded-full p-4 shadow-2xl hover:scale-110 transition-transform group relative flex items-center justify-center" id="chat-toggle-btn" onclick="toggleChat()">
+<span class="text-2xl">✨</span>
+</button>
+</div>
+<div class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all" id="selection-tooltip">
+<button class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600" onclick="explainSelectedTerm()">
+<span>✨</span> AI Simple Explanation
     </button>
 </div>
-
-<div id="selection-tooltip" class="fixed hidden opacity-0 transform scale-95 pointer-events-none transition-all">
-    <button onclick="explainSelectedTerm()" class="pointer-events-auto bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-3 py-2 rounded-lg shadow-xl flex items-center gap-1 transition-colors border border-slate-600">
-        <span>✨</span> AI Simple Explanation
-    </button>
+<div class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity" id="explain-modal">
+<div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
+<div class="bg-blue-600 text-white p-4 flex justify-between items-center">
+<h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> Term Explainer</h3>
+<button class="text-blue-200 hover:text-white transition-colors" onclick="closeExplainModal()">
+<svg class="h-6 w-6" fill="none" stroke="currentColor" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M6 18L18 6M6 6l12 12" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+</button>
 </div>
-<div id="explain-modal" class="fixed inset-0 bg-slate-900/60 hidden z-[9999] flex items-center justify-center p-4 backdrop-blur-sm transition-opacity">
-    <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md overflow-hidden transform transition-all">
-        <div class="bg-blue-600 text-white p-4 flex justify-between items-center">
-            <h3 class="font-bold flex items-center"><span class="mr-2 text-xl">✨</span> Term Explainer</h3>
-            <button onclick="closeExplainModal()" class="text-blue-200 hover:text-white transition-colors">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
-            </button>
-        </div>
-        <div class="p-6">
-            <div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Your Queried Term:</div>
-            <div id="explain-term-title" class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100"></div>
-            <div id="explain-loading" class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg">
-                <svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+<div class="p-6">
+<div class="mb-4 text-xs font-bold text-slate-400 uppercase tracking-wider">Your Queried Term:</div>
+<div class="text-xl font-black text-slate-800 mb-4 pb-3 border-b border-slate-100" id="explain-term-title"></div>
+<div class="hidden text-sm text-blue-600 font-bold flex items-center justify-center py-6 bg-blue-50 rounded-lg" id="explain-loading">
+<svg class="animate-spin -ml-1 mr-3 h-6 w-6 text-blue-600" fill="none" viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z" fill="currentColor"></path></svg>
                 AI is generating explanation...
             </div>
-            <div id="explain-result" class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100"></div>
-        </div>
-        <div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
-            <button onclick="closeExplainModal()" class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors">Close</button>
-        </div>
-    </div>
+<div class="text-sm text-slate-700 leading-relaxed hidden bg-slate-50 p-4 rounded-lg border border-slate-100" id="explain-result"></div>
 </div>
-
+<div class="bg-slate-50 p-4 border-t border-slate-200 flex justify-end">
+<button class="bg-slate-300 hover:bg-slate-400 text-slate-800 px-5 py-2 rounded-lg text-sm font-bold transition-colors" onclick="closeExplainModal()">Close</button>
+</div>
+</div>
+</div>
 <script>
     // Global chart instances registry
     window.charts = {};
@@ -216,9 +383,68 @@
             if (modal) { modal.style.display = 'flex'; document.body.style.overflow = 'hidden'; }
         }
 
-        window.charts.nvdaSegment = new Chart(document.getElementById("segmentRevenueChart").getContext("2d"), {"type": "bar", "data": {"labels": ["Actual", "Snapshot consensus"], "datasets": [{"label": "US$bn", "data": [115.844, 109.33], "backgroundColor": ["#2563eb", "#94a3b8", "#94a3b8", "#94a3b8"], "borderRadius": 4}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"display": false}}, "scales": {"x": {"beginAtZero": true}, "y": {"beginAtZero": true}}}});
-        window.charts.nvdaProfit = new Chart(document.getElementById("profitabilityChart").getContext("2d"), {"type": "bar", "data": {"labels": ["Actual", "Snapshot consensus"], "datasets": [{"label": "US$", "data": [2.68, 2.47], "backgroundColor": ["#2563eb", "#94a3b8", "#94a3b8", "#94a3b8"], "borderRadius": 4}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"display": false}}, "scales": {"x": {"beginAtZero": true}, "y": {"beginAtZero": true}}}});
-        window.charts.nvdaValuation = new Chart(document.getElementById("valuationChart").getContext("2d"), {"type": "bar", "data": {"labels": ["NVDA", "AVGO", "AMD", "INTC"], "datasets": [{"label": "Next 4 Qtrs Est P/E (Adj+)", "data": [11.16, 19.57, 33.44, 39.02], "backgroundColor": ["#2563eb", "#94a3b8", "#94a3b8", "#94a3b8"], "borderRadius": 4}]}, "options": {"responsive": true, "maintainAspectRatio": false, "plugins": {"legend": {"display": false}}, "scales": {"x": {"beginAtZero": true}, "y": {"beginAtZero": true}}, "indexAxis": "y"}});
+        // NVIDIA verified chart data
+        window.charts.nvdaSegment = new Chart(document.getElementById('segmentRevenueChart').getContext('2d'), {
+            type: 'doughnut',
+            data: {
+                labels: ["Hyperscale", "ACIE", "Edge Computing"],
+                datasets: [{
+                    data: [60136, 47474, 8234],
+                    backgroundColor: ['rgba(37, 99, 235, 0.85)', 'rgba(16, 185, 129, 0.85)', 'rgba(99, 102, 241, 0.85)'],
+                    borderWidth: 0
+                }]
+            },
+            options: { responsive: true, maintainAspectRatio: false, plugins: { legend: { position: 'bottom' } }, cutout: '65%' }
+        });
+
+        // NVIDIA verified chart data
+        window.charts.nvdaProfit = new Chart(document.getElementById('profitabilityChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ["Q3 FY2026", "Q2 FY2027", "Q3 FY2027"],
+                datasets: [
+                    {
+                        label: "Revenue (US$m)",
+                        data: [57006, 96221, 115844],
+                        backgroundColor: '#3b82f6',
+                        borderRadius: 4
+                    },
+                    {
+                        label: "Non-GAAP Gross Margin (%)",
+                        data: [73.5, 75.0, 74.9],
+                        backgroundColor: '#10b981',
+                        borderRadius: 4,
+                        yAxisID: 'percentageAxis'
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'bottom' } },
+                scales: {
+                    y: { beginAtZero: true, position: 'left', grid: { color: '#f1f5f9' } },
+                    percentageAxis: { beginAtZero: true, max: 100, position: 'right', grid: { display: false } }
+                }
+            }
+        });
+
+        // NVIDIA verified chart data
+        window.charts.nvdaValuation = new Chart(document.getElementById('valuationChart').getContext('2d'), {
+            type: 'bar',
+            data: {
+                labels: ["NVDA", "AVGO", "AMD", "INTC"],
+                datasets: [{
+                    label: 'Next 4 Qtrs Est Forward P/E',
+                    data: [11.16, 19.57, 33.44, 39.02],
+                    backgroundColor: ['rgba(37, 99, 235, 0.95)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)', 'rgba(148, 163, 184, 0.6)'],
+                    borderRadius: 4
+                }]
+            },
+            options: { indexAxis: 'y', responsive: true, maintainAspectRatio: false, plugins: { legend: { display: false } }, scales: { x: { beginAtZero: true } } }
+        });
+
+        // Dynamic asynchronous linkage for external disclaimer.html
         fetch('disclaimer.html')
             .then(response => {
                 if (!response.ok) throw new Error('Unable to load disclaimer.html');
@@ -250,7 +476,7 @@
     }
 
     // AI Chat Widget Logic
-    const standardPrompt = "You are the NVIDIA NVDA research assistant. Answer in English. As of 2026-11-18; not live prices. Quarter ended 2026-10-25 released 2026-11-17. {\"company\": \"NVIDIA\", \"subtitle\": \"Senior Analyst Operations & Strategy Report | FY2027 Q3 Earnings\", \"intro\": \"FY2027 Q3 ended 2026/10/25; earnings released 2026/11/17; report and market-data snapshot: 2026/11/18.\", \"headline\": \"Revenue and EPS Beat Expectations; Focus Shifts to Margins and Cash Conversion\", \"views\": [[\"AI infrastructure demand supports growth\", \"We believe NVIDIA again demonstrated strong AI infrastructure demand. Revenue and adjusted EPS exceeded the supplied Bloomberg consensus snapshot by about 6.0% and 8.5%, respectively. Next-quarter revenue guidance also exceeds the snapshot consensus at the midpoint, supporting continued business growth.\"], [\"Margins and cash conversion are the next tests\", \"Next-quarter gross-margin guidance is below the current quarter, while free cash flow was 25.6% below the snapshot consensus. We focus on converting incremental revenue into cash and sustaining profitability through the next-generation product ramp, rather than judging earnings quality solely by revenue growth.\"], [\"Valuation appeal depends on earnings delivery\", \"At 11.16x next-four-quarter estimated earnings in the supplied screenshot, NVIDIA trades below AVGO, AMD and INTC. We believe this offers valuation appeal, but delivering forecast earnings remains essential; leadership transition and regulatory uncertainty may also sustain a valuation discount.\"]], \"kpis\": [[\"Quarterly revenue\", \"US$115.844bn\", \"+5.96% vs snapshot consensus\"], [\"Adjusted EPS\", \"US$2.680\", \"+8.50% vs snapshot consensus\"], [\"Non-GAAP gross margin\", \"74.9%\", \"+0.874 percentage points vs consensus\"], [\"Quarterly free cash flow\", \"US$43.831bn\", \"−25.64% vs snapshot consensus\"]], \"charttitles\": [\"Revenue: Actual vs Snapshot Consensus (US$bn)\", \"EPS: Actual vs Snapshot Consensus (US$)\"], \"labels\": [\"Actual\", \"Snapshot consensus\"], \"tabletitle\": \"FY2027 Q3 Actuals vs Bloomberg Snapshot Consensus\", \"heads\": [\"Metric\", \"Actual\", \"Snapshot consensus\", \"Difference\"], \"metrics\": [\"Revenue (US$bn)\", \"Adjusted diluted EPS (US$)\", \"GAAP diluted EPS (US$)\", \"Non-GAAP gross margin\", \"Operating income (EEO adjusted basis; US$bn)\", \"Free cash flow (US$bn)\"], \"note\": \"Source: Bloomberg EEO supplied 2026/11/18. The snapshot has not been independently established as frozen pre-announcement consensus. Official GAAP gross margin is 74.8% and operating income US$77.520bn; these differ from the adjusted measures above.\", \"outtitle\": \"Official Results and Next-Quarter Guidance\", \"out\": \"Official revenue grew 103% YoY and 20% QoQ; Data Center revenue reached US$107.6bn, up 110% YoY. Q4 revenue guidance is US$130bn ±3%, with the midpoint 3.50% above EEO consensus of US$125.598bn; guided gross margin is 71%–72%. Q4 includes an additional week and guidance assumes no China Data Center compute revenue.\", \"valtitle\": \"Semiconductor Peers: Next-Four-Quarter Adjusted P/E\", \"valheads\": [\"Company\", \"Reference price (US$)\", \"Forward P/E\", \"Forward EV/Revenue\", \"Forward EV/EBITDA\"], \"valnote\": \"Source: Bloomberg EEO screenshots supplied 2026/11/18, each showing a 17-Nov quote. All multiples use Next 4 Qtrs Est. Fiscal calendars, rolling-quarter windows and adjustments may still differ. Assess multiples alongside business mix and earnings visibility.\", \"street\": \"Source: Bloomberg ANR (2026/11/18); reference share price: 2026/11/17 US$155.46.\", \"consensus\": \"Consensus score: 4.51/5. Twelve-month consensus target: US$260.07, implying 67.3% upside. Buy/Hold/Sell: 78.3%/20.5%/1.2% (65/17/1 firms).\", \"ratingdate\": \"Rating and date\", \"target\": \"Target and implied return\", \"risks\": [[\"Gross-margin pressure\", \"Q4 gross-margin guidance is below Q3; product transitions and delivery execution require monitoring.\"], [\"Cash conversion\", \"Free cash flow is below snapshot consensus; the gap between earnings and cash performance warrants continued attention.\"], [\"Earnings estimate revisions\", \"A lower forward P/E depends on forecast earnings being delivered and does not guarantee returns.\"], [\"Leadership and regulation\", \"The official release names Colette Kress as interim CEO and identifies leadership transition and independent-investigation risks. No investigation outcome should be presumed.\"]], \"welcome\": \"Hello! I am the NVIDIA (NVDA) research assistant for FY2027 Q3 earnings, valuation and risks. Information is as of 2026/11/18, not live market data.\"} Tables: [[\"115.844\", \"109.330\", \"+5.96%\"], [\"2.680\", \"2.470\", \"+8.50%\"], [\"2.700\", \"2.514\", \"+7.40%\"], [\"74.900%\", \"74.026%\", \"+0.874 pp\"], [\"77.883\", \"71.951\", \"+8.24%\"], [\"43.831\", \"58.943\", \"\\u221225.64%\"]] Peer table: [[\"NVDA\", \"155.46\", \"11.16x\", \"5.93x\", \"8.94x\"], [\"AVGO\", \"341.60\", \"19.57x\", \"10.52x\", \"15.69x\"], [\"AMD\", \"503.41\", \"33.44x\", \"9.72x\", \"27.52x\"], [\"INTC\", \"55.17\", \"39.02x\", \"4.55x\", \"13.75x\"]] Do not invent missing data or bank theses. Use We believe/我們認為/我们认为. Standard ratings only Overweight/Buy/Neutral/Sell/Underweight. Distinguish company actuals, guidance, Bloomberg snapshot and our analysis. Use HTML b, not Markdown.";
+    const standardPrompt = "Answer in English. NVIDIA NVDA research. As of 2026-11-18, not live prices. Current report content: I. Our Views FY2027 Q3 ended 2026/10/25; earnings released 2026/11/17; report and market-data snapshot: 2026/11/18. 🎯 Core Operational Conclusions 1. Data Center growth continues; product execution remains the key catalyst We believe NVIDIA’s demand base remains strong. Q3 revenue was US$115.844bn, up 103% YoY and 20% QoQ. Data Center revenue reached US$107.610bn, up 110% YoY and 92.9% of total revenue. Hyperscale contributed US$60.136bn and ACIE US$47.474bn, indicating demand across customer categories. Vera Rubin has begun shipping. The next tests are scaling the new architecture on schedule and ensuring customers have the power, data-center and deployment capacity to absorb deliveries. 2. Revenue guidance rises, but margins determine earnings quality Q4 revenue guidance is US$130bn ±3%, implying approximately 12.2% sequential growth at the midpoint and 3.5% upside to the Bloomberg snapshot consensus. However, non-GAAP gross-margin guidance of 71%–72% is below Q3’s 74.9%, while guided non-GAAP operating expenses are approximately US$10.7bn. We believe the investment focus should extend beyond revenue beats to how mix, costs and pricing power affect earnings. Q4 has an additional week and excludes China Data Center compute revenue; not all sequential growth represents stronger demand on a like-for-like week basis. 3. Cash flow recovers, but conversion still needs to be demonstrated Q3 operating cash flow of US$48.253bn less US$4.422bn of capital expenditure and US$0.054bn of related principal payments produces company-defined FCF of US$43.777bn, or 37.8% of revenue, well above Q2’s US$21.341bn. Nevertheless, Bloomberg’s US$43.831bn FCF remains below its US$58.943bn consensus snapshot. Days sales outstanding rose from 60 to 64 and receivables reached US$81.033bn. We believe sequential cash improvement must be validated against collection efficiency; the US$54m difference between the two FCF definitions is reconciled separately. 4. The valuation discount offers conditional appeal, not an immediate rerating guarantee Bloomberg next-four-quarter adjusted P/E is 11.16x, below AVGO at 19.57x, AMD at 33.44x and INTC at 39.02x. The ANR consensus target of US$260.07 implies 67.3% upside to the 17 November reference price of US$155.46. We believe valuation appeal depends on delivering forecast earnings, stabilizing margins and rebuilding confidence through the leadership transition. A lower multiple may reflect governance and regulatory risks rather than simple mispricing. Deliveries, cash conversion and progress on these risks will determine whether rerating conditions are met. II. Financials & Operations Q3 Total Revenue $115,844 M ▲ YoY +103% / QoQ +20% Data Center Quarterly Revenue $107,610 M ● 92.9% of revenue / YoY +110% Non-GAAP Operating Margin 67.2% ● GAAP operating margin 66.9% Quarterly FCF (Company Definition) $43,777 M ● FCF / revenue 37.8% Q3 Revenue by Market Platform (Million USD) Hyperscale US$60,136m, ACIE US$47,474m and Edge Computing US$8,234m total US$115,844m. The first two comprise Data Center, representing 92.9%. Market platforms differ from reportable segments; historical classifications are recast by the company. Revenue and Non-GAAP Gross Margin Across Comparison Periods Q3 FY2026, Q2 FY2027 and Q3 FY2027 are comparison periods, not three consecutive quarters. Left axis: revenue (US$m); right axis: non-GAAP gross margin (%). Q3 Core Financial Data (US$ Millions, Except EPS) Financial Metric Q3 FY2027 GAAP Q3 FY2027 Non-GAAP Non-GAAP QoQ / Supplement Quarterly Revenue $115,844 M $115,844 M +20.4% QoQ Gross Profit / Margin $86,676 M (74.8%) $86,724 M (74.9%) Gross margin −0.1 pp Operating Income $77,520 M $77,883 M +21.8% QoQ Quarterly Net Income $65,287 M $64,870 M +20.2% QoQ Operating Cash Flow & Diluted EPS GAAP Diluted EPS: $2.70 Non-GAAP EPS: $2.68 Operating cash flow: $48,253 M Non-GAAP includes stock-based compensation; comparative periods use the company’s recast basis. GAAP and non-GAAP are kept separate. The fiscal quarter ended 2026/10/25; Bloomberg’s standardized 10/31 quarter label is not the actual fiscal period end. Data Center Demand Breakdown Hyperscale revenue was US$60,136m (+71% YoY, +23% QoQ); AI Clouds, Industrial & Enterprise (ACIE) was US$47,474m (+195% YoY, +18% QoQ), totaling US$107,610m for Data Center. Edge Computing generated US$8,234m (+42% YoY, +14% QoQ). Classifications and comparisons follow the latest company Revenue Trend; undisclosed segment margins are not inferred. Free Cash Flow Bridge and Capital Returns Operating cash flow US$48,253m − capital expenditure US$4,422m − related principal payments US$54m = company-defined FCF US$43,777m. Bloomberg EEO’s US$43,831m equals the first two items netted, a US$54m difference from the company definition; the market comparison below retains Bloomberg’s original value. Quarterly shareholder returns were US$28.1bn, with approximately US$227.3bn of buyback authorization remaining. Authorization is not executed repurchasing. FY2027 Q3 Actuals vs Bloomberg Snapshot Consensus Metric Actual Snapshot consensus Difference Revenue (US$bn) 115.844 109.330 +5.96% Adjusted diluted EPS (US$) 2.680 2.470 +8.50% GAAP diluted EPS (US$) 2.700 2.514 +7.40% Non-GAAP gross margin 74.900% 74.026% +0.874 pp Operating income (EEO adjusted basis; US$bn) 77.883 71.951 +8.24% Free cash flow (US$bn) 43.831 58.943 −25.64% Source: Bloomberg EEO supplied 2026/11/18. The snapshot has not been independently established as frozen pre-announcement consensus. Official GAAP gross margin is 74.8% and operating income US$77.520bn; these differ from the adjusted measures above. Official Results and Next-Quarter Guidance Q4 revenue guidance is US$130bn ±3% (US$126.1–133.9bn), with midpoint growth of approximately 12.2% QoQ and 3.50% upside to the Bloomberg snapshot consensus of US$125.598bn. Both GAAP and non-GAAP gross margins are guided to 71%–72%; operating expenses are approximately US$11.0bn and US$10.7bn, respectively. Full-year FY2027 tax rates are expected at 16%–18%, excluding discrete items and material tax-environment changes. Q4 has an additional week and excludes China Data Center compute revenue. Sources: NVIDIA FY2027 Q3 results · CFO commentary · Revenue Trend III. Valuation Comparison Semiconductor Peers: Next-Four-Quarter Adjusted P/E Source: Bloomberg EEO screenshots supplied 2026/11/18, each showing a 17-Nov quote. All multiples use Next 4 Qtrs Est. Fiscal calendars, rolling-quarter windows and adjustments may still differ. Assess multiples alongside business mix and earnings visibility. Company Reference price (US$) Forward P/E Forward EV/Revenue Forward EV/EBITDA NVDA 155.46 11.16x 5.93x 8.94x AVGO 341.60 19.57x 10.52x 15.69x AMD 503.41 33.44x 9.72x 27.52x INTC 55.17 39.02x 4.55x 13.75x Interpreting the Discount and Rerating Conditions We believe NVIDIA’s lower earnings multiple should be considered alongside its Data Center concentration, forecast earnings growth, leadership transition and regulatory risks. Broadcom’s software mix, AMD’s product-ramp stage and Intel’s restructuring costs differ. A peer-average multiple is therefore not a direct fair-value benchmark for NVIDIA. A recovery requires earnings and cash expectations to be validated, not merely a gap between multiples. IV. Analyst Views Source: Bloomberg ANR (2026/11/18); reference share price: 2026/11/17 US$155.46. UBS Buy Rating and date: Timothy M Arcuri; Buy; 2026/11/16. Target and implied return: US$240.00; +54.4%. Morgan Stanley Overweight Rating and date: Joseph Moore; Overweight; 2026/11/16. Target and implied return: US$267.00; +71.7%. Citi Buy Rating and date: Atif Malik; Buy; 2026/11/17. Target and implied return: US$225.00; +44.7%. Consensus Consensus score: 4.51/5. Twelve-month consensus target: US$260.07, implying 67.3% upside. Buy/Hold/Sell: 78.3%/20.5%/1.2% (65/17/1 firms). V. Risk Factors Gross margins and product transitions: Q4 gross-margin guidance of 71%–72% is below Q3’s 74.9%. Unfavorable mix, supply costs or pricing during the new-architecture ramp could offset part of revenue growth and pressure elevated earnings expectations. Shipment volumes, delivery execution and margins should be tracked together rather than relying solely on orders or revenue. Cash conversion, customer capex and execution: Company-defined FCF improved sequentially, but the Bloomberg measure remained below snapshot consensus. Delays in customers’ data-center construction, power availability, financing or deployment could extend delivery and collection cycles and increase working-capital needs. Supply and capacity commitments rose to US$390bn, primarily involving multi-year memory purchases. These are not quarterly expenses, but demand or deployment shortfalls could increase inventory and procurement risks. Leadership transition, governance and regulation: The official release names Colette Kress as interim CEO and identifies leadership-transition, independent-investigation, regulatory and litigation risks. No outcome is presumed. If uncertainty affects customer confidence, employee retention or decision-making, the valuation discount could persist even while near-term revenue remains strong. Export restrictions, competition and earnings forecasts: Q4 guidance excludes China Data Center compute revenue, but changes in export rules and licences can still affect addressable markets and product planning. Cloud customers’ custom chips and alternative computing platforms may also reshape long-term demand. The 11.16x forward P/E depends on forecast earnings; capex reductions or earnings downgrades mean a low multiple does not guarantee downside protection. 6. Disclaimer Securing live connection to fetch the latest disclaimer components from disclaimer.html... Additional exact chart data: Revenue USDm57006,96221,115844 and Non-GAAP gross margin73.5,75,74.9 across Q3FY26,Q2FY27,Q3FY27 (not consecutive). FCF company43777m=48253-4422-54; Bloomberg43831m=48253-4422, consensus58943m. Peer next4 adjusted PE NVDA11.16 AVGO19.57 AMD33.44 INTC39.02. Do not invent bank theses. Retain standardized rating words only. Distinguish actual/guidance/snapshot consensus/our view. Use HTML b not Markdown.";
     function toggleChat() { document.getElementById('chat-window').classList.toggle('hidden'); }
     function appendMessage(text, isUser) {
         const msgDiv = document.createElement('div');
@@ -287,7 +513,7 @@
         document.getElementById('selection-tooltip').classList.add('hidden');
         document.getElementById('explain-term-title').textContent = selectedText;
         document.getElementById('explain-result').classList.add('hidden'); document.getElementById('explain-loading').classList.remove('hidden'); document.getElementById('explain-modal').classList.remove('hidden');
-        const res = await callGeminiAPI(`Explain this NVIDIA (NVDA) financial/earnings term; report information is as of 2026/11/18: ${selectedText}`, "You are a NVIDIA semiconductor and AI compute expert. Explain the term using accessible yet professional English. Limit your response to 150 words, and wrap key emphasis points in <b> tags.");
+        const res = await callGeminiAPI(`Explain this NVIDIA (MU) financial/earnings related term: ${selectedText}`, "You are a NVIDIA memory semiconductor expert. Explain the term using accessible yet professional English. Limit your response to 150 words, and wrap key emphasis points in <b> tags.");
         document.getElementById('explain-loading').classList.add('hidden'); document.getElementById('explain-result').innerHTML = res; document.getElementById('explain-result').classList.remove('hidden');
     }
     function closeExplainModal() { document.getElementById('explain-modal').classList.add('hidden'); window.getSelection().removeAllRanges(); }
