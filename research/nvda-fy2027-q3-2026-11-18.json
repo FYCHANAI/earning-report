@@ -1,0 +1,86 @@
+{
+  "period_end": "2026-10-25",
+  "release": "2026-11-17",
+  "snapshot": "2026-11-18",
+  "reference_price": 155.46,
+  "reference_price_date": "2026-11-17",
+  "official": "https://investor.nvidia.com/news/press-release-details/2026/NVIDIA-Announces-Financial-Results-for-Third-Quarter-Fiscal-2027/",
+  "rows": [
+    [
+      "115.844",
+      "109.330",
+      "+5.96%"
+    ],
+    [
+      "2.680",
+      "2.470",
+      "+8.50%"
+    ],
+    [
+      "2.700",
+      "2.514",
+      "+7.40%"
+    ],
+    [
+      "74.900%",
+      "74.026%",
+      "+0.874 pp"
+    ],
+    [
+      "77.883",
+      "71.951",
+      "+8.24%"
+    ],
+    [
+      "43.831",
+      "58.943",
+      "−25.64%"
+    ]
+  ],
+  "peers": [
+    [
+      "NVDA",
+      "155.46",
+      "11.16x",
+      "5.93x",
+      "8.94x"
+    ],
+    [
+      "AVGO",
+      "341.60",
+      "19.57x",
+      "10.52x",
+      "15.69x"
+    ],
+    [
+      "AMD",
+      "503.41",
+      "33.44x",
+      "9.72x",
+      "27.52x"
+    ],
+    [
+      "INTC",
+      "55.17",
+      "39.02x",
+      "4.55x",
+      "13.75x"
+    ]
+  ],
+  "anr": {
+    "score": 4.51,
+    "target": 260.07,
+    "buys": 65,
+    "holds": 17,
+    "sells": 1
+  },
+  "notes": [
+    "All five user screenshots inspected. Do not commit original screenshots.",
+    "EEO standardized quarter date 10/31 is not official fiscal end 10/25.",
+    "Raw Morgan Stanley rating Overwt/Attractive displayed Overweight.",
+    "JP Morgan and HSBC not visible; selected UBS, Morgan Stanley and Citi. No bank theses inferred.",
+    "Actual vs snapshot differences not confirmed pre-announcement surprises.",
+    "No full earnings-call transcript review.",
+    "PI legal/API components retained."
+  ]
+}
